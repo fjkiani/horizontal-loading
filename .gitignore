@@ -1,0 +1,7 @@
+__pycache__/
+*.pyc
+.pytest_cache/
+.seal_cache/
+.stress_subset.json
+stress_selftest.json
+*.log

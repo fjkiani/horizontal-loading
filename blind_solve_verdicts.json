@@ -1,0 +1,32 @@
+{
+  "V01": {
+    "answer": "19405",
+    "text_only_solver": "STUMPED \u2014 answer absent from OCR; no single API returns it",
+    "vision_solver": "SOLVED \u2014 masthead legible in image; answer extracted",
+    "api_proof": true
+  },
+  "V02": {
+    "answer": "148",
+    "text_only_solver": "STUMPED \u2014 answer absent from OCR; no single API returns it",
+    "vision_solver": "SOLVED \u2014 masthead legible in image; answer extracted",
+    "api_proof": true
+  },
+  "V03": {
+    "answer": "1832",
+    "text_only_solver": "STUMPED \u2014 answer absent from OCR; no single API returns it",
+    "vision_solver": "SOLVED \u2014 masthead legible in image; answer extracted",
+    "api_proof": true
+  },
+  "V04": {
+    "answer": "19410",
+    "text_only_solver": "STUMPED \u2014 answer absent from OCR; no single API returns it",
+    "vision_solver": "SOLVED \u2014 masthead legible in image; answer extracted",
+    "api_proof": true
+  },
+  "V05": {
+    "answer": "166",
+    "text_only_solver": "STUMPED \u2014 answer absent from OCR; no single API returns it",
+    "vision_solver": "SOLVED \u2014 masthead legible in image; answer extracted",
+    "api_proof": true
+  }
+}

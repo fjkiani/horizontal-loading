@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Seal Prompt Generator</title>
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+  <header>
+    <h1>Seal Prompt Generator</h1>
+    <p class="sub">API-proof research prompts, computed from live data and verified.</p>
+  </header>
+
+  <main>
+    <!-- Left: prompt list + generate -->
+    <section id="left">
+      <div class="panel">
+        <h2>Verified prompts</h2>
+        <div id="prompt-list" class="list">Loading…</div>
+      </div>
+      <div class="panel">
+        <h2>Generate</h2>
+        <p class="hint">Select a verified vision trap (re-verified live before serving).</p>
+        <select id="gen-page"></select>
+        <button id="gen-btn">Generate &amp; verify</button>
+        <div id="gen-result" class="result"></div>
+      </div>
+    </section>
+
+    <!-- Center: detail -->
+    <section id="center">
+      <div class="panel">
+        <h2>Prompt detail</h2>
+        <div id="detail" class="detail">Select a prompt.</div>
+      </div>
+    </section>
+
+    <!-- Right: stress test -->
+    <section id="right">
+      <div class="panel">
+        <h2>Stress test</h2>
+        <label>Solver
+          <select id="solver">
+            <option value="agent">agent (offline probe)</option>
+            <option value="openai">openai-compatible (your key)</option>
+          </select>
+        </label>
+        <div id="openai-fields" class="hidden">
+          <input id="api-key" type="password" placeholder="API key">
+          <input id="base-url" type="text" placeholder="Base URL (https://api.openai.com/v1)">
+          <input id="model" type="text" placeholder="model (gpt-4o)">
+        </div>
+        <label>Runs <input id="n-runs" type="number" value="3" min="1" max="5"></label>
+        <button id="stress-btn">Run stress test</button>
+        <div id="stress-result" class="result"></div>
+      </div>
+    </section>
+  </main>
+
+  <script src="/app.js"></script>
+</body>
+</html>

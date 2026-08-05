@@ -1,0 +1,15 @@
+.git
+__pycache__/
+*.pyc
+.pytest_cache/
+.seal_cache/
+.venv/
+.Rlib/
+.conda/
+bin/
+lib/
+*.log
+stress_selftest.json
+.stress_subset.json
+uvicorn*.log
+uv.log

@@ -67,16 +67,28 @@ def test_generate_rejects_nih_class():
 
 
 def test_generate_on_demand_contract():
-    """On-demand generation returns a fresh trap with the full contract. This
-    performs a live LOC walk; it is the real generator, not a pool lookup."""
+    """On-demand generation is async: POST returns a job, polling yields a fresh
+    trap with the full contract. This performs a live LOC walk (real generator)."""
+    import time
     # 1900-07-01 is within a Tribune run where the issue number is absent from
     # the whole-page OCR (clean traps). Some runs (e.g. June 1900) leak the number
-    # into the OCR and correctly yield no trap -> 422; we use a clean range here.
+    # into the OCR and correctly yield no trap; we use a clean range here.
     r = client.post("/api/generate", json={
         "trap_class": "vision", "lccn": "sn83030214",
-        "start_date": "1900-07-01", "max_steps": 15})
+        "start_date": "1900-07-01", "max_steps": 8})
     assert r.status_code == 200, r.text
-    d = r.json()
+    job = r.json()
+    assert job["status"] == "running" and job["job_id"]
+    # poll until done
+    d = None
+    for _ in range(120):
+        s = client.get(f"/api/generate/{job['job_id']}").json()
+        if s["status"] == "done":
+            d = s["result"]; break
+        if s["status"] == "error":
+            pytest.fail(f"generation errored: {s['detail']}")
+        time.sleep(1)
+    assert d is not None, "generation did not complete in time"
     # contract fields
     for k in ("id", "prompt", "answer", "field", "paper", "date",
               "verified", "api_proof", "confidence", "word_count",
@@ -88,6 +100,11 @@ def test_generate_on_demand_contract():
     assert len(d["sources"]) >= 3
     # OCR-derived candidates are served unverified until independently confirmed
     assert d["verified"] is False
+
+
+def test_generate_unknown_job_404():
+    r = client.get("/api/generate/doesnotexist")
+    assert r.status_code == 404
 
 
 def test_generated_pool_and_pending():

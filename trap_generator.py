@@ -140,7 +140,7 @@ def _word_count(s):
     return len(re.findall(r"\S+", s))
 
 
-def generate_trap(lccn="sn83030214", start_date=None, max_steps=12, min_confidence="high"):
+def generate_trap(lccn="sn83030214", start_date=None, max_steps=8, min_confidence="high"):
     """Walk forward from a seed front page, returning the FIRST trap that passes
     every gate. Returns a dict with the new prompt + answer + provenance, or
     raises RuntimeError if no clean trap is found within max_steps pages."""
@@ -156,12 +156,15 @@ def generate_trap(lccn="sn83030214", start_date=None, max_steps=12, min_confiden
 
         img = os.path.join(_IMG_DIR, f"{lccn}_{date}.jpg")
         try:
-            je.loc_page_image(url, img, pct=20)
+            je.loc_page_image(url, img, pct=15)  # pct:15 is enough for the masthead and faster
         except Exception:
             img = None
 
         if img and _legible(img):
             crop = _masthead_crop(img)
+            # Three scales give a 2-of-3 'high' consensus; two scales proved too
+            # brittle (many pages read only 'low'). Generation is async, so the
+            # extra OCR cost is absorbed by the background job, not the request.
             reads = [_ocr_at_scale(crop, s) for s in (2, 3, 4)]
             answer, field, conf = _extract_with_confidence(*reads)
 

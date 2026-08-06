@@ -104,20 +104,31 @@ async function selectPrompt(pid, el) {
   det.innerHTML = html;
 }
 
-/* ---------- on-demand generation ---------- */
+/* ---------- on-demand generation (async job + polling) ---------- */
 $("gen-btn").onclick = async () => {
   const out = $("gen-result");
-  out.textContent = "Walking live front pages… (this can take 30–90s)";
   const body = { trap_class: "vision" };
   const lccn = $("gen-lccn").value;
   const date = $("gen-date").value.trim();
   if (lccn) body.lccn = lccn;
   if (date) body.start_date = date;
   try {
-    const r = await api("/api/generate", {
+    const job = await api("/api/generate", {
       method: "POST", headers: { "Content-Type": "application/json" },
       body: JSON.stringify(body),
     });
+    out.textContent = "Walking live front pages… (downloading + OCR; can take 1–2 min on the free tier)";
+    // poll the job until it completes
+    let done = null, err = null;
+    for (let i = 0; i < 180; i++) {
+      await new Promise((r) => setTimeout(r, 2000));
+      const s = await api(`/api/generate/${job.job_id}`);
+      if (s.status === "done") { done = s.result; break; }
+      if (s.status === "error") { err = s.detail; break; }
+    }
+    if (err) { out.innerHTML = `${badge(false, "no trap")} ${esc(err)}`; return; }
+    if (!done) { out.innerHTML = `${badge(false, "timeout")} still running — check /api/pending shortly.`; return; }
+    const r = done;
     out.innerHTML = `${badge(r.api_proof, "api-proof")} <b>${esc(r.paper)}</b> ${esc(r.date)}<br>` +
       `${esc(r.field)}: <b>${esc(r.answer)}</b> ${badge(r.verified, r.verified ? "verified" : "unverified")}`;
     showGenerated(r);

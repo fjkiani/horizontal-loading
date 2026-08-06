@@ -9,22 +9,45 @@
 <body>
   <header>
     <h1>Seal Prompt Generator</h1>
-    <p class="sub">API-proof research prompts, computed from live data and verified.</p>
+    <p class="sub">Generates API-proof research prompts <b>on demand</b> by walking live Library of Congress front pages. Each trap is computed from a fresh scan, gated, then independently confirmed.</p>
   </header>
 
   <main>
-    <!-- Left: prompt list + generate -->
+    <!-- Left: generate + catalogs -->
     <section id="left">
       <div class="panel">
-        <h2>Verified prompts</h2>
-        <div id="prompt-list" class="list">Loading…</div>
-      </div>
-      <div class="panel">
-        <h2>Generate</h2>
-        <p class="hint">Select a verified vision trap (re-verified live before serving).</p>
-        <select id="gen-page"></select>
-        <button id="gen-btn">Generate &amp; verify</button>
+        <h2>Generate a new trap</h2>
+        <p class="hint">Walks forward through real newspaper front pages, OCRs the masthead, and keeps only traps whose answer is <b>absent from the page's text layer</b> (api-proof). Novel page every call.</p>
+        <label>Newspaper
+          <select id="gen-lccn">
+            <option value="">Random</option>
+            <option value="sn83030214">New-York Tribune</option>
+            <option value="sn83045211">Evening Public Ledger</option>
+            <option value="sn84020504">Evening Star &amp; Newark Advertiser</option>
+          </select>
+        </label>
+        <label>Start date (optional)
+          <input id="gen-date" type="text" placeholder="YYYY-MM-DD (blank = novel)">
+        </label>
+        <button id="gen-btn">Generate on demand</button>
         <div id="gen-result" class="result"></div>
+      </div>
+
+      <div class="panel">
+        <h2>Verified generated <span id="gen-count" class="pill"></span></h2>
+        <p class="hint">Independently confirmed by an image read.</p>
+        <div id="generated-list" class="list">Loading…</div>
+      </div>
+
+      <div class="panel">
+        <h2>Pending confirmation <span id="pend-count" class="pill"></span></h2>
+        <p class="hint">OCR-derived candidates. Not ground truth until confirmed.</p>
+        <div id="pending-list" class="list">Loading…</div>
+      </div>
+
+      <div class="panel">
+        <h2>Curated set</h2>
+        <div id="prompt-list" class="list">Loading…</div>
       </div>
     </section>
 
@@ -32,7 +55,7 @@
     <section id="center">
       <div class="panel">
         <h2>Prompt detail</h2>
-        <div id="detail" class="detail">Select a prompt.</div>
+        <div id="detail" class="detail">Generate a trap or select one.</div>
       </div>
     </section>
 

@@ -26,6 +26,7 @@ sys.path.insert(0, _REPO)
 import batch_prompts as bp
 import verify_joins as vj
 import stress_test_runner as str_
+import trap_generator as tg
 from app import solvers
 
 WORKSPACE = _REPO
@@ -115,34 +116,118 @@ def prompt_image(pid: str):
 
 
 class GenerateRequest(BaseModel):
-    trap_class: str = "vision"          # only 'vision' is supported (verified pool)
-    page_id: Optional[str] = None        # one of the verified V01..V05 ids
+    trap_class: str = "vision"           # only 'vision' is supported
+    lccn: Optional[str] = None           # newspaper to draw from (default: random seed)
+    start_date: Optional[str] = None     # YYYY-MM-DD seed; default: randomized for novelty
+    max_steps: int = 15                  # how many front pages to walk before giving up
+
+
+# Tracks the furthest date walked per paper so repeated Generate calls keep
+# producing NOVEL pages instead of re-serving the same seed.
+_WALK_CURSOR = {}
 
 
 @app.post("/api/generate")
 def generate(req: GenerateRequest):
-    """Return a verified prompt from the pool. Novel vision traps are NOT auto-generated
-    (each needs a manual OCR-leak + image-legibility check), so generation selects from
-    the verified pool and re-runs the gate to confirm it still passes live."""
-    author = _load_author()
+    """Generate a NOVEL vision trap on demand. Walks forward through LOC front
+    pages from a seed, auto-extracts the masthead answer via OCR consensus, and
+    runs the api-proof + leak + legibility gates. The candidate is served as a
+    fresh trap and queued for independent ground-truth confirmation (agent/vision
+    read of the image); `verified` is True only after that confirmation.
+
+    NOTE: OCR-derived answers are NOT guaranteed correct until confirmed — two
+    OCR engines have been observed to converge on the same wrong digit on
+    degraded mastheads. Confirmed traps are in GET /api/generated."""
     if req.trap_class != "vision":
         raise HTTPException(400, "only trap_class='vision' is currently supported; "
                                  "the NIH ranking class was removed as non-reproducible")
-    pid = req.page_id or sorted(author.keys())[0]
-    if pid not in author:
-        raise HTTPException(404, f"page_id {pid} not in verified pool {sorted(author.keys())}")
-    # Re-verify live before serving.
-    p = next((x for x in bp.BATCH if x.id == pid), None)
-    if p is None:
-        raise HTTPException(404, f"{pid} not in batch")
-    res, fails = vj.verify_clean(p)
-    if fails:
-        raise HTTPException(422, f"prompt {pid} failed live verification: {fails}")
-    rec = author[pid]
-    return {"id": pid, "prompt": rec["prompt"], "answer": res["answer"],
-            "verified": True, "api_proof": res.get("api_proof", False),
-            "golden": rec["golden"], "sources": rec.get("sources", []),
-            "image_url": f"/api/prompts/{pid}/image" if rec.get("image_path") else None}
+    import random, datetime
+    lccn = req.lccn or random.choice(list(tg.SEEDS.keys()))
+    if req.start_date:
+        seed = req.start_date
+    elif lccn in _WALK_CURSOR:
+        seed = _WALK_CURSOR[lccn]  # continue past the last-served page
+    else:
+        # randomize the seed within the paper's early run for variety
+        base = tg.SEEDS[lccn]
+        y, m, d = map(int, base.split("-"))
+        seed = (datetime.date(y, m, d) + datetime.timedelta(days=random.randint(0, 120))).isoformat()
+    try:
+        trap = tg.generate_trap(lccn=lccn, start_date=seed, max_steps=max(1, min(req.max_steps, 30)))
+    except RuntimeError as e:
+        raise HTTPException(422, str(e))
+    # advance the cursor past the served page so the next call is novel
+    try:
+        y, m, d = map(int, trap["date"].split("-"))
+        _WALK_CURSOR[lccn] = (datetime.date(y, m, d) + datetime.timedelta(days=1)).isoformat()
+    except Exception:
+        pass
+    return {
+        "id": f"{trap['lccn']}:{trap['date']}:{trap['field']}",
+        "prompt": trap["prompt"], "answer": trap["answer"],
+        "field": trap["field"], "paper": trap["paper"], "date": trap["date"],
+        "verified": trap["verified"], "api_proof": trap["api_proof"],
+        "confidence": trap["confidence"], "word_count": trap["word_count"],
+        "golden": trap["golden"], "sources": trap["sources"],
+        "resource_url": trap["resource_url"],
+        "note": ("OCR-derived candidate; pending independent image confirmation. "
+                 "Confirmed traps appear in /api/generated."),
+    }
+
+
+def _trap_summary(t):
+    return {
+        "id": f"{t['lccn']}:{t['date']}:{t['field']}",
+        "lccn": t["lccn"], "date": t["date"], "paper": t["paper"],
+        "field": t["field"], "answer": t["answer"],
+        "verified": t.get("verified", False), "api_proof": t.get("api_proof", False),
+        "confidence": t.get("confidence"), "word_count": t.get("word_count"),
+        "image_url": f"/api/generated/image?lccn={t['lccn']}&date={t['date']}&field={t['field']}",
+    }
+
+
+@app.get("/api/generated")
+def list_generated():
+    """The growing catalog of independently-confirmed (verified) generated traps."""
+    pool = tg.list_generated()
+    return {"count": len(pool), "verified": [_trap_summary(t) for t in pool]}
+
+
+@app.get("/api/generated/image")
+def generated_image(lccn: str, date: str, field: str):
+    """Serve the scan image for a generated trap (verified or pending)."""
+    for t in tg.list_generated() + tg.list_pending():
+        if (t["lccn"], t["date"], t["field"]) == (lccn, date, field):
+            path = tg.resolve_image_path(t)
+            if path and os.path.exists(path):
+                return FileResponse(path, media_type="image/jpeg")
+            raise HTTPException(404, "image file missing")
+    raise HTTPException(404, "no matching generated trap")
+
+
+@app.get("/api/pending")
+def list_pending():
+    """OCR-derived candidates awaiting ground-truth confirmation."""
+    pend = tg.list_pending()
+    return {"count": len(pend), "pending": [_trap_summary(t) for t in pend]}
+
+
+class ConfirmRequest(BaseModel):
+    lccn: str
+    date: str
+    field: str
+    confirmed_answer: str
+    verifier: str = "agent"
+
+
+@app.post("/api/confirm")
+def confirm(req: ConfirmRequest):
+    """Confirm a pending candidate's ground truth from an independent image read.
+    If confirmed_answer differs from the OCR candidate, the confirmed value wins."""
+    t = tg.confirm_candidate(req.lccn, req.date, req.field, req.confirmed_answer, req.verifier)
+    if not t:
+        raise HTTPException(404, "no matching pending candidate")
+    return {"verified": True, "trap": t}
 
 
 class StressRequest(BaseModel):

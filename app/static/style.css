@@ -61,6 +61,14 @@ button {
 button:hover { opacity: 0.92; }
 .result { font-size: 12px; margin-top: 10px; white-space: pre-wrap; }
 .hidden { display: none; }
+.pill {
+  display: inline-block; background: var(--accent); color: #fff; font-size: 11px;
+  padding: 0 7px; border-radius: 10px; vertical-align: middle;
+}
+.kv.warn {
+  background: #fdf3e0; border: 1px solid #f0d9a8; border-radius: 6px;
+  padding: 8px; color: #8a5a00; font-size: 12px; margin-top: 10px;
+}
 table { width: 100%; border-collapse: collapse; font-size: 12px; margin-top: 8px; }
 th, td { text-align: left; padding: 5px 6px; border-bottom: 1px solid var(--line); }
 th { color: var(--muted); font-weight: 600; }

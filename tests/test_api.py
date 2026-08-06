@@ -13,7 +13,8 @@ Uses FastAPI TestClient (no live server needed). Covers:
 import os, sys, json
 import pytest
 
-sys.path.insert(0, "/workspace")
+_REPO = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+sys.path.insert(0, _REPO)
 from fastapi.testclient import TestClient
 from app.main import app
 import join_engine as je
@@ -59,17 +60,56 @@ def test_prompt_detail_404():
     assert r.status_code == 404
 
 
-def test_generate_reverifies_and_rejects_nih():
-    # valid vision generation re-verifies live
-    r = client.post("/api/generate", json={"trap_class": "vision", "page_id": "V04"})
-    assert r.status_code == 200
-    assert r.json()["verified"] and r.json()["answer"] == "19410"
+def test_generate_rejects_nih_class():
     # NIH class is removed -> 400
-    r2 = client.post("/api/generate", json={"trap_class": "nih_rank"})
-    assert r2.status_code == 400
-    # unknown page -> 404
-    r3 = client.post("/api/generate", json={"trap_class": "vision", "page_id": "V99"})
-    assert r3.status_code == 404
+    r = client.post("/api/generate", json={"trap_class": "nih_rank"})
+    assert r.status_code == 400
+
+
+def test_generate_on_demand_contract():
+    """On-demand generation returns a fresh trap with the full contract. This
+    performs a live LOC walk; it is the real generator, not a pool lookup."""
+    # 1900-07-01 is within a Tribune run where the issue number is absent from
+    # the whole-page OCR (clean traps). Some runs (e.g. June 1900) leak the number
+    # into the OCR and correctly yield no trap -> 422; we use a clean range here.
+    r = client.post("/api/generate", json={
+        "trap_class": "vision", "lccn": "sn83030214",
+        "start_date": "1900-07-01", "max_steps": 15})
+    assert r.status_code == 200, r.text
+    d = r.json()
+    # contract fields
+    for k in ("id", "prompt", "answer", "field", "paper", "date",
+              "verified", "api_proof", "confidence", "word_count",
+              "golden", "sources", "resource_url"):
+        assert k in d, f"missing field {k}"
+    assert d["api_proof"] is True
+    assert 70 <= d["word_count"] <= 150
+    assert d["answer"]                      # non-empty atomic answer
+    assert len(d["sources"]) >= 3
+    # OCR-derived candidates are served unverified until independently confirmed
+    assert d["verified"] is False
+
+
+def test_generated_pool_and_pending():
+    r = client.get("/api/generated")
+    assert r.status_code == 200
+    d = r.json()
+    assert d["count"] == len(d["verified"])
+    for t in d["verified"]:
+        assert t["verified"] is True
+        assert t["api_proof"] is True
+        assert t["answer"]
+    # pending endpoint returns a list (may be empty)
+    rp = client.get("/api/pending")
+    assert rp.status_code == 200
+    assert rp.json()["count"] == len(rp.json()["pending"])
+
+
+def test_confirm_unknown_candidate_404():
+    r = client.post("/api/confirm", json={
+        "lccn": "sn00000000", "date": "1900-01-01", "field": "issue number",
+        "confirmed_answer": "1", "verifier": "test"})
+    assert r.status_code == 404
 
 
 def test_flawed_controls_caught():

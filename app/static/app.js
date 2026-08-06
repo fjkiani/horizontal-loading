@@ -16,13 +16,60 @@ function badge(ok, label) {
   return `<span class="badge ${cls}">${label}</span>`;
 }
 
+function esc(s) { return String(s).replace(/[&<>"]/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c])); }
+
+/* ---------- generated trap detail ---------- */
+function showGenerated(t) {
+  const det = $("detail");
+  let html = `<div class="prompt-text">${esc(t.prompt)}</div>`;
+  html += `<div class="kv"><b>Answer:</b> ${esc(t.answer)} ${badge(t.api_proof, "api-proof")} ${badge(t.verified, t.verified ? "verified" : "unverified")}</div>`;
+  html += `<div class="kv"><b>Paper:</b> ${esc(t.paper)} · <b>Date:</b> ${esc(t.date)} · <b>Field:</b> ${esc(t.field)}</div>`;
+  html += `<div class="kv"><b>Confidence:</b> ${esc(t.confidence || "—")} · <b>Words:</b> ${t.word_count || "—"}</div>`;
+  if (t.image_url) html += `<img src="${t.image_url}" alt="scan">`;
+  if (t.golden) html += `<div class="kv"><b>Golden trajectory:</b></div><ol class="trace">` +
+    t.golden.map((s) => `<li>${esc(s)}</li>`).join("") + `</ol>`;
+  if (t.sources) html += `<div class="kv"><b>Sources:</b></div><ul class="trace">` +
+    t.sources.map((s) => `<li><a href="${s}" target="_blank" rel="noopener">${esc(s)}</a></li>`).join("") + `</ul>`;
+  if (!t.verified) html += `<div class="kv warn">OCR-derived candidate — confirm against the image before treating the answer as ground truth.</div>`;
+  det.innerHTML = html;
+}
+
+/* ---------- catalogs ---------- */
+async function loadGenerated() {
+  const data = await api("/api/generated");
+  $("gen-count").textContent = data.count;
+  const list = $("generated-list");
+  list.innerHTML = data.count ? "" : "<div class='hint'>None yet — generate one.</div>";
+  data.verified.forEach((t) => {
+    const div = document.createElement("div");
+    div.className = "item";
+    div.innerHTML = `<b>${esc(t.paper)}</b> ${esc(t.date)} ${badge(true, "verified")} ${badge(t.api_proof, "api-proof")}
+      <div style="color:#6b6b6b;font-size:11px;margin-top:3px">${esc(t.field)}: ${esc(t.answer)}</div>`;
+    div.onclick = () => { showGenerated(t); markActive(div); };
+    list.appendChild(div);
+  });
+}
+
+async function loadPending() {
+  const data = await api("/api/pending");
+  $("pend-count").textContent = data.count;
+  const list = $("pending-list");
+  list.innerHTML = data.count ? "" : "<div class='hint'>Queue empty.</div>";
+  data.pending.forEach((t) => {
+    const div = document.createElement("div");
+    div.className = "item";
+    div.innerHTML = `<b>${esc(t.paper)}</b> ${esc(t.date)} ${badge(false, "unverified")}
+      <div style="color:#6b6b6b;font-size:11px;margin-top:3px">OCR read: ${esc(t.answer)}</div>`;
+    div.onclick = () => { showGenerated(t); markActive(div); };
+    list.appendChild(div);
+  });
+}
+
 async function loadPrompts() {
   const data = await api("/api/prompts");
   prompts = data.prompts;
   const list = $("prompt-list");
   list.innerHTML = "";
-  const sel = $("gen-page");
-  sel.innerHTML = "";
   prompts.forEach((p) => {
     const div = document.createElement("div");
     div.className = "item";
@@ -33,41 +80,52 @@ async function loadPrompts() {
       <div style="color:#6b6b6b;font-size:11px;margin-top:3px">answer: ${p.answer}</div>`;
     div.onclick = () => selectPrompt(p.id, div);
     list.appendChild(div);
-    const o = document.createElement("option");
-    o.value = p.id; o.textContent = `${p.id} (${p.domain})`;
-    sel.appendChild(o);
   });
 }
 
-async function selectPrompt(pid, el) {
+function markActive(el) {
   document.querySelectorAll(".item").forEach((x) => x.classList.remove("active"));
   if (el) el.classList.add("active");
+}
+
+async function selectPrompt(pid, el) {
+  markActive(el);
   selected = pid;
   const d = await api(`/api/prompts/${pid}`);
   const det = $("detail");
-  let html = `<div class="prompt-text">${d.prompt}</div>`;
-  html += `<div class="kv"><b>Answer:</b> ${d.answer} ${badge(d.api_proof, "api-proof")}</div>`;
-  html += `<div class="kv"><b>Method:</b> ${d.method} · <b>Domain:</b> ${d.domain}</div>`;
+  let html = `<div class="prompt-text">${esc(d.prompt)}</div>`;
+  html += `<div class="kv"><b>Answer:</b> ${esc(d.answer)} ${badge(d.api_proof, "api-proof")}</div>`;
+  html += `<div class="kv"><b>Method:</b> ${esc(d.method)} · <b>Domain:</b> ${esc(d.domain)}</div>`;
   if (d.has_image) html += `<img src="${d.image_url}" alt="scan">`;
   html += `<div class="kv"><b>Golden trajectory:</b></div><ol class="trace">` +
-          d.golden.map((s) => `<li>${s}</li>`).join("") + `</ol>`;
+    d.golden.map((s) => `<li>${esc(s)}</li>`).join("") + `</ol>`;
   html += `<div class="kv"><b>Sources:</b></div><ul class="trace">` +
-          d.sources.map((s) => `<li><a href="${s}" target="_blank" rel="noopener">${s}</a></li>`).join("") + `</ul>`;
+    d.sources.map((s) => `<li><a href="${s}" target="_blank" rel="noopener">${esc(s)}</a></li>`).join("") + `</ul>`;
   det.innerHTML = html;
 }
 
+/* ---------- on-demand generation ---------- */
 $("gen-btn").onclick = async () => {
   const out = $("gen-result");
-  out.textContent = "Verifying live…";
+  out.textContent = "Walking live front pages… (this can take 30–90s)";
+  const body = { trap_class: "vision" };
+  const lccn = $("gen-lccn").value;
+  const date = $("gen-date").value.trim();
+  if (lccn) body.lccn = lccn;
+  if (date) body.start_date = date;
   try {
     const r = await api("/api/generate", {
       method: "POST", headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ trap_class: "vision", page_id: $("gen-page").value }),
+      body: JSON.stringify(body),
     });
-    out.innerHTML = `${badge(true, "verified")} <b>${r.id}</b> answer: <b>${r.answer}</b> (api-proof)`;
-  } catch (e) { out.innerHTML = `${badge(false, "error")} ${e.message}`; }
+    out.innerHTML = `${badge(r.api_proof, "api-proof")} <b>${esc(r.paper)}</b> ${esc(r.date)}<br>` +
+      `${esc(r.field)}: <b>${esc(r.answer)}</b> ${badge(r.verified, r.verified ? "verified" : "unverified")}`;
+    showGenerated(r);
+    loadPending();  // the new candidate joins the pending queue
+  } catch (e) { out.innerHTML = `${badge(false, "error")} ${esc(e.message)}`; }
 };
 
+/* ---------- stress test ---------- */
 $("solver").onchange = () => {
   $("openai-fields").classList.toggle("hidden", $("solver").value !== "openai");
 };
@@ -89,13 +147,15 @@ $("stress-btn").onclick = async () => {
       method: "POST", headers: { "Content-Type": "application/json" },
       body: JSON.stringify(body),
     });
-    let html = `<div style="color:#6b6b6b">${r.note}</div><table><tr><th>ID</th><th>L2 fail</th><th>stump?</th></tr>`;
+    let html = `<div style="color:#6b6b6b">${esc(r.note)}</div><table><tr><th>ID</th><th>L2 fail</th><th>stump?</th></tr>`;
     for (const [pid, res] of Object.entries(r.results)) {
       html += `<tr><td>${pid}</td><td>${(res.l2_fail_rate * 100).toFixed(0)}%</td>` +
-              `<td>${badge(res.proxy_validated, res.proxy_validated ? "proxy" : "no")}</td></tr>`;
+        `<td>${badge(res.proxy_validated, res.proxy_validated ? "proxy" : "no")}</td></tr>`;
     }
     out.innerHTML = html + "</table>";
-  } catch (e) { out.innerHTML = `${badge(false, "error")} ${e.message}`; }
+  } catch (e) { out.innerHTML = `${badge(false, "error")} ${esc(e.message)}`; }
 };
 
+loadGenerated().catch((e) => { $("generated-list").textContent = "Error: " + e.message; });
+loadPending().catch((e) => { $("pending-list").textContent = "Error: " + e.message; });
 loadPrompts().catch((e) => { $("prompt-list").textContent = "Error: " + e.message; });

@@ -10,6 +10,7 @@ Uses FastAPI TestClient (no live server needed). Covers:
   - cache-key regression: distinct fiscal years map to distinct cache keys
   - stress-test endpoint wiring returns a result dict
 """
+import pathlib
 import time
 import os, sys, json
 import pytest
@@ -266,3 +267,12 @@ def test_generate_job_reports_progress_not_just_running():
     finally:
         with m._JOBS_LOCK:
             m._JOBS.pop(jid, None)
+
+
+def test_frontend_js_is_syntactically_valid():
+    """A syntax error in app.js breaks the entire UI while every API test still
+    passes. Parse it in CI so that failure mode cannot ship silently."""
+    esprima = pytest.importorskip("esprima")
+    src = (pathlib.Path(__file__).resolve().parent.parent
+           / "app" / "static" / "app.js").read_text()
+    esprima.parseScript(src)

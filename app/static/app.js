@@ -124,9 +124,14 @@ $("gen-btn").onclick = async () => {
     out.textContent = "Starting walk…";
     // Poll until the job completes, surfacing which page is being worked and why
     // pages get rejected. A silent spinner is indistinguishable from a hang.
+    // Budget must cover the real worst case, not a guess. A walk costs roughly
+    // 2 min/page on the free tier (three raster downloads + OCR each), so an
+    // 8-page walk can legitimately run ~17 min. The old 180x2s = 6 min budget
+    // declared "timeout" on jobs that were working fine.
     let done = null, err = null, lastLog = [];
-    for (let i = 0; i < 180; i++) {
-      await new Promise((r) => setTimeout(r, 2000));
+    const deadline = Date.now() + 22 * 60 * 1000;
+    while (Date.now() < deadline) {
+      await new Promise((r) => setTimeout(r, 3000));
       const s = await api(`/api/generate/${job.job_id}`);
       if (s.log && s.log.length) lastLog = s.log;
       if (s.status === "done") { done = s.result; break; }
@@ -134,11 +139,13 @@ $("gen-btn").onclick = async () => {
       const p = s.progress || {};
       const step = p.step ? `page ${p.step}/${s.max_steps || "?"}` : "starting";
       const where = p.date ? ` · ${esc(p.date)}` : "";
+      const votes = (p.votes && p.votes.length)
+        ? `<br><span class="muted">votes so far: ${esc(p.votes.join(", "))} (needs 2 agreeing)</span>` : "";
       const why = p.reason ? `<br><span class="muted">rejected: ${esc(p.reason)}</span>`
                 : p.candidate ? `<br><span class="muted">candidate ${esc(p.candidate)} — testing api-proof</span>`
-                : "";
+                : votes;
       out.innerHTML = `<b>${esc(step)}</b>${where} — ${esc(p.phase || "working")}` +
-        ` <span class="muted">(${s.elapsed ?? 0}s)</span>${why}`;
+        ` <span class="muted">(${Math.round(s.elapsed || 0)}s)</span>${why}`;
     }
     const trail = lastLog.filter((e) => e.reason)
       .map((e) => `<div class="muted">${esc(e.date || "")} — ${esc(e.reason)}</div>`).join("");
@@ -147,7 +154,13 @@ $("gen-btn").onclick = async () => {
         (trail ? `<div style="margin-top:6px">${trail}</div>` : "");
       return;
     }
-    if (!done) { out.innerHTML = `${badge(false, "timeout")} still running — check /api/pending shortly.`; return; }
+    if (!done) {
+      out.innerHTML = `${badge(false, "still running")} the walk exceeded this page's 22-minute ` +
+        `watch window but is <b>not</b> cancelled — it continues server-side. ` +
+        `Poll <code>/api/generate/${esc(job.job_id)}</code> or check the pending queue.` +
+        (trail ? `<div style="margin-top:6px">${trail}</div>` : "");
+      return;
+    }
     const r = done;
     out.innerHTML = `${badge(r.api_proof, "api-proof")} <b>${esc(r.paper)}</b> ${esc(r.date)}<br>` +
       `${esc(r.field)}: <b>${esc(r.answer)}</b> ${badge(r.verified, r.verified ? "verified" : "unverified")}`;

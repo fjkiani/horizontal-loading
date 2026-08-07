@@ -256,7 +256,13 @@ def generate_trap(lccn="sn83030214", start_date=None, max_steps=8, min_confidenc
             # Lower recall is the right trade: the walk simply advances a page.
             try:
                 import masthead_reader as mr
-                r = mr.read_masthead(url, cache_tag=f"{lccn}_{date}")
+                r = mr.read_masthead(
+                    url, cache_tag=f"{lccn}_{date}",
+                    progress=lambda d: _emit(
+                        phase=f"reading masthead at pct:{d['raster']} "
+                              f"({d['raster_index']}/{d['rasters']})",
+                        step=tried, max_steps=max_steps, date=date, paper=title,
+                        votes=d.get("votes") or []))
                 answer, field, conf = r["answer"], r["field"], r["confidence"]
                 engine = "tesseract-xres"
             except Exception:

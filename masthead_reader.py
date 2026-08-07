@@ -108,7 +108,8 @@ def _parse(texts):
     return None, None
 
 
-def read_masthead(resource_url, workdir="/workspace/adjudicate", cache_tag=None):
+def read_masthead(resource_url, workdir="/workspace/adjudicate", cache_tag=None,
+                  progress=None):
     """Read the masthead answer using cross-RESOLUTION agreement.
 
     Returns dict: answer, field, confidence, per_resolution, agree.
@@ -121,6 +122,16 @@ def read_masthead(resource_url, workdir="/workspace/adjudicate", cache_tag=None)
     tag = cache_tag or re.sub(r"[^A-Za-z0-9]+", "_", resource_url)[-60:]
     per = {}
     for i, pct in enumerate(RESOLUTIONS):
+        # Each raster is a multi-MB download plus OCR; on a 0.1 vCPU instance a
+        # single page can sit here ~2 min. Report per-raster so the caller can
+        # show movement instead of one opaque "reading masthead".
+        if progress:
+            try:
+                progress({"raster": pct, "raster_index": i + 1,
+                          "rasters": len(RESOLUTIONS),
+                          "votes": [v["answer"] for v in per.values() if v.get("answer")]})
+            except Exception:
+                pass
         got = [v["answer"] for v in per.values() if v.get("answer")]
         # STAGED, to keep the walk affordable on a 0.1 vCPU instance:
         #  * bail out entirely if the first raster found nothing - most walked pages

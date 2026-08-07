@@ -6,3 +6,4 @@ pytesseract>=0.3.10
 pytest>=8.0
 httpx>=0.27
 cohere>=7.0
+esprima>=4.0

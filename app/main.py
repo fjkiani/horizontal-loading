@@ -220,6 +220,10 @@ def _trap_summary(t):
         "field": t["field"], "answer": t["answer"],
         "verified": t.get("verified", False), "api_proof": t.get("api_proof", False),
         "confidence": t.get("confidence"), "word_count": t.get("word_count"),
+        # Provenance: which extractor proposed the answer, and who confirmed it.
+        # This matters because a confident OCR reading is not ground truth - the
+        # old same-raster extractor emitted 176 for a masthead that reads 175.
+        "ocr_engine": t.get("ocr_engine"), "verifier": t.get("verifier"),
         "image_url": f"/api/generated/image?lccn={t['lccn']}&date={t['date']}&field={t['field']}",
     }
 

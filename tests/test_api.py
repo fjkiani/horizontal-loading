@@ -209,9 +209,16 @@ def test_reader_benchmark_has_no_false_confidence():
     new_wrong = [k for k, v in d.items() if v.get("new_accepted_wrong")]
     assert not new_wrong, f"new reader accepted wrong answers: {new_wrong}"
     # And it must have caught the specific historical failure.
+    # The historically-failing page: the invariant is NOT "always refuse it", it is
+    # "never accept a wrong value for it". Refusing (conflict) and reading it
+    # correctly (175) are both acceptable; emitting 176 confidently is not.
     hard = d.get("sn83045211:1922-04-06")
     if hard:
-        assert not hard["new_accepted"], "1922-04-06 must NOT be accepted"
+        assert hard["truth"] == "175"
+        if hard["new_accepted"]:
+            assert hard["new_correct"], (
+                f"accepted a wrong value for the known-hard masthead: "
+                f"{hard['new']['answer']} != 175")
         assert hard["old_accepted_wrong"], "benchmark should record the old failure"
 
 

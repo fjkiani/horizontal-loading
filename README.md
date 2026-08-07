@@ -143,15 +143,28 @@ Two conclusions:
 requires cross-**resolution** agreement. Scored on the agent-verified ground truths
 (`benchmark_readers.py` → `reader_benchmark.json`):
 
-| reader | correct | accepted (high-conf) | **accepted WRONG** | precision when accepted |
-|---|---|---|---|---|
-| old (same-raster upscales) | 8/9 | 8 | **1** | 88% |
-| new (cross-resolution) | 7/9 | 4 | **0** | **100%** |
+| reader | correct | accepted (high-conf) | **accepted WRONG** | precision | 1922-04-06 |
+|---|---|---|---|---|---|
+| old (same-raster upscales) | 9/10 | 8 | **1** | 88% | **176 — wrong, high conf** |
+| new (cross-resolution) | 8/10 | 7 | **0** | **100%** | **175 — correct, high conf** |
 
-Recall drops and precision goes to 100%: the new reader returns `conflict` on
-1922-04-06 and refuses it instead of shipping 176. That is the correct trade — the walk
-just advances to the next page, whereas a wrong "verified" answer poisons the product.
-Locked in by `test_reader_benchmark_has_no_false_confidence`.
+Precision goes to 100% *and* the hard case is now read correctly. Three refinements got
+there, each driven by inspecting why a specific page failed:
+
+1. **Three rasters, majority vote** (`pct:40`, `pct:60`, tie-breaker `pct:25`). Two
+   resolutions alone rejected three correct answers for want of a second vote.
+2. **Bail only after two empty rasters.** Quitting after one was too eager — no single
+   resolution is universally best, and a false reject makes the walk pay for a whole
+   extra page anyway.
+3. **Discard implausibly short issue numbers.** At `pct:40` the reader matched a bare
+   `"2"` from nearby body text. That junk vote was not harmless: it manufactured a fake
+   tie. Filtering it lets the parse continue and find the real `175`, turning a refusal
+   into a correct 2-of-3 majority (175 / 176 / 175).
+
+Remaining misses are conservative refusals, never wrong answers: `1900-07-04` ends in
+`conflict` (pct:60 reads 19589, pct:25 reads 19580) and `1900-08-01` parses at no
+resolution. The walk simply advances a page. Locked in by
+`test_reader_benchmark_has_no_false_confidence`.
 
 ### On the Cohere vision LLM
 

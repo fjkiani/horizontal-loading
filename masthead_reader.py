@@ -43,7 +43,15 @@ import trap_generator as tg
 # Two genuinely different source rasters. pct:40 was the accuracy/latency sweet
 # spot in the sweep; pct:60 is a different downsample of the same master scan, so
 # its errors are not guaranteed to correlate with pct:40's.
-RESOLUTIONS = (40, 60)
+# Ordered by cost/benefit. pct:40 was the accuracy/latency sweet spot in the sweep
+# and is read first. pct:60 is a different downsample of the same master scan, so
+# its errors need not correlate. pct:25 is consulted ONLY as a tie-breaker, because
+# the benchmark showed three correct answers were being rejected purely for want of
+# a second agreeing vote (confidence "low"), which cost recall without buying
+# precision. A third raster converts those into a 2-of-3 majority; a genuine 2-2
+# split (as on Ledger 1922-04-06) still ends as "conflict" and is refused.
+RESOLUTIONS = (40, 60, 25)
+MIN_VOTES = 2
 # psm 6 ("assume a uniform block of text") preserves the masthead's line layout;
 # psm 7 ("single line") helps when the crop isolates one rule-to-rule band.
 PSMS = ("--psm 6", "--psm 7")
@@ -76,14 +84,23 @@ def _read_variants(crop):
     return out
 
 
+# Implausibly short issue numbers are almost always spurious regex hits on nearby
+# body text (e.g. the pct:40 read of Ledger 1922-04-06 matched a bare "2"). Such a
+# junk vote is not harmless: it manufactures a fake tie and makes the reader refuse
+# a page it could otherwise have called, so it costs recall.
+_MIN_ISSUE_DIGITS = 2
+
+
 def _parse(texts):
-    """First (answer, field) found across candidate texts, using the shared regexes."""
+    """First plausible (answer, field) across candidate texts, using shared regexes."""
     for t in texts:
         flat = " ".join((t or "").split())
         for pat in tg._ISSUE_PATTERNS:
             m = re.search(pat, flat, re.IGNORECASE)
             if m:
-                return tg._norm_digits(m.group(1)), "issue number"
+                d = tg._norm_digits(m.group(1))
+                if len(d) >= _MIN_ISSUE_DIGITS and int(d) > 0:
+                    return d, "issue number"
         for pat in tg._YEAR_PATTERNS:
             m = re.search(pat, flat, re.IGNORECASE)
             if m:
@@ -104,11 +121,22 @@ def read_masthead(resource_url, workdir="/workspace/adjudicate", cache_tag=None)
     tag = cache_tag or re.sub(r"[^A-Za-z0-9]+", "_", resource_url)[-60:]
     per = {}
     for i, pct in enumerate(RESOLUTIONS):
-        # STAGED: most walked pages carry no parseable issue number. Reading the
-        # first resolution and bailing out when it finds nothing avoids paying for
-        # a second high-res download + OCR pass on pages we are going to reject
-        # anyway. The second resolution is only spent CONFIRMING a live candidate.
-        if i > 0 and not any(v.get("answer") for v in per.values()):
+        got = [v["answer"] for v in per.values() if v.get("answer")]
+        # STAGED, to keep the walk affordable on a 0.1 vCPU instance:
+        #  * bail out entirely if the first raster found nothing - most walked pages
+        #    carry no parseable issue number, and those rejects should cost one
+        #    download, not three.
+        #  * stop as soon as MIN_VOTES rasters agree - the common case costs two.
+        #  * only pay for the third raster to break an actual tie.
+        # Bail only after TWO rasters have come up empty. Quitting after one was
+        # too eager: the sweep showed no single resolution is universally best, so
+        # a page that fails to parse at pct:40 can still parse at pct:60 (this cost
+        # two known-good pages, 1900-07-04 and 1900-08-01, in benchmarking). A
+        # false reject is not even cheap - the walk then pays for a whole extra
+        # page (JSON + download + OCR) to replace the one we discarded.
+        if i >= 2 and not got:
+            break
+        if len(got) >= MIN_VOTES and len(set(got)) == 1:
             break
         path = os.path.join(workdir, f"{tag}_pct{pct}.jpg")
         try:
@@ -127,11 +155,23 @@ def read_masthead(resource_url, workdir="/workspace/adjudicate", cache_tag=None)
     if not vals:
         return {"answer": None, "field": None, "confidence": "none",
                 "per_resolution": per, "agree": False}
-    uniq = set(vals)
-    if len(uniq) == 1:
-        conf = "high" if len(vals) >= 2 else "low"
-        return {"answer": vals[0], "field": fields[0], "confidence": conf,
-                "per_resolution": per, "agree": len(vals) >= 2}
-    return {"answer": None, "field": fields[0] if fields else None,
-            "confidence": "conflict", "per_resolution": per, "agree": False,
-            "candidates": sorted(uniq)}
+
+    from collections import Counter
+    tally = Counter(vals)
+    top, top_n = tally.most_common(1)[0]
+    field = next((f for v, f in zip(vals, fields) if v == top), fields[0])
+    runner_n = tally.most_common(2)[1][1] if len(tally) > 1 else 0
+
+    # A clear majority across DISTINCT rasters is the only thing that earns "high".
+    if top_n >= MIN_VOTES and top_n > runner_n:
+        return {"answer": top, "field": field, "confidence": "high",
+                "per_resolution": per, "agree": True, "votes": dict(tally)}
+    # A tie between different rasters is exactly the 175-vs-176 failure mode:
+    # refuse it rather than pick a winner.
+    if len(tally) > 1 and top_n == runner_n:
+        return {"answer": None, "field": field, "confidence": "conflict",
+                "per_resolution": per, "agree": False,
+                "candidates": sorted(tally), "votes": dict(tally)}
+    # Single raster produced a value: plausible but uncorroborated.
+    return {"answer": top, "field": field, "confidence": "low",
+            "per_resolution": per, "agree": False, "votes": dict(tally)}

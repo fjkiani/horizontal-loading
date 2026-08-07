@@ -10,6 +10,7 @@ Uses FastAPI TestClient (no live server needed). Covers:
   - cache-key regression: distinct fiscal years map to distinct cache keys
   - stress-test endpoint wiring returns a result dict
 """
+import time
 import os, sys, json
 import pytest
 
@@ -228,3 +229,40 @@ def test_generated_pool_answers_are_confirmed():
     for t in tg.list_generated():
         assert t.get("verified") is True, f"{t['date']} served unverified"
         assert t.get("answer"), f"{t['date']} missing answer"
+
+
+def test_generated_payload_carries_prompt_text():
+    """The prompt IS the product. The detail pane renders trap.prompt, so a
+    summary payload without it rendered a literal 'undefined' in the UI."""
+    r = client.get("/api/generated")
+    assert r.status_code == 200
+    traps = r.json()["verified"]
+    assert traps, "expected a non-empty verified pool"
+    for t in traps:
+        assert t.get("prompt"), f"{t['id']} has no prompt text in the payload"
+        assert 70 <= len(t["prompt"].split()) <= 150
+        # the answer must never leak into the prompt that asks for it
+        assert t["answer"].replace(",", "") not in t["prompt"].replace(",", "")
+
+
+def test_generate_job_reports_progress_not_just_running():
+    """A bare {'status':'running'} is indistinguishable from a hang. The poll
+    endpoint must expose elapsed time and which page is being worked."""
+    import app.main as m
+    jid = "test-progress-job"
+    with m._JOBS_LOCK:
+        m._JOBS[jid] = {"status": "running", "started": time.time() - 5.0,
+                        "max_steps": 8, "progress": {"phase": "reading masthead",
+                                                     "step": 3, "date": "1900-10-03"},
+                        "log": [{"phase": "page rejected", "date": "1900-10-01",
+                                 "reason": "issue number already in the page OCR (not api-proof)"}]}
+    try:
+        s = client.get(f"/api/generate/{jid}").json()
+        assert s["status"] == "running"
+        assert s["elapsed"] >= 5.0
+        assert s["progress"]["step"] == 3
+        assert s["max_steps"] == 8
+        assert s["log"][0]["reason"]
+    finally:
+        with m._JOBS_LOCK:
+            m._JOBS.pop(jid, None)

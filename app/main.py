@@ -135,8 +135,20 @@ _JOBS_LOCK = threading.Lock()
 
 
 def _run_generate(job_id, lccn, seed, max_steps):
+    def _progress(ev):
+        # A walk can run for minutes on a small instance. Without this the poll
+        # endpoint returns a bare "running" and the UI cannot distinguish real
+        # work from a hang.
+        with _JOBS_LOCK:
+            j = _JOBS.get(job_id)
+            if j and j.get("status") == "running":
+                j["progress"] = ev
+                j.setdefault("log", []).append(ev)
+                del j["log"][:-12]  # keep the tail bounded
+
     try:
-        trap = tg.generate_trap(lccn=lccn, start_date=seed, max_steps=max_steps)
+        trap = tg.generate_trap(lccn=lccn, start_date=seed, max_steps=max_steps,
+                                progress=_progress)
         # advance the cursor past the served page so the next call is novel
         try:
             import datetime
@@ -157,13 +169,18 @@ def _run_generate(job_id, lccn, seed, max_steps):
                      "Confirmed traps appear in /api/generated."),
         }
         with _JOBS_LOCK:
-            _JOBS[job_id] = {"status": "done", "result": result}
+            # update in place: replacing the dict would discard started/log, which
+            # is exactly the context needed to explain a slow or failed walk.
+            _JOBS.setdefault(job_id, {}).update(
+                {"status": "done", "result": result, "ended": time.time()})
     except RuntimeError as e:
         with _JOBS_LOCK:
-            _JOBS[job_id] = {"status": "error", "detail": str(e)}
+            _JOBS.setdefault(job_id, {}).update(
+                {"status": "error", "detail": str(e), "ended": time.time()})
     except Exception as e:
         with _JOBS_LOCK:
-            _JOBS[job_id] = {"status": "error", "detail": f"generation failed: {e}"}
+            _JOBS.setdefault(job_id, {}).update(
+                {"status": "error", "detail": f"generation failed: {e}", "ended": time.time()})
 
 
 @app.post("/api/generate")
@@ -192,7 +209,10 @@ def generate(req: GenerateRequest):
         seed = (datetime.date(y, m, d) + datetime.timedelta(days=random.randint(0, 120))).isoformat()
     job_id = uuid.uuid4().hex[:12]
     with _JOBS_LOCK:
-        _JOBS[job_id] = {"status": "running"}
+        _JOBS[job_id] = {"status": "running", "started": time.time(),
+                         "max_steps": max(1, min(req.max_steps, 12)),
+                         "lccn": lccn, "seed": seed, "progress": {"phase": "starting"},
+                         "log": []}
     threading.Thread(target=_run_generate, args=(job_id, lccn, seed, max(1, min(req.max_steps, 12))),
                      daemon=True).start()
     return {"job_id": job_id, "status": "running",
@@ -207,9 +227,15 @@ def generate_status(job_id: str):
     if not job:
         raise HTTPException(404, "job not found")
     if job["status"] == "running":
-        return {"job_id": job_id, "status": "running"}
+        return {"job_id": job_id, "status": "running",
+                "elapsed": round(time.time() - job.get("started", time.time()), 1),
+                "max_steps": job.get("max_steps"),
+                "progress": job.get("progress") or {},
+                "log": job.get("log") or []}
     if job["status"] == "error":
-        return {"job_id": job_id, "status": "error", "detail": job["detail"]}
+        return {"job_id": job_id, "status": "error", "detail": job["detail"],
+                "elapsed": round(job.get("ended", time.time()) - job.get("started", time.time()), 1),
+                "log": job.get("log") or []}
     return {"job_id": job_id, "status": "done", "result": job["result"]}
 
 
@@ -218,6 +244,9 @@ def _trap_summary(t):
         "id": f"{t['lccn']}:{t['date']}:{t['field']}",
         "lccn": t["lccn"], "date": t["date"], "paper": t["paper"],
         "field": t["field"], "answer": t["answer"],
+        # The prompt IS the product - the UI detail pane renders it. Omitting it
+        # here rendered a literal "undefined" in the detail view.
+        "prompt": t.get("prompt", ""),
         "verified": t.get("verified", False), "api_proof": t.get("api_proof", False),
         "confidence": t.get("confidence"), "word_count": t.get("word_count"),
         # Provenance: which extractor proposed the answer, and who confirmed it.

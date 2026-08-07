@@ -202,19 +202,35 @@ def _word_count(s):
     return len(re.findall(r"\S+", s))
 
 
-def generate_trap(lccn="sn83030214", start_date=None, max_steps=8, min_confidence="high"):
+def generate_trap(lccn="sn83030214", start_date=None, max_steps=8, min_confidence="high",
+                  progress=None):
     """Walk forward from a seed front page, returning the FIRST trap that passes
     every gate. Returns a dict with the new prompt + answer + provenance, or
-    raises RuntimeError if no clean trap is found within max_steps pages."""
+    raises RuntimeError if no clean trap is found within max_steps pages.
+
+    progress: optional callable(dict). Invoked as the walk advances so a caller
+    (the async job endpoint) can report which page is being worked and why pages
+    are being rejected. A walk can take minutes on a small instance, and a bare
+    "running" status is indistinguishable from a hang."""
+    def _emit(**kw):
+        if progress:
+            try:
+                progress(kw)
+            except Exception:
+                pass  # progress reporting must never break generation
+
     start_date = start_date or SEEDS.get(lccn, "1900-01-01")
     url = f"https://www.loc.gov/resource/{lccn}/{start_date}/ed-1/?sp=1"
     tried = 0
     for _ in range(max_steps):
+        _emit(phase="fetching page metadata", step=tried + 1, max_steps=max_steps)
         meta = je.get(url + ("&fo=json" if "?" in url else "?fo=json"), as_json=True)
         item = meta.get("item", {})
         date = item.get("date", start_date)
         title = re.sub(r"\s*\(.*?\)\s*", " ", item.get("title", lccn)).split(",")[0].strip()
         tried += 1
+        _emit(phase="reading masthead", step=tried, max_steps=max_steps,
+              date=date, paper=title)
 
         img = os.path.join(_IMG_DIR, f"{lccn}_{date}.jpg")
         try:
@@ -250,6 +266,8 @@ def generate_trap(lccn="sn83030214", start_date=None, max_steps=8, min_confidenc
 
             if answer and field and conf == min_confidence:
                 # G2 api-proof: answer absent from whole-page OCR.
+                _emit(phase="checking api-proof gate", step=tried, max_steps=max_steps,
+                      date=date, paper=title, candidate=answer)
                 page_ocr = je.loc_page_ocr(url)
                 norm_ocr = _norm_digits(page_ocr)
                 api_proof = _norm_digits(answer) not in norm_ocr
@@ -285,6 +303,20 @@ def generate_trap(lccn="sn83030214", start_date=None, max_steps=8, min_confidenc
                     }
                     _persist_pending(trap)
                     return trap
+                # Explain the rejection so a long walk is legible rather than silent.
+                why = ("issue number already in the page OCR (not api-proof)"
+                       if not api_proof else
+                       "answer leaks into the prompt" if leak else
+                       f"prompt word count {wc} outside 70-150")
+                _emit(phase="page rejected", step=tried, max_steps=max_steps,
+                      date=date, paper=title, reason=why)
+            else:
+                _emit(phase="page rejected", step=tried, max_steps=max_steps,
+                      date=date, paper=title,
+                      reason=f"masthead read inconclusive (confidence: {conf})")
+        else:
+            _emit(phase="page rejected", step=tried, max_steps=max_steps,
+                  date=date, paper=title, reason="scan failed legibility check")
         # advance to next issue
         nxt = meta.get("next_resource", {}).get("url")
         if not nxt:

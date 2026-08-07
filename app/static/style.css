@@ -28,6 +28,7 @@ main {
 }
 .panel h2 { margin: 0 0 10px; font-size: 15px; }
 .hint { color: var(--muted); font-size: 12px; margin: 0 0 8px; }
+.muted { color: var(--muted); font-size: 12px; }
 .list .item {
   padding: 8px; border: 1px solid var(--line); border-radius: 6px; margin-bottom: 8px;
   cursor: pointer; font-size: 13px;

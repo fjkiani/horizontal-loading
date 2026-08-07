@@ -54,7 +54,11 @@ async function loadPending() {
   const data = await api("/api/pending");
   $("pend-count").textContent = data.count;
   const list = $("pending-list");
-  list.innerHTML = data.count ? "" : "<div class='hint'>Queue empty.</div>";
+  // An empty queue is the healthy state, not a failure - it means every
+  // OCR-derived candidate has already been confirmed into the verified pool.
+  list.innerHTML = data.count ? ""
+    : "<div class='hint'>Queue empty — every candidate has been confirmed into the verified pool. "
+      + "New candidates land here after a walk.</div>";
   data.pending.forEach((t) => {
     const div = document.createElement("div");
     div.className = "item";
@@ -117,16 +121,32 @@ $("gen-btn").onclick = async () => {
       method: "POST", headers: { "Content-Type": "application/json" },
       body: JSON.stringify(body),
     });
-    out.textContent = "Walking live front pages… (downloading + OCR; can take 1–2 min on the free tier)";
-    // poll the job until it completes
-    let done = null, err = null;
+    out.textContent = "Starting walk…";
+    // Poll until the job completes, surfacing which page is being worked and why
+    // pages get rejected. A silent spinner is indistinguishable from a hang.
+    let done = null, err = null, lastLog = [];
     for (let i = 0; i < 180; i++) {
       await new Promise((r) => setTimeout(r, 2000));
       const s = await api(`/api/generate/${job.job_id}`);
+      if (s.log && s.log.length) lastLog = s.log;
       if (s.status === "done") { done = s.result; break; }
       if (s.status === "error") { err = s.detail; break; }
+      const p = s.progress || {};
+      const step = p.step ? `page ${p.step}/${s.max_steps || "?"}` : "starting";
+      const where = p.date ? ` · ${esc(p.date)}` : "";
+      const why = p.reason ? `<br><span class="muted">rejected: ${esc(p.reason)}</span>`
+                : p.candidate ? `<br><span class="muted">candidate ${esc(p.candidate)} — testing api-proof</span>`
+                : "";
+      out.innerHTML = `<b>${esc(step)}</b>${where} — ${esc(p.phase || "working")}` +
+        ` <span class="muted">(${s.elapsed ?? 0}s)</span>${why}`;
     }
-    if (err) { out.innerHTML = `${badge(false, "no trap")} ${esc(err)}`; return; }
+    const trail = lastLog.filter((e) => e.reason)
+      .map((e) => `<div class="muted">${esc(e.date || "")} — ${esc(e.reason)}</div>`).join("");
+    if (err) {
+      out.innerHTML = `${badge(false, "no trap")} ${esc(err)}` +
+        (trail ? `<div style="margin-top:6px">${trail}</div>` : "");
+      return;
+    }
     if (!done) { out.innerHTML = `${badge(false, "timeout")} still running — check /api/pending shortly.`; return; }
     const r = done;
     out.innerHTML = `${badge(r.api_proof, "api-proof")} <b>${esc(r.paper)}</b> ${esc(r.date)}<br>` +

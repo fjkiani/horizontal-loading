@@ -1,0 +1,418 @@
+{
+  "sn83030214:1900-01-01": {
+    "truth": "19405",
+    "old": {
+      "answer": "19405",
+      "field": "issue number",
+      "confidence": "high"
+    },
+    "old_correct": true,
+    "old_accepted": true,
+    "old_accepted_wrong": false,
+    "new": {
+      "answer": "19405",
+      "field": "issue number",
+      "confidence": "high",
+      "agree": true
+    },
+    "new_detail": {
+      "40": {
+        "answer": "19405",
+        "field": "issue number",
+        "image_size": [
+          2570,
+          3534
+        ],
+        "crop_size": [
+          1156,
+          354
+        ]
+      },
+      "60": {
+        "answer": "19405",
+        "field": "issue number",
+        "image_size": [
+          3856,
+          5301
+        ],
+        "crop_size": [
+          1735,
+          530
+        ]
+      }
+    },
+    "new_correct": true,
+    "new_accepted": true,
+    "new_accepted_wrong": false,
+    "secs": 14.4
+  },
+  "sn83030214:1900-02-11": {
+    "truth": "19446",
+    "old": {
+      "answer": "19446",
+      "field": "issue number",
+      "confidence": "high"
+    },
+    "old_correct": true,
+    "old_accepted": true,
+    "old_accepted_wrong": false,
+    "new": {
+      "answer": "19446",
+      "field": "issue number",
+      "confidence": "low",
+      "agree": false
+    },
+    "new_detail": {
+      "40": {
+        "answer": null,
+        "field": null,
+        "error": "IncompleteRead(62902 bytes read, 1268023 more expected)"
+      },
+      "60": {
+        "answer": "19446",
+        "field": "issue number",
+        "image_size": [
+          3826,
+          5291
+        ],
+        "crop_size": [
+          1721,
+          529
+        ]
+      }
+    },
+    "new_correct": true,
+    "new_accepted": false,
+    "new_accepted_wrong": false,
+    "secs": 66.5
+  },
+  "sn83030214:1900-03-02": {
+    "truth": "19465",
+    "old": {
+      "answer": "19465",
+      "field": "issue number",
+      "confidence": "high"
+    },
+    "old_correct": true,
+    "old_accepted": true,
+    "old_accepted_wrong": false,
+    "new": {
+      "answer": "19465",
+      "field": "issue number",
+      "confidence": "high",
+      "agree": true
+    },
+    "new_detail": {
+      "40": {
+        "answer": "19465",
+        "field": "issue number",
+        "image_size": [
+          2563,
+          3540
+        ],
+        "crop_size": [
+          1153,
+          354
+        ]
+      },
+      "60": {
+        "answer": "19465",
+        "field": "issue number",
+        "image_size": [
+          3845,
+          5310
+        ],
+        "crop_size": [
+          1730,
+          531
+        ]
+      }
+    },
+    "new_correct": true,
+    "new_accepted": true,
+    "new_accepted_wrong": false,
+    "secs": 63.1
+  },
+  "sn83045211:1922-03-11": {
+    "truth": "158",
+    "old": {
+      "answer": "158",
+      "field": "issue number",
+      "confidence": "high"
+    },
+    "old_correct": true,
+    "old_accepted": true,
+    "old_accepted_wrong": false,
+    "new": {
+      "answer": "158",
+      "field": "issue number",
+      "confidence": "high",
+      "agree": true
+    },
+    "new_detail": {
+      "40": {
+        "answer": "158",
+        "field": "issue number",
+        "image_size": [
+          2265,
+          2825
+        ],
+        "crop_size": [
+          1019,
+          283
+        ]
+      },
+      "60": {
+        "answer": "158",
+        "field": "issue number",
+        "image_size": [
+          3398,
+          4237
+        ],
+        "crop_size": [
+          1529,
+          424
+        ]
+      }
+    },
+    "new_correct": true,
+    "new_accepted": true,
+    "new_accepted_wrong": false,
+    "secs": 17.3
+  },
+  "sn83045211:1922-04-06": {
+    "truth": "175",
+    "old": {
+      "answer": "176",
+      "field": "issue number",
+      "confidence": "high"
+    },
+    "old_correct": false,
+    "old_accepted": true,
+    "old_accepted_wrong": true,
+    "new": {
+      "answer": null,
+      "field": "issue number",
+      "confidence": "conflict",
+      "agree": false
+    },
+    "new_detail": {
+      "40": {
+        "answer": "2",
+        "field": "issue number",
+        "image_size": [
+          2286,
+          2848
+        ],
+        "crop_size": [
+          1028,
+          285
+        ]
+      },
+      "60": {
+        "answer": "176",
+        "field": "issue number",
+        "image_size": [
+          3429,
+          4273
+        ],
+        "crop_size": [
+          1543,
+          427
+        ]
+      }
+    },
+    "new_correct": false,
+    "new_accepted": false,
+    "new_accepted_wrong": false,
+    "secs": 4.1
+  },
+  "sn83030214:1900-05-12": {
+    "truth": "19536",
+    "old": {
+      "answer": "19536",
+      "field": "issue number",
+      "confidence": "high"
+    },
+    "old_correct": true,
+    "old_accepted": true,
+    "old_accepted_wrong": false,
+    "new": {
+      "answer": "19536",
+      "field": "issue number",
+      "confidence": "high",
+      "agree": true
+    },
+    "new_detail": {
+      "40": {
+        "answer": "19536",
+        "field": "issue number",
+        "image_size": [
+          2588,
+          3546
+        ],
+        "crop_size": [
+          1164,
+          355
+        ]
+      },
+      "60": {
+        "answer": "19536",
+        "field": "issue number",
+        "image_size": [
+          3883,
+          5319
+        ],
+        "crop_size": [
+          1747,
+          532
+        ]
+      }
+    },
+    "new_correct": true,
+    "new_accepted": true,
+    "new_accepted_wrong": false,
+    "secs": 10.5
+  },
+  "sn83030214:1900-07-04": {
+    "truth": "19589",
+    "old": {
+      "answer": "19589",
+      "field": "issue number",
+      "confidence": "high"
+    },
+    "old_correct": true,
+    "old_accepted": true,
+    "old_accepted_wrong": false,
+    "new": {
+      "answer": "19589",
+      "field": "issue number",
+      "confidence": "low",
+      "agree": false
+    },
+    "new_detail": {
+      "40": {
+        "answer": null,
+        "field": null,
+        "image_size": [
+          2595,
+          3552
+        ],
+        "crop_size": [
+          1167,
+          355
+        ]
+      },
+      "60": {
+        "answer": "19589",
+        "field": "issue number",
+        "image_size": [
+          3892,
+          5329
+        ],
+        "crop_size": [
+          1751,
+          533
+        ]
+      }
+    },
+    "new_correct": true,
+    "new_accepted": false,
+    "new_accepted_wrong": false,
+    "secs": 8.8
+  },
+  "sn83030214:1900-07-03": {
+    "truth": "19588",
+    "old": {
+      "answer": "19588",
+      "field": "issue number",
+      "confidence": "low"
+    },
+    "old_correct": true,
+    "old_accepted": false,
+    "old_accepted_wrong": false,
+    "new": {
+      "answer": "19588",
+      "field": "issue number",
+      "confidence": "low",
+      "agree": false
+    },
+    "new_detail": {
+      "40": {
+        "answer": "19588",
+        "field": "issue number",
+        "image_size": [
+          2595,
+          3552
+        ],
+        "crop_size": [
+          1167,
+          355
+        ]
+      },
+      "60": {
+        "answer": null,
+        "field": null,
+        "image_size": [
+          3892,
+          5329
+        ],
+        "crop_size": [
+          1751,
+          533
+        ]
+      }
+    },
+    "new_correct": true,
+    "new_accepted": false,
+    "new_accepted_wrong": false,
+    "secs": 11.9
+  },
+  "sn83030214:1900-08-01": {
+    "truth": "19617",
+    "old": {
+      "answer": "19617",
+      "field": "issue number",
+      "confidence": "high"
+    },
+    "old_correct": true,
+    "old_accepted": true,
+    "old_accepted_wrong": false,
+    "new": {
+      "answer": null,
+      "field": null,
+      "confidence": "none",
+      "agree": false
+    },
+    "new_detail": {
+      "40": {
+        "answer": null,
+        "field": null,
+        "image_size": [
+          2608,
+          3565
+        ],
+        "crop_size": [
+          1173,
+          356
+        ]
+      },
+      "60": {
+        "answer": null,
+        "field": null,
+        "image_size": [
+          3912,
+          5347
+        ],
+        "crop_size": [
+          1760,
+          535
+        ]
+      }
+    },
+    "new_correct": false,
+    "new_accepted": false,
+    "new_accepted_wrong": false,
+    "secs": 11.1
+  }
+}

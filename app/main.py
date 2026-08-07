@@ -268,6 +268,26 @@ def confirm(req: ConfirmRequest):
     return {"verified": True, "trap": t}
 
 
+@app.post("/api/confirm/vision")
+def confirm_vision(lccn: str, date: str, field: str = "issue number"):
+    """Adjudicate a pending candidate with the Cohere vision LLM (optional).
+
+    Requires COHERE_API_KEY. Outcomes: 'agree' promotes the candidate,
+    'conflict' holds it with BOTH readings recorded, 'unread' leaves it pending.
+
+    MEASURED CAVEAT: on a Cohere TRIAL key the vision endpoint sustained only
+    ~1 call per several minutes (repeated HTTP 429), and when fed the same
+    downscaled raster that fooled tesseract it returned the same wrong digit
+    (176 vs true 175). It is exposed as an optional second opinion, not as the
+    primary extractor — the primary extractor is cross-resolution tesseract."""
+    if not tg.cohere_available():
+        raise HTTPException(400, "COHERE_API_KEY not configured")
+    out = tg.cohere_confirm(lccn, date, field)
+    if out.get("outcome") == "not_found":
+        raise HTTPException(404, "no matching pending candidate")
+    return out
+
+
 class StressRequest(BaseModel):
     prompt_ids: list[str]
     solver: str = "agent"               # 'agent' | 'openai'

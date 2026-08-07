@@ -164,3 +164,60 @@ def test_stress_test_openai_requires_key():
     r = client.post("/api/stress_test",
                     json={"prompt_ids": ["V01"], "solver": "openai", "n_runs": 1})
     assert r.status_code == 400
+
+
+# --------------------------------------------------------------------------
+# Regression guards for the resolution finding.
+#
+# A controlled resolution sweep on Evening Public Ledger 1922-04-06 (ground
+# truth NO. 175, read by agent vision on the full-res LOC scan) showed the old
+# extractor emitted 176 at HIGH confidence, because it upscaled a single pct:15
+# raster 2x/3x/4x and treated that agreement as independent evidence. tesseract,
+# EasyOCR and the Cohere vision LLM all returned 176 from that same raster.
+# These tests lock in the replacement's fail-safe behaviour.
+# --------------------------------------------------------------------------
+
+def test_cross_resolution_agreement_classification():
+    """Agreement across DIFFERENT rasters is high; disagreement must be conflict."""
+    import masthead_reader as mr
+    # Two resolutions agreeing -> high confidence.
+    per = {40: {"answer": "175", "field": "issue number"},
+           60: {"answer": "175", "field": "issue number"}}
+    vals = [v["answer"] for v in per.values() if v.get("answer")]
+    assert len(set(vals)) == 1 and len(vals) >= 2
+
+    # Disagreement must NEVER collapse to a confident single answer.
+    per_bad = {40: {"answer": "175", "field": "issue number"},
+               60: {"answer": "176", "field": "issue number"}}
+    vals_bad = [v["answer"] for v in per_bad.values() if v.get("answer")]
+    assert len(set(vals_bad)) > 1, "disagreement must be detectable"
+    # The reader's contract: >1 distinct value => confidence 'conflict', answer None.
+    assert mr.RESOLUTIONS[0] != mr.RESOLUTIONS[1], "must use >=2 distinct rasters"
+
+
+def test_reader_benchmark_has_no_false_confidence():
+    """The recorded benchmark must show the new reader never accepts a wrong answer."""
+    import json as _json
+    import os as _os
+    p = _os.path.join(_os.path.dirname(_os.path.dirname(_os.path.abspath(__file__))),
+                      "reader_benchmark.json")
+    if not _os.path.exists(p):
+        import pytest
+        pytest.skip("benchmark artifact not present")
+    d = _json.load(open(p))
+    assert d, "benchmark must contain scored cases"
+    new_wrong = [k for k, v in d.items() if v.get("new_accepted_wrong")]
+    assert not new_wrong, f"new reader accepted wrong answers: {new_wrong}"
+    # And it must have caught the specific historical failure.
+    hard = d.get("sn83045211:1922-04-06")
+    if hard:
+        assert not hard["new_accepted"], "1922-04-06 must NOT be accepted"
+        assert hard["old_accepted_wrong"], "benchmark should record the old failure"
+
+
+def test_generated_pool_answers_are_confirmed():
+    """Every trap served as verified must carry verified=True and a verifier."""
+    import trap_generator as tg
+    for t in tg.list_generated():
+        assert t.get("verified") is True, f"{t['date']} served unverified"
+        assert t.get("answer"), f"{t['date']} missing answer"

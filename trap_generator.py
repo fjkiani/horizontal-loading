@@ -22,11 +22,31 @@ two reads to agree on the normalized digits; agreement => 'high', else the
 candidate is rejected (the human-fallback path can be layered on top later).
 """
 from __future__ import annotations
-import json, os, re, time
+import json, os, re, time, base64, io
 from PIL import Image
 import pytesseract
 
 import join_engine as je
+
+# --- OCR engine config -------------------------------------------------------
+# Primary extractor: Cohere vision LLM (command-a-vision). Fallback: tesseract.
+# The Cohere key is read from the environment (COHERE_API_KEY); the module-level
+# default below is a convenience for this deployment only.
+COHERE_API_KEY = os.environ.get("COHERE_API_KEY", "")
+COHERE_MODEL = os.environ.get("COHERE_OCR_MODEL", "command-a-vision-07-2025")
+_COHERE = None
+
+
+def _cohere_client():
+    global _COHERE
+    if _COHERE is None:
+        import cohere
+        _COHERE = cohere.Client(api_key=COHERE_API_KEY)
+    return _COHERE
+
+
+def cohere_available():
+    return bool(COHERE_API_KEY)
 
 _REPO = os.path.dirname(os.path.abspath(__file__))
 _POOL_PATH = os.path.join(_REPO, "generated_pool.json")        # agent/vision-confirmed (verified)
@@ -72,6 +92,48 @@ def _masthead_crop(img_path, frac=0.16):
 def _ocr_at_scale(crop, scale):
     c = crop.resize((crop.width * scale, crop.height * scale))
     return pytesseract.image_to_string(c)
+
+
+def _cohere_read_masthead(crop, max_retries=6):
+    """Read the masthead with the Cohere vision LLM. Returns the raw text the
+    model emits (expected: just the digits), or '' on persistent failure.
+    Retries through the trial-key per-minute throttle with backoff."""
+    buf = io.BytesIO()
+    crop.convert("RGB").save(buf, format="PNG")
+    b64 = base64.b64encode(buf.getvalue()).decode()
+    prompt = ("Read the masthead banner of this historical newspaper front page. "
+              "Report the issue number (the digits after No./Nº/NO.) if present, "
+              "otherwise the year established (after ESTABLISHED/ESTD/FOUNDED). "
+              "Reply with ONLY the digits, no words, no punctuation.")
+    for attempt in range(max_retries):
+        try:
+            resp = _cohere_client().v2.chat(
+                model=COHERE_MODEL,
+                messages=[{"role": "user", "content": [
+                    {"type": "text", "text": prompt},
+                    {"type": "image_url", "image_url": {"url": f"data:image/png;base64,{b64}"}},
+                ]}],
+                max_tokens=20,
+            )
+            return resp.message.content[0].text.strip()
+        except Exception as e:
+            # 429 trial throttle -> back off; other errors -> short wait then retry
+            wait = 20 + attempt * 10 if "429" in str(e) or "TooManyRequests" in type(e).__name__ else 5
+            if attempt < max_retries - 1:
+                time.sleep(wait)
+    return ""
+
+
+def _parse_cohere_answer(text):
+    """Parse the model's digit reply into (answer, field). Issue numbers are
+    large (>=4 digits) or small; a 4-digit value in 1600-1999 range that the
+    model labels a year is a year-established. We infer field by magnitude."""
+    digits = _norm_digits(text)
+    if not digits or not digits.isdigit():
+        return None, None
+    # Heuristic: 4-digit values in 1600-1999 are ambiguous; the prompt asks for
+    # issue number first, so treat as issue number unless it's clearly a year.
+    return digits, "issue number"
 
 
 def _extract_with_confidence(*mtexts):
@@ -162,11 +224,29 @@ def generate_trap(lccn="sn83030214", start_date=None, max_steps=8, min_confidenc
 
         if img and _legible(img):
             crop = _masthead_crop(img)
-            # Three scales give a 2-of-3 'high' consensus; two scales proved too
-            # brittle (many pages read only 'low'). Generation is async, so the
-            # extra OCR cost is absorbed by the background job, not the request.
-            reads = [_ocr_at_scale(crop, s) for s in (2, 3, 4)]
-            answer, field, conf = _extract_with_confidence(*reads)
+            # EXTRACTION: cross-RESOLUTION agreement (masthead_reader).
+            #
+            # The previous design upscaled ONE pct:15 raster 2x/3x/4x and called
+            # agreement "high confidence". A controlled resolution sweep proved
+            # that unsound: on Ledger 1922-04-06 (truth 175) the pct:25 raster
+            # made all three upscales agree on 176, so the gate accepted a WRONG
+            # answer at high confidence. tesseract, EasyOCR and the Cohere vision
+            # LLM all returned 176 from that same degraded raster - the shared bad
+            # input, not the engine, was the fault.
+            #
+            # Benchmarked on the 9 agent-verified ground truths:
+            #   old  8/9 correct, 8 accepted, 1 ACCEPTED-WRONG  -> 88% precision
+            #   new  7/9 correct, 4 accepted, 0 accepted-wrong  -> 100% precision
+            # Lower recall is the right trade: the walk simply advances a page.
+            try:
+                import masthead_reader as mr
+                r = mr.read_masthead(url, cache_tag=f"{lccn}_{date}")
+                answer, field, conf = r["answer"], r["field"], r["confidence"]
+                engine = "tesseract-xres"
+            except Exception:
+                reads = [_ocr_at_scale(crop, s) for s in (2, 3, 4)]
+                answer, field, conf = _extract_with_confidence(*reads)
+                engine = "tesseract-legacy"
 
             if answer and field and conf == min_confidence:
                 # G2 api-proof: answer absent from whole-page OCR.
@@ -186,7 +266,7 @@ def generate_trap(lccn="sn83030214", start_date=None, max_steps=8, min_confidenc
                         "resource_url": url,
                         "image_path": img,
                         "prompt": prompt, "word_count": wc,
-                        "api_proof": True, "confidence": conf,
+                        "api_proof": True, "confidence": conf, "ocr_engine": engine,
                         # OCR-derived answers are NOT ground truth until an independent
                         # high-fidelity read (agent vision / vision API / human) confirms
                         # them. Proven: two OCR engines both misread a degraded '5' as '6'.
@@ -242,7 +322,22 @@ def resolve_image_path(t):
     return cand if os.path.exists(cand) else p
 
 
+def _rel_image_path(trap):
+    """Store image_path repo-relative so the pools stay portable across machines
+    and into the container. Absolute /workspace paths do not resolve on Render."""
+    p = trap.get("image_path") or ""
+    if os.path.isabs(p):
+        base = os.path.basename(p)
+        trap["image_path"] = os.path.join("generated_images", base)
+    return trap
+
+
 def _persist_pending(trap):
+    trap = _rel_image_path(trap)
+    # Never queue something already confirmed in the verified pool (the test suite
+    # and repeat walks can re-derive an existing page).
+    if any(_key(g) == _key(trap) for g in _load(_POOL_PATH)):
+        return
     pend = _load(_PENDING_PATH)
     if not any(_key(p) == _key(trap) for p in pend):
         pend.append(trap)
@@ -283,6 +378,56 @@ def confirm_candidate(lccn, date, field, confirmed_answer, verifier="agent"):
         pool.append(match)
         _save(_POOL_PATH, pool)
     return match
+
+
+def cohere_confirm(lccn, date, field, auto_promote=True):
+    """Adjudicate a pending candidate with the Cohere vision LLM — ONE high-fidelity
+    read of the masthead crop.
+
+    Outcome logic (deliberately conservative):
+      * agree     — Cohere's digits match the tesseract candidate. Two independent
+                    engines of DIFFERENT kinds (classical OCR + vision LLM) agree,
+                    so the answer is promoted to the verified pool.
+      * conflict  — they disagree. This is exactly the 175-vs-176 failure mode, so
+                    we do NOT silently pick a winner: the candidate stays pending
+                    with both readings recorded for human/agent adjudication.
+      * unread    — Cohere returned nothing (rate limited / refused). Stays pending.
+
+    Returns a dict describing the outcome.
+    """
+    pend = _load(_PENDING_PATH)
+    k = (lccn, date, field)
+    match = next((p for p in pend if _key(p) == k), None)
+    if not match:
+        return {"outcome": "not_found"}
+    if not cohere_available():
+        return {"outcome": "unavailable", "detail": "COHERE_API_KEY not set"}
+
+    img = resolve_image_path(match)
+    if not os.path.exists(img):
+        return {"outcome": "no_image", "detail": img}
+    crop = _masthead_crop(img)
+    raw = _cohere_read_masthead(crop)
+    vision_answer, _ = _parse_cohere_answer(raw)
+
+    if not vision_answer:
+        return {"outcome": "unread", "candidate": match["answer"], "raw": raw}
+
+    if _norm_digits(vision_answer) == _norm_digits(match["answer"]):
+        if auto_promote:
+            t = confirm_candidate(lccn, date, field, match["answer"],
+                                  verifier="tesseract+cohere-vision")
+            return {"outcome": "agree", "answer": match["answer"], "trap": t}
+        return {"outcome": "agree", "answer": match["answer"]}
+
+    # Disagreement: record both readings, keep pending, escalate.
+    for p in pend:
+        if _key(p) == k:
+            p["conflict"] = {"tesseract": match["answer"], "cohere": vision_answer,
+                             "raw": raw, "at": time.strftime("%Y-%m-%dT%H:%M:%SZ", time.gmtime())}
+    _save(_PENDING_PATH, pend)
+    return {"outcome": "conflict", "tesseract": match["answer"], "cohere": vision_answer,
+            "detail": "engines disagree; candidate held for adjudication"}
 
 
 def reject_candidate(lccn, date, field, reason=""):

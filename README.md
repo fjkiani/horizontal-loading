@@ -107,11 +107,67 @@ flawed controls caught, cache-key regression, stress-test wiring.
   single API call returns it. This satisfies the design constraint.
 - **Vision-capable solver: not stumped** — a model with image input reads the masthead and
   extracts the answer. These traps defeat text-only solvers, not vision solvers.
-- **OCR-only generation is not self-verifying.** Degraded mastheads can make two OCR
-  engines agree on a wrong digit, so every generated candidate requires an independent
-  image read before it counts as ground truth. The pending→confirm architecture exists for
-  exactly this reason. To make confirmation fully hands-off, slot a vision API key into
-  the confirm step.
+- **OCR-only generation is not self-verifying.** Every generated candidate requires an
+  independent image read before it counts as ground truth. The pending→confirm
+  architecture exists for exactly this reason.
+
+### The resolution finding (why the extractor was rebuilt)
+
+Evening Public Ledger 1922-04-06 truly reads `VOL. VIII.—NO. 175`. The original
+extractor returned **176 at HIGH confidence** — a wrong answer that passed every gate.
+tesseract, EasyOCR *and* the Cohere `command-a-vision-07-2025` vision LLM all returned
+176. That looked like three independent engines agreeing.
+
+They were not independent: all three were fed the same `pct:15` downscale. A controlled
+resolution sweep, holding the extractor fixed and varying only the source raster:
+
+| LOC `pct:` | masthead crop | reading | confidence | correct |
+|---|---|---|---|---|
+| 15 | 857×170 | 378 | low | no |
+| 25 | 1429×284 | **176** | **high** | **no** |
+| 40 | 2286×455 | 175 | high | yes |
+| 60 | 3429×683 | 176 | low | no |
+| 100 | 5716×1139 | 175 | low | yes |
+
+Two conclusions:
+
+1. **Upscaling one raster 2×/3×/4× is correlated error, not independent evidence.** At
+   `pct:25` all three upscales agreed on the wrong digit, so the pipeline reported high
+   confidence for 176. Same-engine, same-raster consensus cannot certify itself.
+2. **The error was never intrinsic to the glyph.** On a tight, correctly located,
+   full-resolution crop of the VOL./NO. line, plain `tesseract --psm 6` reads
+   `VOL. VIII.—NO. 175` correctly. The engine was fine; the input was not.
+
+`masthead_reader.py` replaces the old path: it reads **two genuinely different rasters**
+(`pct:40` and `pct:60`), crops the VOL./NO. band rather than a blanket top-16% strip, and
+requires cross-**resolution** agreement. Scored on the agent-verified ground truths
+(`benchmark_readers.py` → `reader_benchmark.json`):
+
+| reader | correct | accepted (high-conf) | **accepted WRONG** | precision when accepted |
+|---|---|---|---|---|
+| old (same-raster upscales) | 8/9 | 8 | **1** | 88% |
+| new (cross-resolution) | 7/9 | 4 | **0** | **100%** |
+
+Recall drops and precision goes to 100%: the new reader returns `conflict` on
+1922-04-06 and refuses it instead of shipping 176. That is the correct trade — the walk
+just advances to the next page, whereas a wrong "verified" answer poisons the product.
+Locked in by `test_reader_benchmark_has_no_false_confidence`.
+
+### On the Cohere vision LLM
+
+Wired and available at `POST /api/confirm/vision` (needs `COHERE_API_KEY`), but **not**
+the primary extractor, on measured grounds:
+
+- On a **trial** key the vision endpoint sustained roughly **one call per several
+  minutes** — repeated HTTP 429 with 5–10 minute waits per successful read, against a
+  1000-call/month cap. A `max_steps=8` walk would need one call per page, so in-loop use
+  is not viable.
+- Accuracy did not beat properly-fed tesseract: given the same `pct:15` raster it
+  returned the same wrong 176; given a mislocated crop it returned 1874.
+- It reads clean mastheads correctly and fast when it does get through (19589 in 1.1s).
+
+A production key would make it a reasonable *second opinion* at the confirm step. It is
+not a substitute for fixing crop geometry and resolution.
 - The built-in stress test uses the same underlying model as the author (proxy), so its
   results are evidence of difficulty, **not proof** of frontier failure. For the real
   ≥2/3 proof, run `solver="openai"` against your target model.

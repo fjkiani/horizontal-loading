@@ -1,0 +1,681 @@
+{
+  "finance": {
+    "scan": [
+      {
+        "year": 2011,
+        "n": 251,
+        "argmax_index": 19,
+        "depth": 0.076,
+        "date": "2011-01-31",
+        "value": 147189.0,
+        "n_ties": 1,
+        "account_type": "Federal Reserve Account"
+      },
+      {
+        "year": 2012,
+        "n": 251,
+        "argmax_index": 82,
+        "depth": 0.328,
+        "date": "2012-04-30",
+        "value": 166619.0,
+        "n_ties": 1,
+        "account_type": "Federal Reserve Account"
+      },
+      {
+        "year": 2013,
+        "n": 251,
+        "argmax_index": 82,
+        "depth": 0.328,
+        "date": "2013-04-30",
+        "value": 213863.0,
+        "n_ties": 1,
+        "account_type": "Federal Reserve Account"
+      },
+      {
+        "year": 2014,
+        "n": 251,
+        "argmax_index": 250,
+        "depth": 1.0,
+        "date": "2014-12-31",
+        "value": 223452.0,
+        "n_ties": 1,
+        "account_type": "Federal Reserve Account"
+      },
+      {
+        "year": 2016,
+        "n": 251,
+        "argmax_index": 208,
+        "depth": 0.832,
+        "date": "2016-10-28",
+        "value": 440383.0,
+        "n_ties": 1,
+        "account_type": "Federal Reserve Account"
+      },
+      {
+        "year": 2017,
+        "n": 251,
+        "argmax_index": 14,
+        "depth": 0.056,
+        "date": "2017-01-24",
+        "value": 406507.0,
+        "n_ties": 1,
+        "account_type": "Federal Reserve Account"
+      },
+      {
+        "year": 2018,
+        "n": 251,
+        "argmax_index": 82,
+        "depth": 0.328,
+        "date": "2018-04-30",
+        "value": 419376.0,
+        "n_ties": 1,
+        "account_type": "Federal Reserve Account"
+      },
+      {
+        "year": 2019,
+        "n": 251,
+        "argmax_index": 210,
+        "depth": 0.84,
+        "date": "2019-10-31",
+        "value": 434942.0,
+        "n_ties": 1,
+        "account_type": "Federal Reserve Account"
+      },
+      {
+        "year": 2021,
+        "n": 63,
+        "note": "too few rows"
+      },
+      {
+        "year": 2022,
+        "n": 73,
+        "note": "too few rows"
+      },
+      {
+        "year": 2023,
+        "n": 0,
+        "note": "too few rows"
+      }
+    ],
+    "interior_candidates": [
+      {
+        "year": 2012,
+        "n": 251,
+        "argmax_index": 82,
+        "depth": 0.328,
+        "date": "2012-04-30",
+        "value": 166619.0,
+        "n_ties": 1,
+        "account_type": "Federal Reserve Account"
+      },
+      {
+        "year": 2013,
+        "n": 251,
+        "argmax_index": 82,
+        "depth": 0.328,
+        "date": "2013-04-30",
+        "value": 213863.0,
+        "n_ties": 1,
+        "account_type": "Federal Reserve Account"
+      },
+      {
+        "year": 2016,
+        "n": 251,
+        "argmax_index": 208,
+        "depth": 0.832,
+        "date": "2016-10-28",
+        "value": 440383.0,
+        "n_ties": 1,
+        "account_type": "Federal Reserve Account"
+      },
+      {
+        "year": 2018,
+        "n": 251,
+        "argmax_index": 82,
+        "depth": 0.328,
+        "date": "2018-04-30",
+        "value": 419376.0,
+        "n_ties": 1,
+        "account_type": "Federal Reserve Account"
+      },
+      {
+        "year": 2019,
+        "n": 251,
+        "argmax_index": 210,
+        "depth": 0.84,
+        "date": "2019-10-31",
+        "value": 434942.0,
+        "n_ties": 1,
+        "account_type": "Federal Reserve Account"
+      }
+    ]
+  },
+  "business": {
+    "n_total": 2427,
+    "loc_hist": [
+      [
+        "US-CA",
+        509
+      ],
+      [
+        "US-MA",
+        194
+      ],
+      [
+        "US-TX",
+        154
+      ],
+      [
+        "US-NY",
+        145
+      ],
+      [
+        "US-NJ",
+        109
+      ],
+      [
+        "US-FL",
+        106
+      ],
+      [
+        "US-PA",
+        84
+      ],
+      [
+        "US-IL",
+        71
+      ],
+      [
+        "CN-",
+        67
+      ],
+      [
+        "US-OH",
+        60
+      ],
+      [
+        "US-CO",
+        57
+      ],
+      [
+        "IL-",
+        57
+      ],
+      [
+        "US-NC",
+        55
+      ],
+      [
+        "US-MN",
+        53
+      ]
+    ],
+    "per_loc": [
+      {
+        "loc": "US-CA",
+        "n": 509,
+        "argmax_index": 496,
+        "depth": 0.9764,
+        "n_ties": 1,
+        "winner": "ALPHABET INC.",
+        "cik": 1652044,
+        "val": 12282000000,
+        "distinct_ciks": 509,
+        "runner_up": 12128000000
+      },
+      {
+        "loc": "US-MA",
+        "n": 194,
+        "argmax_index": 6,
+        "depth": 0.0311,
+        "n_ties": 1,
+        "winner": "General Electric Company",
+        "cik": 40545,
+        "val": 5278000000,
+        "distinct_ciks": 194,
+        "runner_up": 3167000000
+      },
+      {
+        "loc": "US-TX",
+        "n": 154,
+        "argmax_index": 99,
+        "depth": 0.6471,
+        "n_ties": 1,
+        "winner": "Oracle Corporation",
+        "cik": 1341439,
+        "val": 5787000000,
+        "distinct_ciks": 154,
+        "runner_up": 1676000000
+      },
+      {
+        "loc": "US-NY",
+        "n": 145,
+        "argmax_index": 4,
+        "depth": 0.0278,
+        "n_ties": 1,
+        "winner": "BRISTOL-MYERS SQUIBB COMPANY",
+        "cik": 14272,
+        "val": 5920000000,
+        "distinct_ciks": 145,
+        "runner_up": 5247000000
+      },
+      {
+        "loc": "US-NJ",
+        "n": 109,
+        "argmax_index": 7,
+        "depth": 0.0648,
+        "n_ties": 1,
+        "winner": "Merck\u00a0& Co., Inc.",
+        "cik": 310158,
+        "val": 6704000000,
+        "distinct_ciks": 109,
+        "runner_up": 632000000
+      },
+      {
+        "loc": "US-FL",
+        "n": 106,
+        "argmax_index": 20,
+        "depth": 0.1905,
+        "n_ties": 1,
+        "winner": "B/E AEROSPACE INC",
+        "cik": 861361,
+        "val": 274400000,
+        "distinct_ciks": 106,
+        "runner_up": 164200000
+      },
+      {
+        "loc": "US-PA",
+        "n": 84,
+        "argmax_index": 12,
+        "depth": 0.1446,
+        "n_ties": 1,
+        "winner": "PPG INDUSTRIES INC",
+        "cik": 79879,
+        "val": 484000000,
+        "distinct_ciks": 84,
+        "runner_up": 169000000
+      },
+      {
+        "loc": "US-IL",
+        "n": 71,
+        "argmax_index": 3,
+        "depth": 0.0429,
+        "n_ties": 1,
+        "winner": "BOEING CO",
+        "cik": 12927,
+        "val": 3331000000,
+        "distinct_ciks": 71,
+        "runner_up": 2119000000
+      },
+      {
+        "loc": "CN-",
+        "n": 67,
+        "argmax_index": 20,
+        "depth": 0.303,
+        "n_ties": 1,
+        "winner": "Baidu, Inc.",
+        "cik": 1329099,
+        "val": 1570867000,
+        "distinct_ciks": 67,
+        "runner_up": 398056000
+      },
+      {
+        "loc": "US-OH",
+        "n": 60,
+        "argmax_index": 12,
+        "depth": 0.2034,
+        "n_ties": 1,
+        "winner": "PROCTER & GAMBLE CO",
+        "cik": 80424,
+        "val": 2000000000,
+        "distinct_ciks": 60,
+        "runner_up": 403085000
+      },
+      {
+        "loc": "US-CO",
+        "n": 57,
+        "argmax_index": 11,
+        "depth": 0.1964,
+        "n_ties": 1,
+        "winner": "Trimble Inc.",
+        "cik": 864749,
+        "val": 336700000,
+        "distinct_ciks": 57,
+        "runner_up": 134485000
+      },
+      {
+        "loc": "IL-",
+        "n": 57,
+        "argmax_index": 20,
+        "depth": 0.3571,
+        "n_ties": 1,
+        "winner": "ELBIT SYSTEMS LTD.",
+        "cik": 1027664,
+        "val": 277837000,
+        "distinct_ciks": 57,
+        "runner_up": 149279000
+      },
+      {
+        "loc": "US-NC",
+        "n": 55,
+        "argmax_index": 6,
+        "depth": 0.1111,
+        "n_ties": 1,
+        "winner": "HONEYWELL INTERNATIONAL INC",
+        "cik": 773840,
+        "val": 1856000000,
+        "distinct_ciks": 55,
+        "runner_up": 448763000
+      },
+      {
+        "loc": "US-MN",
+        "n": 53,
+        "argmax_index": 7,
+        "depth": 0.1346,
+        "n_ties": 1,
+        "winner": "3M COMPANY",
+        "cik": 66740,
+        "val": 1220000000,
+        "distinct_ciks": 53,
+        "runner_up": 676000000
+      }
+    ]
+  },
+  "politics": [
+    {
+      "year": 1998,
+      "n": 38,
+      "argmin_index": 14,
+      "depth": 0.3784,
+      "n_ties": 1,
+      "title": "1998 Amendments to the Manual for Courts-Martial, United States",
+      "eo": "13086",
+      "pub": "1998-06-02",
+      "spearman_title_vs_order": -0.1459,
+      "distinct_eo": 38,
+      "eo_min": "13072",
+      "eo_max": "13109"
+    },
+    {
+      "year": 2003,
+      "n": 40,
+      "argmin_index": 0,
+      "depth": 0.0,
+      "n_ties": 1,
+      "title": "Adjustments of Certain Rates of Pay",
+      "eo": "13282",
+      "pub": "2003-01-08",
+      "spearman_title_vs_order": 0.121,
+      "distinct_eo": 40,
+      "eo_min": "13282",
+      "eo_max": "13321"
+    },
+    {
+      "year": 1996,
+      "n": 50,
+      "argmin_index": 7,
+      "depth": 0.1429,
+      "n_ties": 1,
+      "title": "Adding the Small Business Administration to the President's Export Council",
+      "eo": "12991",
+      "pub": "1996-03-08",
+      "spearman_title_vs_order": 0.0348,
+      "distinct_eo": 50,
+      "eo_min": "12984",
+      "eo_max": "13033"
+    },
+    {
+      "year": 2007,
+      "n": 33,
+      "argmin_index": 9,
+      "depth": 0.2812,
+      "n_ties": 1,
+      "title": "2007 Amendments to the Manual for Courts-Martial, United States",
+      "eo": "13430",
+      "pub": "2007-04-23",
+      "spearman_title_vs_order": -0.3185,
+      "distinct_eo": 33,
+      "eo_min": "13421",
+      "eo_max": "13453"
+    },
+    {
+      "year": 2011,
+      "n": 34,
+      "argmin_index": 30,
+      "depth": 0.9091,
+      "n_ties": 1,
+      "title": "2011 Amendments to the Manual for Courts-Martial, United States",
+      "eo": "13593",
+      "pub": "2011-12-16",
+      "spearman_title_vs_order": -0.1572,
+      "distinct_eo": 34,
+      "eo_min": "13563",
+      "eo_max": "13596"
+    }
+  ],
+  "geography": [
+    {
+      "iso": "NP",
+      "country": "Nepal",
+      "n": 9,
+      "argmax_index": 4,
+      "depth": 0.5,
+      "n_ties": 1,
+      "winner": "Tenzing-Hillary Airport",
+      "icao": "VNLK",
+      "elev": 9380,
+      "distinct_icao": 9,
+      "p_guess": 0.1111,
+      "runner_up_elev": 7990
+    },
+    {
+      "iso": "PE",
+      "country": "Peru",
+      "n": 24,
+      "argmax_index": 7,
+      "depth": 0.3043,
+      "n_ties": 1,
+      "winner": "Inca Manco Capac International Airport",
+      "icao": "SPJL",
+      "elev": 12552,
+      "distinct_icao": 24,
+      "p_guess": 0.0417,
+      "runner_up_elev": 11034
+    },
+    {
+      "iso": "BO",
+      "country": "Bolivia",
+      "n": 13,
+      "argmax_index": 5,
+      "depth": 0.4167,
+      "n_ties": 1,
+      "winner": "El Alto International Airport",
+      "icao": "SLLP",
+      "elev": 13355,
+      "distinct_icao": 13,
+      "p_guess": 0.0769,
+      "runner_up_elev": 12152
+    },
+    {
+      "iso": "CO",
+      "country": "Colombia",
+      "n": 42,
+      "argmax_index": 16,
+      "depth": 0.3902,
+      "n_ties": 1,
+      "winner": "San Luis Airport",
+      "icao": "SKIP",
+      "elev": 9765,
+      "distinct_icao": 42,
+      "p_guess": 0.0238,
+      "runner_up_elev": 8361
+    },
+    {
+      "iso": "ID",
+      "country": "Indonesia",
+      "n": 69,
+      "argmax_index": 1,
+      "depth": 0.0147,
+      "n_ties": 1,
+      "winner": "Bilorai Airport",
+      "icao": "WAYB",
+      "elev": 7348,
+      "distinct_icao": 69,
+      "p_guess": 0.0145,
+      "runner_up_elev": 5435
+    },
+    {
+      "iso": "NO",
+      "country": "Norway",
+      "n": 40,
+      "argmax_index": 27,
+      "depth": 0.6923,
+      "n_ties": 1,
+      "winner": "R\u00f8ros Airport",
+      "icao": "ENRO",
+      "elev": 2054,
+      "distinct_icao": 40,
+      "p_guess": 0.025,
+      "runner_up_elev": 681
+    },
+    {
+      "iso": "CL",
+      "country": "Chile",
+      "n": 17,
+      "argmax_index": 3,
+      "depth": 0.1875,
+      "n_ties": 1,
+      "winner": "El Loa Airport",
+      "icao": "SCCF",
+      "elev": 7543,
+      "distinct_icao": 17,
+      "p_guess": 0.0588,
+      "runner_up_elev": 5240
+    },
+    {
+      "iso": "EC",
+      "country": "Ecuador",
+      "n": 12,
+      "argmax_index": 11,
+      "depth": 1.0,
+      "n_ties": 1,
+      "winner": "Lieutenant Colonel Luis A. Mantilla International Airport",
+      "icao": "SETU",
+      "elev": 9649,
+      "distinct_icao": 12,
+      "p_guess": 0.0833,
+      "runner_up_elev": 9205
+    },
+    {
+      "iso": "TR",
+      "country": "Turkey",
+      "n": 47,
+      "argmax_index": 36,
+      "depth": 0.7826,
+      "n_ties": 1,
+      "winner": "Hakkari Y\u00fcksekova Airport",
+      "icao": "LTCW",
+      "elev": 6400,
+      "distinct_icao": 47,
+      "p_guess": 0.0213,
+      "runner_up_elev": 5889
+    },
+    {
+      "iso": "JP",
+      "country": "Japan",
+      "n": 83,
+      "argmax_index": 1,
+      "depth": 0.0122,
+      "n_ties": 1,
+      "winner": "Shinshu-Matsumoto Airport",
+      "icao": "RJAF",
+      "elev": 2182,
+      "distinct_icao": 83,
+      "p_guess": 0.012,
+      "runner_up_elev": 1221
+    },
+    {
+      "iso": "NZ",
+      "country": "New Zealand",
+      "n": 26,
+      "argmax_index": 1,
+      "depth": 0.04,
+      "n_ties": 1,
+      "winner": "Taupo Airport",
+      "icao": "NZAP",
+      "elev": 1335,
+      "distinct_icao": 26,
+      "p_guess": 0.0385,
+      "runner_up_elev": 1171
+    }
+  ],
+  "shopping": {
+    "prefix_evidence": {},
+    "enumerability": [
+      {
+        "tag": "en:chocolates",
+        "country": "france",
+        "error": "FetchError: https://world.openfoodfacts.org/api/v2/search?categories_tags=en:chocolates&countries_tags_en=france&fields=code,brands,product_name,nutriments&page_size=100&page=1 -> gave up after 3 atte"
+      },
+      {
+        "tag": "en:breakfast-cereals",
+        "country": "united-kingdom",
+        "error": "FetchError: https://world.openfoodfacts.org/api/v2/search?categories_tags=en:breakfast-cereals&countries_tags_en=united-kingdom&fields=code,brands,product_name,nutriments&page_size=100&page=1 -> gave "
+      },
+      {
+        "tag": "en:mineral-waters",
+        "country": "france",
+        "count": 1656,
+        "page_size": 100,
+        "returned": 100,
+        "coded": 93,
+        "fully_enumerable": false,
+        "spearman_code_vs_prefix": 0.8386,
+        "max_code": "8445291061132",
+        "max_code_prefix": "844",
+        "max_code_brand": "Nestl\u00e9, hepar",
+        "n_with_salt_100g": 84,
+        "salt_winner": {
+          "n": 84,
+          "argmax_index": 70,
+          "depth": 0.8434,
+          "n_ties": 1,
+          "code": "8020141640004",
+          "brand": "Sant'Anna",
+          "name": "Acqua minerales naturale sant'anna sorgente Rebrua",
+          "salt": 3.75,
+          "runner_up": 2.93,
+          "distinct_codes": 84,
+          "spearman_salt_vs_order": 0.2194
+        }
+      },
+      {
+        "tag": "en:instant-coffees",
+        "country": "germany",
+        "count": 317,
+        "page_size": 100,
+        "returned": 100,
+        "coded": 96,
+        "fully_enumerable": false,
+        "spearman_code_vs_prefix": 0.961,
+        "max_code": "9002100103408",
+        "max_code_prefix": "900",
+        "max_code_brand": "nescafe",
+        "n_with_salt_100g": 43,
+        "salt_winner": {
+          "n": 43,
+          "argmax_index": 12,
+          "depth": 0.2857,
+          "n_ties": 1,
+          "code": "8410100020921",
+          "brand": "NESCAF\u00c9",
+          "name": "Bebida instant\u00e1nea en polvo con az\u00facar, leche y ca",
+          "salt": 2.85714285714286,
+          "runner_up": 1.8675,
+          "distinct_codes": 43,
+          "spearman_salt_vs_order": 0.3001
+        }
+      }
+    ]
+  }
+}

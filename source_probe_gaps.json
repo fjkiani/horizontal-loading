@@ -1,0 +1,44 @@
+{
+ "nih_reporter_post": {
+  "status": 200,
+  "ok": true,
+  "sample": "{\"meta\":{\"search_id\":\"ZwuRCITU6kOOXS0M5yaXgA\",\"total\":82966,\"offset\":0,\"limit\":1,\"sort_field\":null,\"sort_order\":\"ASC\",\"sorted_by_relevance\":false,\"properties\":{\"URL\":\"https:/reporter.nih.gov/search/Zw",
+  "verdict": "probe error in probe_sources.py (GET on a POST-only endpoint)"
+ },
+ "wikidata_sparql_backoff": {
+  "status": 200,
+  "ok": true,
+  "tries": 1,
+  "sample": "{\n  \"head\" : {\n    \"vars\" : [ \"s\" ]\n  },\n  \"results\" : {\n    \"bindings\" : [ {\n      \"s\" : {\n        \"type\" : \"uri\",\n        \"value\" : \"http://www.wikidata.org/entity/Q2374\"\n      }\n    } ]\n  }\n}",
+  "verdict": "rate-limited, usable with backoff"
+ },
+ "wikidata_entitydata": {
+  "status": 200,
+  "ok": true,
+  "bytes": 3000
+ },
+ "wikipedia_rest": {
+  "status": 200,
+  "ok": true,
+  "sample": "{\"type\":\"standard\",\"title\":\"Doom (1993 video game)\",\"displaytitle\":\"<i>Doom</i> (1993 video game)\",\"namespace\":{\"id\":0,\"text\":\"\"},\"wikibase_item\":\"Q189784\",\"tit"
+ },
+ "rawg_retry": {
+  "status": 522,
+  "ok": false,
+  "tries": 3,
+  "sample": "{\"type\":\"https://developers.cloudflare.com/support/troubleshooting/http-status-codes/cloudflare-5xx-errors/error-522/\",\"title\":\"Error 522: Connection timed out\"",
+  "verdict": "down/blocked"
+ },
+ "vg_alt::Internet Game Database proxy (Wikidata)": {
+  "status": 200,
+  "ok": true
+ },
+ "vg_alt::Open Library (game guides)": {
+  "status": 200,
+  "ok": true
+ },
+ "vg_alt::MobyGames public page": {
+  "status": 403,
+  "ok": false
+ }
+}

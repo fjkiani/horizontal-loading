@@ -61,6 +61,13 @@ def audit(pool_path=POOL):
     pool = json.load(open(pool_path))
     by_paper = defaultdict(list)
     for t in pool:
+        # API-native traps carry no lccn/date. This audit asks whether a scan
+        # trap's issue number is derivable from a calendar anchor, which is
+        # meaningless for an answer produced by ranking an API collection.
+        # Scoping here is not suppression: those traps are audited instead by
+        # source_gate (operator independence) and evaluate_traps (T0-T7).
+        if t.get("track") == "api-native" or "lccn" not in t:
+            continue
         by_paper[t["lccn"]].append(t)
 
     report = {}

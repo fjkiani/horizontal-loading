@@ -27,6 +27,7 @@ import batch_prompts as bp
 import verify_joins as vj
 import stress_test_runner as str_
 import trap_generator as tg
+import source_gate as sg
 from app import solvers
 
 WORKSPACE = _REPO
@@ -244,9 +245,44 @@ def generate_status(job_id: str):
     return {"job_id": job_id, "status": "done", "result": job["result"]}
 
 
+def _api_trap_summary(t):
+    """Summary for an API-native trap.
+
+    These have no lccn, date, paper or scan image, so the scan-trap summary
+    below raised KeyError on every one of them -- the pool could hold them but
+    the catalog endpoint could not render them. The witness tier is surfaced
+    rather than hidden: `gold` means two or more operators independent of the
+    one that supplied the ranked collection confirm the answer, `silver` means
+    exactly one. Nothing with zero reaches the pool.
+    """
+    ind = t.get("independent_confirming_operators") or []
+    return {
+        "id": f"api-native:{t.get('category')}:{t.get('field')}",
+        "track": "api-native",
+        "category": t.get("category"),
+        "field": t.get("field"), "answer": t.get("answer"),
+        "entity": t.get("entity"),
+        "prompt": t.get("prompt", ""),
+        "verified": t.get("verified", False),
+        "api_proof": t.get("api_proof", False),
+        "n_base": t.get("n_base"),
+        "primary_operator": t.get("primary_operator"),
+        "source_operators": t.get("source_operators"),
+        "independent_confirming_operators": ind,
+        "witness_tier": "gold" if len(ind) >= 2 else ("silver" if ind else "unwitnessed"),
+        "confirmation": t.get("confirmation"),
+        "sources": t.get("sources"),
+        "image_url": None,
+    }
+
+
 def _trap_summary(t):
+    if t.get("track") == "api-native" or "lccn" not in t:
+        return _api_trap_summary(t)
     return {
         "id": f"{t['lccn']}:{t['date']}:{t['field']}",
+        "track": "vision-scan",
+        "category": t.get("category"),
         "lccn": t["lccn"], "date": t["date"], "paper": t["paper"],
         "field": t["field"], "answer": t["answer"],
         # The prompt IS the product - the UI detail pane renders it. Omitting it
@@ -262,18 +298,81 @@ def _trap_summary(t):
     }
 
 
-@app.get("/api/generated")
-def list_generated():
-    """The growing catalog of independently-confirmed (verified) generated traps."""
+@app.get("/api/categories")
+def list_categories():
+    """The closed 16-value taxonomy, with how many served traps each holds.
+
+    A category with 0 served traps is reported as 0 rather than omitted: the
+    absence is the finding. `unservable` lists the categories whose generator
+    currently produces an answer that no independent operator will confirm, so
+    the gate refuses it.
+    """
     pool = tg.list_generated()
-    return {"count": len(pool), "verified": [_trap_summary(t) for t in pool]}
+    counts = {c: 0 for c in sg.CATEGORIES}
+    for t in pool:
+        c = t.get("category")
+        if c in counts:
+            counts[c] += 1
+    return {"categories": [{"category": c, "n_served": counts[c]}
+                           for c in sg.CATEGORIES],
+            "n_categories": len(sg.CATEGORIES),
+            "n_served_total": len(pool),
+            "unservable": [c for c in sg.CATEGORIES if counts[c] == 0]}
+
+
+@app.get("/api/retired")
+def list_retired():
+    """Prompts withdrawn from service, with the evidence for withdrawal.
+
+    Retired prompts stay inspectable and stay OUT of the served pool. The 23
+    archived here all resolved to a banned publisher.
+    """
+    path = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))),
+                        "retired_corpus.json")
+    if not os.path.exists(path):
+        return {"count": 0, "retired": []}
+    with open(path) as fh:
+        doc = json.load(fh)
+    if isinstance(doc, list):
+        return {"count": len(doc), "retired": doc}
+    curated = doc.get("curated") or []
+    generated = doc.get("generated") or []
+    return {"count": len(curated) + len(generated),
+            "retired_at": doc.get("retired_at"),
+            "rule": doc.get("rule"),
+            "counts": doc.get("counts"),
+            "curated": curated,
+            "generated": generated}
+
+
+@app.get("/api/generated")
+def list_generated(category: str | None = None, tier: str | None = None,
+                   track: str | None = None):
+    """The growing catalog of independently-confirmed (verified) generated traps.
+
+    Optional filters: `category` (one of the 16), `tier` (gold|silver),
+    `track` (api-native|vision-scan).
+    """
+    if category is not None and category not in sg.CATEGORIES:
+        raise HTTPException(400, f"category {category!r} is not one of the 16 "
+                                 f"permitted values")
+    rows = [_trap_summary(t) for t in tg.list_generated()]
+    if category is not None:
+        rows = [r for r in rows if r.get("category") == category]
+    if tier is not None:
+        rows = [r for r in rows if r.get("witness_tier") == tier]
+    if track is not None:
+        rows = [r for r in rows if r.get("track") == track]
+    return {"count": len(rows), "filters": {"category": category, "tier": tier,
+                                            "track": track},
+            "verified": rows}
 
 
 @app.get("/api/generated/image")
 def generated_image(lccn: str, date: str, field: str):
     """Serve the scan image for a generated trap (verified or pending)."""
     for t in tg.list_generated() + tg.list_pending():
-        if (t["lccn"], t["date"], t["field"]) == (lccn, date, field):
+        if (t.get("lccn"), t.get("date"), t.get("field")) == (lccn, date, field):
             path = tg.resolve_image_path(t)
             if path and os.path.exists(path):
                 return FileResponse(path, media_type="image/jpeg")

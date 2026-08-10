@@ -1,0 +1,496 @@
+{
+ "science and technology": [
+  {
+   "operator": "arXiv",
+   "domain": "export.arxiv.org",
+   "url": "http://export.arxiv.org/api/query?search_query=all:electron&max_results=1",
+   "needs_key_expected": false,
+   "status": 200,
+   "note": "ok",
+   "bytes": 2938,
+   "elapsed_s": 0.06,
+   "usable_keyless": true
+  },
+  {
+   "operator": "USPTO PatentsView",
+   "domain": "search.patentsview.org",
+   "url": "https://search.patentsview.org/api/v1/patent/?q=%7B%22patent_id%22:%2210000000%22%7D",
+   "needs_key_expected": true,
+   "status": null,
+   "note": "URLError: <urlopen error [Errno -2] Name or service not known>",
+   "bytes": 0,
+   "elapsed_s": 0.0,
+   "usable_keyless": false
+  },
+  {
+   "operator": "NASA TechPort",
+   "domain": "techport.nasa.gov",
+   "url": "https://techport.nasa.gov/api/projects?limit=1",
+   "needs_key_expected": false,
+   "status": 200,
+   "note": "ok",
+   "bytes": 4096,
+   "elapsed_s": 0.31,
+   "usable_keyless": true
+  }
+ ],
+ "art": [
+  {
+   "operator": "Metropolitan Museum",
+   "domain": "collectionapi.metmuseum.org",
+   "url": "https://collectionapi.metmuseum.org/public/collection/v1/objects/45734",
+   "needs_key_expected": false,
+   "status": 200,
+   "note": "ok",
+   "bytes": 2250,
+   "elapsed_s": 0.1,
+   "usable_keyless": true
+  },
+  {
+   "operator": "Art Institute of Chicago",
+   "domain": "api.artic.edu",
+   "url": "https://api.artic.edu/api/v1/artworks/27992",
+   "needs_key_expected": false,
+   "status": 200,
+   "note": "ok",
+   "bytes": 4096,
+   "elapsed_s": 0.15,
+   "usable_keyless": true
+  },
+  {
+   "operator": "Cleveland Museum of Art",
+   "domain": "openaccess-api.clevelandart.org",
+   "url": "https://openaccess-api.clevelandart.org/api/artworks/?limit=1",
+   "needs_key_expected": false,
+   "status": 200,
+   "note": "ok",
+   "bytes": 4096,
+   "elapsed_s": 0.49,
+   "usable_keyless": true
+  }
+ ],
+ "business": [
+  {
+   "operator": "SEC EDGAR",
+   "domain": "data.sec.gov",
+   "url": "https://data.sec.gov/api/xbrl/companyconcept/CIK0000320193/us-gaap/Assets.json",
+   "needs_key_expected": false,
+   "status": 200,
+   "note": "ok",
+   "bytes": 4096,
+   "elapsed_s": 0.17,
+   "usable_keyless": true
+  }
+ ],
+ "celebrities/public figures": [
+  {
+   "operator": "Wikidata",
+   "domain": "wikidata.org",
+   "url": "https://www.wikidata.org/w/api.php?action=wbsearchentities&search=Marie%20Curie&language=en&format=json",
+   "needs_key_expected": false,
+   "status": 200,
+   "note": "ok",
+   "bytes": 3372,
+   "elapsed_s": 0.23,
+   "usable_keyless": true
+  },
+  {
+   "operator": "Nobel Prize",
+   "domain": "api.nobelprize.org",
+   "url": "https://api.nobelprize.org/2.1/laureates?limit=1",
+   "needs_key_expected": false,
+   "status": 200,
+   "note": "ok",
+   "bytes": 4096,
+   "elapsed_s": 0.04,
+   "usable_keyless": true
+  }
+ ],
+ "education": [
+  {
+   "operator": "College Scorecard",
+   "domain": "api.data.gov",
+   "url": "https://api.data.gov/ed/collegescorecard/v1/schools?per_page=1",
+   "needs_key_expected": true,
+   "status": 403,
+   "note": "{   \"error\": {     \"code\": \"API_KEY_MISSING\",     \"message\": \"College Scorecard requires an API Key for access. To obtain a key, visit https://api.data.gov/signup. You will receive",
+   "bytes": 0,
+   "elapsed_s": 0.2,
+   "usable_keyless": false
+  },
+  {
+   "operator": "NCES IPEDS (bulk)",
+   "domain": "nces.ed.gov",
+   "url": "https://nces.ed.gov/ipeds/datacenter/data/HD2022.zip",
+   "needs_key_expected": false,
+   "status": 200,
+   "note": "ok",
+   "bytes": 4096,
+   "elapsed_s": 0.33,
+   "usable_keyless": true
+  }
+ ],
+ "finance": [
+  {
+   "operator": "US Treasury FiscalData",
+   "domain": "api.fiscaldata.treasury.gov",
+   "url": "https://api.fiscaldata.treasury.gov/services/api/fiscal_service/v2/accounting/od/debt_to_penny?page[size]=1",
+   "needs_key_expected": false,
+   "status": 200,
+   "note": "ok",
+   "bytes": 1765,
+   "elapsed_s": 0.45,
+   "usable_keyless": true
+  },
+  {
+   "operator": "SEC EDGAR",
+   "domain": "data.sec.gov",
+   "url": "https://data.sec.gov/api/xbrl/companyconcept/CIK0000789019/us-gaap/Revenues.json",
+   "needs_key_expected": false,
+   "status": 200,
+   "note": "ok",
+   "bytes": 4096,
+   "elapsed_s": 0.02,
+   "usable_keyless": true
+  }
+ ],
+ "geography": [
+  {
+   "operator": "REST Countries",
+   "domain": "restcountries.com",
+   "url": "https://restcountries.com/v3.1/alpha/nz",
+   "needs_key_expected": false,
+   "status": 200,
+   "note": "ok",
+   "bytes": 261,
+   "elapsed_s": 0.06,
+   "usable_keyless": true
+  },
+  {
+   "operator": "USGS GNIS/Water",
+   "domain": "waterservices.usgs.gov",
+   "url": "https://waterservices.usgs.gov/nwis/site/?format=rdb&sites=01646500",
+   "needs_key_expected": false,
+   "status": 200,
+   "note": "ok",
+   "bytes": 1307,
+   "elapsed_s": 0.24,
+   "usable_keyless": true
+  },
+  {
+   "operator": "OurAirports",
+   "domain": "davidmegginson.github.io",
+   "url": "https://davidmegginson.github.io/ourairports-data/airports.csv",
+   "needs_key_expected": false,
+   "status": 200,
+   "note": "ok",
+   "bytes": 4096,
+   "elapsed_s": 0.02,
+   "usable_keyless": true
+  }
+ ],
+ "health and medicine": [
+  {
+   "operator": "NIH RePORTER",
+   "domain": "api.reporter.nih.gov",
+   "url": "https://api.reporter.nih.gov/v2/projects/search",
+   "needs_key_expected": false,
+   "status": 405,
+   "note": "",
+   "bytes": 0,
+   "elapsed_s": 0.61,
+   "usable_keyless": false
+  },
+  {
+   "operator": "ClinicalTrials.gov",
+   "domain": "clinicaltrials.gov",
+   "url": "https://clinicaltrials.gov/api/v2/studies?pageSize=1",
+   "needs_key_expected": false,
+   "status": 200,
+   "note": "ok",
+   "bytes": 4096,
+   "elapsed_s": 0.1,
+   "usable_keyless": true
+  },
+  {
+   "operator": "openFDA",
+   "domain": "api.fda.gov",
+   "url": "https://api.fda.gov/drug/label.json?limit=1",
+   "needs_key_expected": false,
+   "status": 200,
+   "note": "ok",
+   "bytes": 3933,
+   "elapsed_s": 0.47,
+   "usable_keyless": true
+  },
+  {
+   "operator": "PubMed E-utilities",
+   "domain": "eutils.ncbi.nlm.nih.gov",
+   "url": "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/esummary.fcgi?db=pubmed&id=1&retmode=json",
+   "needs_key_expected": false,
+   "status": 200,
+   "note": "ok",
+   "bytes": 1532,
+   "elapsed_s": 0.22,
+   "usable_keyless": true
+  }
+ ],
+ "history": [
+  {
+   "operator": "Nobel Prize",
+   "domain": "api.nobelprize.org",
+   "url": "https://api.nobelprize.org/2.1/nobelPrizes?nobelPrizeYear=1901",
+   "needs_key_expected": false,
+   "status": 200,
+   "note": "ok",
+   "bytes": 4096,
+   "elapsed_s": 0.04,
+   "usable_keyless": true
+  },
+  {
+   "operator": "Federal Register",
+   "domain": "federalregister.gov",
+   "url": "https://www.federalregister.gov/api/v1/documents.json?per_page=1",
+   "needs_key_expected": false,
+   "status": 200,
+   "note": "ok",
+   "bytes": 4096,
+   "elapsed_s": 0.08,
+   "usable_keyless": true
+  }
+ ],
+ "legal": [
+  {
+   "operator": "CourtListener",
+   "domain": "courtlistener.com",
+   "url": "https://www.courtlistener.com/api/rest/v4/courts/?page_size=1",
+   "needs_key_expected": true,
+   "status": 200,
+   "note": "ok",
+   "bytes": 4096,
+   "elapsed_s": 0.18,
+   "usable_keyless": true
+  },
+  {
+   "operator": "Federal Register",
+   "domain": "federalregister.gov",
+   "url": "https://www.federalregister.gov/api/v1/documents.json?per_page=1",
+   "needs_key_expected": false,
+   "status": 200,
+   "note": "ok",
+   "bytes": 4096,
+   "elapsed_s": 0.07,
+   "usable_keyless": true
+  },
+  {
+   "operator": "GovInfo",
+   "domain": "api.govinfo.gov",
+   "url": "https://api.govinfo.gov/collections",
+   "needs_key_expected": true,
+   "status": 401,
+   "note": "{   \"error\": {     \"code\": \"API_KEY_MISSING\",     \"message\": \"No api_key was supplied. Get one at https://www.govinfo.gov/api-signup\"   } }",
+   "bytes": 0,
+   "elapsed_s": 0.24,
+   "usable_keyless": false
+  }
+ ],
+ "politics": [
+  {
+   "operator": "Congress.gov",
+   "domain": "api.congress.gov",
+   "url": "https://api.congress.gov/v3/bill?limit=1",
+   "needs_key_expected": true,
+   "status": 403,
+   "note": "{   \"error\": {     \"code\": \"API_KEY_MISSING\",     \"message\": \"No api_key was supplied. Get one at https://api.congress.gov:443\"   } }",
+   "bytes": 0,
+   "elapsed_s": 0.22,
+   "usable_keyless": false
+  },
+  {
+   "operator": "FEC",
+   "domain": "api.open.fec.gov",
+   "url": "https://api.open.fec.gov/v1/candidates/?per_page=1",
+   "needs_key_expected": true,
+   "status": 403,
+   "note": "{   \"error\": {     \"code\": \"API_KEY_MISSING\",     \"message\": \"No api_key was supplied. Get one at https://api.data.gov/signup/ Contact us at https://github.com/fecgov/openFEC/issue",
+   "bytes": 0,
+   "elapsed_s": 0.3,
+   "usable_keyless": false
+  },
+  {
+   "operator": "Federal Register",
+   "domain": "federalregister.gov",
+   "url": "https://www.federalregister.gov/api/v1/agencies",
+   "needs_key_expected": false,
+   "status": 200,
+   "note": "ok",
+   "bytes": 4096,
+   "elapsed_s": 0.31,
+   "usable_keyless": true
+  }
+ ],
+ "shopping": [
+  {
+   "operator": "Open Food Facts",
+   "domain": "world.openfoodfacts.org",
+   "url": "https://world.openfoodfacts.org/api/v2/product/737628064502.json",
+   "needs_key_expected": false,
+   "status": 200,
+   "note": "ok",
+   "bytes": 4096,
+   "elapsed_s": 0.48,
+   "usable_keyless": true
+  },
+  {
+   "operator": "Open Library",
+   "domain": "openlibrary.org",
+   "url": "https://openlibrary.org/isbn/9780140328721.json",
+   "needs_key_expected": false,
+   "status": 200,
+   "note": "ok",
+   "bytes": 1754,
+   "elapsed_s": 0.45,
+   "usable_keyless": true
+  }
+ ],
+ "sports": [
+  {
+   "operator": "Olympedia via Wikidata",
+   "domain": "query.wikidata.org",
+   "url": "https://query.wikidata.org/sparql?format=json&query=SELECT%20?s%20WHERE%20%7B?s%20wdt:P31%20wd:Q18536594%7D%20LIMIT%201",
+   "needs_key_expected": false,
+   "status": 200,
+   "note": "ok",
+   "bytes": 195,
+   "elapsed_s": 0.64,
+   "usable_keyless": true
+  },
+  {
+   "operator": "TheSportsDB",
+   "domain": "www.thesportsdb.com",
+   "url": "https://www.thesportsdb.com/api/v1/json/3/searchteams.php?t=Arsenal",
+   "needs_key_expected": false,
+   "status": 200,
+   "note": "ok",
+   "bytes": 4096,
+   "elapsed_s": 0.14,
+   "usable_keyless": true
+  },
+  {
+   "operator": "balldontlie",
+   "domain": "api.balldontlie.io",
+   "url": "https://api.balldontlie.io/v1/teams?per_page=1",
+   "needs_key_expected": true,
+   "status": 401,
+   "note": "Unauthorized",
+   "bytes": 0,
+   "elapsed_s": 0.12,
+   "usable_keyless": false
+  }
+ ],
+ "travel": [
+  {
+   "operator": "OurAirports",
+   "domain": "davidmegginson.github.io",
+   "url": "https://davidmegginson.github.io/ourairports-data/airports.csv",
+   "needs_key_expected": false,
+   "status": 200,
+   "note": "ok",
+   "bytes": 4096,
+   "elapsed_s": 0.03,
+   "usable_keyless": true
+  },
+  {
+   "operator": "US BTS / FAA NASR",
+   "domain": "nfdc.faa.gov",
+   "url": "https://nfdc.faa.gov/webContent/28DaySub/28DaySubscription_Effective_2024-01-25.zip",
+   "needs_key_expected": false,
+   "status": 200,
+   "note": "ok",
+   "bytes": 4096,
+   "elapsed_s": 0.07,
+   "usable_keyless": true
+  },
+  {
+   "operator": "OpenFlights",
+   "domain": "raw.githubusercontent.com",
+   "url": "https://raw.githubusercontent.com/jpatokal/openflights/master/data/airports.dat",
+   "needs_key_expected": false,
+   "status": 200,
+   "note": "ok",
+   "bytes": 4096,
+   "elapsed_s": 0.04,
+   "usable_keyless": true
+  }
+ ],
+ "tv shows and movies": [
+  {
+   "operator": "TVmaze",
+   "domain": "api.tvmaze.com",
+   "url": "https://api.tvmaze.com/shows/1",
+   "needs_key_expected": false,
+   "status": 200,
+   "note": "ok",
+   "bytes": 1369,
+   "elapsed_s": 0.36,
+   "usable_keyless": true
+  },
+  {
+   "operator": "Wikidata",
+   "domain": "query.wikidata.org",
+   "url": "https://query.wikidata.org/sparql?format=json&query=SELECT%20?s%20WHERE%20%7B?s%20wdt:P31%20wd:Q5398426%7D%20LIMIT%201",
+   "needs_key_expected": false,
+   "status": 429,
+   "note": "<!DOCTYPE html> <html lang=\"en\"> <meta charset=\"utf-8\"> <title>Wikimedia Error</title> <style> * { margin: 0; padding: 0; } body { background: #fff; font: 15px/1.6 sans-serif; colo",
+   "bytes": 0,
+   "elapsed_s": 0.08,
+   "usable_keyless": false
+  },
+  {
+   "operator": "TMDB",
+   "domain": "api.themoviedb.org",
+   "url": "https://api.themoviedb.org/3/movie/550",
+   "needs_key_expected": true,
+   "status": 401,
+   "note": "{\"status_code\":7,\"status_message\":\"Invalid API key: You must be granted a valid key.\",\"success\":false} ",
+   "bytes": 0,
+   "elapsed_s": 0.04,
+   "usable_keyless": false
+  }
+ ],
+ "video games": [
+  {
+   "operator": "MobyGames",
+   "domain": "api.mobygames.com",
+   "url": "https://api.mobygames.com/v1/games?limit=1",
+   "needs_key_expected": true,
+   "status": 401,
+   "note": "{\"code\":401,\"error\":\"Authorization required\",\"message\":\"You must have an API key to use this resource.\"} ",
+   "bytes": 0,
+   "elapsed_s": 2.8,
+   "usable_keyless": false
+  },
+  {
+   "operator": "RAWG",
+   "domain": "api.rawg.io",
+   "url": "https://api.rawg.io/api/games?page_size=1",
+   "needs_key_expected": true,
+   "status": 522,
+   "note": "{\"type\":\"https://developers.cloudflare.com/support/troubleshooting/http-status-codes/cloudflare-5xx-errors/error-522/\",\"title\":\"Error 522: Connection timed out\",\"status\":522,\"detai",
+   "bytes": 0,
+   "elapsed_s": 19.74,
+   "usable_keyless": false
+  },
+  {
+   "operator": "Wikidata",
+   "domain": "query.wikidata.org",
+   "url": "https://query.wikidata.org/sparql?format=json&query=SELECT%20?s%20WHERE%20%7B?s%20wdt:P31%20wd:Q7889%7D%20LIMIT%201",
+   "needs_key_expected": false,
+   "status": 429,
+   "note": "<!DOCTYPE html> <html lang=\"en\"> <meta charset=\"utf-8\"> <title>Wikimedia Error</title> <style> * { margin: 0; padding: 0; } body { background: #fff; font: 15px/1.6 sans-serif; colo",
+   "bytes": 0,
+   "elapsed_s": 0.08,
+   "usable_keyless": false
+  }
+ ]
+}

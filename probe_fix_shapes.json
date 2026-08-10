@@ -1,0 +1,307 @@
+{
+  "arxiv_20240115": {
+    "n": 1,
+    "top_author_counts": [
+      6
+    ],
+    "unique_max": false,
+    "winner": {
+      "id": "2401.07937v1",
+      "nau": 6,
+      "title": "Integrate Any Omics: Towards genome-wide data integration for patient "
+    }
+  },
+  "arxiv_20240206": {
+    "n": 0,
+    "top_author_counts": [],
+    "unique_max": false,
+    "winner": null
+  },
+  "arxiv_20240311": {
+    "n": 0,
+    "top_author_counts": [],
+    "unique_max": false,
+    "winner": null
+  },
+  "datacite_2401.01234": {
+    "ok": true,
+    "title": "Mixture cure semiparametric additive hazard models under partly interval censori"
+  },
+  "datacite_2402.00001": {
+    "ok": true,
+    "title": "Using binary string to prove the Collatz conjecture"
+  },
+  "openalex_arxiv": {
+    "ok": true,
+    "title": "Mixture cure semiparametric additive hazard models under partly interval censori"
+  },
+  "lii_504_555": {
+    "ok": true,
+    "title": "Manuel LUJAN, Jr., Secretary of the Interior, Petitioner v. DEFENDERS OF WILDLIFE, et al. | Supreme Court | US Law | LII"
+  },
+  "lii_505_1": {
+    "ok": true,
+    "title": "Stephanie NORDLINGER, Petitioner v. Kenneth HAHN, in his capacity as Tax Assessor for Los Angeles County, et al. | Supre"
+  },
+  "lii_498_19": {
+    "ok": true,
+    "title": "Mercedel W. MILES, Individually and as Administratrix of the Succession of Ludwick Adam Torregano, Petitioner, v. APEX M"
+  },
+  "courtlistener": {
+    "n": 20,
+    "n_dates": 3,
+    "dates_with_ge4": [
+      "1992-01-10"
+    ],
+    "sample_keys": [
+      "absolute_url",
+      "attorney",
+      "caseName",
+      "caseNameFull",
+      "citation",
+      "citeCount",
+      "cluster_id",
+      "court",
+      "court_citation_string",
+      "court_id",
+      "court_jurisdiction",
+      "dateArgued",
+      "dateFiled",
+      "dateReargued",
+      "dateReargumentDenied",
+      "docketNumber",
+      "docket_id",
+      "judge",
+      "lexisCite",
+      "meta",
+      "neutralCite",
+      "non_participating_judge_ids",
+      "opinions",
+      "panel_ids",
+      "panel_names",
+      "posture",
+      "procedural_history",
+      "scdb_id",
+      "sibling_ids",
+      "source",
+      "status",
+      "suitNature",
+      "syllabus"
+    ],
+    "sample_citation": [
+      "502 U.S. 1022"
+    ],
+    "sample_caseName": "Colorado v. Kuhn"
+  },
+  "mlb_roster": {
+    "n_roster": 38,
+    "n_people": 38,
+    "n_dated": 38,
+    "oldest": [
+      {
+        "fullName": "Tim Raines Sr.",
+        "birthDate": "1959-09-16",
+        "birthCity": "Sanford",
+        "birthCountry": "USA",
+        "id": 120891
+      },
+      {
+        "fullName": "Chili Davis",
+        "birthDate": "1960-01-17",
+        "birthCity": "Kingston",
+        "birthCountry": "Jamaica",
+        "id": 113099
+      },
+      {
+        "fullName": "Darryl Strawberry",
+        "birthDate": "1962-03-12",
+        "birthCity": "Los Angeles",
+        "birthCountry": "USA",
+        "id": 122864
+      }
+    ]
+  },
+  "tvmaze_tt0944947": {
+    "ok": true,
+    "name": "Game of Thrones",
+    "premiered": "2011-04-17"
+  },
+  "tvmaze_tt0813715": {
+    "ok": true,
+    "name": "Heroes",
+    "premiered": "2006-09-25"
+  },
+  "steam_pool": {
+    "rows": [
+      {
+        "appid": 70,
+        "ok": true,
+        "name": "Half-Life",
+        "released": "19 Nov, 1998",
+        "dev": "Valve"
+      },
+      {
+        "appid": 220,
+        "ok": true,
+        "name": "Half-Life 2",
+        "released": "Nov 16, 2004",
+        "dev": "Valve"
+      },
+      {
+        "appid": 400,
+        "ok": true,
+        "name": "Portal",
+        "released": "10 Oct, 2007",
+        "dev": "Valve"
+      },
+      {
+        "appid": 620,
+        "ok": true,
+        "name": "Portal 2",
+        "released": "Apr 18, 2011",
+        "dev": "Valve"
+      },
+      {
+        "appid": 570,
+        "ok": true,
+        "name": "Dota 2",
+        "released": "9 Jul, 2013",
+        "dev": "Valve"
+      },
+      {
+        "appid": 730,
+        "ok": true,
+        "name": "Counter-Strike 2",
+        "released": "21 Aug, 2012",
+        "dev": "Valve"
+      },
+      {
+        "appid": 105600,
+        "ok": true,
+        "name": "Terraria",
+        "released": "16 May, 2011",
+        "dev": "Re-Logic"
+      },
+      {
+        "appid": 292030,
+        "ok": true,
+        "name": "The Witcher 3: Wild Hunt",
+        "released": "18 May, 2015",
+        "dev": "CD PROJEKT RED"
+      },
+      {
+        "appid": 271590,
+        "ok": true,
+        "name": "Grand Theft Auto V Legacy",
+        "released": "13 Apr, 2015",
+        "dev": "Rockstar North"
+      },
+      {
+        "appid": 377160,
+        "ok": true,
+        "name": "Fallout 4",
+        "released": "Nov 9, 2015",
+        "dev": "Bethesda Game Studios"
+      },
+      {
+        "appid": 578080,
+        "ok": true,
+        "name": "PUBG: BATTLEGROUNDS",
+        "released": "21 Dec, 2017",
+        "dev": "PUBG Corporation"
+      },
+      {
+        "appid": 1091500,
+        "ok": true,
+        "name": "Cyberpunk 2077",
+        "released": "9 Dec, 2020",
+        "dev": "CD PROJEKT RED"
+      },
+      {
+        "appid": 3830,
+        "ok": true,
+        "name": "Psychonauts",
+        "released": "11/out./2006",
+        "dev": "Double Fine Productions"
+      },
+      {
+        "appid": 6910,
+        "ok": true,
+        "name": "Deus Ex: Game of the Year Edition",
+        "released": "Mar 29, 2007",
+        "dev": "Ion Storm"
+      },
+      {
+        "appid": 22380,
+        "ok": true,
+        "name": "Fallout: New Vegas",
+        "released": "Oct 19, 2010",
+        "dev": "Obsidian Entertainment"
+      },
+      {
+        "appid": 8930,
+        "ok": true,
+        "name": "Sid Meier's Civilization\u00ae V",
+        "released": "Sep 21, 2010",
+        "dev": "Firaxis Games"
+      },
+      {
+        "appid": 250900,
+        "ok": true,
+        "name": "The Binding of Isaac: Rebirth",
+        "released": "4 Nov, 2014",
+        "dev": "Nicalis, Inc."
+      },
+      {
+        "appid": 39210,
+        "ok": true,
+        "name": "FINAL FANTASY XIV Online",
+        "released": "Feb 18, 2014",
+        "dev": "Square Enix"
+      }
+    ]
+  },
+  "imdb_bulk": {
+    "lines": 12707541,
+    "header": [
+      "tconst",
+      "titleType",
+      "primaryTitle",
+      "originalTitle",
+      "isAdult",
+      "startYear",
+      "endYear",
+      "runtimeMinutes",
+      "genres"
+    ],
+    "n_hits": 18,
+    "top": [
+      {
+        "tconst": "tt0128419",
+        "title": "Prey",
+        "runtime": 60
+      },
+      {
+        "tconst": "tt0164097",
+        "title": "Mercy Point",
+        "runtime": 60
+      },
+      {
+        "tconst": "tt0172058",
+        "title": "Space Island One",
+        "runtime": 45
+      },
+      {
+        "tconst": "tt12411090",
+        "title": "The New Adventure of Wisely",
+        "runtime": 45
+      },
+      {
+        "tconst": "tt0167720",
+        "title": "Seven Days",
+        "runtime": 42
+      }
+    ],
+    "secs": 16.1
+  }
+}

@@ -20,10 +20,12 @@ A FLAWED prompt (negative control) is expected to fail its intended rule.
 from __future__ import annotations
 import re
 from batch_prompts import BATCH
+import source_gate as sg
 
-BANNED = ["archive.org", "hathitrust.org", "pro-football-reference.com",
-          "sports-reference.com", "basketball-reference.com", "baseball-reference.com",
-          "hockey-reference.com", "fbref.com", "stathead.com"]
+# Banned-source policy now lives in source_gate so that the API, the generator and
+# this gate cannot drift apart. The previous local list omitted loc.gov and
+# archive.org, which is how the original corpus passed verification.
+BANNED = list(sg.BANNED_DOMAINS)
 ARITH = re.compile(r"\b(add|sum|total of|plus|multiply|divided by|average of|subtract|product of)\b", re.I)
 
 
@@ -59,10 +61,17 @@ def verify_clean(p):
     wc = word_count(p.prompt)
     if not (70 <= wc <= 150):
         fails.append(f"V4 word count {wc} outside [70,150]")
-    if len(p.sources) < 3:
-        fails.append(f"V5 only {len(p.sources)} sources")
-    if any(b in " ".join(p.sources).lower() for b in BANNED):
-        fails.append("V6 banned source present")
+    # V5/V6 are now enforced at OPERATOR level, not URL level. Three paths on one
+    # publisher is one source. See source_gate for the rationale.
+    for viol in sg.check_sources(
+        p.sources,
+        min_operators=3,
+        confirming_sources=getattr(p, "confirming_sources", None),
+    ):
+        fails.append(viol.replace("R3b", "V5b").replace("R3", "V5").replace("R4", "V6"))
+    # V9 taxonomy: every prompt carries exactly one of the 16 permitted categories.
+    for viol in sg.check_category(getattr(p, "category", None)):
+        fails.append(viol.replace("R6", "V9"))
     if ARITH.search(p.prompt):
         fails.append("V7 arithmetic framing in prompt")
     # V8 API-proof: the compute() must have proven the answer is not single-call retrievable.

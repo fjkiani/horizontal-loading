@@ -1,0 +1,655 @@
+{
+  "generated_at": "2026-08-10T21:39:25Z",
+  "results": {
+    "science and technology": {
+      "category": "science and technology",
+      "alt_kwargs": {
+        "days": "('2023-02-14', '2023-05-16', '2023-09-12', '2023-11-14', '2024-09-10', '2024-10-08')",
+        "cats": "('cs.CR', 'math.PR', 'cond-mat.mes-hall', 'astro-ph.GA', 'q-bio.PE', 'physics.flu-dyn')"
+      },
+      "primary_answer": "2403.07505",
+      "status": "ok",
+      "alt_answer": "2302.07287",
+      "alt_entity": "Forward Pass: On the Security Implications of Email Forwarding Mechanism and Policy",
+      "n_base": 12,
+      "source_operators": [
+        "Cornell University",
+        "DataCite",
+        "OurResearch (OpenAlex)"
+      ],
+      "confirming_operators": [
+        "DataCite",
+        "OurResearch (OpenAlex)"
+      ],
+      "ranking_evidence": {
+        "label": "science cs.CR/2023-02-14",
+        "mode": "max",
+        "n_base": 12,
+        "n_tied_at_extremum": 1,
+        "distinct_keys": 7,
+        "winner_position_in_api_order": 10,
+        "winner_is_first_returned": false,
+        "winner_is_last_returned": false,
+        "top_keys": [
+          "7",
+          "6",
+          "6",
+          "5",
+          "4"
+        ],
+        "answer_field_distinct_values": 12,
+        "answer_field_modal_share": 0.0833,
+        "p_answer_by_uniform_guess": 0.0833
+      },
+      "violations": [],
+      "B1_gate_valid": true,
+      "B2_answer_differs": true,
+      "B3_unique_extremum": true,
+      "prompt": "The arXiv preprint server publishes a dated listing of every submission indexed under the subject class cs.CR, each entry carrying its full author list and its arXiv identifier. Consider only the submissions that arXiv timestamps to 2023-02-14 in Coordinated Universal Time. Among only those submissions, exactly one credits more named authors than any other. Report the arXiv identifier of that single submission. Resolve the identifier through two registration agencies independent of the preprint server before answering. Give the identifier alone, without any version suffix and with no other words.",
+      "secs": 0.9
+    },
+    "art": {
+      "category": "art",
+      "alt_kwargs": {
+        "artist": "Claude Monet",
+        "dept": "11"
+      },
+      "primary_answer": "71.84",
+      "status": "fail",
+      "error": "https://collectionapi.metmuseum.org/public/collection/v1/search?hasImages=true&q=Claude Monet -> gave up after 5 attempts (InvalidURL: URL can't contain control characters. '/public/collection/v1/search?hasImages=true&q=Claude Monet' (found at least ' '))",
+      "etype": "FetchError",
+      "tb": "n_art\n    srch = net.get_json(\n           ^^^^^^^^^^^^^\n  File \"/workspace/seal_deploy/net.py\", line 88, in get_json\n    txt = fetch(url, body=body, **kw)\n          ^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/workspace/seal_deploy/net.py\", line 84, in fetch\n    raise FetchError(f\"{url} -> gave up after {attempts} attempts ({last})\")\nnet.FetchError: https://collectionapi.metmuseum.org/public/collection/v1/search?hasImages=true&q=Claude Monet -> gave up after 5 attempts (InvalidURL: URL can't contain control characters. '/public/collection/v1/search?hasImages=true&q=Claude Monet' (found at least ' '))\n",
+      "B1_gate_valid": false,
+      "B2_answer_differs": null,
+      "B3_unique_extremum": null,
+      "secs": 62.0
+    },
+    "business": {
+      "category": "business",
+      "alt_kwargs": {
+        "cik": "0000789019",
+        "concept": "ResearchAndDevelopmentExpense",
+        "legal_name": "Microsoft Corporation"
+      },
+      "primary_answer": "2007-09-29",
+      "status": "ok",
+      "alt_answer": "2008-06-30",
+      "alt_entity": "Microsoft Corporation \u2014 ResearchAndDevelopmentExpense",
+      "n_base": 51,
+      "source_operators": [
+        "Global Legal Entity Identifier Foundation",
+        "US Securities and Exchange Commission",
+        "Wikimedia Foundation"
+      ],
+      "confirming_operators": [
+        "US Securities and Exchange Commission"
+      ],
+      "ranking_evidence": {
+        "label": "business",
+        "mode": "min",
+        "n_base": 51,
+        "n_tied_at_extremum": 1,
+        "distinct_keys": 19,
+        "winner_position_in_api_order": 0,
+        "winner_is_first_returned": true,
+        "winner_is_last_returned": false,
+        "top_keys": [
+          "2007-07-01",
+          "2008-07-01",
+          "2008-07-01",
+          "2009-07-01",
+          "2009-07-01"
+        ],
+        "answer_field_distinct_values": 19,
+        "answer_field_modal_share": 0.0588,
+        "p_answer_by_uniform_guess": 0.0196
+      },
+      "violations": [],
+      "B1_gate_valid": true,
+      "B2_answer_differs": true,
+      "B3_unique_extremum": true,
+      "prompt": "The United States securities regulator publishes structured company facts drawn from the annual reports filed by Microsoft Corporation, tagged under standard accounting concepts. Look only at the concept covering research and development expense, and only at figures reported on the annual report form for a full fiscal year. Among all such annual observations the company has ever filed, one covers an earlier fiscal period than any other. Report the period end date of that earliest annual observation. Confirm the filer's legal identity through an independent entity register. Answer with that date alone in year, month and day order, using hyphens.",
+      "secs": 0.8
+    },
+    "celebrities/public figures": {
+      "category": "celebrities/public figures",
+      "alt_kwargs": {
+        "y0": "1901",
+        "y1": "1980"
+      },
+      "primary_answer": "1911",
+      "status": "ok",
+      "alt_answer": "1911",
+      "alt_entity": "Marie Curie",
+      "n_base": 503,
+      "source_operators": [
+        "Nobel Prize Outreach",
+        "OurResearch (OpenAlex)",
+        "Wikimedia Foundation"
+      ],
+      "confirming_operators": [
+        "Wikimedia Foundation"
+      ],
+      "ranking_evidence": {
+        "label": "celebrities",
+        "mode": "min",
+        "n_base": 4,
+        "n_tied_at_extremum": 1,
+        "distinct_keys": 4,
+        "winner_position_in_api_order": 0,
+        "winner_is_first_returned": true,
+        "winner_is_last_returned": false,
+        "top_keys": [
+          "1911",
+          "1962",
+          "1972",
+          "1980"
+        ],
+        "answer_field_distinct_values": 4,
+        "answer_field_modal_share": 0.25,
+        "p_answer_by_uniform_guess": 0.25
+      },
+      "violations": [],
+      "B1_gate_valid": true,
+      "B2_answer_differs": false,
+      "B3_unique_extremum": true,
+      "prompt": "The official Nobel Prize records name every laureate honoured between 1901 and 1980, across all of the prize categories awarded in that period. Almost every individual in those records appears exactly once. A very small number appear on two separate occasions. Among the individuals honoured more than once, consider whichever of them received their second award earliest. Report the year in which that particular second award was made. Confirm the individual through an independent structured biography record. Answer with the four-digit year alone and nothing further.",
+      "secs": 4.8
+    },
+    "education": {
+      "category": "education",
+      "alt_kwargs": {
+        "country": "Portugal"
+      },
+      "primary_answer": "wit.ie",
+      "status": "ok",
+      "alt_answer": "utl.pt",
+      "alt_entity": "Universidade Tecnica de Lisboa",
+      "n_base": 65,
+      "source_operators": [
+        "Hipo Labs",
+        "US Department of Education",
+        "Wikimedia Foundation"
+      ],
+      "confirming_operators": [
+        "Hipo Labs"
+      ],
+      "ranking_evidence": {
+        "label": "education",
+        "mode": "max",
+        "n_base": 65,
+        "n_tied_at_extremum": 1,
+        "distinct_keys": 65,
+        "winner_position_in_api_order": 60,
+        "winner_is_first_returned": false,
+        "winner_is_last_returned": false,
+        "top_keys": [
+          "utl.pt",
+          "utad.pt",
+          "uportu.pt",
+          "up.pt",
+          "unl.pt"
+        ],
+        "answer_field_distinct_values": 65,
+        "answer_field_modal_share": 0.0154,
+        "p_answer_by_uniform_guess": 0.0154
+      },
+      "violations": [],
+      "B1_gate_valid": true,
+      "B2_answer_differs": true,
+      "B3_unique_extremum": true,
+      "prompt": "A public register of higher education institutions lists the universities and colleges of Portugal, recording the internet domain each one uses. Consider only the institutions that this register places in Portugal and for which it records at least one domain. Order the primary domains of those institutions as text, from first to last. One domain falls later in that ordering than every other. Report that single last-ordered domain. Confirm the institution through an independent structured knowledge base. Give the domain alone, in lower case, with no protocol and no path.",
+      "secs": 0.4
+    },
+    "finance": {
+      "category": "finance",
+      "alt_kwargs": {
+        "year": "2018"
+      },
+      "primary_answer": "2015-12-31",
+      "status": "ok",
+      "alt_answer": "2018-12-31",
+      "alt_entity": "US total public debt outstanding, 2018",
+      "n_base": 251,
+      "source_operators": [
+        "US Department of the Treasury",
+        "US Securities and Exchange Commission",
+        "Wikimedia Foundation"
+      ],
+      "confirming_operators": [
+        "US Department of the Treasury"
+      ],
+      "ranking_evidence": {
+        "label": "finance",
+        "mode": "max",
+        "n_base": 251,
+        "n_tied_at_extremum": 1,
+        "distinct_keys": 251,
+        "winner_position_in_api_order": 250,
+        "winner_is_first_returned": false,
+        "winner_is_last_returned": true,
+        "top_keys": [
+          "21974095705790.55",
+          "21885501490485.79",
+          "21876674953142.67",
+          "21873194423164.45",
+          "21868943731576.67"
+        ],
+        "answer_field_distinct_values": 251,
+        "answer_field_modal_share": 0.004,
+        "p_answer_by_uniform_guess": 0.004
+      },
+      "violations": [],
+      "B1_gate_valid": true,
+      "B2_answer_differs": true,
+      "B3_unique_extremum": true,
+      "prompt": "The United States Treasury publishes the total public debt outstanding as a daily series, with one dated observation for every business day of 2018. Restrict attention strictly to observations dated within 2018 itself. Across that single year the reported outstanding figure reached its highest point on exactly one of those days. Report the calendar date of that day. The daily series is published without any ranking view, so the ordering must be established from the records themselves. Answer with the date alone in year, month and day order, using hyphens.",
+      "secs": 0.4
+    },
+    "geography": {
+      "category": "geography",
+      "alt_kwargs": {
+        "country_iso": "CH",
+        "country_name": "Switzerland"
+      },
+      "primary_answer": "VNLK",
+      "status": "ok",
+      "alt_answer": "LSZB",
+      "alt_entity": "Bern Airport",
+      "n_base": 5,
+      "source_operators": [
+        "OurAirports",
+        "REST Countries project",
+        "Wikimedia Foundation"
+      ],
+      "confirming_operators": [
+        "Wikimedia Foundation"
+      ],
+      "ranking_evidence": {
+        "label": "geography",
+        "mode": "max",
+        "n_base": 5,
+        "n_tied_at_extremum": 1,
+        "distinct_keys": 5,
+        "winner_position_in_api_order": 2,
+        "winner_is_first_returned": false,
+        "winner_is_last_returned": false,
+        "top_keys": [
+          "1671",
+          "1417",
+          "1411",
+          "1306",
+          "915"
+        ],
+        "answer_field_distinct_values": 5,
+        "answer_field_modal_share": 0.2,
+        "p_answer_by_uniform_guess": 0.2
+      },
+      "violations": [],
+      "B1_gate_valid": true,
+      "B2_answer_differs": true,
+      "B3_unique_extremum": true,
+      "prompt": "The OurAirports open dataset lists every civil aerodrome in Switzerland with its elevation, service status and identifier codes. Restrict attention to aerodromes in that country classified as medium or large and flagged as currently having scheduled commercial service. Among only those, one sits at a greater elevation above sea level than any other. Identify that single aerodrome and report its four-character ICAO identifier. Confirm the same identifier against an independent structured reference before answering. Give the identifier alone, in capital letters, with no surrounding words.",
+      "secs": 0.9
+    },
+    "health and medicine": {
+      "category": "health and medicine",
+      "alt_kwargs": {
+        "condition": "multiple sclerosis",
+        "phase": "PHASE3"
+      },
+      "primary_answer": "NCT00021697",
+      "status": "ok",
+      "alt_answer": "NCT00473213",
+      "alt_entity": "Optimizing IFN Beta - 1B Dose",
+      "n_base": 198,
+      "source_operators": [
+        "US Food and Drug Administration",
+        "US National Institutes of Health",
+        "Wikimedia Foundation"
+      ],
+      "confirming_operators": [
+        "Wikimedia Foundation"
+      ],
+      "ranking_evidence": {
+        "label": "health",
+        "mode": "min",
+        "n_base": 198,
+        "n_tied_at_extremum": 1,
+        "distinct_keys": 167,
+        "winner_position_in_api_order": 77,
+        "winner_is_first_returned": false,
+        "winner_is_last_returned": false,
+        "top_keys": [
+          "1999-09",
+          "2001-01",
+          "2001-05",
+          "2001-07",
+          "2001-11"
+        ],
+        "answer_field_distinct_values": 198,
+        "answer_field_modal_share": 0.0051,
+        "p_answer_by_uniform_guess": 0.0051
+      },
+      "violations": [],
+      "B1_gate_valid": true,
+      "B2_answer_differs": true,
+      "B3_unique_extremum": true,
+      "prompt": "The United States public clinical trials registry records interventional studies of multiple sclerosis, each with a phase, a recruitment status and a start date. Consider only those studies recorded as phase 3 and as having reached completion. Within that set exactly one began earlier than every other. Report the registry identifier assigned to that single earliest study. Verify the identifier appears on an independent structured knowledge base. Answer with the identifier alone, in its standard eight-digit registry form.",
+      "secs": 0.5
+    },
+    "history": {
+      "category": "history",
+      "alt_kwargs": {
+        "category_key": "Chemistry",
+        "y0": "1901",
+        "y1": "1935"
+      },
+      "primary_answer": "1903",
+      "status": "fail",
+      "error": "history: no Chemistry prize shared by three or more between 1901-1935",
+      "etype": "TrapUnavailable",
+      "tb": "Traceback (most recent call last):\n  File \"/workspace/seal_deploy/cross_cohort.py\", line 79, in main\n    cand = ct.GENERATORS[cat](**kwargs)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/workspace/seal_deploy/category_traps.py\", line 725, in gen_history\n    return Candidate(\n        ^^^^^^^^^^^^^^\ncategory_traps.TrapUnavailable: history: no Chemistry prize shared by three or more between 1901-1935\n",
+      "B1_gate_valid": false,
+      "B2_answer_differs": null,
+      "B3_unique_extremum": null,
+      "secs": 7.1
+    },
+    "legal": {
+      "category": "legal",
+      "alt_kwargs": {
+        "vols": "(512, 517, 520, 524)"
+      },
+      "primary_answer": "768",
+      "status": "ok",
+      "alt_answer": "484",
+      "alt_entity": "44 Liquormart, Inc. v. Rhode Island",
+      "n_base": 58,
+      "source_operators": [
+        "Cornell University",
+        "Free Law Project",
+        "Harvard Law School Library Innovation Lab"
+      ],
+      "confirming_operators": [
+        "Cornell University",
+        "Free Law Project"
+      ],
+      "ranking_evidence": {
+        "label": "legal vol 517",
+        "mode": "min",
+        "n_base": 58,
+        "n_tied_at_extremum": 1,
+        "distinct_keys": 58,
+        "winner_position_in_api_order": 14,
+        "winner_is_first_returned": false,
+        "winner_is_last_returned": false,
+        "top_keys": [
+          "44 liquormart, inc. v. rhode island",
+          "allen v. united states",
+          "auciello iron works, inc. v. national labor relations board",
+          "barnett bank of marion county, n. a. v. nelson",
+          "bmw of north america, inc. v. gore"
+        ],
+        "answer_field_distinct_values": 58,
+        "answer_field_modal_share": 0.0172,
+        "p_answer_by_uniform_guess": 0.0172
+      },
+      "violations": [],
+      "B1_gate_valid": true,
+      "B2_answer_differs": true,
+      "B3_unique_extremum": true,
+      "prompt": "The Caselaw Access Project distributes, as one machine-readable file, metadata for every case reported in volume 517 of United States Reports, giving each case a short name together with the first and last printed page it occupies. Consider only those cases in that volume which run to more than a single printed page. Order the short names of those cases alphabetically and take whichever name comes first. Report the printed page of United States Reports on which that first-named case begins. Confirm the page against an independently published text of the same decision. Answer with the page number alone, with no volume, no reporter abbreviation and no other words.",
+      "secs": 45.3
+    },
+    "politics": {
+      "category": "politics",
+      "alt_kwargs": {
+        "year": "2003"
+      },
+      "primary_answer": "1998-12-22",
+      "status": "ok",
+      "alt_answer": "2003-09-30",
+      "alt_entity": "Executive Order 13317",
+      "n_base": 36,
+      "source_operators": [
+        "Free Law Project",
+        "US Office of the Federal Register",
+        "Wikimedia Foundation"
+      ],
+      "confirming_operators": [
+        "US Office of the Federal Register"
+      ],
+      "ranking_evidence": {
+        "label": "politics",
+        "mode": "max",
+        "n_base": 36,
+        "n_tied_at_extremum": 1,
+        "distinct_keys": 36,
+        "winner_position_in_api_order": 35,
+        "winner_is_first_returned": false,
+        "winner_is_last_returned": true,
+        "top_keys": [
+          "13317",
+          "13316",
+          "13315",
+          "13314",
+          "13313"
+        ],
+        "answer_field_distinct_values": 31,
+        "answer_field_modal_share": 0.0556,
+        "p_answer_by_uniform_guess": 0.0278
+      },
+      "violations": [],
+      "B1_gate_valid": true,
+      "B2_answer_differs": true,
+      "B3_unique_extremum": true,
+      "prompt": "The United States Office of the Federal Register publishes every presidential executive order, each carrying a sequential order number and a publication date. Consider only the executive orders that the register published during 2003. Among those, one bears a higher sequential order number than any other issued that year. Report the date on which that highest-numbered order of the year was published in the register. Verify the order number against an independent public record. Answer with the date alone in year, month and day order, using hyphens.",
+      "secs": 0.4
+    },
+    "shopping": {
+      "category": "shopping",
+      "alt_kwargs": {
+        "category_tag": "en:chocolates",
+        "country": "france"
+      },
+      "primary_answer": "Nestl\u00e9",
+      "status": "ok",
+      "alt_answer": "Nestl\u00e9",
+      "alt_entity": "NESTL\u00c9 DESSERT 80% Puissant 170g",
+      "n_base": 98,
+      "source_operators": [
+        "Open Food Facts",
+        "UPCitemdb",
+        "Wikimedia Foundation"
+      ],
+      "confirming_operators": [
+        "Open Food Facts"
+      ],
+      "ranking_evidence": {
+        "label": "shopping",
+        "mode": "max",
+        "n_base": 98,
+        "n_tied_at_extremum": 1,
+        "distinct_keys": 98,
+        "winner_position_in_api_order": 55,
+        "winner_is_first_returned": false,
+        "winner_is_last_returned": false,
+        "top_keys": [
+          "8445290991867",
+          "8425197712024",
+          "8402001025594",
+          "7622400013935",
+          "7622210995100"
+        ],
+        "answer_field_distinct_values": 46,
+        "answer_field_modal_share": 0.102,
+        "p_answer_by_uniform_guess": 0.0918
+      },
+      "violations": [],
+      "B1_gate_valid": true,
+      "B2_answer_differs": false,
+      "B3_unique_extremum": true,
+      "prompt": "The Open Food Facts cooperative database catalogues packaged grocery products, recording for each one its barcode, its brand and its nutritional grade. Restrict attention to products filed under the chocolates category and sold in the france, keeping only those that carry a nutritional grade. Among that restricted set, one product's barcode is numerically greater than every other. Report the brand recorded against that single product. Check the barcode against an independent product register. Give the brand name alone, exactly as the database records it.",
+      "secs": 11.8
+    },
+    "sports": {
+      "category": "sports",
+      "alt_kwargs": {
+        "pairs": "((119, 'Los Angeles Dodgers', 1988), (158, 'Milwaukee Brewers', 1982), (117, 'Houston Astros', 2005))"
+      },
+      "primary_answer": "Newton",
+      "status": "ok",
+      "alt_answer": "Clio",
+      "alt_entity": "Don Sutton",
+      "n_base": 38,
+      "source_operators": [
+        "Major League Baseball",
+        "Retrosheet",
+        "Wikimedia Foundation"
+      ],
+      "confirming_operators": [
+        "Retrosheet",
+        "Wikimedia Foundation"
+      ],
+      "ranking_evidence": {
+        "label": "sports Los Angeles Dodgers 1988",
+        "mode": "min",
+        "n_base": 38,
+        "n_tied_at_extremum": 1,
+        "distinct_keys": 38,
+        "winner_position_in_api_order": 34,
+        "winner_is_first_returned": false,
+        "winner_is_last_returned": false,
+        "top_keys": [
+          "1945-04-02",
+          "1949-09-13",
+          "1954-02-02",
+          "1955-03-15",
+          "1955-11-26"
+        ],
+        "answer_field_distinct_values": 35,
+        "answer_field_modal_share": 0.0789,
+        "p_answer_by_uniform_guess": 0.0263
+      },
+      "violations": [],
+      "B1_gate_valid": true,
+      "B2_answer_differs": true,
+      "B3_unique_extremum": true,
+      "prompt": "The official Major League Baseball statistics service publishes the full season roster of the Los Angeles Dodgers for 1988, listing every player the club carried that year with his date and place of birth. Consider only the players appearing on that full season roster. Exactly one of them was born earlier than every other player on the list. Report the city of birth that the service records for that single oldest player. Confirm the birthplace against two references independent of the league. Give the city name alone, as recorded, with no state, no country and no other words.",
+      "secs": 0.2
+    },
+    "travel": {
+      "category": "travel",
+      "alt_kwargs": {
+        "airline_iata": "LH",
+        "hub_iata": "FRA"
+      },
+      "primary_answer": "IVL",
+      "status": "ok",
+      "alt_answer": "HEL",
+      "alt_entity": "Helsinki Vantaa Airport",
+      "n_base": 171,
+      "source_operators": [
+        "OpenFlights",
+        "OurAirports",
+        "Wikimedia Foundation"
+      ],
+      "confirming_operators": [
+        "OurAirports"
+      ],
+      "ranking_evidence": {
+        "label": "travel",
+        "mode": "max",
+        "n_base": 171,
+        "n_tied_at_extremum": 1,
+        "distinct_keys": 171,
+        "winner_position_in_api_order": 62,
+        "winner_is_first_returned": false,
+        "winner_is_last_returned": false,
+        "top_keys": [
+          "60.317199707031",
+          "60.29339981",
+          "60.121",
+          "59.80030059814453",
+          "59.651901245117"
+        ],
+        "answer_field_distinct_values": 171,
+        "answer_field_modal_share": 0.0058,
+        "p_answer_by_uniform_guess": 0.0058
+      },
+      "violations": [],
+      "B1_gate_valid": true,
+      "B2_answer_differs": true,
+      "B3_unique_extremum": true,
+      "prompt": "The OpenFlights project distributes an airline route table and a separate airport table, each as a plain delimited file covering worldwide civil aviation. Consider only the nonstop destinations served by the carrier with IATA code LH departing from its hub at FRA, as recorded in that route table. Join those destinations to the airport table and find the one lying furthest north. Report the three-letter IATA code of that single northernmost destination. Cross-check the coordinates against a second independent aerodrome register. Answer with the three-letter code only, capitalised, and nothing else.",
+      "secs": 0.5
+    },
+    "tv shows and movies": {
+      "category": "tv shows and movies",
+      "alt_kwargs": {
+        "years": "(1996, 2001)",
+        "genres": "('Fantasy', 'Crime', 'Mystery')"
+      },
+      "primary_answer": "tt0870980",
+      "status": "ok",
+      "alt_answer": "tt0281442",
+      "alt_entity": "Fun at the Funeral Parlour",
+      "n_base": 64,
+      "source_operators": [
+        "IMDb (Amazon)",
+        "TVmaze",
+        "Wikimedia Foundation"
+      ],
+      "confirming_operators": [
+        "TVmaze",
+        "Wikimedia Foundation"
+      ],
+      "ranking_evidence": {
+        "label": "tv 2001/Crime",
+        "mode": "max",
+        "n_base": 64,
+        "n_tied_at_extremum": 1,
+        "distinct_keys": 18,
+        "winner_position_in_api_order": 23,
+        "winner_is_first_returned": false,
+        "winner_is_last_returned": false,
+        "top_keys": [
+          "390",
+          "375",
+          "185",
+          "102",
+          "90"
+        ],
+        "answer_field_distinct_values": 64,
+        "answer_field_modal_share": 0.0156,
+        "p_answer_by_uniform_guess": 0.0156
+      },
+      "violations": [],
+      "B1_gate_valid": true,
+      "B2_answer_differs": true,
+      "B3_unique_extremum": true,
+      "prompt": "The published IMDb title export lists every television series it indexes, giving each one a start year, its genre labels and its typical episode running time in minutes. Consider only entries typed as a television series, labelled with the Crime genre, and recorded as starting in 2001. Among only those series, exactly one carries a longer recorded episode running time than any other. Report the IMDb title identifier of that single series. Confirm the identifier against two independent references. Give the identifier alone, beginning with its two letters, and nothing else.",
+      "secs": 17.3
+    },
+    "video games": {
+      "category": "video games",
+      "alt_kwargs": {
+        "appids": "(400, 620, 730, 4000, 220, 550, 240, 70, 242760, 413150, 431960, 322330)"
+      },
+      "primary_answer": "Double Fine Productions",
+      "status": "fail",
+      "error": "video games: Wikidata P178 gave None, storefront says 'Valve'",
+      "etype": "TrapUnavailable",
+      "tb": "Traceback (most recent call last):\n  File \"/workspace/seal_deploy/cross_cohort.py\", line 79, in main\n    cand = ct.GENERATORS[cat](**kwargs)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/workspace/seal_deploy/category_traps.py\", line 1285, in gen_video_games\n    # 14. VIDEO GAMES -- Valve x Wikimedia x PEGI\n            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\ncategory_traps.TrapUnavailable: video games: Wikidata P178 gave None, storefront says 'Valve'\n",
+      "B1_gate_valid": false,
+      "B2_answer_differs": null,
+      "B3_unique_extremum": null,
+      "secs": 1.8
+    }
+  },
+  "counts": {
+    "reproduced": 13,
+    "answer_differs": 11,
+    "total": 16
+  }
+}

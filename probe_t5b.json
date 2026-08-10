@@ -1,0 +1,402 @@
+{
+  "education": {
+    "Waterford Institute of Technology": {
+      "n": 20,
+      "recs": [
+        {
+          "id": "https://ror.org/04k9e4w52",
+          "names": [
+            "Waterford Institute"
+          ],
+          "links": [
+            "https://www.waterford.org/",
+            "https://en.wikipedia.org/wiki/Waterford_School"
+          ],
+          "status": "active"
+        },
+        {
+          "id": "https://ror.org/007pvy114",
+          "names": [
+            "Ardkeen Hospital",
+            "Ospid\u00e9al na hOllscoile, Port L\u00e1irge",
+            "UHW"
+          ],
+          "links": [
+            "https://www.hse.ie/eng/services/list/3/acutehospitals/hospitals/waterford/",
+            "https://en.wikipedia.org/wiki/University_Hospital_Waterford"
+          ],
+          "status": "active"
+        },
+        {
+          "id": "https://ror.org/011jwng84",
+          "names": [
+            "KIT",
+            "Kolin Institute of Technology",
+            "Kol\u00ednsk\u00fd Technologick\u00fd Institut"
+          ],
+          "links": [
+            "http://www.koltech.cz/o_nas_en.php"
+          ],
+          "status": "active"
+        },
+        {
+          "id": "https://ror.org/017g1tr52",
+          "names": [
+            "Morrison Institute of Technology",
+            "Morrison Tech"
+          ],
+          "links": [
+            "https://www.morrisontech.edu/"
+          ],
+          "status": "active"
+        },
+        {
+          "id": "https://ror.org/00ykac431",
+          "names": [
+            "ICT",
+            "Institute of Chemical Technology",
+            "University Department of Chemical Technology"
+          ],
+          "links": [
+            "http://www.ictmumbai.edu.in/",
+            "https://en.wikipedia.org/wiki/Institute_of_Chemical_Technology"
+          ],
+          "status": "active"
+        },
+        {
+          "id": "https://ror.org/02kx4r613",
+          "names": [
+            "GIRVAN",
+            "Girvan Institute of Technology"
+          ],
+          "links": [
+            "http://www.girvan.org/"
+          ],
+          "status": "active"
+        }
+      ],
+      "wit_ie_present": false
+    },
+    "South East Technological University": {
+      "n": 20,
+      "recs": [
+        {
+          "id": "https://ror.org/03fgx6868",
+          "names": [
+            "Ollscoil Teicneola\u00edochta and Oirdheiscirt",
+            "South East Technological University"
+          ],
+          "links": [
+            "https://www.setu.ie",
+            "https://en.wikipedia.org/wiki/South_East_Technological_University"
+          ],
+          "status": "active"
+        },
+        {
+          "id": "https://ror.org/00m04y575",
+          "names": [
+            "G\u00fcneydo\u011fu Avrupa \u00dcniversitesi",
+            "SEEU",
+            "South East European University"
+          ],
+          "links": [
+            "https://www.seeu.edu.mk/",
+            "https://en.wikipedia.org/wiki/South_East_European_University"
+          ],
+          "status": "active"
+        },
+        {
+          "id": "https://ror.org/001d11g88",
+          "names": [
+            "ARISER",
+            "Agricultural Research Institute for South-East Region",
+            "All-Union Institute of Grain economy VIZH"
+          ],
+          "links": [
+            "https://www.arisersar.ru/ariser.htm"
+          ],
+          "status": "active"
+        },
+        {
+          "id": "https://ror.org/033s2jy46",
+          "names": [
+            "South East Water (Australia)"
+          ],
+          "links": [
+            "http://southeastwater.com.au/Pages/Home.aspx",
+            "https://en.wikipedia.org/wiki/South_East_Water_(Australia)"
+          ],
+          "status": "active"
+        },
+        {
+          "id": "https://ror.org/037bjx704",
+          "names": [
+            "CCSEO",
+            "Cancer Care South East"
+          ],
+          "links": [
+            "http://cancercaresoutheast.ca/"
+          ],
+          "status": "active"
+        },
+        {
+          "id": "https://ror.org/02q27pq78",
+          "names": [
+            "South East Rivers Trust",
+            "Wandle Trust"
+          ],
+          "links": [
+            "https://www.southeastriverstrust.org"
+          ],
+          "status": "active"
+        }
+      ],
+      "wit_ie_present": false
+    },
+    "wikidata_P856": {
+      "qid": "Q7974025",
+      "site": "http://www.wit.ie",
+      "matches_wit_ie": true
+    },
+    "live::https://www.wit.ie/": "FetchError: https://www.wit.ie/ -> HTTP 403",
+    "live::https://www.setu.ie/": "FetchError: https://www.setu.ie/ -> HTTP 403",
+    "ok": true
+  },
+  "shopping": {
+    "ok": true,
+    "n_codes": 15,
+    "upcitemdb_coverage": "1/15",
+    "wikidata_gtin_coverage": "0/15",
+    "rows": [
+      {
+        "code": "7613036900096",
+        "wd_gtin": [],
+        "upc_total": 0,
+        "upc_title": ""
+      },
+      {
+        "code": "7613035676497",
+        "wd_gtin": [],
+        "upc_total": 0,
+        "upc_title": ""
+      },
+      {
+        "code": "20941130",
+        "wd_gtin": [],
+        "upc_total": 0,
+        "upc_title": ""
+      },
+      {
+        "code": "4056489440628",
+        "wd_gtin": [],
+        "upc_total": 0,
+        "upc_title": ""
+      },
+      {
+        "code": "8410100020549",
+        "wd_gtin": [],
+        "upc_total": 0,
+        "upc_title": ""
+      },
+      {
+        "code": "4056489224525",
+        "wd_gtin": [],
+        "upc_total": 0,
+        "upc_title": ""
+      },
+      {
+        "code": "8711000522967",
+        "wd_gtin": [],
+        "upc_total": 0,
+        "upc_title": ""
+      },
+      {
+        "code": "7613036305846",
+        "wd_gtin": [],
+        "upc_err": "FetchError: https://api.upcitemdb.com/prod/trial/lookup?upc=761303630584"
+      },
+      {
+        "code": "7613033174667",
+        "wd_gtin": [],
+        "upc_total": 1,
+        "upc_title": "Dolce Gusto Cafe Au Lait (3 Boxes,total 48 Capsules ) 48 Ser"
+      },
+      {
+        "code": "20991241",
+        "wd_gtin": [],
+        "upc_total": 0,
+        "upc_title": ""
+      },
+      {
+        "code": "3560071275808",
+        "wd_gtin": [],
+        "upc_total": 0,
+        "upc_title": ""
+      },
+      {
+        "code": "4337256381185",
+        "wd_gtin": [],
+        "upc_total": 0,
+        "upc_title": ""
+      },
+      {
+        "code": "4047247838849",
+        "wd_gtin": [],
+        "upc_total": 0,
+        "upc_title": ""
+      },
+      {
+        "code": "8445291259331",
+        "wd_gtin": [],
+        "upc_total": 0,
+        "upc_title": ""
+      },
+      {
+        "code": "20084035",
+        "wd_gtin": [],
+        "upc_err": "FetchError: https://api.upcitemdb.com/prod/trial/lookup?upc=20084035 -> "
+      }
+    ],
+    "verdict": "barcode has independent coverage"
+  },
+  "politics": {
+    "api.govinfo.gov/packages/FR-2003-03-28/summary?api_key=DEM": "{\"dateIssued\": \"2003-03-28\", \"issue\": \"60\", \"documentType\": \"FR\", \"packageId\": \"FR-2003-03-28\", \"collectionCode\": \"FR\", \"detailsLink\": \"https://www.govinfo.gov/app/details/FR-2003-03-28\", \"title\": \"Federal Register Volume 68 Issue 60 (March 28, 2003)\", \"branch\": \"executive\", \"collectionName\": \"Feder",
+    "www.govinfo.gov/wssearch/rb/cpd/2003/executiveorder?fetchC": "{\"childNodes\": [{\"childNodes\": [], \"nodeValue\": {\"navigator\": \"pubyearnav\", \"level\": 1, \"displayValue\": \"2026\", \"value\": \"2026\", \"docCount\": 443, \"browsePath\": \"2026\", \"agencyLevel\": 0, \"nodeStatus\": \"C\", \"index\": \"0\", \"part\": false, \"forGpo\": false, \"hasChildren\": false, \"hasParents\": false, \"rootN",
+    "api.govinfo.gov/collections/CPD/2003-03-25T00:00:00Z?offse": "{\"count\": 18458, \"message\": null, \"nextPage\": \"https://api.govinfo.gov/collections/CPD/2003-03-25T00:00:00Z?offset=5&pageSize=5\", \"previousPage\": null, \"packages\": [{\"congress\": null, \"dateIssued\": \"2026-07-01\", \"docClass\": \"PRESDOC\", \"lastModified\": \"2026-08-10T19:19:21Z\", \"packageId\": \"DCPD-202600",
+    "wd_by_value": [],
+    "ok": true
+  },
+  "tv": {
+    "tvmaze_series_lookup": {
+      "id": 169,
+      "name": "Breaking Bad",
+      "premiered": "2008-01-20",
+      "runtime": 60
+    },
+    "n_buckets": 685,
+    "n_candidates": 302,
+    "top_candidates": [
+      {
+        "year": 2001,
+        "genre": "Comedy",
+        "n": 398,
+        "top": "tt0303496",
+        "top_rt": 195,
+        "second_rt": 140,
+        "title": "Micawber",
+        "sep": 1.393
+      },
+      {
+        "year": 2004,
+        "genre": "Drama",
+        "n": 375,
+        "top": "tt0385372",
+        "top_rt": 200,
+        "second_rt": 192,
+        "title": "Beyond Borders",
+        "sep": 1.042
+      },
+      {
+        "year": 1998,
+        "genre": "Comedy",
+        "n": 359,
+        "top": "tt0138280",
+        "top_rt": 200,
+        "second_rt": 190,
+        "title": "Tre per sempre",
+        "sep": 1.053
+      },
+      {
+        "year": 2000,
+        "genre": "Comedy",
+        "n": 347,
+        "top": "tt0306095",
+        "top_rt": 195,
+        "second_rt": 180,
+        "title": "Una storia qualunque",
+        "sep": 1.083
+      },
+      {
+        "year": 2005,
+        "genre": "Reality-TV",
+        "n": 345,
+        "top": "tt0862558",
+        "top_rt": 200,
+        "second_rt": 190,
+        "title": "Anatomy for Beginners",
+        "sep": 1.053
+      },
+      {
+        "year": 2001,
+        "genre": "Documentary",
+        "n": 321,
+        "top": "tt1524954",
+        "top_rt": 194,
+        "second_rt": 147,
+        "title": "Battlefields",
+        "sep": 1.32
+      },
+      {
+        "year": 1996,
+        "genre": "Comedy",
+        "n": 319,
+        "top": "tt9892626",
+        "top_rt": 193,
+        "second_rt": 185,
+        "title": "Dum posledn\u00ed radosti",
+        "sep": 1.043
+      },
+      {
+        "year": 2006,
+        "genre": "Talk-Show",
+        "n": 302,
+        "top": "tt1075767",
+        "top_rt": 195,
+        "second_rt": 190,
+        "title": "Kalokairines selides",
+        "sep": 1.026
+      },
+      {
+        "year": 2001,
+        "genre": "Drama",
+        "n": 296,
+        "top": "tt3793920",
+        "top_rt": 200,
+        "second_rt": 195,
+        "title": "Bes Dakikalik Bir Mesele",
+        "sep": 1.026
+      },
+      {
+        "year": 2002,
+        "genre": "Drama",
+        "n": 295,
+        "top": "tt0307734",
+        "top_rt": 200,
+        "second_rt": 180,
+        "title": "Crime & Punishment",
+        "sep": 1.111
+      },
+      {
+        "year": 1994,
+        "genre": "Comedy",
+        "n": 285,
+        "top": "tt0298763",
+        "top_rt": 180,
+        "second_rt": 120,
+        "title": "World Tour of Scotland",
+        "sep": 1.5
+      },
+      {
+        "year": 1992,
+        "genre": "Comedy",
+        "n": 265,
+        "top": "tt0270804",
+        "top_rt": 180,
+        "second_rt": 150,
+        "title": "Soccer AM",
+        "sep": 1.2
+      }
+    ],
+    "ok": true
+  }
+}

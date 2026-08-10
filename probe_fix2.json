@@ -1,0 +1,340 @@
+{
+  "cl_day_1992-01-10": {
+    "top_keys": [
+      "count",
+      "next",
+      "previous",
+      "results"
+    ],
+    "count": 16,
+    "n": 16,
+    "has_next": false,
+    "cases": [
+      {
+        "n": "Republic of Argentina v. Weltover, Inc.",
+        "c": [
+          "502 U.S. 1024"
+        ]
+      },
+      {
+        "n": "Republic of Argentina v. Weltover, Inc.",
+        "c": [
+          "502 U.S. 1024",
+          "112 S. Ct. 858"
+        ]
+      },
+      {
+        "n": "United States v. Alvarez-Machain",
+        "c": [
+          "502 U.S. 1024"
+        ]
+      },
+      {
+        "n": "United States v. Alvarez-Machain",
+        "c": [
+          "502 U.S. 1024",
+          "112 S. Ct. 857"
+        ]
+      },
+      {
+        "n": "Fort Gratiot Sanitary Landfill, Inc. v. Michigan Department of Natural Resources",
+        "c": [
+          "502 U.S. 1024"
+        ]
+      },
+      {
+        "n": "Fort Gratiot Sanitary Landfill, Inc. v. Michigan Department of Natural Resources",
+        "c": [
+          "502 U.S. 1024",
+          "112 S. Ct. 857"
+        ]
+      },
+      {
+        "n": "Forsyth County v. Nationalist Movement",
+        "c": [
+          "502 U.S. 1023"
+        ]
+      },
+      {
+        "n": "Forsyth County v. Nationalist Movement",
+        "c": [
+          "502 U.S. 1023",
+          "112 S. Ct. 857",
+          "116 L. Ed. 2d 765",
+          "60 U.S.L.W. 3475",
+          "1992 U.S. LEXIS 301"
+        ]
+      },
+      {
+        "n": "New York v. United States",
+        "c": [
+          "502 U.S. 1023"
+        ]
+      },
+      {
+        "n": "New York v. United States",
+        "c": [
+          "502 U.S. 1023"
+        ]
+      },
+      {
+        "n": "Ankenbrandt ex rel. L. R. v. Richards",
+        "c": [
+          "502 U.S. 1023"
+        ]
+      },
+      {
+        "n": "Ankenbrandt ex rel. L. R. v. Richards",
+        "c": [
+          "502 U.S. 1023"
+        ]
+      },
+      {
+        "n": "International Society for Krishna Consciousness, Inc. v. Lee",
+        "c": [
+          "502 U.S. 1022"
+        ]
+      },
+      {
+        "n": "International Society for Krishna Consciousness, Inc. v. Lee",
+        "c": [
+          "502 U.S. 1022"
+        ]
+      },
+      {
+        "n": "Cotlow v. Emison",
+        "c": [
+          "502 U.S. 1022"
+        ]
+      },
+      {
+        "n": "Cotlow v. Emison",
+        "c": [
+          "502 U.S. 1022",
+          "112 S. Ct. 855"
+        ]
+      }
+    ]
+  },
+  "cl_day_1993-06-28": {
+    "top_keys": [
+      "count",
+      "next",
+      "previous",
+      "results"
+    ],
+    "count": 419,
+    "n": 20,
+    "has_next": true,
+    "cases": [
+      {
+        "n": "Hearn v. United States",
+        "c": [
+          "509 U.S. 933"
+        ]
+      },
+      {
+        "n": "Hearn v. United States",
+        "c": [
+          "509 U.S. 933",
+          "113 S. Ct. 3064"
+        ]
+      },
+      {
+        "n": "Stevens v. Zant",
+        "c": [
+          "509 U.S. 933"
+        ]
+      },
+      {
+        "n": "Stevens v. Zant",
+        "c": [
+          "509 U.S. 933"
+        ]
+      },
+      {
+        "n": "Withrow v. Williams",
+        "c": [
+          "509 U.S. 933"
+        ]
+      },
+      {
+        "n": "Withrow v. Williams",
+        "c": [
+          "509 U.S. 933"
+        ]
+      },
+      {
+        "n": "Shalala v. Gutierrez",
+        "c": [
+          "509 U.S. 933"
+        ]
+      },
+      {
+        "n": "Shalala v. Gutierrez",
+        "c": [
+          "509 U.S. 933",
+          "113 S. Ct. 3064"
+        ]
+      },
+      {
+        "n": "Harris v. Collins",
+        "c": [
+          "509 U.S. 933"
+        ]
+      },
+      {
+        "n": "Harris v. Collins",
+        "c": [
+          "509 U.S. 933",
+          "113 S. Ct. 3069"
+        ]
+      },
+      {
+        "n": "Owens-Illinois, Inc. v. Pool",
+        "c": [
+          "509 U.S. 933"
+        ]
+      },
+      {
+        "n": "Owens-Illinois, Inc. v. Pool",
+        "c": [
+          "509 U.S. 933",
+          "113 S. Ct. 3064"
+        ]
+      },
+      {
+        "n": "Duff-Smith v. Collins",
+        "c": [
+          "509 U.S. 933"
+        ]
+      },
+      {
+        "n": "Duff-Smith v. Collins",
+        "c": [
+          "509 U.S. 933",
+          "113 S. Ct. 3069"
+        ]
+      },
+      {
+        "n": "Stevens v. Zant",
+        "c": [
+          "509 U.S. 933"
+        ]
+      },
+      {
+        "n": "Stevens v. Zant",
+        "c": [
+          "509 U.S. 933",
+          "113 S. Ct. 3069"
+        ]
+      },
+      {
+        "n": "Ryman v. United States",
+        "c": [
+          "509 U.S. 932"
+        ]
+      },
+      {
+        "n": "Ryman v. United States",
+        "c": [
+          "509 U.S. 932",
+          "113 S. Ct. 3063"
+        ]
+      },
+      {
+        "n": "San-Miguel v. United States",
+        "c": [
+          "509 U.S. 932"
+        ]
+      },
+      {
+        "n": "San-Miguel v. United States",
+        "c": [
+          "509 U.S. 932",
+          "113 S. Ct. 3062"
+        ]
+      }
+    ]
+  },
+  "wd_Tim Raines": {
+    "n": 2,
+    "hits": [
+      {
+        "id": "Q3025632",
+        "label": "Tim Raines",
+        "desc": "American Hall of Fame baseball player and baseball coach"
+      },
+      {
+        "id": "Q3528679",
+        "label": "Tim Raines, Jr.",
+        "desc": "American baseball player"
+      }
+    ]
+  },
+  "wd_Chili Davis": {
+    "n": 1,
+    "hits": [
+      {
+        "id": "Q2963613",
+        "label": "Chili Davis",
+        "desc": "Jamaican-born American baseball player"
+      }
+    ]
+  },
+  "sdb_Tim Raines": {
+    "n": 1,
+    "rows": [
+      {
+        "name": "Tim Raines",
+        "sport": "Baseball",
+        "birth": null,
+        "dob": "1959-09-16"
+      }
+    ]
+  },
+  "sdb_Danny Darwin": {
+    "n": 1,
+    "rows": [
+      {
+        "name": "Danny Darwin",
+        "sport": "Baseball",
+        "birth": null,
+        "dob": "1955-10-25"
+      }
+    ]
+  },
+  "retro_BIOFILE.TXT": {
+    "ok": true,
+    "bytes": 4117520,
+    "head": [
+      "PLAYERID,LAST,FIRST,NICKNAME,BIRTHDATE,BIRTH CITY,BIRTH STATE,BIRTH COUNTRY,PLAY DEBUT,PLAY LASTGAME,MGR DEBUT,MGR LASTGAME,COACH DEBUT,COACH LASTGAME,UMP DEBUT,UMP LASTGAME,DEATHDATE,DEATH CITY,DEATH STATE,DEATH COUNTRY,BATS,THROWS,HEIGHT,WEIGHT,CEMETERY,CEME CITY,CEME STATE,CEME COUNTRY,CEME NOTE,BIRTH NAME,NAME CHG,BAT CHG,HOF",
+      "aardd001,\"Aardsma\",\"David Allan\",\"David\",\"12/27/1981\",\"Denver\",\"Colorado\",\"USA\",\"04/06/2004\",\"08/23/2015\",,,,,,,,,,,R,R,\"6-05\",200,,,,,,,,,"
+    ]
+  },
+  "retro_biofile.csv": {
+    "ok": true,
+    "bytes": 4989085,
+    "head": [
+      "PLAYERID,LAST,FIRST,NICKNAME,BIRTHDATE,BIRTH.CITY,BIRTH.STATE,BIRTH.COUNTRY,PLAY.DEBUT,PLAY.LASTGAME,MGR.DEBUT,MGR.LASTGAME,COACH.DEBUT,COACH.LASTGAME,UMP.DEBUT,UMP.LASTGAME,DEATHDATE,DEATH.CITY,DEATH.STATE,DEATH.COUNTRY,BATS,THROWS,HEIGHT,WEIGHT,CEMETERY,CEME.CITY,CEME.STATE,CEME.COUNTRY,CEME.NOTE,BIRTH.NAME,NAME.CHG,BAT.CHG,HOF",
+      "\"aardd001\",\"Aardsma\",\"David Allan\",\"David\",\"12/27/1981\",\"Denver\",\"Colorado\",\"USA\",\"04/06/2004\",\"08/23/2015\",,,,,,,,,,,\"R\",\"R\",\"6-05\",200,,,,,,,,,"
+    ]
+  },
+  "retro_people-0.csv": {
+    "ok": true,
+    "bytes": 4193475,
+    "head": [
+      "key_person,key_uuid,key_mlbam,key_retro,key_bbref,key_bbref_minors,key_fangraphs,key_npb,key_sr_nfl,key_sr_nba,key_sr_nhl,key_wikidata,name_last,name_first,name_given,name_suffix,name_matrilineal,name_nick,birth_year,birth_month,birth_day,death_year,death_month,death_day,pro_played_first,pro_played_last,mlb_played_first,mlb_played_last,col_played_first,col_played_last,pro_managed_first,pro_managed_last,mlb_managed_first,mlb_managed_last,col_managed_first,col_managed_last,pro_umpired_first,pro_umpired_last,mlb_umpired_first,mlb_umpired_last",
+      "000007d9,000007d9-a2b6-47fd-bc61-e582f190e74a,472542,,,garcia001ado,,,,,,,Garcia,Adolfito,Adolfito,,,,1985,1,31,,,,2006,2008,,,,,,,,,,,,,,"
+    ]
+  },
+  "nom_Sanford, Florida, United States": {
+    "n": 1,
+    "rows": [
+      {
+        "name": "Sanford, Seminole County, Florida, United States",
+        "type": "administrative"
+      }
+    ]
+  }
+}

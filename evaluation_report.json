@@ -1,0 +1,1110 @@
+{
+  "evaluated_at": "2026-08-10T22:45:30Z",
+  "thresholds": {
+    "max_uniform_guess": 0.1,
+    "min_confirming_operators": 2,
+    "word_range": [
+      70,
+      150
+    ]
+  },
+  "per_trap": [
+    {
+      "category": "history",
+      "answer": "1975",
+      "field": "award year",
+      "tests": {
+        "T0_base_adequacy": {
+          "pass": true,
+          "detail": "n_ranked=21 (>= 5); isolation chooses among candidates"
+        },
+        "T1_uniqueness": {
+          "pass": true,
+          "detail": "n_tied_at_extremum=1"
+        },
+        "T2_guessability": {
+          "pass": true,
+          "detail": "answer occurs 1/21 times (p=0.04762), modal count 1, 21 distinct values, answer_is_strict_mode=False"
+        },
+        "T3_order_leak": {
+          "pass": true,
+          "detail": "winner at index 8 of 21 (depth 0.4), first=False last=False, H0 P(first|last)=0.0952"
+        },
+        "T3b_monotone_key": {
+          "pass": true,
+          "detail": "spearman(key, api_index)=0.261 (|rho| <= 0.95); key is off-axis"
+        },
+        "T4_separation": {
+          "pass": true,
+          "detail": "top1='aage niels bohr' top2='antoine henri becquerel' (non-numeric key, distinct)"
+        },
+        "T5_confirmation": {
+          "pass": false,
+          "detail": "1 independent witness(es): ['Wikimedia Foundation']; primary='Nobel Prize Outreach'; 3 source operator(s): ['Crossref', 'Nobel Prize Outreach', 'Wikimedia Foundation']"
+        },
+        "T6_gate": {
+          "pass": true,
+          "detail": "clean"
+        },
+        "T7_prompt_leak": {
+          "pass": true,
+          "detail": "word count 102; years named in prompt: 1901,2000"
+        }
+      },
+      "collection_is_explicit": false,
+      "verdict": "hold",
+      "primary_operator": "Nobel Prize Outreach",
+      "independent_witnesses": [
+        "Wikimedia Foundation"
+      ],
+      "witness_tier": "silver",
+      "evidence": {
+        "label": "history",
+        "mode": "min",
+        "n_base": 21,
+        "n_ranked": 21,
+        "spearman_key_vs_api_order": 0.261,
+        "n_tied_at_extremum": 1,
+        "distinct_keys": 21,
+        "winner_position_in_api_order": 8,
+        "winner_is_first_returned": false,
+        "winner_is_last_returned": false,
+        "top_keys": [
+          "aage niels bohr",
+          "antoine henri becquerel",
+          "charles hard townes",
+          "david m. lee",
+          "ernst ruska"
+        ],
+        "answer_field_distinct_values": 21,
+        "answer_field_n_values": 21,
+        "answer_field_max_count": 1,
+        "answer_field_count_of_answer": 1,
+        "answer_field_modal_share": 0.047619,
+        "p_answer_by_uniform_guess": 0.047619,
+        "_collection_is_explicit": false
+      }
+    },
+    {
+      "category": "finance",
+      "verdict": "unavailable",
+      "error": "gate rejected: [\"R3c every confirming source is run by the primary operator 'US Department of the Treasury'; a source restating itself is not a witness\"]",
+      "tests": {}
+    },
+    {
+      "category": "science and technology",
+      "answer": "2403.07505",
+      "field": "arXiv identifier",
+      "tests": {
+        "T0_base_adequacy": {
+          "pass": true,
+          "detail": "n_ranked=15 (>= 5); isolation chooses among candidates"
+        },
+        "T1_uniqueness": {
+          "pass": true,
+          "detail": "n_tied_at_extremum=1"
+        },
+        "T2_guessability": {
+          "pass": true,
+          "detail": "answer occurs 1/15 times (p=0.06667), modal count 1, 15 distinct values, answer_is_strict_mode=False"
+        },
+        "T3_order_leak": {
+          "pass": true,
+          "detail": "winner at index 5 of 15 (depth 0.3571), first=False last=False, H0 P(first|last)=0.1333"
+        },
+        "T3b_monotone_key": {
+          "pass": true,
+          "detail": "spearman(key, api_index)=0.0255 (|rho| <= 0.95); key is off-axis"
+        },
+        "T4_separation": {
+          "pass": true,
+          "detail": "top1=20 top2=5 gap=15 rel=0.75"
+        },
+        "T5_confirmation": {
+          "pass": true,
+          "detail": "2 independent witness(es): ['DataCite', 'OurResearch (OpenAlex)']; primary='Cornell University'; 3 source operator(s): ['Cornell University', 'DataCite', 'OurResearch (OpenAlex)']"
+        },
+        "T6_gate": {
+          "pass": true,
+          "detail": "clean"
+        },
+        "T7_prompt_leak": {
+          "pass": true,
+          "detail": "word count 89; years named in prompt: 2024"
+        }
+      },
+      "collection_is_explicit": false,
+      "verdict": "ship",
+      "primary_operator": "Cornell University",
+      "independent_witnesses": [
+        "DataCite",
+        "OurResearch (OpenAlex)"
+      ],
+      "witness_tier": "gold",
+      "evidence": {
+        "label": "science astro-ph.EP/2024-03-12",
+        "mode": "max",
+        "n_base": 15,
+        "n_ranked": 15,
+        "spearman_key_vs_api_order": 0.0255,
+        "n_tied_at_extremum": 1,
+        "distinct_keys": 6,
+        "winner_position_in_api_order": 5,
+        "winner_is_first_returned": false,
+        "winner_is_last_returned": false,
+        "top_keys": [
+          "20",
+          "5",
+          "5",
+          "5",
+          "4"
+        ],
+        "answer_field_distinct_values": 15,
+        "answer_field_n_values": 15,
+        "answer_field_max_count": 1,
+        "answer_field_count_of_answer": 1,
+        "answer_field_modal_share": 0.066667,
+        "p_answer_by_uniform_guess": 0.066667,
+        "_collection_is_explicit": false
+      }
+    },
+    {
+      "category": "art",
+      "answer": "71.84",
+      "field": "accession number",
+      "tests": {
+        "T0_base_adequacy": {
+          "pass": true,
+          "detail": "n_ranked=89 (>= 5); isolation chooses among candidates"
+        },
+        "T1_uniqueness": {
+          "pass": true,
+          "detail": "n_tied_at_extremum=1"
+        },
+        "T2_guessability": {
+          "pass": true,
+          "detail": "answer occurs 1/89 times (p=0.01124), modal count 1, 89 distinct values, answer_is_strict_mode=False"
+        },
+        "T3_order_leak": {
+          "pass": true,
+          "detail": "winner at index 32 of 89 (depth 0.3636), first=False last=False, H0 P(first|last)=0.0225"
+        },
+        "T3b_monotone_key": {
+          "pass": true,
+          "detail": "spearman(key, api_index)=-0.0252 (|rho| <= 0.95); key is off-axis"
+        },
+        "T4_separation": {
+          "pass": true,
+          "detail": "top1=1871 top2=1889 gap=18 rel=0.009621"
+        },
+        "T5_confirmation": {
+          "pass": false,
+          "detail": "1 independent witness(es): ['Wikimedia Foundation']; primary='Metropolitan Museum of Art'; self-confirming and not counted: ['Metropolitan Museum of Art']; 3 source operator(s): ['Europeana Foundation', 'Metropolitan Museum of Art', 'Wikimedia Foundation']"
+        },
+        "T6_gate": {
+          "pass": true,
+          "detail": "clean"
+        },
+        "T7_prompt_leak": {
+          "pass": true,
+          "detail": "word count 97"
+        }
+      },
+      "collection_is_explicit": false,
+      "verdict": "hold",
+      "primary_operator": "Metropolitan Museum of Art",
+      "independent_witnesses": [
+        "Wikimedia Foundation"
+      ],
+      "witness_tier": "silver",
+      "evidence": {
+        "label": "art",
+        "mode": "min",
+        "n_base": 89,
+        "n_ranked": 89,
+        "spearman_key_vs_api_order": -0.0252,
+        "n_tied_at_extremum": 1,
+        "distinct_keys": 33,
+        "winner_position_in_api_order": 32,
+        "winner_is_first_returned": false,
+        "winner_is_last_returned": false,
+        "top_keys": [
+          "1871",
+          "1889",
+          "1891",
+          "1914",
+          "1914"
+        ],
+        "answer_field_distinct_values": 89,
+        "answer_field_n_values": 89,
+        "answer_field_max_count": 1,
+        "answer_field_count_of_answer": 1,
+        "answer_field_modal_share": 0.011236,
+        "p_answer_by_uniform_guess": 0.011236,
+        "_collection_is_explicit": false
+      }
+    },
+    {
+      "category": "business",
+      "answer": "1341439",
+      "field": "SEC Central Index Key",
+      "tests": {
+        "T0_base_adequacy": {
+          "pass": true,
+          "detail": "n_ranked=154 (>= 5); isolation chooses among candidates"
+        },
+        "T1_uniqueness": {
+          "pass": true,
+          "detail": "n_tied_at_extremum=1"
+        },
+        "T2_guessability": {
+          "pass": true,
+          "detail": "answer occurs 1/154 times (p=0.006494), modal count 1, 154 distinct values, answer_is_strict_mode=False"
+        },
+        "T3_order_leak": {
+          "pass": true,
+          "detail": "winner at index 99 of 154 (depth 0.6471), first=False last=False, H0 P(first|last)=0.013"
+        },
+        "T3b_monotone_key": {
+          "pass": true,
+          "detail": "spearman(key, api_index)=-0.065 (|rho| <= 0.95); key is off-axis"
+        },
+        "T4_separation": {
+          "pass": true,
+          "detail": "top1=5787000000.0 top2=1676000000.0 gap=4.111e+09 rel=0.7104"
+        },
+        "T5_confirmation": {
+          "pass": false,
+          "detail": "1 independent witness(es): ['Wikimedia Foundation']; primary='US Securities and Exchange Commission'; self-confirming and not counted: ['US Securities and Exchange Commission']; 3 source operator(s): ['Global Legal Entity Identifier Foundation', 'US Securities and Exchange Commission', 'Wikimedia Foundation']"
+        },
+        "T6_gate": {
+          "pass": true,
+          "detail": "clean"
+        },
+        "T7_prompt_leak": {
+          "pass": true,
+          "detail": "word count 110; years named in prompt: 2015"
+        }
+      },
+      "collection_is_explicit": false,
+      "verdict": "hold",
+      "primary_operator": "US Securities and Exchange Commission",
+      "independent_witnesses": [
+        "Wikimedia Foundation"
+      ],
+      "witness_tier": "silver",
+      "evidence": {
+        "label": "business",
+        "mode": "max",
+        "n_base": 154,
+        "n_ranked": 154,
+        "spearman_key_vs_api_order": -0.065,
+        "n_tied_at_extremum": 1,
+        "distinct_keys": 144,
+        "winner_position_in_api_order": 99,
+        "winner_is_first_returned": false,
+        "winner_is_last_returned": false,
+        "top_keys": [
+          "5787000000.0",
+          "1676000000.0",
+          "1267000000.0",
+          "1094000000.0",
+          "1051000000.0"
+        ],
+        "answer_field_distinct_values": 154,
+        "answer_field_n_values": 154,
+        "answer_field_max_count": 1,
+        "answer_field_count_of_answer": 1,
+        "answer_field_modal_share": 0.006494,
+        "p_answer_by_uniform_guess": 0.006494,
+        "_collection_is_explicit": false
+      }
+    },
+    {
+      "category": "celebrities/public figures",
+      "answer": "Leiden",
+      "field": "city of birth",
+      "tests": {
+        "T0_base_adequacy": {
+          "pass": true,
+          "detail": "n_ranked=104 (>= 5); isolation chooses among candidates"
+        },
+        "T1_uniqueness": {
+          "pass": true,
+          "detail": "n_tied_at_extremum=1"
+        },
+        "T2_guessability": {
+          "pass": true,
+          "detail": "answer occurs 1/104 times (p=0.009615), modal count 6, 90 distinct values, answer_is_strict_mode=False"
+        },
+        "T3_order_leak": {
+          "pass": true,
+          "detail": "winner at index 51 of 104 (depth 0.4951), first=False last=False, H0 P(first|last)=0.0192"
+        },
+        "T3b_monotone_key": {
+          "pass": true,
+          "detail": "spearman(key, api_index)=-0.0293 (|rho| <= 0.95); key is off-axis"
+        },
+        "T4_separation": {
+          "pass": true,
+          "detail": "top1='1837-11-23' top2='1842-11-12' (non-numeric key, distinct)"
+        },
+        "T5_confirmation": {
+          "pass": false,
+          "detail": "1 independent witness(es): ['Wikimedia Foundation']; primary='Nobel Prize Outreach'; 3 source operator(s): ['Nobel Prize Outreach', 'OurResearch (OpenAlex)', 'Wikimedia Foundation']"
+        },
+        "T6_gate": {
+          "pass": true,
+          "detail": "clean"
+        },
+        "T7_prompt_leak": {
+          "pass": true,
+          "detail": "word count 91; years named in prompt: 1901,1975"
+        }
+      },
+      "collection_is_explicit": false,
+      "verdict": "hold",
+      "primary_operator": "Nobel Prize Outreach",
+      "independent_witnesses": [
+        "Wikimedia Foundation"
+      ],
+      "witness_tier": "silver",
+      "evidence": {
+        "label": "celebrities",
+        "mode": "min",
+        "n_base": 104,
+        "n_ranked": 104,
+        "spearman_key_vs_api_order": -0.0293,
+        "n_tied_at_extremum": 1,
+        "distinct_keys": 103,
+        "winner_position_in_api_order": 51,
+        "winner_is_first_returned": false,
+        "winner_is_last_returned": false,
+        "top_keys": [
+          "1837-11-23",
+          "1842-11-12",
+          "1845-03-27",
+          "1845-08-16",
+          "1850-06-06"
+        ],
+        "answer_field_distinct_values": 90,
+        "answer_field_n_values": 104,
+        "answer_field_max_count": 6,
+        "answer_field_count_of_answer": 1,
+        "answer_field_modal_share": 0.057692,
+        "p_answer_by_uniform_guess": 0.009615,
+        "_collection_is_explicit": false
+      }
+    },
+    {
+      "category": "education",
+      "answer": "wit.ie",
+      "field": "internet domain",
+      "tests": {
+        "T0_base_adequacy": {
+          "pass": true,
+          "detail": "n_ranked=27 (>= 5); isolation chooses among candidates"
+        },
+        "T1_uniqueness": {
+          "pass": true,
+          "detail": "n_tied_at_extremum=1"
+        },
+        "T2_guessability": {
+          "pass": true,
+          "detail": "answer occurs 1/27 times (p=0.03704), modal count 1, 27 distinct values, answer_is_strict_mode=False"
+        },
+        "T3_order_leak": {
+          "pass": true,
+          "detail": "winner at index 23 of 27 (depth 0.8846), first=False last=False, H0 P(first|last)=0.0741"
+        },
+        "T3b_monotone_key": {
+          "pass": true,
+          "detail": "spearman(key, api_index)=0.7888 (|rho| <= 0.95); key is off-axis"
+        },
+        "T4_separation": {
+          "pass": true,
+          "detail": "top1='wit.ie' top2='universityofgalway.ie' (non-numeric key, distinct)"
+        },
+        "T5_confirmation": {
+          "pass": false,
+          "detail": "1 independent witness(es): ['Wikimedia Foundation']; primary='Hipo Labs'; 3 source operator(s): ['Hipo Labs', 'US Department of Education', 'Wikimedia Foundation']"
+        },
+        "T6_gate": {
+          "pass": true,
+          "detail": "clean"
+        },
+        "T7_prompt_leak": {
+          "pass": true,
+          "detail": "word count 90"
+        }
+      },
+      "collection_is_explicit": false,
+      "verdict": "hold",
+      "primary_operator": "Hipo Labs",
+      "independent_witnesses": [
+        "Wikimedia Foundation"
+      ],
+      "witness_tier": "silver",
+      "evidence": {
+        "label": "education",
+        "mode": "max",
+        "n_base": 27,
+        "n_ranked": 27,
+        "spearman_key_vs_api_order": 0.7888,
+        "n_tied_at_extremum": 1,
+        "distinct_keys": 27,
+        "winner_position_in_api_order": 23,
+        "winner_is_first_returned": false,
+        "winner_is_last_returned": false,
+        "top_keys": [
+          "wit.ie",
+          "universityofgalway.ie",
+          "ul.ie",
+          "ucd.ie",
+          "ucc.ie"
+        ],
+        "answer_field_distinct_values": 27,
+        "answer_field_n_values": 27,
+        "answer_field_max_count": 1,
+        "answer_field_count_of_answer": 1,
+        "answer_field_modal_share": 0.037037,
+        "p_answer_by_uniform_guess": 0.037037,
+        "_collection_is_explicit": false
+      }
+    },
+    {
+      "category": "geography",
+      "answer": "SKIP",
+      "field": "ICAO identifier",
+      "tests": {
+        "T0_base_adequacy": {
+          "pass": true,
+          "detail": "n_ranked=42 (>= 5); isolation chooses among candidates"
+        },
+        "T1_uniqueness": {
+          "pass": true,
+          "detail": "n_tied_at_extremum=1"
+        },
+        "T2_guessability": {
+          "pass": true,
+          "detail": "answer occurs 1/42 times (p=0.02381), modal count 1, 42 distinct values, answer_is_strict_mode=False"
+        },
+        "T3_order_leak": {
+          "pass": true,
+          "detail": "winner at index 16 of 42 (depth 0.3902), first=False last=False, H0 P(first|last)=0.0476"
+        },
+        "T3b_monotone_key": {
+          "pass": true,
+          "detail": "spearman(key, api_index)=-0.0349 (|rho| <= 0.95); key is off-axis"
+        },
+        "T4_separation": {
+          "pass": true,
+          "detail": "top1=9765 top2=8361 gap=1404 rel=0.1438"
+        },
+        "T5_confirmation": {
+          "pass": true,
+          "detail": "2 independent witness(es): ['OpenFlights', 'Wikimedia Foundation']; primary='OurAirports'; 4 source operator(s): ['OpenFlights', 'OurAirports', 'REST Countries project', 'Wikimedia Foundation']"
+        },
+        "T6_gate": {
+          "pass": true,
+          "detail": "clean"
+        },
+        "T7_prompt_leak": {
+          "pass": true,
+          "detail": "word count 84"
+        }
+      },
+      "collection_is_explicit": false,
+      "verdict": "ship",
+      "primary_operator": "OurAirports",
+      "independent_witnesses": [
+        "OpenFlights",
+        "Wikimedia Foundation"
+      ],
+      "witness_tier": "gold",
+      "evidence": {
+        "label": "geography",
+        "mode": "max",
+        "n_base": 42,
+        "n_ranked": 42,
+        "spearman_key_vs_api_order": -0.0349,
+        "n_tied_at_extremum": 1,
+        "distinct_keys": 42,
+        "winner_position_in_api_order": 16,
+        "winner_is_first_returned": false,
+        "winner_is_last_returned": false,
+        "top_keys": [
+          "9765",
+          "8361",
+          "6955",
+          "6871",
+          "5951"
+        ],
+        "answer_field_distinct_values": 42,
+        "answer_field_n_values": 42,
+        "answer_field_max_count": 1,
+        "answer_field_count_of_answer": 1,
+        "answer_field_modal_share": 0.02381,
+        "p_answer_by_uniform_guess": 0.02381,
+        "_collection_is_explicit": false
+      }
+    },
+    {
+      "category": "health and medicine",
+      "answer": "NCT00021697",
+      "field": "trial registry identifier",
+      "tests": {
+        "T0_base_adequacy": {
+          "pass": true,
+          "detail": "n_ranked=51 (>= 5); isolation chooses among candidates"
+        },
+        "T1_uniqueness": {
+          "pass": true,
+          "detail": "n_tied_at_extremum=1"
+        },
+        "T2_guessability": {
+          "pass": true,
+          "detail": "answer occurs 1/51 times (p=0.01961), modal count 1, 51 distinct values, answer_is_strict_mode=False"
+        },
+        "T3_order_leak": {
+          "pass": true,
+          "detail": "winner at index 45 of 51 (depth 0.9), first=False last=False, H0 P(first|last)=0.0392"
+        },
+        "T3b_monotone_key": {
+          "pass": true,
+          "detail": "spearman(key, api_index)=0.1455 (|rho| <= 0.95); key is off-axis"
+        },
+        "T4_separation": {
+          "pass": true,
+          "detail": "top1='2001-01' top2='2002-04' (non-numeric key, distinct)"
+        },
+        "T5_confirmation": {
+          "pass": true,
+          "detail": "2 independent witness(es): ['EMBL-EBI', 'Wikimedia Foundation']; primary='US National Institutes of Health'; 4 source operator(s): ['EMBL-EBI', 'US Food and Drug Administration', 'US National Institutes of Health', 'Wikimedia Foundation']"
+        },
+        "T6_gate": {
+          "pass": true,
+          "detail": "clean"
+        },
+        "T7_prompt_leak": {
+          "pass": true,
+          "detail": "word count 79"
+        }
+      },
+      "collection_is_explicit": false,
+      "verdict": "ship",
+      "primary_operator": "US National Institutes of Health",
+      "independent_witnesses": [
+        "EMBL-EBI",
+        "Wikimedia Foundation"
+      ],
+      "witness_tier": "gold",
+      "evidence": {
+        "label": "health",
+        "mode": "min",
+        "n_base": 51,
+        "n_ranked": 51,
+        "spearman_key_vs_api_order": 0.1455,
+        "n_tied_at_extremum": 1,
+        "distinct_keys": 50,
+        "winner_position_in_api_order": 45,
+        "winner_is_first_returned": false,
+        "winner_is_last_returned": false,
+        "top_keys": [
+          "2001-01",
+          "2002-04",
+          "2003-01",
+          "2003-06",
+          "2003-07"
+        ],
+        "answer_field_distinct_values": 51,
+        "answer_field_n_values": 51,
+        "answer_field_max_count": 1,
+        "answer_field_count_of_answer": 1,
+        "answer_field_modal_share": 0.019608,
+        "p_answer_by_uniform_guess": 0.019608,
+        "_collection_is_explicit": false
+      }
+    },
+    {
+      "category": "legal",
+      "answer": "768",
+      "field": "United States Reports page",
+      "tests": {
+        "T0_base_adequacy": {
+          "pass": true,
+          "detail": "n_ranked=51 (>= 5); isolation chooses among candidates"
+        },
+        "T1_uniqueness": {
+          "pass": true,
+          "detail": "n_tied_at_extremum=1"
+        },
+        "T2_guessability": {
+          "pass": true,
+          "detail": "answer occurs 1/51 times (p=0.01961), modal count 1, 51 distinct values, answer_is_strict_mode=False"
+        },
+        "T3_order_leak": {
+          "pass": true,
+          "detail": "winner at index 27 of 51 (depth 0.54), first=False last=False, H0 P(first|last)=0.0392"
+        },
+        "T3b_monotone_key": {
+          "pass": true,
+          "detail": "spearman(key, api_index)=0.0064 (|rho| <= 0.95); key is off-axis"
+        },
+        "T4_separation": {
+          "pass": true,
+          "detail": "top1='allied-signal, inc. ex rel. bendix corp. v. director, division of taxation' top2='ankenbrandt ex rel. l. r. v. richards' (non-numeric key, distinct)"
+        },
+        "T5_confirmation": {
+          "pass": true,
+          "detail": "2 independent witness(es): ['Cornell University', 'Free Law Project']; primary='Harvard Law School Library Innovation Lab'; 3 source operator(s): ['Cornell University', 'Free Law Project', 'Harvard Law School Library Innovation Lab']"
+        },
+        "T6_gate": {
+          "pass": true,
+          "detail": "clean"
+        },
+        "T7_prompt_leak": {
+          "pass": true,
+          "detail": "word count 109"
+        }
+      },
+      "collection_is_explicit": false,
+      "verdict": "ship",
+      "primary_operator": "Harvard Law School Library Innovation Lab",
+      "independent_witnesses": [
+        "Cornell University",
+        "Free Law Project"
+      ],
+      "witness_tier": "gold",
+      "evidence": {
+        "label": "legal vol 504",
+        "mode": "min",
+        "n_base": 51,
+        "n_ranked": 51,
+        "spearman_key_vs_api_order": 0.0064,
+        "n_tied_at_extremum": 1,
+        "distinct_keys": 51,
+        "winner_position_in_api_order": 27,
+        "winner_is_first_returned": false,
+        "winner_is_last_returned": false,
+        "top_keys": [
+          "allied-signal, inc. ex rel. bendix corp. v. director, division of taxation",
+          "ankenbrandt ex rel. l. r. v. richards",
+          "black v. collins",
+          "burdick v. takushi",
+          "burlington northern railroad v. ford"
+        ],
+        "answer_field_distinct_values": 51,
+        "answer_field_n_values": 51,
+        "answer_field_max_count": 1,
+        "answer_field_count_of_answer": 1,
+        "answer_field_modal_share": 0.019608,
+        "p_answer_by_uniform_guess": 0.019608,
+        "_collection_is_explicit": false
+      }
+    },
+    {
+      "category": "politics",
+      "verdict": "unavailable",
+      "error": "gate rejected: [\"R3c every confirming source is run by the primary operator 'US Office of the Federal Register'; a source restating itself is not a witness\"]",
+      "tests": {}
+    },
+    {
+      "category": "shopping",
+      "verdict": "unavailable",
+      "error": "gate rejected: [\"R3c every confirming source is run by the primary operator 'Open Food Facts'; a source restating itself is not a witness\"]",
+      "tests": {}
+    },
+    {
+      "category": "sports",
+      "answer": "Newton",
+      "field": "city of birth",
+      "tests": {
+        "T0_base_adequacy": {
+          "pass": true,
+          "detail": "n_ranked=48 (>= 5); isolation chooses among candidates"
+        },
+        "T1_uniqueness": {
+          "pass": true,
+          "detail": "n_tied_at_extremum=1"
+        },
+        "T2_guessability": {
+          "pass": true,
+          "detail": "answer occurs 1/48 times (p=0.02083), modal count 2, 45 distinct values, answer_is_strict_mode=False"
+        },
+        "T3_order_leak": {
+          "pass": true,
+          "detail": "winner at index 6 of 48 (depth 0.1277), first=False last=False, H0 P(first|last)=0.0417"
+        },
+        "T3b_monotone_key": {
+          "pass": true,
+          "detail": "spearman(key, api_index)=0.0731 (|rho| <= 0.95); key is off-axis"
+        },
+        "T4_separation": {
+          "pass": true,
+          "detail": "top1='1961-09-09' top2='1962-10-30' (non-numeric key, distinct)"
+        },
+        "T5_confirmation": {
+          "pass": true,
+          "detail": "2 independent witness(es): ['Retrosheet', 'Wikimedia Foundation']; primary='Major League Baseball'; 3 source operator(s): ['Major League Baseball', 'Retrosheet', 'Wikimedia Foundation']"
+        },
+        "T6_gate": {
+          "pass": true,
+          "detail": "clean"
+        },
+        "T7_prompt_leak": {
+          "pass": true,
+          "detail": "word count 98; years named in prompt: 1999"
+        }
+      },
+      "collection_is_explicit": false,
+      "verdict": "ship",
+      "primary_operator": "Major League Baseball",
+      "independent_witnesses": [
+        "Retrosheet",
+        "Wikimedia Foundation"
+      ],
+      "witness_tier": "gold",
+      "evidence": {
+        "label": "sports Boston Red Sox 1999",
+        "mode": "min",
+        "n_base": 48,
+        "n_ranked": 48,
+        "spearman_key_vs_api_order": 0.0731,
+        "n_tied_at_extremum": 1,
+        "distinct_keys": 47,
+        "winner_position_in_api_order": 6,
+        "winner_is_first_returned": false,
+        "winner_is_last_returned": false,
+        "top_keys": [
+          "1961-09-09",
+          "1962-10-30",
+          "1963-06-25",
+          "1964-04-11",
+          "1964-08-24"
+        ],
+        "answer_field_distinct_values": 45,
+        "answer_field_n_values": 48,
+        "answer_field_max_count": 2,
+        "answer_field_count_of_answer": 1,
+        "answer_field_modal_share": 0.041667,
+        "p_answer_by_uniform_guess": 0.020833,
+        "_collection_is_explicit": false
+      }
+    },
+    {
+      "category": "travel",
+      "answer": "IVL",
+      "field": "IATA code",
+      "tests": {
+        "T0_base_adequacy": {
+          "pass": true,
+          "detail": "n_ranked=73 (>= 5); isolation chooses among candidates"
+        },
+        "T1_uniqueness": {
+          "pass": true,
+          "detail": "n_tied_at_extremum=1"
+        },
+        "T2_guessability": {
+          "pass": true,
+          "detail": "answer occurs 1/73 times (p=0.0137), modal count 1, 73 distinct values, answer_is_strict_mode=False"
+        },
+        "T3_order_leak": {
+          "pass": true,
+          "detail": "winner at index 6 of 73 (depth 0.0833), first=False last=False, H0 P(first|last)=0.0274"
+        },
+        "T3b_monotone_key": {
+          "pass": true,
+          "detail": "spearman(key, api_index)=-0.2042 (|rho| <= 0.95); key is off-axis"
+        },
+        "T4_separation": {
+          "pass": true,
+          "detail": "top1=68.607299804688 top2=66.564796447754 gap=2.0425 rel=0.02977"
+        },
+        "T5_confirmation": {
+          "pass": true,
+          "detail": "2 independent witness(es): ['OurAirports', 'Wikimedia Foundation']; primary='OpenFlights'; 3 source operator(s): ['OpenFlights', 'OurAirports', 'Wikimedia Foundation']"
+        },
+        "T6_gate": {
+          "pass": true,
+          "detail": "clean"
+        },
+        "T7_prompt_leak": {
+          "pass": true,
+          "detail": "word count 91"
+        }
+      },
+      "collection_is_explicit": false,
+      "verdict": "ship",
+      "primary_operator": "OpenFlights",
+      "independent_witnesses": [
+        "OurAirports",
+        "Wikimedia Foundation"
+      ],
+      "witness_tier": "gold",
+      "evidence": {
+        "label": "travel",
+        "mode": "max",
+        "n_base": 73,
+        "n_ranked": 73,
+        "spearman_key_vs_api_order": -0.2042,
+        "n_tied_at_extremum": 1,
+        "distinct_keys": 73,
+        "winner_position_in_api_order": 6,
+        "winner_is_first_returned": false,
+        "winner_is_last_returned": false,
+        "top_keys": [
+          "68.607299804688",
+          "66.564796447754",
+          "65.987602233887",
+          "65.778701782227",
+          "64.930099487305"
+        ],
+        "answer_field_distinct_values": 73,
+        "answer_field_n_values": 73,
+        "answer_field_max_count": 1,
+        "answer_field_count_of_answer": 1,
+        "answer_field_modal_share": 0.013699,
+        "p_answer_by_uniform_guess": 0.013699,
+        "_collection_is_explicit": false
+      }
+    },
+    {
+      "category": "tv shows and movies",
+      "answer": "tt1278381",
+      "field": "IMDb title identifier",
+      "tests": {
+        "T0_base_adequacy": {
+          "pass": true,
+          "detail": "n_ranked=211 (>= 5); isolation chooses among candidates"
+        },
+        "T1_uniqueness": {
+          "pass": true,
+          "detail": "n_tied_at_extremum=1"
+        },
+        "T2_guessability": {
+          "pass": true,
+          "detail": "answer occurs 1/211 times (p=0.004739), modal count 1, 211 distinct values, answer_is_strict_mode=False"
+        },
+        "T3_order_leak": {
+          "pass": true,
+          "detail": "winner at index 104 of 211 (depth 0.4952), first=False last=False, H0 P(first|last)=0.0095"
+        },
+        "T3b_monotone_key": {
+          "pass": true,
+          "detail": "spearman(key, api_index)=-0.2021 (|rho| <= 0.95); key is off-axis"
+        },
+        "T4_separation": {
+          "pass": true,
+          "detail": "top1=190 top2=166 gap=24 rel=0.1263"
+        },
+        "T5_confirmation": {
+          "pass": false,
+          "detail": "1 independent witness(es): ['Wikimedia Foundation']; primary='IMDb (Amazon)'; 3 source operator(s): ['IMDb (Amazon)', 'TVmaze', 'Wikimedia Foundation']"
+        },
+        "T6_gate": {
+          "pass": true,
+          "detail": "clean"
+        },
+        "T7_prompt_leak": {
+          "pass": true,
+          "detail": "word count 98; years named in prompt: 2008"
+        }
+      },
+      "collection_is_explicit": false,
+      "verdict": "hold",
+      "primary_operator": "IMDb (Amazon)",
+      "independent_witnesses": [
+        "Wikimedia Foundation"
+      ],
+      "witness_tier": "silver",
+      "evidence": {
+        "label": "tv shows and movies",
+        "mode": "max",
+        "n_base": 211,
+        "n_ranked": 211,
+        "spearman_key_vs_api_order": -0.2021,
+        "n_tied_at_extremum": 1,
+        "distinct_keys": 76,
+        "winner_position_in_api_order": 104,
+        "winner_is_first_returned": false,
+        "winner_is_last_returned": false,
+        "top_keys": [
+          "190",
+          "166",
+          "164",
+          "156",
+          "154"
+        ],
+        "answer_field_distinct_values": 211,
+        "answer_field_n_values": 211,
+        "answer_field_max_count": 1,
+        "answer_field_count_of_answer": 1,
+        "answer_field_modal_share": 0.004739,
+        "p_answer_by_uniform_guess": 0.004739,
+        "_collection_is_explicit": false
+      }
+    },
+    {
+      "category": "video games",
+      "answer": "Colossal Order",
+      "field": "developing studio",
+      "tests": {
+        "T0_base_adequacy": {
+          "pass": true,
+          "detail": "n_ranked=14 (>= 5); isolation chooses among candidates"
+        },
+        "T1_uniqueness": {
+          "pass": true,
+          "detail": "n_tied_at_extremum=1"
+        },
+        "T2_guessability": {
+          "pass": true,
+          "detail": "answer occurs 1/14 times (p=0.07143), modal count 1, 14 distinct values, answer_is_strict_mode=False"
+        },
+        "T3_order_leak": {
+          "pass": true,
+          "detail": "EXEMPT (collection_is_explicit): the prompt enumerates every member of the base collection by identifier, so the API return order carries no information the solver does not already hold. Both order tests assume the ordering is hidden; that assumption is false here, so they are reported as not-applicable rather than passed. (measured index 8 of 14, first=False last=False)"
+        },
+        "T3b_monotone_key": {
+          "pass": true,
+          "detail": "EXEMPT (collection_is_explicit): the prompt enumerates every member of the base collection by identifier, so the API return order carries no information the solver does not already hold. Both order tests assume the ordering is hidden; that assumption is false here, so they are reported as not-applicable rather than passed. (measured rho=-0.0637)"
+        },
+        "T4_separation": {
+          "pass": true,
+          "detail": "top1='citiesskylines' top2='cuphead' (non-numeric key, distinct)"
+        },
+        "T5_confirmation": {
+          "pass": false,
+          "detail": "1 independent witness(es): ['Wikimedia Foundation']; primary='Valve Corporation'; 3 source operator(s): ['Pan European Game Information', 'Valve Corporation', 'Wikimedia Foundation']"
+        },
+        "T6_gate": {
+          "pass": true,
+          "detail": "clean"
+        },
+        "T7_prompt_leak": {
+          "pass": true,
+          "detail": "word count 114"
+        }
+      },
+      "collection_is_explicit": true,
+      "verdict": "hold",
+      "primary_operator": "Valve Corporation",
+      "independent_witnesses": [
+        "Wikimedia Foundation"
+      ],
+      "witness_tier": "silver",
+      "evidence": {
+        "label": "video games",
+        "mode": "min",
+        "n_base": 14,
+        "n_ranked": 14,
+        "spearman_key_vs_api_order": -0.0637,
+        "n_tied_at_extremum": 1,
+        "distinct_keys": 14,
+        "winner_position_in_api_order": 8,
+        "winner_is_first_returned": false,
+        "winner_is_last_returned": false,
+        "top_keys": [
+          "citiesskylines",
+          "cuphead",
+          "deusexgameoftheyearedition",
+          "dontstarvetogether",
+          "europauniversalisiv"
+        ],
+        "answer_field_distinct_values": 14,
+        "answer_field_n_values": 14,
+        "answer_field_max_count": 1,
+        "answer_field_count_of_answer": 1,
+        "answer_field_modal_share": 0.071429,
+        "p_answer_by_uniform_guess": 0.071429,
+        "_collection_is_explicit": true
+      }
+    }
+  ],
+  "corpus": {
+    "order_test_exemptions": {
+      "rule": "collection_is_explicit traps are excluded from C1/C3/C4",
+      "reason": "EXEMPT (collection_is_explicit): the prompt enumerates every member of the base collection by identifier, so the API return order carries no information the solver does not already hold. Both order tests assume the ordering is hidden; that assumption is false here, so they are reported as not-applicable rather than passed.",
+      "categories": [
+        "video games"
+      ],
+      "n_excluded": 1
+    },
+    "C3_depth_uniformity": {
+      "h0": "winner relative depth pos/(n-1) is Uniform(0,1) across the corpus",
+      "n": 12,
+      "depths": [
+        0.0833,
+        0.1277,
+        0.3571,
+        0.3636,
+        0.3902,
+        0.4,
+        0.4951,
+        0.4952,
+        0.54,
+        0.6471,
+        0.8846,
+        0.9
+      ],
+      "mean_depth": 0.4737,
+      "ks_statistic": 0.21,
+      "ks_p_approx": 0.611485
+    },
+    "C4_key_monotonicity": {
+      "h0": "ranking keys are unrelated to API return order (rho ~ 0)",
+      "n": 12,
+      "abs_rho": [
+        0.0064,
+        0.0252,
+        0.0255,
+        0.0293,
+        0.0349,
+        0.065,
+        0.0731,
+        0.1455,
+        0.2021,
+        0.2042,
+        0.261,
+        0.7888
+      ],
+      "mean_abs_rho": 0.1551,
+      "n_over_threshold": 0
+    },
+    "C1_positional_leak": {
+      "h0": "winner index is uniform over the n_base records the API returned",
+      "n_traps_tested": 12,
+      "per_trap_p_first_or_last": [
+        0.0952,
+        0.1333,
+        0.0225,
+        0.013,
+        0.0192,
+        0.0741,
+        0.0476,
+        0.0392,
+        0.0392,
+        0.0417,
+        0.0274,
+        0.0095
+      ],
+      "expected_first_or_last": 0.5619,
+      "observed_first_or_last": 0,
+      "exact_two_sided_p": 1.0
+    },
+    "C2_guess_yield": {
+      "h0": "a guesser draws uniformly from the observed answer-field values",
+      "n_traps_tested": 13,
+      "expected_hits_across_corpus": 0.3524,
+      "p_at_least_one_hit": 0.302609,
+      "n_traps_over_threshold": 0,
+      "threshold": 0.1
+    }
+  },
+  "counts": {
+    "ship": 6,
+    "unavailable": 3,
+    "hold": 7
+  }
+}

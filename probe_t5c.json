@@ -1,0 +1,467 @@
+{
+  "politics": {
+    "n_granules": 130,
+    "granule_hits_13292": [],
+    "ok": false
+  },
+  "art": {
+    "europeana_total": 0,
+    "europeana_titles": [],
+    "ok": false
+  },
+  "tv": {
+    "ok": true,
+    "n_tested": 12,
+    "n_on_tvmaze": 5,
+    "coverage": "5/12",
+    "rows": [
+      {
+        "year": 2001,
+        "genre": "Comedy",
+        "n": 398,
+        "top": "tt0303496",
+        "top_rt": 195,
+        "second_rt": 140,
+        "title": "Micawber",
+        "sep": 1.393,
+        "tvmaze_id": 63432,
+        "tvmaze_name": "Micawber",
+        "tvmaze_runtime": 50,
+        "tvmaze_avg_runtime": 50
+      },
+      {
+        "year": 2004,
+        "genre": "Drama",
+        "n": 375,
+        "top": "tt0385372",
+        "top_rt": 200,
+        "second_rt": 192,
+        "title": "Beyond Borders",
+        "sep": 1.042,
+        "tvmaze_err": "FetchError: https://api.tvmaze.com/lookup/shows?imdb=tt0385372"
+      },
+      {
+        "year": 1998,
+        "genre": "Comedy",
+        "n": 359,
+        "top": "tt0138280",
+        "top_rt": 200,
+        "second_rt": 190,
+        "title": "Tre per sempre",
+        "sep": 1.053,
+        "tvmaze_err": "FetchError: https://api.tvmaze.com/lookup/shows?imdb=tt0138280"
+      },
+      {
+        "year": 2000,
+        "genre": "Comedy",
+        "n": 347,
+        "top": "tt0306095",
+        "top_rt": 195,
+        "second_rt": 180,
+        "title": "Una storia qualunque",
+        "sep": 1.083,
+        "tvmaze_err": "FetchError: https://api.tvmaze.com/lookup/shows?imdb=tt0306095"
+      },
+      {
+        "year": 2005,
+        "genre": "Reality-TV",
+        "n": 345,
+        "top": "tt0862558",
+        "top_rt": 200,
+        "second_rt": 190,
+        "title": "Anatomy for Beginners",
+        "sep": 1.053,
+        "tvmaze_id": 14652,
+        "tvmaze_name": "Anatomy for Beginners",
+        "tvmaze_runtime": 60,
+        "tvmaze_avg_runtime": 60
+      },
+      {
+        "year": 2001,
+        "genre": "Documentary",
+        "n": 321,
+        "top": "tt1524954",
+        "top_rt": 194,
+        "second_rt": 147,
+        "title": "Battlefields",
+        "sep": 1.32,
+        "tvmaze_id": 9298,
+        "tvmaze_name": "Battlefields",
+        "tvmaze_runtime": 50,
+        "tvmaze_avg_runtime": 50
+      },
+      {
+        "year": 1996,
+        "genre": "Comedy",
+        "n": 319,
+        "top": "tt9892626",
+        "top_rt": 193,
+        "second_rt": 185,
+        "title": "Dum posledn\u00ed radosti",
+        "sep": 1.043,
+        "tvmaze_err": "FetchError: https://api.tvmaze.com/lookup/shows?imdb=tt9892626"
+      },
+      {
+        "year": 2006,
+        "genre": "Talk-Show",
+        "n": 302,
+        "top": "tt1075767",
+        "top_rt": 195,
+        "second_rt": 190,
+        "title": "Kalokairines selides",
+        "sep": 1.026,
+        "tvmaze_err": "FetchError: https://api.tvmaze.com/lookup/shows?imdb=tt1075767"
+      },
+      {
+        "year": 2001,
+        "genre": "Drama",
+        "n": 296,
+        "top": "tt3793920",
+        "top_rt": 200,
+        "second_rt": 195,
+        "title": "Bes Dakikalik Bir Mesele",
+        "sep": 1.026,
+        "tvmaze_err": "FetchError: https://api.tvmaze.com/lookup/shows?imdb=tt3793920"
+      },
+      {
+        "year": 2002,
+        "genre": "Drama",
+        "n": 295,
+        "top": "tt0307734",
+        "top_rt": 200,
+        "second_rt": 180,
+        "title": "Crime & Punishment",
+        "sep": 1.111,
+        "tvmaze_id": 91772,
+        "tvmaze_name": "Crime and Punishment",
+        "tvmaze_runtime": 90,
+        "tvmaze_avg_runtime": 90
+      },
+      {
+        "year": 1994,
+        "genre": "Comedy",
+        "n": 285,
+        "top": "tt0298763",
+        "top_rt": 180,
+        "second_rt": 120,
+        "title": "World Tour of Scotland",
+        "sep": 1.5,
+        "tvmaze_err": "FetchError: https://api.tvmaze.com/lookup/shows?imdb=tt0298763"
+      },
+      {
+        "year": 1992,
+        "genre": "Comedy",
+        "n": 265,
+        "top": "tt0270804",
+        "top_rt": 180,
+        "second_rt": 150,
+        "title": "Soccer AM",
+        "sep": 1.2,
+        "tvmaze_id": 6548,
+        "tvmaze_name": "Soccer AM",
+        "tvmaze_runtime": 90,
+        "tvmaze_avg_runtime": 104
+      }
+    ]
+  },
+  "shopping": {
+    "ok": true,
+    "n_pairs": 12,
+    "n_with_independent_witness": 1,
+    "winners_confirmed": [
+      {
+        "tag": "en:crisps",
+        "country": "united-kingdom",
+        "count": 1982,
+        "fetched": 400,
+        "n_ranked": 395,
+        "top1": [
+          "0096619702480",
+          51.0,
+          "Kirkland Signature",
+          "Roasted seasoned seaweed"
+        ],
+        "top2": [
+          "8426944001071",
+          44.0,
+          "TORRES",
+          "BLACK TRUFFLE PREMIUM POTATO CHIPS"
+        ],
+        "ties": 1,
+        "sep_ratio": 1.1591,
+        "upc_total": 1,
+        "upc_title": "Kirkland Signature Roasted Seasoned Seaweed Winter Harvest (10 X 17g) ",
+        "independent_witness": true
+      }
+    ],
+    "pairs": [
+      {
+        "tag": "en:instant-coffees",
+        "country": "germany",
+        "count": 317,
+        "fetched": 317,
+        "n_ranked": 157,
+        "top1": [
+          "7613036900096",
+          27.2,
+          "NESCAF\u00c9",
+          "2v1 k\u00e1va instantn\u00e1"
+        ],
+        "top2": [
+          "7613032573706",
+          16.8,
+          "Nescaf\u00e9",
+          "Nescaf\u00e9 Latte Macchiato"
+        ],
+        "ties": 1,
+        "sep_ratio": 1.619,
+        "upc_total": 0,
+        "upc_title": "",
+        "independent_witness": false
+      },
+      {
+        "tag": "en:baked-beans",
+        "country": "united-kingdom",
+        "count": 174,
+        "fetched": 174,
+        "n_ranked": 159,
+        "top1": [
+          "29061693",
+          14.6,
+          "Marks & Spencer",
+          "Baked beans"
+        ],
+        "top2": [
+          "5000157145031",
+          10.7,
+          "Heinz",
+          "Beanz Burgerz Texan style"
+        ],
+        "ties": 1,
+        "sep_ratio": 1.3645,
+        "upc_total": 0,
+        "upc_title": "",
+        "independent_witness": false
+      },
+      {
+        "tag": "en:tahini",
+        "country": "france",
+        "count": 236,
+        "fetched": 236,
+        "n_ranked": 225,
+        "top1": [
+          "0077101014366",
+          69.0,
+          "Mee Chun Canning",
+          "Sauce S\u00e9same"
+        ],
+        "top2": [
+          "8690804682902",
+          65.0,
+          "BLG Kardesler, Suntat",
+          "Tahin Sesampaste"
+        ],
+        "ties": 1,
+        "sep_ratio": 1.0615,
+        "upc_total": 0,
+        "upc_title": "",
+        "independent_witness": false
+      },
+      {
+        "tag": "en:mineral-waters",
+        "country": "france",
+        "count": 1656,
+        "fetched": 400,
+        "n_ranked": 240,
+        "top1": [
+          "80007814",
+          4.4000000953674,
+          "San Benedetto",
+          "ACQUA SAN BENEDETTO FRIZZANTE ML"
+        ],
+        "top2": [
+          "3564700631034",
+          0.5,
+          "Marque Rep\u00e8re",
+          "La P\u00e9tillante Citron - Citron vert"
+        ],
+        "ties": 1,
+        "sep_ratio": 8.8,
+        "upc_total": 0,
+        "upc_title": "",
+        "independent_witness": false
+      },
+      {
+        "tag": "en:chocolates",
+        "country": "switzerland",
+        "count": 1663,
+        "fetched": 400,
+        "n_ranked": 399,
+        "top1": [
+          "7627534931797",
+          68.0,
+          "Coop naturaplan",
+          "Chocolat 100% Honduras"
+        ],
+        "top2": [
+          "4044889004106",
+          64.0,
+          "Vivani",
+          "Chocolate Negro Intenso"
+        ],
+        "ties": 1,
+        "sep_ratio": 1.0625,
+        "upc_total": 0,
+        "upc_title": "",
+        "independent_witness": false
+      },
+      {
+        "tag": "en:breakfast-cereals",
+        "country": "united-kingdom",
+        "count": 1913,
+        "fetched": 400,
+        "n_ranked": 390,
+        "top1": [
+          "5060375300124",
+          53.0,
+          "The Paleo Foods Co.",
+          "Pecan & Almond Grain-Free Granola"
+        ],
+        "top2": [
+          "5016887005187",
+          37.0,
+          "Linwoods",
+          "Milled Hemp Seed"
+        ],
+        "ties": 1,
+        "sep_ratio": 1.4324,
+        "upc_total": 0,
+        "upc_title": "",
+        "independent_witness": false
+      },
+      {
+        "tag": "en:olive-oils",
+        "country": "italy",
+        "count": 2189,
+        "fetched": 400,
+        "n_ranked": 378,
+        "top1": [
+          "8002802102083",
+          100.0,
+          "Elisa",
+          "Huile d\\'Olive Bio"
+        ],
+        "top2": [
+          "8002802102069",
+          100.0,
+          "Elisa",
+          "Huile Olive Fruitee Italie"
+        ],
+        "ties": 27,
+        "sep_ratio": 1.0,
+        "skip": "tie at the extremum"
+      },
+      {
+        "tag": "en:pastas",
+        "country": "italy",
+        "error": "FetchError: https://world.openfoodfacts.org/api/v2/search?categories_tags=en:pastas&countries_tags_en="
+      },
+      {
+        "tag": "en:yogurts",
+        "country": "germany",
+        "count": 3203,
+        "fetched": 400,
+        "n_ranked": 397,
+        "top1": [
+          "20221584",
+          92.0,
+          "Milbona, Frisan",
+          "Raps\u00f6l"
+        ],
+        "top2": [
+          "4056489516767",
+          10.2,
+          "ENVIA",
+          "L'onctueux sur lit \u00e0 la p\u00eache saveur pas"
+        ],
+        "ties": 1,
+        "sep_ratio": 9.0196,
+        "upc_total": 0,
+        "upc_title": "",
+        "independent_witness": false
+      },
+      {
+        "tag": "en:teas",
+        "country": "united-kingdom",
+        "count": 539,
+        "fetched": 400,
+        "n_ranked": 162,
+        "top1": [
+          "5060482840209",
+          17.4,
+          "deliciously ella",
+          "Apple & Raisin Oat Bar"
+        ],
+        "top2": [
+          "5060072971641",
+          11.4,
+          "Drink Me",
+          "Chai Matcha Latte"
+        ],
+        "ties": 1,
+        "sep_ratio": 1.5263,
+        "upc_total": 0,
+        "upc_title": "",
+        "independent_witness": false
+      },
+      {
+        "tag": "en:crisps",
+        "country": "united-kingdom",
+        "count": 1982,
+        "fetched": 400,
+        "n_ranked": 395,
+        "top1": [
+          "0096619702480",
+          51.0,
+          "Kirkland Signature",
+          "Roasted seasoned seaweed"
+        ],
+        "top2": [
+          "8426944001071",
+          44.0,
+          "TORRES",
+          "BLACK TRUFFLE PREMIUM POTATO CHIPS"
+        ],
+        "ties": 1,
+        "sep_ratio": 1.1591,
+        "upc_total": 1,
+        "upc_title": "Kirkland Signature Roasted Seasoned Seaweed Winter Harvest (10 X 17g) ",
+        "independent_witness": true
+      },
+      {
+        "tag": "en:beers",
+        "country": "belgium",
+        "count": 477,
+        "fetched": 400,
+        "n_ranked": 127,
+        "top1": [
+          "5412858000067",
+          1.0,
+          "Abbaye notre-dame de saint-remy, Trappiste, Trappistes Rochefort",
+          "Trappiste Rochefort 6"
+        ],
+        "top2": [
+          "3119783021502",
+          0.6,
+          "Desperados",
+          "Desperados Virgin-0,0%"
+        ],
+        "ties": 1,
+        "sep_ratio": 1.6667,
+        "upc_total": 0,
+        "upc_title": "",
+        "independent_witness": false
+      }
+    ]
+  }
+}

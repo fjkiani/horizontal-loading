@@ -1,0 +1,223 @@
+{
+  "n_pool": 30,
+  "n_resolved": 30,
+  "errors": [],
+  "n_distinct_devs_in_pool": 28,
+  "roster_size": 28,
+  "title_key_ties": 0,
+  "p_guess_if_all_distinct": 0.035714,
+  "roster": [
+    {
+      "appid": 251570,
+      "key": "7daystodie",
+      "name": "7 Days to Die",
+      "dev": "The Fun Pimps"
+    },
+    {
+      "appid": 255710,
+      "key": "citiesskylines",
+      "name": "Cities: Skylines",
+      "dev": "Colossal Order"
+    },
+    {
+      "appid": 268910,
+      "key": "cuphead",
+      "name": "Cuphead",
+      "dev": "Studio MDHR Entertainment Inc."
+    },
+    {
+      "appid": 6910,
+      "key": "deusexgameoftheyearedition",
+      "name": "Deus Ex: Game of the Year Edition",
+      "dev": "Ion Storm"
+    },
+    {
+      "appid": 322330,
+      "key": "dontstarvetogether",
+      "name": "Don't Starve Together",
+      "dev": "Klei Entertainment"
+    },
+    {
+      "appid": 570,
+      "key": "dota2",
+      "name": "Dota 2",
+      "dev": "Valve"
+    },
+    {
+      "appid": 236850,
+      "key": "europauniversalisiv",
+      "name": "Europa Universalis IV",
+      "dev": "Paradox Development Studio"
+    },
+    {
+      "appid": 427520,
+      "key": "factorio",
+      "name": "Factorio",
+      "dev": "Wube Software LTD."
+    },
+    {
+      "appid": 377160,
+      "key": "fallout4",
+      "name": "Fallout 4",
+      "dev": "Bethesda Game Studios"
+    },
+    {
+      "appid": 22380,
+      "key": "falloutnewvegas",
+      "name": "Fallout: New Vegas",
+      "dev": "Obsidian Entertainment"
+    },
+    {
+      "appid": 39210,
+      "key": "finalfantasyxivonline",
+      "name": "FINAL FANTASY XIV Online",
+      "dev": "Square Enix"
+    },
+    {
+      "appid": 4000,
+      "key": "garrysmod",
+      "name": "Garry's Mod",
+      "dev": "Facepunch Studios"
+    },
+    {
+      "appid": 271590,
+      "key": "grandtheftautovlegacy",
+      "name": "Grand Theft Auto V Legacy",
+      "dev": "Rockstar North"
+    },
+    {
+      "appid": 367520,
+      "key": "hollowknight",
+      "name": "Hollow Knight",
+      "dev": "Team Cherry"
+    },
+    {
+      "appid": 220200,
+      "key": "kerbalspaceprogram",
+      "name": "Kerbal Space Program",
+      "dev": "Squad"
+    },
+    {
+      "appid": 261550,
+      "key": "mountbladeiibannerlord",
+      "name": "Mount & Blade II: Bannerlord",
+      "dev": "TaleWorlds Entertainment"
+    },
+    {
+      "appid": 218620,
+      "key": "payday2",
+      "name": "PAYDAY 2",
+      "dev": "OVERKILL - a Starbreeze Studio."
+    },
+    {
+      "appid": 108600,
+      "key": "projectzomboid",
+      "name": "Project Zomboid",
+      "dev": "The Indie Stone"
+    },
+    {
+      "appid": 3830,
+      "key": "psychonauts",
+      "name": "Psychonauts",
+      "dev": "Double Fine Productions"
+    },
+    {
+      "appid": 578080,
+      "key": "pubgbattlegrounds",
+      "name": "PUBG: BATTLEGROUNDS",
+      "dev": "PUBG Corporation"
+    },
+    {
+      "appid": 294100,
+      "key": "rimworld",
+      "name": "RimWorld",
+      "dev": "Ludeon Studios"
+    },
+    {
+      "appid": 8930,
+      "key": "sidmeierscivilizationv",
+      "name": "Sid Meier's Civilization\u00ae V",
+      "dev": "Firaxis Games"
+    },
+    {
+      "appid": 413150,
+      "key": "stardewvalley",
+      "name": "Stardew Valley",
+      "dev": "ConcernedApe"
+    },
+    {
+      "appid": 105600,
+      "key": "terraria",
+      "name": "Terraria",
+      "dev": "Re-Logic"
+    },
+    {
+      "appid": 250900,
+      "key": "thebindingofisaacrebirth",
+      "name": "The Binding of Isaac: Rebirth",
+      "dev": "Nicalis, Inc."
+    },
+    {
+      "appid": 242760,
+      "key": "theforest",
+      "name": "The Forest",
+      "dev": "Endnight Games Ltd"
+    },
+    {
+      "appid": 292030,
+      "key": "thewitcher3wildhunt",
+      "name": "The Witcher 3: Wild Hunt",
+      "dev": "CD PROJEKT RED"
+    },
+    {
+      "appid": 391540,
+      "key": "undertale",
+      "name": "Undertale",
+      "dev": "tobyfox"
+    }
+  ],
+  "winner": {
+    "appid": 251570,
+    "name": "7 Days to Die",
+    "dev": "The Fun Pimps",
+    "n_devs_listed": 1,
+    "pub": "The Fun Pimps Entertainment LLC",
+    "key": "7daystodie"
+  },
+  "wd_qid": "Q14753828",
+  "wd_p178": [
+    {
+      "claim_index": 0,
+      "qid": "Q139379148",
+      "label": "The Fun Pimps"
+    }
+  ],
+  "wd_match": true,
+  "alphabetical_head": [
+    {
+      "key": "7daystodie",
+      "dev": "The Fun Pimps",
+      "appid": 251570
+    },
+    {
+      "key": "citiesskylines",
+      "dev": "Colossal Order",
+      "appid": 255710
+    },
+    {
+      "key": "cuphead",
+      "dev": "Studio MDHR Entertainment Inc.",
+      "appid": 268910
+    },
+    {
+      "key": "deusexgameoftheyearedition",
+      "dev": "Ion Storm",
+      "appid": 6910
+    },
+    {
+      "key": "dontstarvetogether",
+      "dev": "Klei Entertainment",
+      "appid": 322330
+    }
+  ]
+}

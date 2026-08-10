@@ -456,7 +456,90 @@ def _save(path, rows):
 
 
 def _key(t):
+    """Identity for de-duplication.
+
+    Scan traps are identified by (newspaper, issue date, field). API-native
+    traps have no lccn or date at all, so keying them on t["lccn"] raised
+    KeyError -- which is why the pool could only ever hold the loc.gov corpus.
+    Both shapes now key cleanly and cannot collide, because the api-native key
+    carries its track name in the first slot.
+    """
+    if t.get("track") == "api-native" or "lccn" not in t:
+        return ("api-native", t.get("category") or "", t.get("field") or "",
+                str(t.get("entity") or ""))
     return (t["lccn"], t["date"], t["field"])
+
+
+# --- pool admission ----------------------------------------------------------
+# Nothing reaches the served pool without passing source_gate. Validation on
+# WRITE rather than on read is deliberate: a trap that is invalid on disk has
+# already been served once by the time a read-time check notices it.
+
+class PoolRejected(Exception):
+    """A trap was refused admission to the served pool."""
+
+
+def _fmt_viol(viol):
+    """Normalise violations for display. source_gate.validate_trap returns
+    list[str] while banned_violations returns list[(url, reason)]; calling
+    list() on the former shredded each message into single characters."""
+    out = []
+    for v in viol or []:
+        out.append(v if isinstance(v, str) else " ".join(str(x) for x in v))
+    return out
+
+
+def _validate_for_pool(trap, min_operators=3):
+    """Return (ok, violations). Scan traps predate the category/operator schema,
+    so they are checked only for banned sources; api-native traps get the full
+    gate including the R3c self-confirmation rule."""
+    import source_gate as sg
+    if trap.get("track") == "api-native":
+        return sg.validate_trap(trap, min_operators=min_operators)
+    urls = list(trap.get("sources") or [])
+    for k in ("image_url", "page_url", "ocr_url"):
+        if trap.get(k):
+            urls.append(trap[k])
+    viol = list(sg.banned_violations(urls))
+    return (not viol), viol
+
+
+def _save_pool(pool, min_operators=3, strict=False):
+    """Write the served pool, refusing to persist any entry that fails the gate.
+
+    Returns (n_written, rejected) where rejected is a list of
+    (key, violations). With strict=True the first rejection raises instead,
+    which is what a caller admitting a single new trap wants.
+    """
+    keep, rejected = [], []
+    for t in pool:
+        ok, viol = _validate_for_pool(t, min_operators=min_operators)
+        if ok:
+            keep.append(t)
+        else:
+            rejected.append((_key(t), _fmt_viol(viol)))
+            if strict:
+                raise PoolRejected(f"{_key(t)}: {_fmt_viol(viol)}")
+    _save(_POOL_PATH, keep)
+    return len(keep), rejected
+
+
+def admit_api_trap(trap, min_operators=3):
+    """Admit one API-native trap (a category_traps.Candidate.to_trap() dict) to
+    the served pool. Raises PoolRejected if it does not pass the gate, so a
+    failing trap is never written and never served."""
+    t = dict(trap)
+    t.setdefault("track", "api-native")
+    t.setdefault("verified", True)
+    ok, viol = _validate_for_pool(t, min_operators=min_operators)
+    if not ok:
+        raise PoolRejected(f"{t.get('category')}: {_fmt_viol(viol)}")
+    pool = _load(_POOL_PATH)
+    k = _key(t)
+    pool = [p for p in pool if _key(p) != k]
+    pool.append(t)
+    _save_pool(pool, min_operators=min_operators, strict=True)
+    return t
 
 
 def resolve_image_path(t):

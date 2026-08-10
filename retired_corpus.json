@@ -1,0 +1,761 @@
+{
+ "retired_at": "2026-08-10T20:53:02.299844+00:00",
+ "rule": "Project Seal banned-source list extended with loc.gov and archive.org. Sources are counted by controlling operator, not by URL string.",
+ "generated": [
+  {
+   "lccn": "sn83030214",
+   "date": "1900-01-01",
+   "field": "issue number",
+   "answer": "19405",
+   "paper": "New-York tribune",
+   "prompt": "Consult the front page of the newspaper \"New-York tribune\" published on 1900-01-01, digitized by the Library of Congress. The page is a historical scan whose machine-readable text layer is heavily degraded by age and ornate typesetting, so automated transcription is unreliable. Examine the masthead banner at the top of the front page directly. What is the issue number printed there? Provide the exact value as it appears, as a single atomic token. Cross-check your reading against the publication's catalog record and at least one independent library source to confirm you have the correct issue before answering.",
+   "sources": [
+    "https://www.loc.gov/resource/sn83030214/1900-01-01/ed-1/?sp=1",
+    "https://www.loc.gov/item/sn83030214/1900-01-01/ed-1/",
+    "https://www.loc.gov/newspapers/sn83030214/"
+   ],
+   "operators": [
+    "US Library of Congress"
+   ],
+   "violating_urls": [
+    "https://www.loc.gov/resource/sn83030214/1900-01-01/ed-1/?sp=1",
+    "https://www.loc.gov/item/sn83030214/1900-01-01/ed-1/",
+    "https://www.loc.gov/newspapers/sn83030214/"
+   ],
+   "violations": [
+    "R6 no category assigned",
+    "R4 banned source https://www.loc.gov/resource/sn83030214/1900-01-01/ed-1/?sp=1 (banned domain: loc.gov)",
+    "R4 banned source https://www.loc.gov/item/sn83030214/1900-01-01/ed-1/ (banned domain: loc.gov)",
+    "R4 banned source https://www.loc.gov/newspapers/sn83030214/ (banned domain: loc.gov)",
+    "R3 only 1 independent operator(s) across 3 source(s): US Library of Congress x3",
+    "R3b no answer-confirming source asserted",
+    "R4 prompt text directs the solver to banned operator US Library of Congress"
+   ],
+   "originally_verified": true,
+   "original_verifier": "agent-vision",
+   "retired_reason": "all sources resolve to the banned operator US Library of Congress"
+  },
+  {
+   "lccn": "sn83030214",
+   "date": "1900-02-11",
+   "field": "issue number",
+   "answer": "19446",
+   "paper": "New-York tribune",
+   "prompt": "Consult the front page of the newspaper \"New-York tribune\" published on 1900-02-11, digitized by the Library of Congress. The page is a historical scan whose machine-readable text layer is heavily degraded by age and ornate typesetting, so automated transcription is unreliable. Examine the masthead banner at the top of the front page directly. What is the issue number printed there? Provide the exact value as it appears, as a single atomic token. Cross-check your reading against the publication's catalog record and at least one independent library source to confirm you have the correct issue before answering.",
+   "sources": [
+    "https://www.loc.gov/resource/sn83030214/1900-02-11/ed-1/?&sp=1",
+    "https://www.loc.gov/item/sn83030214/1900-02-11/ed-1/",
+    "https://www.loc.gov/newspapers/sn83030214/"
+   ],
+   "operators": [
+    "US Library of Congress"
+   ],
+   "violating_urls": [
+    "https://www.loc.gov/resource/sn83030214/1900-02-11/ed-1/?&sp=1",
+    "https://www.loc.gov/item/sn83030214/1900-02-11/ed-1/",
+    "https://www.loc.gov/newspapers/sn83030214/"
+   ],
+   "violations": [
+    "R6 no category assigned",
+    "R4 banned source https://www.loc.gov/resource/sn83030214/1900-02-11/ed-1/?&sp=1 (banned domain: loc.gov)",
+    "R4 banned source https://www.loc.gov/item/sn83030214/1900-02-11/ed-1/ (banned domain: loc.gov)",
+    "R4 banned source https://www.loc.gov/newspapers/sn83030214/ (banned domain: loc.gov)",
+    "R3 only 1 independent operator(s) across 3 source(s): US Library of Congress x3",
+    "R3b no answer-confirming source asserted",
+    "R4 prompt text directs the solver to banned operator US Library of Congress"
+   ],
+   "originally_verified": true,
+   "original_verifier": "agent-vision",
+   "retired_reason": "all sources resolve to the banned operator US Library of Congress"
+  },
+  {
+   "lccn": "sn83030214",
+   "date": "1900-03-02",
+   "field": "issue number",
+   "answer": "19465",
+   "paper": "New-York tribune",
+   "prompt": "Consult the front page of the newspaper \"New-York tribune\" published on 1900-03-02, digitized by the Library of Congress. The page is a historical scan whose machine-readable text layer is heavily degraded by age and ornate typesetting, so automated transcription is unreliable. Examine the masthead banner at the top of the front page directly. What is the issue number printed there? Provide the exact value as it appears, as a single atomic token. Cross-check your reading against the publication's catalog record and at least one independent library source to confirm you have the correct issue before answering.",
+   "sources": [
+    "https://www.loc.gov/resource/sn83030214/1900-03-02/ed-1/?&sp=1",
+    "https://www.loc.gov/item/sn83030214/1900-03-02/ed-1/",
+    "https://www.loc.gov/newspapers/sn83030214/"
+   ],
+   "operators": [
+    "US Library of Congress"
+   ],
+   "violating_urls": [
+    "https://www.loc.gov/resource/sn83030214/1900-03-02/ed-1/?&sp=1",
+    "https://www.loc.gov/item/sn83030214/1900-03-02/ed-1/",
+    "https://www.loc.gov/newspapers/sn83030214/"
+   ],
+   "violations": [
+    "R6 no category assigned",
+    "R4 banned source https://www.loc.gov/resource/sn83030214/1900-03-02/ed-1/?&sp=1 (banned domain: loc.gov)",
+    "R4 banned source https://www.loc.gov/item/sn83030214/1900-03-02/ed-1/ (banned domain: loc.gov)",
+    "R4 banned source https://www.loc.gov/newspapers/sn83030214/ (banned domain: loc.gov)",
+    "R3 only 1 independent operator(s) across 3 source(s): US Library of Congress x3",
+    "R3b no answer-confirming source asserted",
+    "R4 prompt text directs the solver to banned operator US Library of Congress"
+   ],
+   "originally_verified": true,
+   "original_verifier": "agent-vision",
+   "retired_reason": "all sources resolve to the banned operator US Library of Congress"
+  },
+  {
+   "lccn": "sn83030214",
+   "date": "1900-05-12",
+   "field": "issue number",
+   "answer": "19536",
+   "paper": "New-York tribune",
+   "prompt": "Consult the front page of the newspaper \"New-York tribune\" published on 1900-05-12, digitized by the Library of Congress. The page is a historical scan whose machine-readable text layer is heavily degraded by age and ornate typesetting, so automated transcription is unreliable. Examine the masthead banner at the top of the front page directly. What is the issue number printed there? Provide the exact value as it appears, as a single atomic token. Cross-check your reading against the publication's catalog record and at least one independent library source to confirm you have the correct issue before answering.",
+   "sources": [
+    "https://www.loc.gov/resource/sn83030214/1900-05-12/ed-1/?&sp=1",
+    "https://www.loc.gov/item/sn83030214/1900-05-12/ed-1/",
+    "https://www.loc.gov/newspapers/sn83030214/"
+   ],
+   "operators": [
+    "US Library of Congress"
+   ],
+   "violating_urls": [
+    "https://www.loc.gov/resource/sn83030214/1900-05-12/ed-1/?&sp=1",
+    "https://www.loc.gov/item/sn83030214/1900-05-12/ed-1/",
+    "https://www.loc.gov/newspapers/sn83030214/"
+   ],
+   "violations": [
+    "R6 no category assigned",
+    "R4 banned source https://www.loc.gov/resource/sn83030214/1900-05-12/ed-1/?&sp=1 (banned domain: loc.gov)",
+    "R4 banned source https://www.loc.gov/item/sn83030214/1900-05-12/ed-1/ (banned domain: loc.gov)",
+    "R4 banned source https://www.loc.gov/newspapers/sn83030214/ (banned domain: loc.gov)",
+    "R3 only 1 independent operator(s) across 3 source(s): US Library of Congress x3",
+    "R3b no answer-confirming source asserted",
+    "R4 prompt text directs the solver to banned operator US Library of Congress"
+   ],
+   "originally_verified": true,
+   "original_verifier": "agent-vision",
+   "retired_reason": "all sources resolve to the banned operator US Library of Congress"
+  },
+  {
+   "lccn": "sn83030214",
+   "date": "1900-07-04",
+   "field": "issue number",
+   "answer": "19589",
+   "paper": "New-York tribune",
+   "prompt": "Consult the front page of the newspaper \"New-York tribune\" published on 1900-07-04, digitized by the Library of Congress. The page is a historical scan whose machine-readable text layer is heavily degraded by age and ornate typesetting, so automated transcription is unreliable. Examine the masthead banner at the top of the front page directly. What is the issue number printed there? Provide the exact value as it appears, as a single atomic token. Cross-check your reading against the publication's catalog record and at least one independent library source to confirm you have the correct issue before answering.",
+   "sources": [
+    "https://www.loc.gov/resource/sn83030214/1900-07-04/ed-1/?&sp=1",
+    "https://www.loc.gov/item/sn83030214/1900-07-04/ed-1/",
+    "https://www.loc.gov/newspapers/sn83030214/"
+   ],
+   "operators": [
+    "US Library of Congress"
+   ],
+   "violating_urls": [
+    "https://www.loc.gov/resource/sn83030214/1900-07-04/ed-1/?&sp=1",
+    "https://www.loc.gov/item/sn83030214/1900-07-04/ed-1/",
+    "https://www.loc.gov/newspapers/sn83030214/"
+   ],
+   "violations": [
+    "R6 no category assigned",
+    "R4 banned source https://www.loc.gov/resource/sn83030214/1900-07-04/ed-1/?&sp=1 (banned domain: loc.gov)",
+    "R4 banned source https://www.loc.gov/item/sn83030214/1900-07-04/ed-1/ (banned domain: loc.gov)",
+    "R4 banned source https://www.loc.gov/newspapers/sn83030214/ (banned domain: loc.gov)",
+    "R3 only 1 independent operator(s) across 3 source(s): US Library of Congress x3",
+    "R3b no answer-confirming source asserted",
+    "R4 prompt text directs the solver to banned operator US Library of Congress"
+   ],
+   "originally_verified": true,
+   "original_verifier": "agent-vision",
+   "retired_reason": "all sources resolve to the banned operator US Library of Congress"
+  },
+  {
+   "lccn": "sn83030214",
+   "date": "1900-07-03",
+   "field": "issue number",
+   "answer": "19588",
+   "paper": "New-York tribune",
+   "prompt": "Consult the front page of the newspaper \"New-York tribune\" published on 1900-07-03, digitized by the Library of Congress. The page is a historical scan whose machine-readable text layer is heavily degraded by age and ornate typesetting, so automated transcription is unreliable. Examine the masthead banner at the top of the front page directly. What is the issue number printed there? Provide the exact value as it appears, as a single atomic token. Cross-check your reading against the publication's catalog record and at least one independent library source to confirm you have the correct issue before answering.",
+   "sources": [
+    "https://www.loc.gov/resource/sn83030214/1900-07-03/ed-1/?&sp=1",
+    "https://www.loc.gov/item/sn83030214/1900-07-03/ed-1/",
+    "https://www.loc.gov/newspapers/sn83030214/"
+   ],
+   "operators": [
+    "US Library of Congress"
+   ],
+   "violating_urls": [
+    "https://www.loc.gov/resource/sn83030214/1900-07-03/ed-1/?&sp=1",
+    "https://www.loc.gov/item/sn83030214/1900-07-03/ed-1/",
+    "https://www.loc.gov/newspapers/sn83030214/"
+   ],
+   "violations": [
+    "R6 no category assigned",
+    "R4 banned source https://www.loc.gov/resource/sn83030214/1900-07-03/ed-1/?&sp=1 (banned domain: loc.gov)",
+    "R4 banned source https://www.loc.gov/item/sn83030214/1900-07-03/ed-1/ (banned domain: loc.gov)",
+    "R4 banned source https://www.loc.gov/newspapers/sn83030214/ (banned domain: loc.gov)",
+    "R3 only 1 independent operator(s) across 3 source(s): US Library of Congress x3",
+    "R3b no answer-confirming source asserted",
+    "R4 prompt text directs the solver to banned operator US Library of Congress"
+   ],
+   "originally_verified": true,
+   "original_verifier": "agent-vision",
+   "retired_reason": "all sources resolve to the banned operator US Library of Congress"
+  },
+  {
+   "lccn": "sn83030214",
+   "date": "1900-08-01",
+   "field": "issue number",
+   "answer": "19617",
+   "paper": "New-York tribune",
+   "prompt": "Consult the front page of the newspaper \"New-York tribune\" published on 1900-08-01, digitized by the Library of Congress. The page is a historical scan whose machine-readable text layer is heavily degraded by age and ornate typesetting, so automated transcription is unreliable. Examine the masthead banner at the top of the front page directly. What is the issue number printed there? Provide the exact value as it appears, as a single atomic token. Cross-check your reading against the publication's catalog record and at least one independent library source to confirm you have the correct issue before answering.",
+   "sources": [
+    "https://www.loc.gov/resource/sn83030214/1900-08-01/ed-1/?sp=1",
+    "https://www.loc.gov/item/sn83030214/1900-08-01/ed-1/",
+    "https://www.loc.gov/newspapers/sn83030214/"
+   ],
+   "operators": [
+    "US Library of Congress"
+   ],
+   "violating_urls": [
+    "https://www.loc.gov/resource/sn83030214/1900-08-01/ed-1/?sp=1",
+    "https://www.loc.gov/item/sn83030214/1900-08-01/ed-1/",
+    "https://www.loc.gov/newspapers/sn83030214/"
+   ],
+   "violations": [
+    "R6 no category assigned",
+    "R4 banned source https://www.loc.gov/resource/sn83030214/1900-08-01/ed-1/?sp=1 (banned domain: loc.gov)",
+    "R4 banned source https://www.loc.gov/item/sn83030214/1900-08-01/ed-1/ (banned domain: loc.gov)",
+    "R4 banned source https://www.loc.gov/newspapers/sn83030214/ (banned domain: loc.gov)",
+    "R3 only 1 independent operator(s) across 3 source(s): US Library of Congress x3",
+    "R3b no answer-confirming source asserted",
+    "R4 prompt text directs the solver to banned operator US Library of Congress"
+   ],
+   "originally_verified": true,
+   "original_verifier": "agent-vision",
+   "retired_reason": "all sources resolve to the banned operator US Library of Congress"
+  },
+  {
+   "lccn": "sn83030214",
+   "date": "1900-07-05",
+   "field": "issue number",
+   "answer": "19590",
+   "paper": "New-York tribune",
+   "prompt": "Consult the front page of the newspaper \"New-York tribune\" published on 1900-07-05, digitized by the Library of Congress. The page is a historical scan whose machine-readable text layer is heavily degraded by age and ornate typesetting, so automated transcription is unreliable. Examine the masthead banner at the top of the front page directly. What is the issue number printed there? Provide the exact value as it appears, as a single atomic token. Cross-check your reading against the publication's catalog record and at least one independent library source to confirm you have the correct issue before answering.",
+   "sources": [
+    "https://www.loc.gov/resource/sn83030214/1900-07-05/ed-1/?&sp=1",
+    "https://www.loc.gov/item/sn83030214/1900-07-05/ed-1/",
+    "https://www.loc.gov/newspapers/sn83030214/"
+   ],
+   "operators": [
+    "US Library of Congress"
+   ],
+   "violating_urls": [
+    "https://www.loc.gov/resource/sn83030214/1900-07-05/ed-1/?&sp=1",
+    "https://www.loc.gov/item/sn83030214/1900-07-05/ed-1/",
+    "https://www.loc.gov/newspapers/sn83030214/"
+   ],
+   "violations": [
+    "R6 no category assigned",
+    "R4 banned source https://www.loc.gov/resource/sn83030214/1900-07-05/ed-1/?&sp=1 (banned domain: loc.gov)",
+    "R4 banned source https://www.loc.gov/item/sn83030214/1900-07-05/ed-1/ (banned domain: loc.gov)",
+    "R4 banned source https://www.loc.gov/newspapers/sn83030214/ (banned domain: loc.gov)",
+    "R3 only 1 independent operator(s) across 3 source(s): US Library of Congress x3",
+    "R3b no answer-confirming source asserted",
+    "R4 prompt text directs the solver to banned operator US Library of Congress"
+   ],
+   "originally_verified": true,
+   "original_verifier": "agent-vision-fullres",
+   "retired_reason": "all sources resolve to the banned operator US Library of Congress"
+  },
+  {
+   "lccn": "sn83030214",
+   "date": "1900-09-05",
+   "field": "issue number",
+   "answer": "19652",
+   "paper": "New-York tribune",
+   "prompt": "Consult the front page of the newspaper \"New-York tribune\" published on 1900-09-05, digitized by the Library of Congress. The page is a historical scan whose machine-readable text layer is heavily degraded by age and ornate typesetting, so automated transcription is unreliable. Examine the masthead banner at the top of the front page directly. What is the issue number printed there? Provide the exact value as it appears, as a single atomic token. Cross-check your reading against the publication's catalog record and at least one independent library source to confirm you have the correct issue before answering.",
+   "sources": [
+    "https://www.loc.gov/resource/sn83030214/1900-09-05/ed-1/?&sp=1",
+    "https://www.loc.gov/item/sn83030214/1900-09-05/ed-1/",
+    "https://www.loc.gov/newspapers/sn83030214/"
+   ],
+   "operators": [
+    "US Library of Congress"
+   ],
+   "violating_urls": [
+    "https://www.loc.gov/resource/sn83030214/1900-09-05/ed-1/?&sp=1",
+    "https://www.loc.gov/item/sn83030214/1900-09-05/ed-1/",
+    "https://www.loc.gov/newspapers/sn83030214/"
+   ],
+   "violations": [
+    "R6 no category assigned",
+    "R4 banned source https://www.loc.gov/resource/sn83030214/1900-09-05/ed-1/?&sp=1 (banned domain: loc.gov)",
+    "R4 banned source https://www.loc.gov/item/sn83030214/1900-09-05/ed-1/ (banned domain: loc.gov)",
+    "R4 banned source https://www.loc.gov/newspapers/sn83030214/ (banned domain: loc.gov)",
+    "R3 only 1 independent operator(s) across 3 source(s): US Library of Congress x3",
+    "R3b no answer-confirming source asserted",
+    "R4 prompt text directs the solver to banned operator US Library of Congress"
+   ],
+   "originally_verified": true,
+   "original_verifier": "agent-vision-fullres",
+   "retired_reason": "all sources resolve to the banned operator US Library of Congress"
+  },
+  {
+   "lccn": "sn83030214",
+   "date": "1900-11-16",
+   "field": "issue number",
+   "answer": "19724",
+   "paper": "New-York tribune",
+   "prompt": "Consult the front page of the newspaper \"New-York tribune\" published on 1900-11-16, digitized by the Library of Congress. The page is a historical scan whose machine-readable text layer is heavily degraded by age and ornate typesetting, so automated transcription is unreliable. Examine the masthead banner at the top of the front page directly. What is the issue number printed there? Provide the exact value as it appears, as a single atomic token. Cross-check your reading against the publication's catalog record and at least one independent library source to confirm you have the correct issue before answering.",
+   "sources": [
+    "https://www.loc.gov/resource/sn83030214/1900-11-16/ed-1/?sp=1",
+    "https://www.loc.gov/item/sn83030214/1900-11-16/ed-1/",
+    "https://www.loc.gov/newspapers/sn83030214/"
+   ],
+   "operators": [
+    "US Library of Congress"
+   ],
+   "violating_urls": [
+    "https://www.loc.gov/resource/sn83030214/1900-11-16/ed-1/?sp=1",
+    "https://www.loc.gov/item/sn83030214/1900-11-16/ed-1/",
+    "https://www.loc.gov/newspapers/sn83030214/"
+   ],
+   "violations": [
+    "R6 no category assigned",
+    "R4 banned source https://www.loc.gov/resource/sn83030214/1900-11-16/ed-1/?sp=1 (banned domain: loc.gov)",
+    "R4 banned source https://www.loc.gov/item/sn83030214/1900-11-16/ed-1/ (banned domain: loc.gov)",
+    "R4 banned source https://www.loc.gov/newspapers/sn83030214/ (banned domain: loc.gov)",
+    "R3 only 1 independent operator(s) across 3 source(s): US Library of Congress x3",
+    "R3b no answer-confirming source asserted",
+    "R4 prompt text directs the solver to banned operator US Library of Congress"
+   ],
+   "originally_verified": true,
+   "original_verifier": "agent-vision-fullres",
+   "retired_reason": "all sources resolve to the banned operator US Library of Congress"
+  },
+  {
+   "lccn": "sn83030214",
+   "date": "1900-11-17",
+   "field": "issue number",
+   "answer": "19725",
+   "paper": "New-York tribune",
+   "prompt": "Consult the front page of the newspaper \"New-York tribune\" published on 1900-11-17, digitized by the Library of Congress. The page is a historical scan whose machine-readable text layer is heavily degraded by age and ornate typesetting, so automated transcription is unreliable. Examine the masthead banner at the top of the front page directly. What is the issue number printed there? Provide the exact value as it appears, as a single atomic token. Cross-check your reading against the publication's catalog record and at least one independent library source to confirm you have the correct issue before answering.",
+   "sources": [
+    "https://www.loc.gov/resource/sn83030214/1900-11-17/ed-1/?sp=1",
+    "https://www.loc.gov/item/sn83030214/1900-11-17/ed-1/",
+    "https://www.loc.gov/newspapers/sn83030214/"
+   ],
+   "operators": [
+    "US Library of Congress"
+   ],
+   "violating_urls": [
+    "https://www.loc.gov/resource/sn83030214/1900-11-17/ed-1/?sp=1",
+    "https://www.loc.gov/item/sn83030214/1900-11-17/ed-1/",
+    "https://www.loc.gov/newspapers/sn83030214/"
+   ],
+   "violations": [
+    "R6 no category assigned",
+    "R4 banned source https://www.loc.gov/resource/sn83030214/1900-11-17/ed-1/?sp=1 (banned domain: loc.gov)",
+    "R4 banned source https://www.loc.gov/item/sn83030214/1900-11-17/ed-1/ (banned domain: loc.gov)",
+    "R4 banned source https://www.loc.gov/newspapers/sn83030214/ (banned domain: loc.gov)",
+    "R3 only 1 independent operator(s) across 3 source(s): US Library of Congress x3",
+    "R3b no answer-confirming source asserted",
+    "R4 prompt text directs the solver to banned operator US Library of Congress"
+   ],
+   "originally_verified": true,
+   "original_verifier": "agent-vision-fullres",
+   "retired_reason": "all sources resolve to the banned operator US Library of Congress"
+  },
+  {
+   "lccn": "sn83045211",
+   "date": "1922-06-06",
+   "field": "issue number",
+   "answer": "227",
+   "paper": "Evening public ledger",
+   "prompt": "Consult the front page of the newspaper \"Evening public ledger\" published on 1922-06-06, digitized by the Library of Congress. The page is a historical scan whose machine-readable text layer is heavily degraded by age and ornate typesetting, so automated transcription is unreliable. Examine the masthead banner at the top of the front page directly. What is the issue number printed there? Provide the exact value as it appears, as a single atomic token. Cross-check your reading against the publication's catalog record and at least one independent library source to confirm you have the correct issue before answering.",
+   "sources": [
+    "https://www.loc.gov/resource/sn83045211/1922-06-06/ed-1/?sp=1",
+    "https://www.loc.gov/item/sn83045211/1922-06-06/ed-1/",
+    "https://www.loc.gov/newspapers/sn83045211/"
+   ],
+   "operators": [
+    "US Library of Congress"
+   ],
+   "violating_urls": [
+    "https://www.loc.gov/resource/sn83045211/1922-06-06/ed-1/?sp=1",
+    "https://www.loc.gov/item/sn83045211/1922-06-06/ed-1/",
+    "https://www.loc.gov/newspapers/sn83045211/"
+   ],
+   "violations": [
+    "R6 no category assigned",
+    "R4 banned source https://www.loc.gov/resource/sn83045211/1922-06-06/ed-1/?sp=1 (banned domain: loc.gov)",
+    "R4 banned source https://www.loc.gov/item/sn83045211/1922-06-06/ed-1/ (banned domain: loc.gov)",
+    "R4 banned source https://www.loc.gov/newspapers/sn83045211/ (banned domain: loc.gov)",
+    "R3 only 1 independent operator(s) across 3 source(s): US Library of Congress x3",
+    "R3b no answer-confirming source asserted",
+    "R4 prompt text directs the solver to banned operator US Library of Congress"
+   ],
+   "originally_verified": true,
+   "original_verifier": "agent-vision-fullres",
+   "retired_reason": "all sources resolve to the banned operator US Library of Congress"
+  },
+  {
+   "lccn": "sn83030214",
+   "date": "1900-10-04",
+   "field": "issue number",
+   "answer": "19681",
+   "paper": "New-York tribune",
+   "prompt": "Consult the front page of the newspaper \"New-York tribune\" published on 1900-10-04, digitized by the Library of Congress. The page is a historical scan whose machine-readable text layer is heavily degraded by age and ornate typesetting, so automated transcription is unreliable. Examine the masthead banner at the top of the front page directly. What is the issue number printed there? Provide the exact value as it appears, as a single atomic token. Cross-check your reading against the publication's catalog record and at least one independent library source to confirm you have the correct issue before answering.",
+   "sources": [
+    "https://www.loc.gov/resource/sn83030214/1900-10-04/ed-1/?&sp=1",
+    "https://www.loc.gov/item/sn83030214/1900-10-04/ed-1/",
+    "https://www.loc.gov/newspapers/sn83030214/"
+   ],
+   "operators": [
+    "US Library of Congress"
+   ],
+   "violating_urls": [
+    "https://www.loc.gov/resource/sn83030214/1900-10-04/ed-1/?&sp=1",
+    "https://www.loc.gov/item/sn83030214/1900-10-04/ed-1/",
+    "https://www.loc.gov/newspapers/sn83030214/"
+   ],
+   "violations": [
+    "R6 no category assigned",
+    "R4 banned source https://www.loc.gov/resource/sn83030214/1900-10-04/ed-1/?&sp=1 (banned domain: loc.gov)",
+    "R4 banned source https://www.loc.gov/item/sn83030214/1900-10-04/ed-1/ (banned domain: loc.gov)",
+    "R4 banned source https://www.loc.gov/newspapers/sn83030214/ (banned domain: loc.gov)",
+    "R3 only 1 independent operator(s) across 3 source(s): US Library of Congress x3",
+    "R3b no answer-confirming source asserted",
+    "R4 prompt text directs the solver to banned operator US Library of Congress"
+   ],
+   "originally_verified": true,
+   "original_verifier": "dual-engine agreement + issue-sequence arithmetic",
+   "retired_reason": "all sources resolve to the banned operator US Library of Congress"
+  },
+  {
+   "lccn": "sn83030214",
+   "date": "1900-10-07",
+   "field": "issue number",
+   "answer": "19684",
+   "paper": "New-York tribune",
+   "prompt": "Consult the front page of the newspaper \"New-York tribune\" published on 1900-10-07, digitized by the Library of Congress. The page is a historical scan whose machine-readable text layer is heavily degraded by age and ornate typesetting, so automated transcription is unreliable. Examine the masthead banner at the top of the front page directly. What is the issue number printed there? Provide the exact value as it appears, as a single atomic token. Cross-check your reading against the publication's catalog record and at least one independent library source to confirm you have the correct issue before answering.",
+   "sources": [
+    "https://www.loc.gov/resource/sn83030214/1900-10-07/ed-1/?&sp=1",
+    "https://www.loc.gov/item/sn83030214/1900-10-07/ed-1/",
+    "https://www.loc.gov/newspapers/sn83030214/"
+   ],
+   "operators": [
+    "US Library of Congress"
+   ],
+   "violating_urls": [
+    "https://www.loc.gov/resource/sn83030214/1900-10-07/ed-1/?&sp=1",
+    "https://www.loc.gov/item/sn83030214/1900-10-07/ed-1/",
+    "https://www.loc.gov/newspapers/sn83030214/"
+   ],
+   "violations": [
+    "R6 no category assigned",
+    "R4 banned source https://www.loc.gov/resource/sn83030214/1900-10-07/ed-1/?&sp=1 (banned domain: loc.gov)",
+    "R4 banned source https://www.loc.gov/item/sn83030214/1900-10-07/ed-1/ (banned domain: loc.gov)",
+    "R4 banned source https://www.loc.gov/newspapers/sn83030214/ (banned domain: loc.gov)",
+    "R3 only 1 independent operator(s) across 3 source(s): US Library of Congress x3",
+    "R3b no answer-confirming source asserted",
+    "R4 prompt text directs the solver to banned operator US Library of Congress"
+   ],
+   "originally_verified": true,
+   "original_verifier": "dual-engine agreement + issue-sequence arithmetic",
+   "retired_reason": "all sources resolve to the banned operator US Library of Congress"
+  },
+  {
+   "lccn": "sn83030214",
+   "date": "1900-10-10",
+   "field": "issue number",
+   "answer": "19687",
+   "paper": "New-York tribune",
+   "prompt": "Consult the front page of the newspaper \"New-York tribune\" published on 1900-10-10, digitized by the Library of Congress. The page is a historical scan whose machine-readable text layer is heavily degraded by age and ornate typesetting, so automated transcription is unreliable. Examine the masthead banner at the top of the front page directly. What is the issue number printed there? Provide the exact value as it appears, as a single atomic token. Cross-check your reading against the publication's catalog record and at least one independent library source to confirm you have the correct issue before answering.",
+   "sources": [
+    "https://www.loc.gov/resource/sn83030214/1900-10-10/ed-1/?&sp=1",
+    "https://www.loc.gov/item/sn83030214/1900-10-10/ed-1/",
+    "https://www.loc.gov/newspapers/sn83030214/"
+   ],
+   "operators": [
+    "US Library of Congress"
+   ],
+   "violating_urls": [
+    "https://www.loc.gov/resource/sn83030214/1900-10-10/ed-1/?&sp=1",
+    "https://www.loc.gov/item/sn83030214/1900-10-10/ed-1/",
+    "https://www.loc.gov/newspapers/sn83030214/"
+   ],
+   "violations": [
+    "R6 no category assigned",
+    "R4 banned source https://www.loc.gov/resource/sn83030214/1900-10-10/ed-1/?&sp=1 (banned domain: loc.gov)",
+    "R4 banned source https://www.loc.gov/item/sn83030214/1900-10-10/ed-1/ (banned domain: loc.gov)",
+    "R4 banned source https://www.loc.gov/newspapers/sn83030214/ (banned domain: loc.gov)",
+    "R3 only 1 independent operator(s) across 3 source(s): US Library of Congress x3",
+    "R3b no answer-confirming source asserted",
+    "R4 prompt text directs the solver to banned operator US Library of Congress"
+   ],
+   "originally_verified": true,
+   "original_verifier": "dual-engine agreement + issue-sequence arithmetic",
+   "retired_reason": "all sources resolve to the banned operator US Library of Congress"
+  },
+  {
+   "lccn": "sn83030214",
+   "date": "1900-10-11",
+   "field": "issue number",
+   "answer": "19688",
+   "paper": "New-York tribune",
+   "prompt": "Consult the front page of the newspaper \"New-York tribune\" published on 1900-10-11, digitized by the Library of Congress. The page is a historical scan whose machine-readable text layer is heavily degraded by age and ornate typesetting, so automated transcription is unreliable. Examine the masthead banner at the top of the front page directly. What is the issue number printed there? Provide the exact value as it appears, as a single atomic token. Cross-check your reading against the publication's catalog record and at least one independent library source to confirm you have the correct issue before answering.",
+   "sources": [
+    "https://www.loc.gov/resource/sn83030214/1900-10-11/ed-1/?&sp=1",
+    "https://www.loc.gov/item/sn83030214/1900-10-11/ed-1/",
+    "https://www.loc.gov/newspapers/sn83030214/"
+   ],
+   "operators": [
+    "US Library of Congress"
+   ],
+   "violating_urls": [
+    "https://www.loc.gov/resource/sn83030214/1900-10-11/ed-1/?&sp=1",
+    "https://www.loc.gov/item/sn83030214/1900-10-11/ed-1/",
+    "https://www.loc.gov/newspapers/sn83030214/"
+   ],
+   "violations": [
+    "R6 no category assigned",
+    "R4 banned source https://www.loc.gov/resource/sn83030214/1900-10-11/ed-1/?&sp=1 (banned domain: loc.gov)",
+    "R4 banned source https://www.loc.gov/item/sn83030214/1900-10-11/ed-1/ (banned domain: loc.gov)",
+    "R4 banned source https://www.loc.gov/newspapers/sn83030214/ (banned domain: loc.gov)",
+    "R3 only 1 independent operator(s) across 3 source(s): US Library of Congress x3",
+    "R3b no answer-confirming source asserted",
+    "R4 prompt text directs the solver to banned operator US Library of Congress"
+   ],
+   "originally_verified": true,
+   "original_verifier": "dual-engine agreement + issue-sequence arithmetic",
+   "retired_reason": "all sources resolve to the banned operator US Library of Congress"
+  },
+  {
+   "lccn": "sn83030214",
+   "date": "1900-10-12",
+   "field": "issue number",
+   "answer": "19689",
+   "paper": "New-York tribune",
+   "prompt": "Consult the front page of the newspaper \"New-York tribune\" published on 1900-10-12, digitized by the Library of Congress. The page is a historical scan whose machine-readable text layer is heavily degraded by age and ornate typesetting, so automated transcription is unreliable. Examine the masthead banner at the top of the front page directly. What is the issue number printed there? Provide the exact value as it appears, as a single atomic token. Cross-check your reading against the publication's catalog record and at least one independent library source to confirm you have the correct issue before answering.",
+   "sources": [
+    "https://www.loc.gov/resource/sn83030214/1900-10-12/ed-1/?&sp=1",
+    "https://www.loc.gov/item/sn83030214/1900-10-12/ed-1/",
+    "https://www.loc.gov/newspapers/sn83030214/"
+   ],
+   "operators": [
+    "US Library of Congress"
+   ],
+   "violating_urls": [
+    "https://www.loc.gov/resource/sn83030214/1900-10-12/ed-1/?&sp=1",
+    "https://www.loc.gov/item/sn83030214/1900-10-12/ed-1/",
+    "https://www.loc.gov/newspapers/sn83030214/"
+   ],
+   "violations": [
+    "R6 no category assigned",
+    "R4 banned source https://www.loc.gov/resource/sn83030214/1900-10-12/ed-1/?&sp=1 (banned domain: loc.gov)",
+    "R4 banned source https://www.loc.gov/item/sn83030214/1900-10-12/ed-1/ (banned domain: loc.gov)",
+    "R4 banned source https://www.loc.gov/newspapers/sn83030214/ (banned domain: loc.gov)",
+    "R3 only 1 independent operator(s) across 3 source(s): US Library of Congress x3",
+    "R3b no answer-confirming source asserted",
+    "R4 prompt text directs the solver to banned operator US Library of Congress"
+   ],
+   "originally_verified": true,
+   "original_verifier": "dual-engine agreement + issue-sequence arithmetic",
+   "retired_reason": "all sources resolve to the banned operator US Library of Congress"
+  },
+  {
+   "lccn": "sn83030214",
+   "date": "1900-10-13",
+   "field": "issue number",
+   "answer": "19690",
+   "paper": "New-York tribune",
+   "prompt": "Consult the front page of the newspaper \"New-York tribune\" published on 1900-10-13, digitized by the Library of Congress. The page is a historical scan whose machine-readable text layer is heavily degraded by age and ornate typesetting, so automated transcription is unreliable. Examine the masthead banner at the top of the front page directly. What is the issue number printed there? Provide the exact value as it appears, as a single atomic token. Cross-check your reading against the publication's catalog record and at least one independent library source to confirm you have the correct issue before answering.",
+   "sources": [
+    "https://www.loc.gov/resource/sn83030214/1900-10-13/ed-1/?&sp=1",
+    "https://www.loc.gov/item/sn83030214/1900-10-13/ed-1/",
+    "https://www.loc.gov/newspapers/sn83030214/"
+   ],
+   "operators": [
+    "US Library of Congress"
+   ],
+   "violating_urls": [
+    "https://www.loc.gov/resource/sn83030214/1900-10-13/ed-1/?&sp=1",
+    "https://www.loc.gov/item/sn83030214/1900-10-13/ed-1/",
+    "https://www.loc.gov/newspapers/sn83030214/"
+   ],
+   "violations": [
+    "R6 no category assigned",
+    "R4 banned source https://www.loc.gov/resource/sn83030214/1900-10-13/ed-1/?&sp=1 (banned domain: loc.gov)",
+    "R4 banned source https://www.loc.gov/item/sn83030214/1900-10-13/ed-1/ (banned domain: loc.gov)",
+    "R4 banned source https://www.loc.gov/newspapers/sn83030214/ (banned domain: loc.gov)",
+    "R3 only 1 independent operator(s) across 3 source(s): US Library of Congress x3",
+    "R3b no answer-confirming source asserted",
+    "R4 prompt text directs the solver to banned operator US Library of Congress"
+   ],
+   "originally_verified": true,
+   "original_verifier": "dual-engine agreement + issue-sequence arithmetic",
+   "retired_reason": "all sources resolve to the banned operator US Library of Congress"
+  }
+ ],
+ "curated": [
+  {
+   "id": "V01",
+   "domain": "Historical newspaper",
+   "answer": "19405",
+   "prompt": "Open the front-page scan of the New-York Tribune for its January 1, 1900 edition, held by the Library of Congress (newspaper LCCN sn83030214, the January 1, 1900 edition, page 1). Read the masthead directly from the page image \u2014 the machine-transcribed text garbles the issue number and cannot be trusted. The masthead prints \"Vol. LIX....No. _____\" near the top. Determine the complete issue number that follows \"No.\", reading every digit carefully from the image, and report it as a single integer with no punctuation. The digits legible in the scan, not the OCR layer, are the authority.",
+   "sources": [
+    "https://www.loc.gov/resource/sn83030214/1900-01-01/ed-1/?sp=1",
+    "https://www.loc.gov/item/sn83030214/1900-01-01/ed-1/",
+    "https://chroniclingamerica.loc.gov/lccn/sn83030214/"
+   ],
+   "operators": [
+    "US Library of Congress"
+   ],
+   "violating_urls": [
+    "https://www.loc.gov/resource/sn83030214/1900-01-01/ed-1/?sp=1",
+    "https://www.loc.gov/item/sn83030214/1900-01-01/ed-1/",
+    "https://chroniclingamerica.loc.gov/lccn/sn83030214/"
+   ],
+   "violations": [
+    "R6 no category assigned",
+    "R4 banned source https://www.loc.gov/resource/sn83030214/1900-01-01/ed-1/?sp=1 (banned domain: loc.gov)",
+    "R4 banned source https://www.loc.gov/item/sn83030214/1900-01-01/ed-1/ (banned domain: loc.gov)",
+    "R4 banned source https://chroniclingamerica.loc.gov/lccn/sn83030214/ (banned domain: loc.gov)",
+    "R3 only 1 independent operator(s) across 3 source(s): US Library of Congress x3",
+    "R3b no answer-confirming source asserted",
+    "R4 prompt text directs the solver to banned operator US Library of Congress"
+   ],
+   "previously_withdrawn": false,
+   "previous_withdrawn_reason": null,
+   "retired_reason": "all sources resolve to the banned operator US Library of Congress"
+  },
+  {
+   "id": "V02",
+   "domain": "Historical newspaper",
+   "answer": "148",
+   "prompt": "Examine the scan of the Evening Public Ledger (Philadelphia) front page for its March 6, 1922 issue, held by the Library of Congress (newspaper LCCN sn83045211, the March 6, 1922 edition, page 23). The automated text transcription of this page is severely corrupted, so read the masthead from the page image itself. In the masthead, the paper prints its volume and issue number as \"VOL. VIII.\u2014NO. ___\". Determine the issue number that follows \"NO.\" and report that integer. Trust only what is legible in the image, not the OCR layer.",
+   "sources": [
+    "https://www.loc.gov/resource/sn83045211/1922-03-06/ed-1/?sp=23",
+    "https://www.loc.gov/item/sn83045211/1922-03-06/ed-1/",
+    "https://chroniclingamerica.loc.gov/lccn/sn83045211/"
+   ],
+   "operators": [
+    "US Library of Congress"
+   ],
+   "violating_urls": [
+    "https://www.loc.gov/resource/sn83045211/1922-03-06/ed-1/?sp=23",
+    "https://www.loc.gov/item/sn83045211/1922-03-06/ed-1/",
+    "https://chroniclingamerica.loc.gov/lccn/sn83045211/"
+   ],
+   "violations": [
+    "R6 no category assigned",
+    "R4 banned source https://www.loc.gov/resource/sn83045211/1922-03-06/ed-1/?sp=23 (banned domain: loc.gov)",
+    "R4 banned source https://www.loc.gov/item/sn83045211/1922-03-06/ed-1/ (banned domain: loc.gov)",
+    "R4 banned source https://chroniclingamerica.loc.gov/lccn/sn83045211/ (banned domain: loc.gov)",
+    "R3 only 1 independent operator(s) across 3 source(s): US Library of Congress x3",
+    "R3b no answer-confirming source asserted",
+    "R4 prompt text directs the solver to banned operator US Library of Congress"
+   ],
+   "previously_withdrawn": true,
+   "previous_withdrawn_reason": "api-proof fails at the ISSUE level. The prompt names page 23, whose text layer is clean, but page 1 of the same issue prints 'NO. 148' in its text layer and the issue number is identical on every page. A text-only solver answers this without opening any scan.",
+   "retired_reason": "all sources resolve to the banned operator US Library of Congress"
+  },
+  {
+   "id": "V03",
+   "domain": "Historical newspaper",
+   "answer": "1832",
+   "prompt": "Look at the masthead of The Evening Star and Newark Advertiser (Newark, New Jersey) for its December 2, 1907 issue, held by the Library of Congress (newspaper LCCN sn84020504, the December 2, 1907 edition, page 9). The machine-readable text for this page omits the founding line, so read the page image directly. The masthead states \"ESTABLISHED\" followed by a four-digit year. Determine that year and report it. Use only the year visible in the scanned image, not the catalog record or the OCR.",
+   "sources": [
+    "https://www.loc.gov/resource/sn84020504/1907-12-02/ed-1/?sp=9",
+    "https://www.loc.gov/item/sn84020504/1907-12-02/ed-1/",
+    "https://chroniclingamerica.loc.gov/lccn/sn84020504/"
+   ],
+   "operators": [
+    "US Library of Congress"
+   ],
+   "violating_urls": [
+    "https://www.loc.gov/resource/sn84020504/1907-12-02/ed-1/?sp=9",
+    "https://www.loc.gov/item/sn84020504/1907-12-02/ed-1/",
+    "https://chroniclingamerica.loc.gov/lccn/sn84020504/"
+   ],
+   "violations": [
+    "R6 no category assigned",
+    "R4 banned source https://www.loc.gov/resource/sn84020504/1907-12-02/ed-1/?sp=9 (banned domain: loc.gov)",
+    "R4 banned source https://www.loc.gov/item/sn84020504/1907-12-02/ed-1/ (banned domain: loc.gov)",
+    "R4 banned source https://chroniclingamerica.loc.gov/lccn/sn84020504/ (banned domain: loc.gov)",
+    "R3 only 1 independent operator(s) across 3 source(s): US Library of Congress x3",
+    "R3b no answer-confirming source asserted",
+    "R4 prompt text directs the solver to banned operator US Library of Congress"
+   ],
+   "previously_withdrawn": true,
+   "previous_withdrawn_reason": "api-proof fails at the ISSUE level. The prompt names page 9, whose text layer is clean, but pages 1 and 6 print 'ESTABLISHED 1832' and page 1 also prints 'FOUNDED MARCH 1. 1832'. The founding year is invariant across the whole paper, so it is recoverable from any issue.",
+   "retired_reason": "all sources resolve to the banned operator US Library of Congress"
+  },
+  {
+   "id": "V04",
+   "domain": "Historical newspaper",
+   "answer": "19410",
+   "prompt": "Open the front-page scan of the New-York Tribune for its January 6, 1900 edition, held by the Library of Congress (newspaper LCCN sn83030214, the January 6, 1900 edition, page 1). Read the masthead directly from the page image \u2014 the machine transcription drops the issue number entirely. The masthead prints \"N\u00ba. LIX.... N\u00ba _____\" near the top. Determine the full issue number that follows the second \"N\u00ba\", reading each digit from the image, and report it as one integer with no punctuation. The digits in the scan, not the OCR, are the authority.",
+   "sources": [
+    "https://www.loc.gov/resource/sn83030214/1900-01-06/ed-1/?sp=1",
+    "https://www.loc.gov/item/sn83030214/1900-01-06/ed-1/",
+    "https://chroniclingamerica.loc.gov/lccn/sn83030214/"
+   ],
+   "operators": [
+    "US Library of Congress"
+   ],
+   "violating_urls": [
+    "https://www.loc.gov/resource/sn83030214/1900-01-06/ed-1/?sp=1",
+    "https://www.loc.gov/item/sn83030214/1900-01-06/ed-1/",
+    "https://chroniclingamerica.loc.gov/lccn/sn83030214/"
+   ],
+   "violations": [
+    "R6 no category assigned",
+    "R4 banned source https://www.loc.gov/resource/sn83030214/1900-01-06/ed-1/?sp=1 (banned domain: loc.gov)",
+    "R4 banned source https://www.loc.gov/item/sn83030214/1900-01-06/ed-1/ (banned domain: loc.gov)",
+    "R4 banned source https://chroniclingamerica.loc.gov/lccn/sn83030214/ (banned domain: loc.gov)",
+    "R3 only 1 independent operator(s) across 3 source(s): US Library of Congress x3",
+    "R3b no answer-confirming source asserted",
+    "R4 prompt text directs the solver to banned operator US Library of Congress"
+   ],
+   "previously_withdrawn": false,
+   "previous_withdrawn_reason": null,
+   "retired_reason": "all sources resolve to the banned operator US Library of Congress"
+  },
+  {
+   "id": "V05",
+   "domain": "Historical newspaper",
+   "answer": "166",
+   "prompt": "Examine the front-page scan of the Evening Public Ledger (Philadelphia) for its March 27, 1922 issue, held by the Library of Congress (newspaper LCCN sn83045211, the March 27, 1922 edition, page 1). The automated text transcription of this page omits the issue number, so read the masthead from the page image itself. The masthead prints \"VOL. VIII.\u2014NO. ___\" near the top. Determine the issue number that follows \"NO.\" and report that integer. Trust only what is legible in the image, not the OCR layer.",
+   "sources": [
+    "https://www.loc.gov/resource/sn83045211/1922-03-27/ed-1/?sp=1",
+    "https://www.loc.gov/item/sn83045211/1922-03-27/ed-1/",
+    "https://chroniclingamerica.loc.gov/lccn/sn83045211/"
+   ],
+   "operators": [
+    "US Library of Congress"
+   ],
+   "violating_urls": [
+    "https://www.loc.gov/resource/sn83045211/1922-03-27/ed-1/?sp=1",
+    "https://www.loc.gov/item/sn83045211/1922-03-27/ed-1/",
+    "https://chroniclingamerica.loc.gov/lccn/sn83045211/"
+   ],
+   "violations": [
+    "R6 no category assigned",
+    "R4 banned source https://www.loc.gov/resource/sn83045211/1922-03-27/ed-1/?sp=1 (banned domain: loc.gov)",
+    "R4 banned source https://www.loc.gov/item/sn83045211/1922-03-27/ed-1/ (banned domain: loc.gov)",
+    "R4 banned source https://chroniclingamerica.loc.gov/lccn/sn83045211/ (banned domain: loc.gov)",
+    "R3 only 1 independent operator(s) across 3 source(s): US Library of Congress x3",
+    "R3b no answer-confirming source asserted",
+    "R4 prompt text directs the solver to banned operator US Library of Congress"
+   ],
+   "previously_withdrawn": false,
+   "previous_withdrawn_reason": null,
+   "retired_reason": "all sources resolve to the banned operator US Library of Congress"
+  }
+ ],
+ "counts": {
+  "generated": 18,
+  "curated": 5
+ }
+}

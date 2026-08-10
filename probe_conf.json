@@ -1,0 +1,222 @@
+{
+  "geography_by_answer": {
+    "n_base": 42,
+    "winner_icao": "SKIP",
+    "winner_name": "San Luis Airport",
+    "elev_ft": 9765,
+    "municipality": "Ipiales",
+    "by_answer_hits": [
+      {
+        "qid": "Q1321708",
+        "label": "San Luis Airport",
+        "country": "Colombia"
+      }
+    ],
+    "by_answer_n": 1,
+    "by_name_qid": "Q3291597",
+    "by_name_p239": "SAOU",
+    "by_name_country": "Argentina",
+    "collision": true
+  },
+  "history_awards": {
+    "person": "Aage Niels Bohr",
+    "qid": "Q103854",
+    "n_p166": 8,
+    "awards_in_claim_order": [
+      {
+        "claim_index": 0,
+        "qid": "Q757645",
+        "label": "Atoms for Peace Award"
+      },
+      {
+        "claim_index": 1,
+        "qid": "Q38104",
+        "label": "Nobel Prize in Physics"
+      },
+      {
+        "claim_index": 2,
+        "qid": "Q15821575",
+        "label": "John Price Wetherill Medal"
+      },
+      {
+        "claim_index": 3,
+        "qid": "Q2240036",
+        "label": "Rutherford Medal and Prize"
+      },
+      {
+        "claim_index": 4,
+        "qid": "Q1164475",
+        "label": "Dannie Heineman Prize for Mathematical Physics"
+      },
+      {
+        "claim_index": 5,
+        "qid": "Q63089015",
+        "label": "honorary doctor of the Peking University"
+      },
+      {
+        "claim_index": 6,
+        "qid": "Q134540050",
+        "label": "H. C. \u00d8rsted Gold Medal"
+      },
+      {
+        "claim_index": 7,
+        "qid": "Q12330137",
+        "label": "Ole R\u00f8mer Medal"
+      }
+    ],
+    "nobel_present": true,
+    "nobel_claim_index": 1,
+    "first_claim_is_nobel": false,
+    "diagnosis": "helper returns claim 0 only; Nobel sits deeper"
+  },
+  "video_games_offsets": {
+    "rows": [
+      {
+        "appid": 3830,
+        "name": "Psychonauts",
+        "date_str": "Oct 11, 2006",
+        "coming_soon": false,
+        "steam_date": "2006-10-11",
+        "wd_qid": "Q1277009",
+        "wd_raw": "+2005-04-19T00:00:00Z",
+        "wd_date": "2005-04-19",
+        "offset_days": 540
+      },
+      {
+        "appid": 6910,
+        "name": "Deus Ex: Game of the Year Edition",
+        "date_str": "Mar 29, 2007",
+        "coming_soon": false,
+        "steam_date": "2007-03-29",
+        "wd_qid": "Q4037255",
+        "wd_raw": "+2001-05-09T00:00:00Z",
+        "wd_date": "2001-05-09",
+        "offset_days": 2150
+      },
+      {
+        "appid": 8930,
+        "name": "Sid Meier's Civilization\u00ae V",
+        "date_str": "Sep 21, 2010",
+        "coming_soon": false,
+        "steam_date": "2010-09-21",
+        "wd_qid": "Q126405953",
+        "wd_raw": "+2025-02-11T00:00:00Z",
+        "wd_date": "2025-02-11",
+        "offset_days": -5257
+      },
+      {
+        "appid": 22380,
+        "name": "Fallout: New Vegas",
+        "date_str": "Oct 19, 2010",
+        "coming_soon": false,
+        "steam_date": "2010-10-19",
+        "wd_qid": "Q753749",
+        "wd_raw": "+2010-10-19T00:00:00Z",
+        "wd_date": "2010-10-19",
+        "offset_days": 0
+      },
+      {
+        "appid": 105600,
+        "name": "Terraria",
+        "date_str": "May 16, 2011",
+        "coming_soon": false,
+        "steam_date": "2011-05-16",
+        "wd_qid": "Q332697",
+        "wd_raw": "+2011-05-17T00:00:00Z",
+        "wd_date": "2011-05-17",
+        "offset_days": -1
+      },
+      {
+        "appid": 250900,
+        "name": "The Binding of Isaac: Rebirth",
+        "date_str": "Nov 4, 2014",
+        "coming_soon": false,
+        "steam_date": "2014-11-04",
+        "wd_qid": "Q16267631",
+        "wd_raw": "+2014-01-01T00:00:00Z",
+        "wd_date": "2014-01-01",
+        "offset_days": 307
+      },
+      {
+        "appid": 39210,
+        "name": "FINAL FANTASY XIV Online",
+        "date_str": "Feb 18, 2014",
+        "coming_soon": false,
+        "steam_date": "2014-02-18",
+        "wd_qid": "Q868389",
+        "wd_raw": "+2010-09-30T00:00:00Z",
+        "wd_date": "2010-09-30",
+        "offset_days": 1237
+      },
+      {
+        "appid": 1091500,
+        "name": "Cyberpunk 2077",
+        "date_str": "Dec 9, 2020",
+        "coming_soon": false,
+        "steam_date": "2020-12-09",
+        "wd_qid": "Q3182559",
+        "wd_raw": "+2020-12-10T00:00:00Z",
+        "wd_date": "2020-12-10",
+        "offset_days": -1
+      },
+      {
+        "appid": 292030,
+        "name": "The Witcher 3: Wild Hunt",
+        "date_str": "May 18, 2015",
+        "coming_soon": false,
+        "steam_date": "2015-05-18",
+        "wd_qid": "Q4267401",
+        "wd_raw": "+2015-05-19T00:00:00Z",
+        "wd_date": "2015-05-19",
+        "offset_days": -1
+      },
+      {
+        "appid": 367520,
+        "name": "Hollow Knight",
+        "date_str": "Feb 24, 2017",
+        "coming_soon": false,
+        "steam_date": "2017-02-24",
+        "wd_qid": "Q29300592",
+        "wd_raw": "+2017-02-24T00:00:00Z",
+        "wd_date": "2017-02-24",
+        "offset_days": 0
+      },
+      {
+        "appid": 620,
+        "name": "Portal 2",
+        "date_str": "Apr 18, 2011",
+        "coming_soon": false,
+        "steam_date": "2011-04-18",
+        "wd_qid": "Q279446",
+        "wd_raw": "+2011-04-19T00:00:00Z",
+        "wd_date": "2011-04-19",
+        "offset_days": -1
+      },
+      {
+        "appid": 570,
+        "name": "Dota 2",
+        "date_str": "Jul 9, 2013",
+        "coming_soon": false,
+        "steam_date": "2013-07-09",
+        "wd_qid": "Q771541",
+        "wd_raw": "+2013-07-09T00:00:00Z",
+        "wd_date": "2013-07-09",
+        "offset_days": 0
+      }
+    ],
+    "n_comparable": 12,
+    "offset_histogram": {
+      "540": 1,
+      "2150": 1,
+      "-5257": 1,
+      "0": 3,
+      "-1": 4,
+      "307": 1,
+      "1237": 1
+    },
+    "n_exact": 3,
+    "n_off_by_one": 4,
+    "n_off_more": 5,
+    "verdict": "release date is not atomic across operators"
+  }
+}

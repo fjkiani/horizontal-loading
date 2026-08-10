@@ -1,0 +1,133 @@
+{
+  "retro": {
+    "error": "AttributeError: 'str' object has no attribute 'decode'"
+  },
+  "cl_months": {
+    "1992-03-01": {
+      "count": 1381,
+      "n_page": 20,
+      "days_on_page": {
+        "1992-03-02": 20
+      },
+      "url": "https://www.courtlistener.com/api/rest/v4/search/?q=&type=o&court=scotus&filed_after=1992-03-01&filed_before=1992-03-31&order_by=dateFiled+asc"
+    },
+    "1992-06-01": {
+      "count": 1514,
+      "n_page": 20,
+      "days_on_page": {
+        "1992-06-01": 20
+      },
+      "url": "https://www.courtlistener.com/api/rest/v4/search/?q=&type=o&court=scotus&filed_after=1992-06-01&filed_before=1992-06-30&order_by=dateFiled+asc"
+    },
+    "1994-01-01": {
+      "count": 1516,
+      "n_page": 20,
+      "days_on_page": {
+        "1994-01-05": 3,
+        "1994-01-06": 1,
+        "1994-01-10": 16
+      },
+      "url": "https://www.courtlistener.com/api/rest/v4/search/?q=&type=o&court=scotus&filed_after=1994-01-01&filed_before=1994-01-31&order_by=dateFiled+asc"
+    }
+  },
+  "cl_days": {
+    "1992-03-02": {
+      "count": 275,
+      "n": 20,
+      "complete": false,
+      "n_distinct_names": 10,
+      "names": [
+        "Camoscio v. Rouse",
+        "Children's Legal Foundation, Inc. v. Action for Children's T",
+        "Christophersen v. Allied-Signal Corp.",
+        "Del Tufo v. Ivy Club",
+        "Grunst v. United States",
+        "Michigan v. Mason",
+        "Phonetele, Inc. v. American Telephone & Telegraph Co.",
+        "South Carolina v. Manning",
+        "Southwestern Bell Telephone Co. v. Langston",
+        "Utah v. Sampson"
+      ],
+      "us_cites": [
+        "503 U.S. 912",
+        "503 U.S. 913",
+        "503 U.S. 914"
+      ]
+    },
+    "1992-06-01": {
+      "count": 247,
+      "n": 20,
+      "complete": false,
+      "n_distinct_names": 10,
+      "names": [
+        "Allison v. United States",
+        "Bingham v. Inland Division of General Motors",
+        "Cates v. United States",
+        "Elder v. United States",
+        "Ferriol v. United States",
+        "Matheney v. Indiana",
+        "Perez v. Louisiana",
+        "Perez-Dominguez v. United States",
+        "Stutts v. United States",
+        "Williamson v. Oklahoma"
+      ],
+      "us_cites": [
+        "504 U.S. 962",
+        "504 U.S. 965",
+        "504 U.S. 968"
+      ]
+    },
+    "1994-01-05": {
+      "count": 3,
+      "n": 3,
+      "complete": true,
+      "n_distinct_names": 2,
+      "names": [
+        "Poole v. City of Killeen",
+        "Simpson Paper (Vermont) Co. v. Department of Environmental C"
+      ],
+      "us_cites": [
+        "510 U.S. 1032",
+        "510 U.S. 1033"
+      ]
+    },
+    "1994-01-06": {
+      "count": 1,
+      "n": 1,
+      "complete": true,
+      "n_distinct_names": 1,
+      "names": [
+        "Wells, by and Through Kehne v. Arave, Warden"
+      ],
+      "us_cites": [
+        "510 U.S. 1033"
+      ]
+    },
+    "1994-01-10": {
+      "count": 826,
+      "n": 20,
+      "complete": false,
+      "n_distinct_names": 20,
+      "names": [
+        "Administrators of the Tulane Educational Fund v. Shalala",
+        "Bush v. Singletary",
+        "Cabal v. Department of Justice",
+        "Cataldi v. Carter",
+        "Cooper v. United States",
+        "Flores v. United States",
+        "Foulks v. United States",
+        "Hicks v. United States",
+        "In re Ainsworth",
+        "Kelly v. United States",
+        "Kleinschmidt v. Schwartz",
+        "Marin v. United States"
+      ],
+      "us_cites": [
+        "510 U.S. 1063",
+        "510 U.S. 1064",
+        "510 U.S. 1065",
+        "510 U.S. 1067"
+      ]
+    }
+  }
+}

@@ -1,0 +1,121 @@
+{
+  "n": 14,
+  "n_resolved_of": 14,
+  "n_distinct_devs": 14,
+  "all_devs_distinct": true,
+  "key_ties": 0,
+  "digit_leading": [],
+  "p_guess_dev": 0.071429,
+  "spearman_key_vs_appid_order": -0.0637,
+  "winner": {
+    "appid": 255710,
+    "name": "Cities: Skylines",
+    "dev": "Colossal Order",
+    "key": "citiesskylines"
+  },
+  "winner_index": 8,
+  "winner_is_first": false,
+  "winner_is_last": false,
+  "depth": 0.6154,
+  "alphabetical_head": [
+    "citiesskylines",
+    "cuphead",
+    "deusexgameoftheyearedition",
+    "dontstarvetogether"
+  ],
+  "wd_qid": "Q18149274",
+  "wd_p178": [
+    {
+      "claim_index": 0,
+      "qid": "Q16829899",
+      "label": null
+    }
+  ],
+  "wd_match": false,
+  "rows": [
+    {
+      "appid": 4000,
+      "name": "Garry's Mod",
+      "dev": "Facepunch Studios",
+      "key": "garrysmod"
+    },
+    {
+      "appid": 6910,
+      "name": "Deus Ex: Game of the Year Edition",
+      "dev": "Ion Storm",
+      "key": "deusexgameoftheyearedition"
+    },
+    {
+      "appid": 22380,
+      "name": "Fallout: New Vegas",
+      "dev": "Obsidian Entertainment",
+      "key": "falloutnewvegas"
+    },
+    {
+      "appid": 39210,
+      "name": "FINAL FANTASY XIV Online",
+      "dev": "Square Enix",
+      "key": "finalfantasyxivonline"
+    },
+    {
+      "appid": 105600,
+      "name": "Terraria",
+      "dev": "Re-Logic",
+      "key": "terraria"
+    },
+    {
+      "appid": 108600,
+      "name": "Project Zomboid",
+      "dev": "The Indie Stone",
+      "key": "projectzomboid"
+    },
+    {
+      "appid": 220200,
+      "name": "Kerbal Space Program",
+      "dev": "Squad",
+      "key": "kerbalspaceprogram"
+    },
+    {
+      "appid": 236850,
+      "name": "Europa Universalis IV",
+      "dev": "Paradox Development Studio",
+      "key": "europauniversalisiv"
+    },
+    {
+      "appid": 255710,
+      "name": "Cities: Skylines",
+      "dev": "Colossal Order",
+      "key": "citiesskylines"
+    },
+    {
+      "appid": 268910,
+      "name": "Cuphead",
+      "dev": "Studio MDHR Entertainment Inc.",
+      "key": "cuphead"
+    },
+    {
+      "appid": 322330,
+      "name": "Don't Starve Together",
+      "dev": "Klei Entertainment",
+      "key": "dontstarvetogether"
+    },
+    {
+      "appid": 367520,
+      "name": "Hollow Knight",
+      "dev": "Team Cherry",
+      "key": "hollowknight"
+    },
+    {
+      "appid": 413150,
+      "name": "Stardew Valley",
+      "dev": "ConcernedApe",
+      "key": "stardewvalley"
+    },
+    {
+      "appid": 427520,
+      "name": "Factorio",
+      "dev": "Wube Software LTD.",
+      "key": "factorio"
+    }
+  ]
+}

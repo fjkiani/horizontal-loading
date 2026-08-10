@@ -1,0 +1,7 @@
+{
+  "celebrities": {
+    "gnd_err": "FetchError: https://lobid.org/gnd/search?q=Johannes+Diderik+van+der+Waals&format=json&size=5 -> gave u",
+    "ok": false,
+    "secs": 512.3
+  }
+}

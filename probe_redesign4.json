@@ -1,0 +1,1368 @@
+{
+  "politics_pages": {
+    "scan": [
+      {
+        "year": 1998,
+        "n": 38,
+        "index": 14,
+        "depth": 0.3784,
+        "n_ties": 1,
+        "distinct_keys": 7,
+        "rho": -0.0559,
+        "first": false,
+        "last": false,
+        "eo": "13086",
+        "title": "1998 Amendments to the Manual for Courts-Martial, United States",
+        "pages": 31,
+        "runner_up": 10,
+        "citation": "63 FR 30065",
+        "pub": "1998-06-02",
+        "distinct_eo": 38,
+        "p_guess_eo": 0.026316,
+        "max_page_hist": [
+          [
+            1,
+            17
+          ],
+          [
+            2,
+            9
+          ],
+          [
+            3,
+            7
+          ],
+          [
+            4,
+            2
+          ]
+        ]
+      },
+      {
+        "year": 2003,
+        "n": 40,
+        "index": 10,
+        "depth": 0.2564,
+        "n_ties": 1,
+        "distinct_keys": 9,
+        "rho": -0.3685,
+        "first": false,
+        "last": false,
+        "eo": "13292",
+        "title": "Further Amendment to Executive Order 12958, as Amended, Classified Nat",
+        "pages": 20,
+        "runner_up": 15,
+        "citation": "68 FR 15315",
+        "pub": "2003-03-28",
+        "distinct_eo": 40,
+        "p_guess_eo": 0.025,
+        "max_page_hist": [
+          [
+            2,
+            16
+          ],
+          [
+            1,
+            13
+          ],
+          [
+            4,
+            4
+          ],
+          [
+            8,
+            2
+          ]
+        ]
+      },
+      {
+        "year": 1996,
+        "n": 50,
+        "index": 0,
+        "depth": 0.0,
+        "n_ties": 2,
+        "distinct_keys": 7,
+        "rho": -0.0041,
+        "first": true,
+        "last": false,
+        "eo": "12984",
+        "title": "Adjustments of Certain Rates of Pay and Allowances",
+        "pages": 10,
+        "runner_up": 10,
+        "citation": "61 FR 237",
+        "pub": "1996-01-03",
+        "distinct_eo": 50,
+        "p_guess_eo": 0.02,
+        "max_page_hist": [
+          [
+            1,
+            17
+          ],
+          [
+            2,
+            16
+          ],
+          [
+            3,
+            9
+          ],
+          [
+            4,
+            3
+          ]
+        ]
+      },
+      {
+        "year": 2007,
+        "n": 33,
+        "index": 26,
+        "depth": 0.8125,
+        "n_ties": 1,
+        "distinct_keys": 7,
+        "rho": 0.1425,
+        "first": false,
+        "last": false,
+        "eo": "13447",
+        "title": "Further 2007 Amendments to the Manual for Courts- Martial, United Stat",
+        "pages": 61,
+        "runner_up": 8,
+        "citation": "72 FR 56179",
+        "pub": "2007-10-02",
+        "distinct_eo": 33,
+        "p_guess_eo": 0.030303,
+        "max_page_hist": [
+          [
+            3,
+            11
+          ],
+          [
+            1,
+            9
+          ],
+          [
+            2,
+            7
+          ],
+          [
+            4,
+            3
+          ]
+        ]
+      },
+      {
+        "year": 2011,
+        "n": 34,
+        "index": 30,
+        "depth": 0.9091,
+        "n_ties": 2,
+        "distinct_keys": 6,
+        "rho": 0.1435,
+        "first": false,
+        "last": false,
+        "eo": "13593",
+        "title": "2011 Amendments to the Manual for Courts-Martial, United States",
+        "pages": 13,
+        "runner_up": 13,
+        "citation": "76 FR 78451",
+        "pub": "2011-12-16",
+        "distinct_eo": 34,
+        "p_guess_eo": 0.029412,
+        "max_page_hist": [
+          [
+            3,
+            15
+          ],
+          [
+            2,
+            10
+          ],
+          [
+            4,
+            3
+          ],
+          [
+            5,
+            3
+          ]
+        ]
+      },
+      {
+        "year": 1994,
+        "n": 53,
+        "index": 49,
+        "depth": 0.9423,
+        "n_ties": 1,
+        "distinct_keys": 9,
+        "rho": 0.0058,
+        "first": false,
+        "last": false,
+        "eo": "12940",
+        "title": "Amendment to Civil Service Rule VI",
+        "pages": 441,
+        "runner_up": 21,
+        "citation": "59 FR 61519",
+        "pub": "1994-11-30",
+        "distinct_eo": 53,
+        "p_guess_eo": 0.018868,
+        "max_page_hist": [
+          [
+            1,
+            21
+          ],
+          [
+            2,
+            18
+          ],
+          [
+            3,
+            6
+          ],
+          [
+            5,
+            3
+          ]
+        ]
+      },
+      {
+        "year": 2009,
+        "n": 42,
+        "index": 41,
+        "depth": 1.0,
+        "n_ties": 1,
+        "distinct_keys": 8,
+        "rho": 0.0649,
+        "first": false,
+        "last": true,
+        "eo": "13525",
+        "title": "Adjustments of Certain Rates of Pay",
+        "pages": 12,
+        "runner_up": 11,
+        "citation": "74 FR 69231",
+        "pub": "2009-12-30",
+        "distinct_eo": 42,
+        "p_guess_eo": 0.02381,
+        "max_page_hist": [
+          [
+            2,
+            11
+          ],
+          [
+            3,
+            11
+          ],
+          [
+            1,
+            8
+          ],
+          [
+            4,
+            6
+          ]
+        ]
+      },
+      {
+        "year": 2015,
+        "n": 29,
+        "index": 9,
+        "depth": 0.3214,
+        "n_ties": 1,
+        "distinct_keys": 8,
+        "rho": -0.1258,
+        "first": false,
+        "last": false,
+        "eo": "13696",
+        "title": "2015 Amendments to the Manual for Courts-Martial, United States",
+        "pages": 46,
+        "runner_up": 14,
+        "citation": "80 FR 35783",
+        "pub": "2015-06-22",
+        "distinct_eo": 29,
+        "p_guess_eo": 0.034483,
+        "max_page_hist": [
+          [
+            3,
+            9
+          ],
+          [
+            4,
+            7
+          ],
+          [
+            2,
+            5
+          ],
+          [
+            5,
+            3
+          ]
+        ]
+      },
+      {
+        "year": 2001,
+        "n": 65,
+        "index": 47,
+        "depth": 0.7344,
+        "n_ties": 1,
+        "distinct_keys": 8,
+        "rho": -0.1481,
+        "first": false,
+        "last": false,
+        "eo": "13231",
+        "title": "Critical Infrastructure Protection in the Information Age",
+        "pages": 9,
+        "runner_up": 7,
+        "citation": "66 FR 53063",
+        "pub": "2001-10-18",
+        "distinct_eo": 65,
+        "p_guess_eo": 0.015385,
+        "max_page_hist": [
+          [
+            2,
+            29
+          ],
+          [
+            1,
+            20
+          ],
+          [
+            3,
+            8
+          ],
+          [
+            5,
+            3
+          ]
+        ]
+      },
+      {
+        "year": 2013,
+        "n": 21,
+        "index": 8,
+        "depth": 0.4,
+        "n_ties": 1,
+        "distinct_keys": 9,
+        "rho": 0.0309,
+        "first": false,
+        "last": false,
+        "eo": "13643",
+        "title": "2013 Amendments to the Manual for Courts-Martial, United States",
+        "pages": 52,
+        "runner_up": 12,
+        "citation": "78 FR 29559",
+        "pub": "2013-05-21",
+        "distinct_eo": 21,
+        "p_guess_eo": 0.047619,
+        "max_page_hist": [
+          [
+            3,
+            5
+          ],
+          [
+            12,
+            3
+          ],
+          [
+            4,
+            3
+          ],
+          [
+            2,
+            3
+          ]
+        ]
+      }
+    ],
+    "repeated_titles": [
+      [
+        "adjustments of certain rates o",
+        2
+      ],
+      [
+        "1998 amendments to the manual ",
+        1
+      ]
+    ],
+    "usable": [
+      {
+        "year": 1998,
+        "n": 38,
+        "index": 14,
+        "depth": 0.3784,
+        "n_ties": 1,
+        "distinct_keys": 7,
+        "rho": -0.0559,
+        "first": false,
+        "last": false,
+        "eo": "13086",
+        "title": "1998 Amendments to the Manual for Courts-Martial, United States",
+        "pages": 31,
+        "runner_up": 10,
+        "citation": "63 FR 30065",
+        "pub": "1998-06-02",
+        "distinct_eo": 38,
+        "p_guess_eo": 0.026316,
+        "max_page_hist": [
+          [
+            1,
+            17
+          ],
+          [
+            2,
+            9
+          ],
+          [
+            3,
+            7
+          ],
+          [
+            4,
+            2
+          ]
+        ]
+      },
+      {
+        "year": 2003,
+        "n": 40,
+        "index": 10,
+        "depth": 0.2564,
+        "n_ties": 1,
+        "distinct_keys": 9,
+        "rho": -0.3685,
+        "first": false,
+        "last": false,
+        "eo": "13292",
+        "title": "Further Amendment to Executive Order 12958, as Amended, Classified Nat",
+        "pages": 20,
+        "runner_up": 15,
+        "citation": "68 FR 15315",
+        "pub": "2003-03-28",
+        "distinct_eo": 40,
+        "p_guess_eo": 0.025,
+        "max_page_hist": [
+          [
+            2,
+            16
+          ],
+          [
+            1,
+            13
+          ],
+          [
+            4,
+            4
+          ],
+          [
+            8,
+            2
+          ]
+        ]
+      },
+      {
+        "year": 2007,
+        "n": 33,
+        "index": 26,
+        "depth": 0.8125,
+        "n_ties": 1,
+        "distinct_keys": 7,
+        "rho": 0.1425,
+        "first": false,
+        "last": false,
+        "eo": "13447",
+        "title": "Further 2007 Amendments to the Manual for Courts- Martial, United Stat",
+        "pages": 61,
+        "runner_up": 8,
+        "citation": "72 FR 56179",
+        "pub": "2007-10-02",
+        "distinct_eo": 33,
+        "p_guess_eo": 0.030303,
+        "max_page_hist": [
+          [
+            3,
+            11
+          ],
+          [
+            1,
+            9
+          ],
+          [
+            2,
+            7
+          ],
+          [
+            4,
+            3
+          ]
+        ]
+      },
+      {
+        "year": 2015,
+        "n": 29,
+        "index": 9,
+        "depth": 0.3214,
+        "n_ties": 1,
+        "distinct_keys": 8,
+        "rho": -0.1258,
+        "first": false,
+        "last": false,
+        "eo": "13696",
+        "title": "2015 Amendments to the Manual for Courts-Martial, United States",
+        "pages": 46,
+        "runner_up": 14,
+        "citation": "80 FR 35783",
+        "pub": "2015-06-22",
+        "distinct_eo": 29,
+        "p_guess_eo": 0.034483,
+        "max_page_hist": [
+          [
+            3,
+            9
+          ],
+          [
+            4,
+            7
+          ],
+          [
+            2,
+            5
+          ],
+          [
+            5,
+            3
+          ]
+        ]
+      },
+      {
+        "year": 2001,
+        "n": 65,
+        "index": 47,
+        "depth": 0.7344,
+        "n_ties": 1,
+        "distinct_keys": 8,
+        "rho": -0.1481,
+        "first": false,
+        "last": false,
+        "eo": "13231",
+        "title": "Critical Infrastructure Protection in the Information Age",
+        "pages": 9,
+        "runner_up": 7,
+        "citation": "66 FR 53063",
+        "pub": "2001-10-18",
+        "distinct_eo": 65,
+        "p_guess_eo": 0.015385,
+        "max_page_hist": [
+          [
+            2,
+            29
+          ],
+          [
+            1,
+            20
+          ],
+          [
+            3,
+            8
+          ],
+          [
+            5,
+            3
+          ]
+        ]
+      },
+      {
+        "year": 2013,
+        "n": 21,
+        "index": 8,
+        "depth": 0.4,
+        "n_ties": 1,
+        "distinct_keys": 9,
+        "rho": 0.0309,
+        "first": false,
+        "last": false,
+        "eo": "13643",
+        "title": "2013 Amendments to the Manual for Courts-Martial, United States",
+        "pages": 52,
+        "runner_up": 12,
+        "citation": "78 FR 29559",
+        "pub": "2013-05-21",
+        "distinct_eo": 21,
+        "p_guess_eo": 0.047619,
+        "max_page_hist": [
+          [
+            3,
+            5
+          ],
+          [
+            12,
+            3
+          ],
+          [
+            4,
+            3
+          ],
+          [
+            2,
+            3
+          ]
+        ]
+      }
+    ]
+  },
+  "history_full": [
+    {
+      "category": "Physics",
+      "window": [
+        1901,
+        2000
+      ],
+      "n": 21,
+      "index": 8,
+      "depth": 0.4,
+      "n_ties": 1,
+      "distinct_keys": 21,
+      "rho": 0.261,
+      "first": false,
+      "last": false,
+      "missing_names": 0,
+      "answer_year": 1975,
+      "winner_name": "aage niels bohr",
+      "second_key": "antoine henri becquerel",
+      "distinct_years": 21,
+      "p_guess_year": 0.047619
+    },
+    {
+      "category": "Physics",
+      "window": [
+        1901,
+        2024
+      ],
+      "n": 38,
+      "index": 8,
+      "depth": 0.2162,
+      "n_ties": 1,
+      "distinct_keys": 38,
+      "rho": 0.0251,
+      "first": false,
+      "last": false,
+      "missing_names": 0,
+      "answer_year": 1975,
+      "winner_name": "aage niels bohr",
+      "second_key": "alain aspect",
+      "distinct_years": 38,
+      "p_guess_year": 0.026316
+    },
+    {
+      "category": "Chemistry",
+      "window": [
+        1901,
+        2000
+      ],
+      "n": 11,
+      "index": 10,
+      "depth": 1.0,
+      "n_ties": 1,
+      "distinct_keys": 11,
+      "rho": 0.1909,
+      "first": false,
+      "last": true,
+      "missing_names": 0,
+      "answer_year": 2000,
+      "winner_name": "alan j. heeger",
+      "second_key": "christian b. anfinsen",
+      "distinct_years": 11,
+      "p_guess_year": 0.090909
+    },
+    {
+      "category": "Chemistry",
+      "window": [
+        1901,
+        2024
+      ],
+      "n": 28,
+      "index": 13,
+      "depth": 0.4815,
+      "n_ties": 1,
+      "distinct_keys": 28,
+      "rho": -0.0378,
+      "first": false,
+      "last": false,
+      "missing_names": 0,
+      "answer_year": 2004,
+      "winner_name": "aaron ciechanover",
+      "second_key": "alan j. heeger",
+      "distinct_years": 28,
+      "p_guess_year": 0.035714
+    },
+    {
+      "category": "Physiology or Medicine",
+      "window": [
+        1901,
+        2000
+      ],
+      "n": 27,
+      "index": 15,
+      "depth": 0.5769,
+      "n_ties": 1,
+      "distinct_keys": 27,
+      "rho": 0.16,
+      "first": false,
+      "last": false,
+      "missing_names": 0,
+      "answer_year": 1974,
+      "winner_name": "albert claude",
+      "second_key": "andr\u00e9 fr\u00e9d\u00e9ric cournand",
+      "distinct_years": 27,
+      "p_guess_year": 0.037037
+    },
+    {
+      "category": "Physiology or Medicine",
+      "window": [
+        1901,
+        2024
+      ],
+      "n": 39,
+      "index": 15,
+      "depth": 0.3947,
+      "n_ties": 1,
+      "distinct_keys": 39,
+      "rho": 0.1727,
+      "first": false,
+      "last": false,
+      "missing_names": 0,
+      "answer_year": 1974,
+      "winner_name": "albert claude",
+      "second_key": "andr\u00e9 fr\u00e9d\u00e9ric cournand",
+      "distinct_years": 39,
+      "p_guess_year": 0.025641
+    }
+  ],
+  "celebs_laur": [
+    {
+      "category": "Physics",
+      "window": [
+        1901,
+        1950
+      ],
+      "n": 54,
+      "index": 0,
+      "depth": 0.0,
+      "n_ties": 1,
+      "distinct_keys": 54,
+      "rho": 1.0,
+      "first": true,
+      "last": false,
+      "winner": "Albert A. Michelson",
+      "answer_dob": "1852-12-19",
+      "award_year": 1907,
+      "laureate_id": "11",
+      "distinct_dob": 54,
+      "p_guess_dob": 0.018519,
+      "dob_year": 1852,
+      "dob_year_named_in_window": false
+    },
+    {
+      "category": "Physics",
+      "window": [
+        1951,
+        2000
+      ],
+      "n": 108,
+      "index": 0,
+      "depth": 0.0,
+      "n_ties": 1,
+      "distinct_keys": 107,
+      "rho": 1.0,
+      "first": true,
+      "last": false,
+      "winner": "Aage N. Bohr",
+      "answer_dob": "1922-06-19",
+      "award_year": 1975,
+      "laureate_id": "102",
+      "distinct_dob": 107,
+      "p_guess_dob": 0.009259,
+      "dob_year": 1922,
+      "dob_year_named_in_window": false
+    },
+    {
+      "category": "Physics",
+      "window": [
+        1901,
+        1975
+      ],
+      "n": 104,
+      "index": 0,
+      "depth": 0.0,
+      "n_ties": 1,
+      "distinct_keys": 103,
+      "rho": 1.0,
+      "first": true,
+      "last": false,
+      "winner": "Aage N. Bohr",
+      "answer_dob": "1922-06-19",
+      "award_year": 1975,
+      "laureate_id": "102",
+      "distinct_dob": 103,
+      "p_guess_dob": 0.009615,
+      "dob_year": 1922,
+      "dob_year_named_in_window": true
+    },
+    {
+      "category": "Physics",
+      "window": [
+        1976,
+        2024
+      ],
+      "n": 122,
+      "index": 0,
+      "depth": 0.0,
+      "n_ties": 1,
+      "distinct_keys": 122,
+      "rho": 1.0,
+      "first": true,
+      "last": false,
+      "winner": "Abdus Salam",
+      "answer_dob": "1926-01-29",
+      "award_year": 1979,
+      "laureate_id": "114",
+      "distinct_dob": 121,
+      "p_guess_dob": 0.008197,
+      "dob_year": 1926,
+      "dob_year_named_in_window": false
+    },
+    {
+      "category": "Chemistry",
+      "window": [
+        1901,
+        1950
+      ],
+      "n": 51,
+      "index": 0,
+      "depth": 0.0,
+      "n_ties": 1,
+      "distinct_keys": 51,
+      "rho": 0.999,
+      "first": true,
+      "last": false,
+      "winner": "Adolf Butenandt",
+      "answer_dob": "1903-03-24",
+      "award_year": 1939,
+      "laureate_id": "199",
+      "distinct_dob": 51,
+      "p_guess_dob": 0.019608,
+      "dob_year": 1903,
+      "dob_year_named_in_window": true
+    },
+    {
+      "category": "Chemistry",
+      "window": [
+        1951,
+        2000
+      ],
+      "n": 84,
+      "index": 0,
+      "depth": 0.0,
+      "n_ties": 1,
+      "distinct_keys": 83,
+      "rho": 1.0,
+      "first": true,
+      "last": false,
+      "winner": "Aaron Klug",
+      "answer_dob": "1926-08-11",
+      "award_year": 1982,
+      "laureate_id": "259",
+      "distinct_dob": 83,
+      "p_guess_dob": 0.011905,
+      "dob_year": 1926,
+      "dob_year_named_in_window": false
+    },
+    {
+      "category": "Chemistry",
+      "window": [
+        1901,
+        1975
+      ],
+      "n": 88,
+      "index": 0,
+      "depth": 0.0,
+      "n_ties": 1,
+      "distinct_keys": 88,
+      "rho": 0.9997,
+      "first": true,
+      "last": false,
+      "winner": "Adolf Butenandt",
+      "answer_dob": "1903-03-24",
+      "award_year": 1939,
+      "laureate_id": "199",
+      "distinct_dob": 88,
+      "p_guess_dob": 0.011364,
+      "dob_year": 1903,
+      "dob_year_named_in_window": true
+    },
+    {
+      "category": "Chemistry",
+      "window": [
+        1976,
+        2024
+      ],
+      "n": 103,
+      "index": 0,
+      "depth": 0.0,
+      "n_ties": 1,
+      "distinct_keys": 102,
+      "rho": 1.0,
+      "first": true,
+      "last": false,
+      "winner": "Aaron Ciechanover",
+      "answer_dob": "1947-10-01",
+      "award_year": 2004,
+      "laureate_id": "779",
+      "distinct_dob": 102,
+      "p_guess_dob": 0.009709,
+      "dob_year": 1947,
+      "dob_year_named_in_window": false
+    },
+    {
+      "category": "Physiology or Medicine",
+      "window": [
+        1901,
+        1950
+      ],
+      "n": 59,
+      "index": 0,
+      "depth": 0.0,
+      "n_ties": 1,
+      "distinct_keys": 59,
+      "rho": 1.0,
+      "first": true,
+      "last": false,
+      "winner": "Albert Szent-Gy\u00f6rgyi",
+      "answer_dob": "1893-09-16",
+      "award_year": 1937,
+      "laureate_id": "332",
+      "distinct_dob": 59,
+      "p_guess_dob": 0.016949,
+      "dob_year": 1893,
+      "dob_year_named_in_window": false
+    },
+    {
+      "category": "Physiology or Medicine",
+      "window": [
+        1951,
+        2000
+      ],
+      "n": 113,
+      "index": 0,
+      "depth": 0.0,
+      "n_ties": 1,
+      "distinct_keys": 113,
+      "rho": 0.9999,
+      "first": true,
+      "last": false,
+      "winner": "Alan Hodgkin",
+      "answer_dob": "1914-02-05",
+      "award_year": 1963,
+      "laureate_id": "376",
+      "distinct_dob": 113,
+      "p_guess_dob": 0.00885,
+      "dob_year": 1914,
+      "dob_year_named_in_window": false
+    },
+    {
+      "category": "Physiology or Medicine",
+      "window": [
+        1901,
+        1975
+      ],
+      "n": 116,
+      "index": 0,
+      "depth": 0.0,
+      "n_ties": 1,
+      "distinct_keys": 116,
+      "rho": 1.0,
+      "first": true,
+      "last": false,
+      "winner": "Alan Hodgkin",
+      "answer_dob": "1914-02-05",
+      "award_year": 1963,
+      "laureate_id": "376",
+      "distinct_dob": 115,
+      "p_guess_dob": 0.008621,
+      "dob_year": 1914,
+      "dob_year_named_in_window": true
+    },
+    {
+      "category": "Physiology or Medicine",
+      "window": [
+        1976,
+        2024
+      ],
+      "n": 110,
+      "index": 0,
+      "depth": 0.0,
+      "n_ties": 1,
+      "distinct_keys": 110,
+      "rho": 0.9999,
+      "first": true,
+      "last": false,
+      "winner": "Alfred G. Gilman",
+      "answer_dob": "1941-07-01",
+      "award_year": 1994,
+      "laureate_id": "450",
+      "distinct_dob": 110,
+      "p_guess_dob": 0.009091,
+      "dob_year": 1941,
+      "dob_year_named_in_window": false
+    },
+    {
+      "category": "Literature",
+      "window": [
+        1901,
+        1950
+      ],
+      "n": 45,
+      "index": 0,
+      "depth": 0.0,
+      "n_ties": 1,
+      "distinct_keys": 45,
+      "rho": 1.0,
+      "first": true,
+      "last": false,
+      "winner": "Anatole France",
+      "answer_dob": "1844-04-16",
+      "award_year": 1921,
+      "laureate_id": "590",
+      "distinct_dob": 45,
+      "p_guess_dob": 0.022222,
+      "dob_year": 1844,
+      "dob_year_named_in_window": false
+    },
+    {
+      "category": "Literature",
+      "window": [
+        1951,
+        2000
+      ],
+      "n": 52,
+      "index": 0,
+      "depth": 0.0,
+      "n_ties": 1,
+      "distinct_keys": 52,
+      "rho": 0.9998,
+      "first": true,
+      "last": false,
+      "winner": "Albert Camus",
+      "answer_dob": "1913-11-07",
+      "award_year": 1957,
+      "laureate_id": "628",
+      "distinct_dob": 52,
+      "p_guess_dob": 0.019231,
+      "dob_year": 1913,
+      "dob_year_named_in_window": false
+    },
+    {
+      "category": "Literature",
+      "window": [
+        1901,
+        1975
+      ],
+      "n": 72,
+      "index": 0,
+      "depth": 0.0,
+      "n_ties": 1,
+      "distinct_keys": 72,
+      "rho": 0.9998,
+      "first": true,
+      "last": false,
+      "winner": "Albert Camus",
+      "answer_dob": "1913-11-07",
+      "award_year": 1957,
+      "laureate_id": "628",
+      "distinct_dob": 72,
+      "p_guess_dob": 0.013889,
+      "dob_year": 1913,
+      "dob_year_named_in_window": true
+    },
+    {
+      "category": "Literature",
+      "window": [
+        1976,
+        2024
+      ],
+      "n": 48,
+      "index": 0,
+      "depth": 0.0,
+      "n_ties": 1,
+      "distinct_keys": 48,
+      "rho": 0.9999,
+      "first": true,
+      "last": false,
+      "winner": "Alice Munro",
+      "answer_dob": "1931-07-10",
+      "award_year": 2013,
+      "laureate_id": "892",
+      "distinct_dob": 48,
+      "p_guess_dob": 0.020833,
+      "dob_year": 1931,
+      "dob_year_named_in_window": false
+    },
+    {
+      "category": "Peace",
+      "window": [
+        1901,
+        1950
+      ],
+      "n": 42,
+      "index": 0,
+      "depth": 0.0,
+      "n_ties": 1,
+      "distinct_keys": 42,
+      "rho": 0.9232,
+      "first": true,
+      "last": false,
+      "winner": "Albert Gobat",
+      "answer_dob": "1843-05-21",
+      "award_year": 1902,
+      "laureate_id": "465",
+      "distinct_dob": 41,
+      "p_guess_dob": 0.047619,
+      "dob_year": 1843,
+      "dob_year_named_in_window": false
+    },
+    {
+      "category": "Peace",
+      "window": [
+        1951,
+        2000
+      ],
+      "n": 45,
+      "index": 0,
+      "depth": 0.0,
+      "n_ties": 1,
+      "distinct_keys": 45,
+      "rho": 0.9995,
+      "first": true,
+      "last": false,
+      "winner": "Adolfo P\u00e9rez Esquivel",
+      "answer_dob": "1931-11-26",
+      "award_year": 1980,
+      "laureate_id": "541",
+      "distinct_dob": 45,
+      "p_guess_dob": 0.022222,
+      "dob_year": 1931,
+      "dob_year_named_in_window": false
+    },
+    {
+      "category": "Peace",
+      "window": [
+        1901,
+        1975
+      ],
+      "n": 59,
+      "index": 0,
+      "depth": 0.0,
+      "n_ties": 1,
+      "distinct_keys": 59,
+      "rho": 0.9425,
+      "first": true,
+      "last": false,
+      "winner": "Albert Gobat",
+      "answer_dob": "1843-05-21",
+      "award_year": 1902,
+      "laureate_id": "465",
+      "distinct_dob": 58,
+      "p_guess_dob": 0.033898,
+      "dob_year": 1843,
+      "dob_year_named_in_window": false
+    },
+    {
+      "category": "Peace",
+      "window": [
+        1976,
+        2024
+      ],
+      "n": 51,
+      "index": 0,
+      "depth": 0.0,
+      "n_ties": 1,
+      "distinct_keys": 51,
+      "rho": 0.9999,
+      "first": true,
+      "last": false,
+      "winner": "Abiy Ahmed Ali",
+      "answer_dob": "1976-08-15",
+      "award_year": 2019,
+      "laureate_id": "981",
+      "distinct_dob": 51,
+      "p_guess_dob": 0.019608,
+      "dob_year": 1976,
+      "dob_year_named_in_window": true
+    }
+  ],
+  "shopping_pages": [
+    {
+      "tag": "en:instant-coffees",
+      "country": "germany",
+      "count": 317,
+      "fetched": 317,
+      "complete": true,
+      "n_with_salt": 144,
+      "pages": 4,
+      "salt": {
+        "n": 144,
+        "index": 108,
+        "depth": 0.7552,
+        "n_ties": 1,
+        "distinct_keys": 61,
+        "rho": 0.2287,
+        "first": false,
+        "last": false,
+        "code": "4063367034886",
+        "brand": "Kaufland Classic",
+        "name": "Cappoccino Kaufland classic",
+        "value": 16.0,
+        "runner_up": 13.0,
+        "distinct_codes": 139,
+        "p_guess_code": 0.006944
+      }
+    },
+    {
+      "tag": "en:mustards",
+      "country": "france",
+      "error": "FetchError: https://world.openfoodfacts.org/api/v2/search?categories_tags=en:mustards&countries_tags_en=france&fields=code,brands,product_name,nutriments&page_s"
+    },
+    {
+      "tag": "en:sardines",
+      "country": "france",
+      "count": 1931,
+      "fetched": 600,
+      "complete": false,
+      "n_with_salt": 586,
+      "pages": 7,
+      "salt": {
+        "n": 586,
+        "index": 454,
+        "depth": 0.7761,
+        "n_ties": 1,
+        "distinct_keys": 100,
+        "rho": 0.0632,
+        "first": false,
+        "last": false,
+        "code": "3107761220009",
+        "brand": "",
+        "name": "Sardines \u00e0 la Tomate",
+        "value": 8.0,
+        "runner_up": 7.9,
+        "distinct_codes": 576,
+        "p_guess_code": 0.001706
+      }
+    },
+    {
+      "tag": "en:pestos",
+      "country": "france",
+      "count": 1447,
+      "fetched": 600,
+      "complete": false,
+      "n_with_salt": 579,
+      "pages": 7,
+      "salt": {
+        "n": 579,
+        "index": 21,
+        "depth": 0.0363,
+        "n_ties": 1,
+        "distinct_keys": 140,
+        "rho": 0.0433,
+        "first": false,
+        "last": false,
+        "code": "8008343279963",
+        "brand": "RUMMO",
+        "name": "Pesto a La Genovese",
+        "value": 34.425,
+        "runner_up": 20.0,
+        "distinct_codes": 570,
+        "p_guess_code": 0.001727
+      }
+    },
+    {
+      "tag": "en:baked-beans",
+      "country": "united-kingdom",
+      "count": 174,
+      "fetched": 174,
+      "complete": true,
+      "n_with_salt": 157,
+      "pages": 2,
+      "salt": {
+        "n": 157,
+        "index": 65,
+        "depth": 0.4167,
+        "n_ties": 3,
+        "distinct_keys": 54,
+        "rho": -0.0731,
+        "first": false,
+        "last": false,
+        "code": "4088600072456",
+        "brand": "Corale",
+        "name": "Baked Beans With Sausages",
+        "value": 1.3,
+        "runner_up": 1.3,
+        "distinct_codes": 156,
+        "p_guess_code": 0.006369
+      }
+    },
+    {
+      "tag": "en:oat-milks",
+      "country": "germany",
+      "error": "FetchError: https://world.openfoodfacts.org/api/v2/search?categories_tags=en:oat-milks&countries_tags_en=germany&fields=code,brands,product_name,nutriments&page"
+    },
+    {
+      "tag": "en:tahini",
+      "country": "france",
+      "count": 236,
+      "fetched": 236,
+      "complete": true,
+      "n_with_salt": 208,
+      "pages": 3,
+      "salt": {
+        "n": 208,
+        "index": 179,
+        "depth": 0.8647,
+        "n_ties": 2,
+        "distinct_keys": 52,
+        "rho": 0.0626,
+        "first": false,
+        "last": false,
+        "code": "0660989752019",
+        "brand": "Bagdan",
+        "name": "Tahin p\u00e2tes de s\u00e9same",
+        "value": 16.0,
+        "runner_up": 16.0,
+        "distinct_codes": 204,
+        "p_guess_code": 0.009615
+      }
+    },
+    {
+      "tag": "en:worcestershire-sauces",
+      "country": "united-kingdom",
+      "count": 16,
+      "fetched": 16,
+      "complete": true,
+      "n_with_salt": 14,
+      "pages": 1,
+      "salt": {
+        "n": 14,
+        "index": 8,
+        "depth": 0.6154,
+        "n_ties": 1,
+        "distinct_keys": 12,
+        "rho": -0.0264,
+        "first": false,
+        "last": false,
+        "code": "5024448560648",
+        "brand": null,
+        "name": "Gluten free worcester sauce",
+        "value": 4.02,
+        "runner_up": 3.8,
+        "distinct_codes": 14,
+        "p_guess_code": 0.071429
+      }
+    }
+  ]
+}

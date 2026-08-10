@@ -1,0 +1,368 @@
+{
+  "video_games": {
+    "error": "AttributeError: 'tuple' object has no attribute 'isoformat'",
+    "tb": "Traceback (most recent call last):\n  File \"/workspace/seal_deploy/probe_redesign2.py\", line 241, in <module>\n    save(name, fn())\n               ^^^^\n  File \"/workspace/seal_deploy/probe_redesign2.py\", line 73, in p_video_games\n    rec[\"by_release\"] = rank_report([d.isoformat() for d in dates], \"min\")\n                                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/workspace/seal_deploy/probe_redesign2.py\", line 73, in <listcomp>\n    rec[\"by_release\"] = rank_report([d.isoformat() for d in dates], \"min\")\n                                     ^^^^^^^^^^^\nAttributeError: 'tuple' object has no attribute 'isoformat'\n"
+  },
+  "nobel": {
+    "n_prizes": 676,
+    "history": [
+      {
+        "category": "Physics",
+        "window": [
+          1901,
+          1935
+        ],
+        "n_ranked": 1,
+        "n": 1,
+        "index": 0,
+        "depth": 0.0,
+        "n_ties": 1,
+        "distinct_keys": 1,
+        "spearman_key_vs_order": null,
+        "winner_is_first": true,
+        "winner_is_last": true,
+        "answer_year": 1903,
+        "distinct_years": 1,
+        "p_guess_year": 1.0
+      },
+      {
+        "category": "Physics",
+        "window": [
+          1901,
+          1970
+        ],
+        "n_ranked": 6,
+        "n": 6,
+        "index": 0,
+        "depth": 0.0,
+        "n_ties": 1,
+        "distinct_keys": 6,
+        "spearman_key_vs_order": 1.0,
+        "winner_is_first": true,
+        "winner_is_last": false,
+        "answer_year": 1903,
+        "distinct_years": 6,
+        "p_guess_year": 0.166667
+      },
+      {
+        "category": "Physics",
+        "window": [
+          1901,
+          2000
+        ],
+        "n_ranked": 21,
+        "n": 21,
+        "index": 0,
+        "depth": 0.0,
+        "n_ties": 1,
+        "distinct_keys": 21,
+        "spearman_key_vs_order": 1.0,
+        "winner_is_first": true,
+        "winner_is_last": false,
+        "answer_year": 1903,
+        "distinct_years": 21,
+        "p_guess_year": 0.047619
+      },
+      {
+        "category": "Physics",
+        "window": [
+          1901,
+          2024
+        ],
+        "n_ranked": 38,
+        "n": 38,
+        "index": 0,
+        "depth": 0.0,
+        "n_ties": 1,
+        "distinct_keys": 38,
+        "spearman_key_vs_order": 1.0,
+        "winner_is_first": true,
+        "winner_is_last": false,
+        "answer_year": 1903,
+        "distinct_years": 38,
+        "p_guess_year": 0.026316
+      },
+      {
+        "category": "Chemistry",
+        "window": [
+          1901,
+          1935
+        ],
+        "n_ranked": 0
+      },
+      {
+        "category": "Chemistry",
+        "window": [
+          1901,
+          1970
+        ],
+        "n_ranked": 2,
+        "n": 2,
+        "index": 0,
+        "depth": 0.0,
+        "n_ties": 1,
+        "distinct_keys": 2,
+        "spearman_key_vs_order": null,
+        "winner_is_first": true,
+        "winner_is_last": false,
+        "answer_year": 1946,
+        "distinct_years": 2,
+        "p_guess_year": 0.5
+      },
+      {
+        "category": "Chemistry",
+        "window": [
+          1901,
+          2000
+        ],
+        "n_ranked": 11,
+        "n": 11,
+        "index": 0,
+        "depth": 0.0,
+        "n_ties": 1,
+        "distinct_keys": 11,
+        "spearman_key_vs_order": 1.0,
+        "winner_is_first": true,
+        "winner_is_last": false,
+        "answer_year": 1946,
+        "distinct_years": 11,
+        "p_guess_year": 0.090909
+      },
+      {
+        "category": "Chemistry",
+        "window": [
+          1901,
+          2024
+        ],
+        "n_ranked": 28,
+        "n": 28,
+        "index": 0,
+        "depth": 0.0,
+        "n_ties": 1,
+        "distinct_keys": 28,
+        "spearman_key_vs_order": 1.0,
+        "winner_is_first": true,
+        "winner_is_last": false,
+        "answer_year": 1946,
+        "distinct_years": 28,
+        "p_guess_year": 0.035714
+      },
+      {
+        "category": "Physiology or Medicine",
+        "window": [
+          1901,
+          1935
+        ],
+        "n_ranked": 1,
+        "n": 1,
+        "index": 0,
+        "depth": 0.0,
+        "n_ties": 1,
+        "distinct_keys": 1,
+        "spearman_key_vs_order": null,
+        "winner_is_first": true,
+        "winner_is_last": true,
+        "answer_year": 1934,
+        "distinct_years": 1,
+        "p_guess_year": 1.0
+      },
+      {
+        "category": "Physiology or Medicine",
+        "window": [
+          1901,
+          1970
+        ],
+        "n_ranked": 14,
+        "n": 14,
+        "index": 0,
+        "depth": 0.0,
+        "n_ties": 1,
+        "distinct_keys": 14,
+        "spearman_key_vs_order": 1.0,
+        "winner_is_first": true,
+        "winner_is_last": false,
+        "answer_year": 1934,
+        "distinct_years": 14,
+        "p_guess_year": 0.071429
+      },
+      {
+        "category": "Physiology or Medicine",
+        "window": [
+          1901,
+          2000
+        ],
+        "n_ranked": 27,
+        "n": 27,
+        "index": 0,
+        "depth": 0.0,
+        "n_ties": 1,
+        "distinct_keys": 27,
+        "spearman_key_vs_order": 1.0,
+        "winner_is_first": true,
+        "winner_is_last": false,
+        "answer_year": 1934,
+        "distinct_years": 27,
+        "p_guess_year": 0.037037
+      },
+      {
+        "category": "Physiology or Medicine",
+        "window": [
+          1901,
+          2024
+        ],
+        "n_ranked": 39,
+        "n": 39,
+        "index": 0,
+        "depth": 0.0,
+        "n_ties": 1,
+        "distinct_keys": 39,
+        "spearman_key_vs_order": 1.0,
+        "winner_is_first": true,
+        "winner_is_last": false,
+        "answer_year": 1934,
+        "distinct_years": 39,
+        "p_guess_year": 0.025641
+      }
+    ],
+    "celebrities": [
+      {
+        "window": [
+          1901,
+          1960
+        ],
+        "n_ranked": 1,
+        "n": 1,
+        "index": 0,
+        "depth": 0.0,
+        "n_ties": 1,
+        "distinct_keys": 1,
+        "spearman_key_vs_order": null,
+        "winner_is_first": true,
+        "winner_is_last": true,
+        "answer_year": 1911,
+        "winner": "Marie Curie, n\u00e9e Sk\u0142odowska",
+        "all": [
+          [
+            "Marie Curie, n\u00e9e Sk\u0142odowska",
+            1911
+          ]
+        ],
+        "distinct_years": 1,
+        "p_guess_year": 1.0
+      },
+      {
+        "window": [
+          1901,
+          1980
+        ],
+        "n_ranked": 4,
+        "n": 4,
+        "index": 0,
+        "depth": 0.0,
+        "n_ties": 1,
+        "distinct_keys": 4,
+        "spearman_key_vs_order": 1.0,
+        "winner_is_first": true,
+        "winner_is_last": false,
+        "answer_year": 1911,
+        "winner": "Marie Curie, n\u00e9e Sk\u0142odowska",
+        "all": [
+          [
+            "Marie Curie, n\u00e9e Sk\u0142odowska",
+            1911
+          ],
+          [
+            "Linus Carl Pauling",
+            1962
+          ],
+          [
+            "John Bardeen",
+            1972
+          ],
+          [
+            "Frederick Sanger",
+            1980
+          ]
+        ],
+        "distinct_years": 4,
+        "p_guess_year": 0.25
+      },
+      {
+        "window": [
+          1901,
+          2024
+        ],
+        "n_ranked": 5,
+        "n": 5,
+        "index": 0,
+        "depth": 0.0,
+        "n_ties": 1,
+        "distinct_keys": 5,
+        "spearman_key_vs_order": 1.0,
+        "winner_is_first": true,
+        "winner_is_last": false,
+        "answer_year": 1911,
+        "winner": "Marie Curie, n\u00e9e Sk\u0142odowska",
+        "all": [
+          [
+            "Marie Curie, n\u00e9e Sk\u0142odowska",
+            1911
+          ],
+          [
+            "Linus Carl Pauling",
+            1962
+          ],
+          [
+            "John Bardeen",
+            1972
+          ],
+          [
+            "Frederick Sanger",
+            1980
+          ],
+          [
+            "K. Barry Sharpless",
+            2022
+          ]
+        ],
+        "distinct_years": 5,
+        "p_guess_year": 0.2
+      }
+    ]
+  },
+  "art": [
+    {
+      "artist": "Rembrandt",
+      "raw": {
+        "ok": true,
+        "total": 998
+      },
+      "quoted": {
+        "ok": true,
+        "total": 998
+      }
+    },
+    {
+      "artist": "Claude Monet",
+      "raw": {
+        "ok": false,
+        "err": "FetchError"
+      },
+      "quoted": {
+        "ok": true,
+        "total": 116
+      }
+    },
+    {
+      "artist": "Vincent van Gogh",
+      "raw": {
+        "ok": false,
+        "err": "FetchError"
+      },
+      "quoted": {
+        "ok": true,
+        "total": 500
+      }
+    }
+  ]
+}

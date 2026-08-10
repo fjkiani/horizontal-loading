@@ -1,0 +1,110 @@
+{
+  "art": {
+    "ok": true,
+    "operator": "Wikimedia Foundation",
+    "met_scoped_hits": [
+      {
+        "qid": "Q19905220",
+        "label": "Man in Armor (Mars?)"
+      }
+    ],
+    "unscoped_count_same_accession": 1,
+    "note": "P217 alone is ambiguous across museums; P195 scoping is required"
+  },
+  "education": {
+    "ok": false,
+    "operator": "Research Organization Registry",
+    "n_items": 20,
+    "matches": [
+      {
+        "id": "https://ror.org/04k9e4w52",
+        "names": [
+          "Waterford Institute"
+        ],
+        "links": [
+          "https://www.waterford.org/",
+          "https://en.wikipedia.org/wiki/Waterford_School"
+        ]
+      },
+      {
+        "id": "https://ror.org/007pvy114",
+        "names": [
+          "Ardkeen Hospital",
+          "Ospid\u00e9al na hOllscoile, Port L\u00e1irge"
+        ],
+        "links": [
+          "https://www.hse.ie/eng/services/list/3/acutehospitals/hospitals/waterford/",
+          "https://en.wikipedia.org/wiki/University_Hospital_Waterford"
+        ]
+      }
+    ]
+  },
+  "health": {
+    "ok": true,
+    "operator": "EMBL-EBI",
+    "hit_count": 1,
+    "titles": [
+      "Treatment for cramps in amyotrophic lateral sclerosis/motor neuron disease."
+    ]
+  },
+  "travel": {
+    "ok": true,
+    "operator": "Wikimedia Foundation",
+    "hits": [
+      {
+        "qid": "Q850269",
+        "label": "Ivalo Airport"
+      }
+    ]
+  },
+  "shopping": {
+    "ok": false,
+    "operator": "UPCitemdb",
+    "code": "OK",
+    "total": 0,
+    "titles": [],
+    "brands": []
+  },
+  "politics": {
+    "ok": false,
+    "operator": "US Government Publishing Office",
+    "link_service_error": "FetchError: https://www.govinfo.gov/link/cpd/executiveorder/13292?link-type=json -> HTTP 400"
+  },
+  "tv": {
+    "ok": false,
+    "operator": "TVmaze",
+    "tvmaze_error": "FetchError: https://api.tvmaze.com/lookup/shows?imdb=tt1278381 -> HTTP 404",
+    "wikimedia_search_n": 0
+  },
+  "celebrities": {
+    "ok": false,
+    "operator": "OCLC (VIAF)",
+    "note": "birthplace is not an authority-file field; expected to fail",
+    "viaf_error": "FetchError: https://viaf.org/api/search?query=local.personalNames%20all%20%22van%20der%20Waals%2C%20Johannes%20Diderik%22&maximumRecords=2&httpAccept=application%2Fjson -> HTTP 405"
+  },
+  "history": {
+    "ok": true,
+    "operator": "Crossref",
+    "rows": [
+      {
+        "title": "Remarks of Aage Bohr at Niels Bohr Memorial Session",
+        "year": 1963,
+        "doi": "10.1063/1.3050560",
+        "container": "Physics Today"
+      },
+      {
+        "title": "Rotational Motion in Nuclei",
+        "year": 1976,
+        "doi": "10.1126/science.193.4249.203",
+        "container": "Science"
+      },
+      {
+        "title": "Focus issue to celebrate the 40-year anniversary of the 1975 Nobel Prize to Aage",
+        "year": 2016,
+        "doi": "10.1088/0031-8949/91/3/030301",
+        "container": "Physica Scripta"
+      }
+    ],
+    "note": "confirms the laureate and the lecture, not the award year directly"
+  }
+}

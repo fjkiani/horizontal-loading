@@ -1,9 +1,9 @@
 {
   "sn83030214": {
     "calendar": "New-York Tribune (daily incl. Sunday)",
-    "n_entries": 11,
+    "n_entries": 17,
     "consensus_anchor": "1900-01-01 = 19405",
-    "explained_exactly": "11/11",
+    "explained_exactly": "17/17",
     "calendar_validated": true,
     "flagged": []
   },

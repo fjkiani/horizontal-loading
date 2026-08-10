@@ -1,0 +1,233 @@
+[
+  {
+    "lccn": "sn83030214",
+    "date": "1900-10-04",
+    "answer": "19681",
+    "field": "issue number",
+    "label": "1900-10-04",
+    "pages_swept": 14,
+    "cpu": {
+      "lccn": "sn83030214",
+      "date": "1900-10-04",
+      "resource_url": "https://www.loc.gov/resource/sn83030214/1900-10-04/ed-1/?&sp=1",
+      "engine": "tesseract-xres",
+      "answer": "19681",
+      "confidence": "low",
+      "per_resolution": {
+        "40": null,
+        "60": "19681",
+        "25": null
+      }
+    },
+    "gpu": {
+      "lccn": "sn83030214",
+      "date": "1900-10-04",
+      "resource_url": "https://www.loc.gov/resource/sn83030214/1900-10-04/ed-1/?&sp=1",
+      "engine": "qwen2.5vl-pct100",
+      "answer": "19681",
+      "field": "issue number",
+      "confidence": "vlm",
+      "transcription": "VOL. LX...NO. 19,681.",
+      "crop_px": [
+        2870,
+        882
+      ],
+      "full_page_px": [
+        6378,
+        8819
+      ]
+    }
+  },
+  {
+    "lccn": "sn83030214",
+    "date": "1900-10-07",
+    "answer": "19684",
+    "field": "issue number",
+    "label": "1900-10-07",
+    "pages_swept": 46,
+    "cpu": {
+      "lccn": "sn83030214",
+      "date": "1900-10-07",
+      "resource_url": "https://www.loc.gov/resource/sn83030214/1900-10-07/ed-1/?&sp=1",
+      "engine": "tesseract-xres",
+      "answer": "19684",
+      "confidence": "high",
+      "per_resolution": {
+        "40": "19684",
+        "60": "19684"
+      }
+    },
+    "gpu": {
+      "lccn": "sn83030214",
+      "date": "1900-10-07",
+      "resource_url": "https://www.loc.gov/resource/sn83030214/1900-10-07/ed-1/?&sp=1",
+      "engine": "qwen2.5vl-pct100",
+      "answer": "19684",
+      "field": "issue number",
+      "confidence": "vlm",
+      "transcription": "VOL. LX...NO. 19,684.",
+      "crop_px": [
+        2855,
+        877
+      ],
+      "full_page_px": [
+        6346,
+        8772
+      ]
+    }
+  },
+  {
+    "lccn": "sn83030214",
+    "date": "1900-10-10",
+    "answer": "19687",
+    "field": "issue number",
+    "label": "1900-10-10",
+    "pages_swept": 14,
+    "cpu": {
+      "lccn": "sn83030214",
+      "date": "1900-10-10",
+      "resource_url": "https://www.loc.gov/resource/sn83030214/1900-10-10/ed-1/?&sp=1",
+      "engine": "tesseract-xres",
+      "answer": "19687",
+      "confidence": "low",
+      "per_resolution": {
+        "40": "19687",
+        "60": null,
+        "25": null
+      }
+    },
+    "gpu": {
+      "lccn": "sn83030214",
+      "date": "1900-10-10",
+      "resource_url": "https://www.loc.gov/resource/sn83030214/1900-10-10/ed-1/?&sp=1",
+      "engine": "qwen2.5vl-pct100",
+      "answer": "19687",
+      "field": "issue number",
+      "confidence": "vlm",
+      "transcription": "VOL. LX....NO. 19.687.",
+      "crop_px": [
+        2870,
+        880
+      ],
+      "full_page_px": [
+        6378,
+        8803
+      ]
+    }
+  },
+  {
+    "lccn": "sn83030214",
+    "date": "1900-10-11",
+    "answer": "19688",
+    "field": "issue number",
+    "label": "1900-10-11",
+    "pages_swept": 14,
+    "cpu": {
+      "lccn": "sn83030214",
+      "date": "1900-10-11",
+      "resource_url": "https://www.loc.gov/resource/sn83030214/1900-10-11/ed-1/?&sp=1",
+      "engine": "tesseract-xres",
+      "answer": "19688",
+      "confidence": "high",
+      "per_resolution": {
+        "40": "19688",
+        "60": "19688"
+      }
+    },
+    "gpu": {
+      "lccn": "sn83030214",
+      "date": "1900-10-11",
+      "resource_url": "https://www.loc.gov/resource/sn83030214/1900-10-11/ed-1/?&sp=1",
+      "engine": "qwen2.5vl-pct100",
+      "answer": "19688",
+      "field": "issue number",
+      "confidence": "vlm",
+      "transcription": "VOL. LX....NO. 19.688.",
+      "crop_px": [
+        2870,
+        880
+      ],
+      "full_page_px": [
+        6378,
+        8803
+      ]
+    }
+  },
+  {
+    "lccn": "sn83030214",
+    "date": "1900-10-12",
+    "answer": "19689",
+    "field": "issue number",
+    "label": "1900-10-12",
+    "pages_swept": 14,
+    "cpu": {
+      "lccn": "sn83030214",
+      "date": "1900-10-12",
+      "resource_url": "https://www.loc.gov/resource/sn83030214/1900-10-12/ed-1/?&sp=1",
+      "engine": "tesseract-xres",
+      "answer": "19689",
+      "confidence": "high",
+      "per_resolution": {
+        "40": "19689",
+        "60": null,
+        "25": "19689"
+      }
+    },
+    "gpu": {
+      "lccn": "sn83030214",
+      "date": "1900-10-12",
+      "resource_url": "https://www.loc.gov/resource/sn83030214/1900-10-12/ed-1/?&sp=1",
+      "engine": "qwen2.5vl-pct100",
+      "answer": "19689",
+      "field": "issue number",
+      "confidence": "vlm",
+      "transcription": "VOL. LX....N\u00b0 19,689.",
+      "crop_px": [
+        2870,
+        880
+      ],
+      "full_page_px": [
+        6378,
+        8803
+      ]
+    }
+  },
+  {
+    "lccn": "sn83030214",
+    "date": "1900-10-13",
+    "answer": "19690",
+    "field": "issue number",
+    "label": "1900-10-13",
+    "pages_swept": 16,
+    "cpu": {
+      "lccn": "sn83030214",
+      "date": "1900-10-13",
+      "resource_url": "https://www.loc.gov/resource/sn83030214/1900-10-13/ed-1/?&sp=1",
+      "engine": "tesseract-xres",
+      "answer": "19690",
+      "confidence": "high",
+      "per_resolution": {
+        "40": "19690",
+        "60": "19690"
+      }
+    },
+    "gpu": {
+      "lccn": "sn83030214",
+      "date": "1900-10-13",
+      "resource_url": "https://www.loc.gov/resource/sn83030214/1900-10-13/ed-1/?&sp=1",
+      "engine": "qwen2.5vl-pct100",
+      "answer": "19690",
+      "field": "issue number",
+      "confidence": "vlm",
+      "transcription": "VOL. LX....N? 19,690.",
+      "crop_px": [
+        2870,
+        880
+      ],
+      "full_page_px": [
+        6378,
+        8803
+      ]
+    }
+  }
+]

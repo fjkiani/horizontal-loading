@@ -327,5 +327,173 @@
     "generated_at": "2026-08-07T05:16:04Z",
     "verifier": "agent-vision-fullres",
     "confirmed_at": "2026-08-07T05:16:04Z"
+  },
+  {
+    "lccn": "sn83030214",
+    "date": "1900-10-04",
+    "paper": "New-York tribune",
+    "field": "issue number",
+    "answer": "19681",
+    "resource_url": "https://www.loc.gov/resource/sn83030214/1900-10-04/ed-1/?&sp=1",
+    "image_path": "/workspace/seal_deploy/generated_images/sn83030214_1900-10-04.jpg",
+    "prompt": "Consult the front page of the newspaper \"New-York tribune\" published on 1900-10-04, digitized by the Library of Congress. The page is a historical scan whose machine-readable text layer is heavily degraded by age and ornate typesetting, so automated transcription is unreliable. Examine the masthead banner at the top of the front page directly. What is the issue number printed there? Provide the exact value as it appears, as a single atomic token. Cross-check your reading against the publication's catalog record and at least one independent library source to confirm you have the correct issue before answering.",
+    "word_count": 96,
+    "api_proof": true,
+    "confidence": "high",
+    "ocr_engine": "tesseract-crossres + qwen2.5-vl-7b (modal a10g)",
+    "verified": true,
+    "verifier": "dual-engine agreement + issue-sequence arithmetic",
+    "gate_note": "whole-issue api-proof: 14 pages swept, no label-bearing leak",
+    "golden": [
+      "Open the LOC scan IMAGE for https://www.loc.gov/resource/sn83030214/1900-10-04/ed-1/?&sp=1",
+      "Read the issue number directly from the masthead (OCR layer is degraded)",
+      "= 19681"
+    ],
+    "sources": [
+      "https://www.loc.gov/resource/sn83030214/1900-10-04/ed-1/?&sp=1",
+      "https://www.loc.gov/item/sn83030214/1900-10-04/ed-1/",
+      "https://www.loc.gov/newspapers/sn83030214/"
+    ],
+    "generated_at": "2026-08-10T20:06:16Z"
+  },
+  {
+    "lccn": "sn83030214",
+    "date": "1900-10-07",
+    "paper": "New-York tribune",
+    "field": "issue number",
+    "answer": "19684",
+    "resource_url": "https://www.loc.gov/resource/sn83030214/1900-10-07/ed-1/?&sp=1",
+    "image_path": "/workspace/seal_deploy/generated_images/sn83030214_1900-10-07.jpg",
+    "prompt": "Consult the front page of the newspaper \"New-York tribune\" published on 1900-10-07, digitized by the Library of Congress. The page is a historical scan whose machine-readable text layer is heavily degraded by age and ornate typesetting, so automated transcription is unreliable. Examine the masthead banner at the top of the front page directly. What is the issue number printed there? Provide the exact value as it appears, as a single atomic token. Cross-check your reading against the publication's catalog record and at least one independent library source to confirm you have the correct issue before answering.",
+    "word_count": 96,
+    "api_proof": true,
+    "confidence": "high",
+    "ocr_engine": "tesseract-crossres + qwen2.5-vl-7b (modal a10g)",
+    "verified": true,
+    "verifier": "dual-engine agreement + issue-sequence arithmetic",
+    "gate_note": "whole-issue api-proof: 46 pages swept, no label-bearing leak",
+    "golden": [
+      "Open the LOC scan IMAGE for https://www.loc.gov/resource/sn83030214/1900-10-07/ed-1/?&sp=1",
+      "Read the issue number directly from the masthead (OCR layer is degraded)",
+      "= 19684"
+    ],
+    "sources": [
+      "https://www.loc.gov/resource/sn83030214/1900-10-07/ed-1/?&sp=1",
+      "https://www.loc.gov/item/sn83030214/1900-10-07/ed-1/",
+      "https://www.loc.gov/newspapers/sn83030214/"
+    ],
+    "generated_at": "2026-08-10T20:06:17Z"
+  },
+  {
+    "lccn": "sn83030214",
+    "date": "1900-10-10",
+    "paper": "New-York tribune",
+    "field": "issue number",
+    "answer": "19687",
+    "resource_url": "https://www.loc.gov/resource/sn83030214/1900-10-10/ed-1/?&sp=1",
+    "image_path": "/workspace/seal_deploy/generated_images/sn83030214_1900-10-10.jpg",
+    "prompt": "Consult the front page of the newspaper \"New-York tribune\" published on 1900-10-10, digitized by the Library of Congress. The page is a historical scan whose machine-readable text layer is heavily degraded by age and ornate typesetting, so automated transcription is unreliable. Examine the masthead banner at the top of the front page directly. What is the issue number printed there? Provide the exact value as it appears, as a single atomic token. Cross-check your reading against the publication's catalog record and at least one independent library source to confirm you have the correct issue before answering.",
+    "word_count": 96,
+    "api_proof": true,
+    "confidence": "high",
+    "ocr_engine": "tesseract-crossres + qwen2.5-vl-7b (modal a10g)",
+    "verified": true,
+    "verifier": "dual-engine agreement + issue-sequence arithmetic",
+    "gate_note": "whole-issue api-proof: 14 pages swept, no label-bearing leak",
+    "golden": [
+      "Open the LOC scan IMAGE for https://www.loc.gov/resource/sn83030214/1900-10-10/ed-1/?&sp=1",
+      "Read the issue number directly from the masthead (OCR layer is degraded)",
+      "= 19687"
+    ],
+    "sources": [
+      "https://www.loc.gov/resource/sn83030214/1900-10-10/ed-1/?&sp=1",
+      "https://www.loc.gov/item/sn83030214/1900-10-10/ed-1/",
+      "https://www.loc.gov/newspapers/sn83030214/"
+    ],
+    "generated_at": "2026-08-10T20:06:20Z"
+  },
+  {
+    "lccn": "sn83030214",
+    "date": "1900-10-11",
+    "paper": "New-York tribune",
+    "field": "issue number",
+    "answer": "19688",
+    "resource_url": "https://www.loc.gov/resource/sn83030214/1900-10-11/ed-1/?&sp=1",
+    "image_path": "/workspace/seal_deploy/generated_images/sn83030214_1900-10-11.jpg",
+    "prompt": "Consult the front page of the newspaper \"New-York tribune\" published on 1900-10-11, digitized by the Library of Congress. The page is a historical scan whose machine-readable text layer is heavily degraded by age and ornate typesetting, so automated transcription is unreliable. Examine the masthead banner at the top of the front page directly. What is the issue number printed there? Provide the exact value as it appears, as a single atomic token. Cross-check your reading against the publication's catalog record and at least one independent library source to confirm you have the correct issue before answering.",
+    "word_count": 96,
+    "api_proof": true,
+    "confidence": "high",
+    "ocr_engine": "tesseract-crossres + qwen2.5-vl-7b (modal a10g)",
+    "verified": true,
+    "verifier": "dual-engine agreement + issue-sequence arithmetic",
+    "gate_note": "whole-issue api-proof: 14 pages swept, no label-bearing leak",
+    "golden": [
+      "Open the LOC scan IMAGE for https://www.loc.gov/resource/sn83030214/1900-10-11/ed-1/?&sp=1",
+      "Read the issue number directly from the masthead (OCR layer is degraded)",
+      "= 19688"
+    ],
+    "sources": [
+      "https://www.loc.gov/resource/sn83030214/1900-10-11/ed-1/?&sp=1",
+      "https://www.loc.gov/item/sn83030214/1900-10-11/ed-1/",
+      "https://www.loc.gov/newspapers/sn83030214/"
+    ],
+    "generated_at": "2026-08-10T20:06:20Z"
+  },
+  {
+    "lccn": "sn83030214",
+    "date": "1900-10-12",
+    "paper": "New-York tribune",
+    "field": "issue number",
+    "answer": "19689",
+    "resource_url": "https://www.loc.gov/resource/sn83030214/1900-10-12/ed-1/?&sp=1",
+    "image_path": "/workspace/seal_deploy/generated_images/sn83030214_1900-10-12.jpg",
+    "prompt": "Consult the front page of the newspaper \"New-York tribune\" published on 1900-10-12, digitized by the Library of Congress. The page is a historical scan whose machine-readable text layer is heavily degraded by age and ornate typesetting, so automated transcription is unreliable. Examine the masthead banner at the top of the front page directly. What is the issue number printed there? Provide the exact value as it appears, as a single atomic token. Cross-check your reading against the publication's catalog record and at least one independent library source to confirm you have the correct issue before answering.",
+    "word_count": 96,
+    "api_proof": true,
+    "confidence": "high",
+    "ocr_engine": "tesseract-crossres + qwen2.5-vl-7b (modal a10g)",
+    "verified": true,
+    "verifier": "dual-engine agreement + issue-sequence arithmetic",
+    "gate_note": "whole-issue api-proof: 14 pages swept, no label-bearing leak",
+    "golden": [
+      "Open the LOC scan IMAGE for https://www.loc.gov/resource/sn83030214/1900-10-12/ed-1/?&sp=1",
+      "Read the issue number directly from the masthead (OCR layer is degraded)",
+      "= 19689"
+    ],
+    "sources": [
+      "https://www.loc.gov/resource/sn83030214/1900-10-12/ed-1/?&sp=1",
+      "https://www.loc.gov/item/sn83030214/1900-10-12/ed-1/",
+      "https://www.loc.gov/newspapers/sn83030214/"
+    ],
+    "generated_at": "2026-08-10T20:06:22Z"
+  },
+  {
+    "lccn": "sn83030214",
+    "date": "1900-10-13",
+    "paper": "New-York tribune",
+    "field": "issue number",
+    "answer": "19690",
+    "resource_url": "https://www.loc.gov/resource/sn83030214/1900-10-13/ed-1/?&sp=1",
+    "image_path": "/workspace/seal_deploy/generated_images/sn83030214_1900-10-13.jpg",
+    "prompt": "Consult the front page of the newspaper \"New-York tribune\" published on 1900-10-13, digitized by the Library of Congress. The page is a historical scan whose machine-readable text layer is heavily degraded by age and ornate typesetting, so automated transcription is unreliable. Examine the masthead banner at the top of the front page directly. What is the issue number printed there? Provide the exact value as it appears, as a single atomic token. Cross-check your reading against the publication's catalog record and at least one independent library source to confirm you have the correct issue before answering.",
+    "word_count": 96,
+    "api_proof": true,
+    "confidence": "high",
+    "ocr_engine": "tesseract-crossres + qwen2.5-vl-7b (modal a10g)",
+    "verified": true,
+    "verifier": "dual-engine agreement + issue-sequence arithmetic",
+    "gate_note": "whole-issue api-proof: 16 pages swept, no label-bearing leak",
+    "golden": [
+      "Open the LOC scan IMAGE for https://www.loc.gov/resource/sn83030214/1900-10-13/ed-1/?&sp=1",
+      "Read the issue number directly from the masthead (OCR layer is degraded)",
+      "= 19690"
+    ],
+    "sources": [
+      "https://www.loc.gov/resource/sn83030214/1900-10-13/ed-1/?&sp=1",
+      "https://www.loc.gov/item/sn83030214/1900-10-13/ed-1/",
+      "https://www.loc.gov/newspapers/sn83030214/"
+    ],
+    "generated_at": "2026-08-10T20:06:25Z"
   }
 ]

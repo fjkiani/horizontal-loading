@@ -696,3 +696,100 @@ def leak_null_model():
     with open("leak_null_model.json", "w") as f:
         json.dump(report, f, indent=2)
     print("wrote leak_null_model.json")
+
+
+# ---------------------------------------------------------------------------
+# Pool growth under the corrected gate.
+#
+# The old gate discarded pages it should have kept. Re-walking October 1900 shows
+# 5 of 8 pages carry a REAL masthead leak ("N* 19.678") and are rightly refused,
+# but the rest were thrown away on a normalization artifact. Combine the fixed
+# gate with the dual-engine reader and the arithmetic cross-check, all in
+# parallel, and accept a page only if every independent line of evidence agrees:
+#
+#   1. tesseract cross-resolution vote (pct 40/60/25)
+#   2. Qwen2.5-VL on a pct:100 crop -- different pixels, same parser
+#   3. the answer implied by the paper's own issue sequence
+#   4. no label-bearing leak on ANY page of that issue
+#
+# Any single engine can be wrong. Requiring all four to coincide is what buys
+# the 0-accepted-wrong record; the GPU model never refuses, so it must never be
+# trusted alone.
+# ---------------------------------------------------------------------------
+@app.local_entrypoint()
+def grow(lccn: str = "sn83030214", dates: str = "", anchor_date: str = "1900-01-01",
+         anchor_value: int = 19405):
+    """Dual-engine + arithmetic + whole-issue gate, fully parallel."""
+    import json, time, datetime
+    from concurrent.futures import ThreadPoolExecutor
+    from collections import defaultdict
+
+    if dates:
+        want = [d.strip() for d in dates.split(",") if d.strip()]
+    else:
+        d0 = datetime.date(1900, 10, 1)
+        want = [(d0 + datetime.timedelta(days=i)).isoformat() for i in range(14)]
+
+    pool = {t["date"] for t in json.load(open("generated_pool.json"))
+            if t["lccn"] == lccn}
+    want = [d for d in want if d not in pool]
+    pages = [{"lccn": lccn, "date": d,
+              "resource_url": f"https://www.loc.gov/resource/{lccn}/{d}/ed-1/?&sp=1"}
+             for d in want]
+    print(f"{len(pages)} candidate dates (skipping {len(pool)} already pooled)")
+
+    t0 = time.time()
+    with ThreadPoolExecutor(max_workers=2) as ex:
+        f_cpu = ex.submit(lambda: list(read_cpu.map(pages)))
+        f_gpu = ex.submit(lambda: list(VLMReader().read.map(pages)))
+        cpu_rows, gpu_rows = f_cpu.result(), f_gpu.result()
+    print(f"dual-engine read in {time.time() - t0:.1f}s")
+
+    cpu = {r["date"]: r for r in cpu_rows}
+    gpu = {r["date"]: r for r in gpu_rows}
+
+    # Arithmetic prediction from the pool's own validated anchor.
+    a = datetime.date.fromisoformat(anchor_date)
+    def predict(d):
+        return anchor_value + (datetime.date.fromisoformat(d) - a).days
+
+    agreed = []
+    for d in want:
+        c, g = cpu.get(d, {}), gpu.get(d, {})
+        ca, ga, pa = c.get("answer"), g.get("answer"), str(predict(d))
+        ok = ca and ga and str(ca) == str(ga) == pa
+        print(f"  {d}  cpu={str(ca):>7} gpu={str(ga):>7} seq={pa:>7}  "
+              f"{'AGREE' if ok else 'no'}")
+        if ok:
+            agreed.append({"lccn": lccn, "date": d, "answer": pa,
+                           "field": "issue number", "label": d})
+    print(f"\n{len(agreed)}/{len(want)} pass triple agreement")
+    if not agreed:
+        return
+
+    counts = list(issue_page_count.map(agreed))
+    tasks = [{**c, "sp": sp} for c in counts for sp in range(1, c["pages"] + 1)]
+    print(f"whole-issue gate: {len(tasks)} page fetches")
+    rows = list(page_leak.map(tasks))
+    by = defaultdict(list)
+    for r in rows:
+        by[r["date"]].append(r)
+
+    accepted = []
+    for cand in agreed:
+        rs = by[cand["date"]]
+        lab = sorted(r["sp"] for r in rs if r.get("label_bearing"))
+        errs = [r["sp"] for r in rs if r.get("old_norm_substring") is None]
+        ex_lab = next((r["label_bearing"][0] for r in rs if r.get("label_bearing")), None)
+        holds = (not lab) and not errs
+        print(f"  {cand['date']}  pages={len(rs)}  leak_pages={lab or '-'}  "
+              f"errors={errs or '-'}  -> {'ACCEPT' if holds else 'reject'}"
+              + (f"  {ex_lab!r}" if ex_lab else ""))
+        if holds:
+            accepted.append({**cand, "pages_swept": len(rs),
+                             "cpu": cpu[cand["date"]], "gpu": gpu[cand["date"]]})
+    print(f"\n{len(accepted)}/{len(agreed)} clear the whole-issue gate "
+          f"({time.time() - t0:.1f}s total)")
+    with open("modal_grow_candidates.json", "w") as f:
+        json.dump(accepted, f, indent=2)
+    print("wrote modal_grow_candidates.json")

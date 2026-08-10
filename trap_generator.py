@@ -79,6 +79,114 @@ _YEAR_PATTERNS = [
 ]
 
 
+# --- api-proof gate -------------------------------------------------------
+#
+# The gate asserts: "this answer is NOT recoverable from the LOC text layer."
+# The naive test -- `answer in strip_separators(page_text)` -- fails in BOTH
+# directions, and a 322-page sweep of every trap's issue caught both:
+#
+#   FALSE REJECT. Stripping every separator from the whole page concatenates
+#   unrelated numbers, so a short answer matches across boundaries. The Ledger
+#   1922-03-27 answer "166" was flagged as leaking on two pages; a standalone
+#   token search finds zero occurrences of 166 anywhere in that 30-page issue.
+#
+#   FALSE ACCEPT. A bare digit match ignores whether a SOLVER could use it.
+#   ~40% of all 3-digit numbers occur somewhere in a 30-page Ledger issue
+#   (356/900, 389/900, 364/900 measured), so a hit is near-chance. The pooled
+#   1922-06-06 answer "227" hits twice, both times as a street address
+#   ("227 North Seventh street"). Nothing marks those as the issue number.
+#
+# What a solver can actually exploit is the answer in LABEL-BEARING form -- the
+# masthead's own "VOL. VIII.-NO. 227", or "ESTABLISHED 1832" for a founding
+# year. That is the only match that tells the solver WHICH number is the answer.
+# The label must track the field: scoring V03's real "ESTABLISHED 1832" leak
+# with the issue-number label returned clean, a false negative in the auditor.
+#
+# Scope matters too. The gate historically checked one page, but the masthead is
+# printed on every page and the answer is an issue-level invariant, so a clean
+# named page proves nothing on its own (V02 names p23 and V03 names p9; both are
+# clean, and both issues leak on page 1).
+# Separators are not noise to be stripped blindly, nor can they be ignored. The
+# Tribune prints "No. 19,678" and LOC's OCR renders the comma as a period, so the
+# raw text reads "N* 19.678": a plain token search for 19678 finds NOTHING even
+# though the masthead is fully present. Stripping every separator fixes that but
+# then matches "$1.66" for the answer 166. Both failures are avoided by allowing a
+# separator ONLY where a thousands grouping can legally fall -- every third digit
+# from the right. That is positional, so "19,678" matches 19678 and "1.66" cannot
+# match 166.
+_SEP = r"[,.\s\u2019']?"
+# OCR renders "No." as N followed by almost any superscript-ish glyph: observed
+# N*, N°, N®, Nº, N", No.
+_LABEL_ISSUE = r"(?:VOL[^0-9]{0,20})?N[O0o\u00ba\u00b0\u00ae*\"\']{0,2}[.,:; ]{0,4}"
+# "FOUNDED MARCH 1. 1832" puts a digit between the label and the year, so a
+# [^0-9] run cannot reach it. Use a bounded lazy window over any characters
+# instead. Bare "EST" is dropped (too common a substring); "EST." is kept.
+_LABEL_YEAR = r"\b(?:ESTABLISHED|ESTAB|ESTD|FOUNDED|EST\.)[\s\S]{0,30}?"
+
+
+def _sep_pattern(answer):
+    """Digits of `answer` with an optional separator at each thousands boundary."""
+    d = re.sub(r"[^0-9]", "", str(answer))
+    out = []
+    for i, ch in enumerate(d):
+        if i and (len(d) - i) % 3 == 0:
+            out.append(_SEP)
+        out.append(re.escape(ch))
+    return "".join(out)
+
+
+def label_bearing_leak(text, answer, field="issue number"):
+    """Find the answer in a form a SOLVER could recognise as the answer.
+
+    A bare digit match is deliberately not a leak: ~40% of all 3-digit numbers
+    occur somewhere in a 30-page Ledger issue (measured 356/900, 389/900,
+    364/900), so an unlabelled hit is near-chance and tells a solver nothing
+    about which number is the issue number. The pooled 1922-06-06 answer 227
+    occurs twice, both as a street address. What is exploitable is the answer
+    carrying its own field label -- the masthead's "VOL. VIII.-NO. 227", or
+    "ESTABLISHED 1832" for a founding year. The label must match the FIELD;
+    scoring a year-established trap with the issue-number label reports clean.
+    """
+    label = _LABEL_YEAR if "year" in (field or "").lower() else _LABEL_ISSUE
+    pat = rf"{label}{_sep_pattern(answer)}(?![0-9])"
+    return [" ".join(m.group(0).split()) for m in re.finditer(pat, text or "", re.I)]
+
+
+def standalone_hits(text, answer):
+    """Occurrences of the answer as a whole number token, separators allowed at
+    thousands boundaries, label or not."""
+    return [m.start() for m in re.finditer(
+        rf"(?<![0-9]){_sep_pattern(answer)}(?![0-9])", text or "")]
+
+
+def api_proof_holds(text, answer, field="issue number"):
+    """The api-proof gate. Returns (holds, reason, evidence).
+
+    Two-tier, because the informativeness of a bare digit match depends entirely
+    on how many digits it has. Measured over whole issues:
+
+        3-digit answers, Evening Public Ledger : 356/900, 389/900, 364/900
+                                                 distinct tokens present
+                                                 -> P(chance hit) ~= 0.40
+        5-digit answers, New-York Tribune      : 28/90000, 99/90000
+                                                 -> P(chance hit) ~= 0.001
+
+    So a standalone "227" in a 30-page Ledger is near-chance -- and in fact both
+    of its occurrences are street addresses. A standalone "19,678" in a Tribune
+    is not chance. The gate therefore requires a FIELD LABEL for short answers
+    and rejects on any standalone token for 5+ digit answers.
+    """
+    lab = label_bearing_leak(text, answer, field)
+    if lab:
+        return False, "label-bearing leak", lab[:3]
+    hits = standalone_hits(text, answer)
+    digits = len(re.sub(r"[^0-9]", "", str(answer)))
+    if hits and digits >= 5:
+        i = hits[0]
+        return False, "rare standalone token", [" ".join(text[max(0, i - 60):i + 45].split())]
+    return True, None, []
+
+
 def _norm_digits(s):
     return re.sub(r"[,\.\s]", "", s or "")
 
@@ -275,8 +383,8 @@ def generate_trap(lccn="sn83030214", start_date=None, max_steps=8, min_confidenc
                 _emit(phase="checking api-proof gate", step=tried, max_steps=max_steps,
                       date=date, paper=title, candidate=answer)
                 page_ocr = je.loc_page_ocr(url)
-                norm_ocr = _norm_digits(page_ocr)
-                api_proof = _norm_digits(answer) not in norm_ocr
+                api_proof, gate_reason, gate_evidence = api_proof_holds(
+                    page_ocr, answer, field)
 
                 prompt = _build_prompt(title, date, field)
                 wc = _word_count(prompt)
@@ -310,7 +418,8 @@ def generate_trap(lccn="sn83030214", start_date=None, max_steps=8, min_confidenc
                     _persist_pending(trap)
                     return trap
                 # Explain the rejection so a long walk is legible rather than silent.
-                why = ("issue number already in the page OCR (not api-proof)"
+                why = (f"{field} recoverable from the page OCR "
+                       f"({gate_reason}: {gate_evidence[0][:60] if gate_evidence else '?'})"
                        if not api_proof else
                        "answer leaks into the prompt" if leak else
                        f"prompt word count {wc} outside 70-150")
@@ -392,26 +501,80 @@ def list_generated():
     return _load(_POOL_PATH)
 
 
-def confirm_candidate(lccn, date, field, confirmed_answer, verifier="agent"):
+def confirm_candidate(lccn, date, field, confirmed_answer, verifier="agent",
+                      require_api_proof=True):
     """Move a pending candidate to the verified pool, setting its answer to the
     independently-confirmed value. If the confirmed answer differs from the OCR
     candidate, the OCR value is discarded and the confirmed value is used.
-    Returns the verified trap, or None if no matching pending candidate."""
+    Returns the verified trap, or None if no matching pending candidate.
+
+    THE api-proof GATE IS CONTINGENT ON THE ANSWER, SO IT MUST BE RE-RUN HERE.
+    A previous version of this function only rewrote the golden trace and left
+    api_proof standing from generation time. That is unsound, and it shipped two
+    invalid traps:
+
+      * 1922-04-06 was generated with the OCR answer 176. 176 is absent from the
+        LOC text layer, so the gate passed. The answer was later corrected to the
+        true 175 -- but 175 IS present in that text layer ("VOL. VIII. NO. 175"),
+        so correcting the answer silently turned a valid trap into a solvable one
+        while api_proof still read true.
+      * 1922-03-11 was generated as 158 (a misread of 153) and passed for the same
+        reason: the gate compared a string that simply is not on the page.
+
+    The failure mode is systematic, not incidental: a WRONG answer is less likely
+    to appear in the page text than the right one, so mis-read pages pass this
+    gate MORE readily than correctly-read ones. The gate's safety property is
+    inverted unless it is re-evaluated against the confirmed answer.
+    """
     pend = _load(_PENDING_PATH)
     pool = _load(_POOL_PATH)
     k = (lccn, date, field)
     match = next((p for p in pend if _key(p) == k), None)
     if not match:
         return None
-    pend = [p for p in pend if _key(p) != k]
-    _save(_PENDING_PATH, pend)
+
+    prior = match.get("answer")
     match["answer"] = str(confirmed_answer)
-    match["verified"] = True
     match["verifier"] = verifier
     match["confirmed_at"] = time.strftime("%Y-%m-%dT%H:%M:%SZ", time.gmtime())
-    # Re-assert api-proof against the CONFIRMED answer (it may differ from OCR's).
-    # The golden trace's final line must reflect the confirmed value.
-    match["golden"][-1] = f"= {confirmed_answer}"
+    if match.get("golden"):
+        match["golden"][-1] = f"= {confirmed_answer}"
+
+    # Re-run the gate whenever the confirmed answer is not the one it was
+    # originally evaluated against.
+    if str(prior) != str(confirmed_answer):
+        try:
+            ocr = je.loc_page_ocr(match["resource_url"])
+            holds, gate_reason, gate_evidence = api_proof_holds(
+                ocr, confirmed_answer, field)
+        except Exception as e:
+            # Unknown is not the same as passing. Refuse to promote on an
+            # unevaluated gate.
+            match["verified"] = False
+            match["api_proof"] = None
+            match["gate_note"] = f"api-proof re-check failed to run: {str(e)[:150]}"
+            match["rejected_reason"] = "api-proof could not be re-evaluated"
+            _save(_PENDING_PATH, pend)
+            return match
+        match["api_proof"] = holds
+        match["gate_note"] = (
+            f"api-proof re-evaluated after answer changed {prior} -> {confirmed_answer}"
+            + (f"; {gate_reason}: {gate_evidence}" if not holds else ""))
+        if not holds and require_api_proof:
+            # Do NOT promote: the confirmed answer is recoverable from the text
+            # layer, so this page is not a vision trap regardless of how well the
+            # masthead was read. Leave it in pending with the finding recorded.
+            match["verified"] = False
+            match["rejected_reason"] = (
+                f"answer {confirmed_answer} is present in the LOC text layer; "
+                "page is solvable without reading the scan")
+            _save(_PENDING_PATH, pend)
+            return match
+
+    match["verified"] = True
+    match.pop("rejected_reason", None)
+    pend = [p for p in pend if _key(p) != k]
+    _save(_PENDING_PATH, pend)
     if not any(_key(p) == k for p in pool):
         pool.append(match)
         _save(_POOL_PATH, pool)

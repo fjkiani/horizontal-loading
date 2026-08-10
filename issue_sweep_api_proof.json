@@ -1,0 +1,273 @@
+[
+  {
+    "label": "V01",
+    "lccn": "sn83030214",
+    "date": "1900-01-01",
+    "answer": "19405",
+    "field": "issue number",
+    "pages": 10,
+    "old_gate_reject_pages": [],
+    "standalone_token_pages": [],
+    "label_bearing_pages": [],
+    "label_example": null,
+    "errors": [],
+    "api_proof_whole_issue": true
+  },
+  {
+    "label": "V02",
+    "lccn": "sn83045211",
+    "date": "1922-03-06",
+    "answer": "148",
+    "field": "issue number",
+    "pages": 32,
+    "old_gate_reject_pages": [
+      1,
+      2,
+      11,
+      24,
+      25,
+      26,
+      28,
+      29
+    ],
+    "standalone_token_pages": [
+      1,
+      28
+    ],
+    "label_bearing_pages": [
+      1
+    ],
+    "label_example": "NO. 148",
+    "errors": [],
+    "api_proof_whole_issue": false
+  },
+  {
+    "label": "V03",
+    "lccn": "sn84020504",
+    "date": "1907-12-02",
+    "answer": "1832",
+    "field": "year established",
+    "pages": 12,
+    "old_gate_reject_pages": [
+      1,
+      6
+    ],
+    "standalone_token_pages": [
+      1,
+      6
+    ],
+    "label_bearing_pages": [
+      1,
+      6
+    ],
+    "label_example": "ESTABLISHED 1832",
+    "errors": [],
+    "api_proof_whole_issue": false
+  },
+  {
+    "label": "V04",
+    "lccn": "sn83030214",
+    "date": "1900-01-06",
+    "answer": "19410",
+    "field": "issue number",
+    "pages": 14,
+    "old_gate_reject_pages": [],
+    "standalone_token_pages": [],
+    "label_bearing_pages": [],
+    "label_example": null,
+    "errors": [],
+    "api_proof_whole_issue": true
+  },
+  {
+    "label": "V05",
+    "lccn": "sn83045211",
+    "date": "1922-03-27",
+    "answer": "166",
+    "field": "issue number",
+    "pages": 30,
+    "old_gate_reject_pages": [
+      19,
+      23
+    ],
+    "standalone_token_pages": [],
+    "label_bearing_pages": [],
+    "label_example": null,
+    "errors": [],
+    "api_proof_whole_issue": true
+  },
+  {
+    "label": "pool 1900-01-01",
+    "lccn": "sn83030214",
+    "date": "1900-01-01",
+    "answer": "19405",
+    "field": "issue number",
+    "pages": 10,
+    "old_gate_reject_pages": [],
+    "standalone_token_pages": [],
+    "label_bearing_pages": [],
+    "label_example": null,
+    "errors": [],
+    "api_proof_whole_issue": true
+  },
+  {
+    "label": "pool 1900-02-11",
+    "lccn": "sn83030214",
+    "date": "1900-02-11",
+    "answer": "19446",
+    "field": "issue number",
+    "pages": 44,
+    "old_gate_reject_pages": [],
+    "standalone_token_pages": [],
+    "label_bearing_pages": [],
+    "label_example": null,
+    "errors": [],
+    "api_proof_whole_issue": true
+  },
+  {
+    "label": "pool 1900-03-02",
+    "lccn": "sn83030214",
+    "date": "1900-03-02",
+    "answer": "19465",
+    "field": "issue number",
+    "pages": 16,
+    "old_gate_reject_pages": [],
+    "standalone_token_pages": [],
+    "label_bearing_pages": [],
+    "label_example": null,
+    "errors": [],
+    "api_proof_whole_issue": true
+  },
+  {
+    "label": "pool 1900-05-12",
+    "lccn": "sn83030214",
+    "date": "1900-05-12",
+    "answer": "19536",
+    "field": "issue number",
+    "pages": 16,
+    "old_gate_reject_pages": [],
+    "standalone_token_pages": [],
+    "label_bearing_pages": [],
+    "label_example": null,
+    "errors": [],
+    "api_proof_whole_issue": true
+  },
+  {
+    "label": "pool 1900-07-03",
+    "lccn": "sn83030214",
+    "date": "1900-07-03",
+    "answer": "19588",
+    "field": "issue number",
+    "pages": 16,
+    "old_gate_reject_pages": [],
+    "standalone_token_pages": [],
+    "label_bearing_pages": [],
+    "label_example": null,
+    "errors": [],
+    "api_proof_whole_issue": true
+  },
+  {
+    "label": "pool 1900-07-04",
+    "lccn": "sn83030214",
+    "date": "1900-07-04",
+    "answer": "19589",
+    "field": "issue number",
+    "pages": 14,
+    "old_gate_reject_pages": [],
+    "standalone_token_pages": [],
+    "label_bearing_pages": [],
+    "label_example": null,
+    "errors": [],
+    "api_proof_whole_issue": true
+  },
+  {
+    "label": "pool 1900-07-05",
+    "lccn": "sn83030214",
+    "date": "1900-07-05",
+    "answer": "19590",
+    "field": "issue number",
+    "pages": 16,
+    "old_gate_reject_pages": [],
+    "standalone_token_pages": [],
+    "label_bearing_pages": [],
+    "label_example": null,
+    "errors": [],
+    "api_proof_whole_issue": true
+  },
+  {
+    "label": "pool 1900-08-01",
+    "lccn": "sn83030214",
+    "date": "1900-08-01",
+    "answer": "19617",
+    "field": "issue number",
+    "pages": 16,
+    "old_gate_reject_pages": [],
+    "standalone_token_pages": [],
+    "label_bearing_pages": [],
+    "label_example": null,
+    "errors": [],
+    "api_proof_whole_issue": true
+  },
+  {
+    "label": "pool 1900-09-05",
+    "lccn": "sn83030214",
+    "date": "1900-09-05",
+    "answer": "19652",
+    "field": "issue number",
+    "pages": 14,
+    "old_gate_reject_pages": [],
+    "standalone_token_pages": [],
+    "label_bearing_pages": [],
+    "label_example": null,
+    "errors": [],
+    "api_proof_whole_issue": true
+  },
+  {
+    "label": "pool 1900-11-16",
+    "lccn": "sn83030214",
+    "date": "1900-11-16",
+    "answer": "19724",
+    "field": "issue number",
+    "pages": 14,
+    "old_gate_reject_pages": [],
+    "standalone_token_pages": [],
+    "label_bearing_pages": [],
+    "label_example": null,
+    "errors": [],
+    "api_proof_whole_issue": true
+  },
+  {
+    "label": "pool 1900-11-17",
+    "lccn": "sn83030214",
+    "date": "1900-11-17",
+    "answer": "19725",
+    "field": "issue number",
+    "pages": 16,
+    "old_gate_reject_pages": [],
+    "standalone_token_pages": [],
+    "label_bearing_pages": [],
+    "label_example": null,
+    "errors": [],
+    "api_proof_whole_issue": true
+  },
+  {
+    "label": "pool 1922-06-06",
+    "lccn": "sn83045211",
+    "date": "1922-06-06",
+    "answer": "227",
+    "field": "issue number",
+    "pages": 32,
+    "old_gate_reject_pages": [
+      2,
+      4,
+      24
+    ],
+    "standalone_token_pages": [
+      2,
+      4
+    ],
+    "label_bearing_pages": [],
+    "label_example": null,
+    "errors": [],
+    "api_proof_whole_issue": true
+  }
+]

@@ -1,0 +1,99 @@
+[
+  {
+    "label": "V02 Ledger",
+    "answer": "148",
+    "digits": 3,
+    "pages": 32,
+    "distinct_tokens_seen": 356,
+    "token_universe": 900,
+    "chance_hit_rate": 0.3956,
+    "n_hits": 2,
+    "n_masthead_form": 1,
+    "masthead_examples": [
+      "NO. 148"
+    ],
+    "hit_examples": [
+      "lie'lll 118 I t I 2 I 3 I 4 I 5 I' rta 47lQ2 ICO 00 162 103 I JTl NO. 148 Entma a Sscend-ClM MaUsr at tha Postefflee at Phl",
+      "i all med'n S3SOU Of of ueimar icr, rooms, f; Dutch hall. K I3R(i() 1(148 S. Yewdall st.l 7 rooms, r (2000 5037-30 Lancaste"
+    ],
+    "leak_is_solver_usable": true
+  },
+  {
+    "label": "V05 Ledger",
+    "answer": "166",
+    "digits": 3,
+    "pages": 30,
+    "distinct_tokens_seen": 389,
+    "token_universe": 900,
+    "chance_hit_rate": 0.4322,
+    "n_hits": 0,
+    "n_masthead_form": 0,
+    "masthead_examples": [],
+    "hit_examples": [],
+    "leak_is_solver_usable": false
+  },
+  {
+    "label": "pool Ledger",
+    "answer": "227",
+    "digits": 3,
+    "pages": 32,
+    "distinct_tokens_seen": 364,
+    "token_universe": 900,
+    "chance_hit_rate": 0.4044,
+    "n_hits": 2,
+    "n_masthead_form": 0,
+    "masthead_examples": [],
+    "hit_examples": [
+      "l dead from heart disease at 10 :30 o'clock this morning nt his home. 227 North Sev enth street. Dr. Welser, until his reti",
+      "tn nn.swci te n charge of Inreeny. I According te Mr, Mn,y Masen, of' 227 North Connecticut nvetitie. who' fcwere out the w"
+    ],
+    "leak_is_solver_usable": false
+  },
+  {
+    "label": "V03 Newark",
+    "answer": "1832",
+    "digits": 4,
+    "pages": 12,
+    "distinct_tokens_seen": 99,
+    "token_universe": 9000,
+    "chance_hit_rate": 0.011,
+    "n_hits": 2,
+    "n_masthead_form": 1,
+    "masthead_examples": [
+      "ESTABLISHED 1832"
+    ],
+    "hit_examples": [
+      "LAST EDITION AND NEWARK ADVERTISER _ _ _ ESTABLISHED 1832._ NEWARK N. I MONDAY, DECEMBER 2, 1907.-12 PAGES.",
+      "ARTHS COPPER THE EVENING STAR AND NEWARK ADVERTISER. FOUNDED MARCH 1. 1832. j Piifeffihetf* *v#bf BiMfcA\u2019rf *tt?*pt\u00abd, by th"
+    ],
+    "leak_is_solver_usable": true
+  },
+  {
+    "label": "V01 Tribune",
+    "answer": "19405",
+    "digits": 5,
+    "pages": 10,
+    "distinct_tokens_seen": 28,
+    "token_universe": 90000,
+    "chance_hit_rate": 0.0003,
+    "n_hits": 0,
+    "n_masthead_form": 0,
+    "masthead_examples": [],
+    "hit_examples": [],
+    "leak_is_solver_usable": false
+  },
+  {
+    "label": "pool Tribune",
+    "answer": "19724",
+    "digits": 5,
+    "pages": 14,
+    "distinct_tokens_seen": 99,
+    "token_universe": 90000,
+    "chance_hit_rate": 0.0011,
+    "n_hits": 0,
+    "n_masthead_form": 0,
+    "masthead_examples": [],
+    "hit_examples": [],
+    "leak_is_solver_usable": false
+  }
+]

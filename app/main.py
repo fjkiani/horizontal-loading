@@ -80,6 +80,8 @@ def list_prompts():
             "id": pid, "domain": rec["domain"], "method": rec["method"],
             "answer": rec["answer"], "n_base": rec["n_base"],
             "api_proof": rec.get("api_proof", False),
+            "withdrawn": rec.get("withdrawn", False),
+            "withdrawn_reason": rec.get("withdrawn_reason"),
             "verified": v.get("pass", False), "verify_fails": v.get("fails", []),
             "exploit": rec.get("exploit", []),
         })
@@ -96,6 +98,9 @@ def prompt_detail(pid: str):
         "id": pid, "domain": rec["domain"], "method": rec["method"],
         "prompt": rec["prompt"], "answer": rec["answer"], "golden": rec["golden"],
         "n_base": rec["n_base"], "api_proof": rec.get("api_proof", False),
+        "withdrawn": rec.get("withdrawn", False),
+        "withdrawn_reason": rec.get("withdrawn_reason"),
+        "withdrawn_evidence": rec.get("withdrawn_evidence"),
         "exploit": rec.get("exploit", []), "sources": rec.get("sources", []),
         "has_image": bool(rec.get("image_path")),
         "image_url": f"/api/prompts/{pid}/image" if rec.get("image_path") else None,

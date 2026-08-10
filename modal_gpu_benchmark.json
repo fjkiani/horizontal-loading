@@ -1,0 +1,366 @@
+{
+  "model": "Qwen/Qwen2.5-VL-7B-Instruct",
+  "gpu_pct": 100,
+  "elapsed_s": 272.0,
+  "n_pages": 14,
+  "score": {
+    "cpu": {
+      "correct": 12,
+      "wrong": 0,
+      "refused": 2
+    },
+    "gpu": {
+      "correct": 13,
+      "wrong": 1,
+      "refused": 0
+    },
+    "dual": {
+      "accept_correct": 11,
+      "accept_wrong": 0,
+      "refused": 3
+    }
+  },
+  "rows": [
+    {
+      "lccn": "sn83030214",
+      "date": "1900-01-01",
+      "paper": "New-York tribune",
+      "verdict": "accept",
+      "answer": "19405",
+      "cpu": "19405",
+      "cpu_confidence": "high",
+      "cpu_per_resolution": {
+        "40": "19405",
+        "60": "19405"
+      },
+      "gpu": "19405",
+      "gpu_transcription": "VOL. LIX....N? 19,405.",
+      "gpu_full_page_px": [
+        6427,
+        8835
+      ],
+      "cpu_detail": null,
+      "gpu_detail": null,
+      "truth": "19405",
+      "cpu_ok": true,
+      "gpu_ok": true
+    },
+    {
+      "lccn": "sn83030214",
+      "date": "1900-02-11",
+      "paper": "New-York tribune",
+      "verdict": "accept",
+      "answer": "19446",
+      "cpu": "19446",
+      "cpu_confidence": "high",
+      "cpu_per_resolution": {
+        "40": "19446",
+        "60": "19446"
+      },
+      "gpu": "19446",
+      "gpu_transcription": "VOL. LIX....N? 19.446.",
+      "gpu_full_page_px": [
+        6378,
+        8819
+      ],
+      "cpu_detail": null,
+      "gpu_detail": null,
+      "truth": "19446",
+      "cpu_ok": true,
+      "gpu_ok": true
+    },
+    {
+      "lccn": "sn83030214",
+      "date": "1900-03-02",
+      "paper": "New-York tribune",
+      "verdict": "accept",
+      "answer": "19465",
+      "cpu": "19465",
+      "cpu_confidence": "high",
+      "cpu_per_resolution": {
+        "40": "19465",
+        "60": "19465"
+      },
+      "gpu": "19465",
+      "gpu_transcription": "VOL. LIX...N? 19,465.",
+      "gpu_full_page_px": [
+        6409,
+        8850
+      ],
+      "cpu_detail": null,
+      "gpu_detail": null,
+      "truth": "19465",
+      "cpu_ok": true,
+      "gpu_ok": true
+    },
+    {
+      "lccn": "sn83045211",
+      "date": "1922-03-11",
+      "paper": "Evening public ledger",
+      "verdict": "conflict",
+      "answer": null,
+      "cpu": "158",
+      "cpu_confidence": "high",
+      "cpu_per_resolution": {
+        "40": "158",
+        "60": "158"
+      },
+      "gpu": "153",
+      "gpu_transcription": "VOL. VIII.-NO. 153",
+      "gpu_full_page_px": [
+        5664,
+        7063
+      ],
+      "cpu_detail": null,
+      "gpu_detail": null,
+      "truth": "158",
+      "cpu_ok": true,
+      "gpu_ok": false
+    },
+    {
+      "lccn": "sn83045211",
+      "date": "1922-04-06",
+      "paper": "Evening public ledger",
+      "verdict": "accept",
+      "answer": "175",
+      "cpu": "175",
+      "cpu_confidence": "high",
+      "cpu_per_resolution": {
+        "40": "175",
+        "60": "176",
+        "25": "175"
+      },
+      "gpu": "175",
+      "gpu_transcription": "VOL. VIII.-NO. 175",
+      "gpu_full_page_px": [
+        5716,
+        7122
+      ],
+      "cpu_detail": null,
+      "gpu_detail": null,
+      "truth": "175",
+      "cpu_ok": true,
+      "gpu_ok": true
+    },
+    {
+      "lccn": "sn83030214",
+      "date": "1900-05-12",
+      "paper": "New-York tribune",
+      "verdict": "accept",
+      "answer": "19536",
+      "cpu": "19536",
+      "cpu_confidence": "high",
+      "cpu_per_resolution": {
+        "40": "19536",
+        "60": "19536"
+      },
+      "gpu": "19536",
+      "gpu_transcription": "VOL. LX...N? 19,536.",
+      "gpu_full_page_px": [
+        6472,
+        8866
+      ],
+      "cpu_detail": null,
+      "gpu_detail": null,
+      "truth": "19536",
+      "cpu_ok": true,
+      "gpu_ok": true
+    },
+    {
+      "lccn": "sn83030214",
+      "date": "1900-07-04",
+      "paper": "New-York tribune",
+      "verdict": "single-engine",
+      "answer": null,
+      "cpu": null,
+      "cpu_confidence": "conflict",
+      "cpu_per_resolution": {
+        "40": null,
+        "60": "19589",
+        "25": "19580"
+      },
+      "gpu": "19589",
+      "gpu_transcription": "VOL. LX....N? 19,589.",
+      "gpu_full_page_px": [
+        6488,
+        8882
+      ],
+      "cpu_detail": null,
+      "gpu_detail": null,
+      "truth": "19589",
+      "cpu_ok": null,
+      "gpu_ok": true
+    },
+    {
+      "lccn": "sn83030214",
+      "date": "1900-07-03",
+      "paper": "New-York tribune",
+      "verdict": "accept",
+      "answer": "19588",
+      "cpu": "19588",
+      "cpu_confidence": "low",
+      "cpu_per_resolution": {
+        "40": "19588",
+        "60": null,
+        "25": null
+      },
+      "gpu": "19588",
+      "gpu_transcription": "VOL. LX...NO. 19,588.",
+      "gpu_full_page_px": [
+        6488,
+        8882
+      ],
+      "cpu_detail": null,
+      "gpu_detail": null,
+      "truth": "19588",
+      "cpu_ok": true,
+      "gpu_ok": true
+    },
+    {
+      "lccn": "sn83030214",
+      "date": "1900-08-01",
+      "paper": "New-York tribune",
+      "verdict": "single-engine",
+      "answer": null,
+      "cpu": null,
+      "cpu_confidence": "none",
+      "cpu_per_resolution": {
+        "40": null,
+        "60": null
+      },
+      "gpu": "19617",
+      "gpu_transcription": "VOL. LX....N? 19,617.",
+      "gpu_full_page_px": [
+        6520,
+        8913
+      ],
+      "cpu_detail": null,
+      "gpu_detail": null,
+      "truth": "19617",
+      "cpu_ok": null,
+      "gpu_ok": true
+    },
+    {
+      "lccn": "sn83030214",
+      "date": "1900-07-05",
+      "paper": "New-York tribune",
+      "verdict": "accept",
+      "answer": "19590",
+      "cpu": "19590",
+      "cpu_confidence": "high",
+      "cpu_per_resolution": {
+        "40": "19590",
+        "60": "19590"
+      },
+      "gpu": "19590",
+      "gpu_transcription": "VOL. LX....N? 19,590.",
+      "gpu_full_page_px": [
+        6457,
+        8882
+      ],
+      "cpu_detail": null,
+      "gpu_detail": null,
+      "truth": "19590",
+      "cpu_ok": true,
+      "gpu_ok": true
+    },
+    {
+      "lccn": "sn83030214",
+      "date": "1900-09-05",
+      "paper": "New-York tribune",
+      "verdict": "accept",
+      "answer": "19652",
+      "cpu": "19652",
+      "cpu_confidence": "high",
+      "cpu_per_resolution": {
+        "40": "19652",
+        "60": "19652"
+      },
+      "gpu": "19652",
+      "gpu_transcription": "VOL. LX....N? 19,652.",
+      "gpu_full_page_px": [
+        6457,
+        8913
+      ],
+      "cpu_detail": null,
+      "gpu_detail": null,
+      "truth": "19652",
+      "cpu_ok": true,
+      "gpu_ok": true
+    },
+    {
+      "lccn": "sn83030214",
+      "date": "1900-11-16",
+      "paper": "New-York tribune",
+      "verdict": "accept",
+      "answer": "19724",
+      "cpu": "19724",
+      "cpu_confidence": "low",
+      "cpu_per_resolution": {
+        "40": null,
+        "60": "19724",
+        "25": null
+      },
+      "gpu": "19724",
+      "gpu_transcription": "VOL. LX....NO. 19,724.",
+      "gpu_full_page_px": [
+        6441,
+        8819
+      ],
+      "cpu_detail": null,
+      "gpu_detail": null,
+      "truth": "19724",
+      "cpu_ok": true,
+      "gpu_ok": true
+    },
+    {
+      "lccn": "sn83030214",
+      "date": "1900-11-17",
+      "paper": "New-York tribune",
+      "verdict": "accept",
+      "answer": "19725",
+      "cpu": "19725",
+      "cpu_confidence": "high",
+      "cpu_per_resolution": {
+        "40": null,
+        "60": "19725",
+        "25": "19725"
+      },
+      "gpu": "19725",
+      "gpu_transcription": "VOL. LX....N? 19,725.",
+      "gpu_full_page_px": [
+        6441,
+        8819
+      ],
+      "cpu_detail": null,
+      "gpu_detail": null,
+      "truth": "19725",
+      "cpu_ok": true,
+      "gpu_ok": true
+    },
+    {
+      "lccn": "sn83045211",
+      "date": "1922-06-06",
+      "paper": "Evening public ledger",
+      "verdict": "accept",
+      "answer": "227",
+      "cpu": "227",
+      "cpu_confidence": "high",
+      "cpu_per_resolution": {
+        "40": "227",
+        "60": "227"
+      },
+      "gpu": "227",
+      "gpu_transcription": "VOL. VIII.-NO. 227",
+      "gpu_full_page_px": [
+        5660,
+        7176
+      ],
+      "cpu_detail": null,
+      "gpu_detail": null,
+      "truth": "227",
+      "cpu_ok": true,
+      "gpu_ok": true
+    }
+  ]
+}

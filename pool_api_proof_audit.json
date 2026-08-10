@@ -1,0 +1,142 @@
+[
+  {
+    "lccn": "sn83030214",
+    "date": "1900-01-01",
+    "answer": "19405",
+    "api_proof": true,
+    "substring_hit": false,
+    "standalone_token_hit": false,
+    "context": null,
+    "ocr_chars": 47746
+  },
+  {
+    "lccn": "sn83030214",
+    "date": "1900-02-11",
+    "answer": "19446",
+    "api_proof": true,
+    "substring_hit": false,
+    "standalone_token_hit": false,
+    "context": null,
+    "ocr_chars": 39838
+  },
+  {
+    "lccn": "sn83030214",
+    "date": "1900-03-02",
+    "answer": "19465",
+    "api_proof": true,
+    "substring_hit": false,
+    "standalone_token_hit": false,
+    "context": null,
+    "ocr_chars": 36052
+  },
+  {
+    "lccn": "sn83045211",
+    "date": "1922-03-11",
+    "answer": "158",
+    "api_proof": true,
+    "substring_hit": false,
+    "standalone_token_hit": false,
+    "context": null,
+    "ocr_chars": 34647
+  },
+  {
+    "lccn": "sn83045211",
+    "date": "1922-04-06",
+    "answer": "175",
+    "api_proof": false,
+    "substring_hit": true,
+    "standalone_token_hit": true,
+    "context": "Mf'mgw mU B H H H mr H f JV -Vm mm V. I 4 m VOL. VIII. NO. 175 sr..in Leaders Bellev Agree- II mint",
+    "ocr_chars": 37084
+  },
+  {
+    "lccn": "sn83030214",
+    "date": "1900-05-12",
+    "answer": "19536",
+    "api_proof": true,
+    "substring_hit": false,
+    "standalone_token_hit": false,
+    "context": null,
+    "ocr_chars": 33839
+  },
+  {
+    "lccn": "sn83030214",
+    "date": "1900-07-04",
+    "answer": "19589",
+    "api_proof": true,
+    "substring_hit": false,
+    "standalone_token_hit": false,
+    "context": null,
+    "ocr_chars": 29731
+  },
+  {
+    "lccn": "sn83030214",
+    "date": "1900-07-03",
+    "answer": "19588",
+    "api_proof": true,
+    "substring_hit": false,
+    "standalone_token_hit": false,
+    "context": null,
+    "ocr_chars": 34042
+  },
+  {
+    "lccn": "sn83030214",
+    "date": "1900-08-01",
+    "answer": "19617",
+    "api_proof": true,
+    "substring_hit": false,
+    "standalone_token_hit": false,
+    "context": null,
+    "ocr_chars": 49469
+  },
+  {
+    "lccn": "sn83030214",
+    "date": "1900-07-05",
+    "answer": "19590",
+    "api_proof": true,
+    "substring_hit": false,
+    "standalone_token_hit": false,
+    "context": null,
+    "ocr_chars": 29393
+  },
+  {
+    "lccn": "sn83030214",
+    "date": "1900-09-05",
+    "answer": "19652",
+    "api_proof": true,
+    "substring_hit": false,
+    "standalone_token_hit": false,
+    "context": null,
+    "ocr_chars": 27475
+  },
+  {
+    "lccn": "sn83030214",
+    "date": "1900-11-16",
+    "answer": "19724",
+    "api_proof": true,
+    "substring_hit": false,
+    "standalone_token_hit": false,
+    "context": null,
+    "ocr_chars": 55346
+  },
+  {
+    "lccn": "sn83030214",
+    "date": "1900-11-17",
+    "answer": "19725",
+    "api_proof": true,
+    "substring_hit": false,
+    "standalone_token_hit": false,
+    "context": null,
+    "ocr_chars": 42183
+  },
+  {
+    "lccn": "sn83045211",
+    "date": "1922-06-06",
+    "answer": "227",
+    "api_proof": true,
+    "substring_hit": false,
+    "standalone_token_hit": false,
+    "context": null,
+    "ocr_chars": 35733
+  }
+]

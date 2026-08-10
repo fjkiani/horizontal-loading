@@ -80,7 +80,7 @@ async function loadPrompts() {
     div.dataset.id = p.id;
     div.innerHTML = `<b>${p.id}</b> ${p.domain}
       ${badge(p.verified, p.verified ? "verified" : "fails")}
-      ${badge(p.api_proof, "api-proof")}
+      ${badge(p.api_proof, "api-proof")}${p.withdrawn ? ' <span class="badge bad">WITHDRAWN</span>' : ""}
       <div style="color:#6b6b6b;font-size:11px;margin-top:3px">answer: ${p.answer}</div>`;
     div.onclick = () => selectPrompt(p.id, div);
     list.appendChild(div);
@@ -99,6 +99,10 @@ async function selectPrompt(pid, el) {
   const det = $("detail");
   let html = `<div class="prompt-text">${esc(d.prompt)}</div>`;
   html += `<div class="kv"><b>Answer:</b> ${esc(d.answer)} ${badge(d.api_proof, "api-proof")}</div>`;
+  if (d.withdrawn) {
+    html += `<div class="kv bad"><b>WITHDRAWN &mdash; not a valid trap.</b> ${esc(d.withdrawn_reason || "")}` +
+            (d.withdrawn_evidence ? `<br><span class="muted">evidence: ${esc(d.withdrawn_evidence)}</span>` : "") + `</div>`;
+  }
   html += `<div class="kv"><b>Method:</b> ${esc(d.method)} · <b>Domain:</b> ${esc(d.domain)}</div>`;
   if (d.has_image) html += `<img src="${d.image_url}" alt="scan">`;
   html += `<div class="kv"><b>Golden trajectory:</b></div><ol class="trace">` +

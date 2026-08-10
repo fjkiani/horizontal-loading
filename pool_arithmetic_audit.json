@@ -1,0 +1,18 @@
+{
+  "sn83030214": {
+    "calendar": "New-York Tribune (daily incl. Sunday)",
+    "n_entries": 11,
+    "consensus_anchor": "1900-01-01 = 19405",
+    "explained_exactly": "11/11",
+    "calendar_validated": true,
+    "flagged": []
+  },
+  "sn83045211": {
+    "calendar": "Evening Public Ledger (daily except Sunday)",
+    "n_entries": 1,
+    "consensus_anchor": "1922-06-06 = 227",
+    "explained_exactly": "1/1",
+    "calendar_validated": false,
+    "flagged": []
+  }
+}

@@ -1,0 +1,102 @@
+[
+  {
+    "id": "V01",
+    "lccn": "sn83030214",
+    "date": "1900-01-01",
+    "sp": 1,
+    "answer": "19405",
+    "named_page": {
+      "chars": 47746,
+      "substring": false,
+      "standalone": false,
+      "context": null
+    },
+    "page_1": {
+      "chars": 47746,
+      "substring": false,
+      "standalone": false,
+      "context": null
+    },
+    "api_proof": true
+  },
+  {
+    "id": "V02",
+    "lccn": "sn83045211",
+    "date": "1922-03-06",
+    "sp": 23,
+    "answer": "148",
+    "named_page": {
+      "chars": 39445,
+      "substring": false,
+      "standalone": false,
+      "context": null
+    },
+    "page_1": {
+      "chars": 35860,
+      "substring": true,
+      "standalone": true,
+      "context": " I 2 I 3 I 4 I 5 I' rta 47lQ2 ICO 00 162 103 I JTl NO. 148 Entma a Sscend-ClM MaUsr at tha Postefflee a"
+    },
+    "api_proof": false
+  },
+  {
+    "id": "V03",
+    "lccn": "sn84020504",
+    "date": "1907-12-02",
+    "sp": 9,
+    "answer": "1832",
+    "named_page": {
+      "chars": 43214,
+      "substring": false,
+      "standalone": false,
+      "context": null
+    },
+    "page_1": {
+      "chars": 31275,
+      "substring": true,
+      "standalone": true,
+      "context": "LAST EDITION AND NEWARK ADVERTISER _ _ _ ESTABLISHED 1832._ NEWARK N. I MONDAY, DECEMBER 2, 1907.-12 P"
+    },
+    "api_proof": false
+  },
+  {
+    "id": "V04",
+    "lccn": "sn83030214",
+    "date": "1900-01-06",
+    "sp": 1,
+    "answer": "19410",
+    "named_page": {
+      "chars": 52582,
+      "substring": false,
+      "standalone": false,
+      "context": null
+    },
+    "page_1": {
+      "chars": 52582,
+      "substring": false,
+      "standalone": false,
+      "context": null
+    },
+    "api_proof": true
+  },
+  {
+    "id": "V05",
+    "lccn": "sn83045211",
+    "date": "1922-03-27",
+    "sp": 1,
+    "answer": "166",
+    "named_page": {
+      "chars": 35523,
+      "substring": false,
+      "standalone": false,
+      "context": null
+    },
+    "page_1": {
+      "chars": 35523,
+      "substring": false,
+      "standalone": false,
+      "context": null
+    },
+    "api_proof": true
+  }
+]

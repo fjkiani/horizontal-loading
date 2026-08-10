@@ -1,0 +1,63 @@
+{
+  "lccn": "sn83045211",
+  "start_date": "1922-04-06",
+  "pages": 3,
+  "elapsed_s": 113.4,
+  "rows": [
+    {
+      "lccn": "sn83045211",
+      "date": "1922-04-06",
+      "paper": "Evening public ledger",
+      "verdict": "single-engine",
+      "answer": null,
+      "cpu": null,
+      "cpu_confidence": "conflict",
+      "cpu_per_resolution": {
+        "40": null,
+        "60": "176",
+        "25": "175"
+      },
+      "gpu": "175",
+      "gpu_transcription": "VOL. VIII.-NO. 175",
+      "gpu_full_page_px": [
+        5716,
+        7122
+      ]
+    },
+    {
+      "lccn": "sn83045211",
+      "date": "1922-04-07",
+      "paper": "Evening public ledger",
+      "verdict": "unread",
+      "answer": null,
+      "cpu": null,
+      "cpu_confidence": "none",
+      "cpu_per_resolution": {
+        "40": null,
+        "60": null
+      },
+      "gpu": null,
+      "gpu_transcription": null,
+      "gpu_full_page_px": null
+    },
+    {
+      "lccn": "sn83045211",
+      "date": "1922-04-08",
+      "paper": "Evening public ledger",
+      "verdict": "accept",
+      "answer": "177",
+      "cpu": "177",
+      "cpu_confidence": "high",
+      "cpu_per_resolution": {
+        "40": "177",
+        "60": "177"
+      },
+      "gpu": "177",
+      "gpu_transcription": "VOL. VIII.-NO. 177",
+      "gpu_full_page_px": [
+        5672,
+        7031
+      ]
+    }
+  ]
+}

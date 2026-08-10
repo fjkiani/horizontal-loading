@@ -74,3 +74,5 @@ table { width: 100%; border-collapse: collapse; font-size: 12px; margin-top: 8px
 th, td { text-align: left; padding: 5px 6px; border-bottom: 1px solid var(--line); }
 th { color: var(--muted); font-weight: 600; }
 @media (max-width: 1000px) { main { grid-template-columns: 1fr; } }
+
+.bad { color: var(--bad); }

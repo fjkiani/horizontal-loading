@@ -81,60 +81,6 @@
     "confirmed_at": "2026-08-06T21:08:11Z"
   },
   {
-    "lccn": "sn83045211",
-    "date": "1922-03-11",
-    "paper": "Evening public ledger",
-    "field": "issue number",
-    "answer": "158",
-    "resource_url": "https://www.loc.gov/resource/sn83045211/1922-03-11/ed-1/?&sp=1",
-    "image_path": "generated_images/sn83045211_1922-03-11.jpg",
-    "prompt": "Consult the front page of the newspaper \"Evening public ledger\" published on 1922-03-11, digitized by the Library of Congress. The page is a historical scan whose machine-readable text layer is heavily degraded by age and ornate typesetting, so automated transcription is unreliable. Examine the masthead banner at the top of the front page directly. What is the issue number printed there? Provide the exact value as it appears, as a single atomic token. Cross-check your reading against the publication's catalog record and at least one independent library source to confirm you have the correct issue before answering.",
-    "word_count": 97,
-    "api_proof": true,
-    "confidence": "high",
-    "golden": [
-      "Open the LOC scan IMAGE for https://www.loc.gov/resource/sn83045211/1922-03-11/ed-1/?&sp=1",
-      "Read the issue number directly from the masthead (OCR layer is degraded)",
-      "= 158"
-    ],
-    "sources": [
-      "https://www.loc.gov/resource/sn83045211/1922-03-11/ed-1/?&sp=1",
-      "https://www.loc.gov/item/sn83045211/1922-03-11/ed-1/",
-      "https://www.loc.gov/newspapers/sn83045211/"
-    ],
-    "generated_at": "2026-08-06T20:55:31Z",
-    "verified": true,
-    "verifier": "agent-vision",
-    "confirmed_at": "2026-08-06T21:08:11Z"
-  },
-  {
-    "lccn": "sn83045211",
-    "date": "1922-04-06",
-    "paper": "Evening public ledger",
-    "field": "issue number",
-    "answer": "175",
-    "resource_url": "https://www.loc.gov/resource/sn83045211/1922-04-06/ed-1/?&sp=1",
-    "image_path": "generated_images/sn83045211_1922-04-06.jpg",
-    "prompt": "Consult the front page of the newspaper \"Evening public ledger\" published on 1922-04-06, digitized by the Library of Congress. The page is a historical scan whose machine-readable text layer is heavily degraded by age and ornate typesetting, so automated transcription is unreliable. Examine the masthead banner at the top of the front page directly. What is the issue number printed there? Provide the exact value as it appears, as a single atomic token. Cross-check your reading against the publication's catalog record and at least one independent library source to confirm you have the correct issue before answering.",
-    "word_count": 97,
-    "api_proof": true,
-    "confidence": "high",
-    "golden": [
-      "Open the LOC scan IMAGE for https://www.loc.gov/resource/sn83045211/1922-04-06/ed-1/?&sp=1",
-      "Read the issue number directly from the masthead (OCR layer is degraded)",
-      "= 175"
-    ],
-    "sources": [
-      "https://www.loc.gov/resource/sn83045211/1922-04-06/ed-1/?&sp=1",
-      "https://www.loc.gov/item/sn83045211/1922-04-06/ed-1/",
-      "https://www.loc.gov/newspapers/sn83045211/"
-    ],
-    "generated_at": "2026-08-06T20:58:48Z",
-    "verified": true,
-    "verifier": "agent-vision",
-    "confirmed_at": "2026-08-06T21:08:11Z"
-  },
-  {
     "lccn": "sn83030214",
     "date": "1900-05-12",
     "paper": "New-York tribune",

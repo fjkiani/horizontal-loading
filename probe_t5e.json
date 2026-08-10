@@ -3,5 +3,197 @@
     "gnd_err": "FetchError: https://lobid.org/gnd/search?q=Johannes+Diderik+van+der+Waals&format=json&size=5 -> gave u",
     "ok": false,
     "secs": 512.3
+  },
+  "history": {
+    "gnd_err": "FetchError: https://lobid.org/gnd/search?q=Aage+Niels+Bohr&format=json&size=5 -> gave up after 5 attem",
+    "ok": false,
+    "secs": 512.0
+  },
+  "video_games": {
+    "page_bytes": 25078,
+    "mentions_colossal_order": true,
+    "context": "e\n|cover        = Cities Skylines cover.jpg\n|developers   = \n{{Infobox game/row/developer|Colossal Order}}\n{{Infobox game/row/developer|Tantalus Media",
+    "ok": true,
+    "secs": 0.1
+  },
+  "tv": {
+    "ok": true,
+    "n_tvmaze": 5,
+    "n_two_witness": 3,
+    "n_runtime_agrees": 0,
+    "best": {
+      "year": 2001,
+      "genre": "Comedy",
+      "n": 398,
+      "sep": 1.393,
+      "top": "tt0303496",
+      "title": "Micawber",
+      "top_rt": 195,
+      "second_rt": 140,
+      "tvmaze_id": 63432,
+      "tvmaze_name": "Micawber",
+      "tvmaze_runtime": 50,
+      "title_match": true,
+      "runtime_agrees": false,
+      "wikidata_hits": 1,
+      "wikidata_qid": "Q6827950",
+      "wikidata_label": "Micawber"
+    },
+    "rows": [
+      {
+        "year": 2001,
+        "genre": "Comedy",
+        "n": 398,
+        "sep": 1.393,
+        "top": "tt0303496",
+        "title": "Micawber",
+        "top_rt": 195,
+        "second_rt": 140,
+        "tvmaze_id": 63432,
+        "tvmaze_name": "Micawber",
+        "tvmaze_runtime": 50,
+        "title_match": true,
+        "runtime_agrees": false,
+        "wikidata_hits": 1,
+        "wikidata_qid": "Q6827950",
+        "wikidata_label": "Micawber"
+      },
+      {
+        "year": 2005,
+        "genre": "Reality-TV",
+        "n": 345,
+        "sep": 1.053,
+        "top": "tt0862558",
+        "title": "Anatomy for Beginners",
+        "top_rt": 200,
+        "second_rt": 190,
+        "tvmaze_id": 14652,
+        "tvmaze_name": "Anatomy for Beginners",
+        "tvmaze_runtime": 60,
+        "title_match": true,
+        "runtime_agrees": false,
+        "wikidata_hits": 1,
+        "wikidata_qid": "Q4752290",
+        "wikidata_label": "Anatomy for Beginners"
+      },
+      {
+        "year": 2001,
+        "genre": "Documentary",
+        "n": 321,
+        "sep": 1.32,
+        "top": "tt1524954",
+        "title": "Battlefields",
+        "top_rt": 194,
+        "second_rt": 147,
+        "tvmaze_id": 9298,
+        "tvmaze_name": "Battlefields",
+        "tvmaze_runtime": 50,
+        "title_match": true,
+        "runtime_agrees": false,
+        "wikidata_hits": 0,
+        "wikidata_qid": null,
+        "wikidata_label": null
+      },
+      {
+        "year": 2002,
+        "genre": "Drama",
+        "n": 295,
+        "sep": 1.111,
+        "top": "tt0307734",
+        "title": "Crime & Punishment",
+        "top_rt": 200,
+        "second_rt": 180,
+        "tvmaze_id": 91772,
+        "tvmaze_name": "Crime and Punishment",
+        "tvmaze_runtime": 90,
+        "title_match": false,
+        "runtime_agrees": false,
+        "wikidata_hits": 1,
+        "wikidata_qid": "Q5185248",
+        "wikidata_label": "Crime and Punishment"
+      },
+      {
+        "year": 1992,
+        "genre": "Comedy",
+        "n": 265,
+        "sep": 1.2,
+        "top": "tt0270804",
+        "title": "Soccer AM",
+        "top_rt": 180,
+        "second_rt": 150,
+        "tvmaze_id": 6548,
+        "tvmaze_name": "Soccer AM",
+        "tvmaze_runtime": 90,
+        "title_match": true,
+        "runtime_agrees": false,
+        "wikidata_hits": 1,
+        "wikidata_qid": "Q16850337",
+        "wikidata_label": "Soccer AM"
+      }
+    ],
+    "secs": 19.6
+  },
+  "politics": {
+    "count": 130,
+    "n_granules_seen": 130,
+    "complete": true,
+    "granule_hits_13292": [],
+    "n_presidential_granules": 1,
+    "presidential_summaries": [
+      {
+        "granuleId": "03-7736",
+        "title": "Further Amendment to Executive Order 12958, as Amended, Classified Nat",
+        "has13292": false
+      }
+    ],
+    "deep_hits": [],
+    "wikidata_search": [
+      {
+        "id": "Q5419886",
+        "label": "Executive Order 13292",
+        "desc": "On US Classified National Security Information"
+      }
+    ],
+    "ok": true,
+    "secs": 2.6
+  },
+  "finance": {
+    "n_priced": 284,
+    "top3": [
+      {
+        "cusip": "912796NV7",
+        "security_type": "Bill",
+        "security_term": "4-Week",
+        "auction_date": "2018-08-14",
+        "_amt": 70000000000.0
+      },
+      {
+        "cusip": "912796PY9",
+        "security_type": "Bill",
+        "security_term": "4-Week",
+        "auction_date": "2018-08-07",
+        "_amt": 70000000000.0
+      },
+      {
+        "cusip": "912796PZ6",
+        "security_type": "Bill",
+        "security_term": "4-Week",
+        "auction_date": "2018-08-21",
+        "_amt": 70000000000.0
+      }
+    ],
+    "ties_at_max": 3,
+    "sep_ratio": 1.0,
+    "cusip": "912796NV7",
+    "sec_fts": "{'took': 170, 'timed_out': False, '_shards': {'total': 50, 'successful': 50, 'skipped': 0, 'failed': 0}, 'hits': {'total': {'value': 593, 'relation': 'eq'}, 'ma",
+    "finra_err": "JSONDecodeError: Expecting value: line 1 column 1 (char 0)",
+    "ok": true,
+    "secs": 1.2
+  },
+  "shopping": {
+    "ok": false,
+    "error": "FetchError: https://world.openfoodfacts.org/api/v2/search?categories_tags=en:crisps&countries_tags_en=united-kingdom&fields=code,brands,product_name,nutriments&page_size=100&page=11 -> HTTP 401",
+    "tb": "                ^^^^^^^^^^^^^^^^^^\n  File \"/workspace/seal_deploy/probe_t5e.py\", line 263, in _off_all\n    js = net.get_json(\n         ^^^^^^^^^^^^^\n  File \"/workspace/seal_deploy/net.py\", line 88, in get_json\n    txt = fetch(url, body=body, **kw)\n          ^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/workspace/seal_deploy/net.py\", line 80, in fetch\n    raise FetchError(f\"{url} -> HTTP {e.code}\") from None\nnet.FetchError: https://world.openfoodfacts.org/api/v2/search?categories_tags=en:crisps&countries_tags_en=united-kingdom&fields=code,brands,product_name,nutriments&page_size=100&page=11 -> HTTP 401\n",
+    "secs": 71.0
   }
 }

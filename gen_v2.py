@@ -6,6 +6,7 @@ the number that proves it are named in each docstring so the reasoning survives.
 Importing this module rebinds the affected entries in category_traps.GENERATORS.
 """
 import csv, gzip, io, json, re, urllib.parse as up
+import re
 
 import net
 import category_traps as ct
@@ -218,15 +219,31 @@ def _politics_one(year):
     pages = sorted((r["page_length"] for r in base), reverse=True)
     if pages[0] <= pages[1]:
         raise TrapUnavailable(f"page length tie at the maximum ({pages[0]})")
+    # GovInfo publishes the same issue but its granule index does not name
+    # individual order numbers: all 130 granules of FR-2003-03-28 were paged and
+    # none reference 13292, and only one granule is presidential at all. So the
+    # witness has to be an operator that catalogues the ORDER, not the issue.
+    wd_eo = ct.net.wikidata_search(f"Executive Order {answer}").get("search", [])
+    eo_hit = next((h for h in wd_eo
+                   if answer in str(h.get("label", ""))
+                   or answer in str(h.get("description", ""))), None)
     srcs = [u,
             f"https://www.federalregister.gov/documents/{best['publication_date']}",
             "https://www.govinfo.gov/app/collection/FR",
             "https://www.wikidata.org/wiki/Q737808"]
+    conf_srcs = [srcs[1]]
+    conf_extra = ""
+    if eo_hit:
+        srcs[3] = f"https://www.wikidata.org/wiki/{eo_hit['id']}"
+        conf_srcs.append(srcs[3])
+        conf_extra = (f"; Wikidata item {eo_hit['id']} is titled "
+                      f"{eo_hit.get('label')!r} and independently binds the "
+                      f"number to the order")
     return Candidate(
         category="politics",
         primary_operator="US Office of the Federal Register", field="executive order number", answer=answer,
         entity=best["title"], n_base=len(base), sources=srcs,
-        confirming_sources=[srcs[1]],
+        confirming_sources=conf_srcs,
         api_proof_argument=(
             f"The Federal Register document API returns the {len(base)} executive "
             f"orders of {year} in publication order with no length field to sort on, "
@@ -237,16 +254,24 @@ def _politics_one(year):
         confirmation=(f"the register's own document record for "
                       f"{best['publication_date']} carries citation "
                       f"{best.get('citation')} spanning pages "
-                      f"{best.get('start_page')} to {best.get('end_page')}"),
+                      f"{best.get('start_page')} to {best.get('end_page')}"
+                      + conf_extra),
         facts={"year": year, "n": len(base), "pages": best["page_length"],
                "runner_up": pages[1], "title": best["title"],
                "citation": best.get("citation"),
                "publication_date": best["publication_date"],
-               "single_witness": True,
-               "provenance_note": ("Executive order numbers are assigned and "
-                                   "published only by the Office of the Federal "
-                                   "Register, so no second operator independently "
-                                   "witnesses the number.")},
+               "single_witness": not bool(eo_hit),
+               "wikidata_eo_qid": (eo_hit or {}).get("id"),
+               "govinfo_granule_check": (
+                   "all 130 granules of the issue were paged; none reference the "
+                   "order number and only one granule is presidential, so GovInfo "
+                   "is a co-publisher of the issue but not a witness of the order"),
+               "provenance_note": (
+                   "Executive order numbers are assigned and published only by "
+                   "the Office of the Federal Register. Wikidata catalogues the "
+                   "order as a subject in its own right, which is why it can "
+                   "witness the number without restating the register's ranking; "
+                   "the page-length ranking itself has no second witness.")},
         prompt=build_prompt(
             f"The United States Office of the Federal Register publishes every "
             f"presidential executive order, recording for each one its sequential "
@@ -768,15 +793,38 @@ def gen_video_games(appids=_VG_ROSTER):
             f"video games: Wikidata P178 did not confirm developer {answer!r} "
             f"for {best['name']!r} (claims: {[l.get('label') for l in labs]})")
 
+    # Third operator. PCGamingWiki keeps developer credits editorially, so a
+    # match there is not Wikidata restated. Co-developers are recorded, not
+    # hidden: a reader who opens the witness will see them.
+    pcgw = ("https://www.pcgamingwiki.com/w/api.php?action=query&prop=revisions"
+            "&rvprop=content&rvslots=main&format=json&titles="
+            + up.quote(best["name"]))
+    pcgw_ok, pcgw_devs = False, []
+    try:
+        pages = (ct.net.get_json(pcgw, timeout=90).get("query") or {}).get("pages") or {}
+        wtxt = ""
+        for _p in pages.values():
+            _r = _p.get("revisions") or []
+            if _r:
+                wtxt = ((_r[0].get("slots") or {}).get("main") or {}).get("*", "")
+        pcgw_devs = re.findall(r"Infobox game/row/developer\|([^}|]+)", wtxt)
+        pcgw_ok = any(ct._norm(answer) == ct._norm(d) for d in pcgw_devs)
+    except Exception:  # noqa: BLE001
+        pcgw_ok = False
+
     srcs = [f"https://store.steampowered.com/api/appdetails?appids={best['appid']}",
             f"https://www.wikidata.org/wiki/{qid}",
             "https://pegi.info/search-pegi?q=" + up.quote(best["name"])]
+    conf_vg = [f"https://www.wikidata.org/wiki/{qid}",
+               f"https://www.wikidata.org/wiki/{hit['qid']}"]
+    if pcgw_ok:
+        srcs.append(pcgw)
+        conf_vg.append(pcgw)
     return Candidate(
         category="video games",
         primary_operator="Valve Corporation", field="developing studio", answer=answer,
         entity=best["name"], n_base=len(base), sources=srcs,
-        confirming_sources=[f"https://www.wikidata.org/wiki/{qid}",
-                            f"https://www.wikidata.org/wiki/{hit['qid']}"],
+        confirming_sources=conf_vg,
         api_proof_argument=(
             f"The storefront exposes one record per application number and offers no "
             f"cross-title ordering, so all {len(base)} records must be fetched "
@@ -787,6 +835,13 @@ def gen_video_games(appids=_VG_ROSTER):
                       f"(item {hit['qid']}, label language {hit.get('label_lang')})"),
         facts={"n": len(base), "title": best["name"], "appid": best["appid"],
                "n_distinct_studios": len(set(devs_norm)),
+               "pcgamingwiki_confirms": pcgw_ok,
+               "pcgamingwiki_developers_listed": pcgw_devs,
+               "co_developer_note": (
+                   "PCGamingWiki lists more than one developer for this title; "
+                   "the answer is the studio the storefront prints first, and the "
+                   "witness is that PCGamingWiki also credits it, not that it is "
+                   "the sole developer." if len(pcgw_devs) > 1 else ""),
                "collection_is_explicit": True,
                "rejected_answer_field": (
                    "store release date: Steam and Wikidata P577 agree for only 3 of "

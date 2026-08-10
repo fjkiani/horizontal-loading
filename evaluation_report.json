@@ -1,5 +1,5 @@
 {
-  "evaluated_at": "2026-08-10T22:45:30Z",
+  "evaluated_at": "2026-08-10T23:11:02Z",
   "thresholds": {
     "max_uniform_guess": 0.1,
     "min_confirming_operators": 2,
@@ -705,9 +705,79 @@
     },
     {
       "category": "politics",
-      "verdict": "unavailable",
-      "error": "gate rejected: [\"R3c every confirming source is run by the primary operator 'US Office of the Federal Register'; a source restating itself is not a witness\"]",
-      "tests": {}
+      "answer": "13292",
+      "field": "executive order number",
+      "tests": {
+        "T0_base_adequacy": {
+          "pass": true,
+          "detail": "n_ranked=40 (>= 5); isolation chooses among candidates"
+        },
+        "T1_uniqueness": {
+          "pass": true,
+          "detail": "n_tied_at_extremum=1"
+        },
+        "T2_guessability": {
+          "pass": true,
+          "detail": "answer occurs 1/40 times (p=0.025), modal count 1, 40 distinct values, answer_is_strict_mode=False"
+        },
+        "T3_order_leak": {
+          "pass": true,
+          "detail": "winner at index 10 of 40 (depth 0.2564), first=False last=False, H0 P(first|last)=0.05"
+        },
+        "T3b_monotone_key": {
+          "pass": true,
+          "detail": "spearman(key, api_index)=-0.3685 (|rho| <= 0.95); key is off-axis"
+        },
+        "T4_separation": {
+          "pass": true,
+          "detail": "top1=20 top2=15 gap=5 rel=0.25"
+        },
+        "T5_confirmation": {
+          "pass": false,
+          "detail": "1 independent witness(es): ['Wikimedia Foundation']; primary='US Office of the Federal Register'; self-confirming and not counted: ['US Office of the Federal Register']; 3 source operator(s): ['US Government Publishing Office', 'US Office of the Federal Register', 'Wikimedia Foundation']"
+        },
+        "T6_gate": {
+          "pass": true,
+          "detail": "clean"
+        },
+        "T7_prompt_leak": {
+          "pass": true,
+          "detail": "word count 112; years named in prompt: 2003"
+        }
+      },
+      "collection_is_explicit": false,
+      "verdict": "hold",
+      "primary_operator": "US Office of the Federal Register",
+      "independent_witnesses": [
+        "Wikimedia Foundation"
+      ],
+      "witness_tier": "silver",
+      "evidence": {
+        "label": "politics",
+        "mode": "max",
+        "n_base": 40,
+        "n_ranked": 40,
+        "spearman_key_vs_api_order": -0.3685,
+        "n_tied_at_extremum": 1,
+        "distinct_keys": 9,
+        "winner_position_in_api_order": 10,
+        "winner_is_first_returned": false,
+        "winner_is_last_returned": false,
+        "top_keys": [
+          "20",
+          "15",
+          "10",
+          "8",
+          "8"
+        ],
+        "answer_field_distinct_values": 40,
+        "answer_field_n_values": 40,
+        "answer_field_max_count": 1,
+        "answer_field_count_of_answer": 1,
+        "answer_field_modal_share": 0.025,
+        "p_answer_by_uniform_guess": 0.025,
+        "_collection_is_explicit": false
+      }
     },
     {
       "category": "shopping",
@@ -975,8 +1045,8 @@
           "detail": "top1='citiesskylines' top2='cuphead' (non-numeric key, distinct)"
         },
         "T5_confirmation": {
-          "pass": false,
-          "detail": "1 independent witness(es): ['Wikimedia Foundation']; primary='Valve Corporation'; 3 source operator(s): ['Pan European Game Information', 'Valve Corporation', 'Wikimedia Foundation']"
+          "pass": true,
+          "detail": "2 independent witness(es): ['PCGamingWiki', 'Wikimedia Foundation']; primary='Valve Corporation'; 4 source operator(s): ['PCGamingWiki', 'Pan European Game Information', 'Valve Corporation', 'Wikimedia Foundation']"
         },
         "T6_gate": {
           "pass": true,
@@ -988,12 +1058,13 @@
         }
       },
       "collection_is_explicit": true,
-      "verdict": "hold",
+      "verdict": "ship",
       "primary_operator": "Valve Corporation",
       "independent_witnesses": [
+        "PCGamingWiki",
         "Wikimedia Foundation"
       ],
-      "witness_tier": "silver",
+      "witness_tier": "gold",
       "evidence": {
         "label": "video games",
         "mode": "min",
@@ -1033,10 +1104,11 @@
     },
     "C3_depth_uniformity": {
       "h0": "winner relative depth pos/(n-1) is Uniform(0,1) across the corpus",
-      "n": 12,
+      "n": 13,
       "depths": [
         0.0833,
         0.1277,
+        0.2564,
         0.3571,
         0.3636,
         0.3902,
@@ -1048,13 +1120,13 @@
         0.8846,
         0.9
       ],
-      "mean_depth": 0.4737,
-      "ks_statistic": 0.21,
-      "ks_p_approx": 0.611485
+      "mean_depth": 0.457,
+      "ks_statistic": 0.2292,
+      "ks_p_approx": 0.448757
     },
     "C4_key_monotonicity": {
       "h0": "ranking keys are unrelated to API return order (rho ~ 0)",
-      "n": 12,
+      "n": 13,
       "abs_rho": [
         0.0064,
         0.0252,
@@ -1067,14 +1139,15 @@
         0.2021,
         0.2042,
         0.261,
+        0.3685,
         0.7888
       ],
-      "mean_abs_rho": 0.1551,
+      "mean_abs_rho": 0.1715,
       "n_over_threshold": 0
     },
     "C1_positional_leak": {
       "h0": "winner index is uniform over the n_base records the API returned",
-      "n_traps_tested": 12,
+      "n_traps_tested": 13,
       "per_trap_p_first_or_last": [
         0.0952,
         0.1333,
@@ -1085,26 +1158,27 @@
         0.0476,
         0.0392,
         0.0392,
+        0.05,
         0.0417,
         0.0274,
         0.0095
       ],
-      "expected_first_or_last": 0.5619,
+      "expected_first_or_last": 0.6119,
       "observed_first_or_last": 0,
       "exact_two_sided_p": 1.0
     },
     "C2_guess_yield": {
       "h0": "a guesser draws uniformly from the observed answer-field values",
-      "n_traps_tested": 13,
-      "expected_hits_across_corpus": 0.3524,
-      "p_at_least_one_hit": 0.302609,
+      "n_traps_tested": 14,
+      "expected_hits_across_corpus": 0.3774,
+      "p_at_least_one_hit": 0.320044,
       "n_traps_over_threshold": 0,
       "threshold": 0.1
     }
   },
   "counts": {
-    "ship": 6,
-    "unavailable": 3,
+    "ship": 7,
+    "unavailable": 2,
     "hold": 7
   }
 }

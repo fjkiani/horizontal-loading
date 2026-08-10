@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-10T22:45:30Z",
+  "generated_at": "2026-08-10T23:11:02Z",
   "results": {
     "history": {
       "category": "history",
@@ -316,7 +316,7 @@
         "violations": [],
         "unmapped_hosts": []
       },
-      "secs": 0.3
+      "secs": 0.0
     },
     "business": {
       "category": "business",
@@ -635,7 +635,7 @@
         "violations": [],
         "unmapped_hosts": []
       },
-      "secs": 0.5
+      "secs": 0.4
     },
     "health and medicine": {
       "category": "health and medicine",
@@ -798,11 +798,13 @@
     },
     "politics": {
       "category": "politics",
-      "status": "fail",
+      "status": "ok",
       "trap": {
         "collection_is_explicit": false,
         "primary_operator": "US Office of the Federal Register",
-        "independent_confirming_operators": [],
+        "independent_confirming_operators": [
+          "Wikimedia Foundation"
+        ],
         "category": "politics",
         "field": "executive order number",
         "answer": "13292",
@@ -812,14 +814,15 @@
           "https://www.federalregister.gov/api/v1/documents.json?conditions[type][]=PRESDOCU&conditions[presidential_document_type][]=executive_order&conditions[publication_date][gte]=2003-01-01&conditions[publication_date][lte]=2003-12-31&fields[]=executive_order_number&fields[]=title&fields[]=page_length&fields[]=publication_date&fields[]=citation&fields[]=start_page&fields[]=end_page&per_page=1000&order=oldest",
           "https://www.federalregister.gov/documents/2003-03-28",
           "https://www.govinfo.gov/app/collection/FR",
-          "https://www.wikidata.org/wiki/Q737808"
+          "https://www.wikidata.org/wiki/Q5419886"
         ],
         "confirming_sources": [
-          "https://www.federalregister.gov/documents/2003-03-28"
+          "https://www.federalregister.gov/documents/2003-03-28",
+          "https://www.wikidata.org/wiki/Q5419886"
         ],
         "api_proof": true,
         "api_proof_argument": "The Federal Register document API returns the 40 executive orders of 2003 in publication order with no length field to sort on, so every record's printed extent must be read and compared. Ranking by printed length is deliberately unrelated to issuance order: measured spearman rho against return order is -0.3685.",
-        "confirmation": "the register's own document record for 2003-03-28 carries citation 68 FR 15315 spanning pages 15315 to 15334",
+        "confirmation": "the register's own document record for 2003-03-28 carries citation 68 FR 15315 spanning pages 15315 to 15334; Wikidata item Q5419886 is titled 'Executive Order 13292' and independently binds the number to the order",
         "prompt": "The United States Office of the Federal Register publishes every presidential executive order, recording for each one its sequential order number, its title and the span of printed pages it occupies. Consider only the executive orders that the register published during 2003, each counted by the number of printed pages it fills. Among those orders one occupies more printed pages than any other issued that year. Report the sequential order number that the register assigns to that single longest order. The register offers no view sorted by printed extent, so the comparison must be built from the records themselves. Give the order number alone as digits, with no prefix or other words.",
         "source_operators": [
           "US Government Publishing Office",
@@ -827,7 +830,8 @@
           "Wikimedia Foundation"
         ],
         "confirming_operators": [
-          "US Office of the Federal Register"
+          "US Office of the Federal Register",
+          "Wikimedia Foundation"
         ],
         "track": "api-native",
         "ranking_evidence": {
@@ -863,20 +867,18 @@
           "title": "Further Amendment to Executive Order 12958, as Amended, Classified National Security Information",
           "citation": "68 FR 15315",
           "publication_date": "2003-03-28",
-          "single_witness": true,
-          "provenance_note": "Executive order numbers are assigned and published only by the Office of the Federal Register, so no second operator independently witnesses the number."
+          "single_witness": false,
+          "wikidata_eo_qid": "Q5419886",
+          "govinfo_granule_check": "all 130 granules of the issue were paged; none reference the order number and only one granule is presidential, so GovInfo is a co-publisher of the issue but not a witness of the order",
+          "provenance_note": "Executive order numbers are assigned and published only by the Office of the Federal Register. Wikidata catalogues the order as a subject in its own right, which is why it can witness the number without restating the register's ranking; the page-length ranking itself has no second witness."
         }
       },
       "validation": {
-        "ok": false,
-        "violations": [
-          "R3c every confirming source is run by the primary operator 'US Office of the Federal Register'; a source restating itself is not a witness"
-        ],
+        "ok": true,
+        "violations": [],
         "unmapped_hosts": []
       },
-      "secs": 0.0,
-      "error": "gate rejected: [\"R3c every confirming source is run by the primary operator 'US Office of the Federal Register'; a source restating itself is not a witness\"]",
-      "etype": "GateRejected"
+      "secs": 0.0
     },
     "shopping": {
       "category": "shopping",
@@ -1119,7 +1121,7 @@
         "violations": [],
         "unmapped_hosts": []
       },
-      "secs": 8.9
+      "secs": 0.5
     },
     "tv shows and movies": {
       "category": "tv shows and movies",
@@ -1205,6 +1207,7 @@
         "collection_is_explicit": true,
         "primary_operator": "Valve Corporation",
         "independent_confirming_operators": [
+          "PCGamingWiki",
           "Wikimedia Foundation"
         ],
         "category": "video games",
@@ -1215,22 +1218,26 @@
         "sources": [
           "https://store.steampowered.com/api/appdetails?appids=255710",
           "https://www.wikidata.org/wiki/Q18149274",
-          "https://pegi.info/search-pegi?q=Cities%3A%20Skylines"
+          "https://pegi.info/search-pegi?q=Cities%3A%20Skylines",
+          "https://www.pcgamingwiki.com/w/api.php?action=query&prop=revisions&rvprop=content&rvslots=main&format=json&titles=Cities%3A%20Skylines"
         ],
         "confirming_sources": [
           "https://www.wikidata.org/wiki/Q18149274",
-          "https://www.wikidata.org/wiki/Q16829899"
+          "https://www.wikidata.org/wiki/Q16829899",
+          "https://www.pcgamingwiki.com/w/api.php?action=query&prop=revisions&rvprop=content&rvslots=main&format=json&titles=Cities%3A%20Skylines"
         ],
         "api_proof": true,
         "api_proof_argument": "The storefront exposes one record per application number and offers no cross-title ordering, so all 14 records must be fetched individually and their printed names compared before the first can be known. The alphabetical key replaces a release-date key that had spearman rho 0.993 against the application number sequence.",
         "confirmation": "Wikidata Q18149274 property P178 returns 'Colossal Order' (item Q16829899, label language mul)",
         "prompt": "The Valve storefront exposes a public record for each catalogue title, giving the name the store prints for it and the studio credited with developing it. Consider the titles carried under the store application numbers 4000, 6910, 22380, 39210, 105600, 108600, 220200, 236850, 255710, 268910, 322330, 367520, 413150 and 427520, taking each name exactly as printed. Reduce each printed name to its letters and digits in lower case, then order those reduced names; one stands before all the others. Report the developing studio that the store credits for that single first-ordered title. Confirm the studio against an independent structured knowledge base before answering. Give the studio name alone, exactly as the store prints it.",
         "source_operators": [
+          "PCGamingWiki",
           "Pan European Game Information",
           "Valve Corporation",
           "Wikimedia Foundation"
         ],
         "confirming_operators": [
+          "PCGamingWiki",
           "Wikimedia Foundation"
         ],
         "track": "api-native",
@@ -1264,6 +1271,12 @@
           "title": "Cities: Skylines",
           "appid": 255710,
           "n_distinct_studios": 14,
+          "pcgamingwiki_confirms": true,
+          "pcgamingwiki_developers_listed": [
+            "Colossal Order",
+            "Tantalus Media"
+          ],
+          "co_developer_note": "PCGamingWiki lists more than one developer for this title; the answer is the studio the storefront prints first, and the witness is that PCGamingWiki also credits it, not that it is the sole developer.",
           "collection_is_explicit": true,
           "rejected_answer_field": "store release date: Steam and Wikidata P577 agree for only 3 of 12 measured titles, with four off by exactly one day in the same direction and five off by 307-5257 days",
           "provenance_note": "The application numbers are named in the prompt, so the solver sees the whole collection and no return-order information is withheld. The exemption is not load-bearing: rho between the alphabetical key and the appid sequence is near zero and the winner is interior to the fetch order."
@@ -1278,8 +1291,8 @@
     }
   },
   "counts": {
-    "ok": 13,
-    "fail": 3,
+    "ok": 14,
+    "fail": 2,
     "total": 16
   }
 }

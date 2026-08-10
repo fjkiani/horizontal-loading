@@ -147,6 +147,10 @@ OPERATOR_MAP = {
     "sec.gov": "US Securities and Exchange Commission",
     "treasury.gov": "US Department of the Treasury",
     "federalregister.gov": "US Office of the Federal Register",
+    # A community wiki, but a distinct controlling entity from Valve and
+    # from Wikimedia, and it records developer credits editorially rather
+    # than by mirroring either one.
+    "pcgamingwiki.com": "PCGamingWiki",
     "govinfo.gov": "US Government Publishing Office",
     "gpo.gov": "US Government Publishing Office",
     "usgs.gov": "US Geological Survey",

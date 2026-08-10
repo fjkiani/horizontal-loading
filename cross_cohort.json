@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-10T21:39:25Z",
+  "generated_at": "2026-08-10T23:11:03Z",
   "results": {
     "science and technology": {
       "category": "science and technology",
@@ -21,10 +21,18 @@
         "DataCite",
         "OurResearch (OpenAlex)"
       ],
+      "primary_operator": "Cornell University",
+      "independent_confirming_operators": [
+        "DataCite",
+        "OurResearch (OpenAlex)"
+      ],
+      "B4_witness_tier": "gold",
       "ranking_evidence": {
         "label": "science cs.CR/2023-02-14",
         "mode": "max",
         "n_base": 12,
+        "n_ranked": 12,
+        "spearman_key_vs_api_order": 0.4461,
         "n_tied_at_extremum": 1,
         "distinct_keys": 7,
         "winner_position_in_api_order": 10,
@@ -38,90 +46,105 @@
           "4"
         ],
         "answer_field_distinct_values": 12,
-        "answer_field_modal_share": 0.0833,
-        "p_answer_by_uniform_guess": 0.0833
+        "answer_field_n_values": 12,
+        "answer_field_max_count": 1,
+        "answer_field_count_of_answer": 1,
+        "answer_field_modal_share": 0.083333,
+        "p_answer_by_uniform_guess": 0.083333
       },
       "violations": [],
       "B1_gate_valid": true,
       "B2_answer_differs": true,
       "B3_unique_extremum": true,
       "prompt": "The arXiv preprint server publishes a dated listing of every submission indexed under the subject class cs.CR, each entry carrying its full author list and its arXiv identifier. Consider only the submissions that arXiv timestamps to 2023-02-14 in Coordinated Universal Time. Among only those submissions, exactly one credits more named authors than any other. Report the arXiv identifier of that single submission. Resolve the identifier through two registration agencies independent of the preprint server before answering. Give the identifier alone, without any version suffix and with no other words.",
-      "secs": 0.9
+      "secs": 0.0
     },
     "art": {
       "category": "art",
       "alt_kwargs": {
-        "artist": "Claude Monet",
+        "artist": "Vincent van Gogh",
         "dept": "11"
       },
       "primary_answer": "71.84",
       "status": "fail",
-      "error": "https://collectionapi.metmuseum.org/public/collection/v1/search?hasImages=true&q=Claude Monet -> gave up after 5 attempts (InvalidURL: URL can't contain control characters. '/public/collection/v1/search?hasImages=true&q=Claude Monet' (found at least ' '))",
-      "etype": "FetchError",
-      "tb": "n_art\n    srch = net.get_json(\n           ^^^^^^^^^^^^^\n  File \"/workspace/seal_deploy/net.py\", line 88, in get_json\n    txt = fetch(url, body=body, **kw)\n          ^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/workspace/seal_deploy/net.py\", line 84, in fetch\n    raise FetchError(f\"{url} -> gave up after {attempts} attempts ({last})\")\nnet.FetchError: https://collectionapi.metmuseum.org/public/collection/v1/search?hasImages=true&q=Claude Monet -> gave up after 5 attempts (InvalidURL: URL can't contain control characters. '/public/collection/v1/search?hasImages=true&q=Claude Monet' (found at least ' '))\n",
+      "error": "art: extremum tied across 2 records",
+      "etype": "TrapUnavailable",
+      "tb": " last):\n  File \"/workspace/seal_deploy/cross_cohort.py\", line 102, in main\n    cand = ct.GENERATORS[cat](**kwargs)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/workspace/seal_deploy/category_traps.py\", line 1213, in gen_art\n    best = _pick_extreme(rows, lambda o: str(o[\"accessionYear\"]), \"art\",\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/workspace/seal_deploy/category_traps.py\", line 201, in _pick_extreme\n    raise TrapUnavailable(f\"{label}: extremum tied across {len(tied)} records\")\ncategory_traps.TrapUnavailable: art: extremum tied across 2 records\n",
       "B1_gate_valid": false,
       "B2_answer_differs": null,
       "B3_unique_extremum": null,
-      "secs": 62.0
+      "secs": 6.7
     },
     "business": {
       "category": "business",
       "alt_kwargs": {
-        "cik": "0000789019",
+        "loc": "US-WA",
         "concept": "ResearchAndDevelopmentExpense",
-        "legal_name": "Microsoft Corporation"
+        "year": "2018"
       },
-      "primary_answer": "2007-09-29",
+      "primary_answer": "1341439",
       "status": "ok",
-      "alt_answer": "2008-06-30",
-      "alt_entity": "Microsoft Corporation \u2014 ResearchAndDevelopmentExpense",
-      "n_base": 51,
+      "alt_answer": "789019",
+      "alt_entity": "MICROSOFT CORPORATION",
+      "n_base": 41,
       "source_operators": [
         "Global Legal Entity Identifier Foundation",
         "US Securities and Exchange Commission",
         "Wikimedia Foundation"
       ],
       "confirming_operators": [
-        "US Securities and Exchange Commission"
+        "US Securities and Exchange Commission",
+        "Wikimedia Foundation"
       ],
+      "primary_operator": "US Securities and Exchange Commission",
+      "independent_confirming_operators": [
+        "Wikimedia Foundation"
+      ],
+      "B4_witness_tier": "silver",
       "ranking_evidence": {
         "label": "business",
-        "mode": "min",
-        "n_base": 51,
+        "mode": "max",
+        "n_base": 41,
+        "n_ranked": 41,
+        "spearman_key_vs_api_order": 0.1606,
         "n_tied_at_extremum": 1,
-        "distinct_keys": 19,
-        "winner_position_in_api_order": 0,
-        "winner_is_first_returned": true,
+        "distinct_keys": 41,
+        "winner_position_in_api_order": 8,
+        "winner_is_first_returned": false,
         "winner_is_last_returned": false,
         "top_keys": [
-          "2007-07-01",
-          "2008-07-01",
-          "2008-07-01",
-          "2009-07-01",
-          "2009-07-01"
+          "14726000000.0",
+          "565309000.0",
+          "410818000.0",
+          "382886000.0",
+          "366084000.0"
         ],
-        "answer_field_distinct_values": 19,
-        "answer_field_modal_share": 0.0588,
-        "p_answer_by_uniform_guess": 0.0196
+        "answer_field_distinct_values": 41,
+        "answer_field_n_values": 41,
+        "answer_field_max_count": 1,
+        "answer_field_count_of_answer": 1,
+        "answer_field_modal_share": 0.02439,
+        "p_answer_by_uniform_guess": 0.02439
       },
       "violations": [],
       "B1_gate_valid": true,
       "B2_answer_differs": true,
       "B3_unique_extremum": true,
-      "prompt": "The United States securities regulator publishes structured company facts drawn from the annual reports filed by Microsoft Corporation, tagged under standard accounting concepts. Look only at the concept covering research and development expense, and only at figures reported on the annual report form for a full fiscal year. Among all such annual observations the company has ever filed, one covers an earlier fiscal period than any other. Report the period end date of that earliest annual observation. Confirm the filer's legal identity through an independent entity register. Answer with that date alone in year, month and day order, using hyphens.",
+      "prompt": "The United States securities regulator publishes a structured frame for each accounting concept and calendar year, listing every filer that reported that concept together with the business address it has on record. Take the frame for research and development expense covering calendar year 2018, and keep only those filers whose recorded business address places them in Texas. Within that restricted group one filer reported a larger figure for the concept than every other. Report the Central Index Key that the regulator assigns to that single filer. Confirm the key against an independent structured knowledge base before answering. Give the digits of the key alone, without leading zeros or any label.",
       "secs": 0.8
     },
     "celebrities/public figures": {
       "category": "celebrities/public figures",
       "alt_kwargs": {
+        "category_key": "Chemistry",
         "y0": "1901",
-        "y1": "1980"
+        "y1": "1975"
       },
-      "primary_answer": "1911",
+      "primary_answer": "Leiden",
       "status": "ok",
-      "alt_answer": "1911",
-      "alt_entity": "Marie Curie",
-      "n_base": 503,
+      "alt_answer": "Berlin",
+      "alt_entity": "Adolf von Baeyer",
+      "n_base": 88,
       "source_operators": [
         "Nobel Prize Outreach",
         "OurResearch (OpenAlex)",
@@ -130,31 +153,42 @@
       "confirming_operators": [
         "Wikimedia Foundation"
       ],
+      "primary_operator": "Nobel Prize Outreach",
+      "independent_confirming_operators": [
+        "Wikimedia Foundation"
+      ],
+      "B4_witness_tier": "silver",
       "ranking_evidence": {
         "label": "celebrities",
         "mode": "min",
-        "n_base": 4,
+        "n_base": 88,
+        "n_ranked": 88,
+        "spearman_key_vs_api_order": -0.0145,
         "n_tied_at_extremum": 1,
-        "distinct_keys": 4,
-        "winner_position_in_api_order": 0,
-        "winner_is_first_returned": true,
+        "distinct_keys": 88,
+        "winner_position_in_api_order": 1,
+        "winner_is_first_returned": false,
         "winner_is_last_returned": false,
         "top_keys": [
-          "1911",
-          "1962",
-          "1972",
-          "1980"
+          "1835-10-31",
+          "1847-03-27",
+          "1852-08-30",
+          "1852-09-28",
+          "1852-10-02"
         ],
-        "answer_field_distinct_values": 4,
-        "answer_field_modal_share": 0.25,
-        "p_answer_by_uniform_guess": 0.25
+        "answer_field_distinct_values": 76,
+        "answer_field_n_values": 88,
+        "answer_field_max_count": 4,
+        "answer_field_count_of_answer": 2,
+        "answer_field_modal_share": 0.045455,
+        "p_answer_by_uniform_guess": 0.022727
       },
       "violations": [],
       "B1_gate_valid": true,
-      "B2_answer_differs": false,
+      "B2_answer_differs": true,
       "B3_unique_extremum": true,
-      "prompt": "The official Nobel Prize records name every laureate honoured between 1901 and 1980, across all of the prize categories awarded in that period. Almost every individual in those records appears exactly once. A very small number appear on two separate occasions. Among the individuals honoured more than once, consider whichever of them received their second award earliest. Report the year in which that particular second award was made. Confirm the individual through an independent structured biography record. Answer with the four-digit year alone and nothing further.",
-      "secs": 4.8
+      "prompt": "The Nobel Prize registry publishes a record for every laureate, giving the person's name, date of birth and the place where they were born. Restrict attention to the laureates recognised in Chemistry for awards made between 1901 and 1975 whose record carries a complete date of birth. Among that group one laureate was born earlier than every other. Report the city recorded as that single laureate's place of birth. Confirm the birthplace against an independent structured knowledge base before answering. Give the city name alone, spelled as the registry records it.",
+      "secs": 0.7
     },
     "education": {
       "category": "education",
@@ -172,12 +206,19 @@
         "Wikimedia Foundation"
       ],
       "confirming_operators": [
-        "Hipo Labs"
+        "Wikimedia Foundation"
       ],
+      "primary_operator": "Hipo Labs",
+      "independent_confirming_operators": [
+        "Wikimedia Foundation"
+      ],
+      "B4_witness_tier": "silver",
       "ranking_evidence": {
         "label": "education",
         "mode": "max",
         "n_base": 65,
+        "n_ranked": 65,
+        "spearman_key_vs_api_order": 0.7319,
         "n_tied_at_extremum": 1,
         "distinct_keys": 65,
         "winner_position_in_api_order": 60,
@@ -191,60 +232,33 @@
           "unl.pt"
         ],
         "answer_field_distinct_values": 65,
-        "answer_field_modal_share": 0.0154,
-        "p_answer_by_uniform_guess": 0.0154
+        "answer_field_n_values": 65,
+        "answer_field_max_count": 1,
+        "answer_field_count_of_answer": 1,
+        "answer_field_modal_share": 0.015385,
+        "p_answer_by_uniform_guess": 0.015385
       },
       "violations": [],
       "B1_gate_valid": true,
       "B2_answer_differs": true,
       "B3_unique_extremum": true,
       "prompt": "A public register of higher education institutions lists the universities and colleges of Portugal, recording the internet domain each one uses. Consider only the institutions that this register places in Portugal and for which it records at least one domain. Order the primary domains of those institutions as text, from first to last. One domain falls later in that ordering than every other. Report that single last-ordered domain. Confirm the institution through an independent structured knowledge base. Give the domain alone, in lower case, with no protocol and no path.",
-      "secs": 0.4
+      "secs": 0.0
     },
     "finance": {
       "category": "finance",
       "alt_kwargs": {
-        "year": "2018"
+        "year": "2010"
       },
-      "primary_answer": "2015-12-31",
-      "status": "ok",
-      "alt_answer": "2018-12-31",
-      "alt_entity": "US total public debt outstanding, 2018",
-      "n_base": 251,
-      "source_operators": [
-        "US Department of the Treasury",
-        "US Securities and Exchange Commission",
-        "Wikimedia Foundation"
-      ],
-      "confirming_operators": [
-        "US Department of the Treasury"
-      ],
-      "ranking_evidence": {
-        "label": "finance",
-        "mode": "max",
-        "n_base": 251,
-        "n_tied_at_extremum": 1,
-        "distinct_keys": 251,
-        "winner_position_in_api_order": 250,
-        "winner_is_first_returned": false,
-        "winner_is_last_returned": true,
-        "top_keys": [
-          "21974095705790.55",
-          "21885501490485.79",
-          "21876674953142.67",
-          "21873194423164.45",
-          "21868943731576.67"
-        ],
-        "answer_field_distinct_values": 251,
-        "answer_field_modal_share": 0.004,
-        "p_answer_by_uniform_guess": 0.004
-      },
-      "violations": [],
-      "B1_gate_valid": true,
-      "B2_answer_differs": true,
-      "B3_unique_extremum": true,
-      "prompt": "The United States Treasury publishes the total public debt outstanding as a daily series, with one dated observation for every business day of 2018. Restrict attention strictly to observations dated within 2018 itself. Across that single year the reported outstanding figure reached its highest point on exactly one of those days. Report the calendar date of that day. The daily series is published without any ranking view, so the ordering must be established from the records themselves. Answer with the date alone in year, month and day order, using hyphens.",
-      "secs": 0.4
+      "primary_answer": "419376",
+      "status": "fail",
+      "error": "finance: 2010 argmax depth 0.0000 sits at an endpoint; pick a year with an interior maximum",
+      "etype": "TrapUnavailable",
+      "tb": "Traceback (most recent call last):\n  File \"/workspace/seal_deploy/cross_cohort.py\", line 102, in main\n    cand = ct.GENERATORS[cat](**kwargs)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/workspace/seal_deploy/gen_v2.py\", line 64, in gen_finance\n    raise TrapUnavailable(f\"finance: {year} argmax depth {d:.4f} sits at an \"\ncategory_traps.TrapUnavailable: finance: 2010 argmax depth 0.0000 sits at an endpoint; pick a year with an interior maximum\n",
+      "B1_gate_valid": false,
+      "B2_answer_differs": null,
+      "B3_unique_extremum": null,
+      "secs": 0.5
     },
     "geography": {
       "category": "geography",
@@ -252,45 +266,15 @@
         "country_iso": "CH",
         "country_name": "Switzerland"
       },
-      "primary_answer": "VNLK",
-      "status": "ok",
-      "alt_answer": "LSZB",
-      "alt_entity": "Bern Airport",
-      "n_base": 5,
-      "source_operators": [
-        "OurAirports",
-        "REST Countries project",
-        "Wikimedia Foundation"
-      ],
-      "confirming_operators": [
-        "Wikimedia Foundation"
-      ],
-      "ranking_evidence": {
-        "label": "geography",
-        "mode": "max",
-        "n_base": 5,
-        "n_tied_at_extremum": 1,
-        "distinct_keys": 5,
-        "winner_position_in_api_order": 2,
-        "winner_is_first_returned": false,
-        "winner_is_last_returned": false,
-        "top_keys": [
-          "1671",
-          "1417",
-          "1411",
-          "1306",
-          "915"
-        ],
-        "answer_field_distinct_values": 5,
-        "answer_field_modal_share": 0.2,
-        "p_answer_by_uniform_guess": 0.2
-      },
-      "violations": [],
-      "B1_gate_valid": true,
-      "B2_answer_differs": true,
-      "B3_unique_extremum": true,
-      "prompt": "The OurAirports open dataset lists every civil aerodrome in Switzerland with its elevation, service status and identifier codes. Restrict attention to aerodromes in that country classified as medium or large and flagged as currently having scheduled commercial service. Among only those, one sits at a greater elevation above sea level than any other. Identify that single aerodrome and report its four-character ICAO identifier. Confirm the same identifier against an independent structured reference before answering. Give the identifier alone, in capital letters, with no surrounding words.",
-      "secs": 0.9
+      "primary_answer": "SKIP",
+      "status": "fail",
+      "error": "geography: only 5 qualifying aerodromes in CH; a uniform guess would be too strong",
+      "etype": "TrapUnavailable",
+      "tb": "Traceback (most recent call last):\n  File \"/workspace/seal_deploy/cross_cohort.py\", line 102, in main\n    cand = ct.GENERATORS[cat](**kwargs)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/workspace/seal_deploy/gen_v2.py\", line 449, in gen_geography\n    raise TrapUnavailable(f\"geography: only {len(base)} qualifying aerodromes \"\ncategory_traps.TrapUnavailable: geography: only 5 qualifying aerodromes in CH; a uniform guess would be too strong\n",
+      "B1_gate_valid": false,
+      "B2_answer_differs": null,
+      "B3_unique_extremum": null,
+      "secs": 0.4
     },
     "health and medicine": {
       "category": "health and medicine",
@@ -304,17 +288,27 @@
       "alt_entity": "Optimizing IFN Beta - 1B Dose",
       "n_base": 198,
       "source_operators": [
+        "EMBL-EBI",
         "US Food and Drug Administration",
         "US National Institutes of Health",
         "Wikimedia Foundation"
       ],
       "confirming_operators": [
+        "EMBL-EBI",
         "Wikimedia Foundation"
       ],
+      "primary_operator": "US National Institutes of Health",
+      "independent_confirming_operators": [
+        "EMBL-EBI",
+        "Wikimedia Foundation"
+      ],
+      "B4_witness_tier": "gold",
       "ranking_evidence": {
         "label": "health",
         "mode": "min",
         "n_base": 198,
+        "n_ranked": 198,
+        "spearman_key_vs_api_order": 0.163,
         "n_tied_at_extremum": 1,
         "distinct_keys": 167,
         "winner_position_in_api_order": 77,
@@ -328,180 +322,175 @@
           "2001-11"
         ],
         "answer_field_distinct_values": 198,
-        "answer_field_modal_share": 0.0051,
-        "p_answer_by_uniform_guess": 0.0051
+        "answer_field_n_values": 198,
+        "answer_field_max_count": 1,
+        "answer_field_count_of_answer": 1,
+        "answer_field_modal_share": 0.005051,
+        "p_answer_by_uniform_guess": 0.005051
       },
       "violations": [],
       "B1_gate_valid": true,
       "B2_answer_differs": true,
       "B3_unique_extremum": true,
       "prompt": "The United States public clinical trials registry records interventional studies of multiple sclerosis, each with a phase, a recruitment status and a start date. Consider only those studies recorded as phase 3 and as having reached completion. Within that set exactly one began earlier than every other. Report the registry identifier assigned to that single earliest study. Verify the identifier appears on an independent structured knowledge base. Answer with the identifier alone, in its standard eight-digit registry form.",
-      "secs": 0.5
+      "secs": 0.0
     },
     "history": {
       "category": "history",
       "alt_kwargs": {
         "category_key": "Chemistry",
         "y0": "1901",
-        "y1": "1935"
+        "y1": "2000",
+        "min_laureates": "3"
       },
-      "primary_answer": "1903",
-      "status": "fail",
-      "error": "history: no Chemistry prize shared by three or more between 1901-1935",
-      "etype": "TrapUnavailable",
-      "tb": "Traceback (most recent call last):\n  File \"/workspace/seal_deploy/cross_cohort.py\", line 79, in main\n    cand = ct.GENERATORS[cat](**kwargs)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/workspace/seal_deploy/category_traps.py\", line 725, in gen_history\n    return Candidate(\n        ^^^^^^^^^^^^^^\ncategory_traps.TrapUnavailable: history: no Chemistry prize shared by three or more between 1901-1935\n",
-      "B1_gate_valid": false,
-      "B2_answer_differs": null,
-      "B3_unique_extremum": null,
-      "secs": 7.1
-    },
-    "legal": {
-      "category": "legal",
-      "alt_kwargs": {
-        "vols": "(512, 517, 520, 524)"
-      },
-      "primary_answer": "768",
+      "primary_answer": "1975",
       "status": "ok",
-      "alt_answer": "484",
-      "alt_entity": "44 Liquormart, Inc. v. Rhode Island",
-      "n_base": 58,
+      "alt_answer": "2000",
+      "alt_entity": "Chemistry prize led by Alan J. Heeger",
+      "n_base": 11,
       "source_operators": [
-        "Cornell University",
-        "Free Law Project",
-        "Harvard Law School Library Innovation Lab"
+        "Crossref",
+        "Nobel Prize Outreach",
+        "Wikimedia Foundation"
       ],
       "confirming_operators": [
-        "Cornell University",
-        "Free Law Project"
+        "Wikimedia Foundation"
       ],
+      "primary_operator": "Nobel Prize Outreach",
+      "independent_confirming_operators": [
+        "Wikimedia Foundation"
+      ],
+      "B4_witness_tier": "silver",
       "ranking_evidence": {
-        "label": "legal vol 517",
+        "label": "history",
         "mode": "min",
-        "n_base": 58,
+        "n_base": 11,
+        "n_ranked": 11,
+        "spearman_key_vs_api_order": 0.1909,
         "n_tied_at_extremum": 1,
-        "distinct_keys": 58,
-        "winner_position_in_api_order": 14,
+        "distinct_keys": 11,
+        "winner_position_in_api_order": 10,
         "winner_is_first_returned": false,
-        "winner_is_last_returned": false,
+        "winner_is_last_returned": true,
         "top_keys": [
-          "44 liquormart, inc. v. rhode island",
-          "allen v. united states",
-          "auciello iron works, inc. v. national labor relations board",
-          "barnett bank of marion county, n. a. v. nelson",
-          "bmw of north america, inc. v. gore"
+          "alan j. heeger",
+          "christian b. anfinsen",
+          "donald j. cram",
+          "dudley r. herschbach",
+          "james batcheller sumner"
         ],
-        "answer_field_distinct_values": 58,
-        "answer_field_modal_share": 0.0172,
-        "p_answer_by_uniform_guess": 0.0172
+        "answer_field_distinct_values": 11,
+        "answer_field_n_values": 11,
+        "answer_field_max_count": 1,
+        "answer_field_count_of_answer": 1,
+        "answer_field_modal_share": 0.090909,
+        "p_answer_by_uniform_guess": 0.090909
       },
       "violations": [],
       "B1_gate_valid": true,
       "B2_answer_differs": true,
       "B3_unique_extremum": true,
-      "prompt": "The Caselaw Access Project distributes, as one machine-readable file, metadata for every case reported in volume 517 of United States Reports, giving each case a short name together with the first and last printed page it occupies. Consider only those cases in that volume which run to more than a single printed page. Order the short names of those cases alphabetically and take whichever name comes first. Report the printed page of United States Reports on which that first-named case begins. Confirm the page against an independently published text of the same decision. Answer with the page number alone, with no volume, no reporter abbreviation and no other words.",
-      "secs": 45.3
+      "prompt": "The Nobel Prize registry records every Chemistry award with its year and the full list of laureates who shared it. Consider only the Chemistry awards made between 1901 and 2000 that were divided among 3 or more laureates, and take the first laureate listed on each of those awards. Order those first-listed laureates alphabetically by full name; one of them stands before all the others. Report the year of the award on which that single laureate is listed first. Confirm the laureate against an independent structured knowledge base before answering. Give the four digits of the year alone, with no other words.",
+      "secs": 1.6
+    },
+    "legal": {
+      "category": "legal",
+      "alt_kwargs": {
+        "vols": "(520, 524, 530, 533)"
+      },
+      "primary_answer": "768",
+      "status": "fail",
+      "error": "legal: no volume isolated a confirmable case; tried vol 520: LII FetchError for 83; vol 524: LII FetchError for 945; vol 530: LII FetchError for 1269; vol 533: LII FetchError for 146",
+      "etype": "TrapUnavailable",
+      "tb": "Traceback (most recent call last):\n  File \"/workspace/seal_deploy/cross_cohort.py\", line 102, in main\n    cand = ct.GENERATORS[cat](**kwargs)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/workspace/seal_deploy/category_traps.py\", line 1142, in gen_legal\n    raise TrapUnavailable(\"legal: no volume isolated a confirmable case; tried \"\ncategory_traps.TrapUnavailable: legal: no volume isolated a confirmable case; tried vol 520: LII FetchError for 83; vol 524: LII FetchError for 945; vol 530: LII FetchError for 1269; vol 533: LII FetchError for 146\n",
+      "B1_gate_valid": false,
+      "B2_answer_differs": null,
+      "B3_unique_extremum": null,
+      "secs": 30.3
     },
     "politics": {
       "category": "politics",
       "alt_kwargs": {
-        "year": "2003"
+        "years": "(1997, 1999, 2005, 2009)"
       },
-      "primary_answer": "1998-12-22",
-      "status": "ok",
-      "alt_answer": "2003-09-30",
-      "alt_entity": "Executive Order 13317",
-      "n_base": 36,
+      "primary_answer": "13292",
+      "status": "gate_fail",
+      "alt_answer": "13071",
+      "alt_entity": "Adjustments of Certain Rates of Pay",
+      "n_base": 38,
       "source_operators": [
-        "Free Law Project",
+        "US Government Publishing Office",
         "US Office of the Federal Register",
         "Wikimedia Foundation"
       ],
       "confirming_operators": [
         "US Office of the Federal Register"
       ],
+      "primary_operator": "US Office of the Federal Register",
+      "independent_confirming_operators": [],
+      "B4_witness_tier": "unwitnessed",
       "ranking_evidence": {
         "label": "politics",
         "mode": "max",
-        "n_base": 36,
+        "n_base": 38,
+        "n_ranked": 38,
+        "spearman_key_vs_api_order": -0.0233,
         "n_tied_at_extremum": 1,
-        "distinct_keys": 36,
-        "winner_position_in_api_order": 35,
+        "distinct_keys": 5,
+        "winner_position_in_api_order": 37,
         "winner_is_first_returned": false,
         "winner_is_last_returned": true,
         "top_keys": [
-          "13317",
-          "13316",
-          "13315",
-          "13314",
-          "13313"
+          "10",
+          "4",
+          "4",
+          "3",
+          "3"
         ],
-        "answer_field_distinct_values": 31,
-        "answer_field_modal_share": 0.0556,
-        "p_answer_by_uniform_guess": 0.0278
+        "answer_field_distinct_values": 38,
+        "answer_field_n_values": 38,
+        "answer_field_max_count": 1,
+        "answer_field_count_of_answer": 1,
+        "answer_field_modal_share": 0.026316,
+        "p_answer_by_uniform_guess": 0.026316
       },
-      "violations": [],
-      "B1_gate_valid": true,
+      "violations": [
+        "R3c every confirming source is run by the primary operator 'US Office of the Federal Register'; a source restating itself is not a witness"
+      ],
+      "B1_gate_valid": false,
       "B2_answer_differs": true,
       "B3_unique_extremum": true,
-      "prompt": "The United States Office of the Federal Register publishes every presidential executive order, each carrying a sequential order number and a publication date. Consider only the executive orders that the register published during 2003. Among those, one bears a higher sequential order number than any other issued that year. Report the date on which that highest-numbered order of the year was published in the register. Verify the order number against an independent public record. Answer with the date alone in year, month and day order, using hyphens.",
-      "secs": 0.4
+      "prompt": "The United States Office of the Federal Register publishes every presidential executive order, recording for each one its sequential order number, its title and the span of printed pages it occupies. Consider only the executive orders that the register published during 1997, each counted by the number of printed pages it fills. Among those orders one occupies more printed pages than any other issued that year. Report the sequential order number that the register assigns to that single longest order. The register offers no view sorted by printed extent, so the comparison must be built from the records themselves. Give the order number alone as digits, with no prefix or other words.",
+      "secs": 0.2
     },
     "shopping": {
       "category": "shopping",
       "alt_kwargs": {
         "category_tag": "en:chocolates",
-        "country": "france"
+        "country": "france",
+        "nutrient": "fat_100g",
+        "max_pages": "6"
       },
-      "primary_answer": "Nestl\u00e9",
-      "status": "ok",
-      "alt_answer": "Nestl\u00e9",
-      "alt_entity": "NESTL\u00c9 DESSERT 80% Puissant 170g",
-      "n_base": 98,
-      "source_operators": [
-        "Open Food Facts",
-        "UPCitemdb",
-        "Wikimedia Foundation"
-      ],
-      "confirming_operators": [
-        "Open Food Facts"
-      ],
-      "ranking_evidence": {
-        "label": "shopping",
-        "mode": "max",
-        "n_base": 98,
-        "n_tied_at_extremum": 1,
-        "distinct_keys": 98,
-        "winner_position_in_api_order": 55,
-        "winner_is_first_returned": false,
-        "winner_is_last_returned": false,
-        "top_keys": [
-          "8445290991867",
-          "8425197712024",
-          "8402001025594",
-          "7622400013935",
-          "7622210995100"
-        ],
-        "answer_field_distinct_values": 46,
-        "answer_field_modal_share": 0.102,
-        "p_answer_by_uniform_guess": 0.0918
-      },
-      "violations": [],
-      "B1_gate_valid": true,
-      "B2_answer_differs": false,
-      "B3_unique_extremum": true,
-      "prompt": "The Open Food Facts cooperative database catalogues packaged grocery products, recording for each one its barcode, its brand and its nutritional grade. Restrict attention to products filed under the chocolates category and sold in the france, keeping only those that carry a nutritional grade. Among that restricted set, one product's barcode is numerically greater than every other. Report the brand recorded against that single product. Check the barcode against an independent product register. Give the brand name alone, exactly as the database records it.",
-      "secs": 11.8
+      "primary_answer": "7613036900096",
+      "status": "fail",
+      "error": "shopping: fetched 600 of 13724 products for en:chocolates/france; the prompt would claim a property of a set that was never fully read",
+      "etype": "TrapUnavailable",
+      "tb": "Traceback (most recent call last):\n  File \"/workspace/seal_deploy/cross_cohort.py\", line 102, in main\n    cand = ct.GENERATORS[cat](**kwargs)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/workspace/seal_deploy/gen_v2.py\", line 536, in gen_shopping\n    # checked; instant coffees in Germany is 317 products and paginates to complete\n            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\ncategory_traps.TrapUnavailable: shopping: fetched 600 of 13724 products for en:chocolates/france; the prompt would claim a property of a set that was never fully read\n",
+      "B1_gate_valid": false,
+      "B2_answer_differs": null,
+      "B3_unique_extremum": null,
+      "secs": 56.0
     },
     "sports": {
       "category": "sports",
       "alt_kwargs": {
-        "pairs": "((119, 'Los Angeles Dodgers', 1988), (158, 'Milwaukee Brewers', 1982), (117, 'Houston Astros', 2005))"
+        "pairs": "((112, 'Chicago Cubs', 2016), (120, 'Washington Nationals', 2019), (137, 'San Francisco Giants', 2010), (114, 'Cleveland Indians', 1995), (115, 'Colorado Rockies', 2007))"
       },
       "primary_answer": "Newton",
       "status": "ok",
-      "alt_answer": "Clio",
-      "alt_entity": "Don Sutton",
-      "n_base": 38,
+      "alt_answer": "Houston",
+      "alt_entity": "Joe Nathan",
+      "n_base": 45,
       "source_operators": [
         "Major League Baseball",
         "Retrosheet",
@@ -511,32 +500,43 @@
         "Retrosheet",
         "Wikimedia Foundation"
       ],
+      "primary_operator": "Major League Baseball",
+      "independent_confirming_operators": [
+        "Retrosheet",
+        "Wikimedia Foundation"
+      ],
+      "B4_witness_tier": "gold",
       "ranking_evidence": {
-        "label": "sports Los Angeles Dodgers 1988",
+        "label": "sports Chicago Cubs 2016",
         "mode": "min",
-        "n_base": 38,
+        "n_base": 45,
+        "n_ranked": 45,
+        "spearman_key_vs_api_order": -0.2431,
         "n_tied_at_extremum": 1,
-        "distinct_keys": 38,
-        "winner_position_in_api_order": 34,
+        "distinct_keys": 45,
+        "winner_position_in_api_order": 26,
         "winner_is_first_returned": false,
         "winner_is_last_returned": false,
         "top_keys": [
-          "1945-04-02",
-          "1949-09-13",
-          "1954-02-02",
-          "1955-03-15",
-          "1955-11-26"
+          "1974-11-22",
+          "1976-03-23",
+          "1977-03-19",
+          "1978-10-23",
+          "1981-05-26"
         ],
-        "answer_field_distinct_values": 35,
-        "answer_field_modal_share": 0.0789,
-        "p_answer_by_uniform_guess": 0.0263
+        "answer_field_distinct_values": 44,
+        "answer_field_n_values": 45,
+        "answer_field_max_count": 2,
+        "answer_field_count_of_answer": 1,
+        "answer_field_modal_share": 0.044444,
+        "p_answer_by_uniform_guess": 0.022222
       },
       "violations": [],
       "B1_gate_valid": true,
       "B2_answer_differs": true,
       "B3_unique_extremum": true,
-      "prompt": "The official Major League Baseball statistics service publishes the full season roster of the Los Angeles Dodgers for 1988, listing every player the club carried that year with his date and place of birth. Consider only the players appearing on that full season roster. Exactly one of them was born earlier than every other player on the list. Report the city of birth that the service records for that single oldest player. Confirm the birthplace against two references independent of the league. Give the city name alone, as recorded, with no state, no country and no other words.",
-      "secs": 0.2
+      "prompt": "The official Major League Baseball statistics service publishes the full season roster of the Chicago Cubs for 2016, listing every player the club carried that year with his date and place of birth. Consider only the players appearing on that full season roster. Exactly one of them was born earlier than every other player on the list. Report the city of birth that the service records for that single oldest player. Confirm the birthplace against two references independent of the league. Give the city name alone, as recorded, with no state, no country and no other words.",
+      "secs": 0.1
     },
     "travel": {
       "category": "travel",
@@ -555,12 +555,21 @@
         "Wikimedia Foundation"
       ],
       "confirming_operators": [
-        "OurAirports"
+        "OurAirports",
+        "Wikimedia Foundation"
       ],
+      "primary_operator": "OpenFlights",
+      "independent_confirming_operators": [
+        "OurAirports",
+        "Wikimedia Foundation"
+      ],
+      "B4_witness_tier": "gold",
       "ranking_evidence": {
         "label": "travel",
         "mode": "max",
         "n_base": 171,
+        "n_ranked": 171,
+        "spearman_key_vs_api_order": -0.0514,
         "n_tied_at_extremum": 1,
         "distinct_keys": 171,
         "winner_position_in_api_order": 62,
@@ -574,8 +583,11 @@
           "59.651901245117"
         ],
         "answer_field_distinct_values": 171,
-        "answer_field_modal_share": 0.0058,
-        "p_answer_by_uniform_guess": 0.0058
+        "answer_field_n_values": 171,
+        "answer_field_max_count": 1,
+        "answer_field_count_of_answer": 1,
+        "answer_field_modal_share": 0.005848,
+        "p_answer_by_uniform_guess": 0.005848
       },
       "violations": [],
       "B1_gate_valid": true,
@@ -587,68 +599,116 @@
     "tv shows and movies": {
       "category": "tv shows and movies",
       "alt_kwargs": {
-        "years": "(1996, 2001)",
-        "genres": "('Fantasy', 'Crime', 'Mystery')"
+        "seeds": "((1996, 'Crime'), (2001, 'Mystery'), (2005, 'Sci-Fi'), (1999, 'Fantasy'), (2010, 'Musical'), (1994, 'Crime'))"
       },
-      "primary_answer": "tt0870980",
+      "primary_answer": "tt1278381",
       "status": "ok",
-      "alt_answer": "tt0281442",
-      "alt_entity": "Fun at the Funeral Parlour",
-      "n_base": 64,
+      "alt_answer": "tt0120689",
+      "alt_entity": "The Green Mile",
+      "n_base": 95,
       "source_operators": [
         "IMDb (Amazon)",
         "TVmaze",
         "Wikimedia Foundation"
       ],
       "confirming_operators": [
-        "TVmaze",
         "Wikimedia Foundation"
       ],
+      "primary_operator": "IMDb (Amazon)",
+      "independent_confirming_operators": [
+        "Wikimedia Foundation"
+      ],
+      "B4_witness_tier": "silver",
       "ranking_evidence": {
-        "label": "tv 2001/Crime",
+        "label": "tv shows and movies",
         "mode": "max",
-        "n_base": 64,
+        "n_base": 95,
+        "n_ranked": 95,
+        "spearman_key_vs_api_order": -0.125,
         "n_tied_at_extremum": 1,
-        "distinct_keys": 18,
-        "winner_position_in_api_order": 23,
+        "distinct_keys": 46,
+        "winner_position_in_api_order": 5,
         "winner_is_first_returned": false,
         "winner_is_last_returned": false,
         "top_keys": [
-          "390",
-          "375",
-          "185",
-          "102",
-          "90"
+          "189",
+          "146",
+          "140",
+          "140",
+          "139"
         ],
-        "answer_field_distinct_values": 64,
-        "answer_field_modal_share": 0.0156,
-        "p_answer_by_uniform_guess": 0.0156
+        "answer_field_distinct_values": 95,
+        "answer_field_n_values": 95,
+        "answer_field_max_count": 1,
+        "answer_field_count_of_answer": 1,
+        "answer_field_modal_share": 0.010526,
+        "p_answer_by_uniform_guess": 0.010526
       },
       "violations": [],
       "B1_gate_valid": true,
       "B2_answer_differs": true,
       "B3_unique_extremum": true,
-      "prompt": "The published IMDb title export lists every television series it indexes, giving each one a start year, its genre labels and its typical episode running time in minutes. Consider only entries typed as a television series, labelled with the Crime genre, and recorded as starting in 2001. Among only those series, exactly one carries a longer recorded episode running time than any other. Report the IMDb title identifier of that single series. Confirm the identifier against two independent references. Give the identifier alone, beginning with its two letters, and nothing else.",
-      "secs": 17.3
+      "prompt": "The IMDb public title export records, for every film it lists, the title, the year of release, the genres assigned to it and the running time in minutes. Restrict attention to titles typed as feature films with a release year of 1999 that carry the Fantasy genre and a recorded running time. Among only those, one film runs longer than every other. Report the IMDb title identifier of that single longest film. Confirm the identifier against an independent structured knowledge base before answering. Give the identifier alone, beginning with the two letters that prefix it, and nothing else.",
+      "secs": 23.9
     },
     "video games": {
       "category": "video games",
       "alt_kwargs": {
-        "appids": "(400, 620, 730, 4000, 220, 550, 240, 70, 242760, 413150, 431960, 322330)"
+        "appids": "(400, 292030, 379720, 588650, 264710, 646570, 204360, 49520, 233450, 275850, 8930, 294100, 219740, 632470)"
       },
-      "primary_answer": "Double Fine Productions",
-      "status": "fail",
-      "error": "video games: Wikidata P178 gave None, storefront says 'Valve'",
-      "etype": "TrapUnavailable",
-      "tb": "Traceback (most recent call last):\n  File \"/workspace/seal_deploy/cross_cohort.py\", line 79, in main\n    cand = ct.GENERATORS[cat](**kwargs)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/workspace/seal_deploy/category_traps.py\", line 1285, in gen_video_games\n    # 14. VIDEO GAMES -- Valve x Wikimedia x PEGI\n            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\ncategory_traps.TrapUnavailable: video games: Wikidata P178 gave None, storefront says 'Valve'\n",
-      "B1_gate_valid": false,
-      "B2_answer_differs": null,
-      "B3_unique_extremum": null,
-      "secs": 1.8
+      "primary_answer": "Colossal Order",
+      "status": "ok",
+      "alt_answer": "Gearbox Software",
+      "alt_entity": "Borderlands 2",
+      "n_base": 14,
+      "source_operators": [
+        "Pan European Game Information",
+        "Valve Corporation",
+        "Wikimedia Foundation"
+      ],
+      "confirming_operators": [
+        "Wikimedia Foundation"
+      ],
+      "primary_operator": "Valve Corporation",
+      "independent_confirming_operators": [
+        "Wikimedia Foundation"
+      ],
+      "B4_witness_tier": "silver",
+      "ranking_evidence": {
+        "label": "video games",
+        "mode": "min",
+        "n_base": 14,
+        "n_ranked": 14,
+        "spearman_key_vs_api_order": -0.2176,
+        "n_tied_at_extremum": 1,
+        "distinct_keys": 14,
+        "winner_position_in_api_order": 7,
+        "winner_is_first_returned": false,
+        "winner_is_last_returned": false,
+        "top_keys": [
+          "borderlands2",
+          "castlecrashers",
+          "deadcells",
+          "discoelysiumthefinalcut",
+          "dontstarve"
+        ],
+        "answer_field_distinct_values": 14,
+        "answer_field_n_values": 14,
+        "answer_field_max_count": 1,
+        "answer_field_count_of_answer": 1,
+        "answer_field_modal_share": 0.071429,
+        "p_answer_by_uniform_guess": 0.071429
+      },
+      "violations": [],
+      "B1_gate_valid": true,
+      "B2_answer_differs": true,
+      "B3_unique_extremum": true,
+      "prompt": "The Valve storefront exposes a public record for each catalogue title, giving the name the store prints for it and the studio credited with developing it. Consider the titles carried under the store application numbers 4000, 6910, 22380, 39210, 105600, 108600, 220200, 236850, 255710, 268910, 322330, 367520, 413150 and 427520, taking each name exactly as printed. Reduce each printed name to its letters and digits in lower case, then order those reduced names; one stands before all the others. Report the developing studio that the store credits for that single first-ordered title. Confirm the studio against an independent structured knowledge base before answering. Give the studio name alone, exactly as the store prints it.",
+      "secs": 0.8
     }
   },
   "counts": {
-    "reproduced": 13,
+    "reproduced": 10,
     "answer_differs": 11,
     "total": 16
   }

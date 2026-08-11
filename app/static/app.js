@@ -19,12 +19,37 @@ function badge(ok, label) {
 function esc(s) { return String(s).replace(/[&<>"]/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c])); }
 
 /* ---------- generated trap detail ---------- */
+// A witness is an operator that confirms the answer and did NOT supply the
+// ranked collection. `gold` = two or more, `silver` = exactly one. Nothing with
+// zero is served, so the tier is a statement about corroboration depth, not
+// about whether the answer was checked at all.
+function tierBadge(tier) {
+  if (tier === "gold") return `<span class="badge ok">gold · 2+ witnesses</span>`;
+  if (tier === "silver") return `<span class="badge neutral">silver · 1 witness</span>`;
+  return `<span class="badge bad">unwitnessed</span>`;
+}
+
 function showGenerated(t) {
   const det = $("detail");
   let html = `<div class="prompt-text">${esc(t.prompt)}</div>`;
   html += `<div class="kv"><b>Answer:</b> ${esc(t.answer)} ${badge(t.api_proof, "api-proof")} ${badge(t.verified, t.verified ? "verified" : "unverified")}</div>`;
-  html += `<div class="kv"><b>Paper:</b> ${esc(t.paper)} · <b>Date:</b> ${esc(t.date)} · <b>Field:</b> ${esc(t.field)}</div>`;
-  html += `<div class="kv"><b>Confidence:</b> ${esc(t.confidence || "—")} · <b>Words:</b> ${t.word_count || "—"}</div>`;
+
+  if (t.track === "api-native") {
+    html += `<div class="kv"><b>Category:</b> ${esc(t.category)} · <b>Field:</b> ${esc(t.field)} ${tierBadge(t.witness_tier)}</div>`;
+    const nb = (t.n_base === 0 || t.n_base) ? t.n_base : "—";
+    html += `<div class="kv"><b>Entity:</b> ${esc(t.entity || "—")} · <b>Base records ranked:</b> ${nb}</div>`;
+    html += `<div class="kv"><b>Ranked collection supplied by:</b> ${esc(t.primary_operator || "—")}</div>`;
+    const w = t.independent_confirming_operators || [];
+    html += `<div class="kv"><b>Independent witnesses (${w.length}):</b> ${w.length ? esc(w.join(", ")) : "none"}</div>`;
+    if (t.witness_tier === "silver") {
+      html += `<div class="kv warn">One witness only. A single confirming operator cannot be cross-checked against a second, so a systematic error in that operator's record would not be detected here.</div>`;
+    }
+    if (t.confirmation) html += `<div class="kv"><b>Confirmation:</b> ${esc(t.confirmation)}</div>`;
+    if (t.source_operators) html += `<div class="kv"><b>All operators:</b> ${esc((t.source_operators || []).join(", "))}</div>`;
+  } else {
+    html += `<div class="kv"><b>Paper:</b> ${esc(t.paper)} · <b>Date:</b> ${esc(t.date)} · <b>Field:</b> ${esc(t.field)}</div>`;
+    html += `<div class="kv"><b>Confidence:</b> ${esc(t.confidence || "—")} · <b>Words:</b> ${t.word_count || "—"}</div>`;
+  }
   if (t.image_url) html += `<img src="${t.image_url}" alt="scan">`;
   if (t.golden) html += `<div class="kv"><b>Golden trajectory:</b></div><ol class="trace">` +
     t.golden.map((s) => `<li>${esc(s)}</li>`).join("") + `</ol>`;
@@ -35,15 +60,43 @@ function showGenerated(t) {
 }
 
 /* ---------- catalogs ---------- */
+// Populated once from /api/categories so the filter lists all 16 values, not
+// just the ones that happen to be servable. A category with 0 served traps is
+// shown with a (0) and stays selectable: the absence is the finding.
+async function loadCategoryFilter() {
+  const sel = $("cat-filter");
+  if (!sel) return;
+  let d;
+  try { d = await api("/api/categories"); } catch (e) { return; }
+  sel.innerHTML = `<option value="">All categories (${d.n_served_total})</option>` +
+    d.categories.map((c) =>
+      `<option value="${esc(c.category)}">${esc(c.category)} (${c.n_served})</option>`).join("");
+  const note = $("cat-note");
+  if (note) {
+    note.textContent = d.unservable.length
+      ? `No independent witness available for: ${d.unservable.join(", ")} — refused, not served.`
+      : "Every category has at least one served trap.";
+  }
+}
+
 async function loadGenerated() {
-  const data = await api("/api/generated");
+  const cat = $("cat-filter") ? $("cat-filter").value : "";
+  const tier = $("tier-filter") ? $("tier-filter").value : "";
+  const qs = [];
+  if (cat) qs.push("category=" + encodeURIComponent(cat));
+  if (tier) qs.push("tier=" + encodeURIComponent(tier));
+  const data = await api("/api/generated" + (qs.length ? "?" + qs.join("&") : ""));
   $("gen-count").textContent = data.count;
   const list = $("generated-list");
-  list.innerHTML = data.count ? "" : "<div class='hint'>None yet — generate one.</div>";
+  list.innerHTML = data.count ? ""
+    : "<div class='hint'>No served trap matches this filter. A category with no trap has no answer that a second operator will confirm.</div>";
   data.verified.forEach((t) => {
     const div = document.createElement("div");
     div.className = "item";
-    div.innerHTML = `<b>${esc(t.paper)}</b> ${esc(t.date)} ${badge(true, "verified")} ${badge(t.api_proof, "api-proof")}
+    const head = t.track === "api-native"
+      ? `<b>${esc(t.category)}</b> ${tierBadge(t.witness_tier)}`
+      : `<b>${esc(t.paper)}</b> ${esc(t.date)} ${badge(true, "verified")}`;
+    div.innerHTML = `${head} ${badge(t.api_proof, "api-proof")}
       <div style="color:#6b6b6b;font-size:11px;margin-top:3px">${esc(t.field)}: ${esc(t.answer)}</div>`;
     div.onclick = () => { showGenerated(t); markActive(div); };
     list.appendChild(div);
@@ -204,6 +257,16 @@ $("stress-btn").onclick = async () => {
   } catch (e) { out.innerHTML = `${badge(false, "error")} ${esc(e.message)}`; }
 };
 
+// Filter changes re-query the server rather than filtering a cached list, so
+// the count in the pill is always the server's count for those filters.
+["cat-filter", "tier-filter"].forEach((id) => {
+  const el = $(id);
+  if (el) el.onchange = () => loadGenerated().catch((e) => {
+    $("generated-list").textContent = "Error: " + e.message;
+  });
+});
+
+loadCategoryFilter().catch(() => { /* filter is an aid; the catalog loads without it */ });
 loadGenerated().catch((e) => { $("generated-list").textContent = "Error: " + e.message; });
 loadPending().catch((e) => { $("pending-list").textContent = "Error: " + e.message; });
 loadPrompts().catch((e) => { $("prompt-list").textContent = "Error: " + e.message; });

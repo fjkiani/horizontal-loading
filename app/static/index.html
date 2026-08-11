@@ -35,6 +35,15 @@
 
       <div class="panel">
         <h2>Verified generated <span id="gen-count" class="pill"></span></h2>
+        <div class="row">
+          <select id="cat-filter"><option value="">All categories</option></select>
+          <select id="tier-filter">
+            <option value="">Any witness tier</option>
+            <option value="gold">gold · 2+ witnesses</option>
+            <option value="silver">silver · 1 witness</option>
+          </select>
+        </div>
+        <div id="cat-note" class="hint"></div>
         <p class="hint">Independently confirmed by an image read.</p>
         <div id="generated-list" class="list">Loading…</div>
       </div>

@@ -1,0 +1,141 @@
+{
+  "generated": "2026-08-11T15:56:19Z",
+  "memaudit_geography_peak_mb": 351.6,
+  "concur_geography_peak_mb": 219.1,
+  "gap_to_explain_mb": 132.5,
+  "memaudit_used_tracemalloc": true,
+  "concur_used_tracemalloc": false,
+  "runs": [
+    {
+      "cat": "geography",
+      "tracemalloc": false,
+      "rss_after_imports_mb": 32.0,
+      "answer": "SKIP",
+      "n_base": 42,
+      "rss_after_build_mb": 63.9,
+      "peak_rss_mb": 219.1,
+      "rep": 0
+    },
+    {
+      "cat": "geography",
+      "tracemalloc": false,
+      "rss_after_imports_mb": 30.3,
+      "answer": "SKIP",
+      "n_base": 42,
+      "rss_after_build_mb": 63.2,
+      "peak_rss_mb": 215.4,
+      "rep": 1
+    },
+    {
+      "cat": "geography",
+      "tracemalloc": true,
+      "rss_after_imports_mb": 31.2,
+      "rss_after_tracemalloc_start_mb": 31.5,
+      "answer": "SKIP",
+      "n_base": 42,
+      "rss_after_build_mb": 164.2,
+      "peak_rss_mb": 351.4,
+      "heap_peak_mb": 174.3,
+      "heap_current_mb": 0.0,
+      "rss_not_attributed_mb": 145.9,
+      "rep": 0
+    },
+    {
+      "cat": "geography",
+      "tracemalloc": true,
+      "rss_after_imports_mb": 31.7,
+      "rss_after_tracemalloc_start_mb": 31.9,
+      "answer": "SKIP",
+      "n_base": 42,
+      "rss_after_build_mb": 164.6,
+      "peak_rss_mb": 351.9,
+      "heap_peak_mb": 174.3,
+      "heap_current_mb": 0.0,
+      "rss_not_attributed_mb": 145.9,
+      "rep": 1
+    },
+    {
+      "cat": "travel",
+      "tracemalloc": false,
+      "rss_after_imports_mb": 30.1,
+      "answer": "6296543",
+      "n_base": 73,
+      "rss_after_build_mb": 67.6,
+      "peak_rss_mb": 225.9,
+      "rep": 0
+    },
+    {
+      "cat": "travel",
+      "tracemalloc": false,
+      "rss_after_imports_mb": 31.2,
+      "answer": "6296543",
+      "n_base": 73,
+      "rss_after_build_mb": 68.7,
+      "peak_rss_mb": 227.0,
+      "rep": 1
+    },
+    {
+      "cat": "travel",
+      "tracemalloc": true,
+      "rss_after_imports_mb": 31.3,
+      "rss_after_tracemalloc_start_mb": 31.6,
+      "answer": "6296543",
+      "n_base": 73,
+      "rss_after_build_mb": 175.0,
+      "peak_rss_mb": 363.2,
+      "heap_peak_mb": 182.4,
+      "heap_current_mb": 0.0,
+      "rss_not_attributed_mb": 149.5,
+      "rep": 0
+    },
+    {
+      "cat": "travel",
+      "tracemalloc": true,
+      "rss_after_imports_mb": 30.4,
+      "rss_after_tracemalloc_start_mb": 30.7,
+      "answer": "6296543",
+      "n_base": 73,
+      "rss_after_build_mb": 173.1,
+      "peak_rss_mb": 363.4,
+      "heap_peak_mb": 182.4,
+      "heap_current_mb": 0.0,
+      "rss_not_attributed_mb": 150.6,
+      "rep": 1
+    }
+  ],
+  "summary": {
+    "geography": {
+      "peak_tracemalloc_off_mb": 217.2,
+      "peak_tracemalloc_on_mb": 351.6,
+      "instrument_overhead_mb": 134.4,
+      "overhead_as_frac_of_on": 0.3822,
+      "off_runs": [
+        219.1,
+        215.4
+      ],
+      "on_runs": [
+        351.4,
+        351.9
+      ]
+    },
+    "travel": {
+      "peak_tracemalloc_off_mb": 226.4,
+      "peak_tracemalloc_on_mb": 363.3,
+      "instrument_overhead_mb": 136.8,
+      "overhead_as_frac_of_on": 0.3767,
+      "off_runs": [
+        225.9,
+        227.0
+      ],
+      "on_runs": [
+        363.2,
+        363.4
+      ]
+    }
+  },
+  "explains_gap": true,
+  "verdict": "the 132.5 MB is tracemalloc's own bookkeeping, not the workload; concur's unprofiled number is the deployed reality",
+  "deployed_worst_case_peak_mb": 226.4,
+  "deployed_headroom_mb": 285.6,
+  "profiled_worst_case_peak_mb": 363.3
+}

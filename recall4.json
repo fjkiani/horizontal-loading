@@ -1,0 +1,694 @@
+{
+  "generated": "2026-08-11T15:50:22Z",
+  "window_chars": 140,
+  "health and medicine": {
+    "category": "health and medicine",
+    "answer": "NCT05178810",
+    "n_members": 51,
+    "key_definition": "len(secondaryOutcomes)",
+    "corpus": "Europe PMC, articles citing the trial accession",
+    "members": [
+      {
+        "id": "NCT01285583",
+        "key": 1,
+        "hit_count": 4,
+        "n_texts": 4,
+        "chars": 5165,
+        "own_contextual": false,
+        "permuted_contextual": false,
+        "superlative_near": true
+      },
+      {
+        "id": "NCT02623699",
+        "key": 8,
+        "hit_count": 133,
+        "n_texts": 25,
+        "chars": 37399,
+        "own_contextual": false,
+        "permuted_contextual": false,
+        "superlative_near": true
+      },
+      {
+        "id": "NCT01994109",
+        "key": 0,
+        "hit_count": 3,
+        "n_texts": 3,
+        "chars": 6535,
+        "own_contextual": false,
+        "permuted_contextual": false,
+        "superlative_near": true
+      },
+      {
+        "id": "NCT00445172",
+        "key": 3,
+        "hit_count": 4,
+        "n_texts": 4,
+        "chars": 5296,
+        "own_contextual": false,
+        "permuted_contextual": false,
+        "superlative_near": true
+      },
+      {
+        "id": "NCT00372879",
+        "key": 1,
+        "hit_count": 3,
+        "n_texts": 3,
+        "chars": 5284,
+        "own_contextual": true,
+        "permuted_contextual": false,
+        "superlative_near": false
+      },
+      {
+        "id": "NCT04414345",
+        "key": 3,
+        "hit_count": 14,
+        "n_texts": 14,
+        "chars": 21149,
+        "own_contextual": false,
+        "permuted_contextual": false,
+        "superlative_near": true
+      },
+      {
+        "id": "NCT01160263",
+        "key": 2,
+        "hit_count": 0,
+        "n_texts": 0,
+        "chars": 0
+      },
+      {
+        "id": "NCT00353665",
+        "key": 2,
+        "hit_count": 8,
+        "n_texts": 8,
+        "chars": 12516,
+        "own_contextual": false,
+        "permuted_contextual": true,
+        "superlative_near": true
+      },
+      {
+        "id": "NCT05136885",
+        "key": 3,
+        "hit_count": 16,
+        "n_texts": 16,
+        "chars": 29898,
+        "own_contextual": false,
+        "permuted_contextual": false,
+        "superlative_near": true
+      },
+      {
+        "id": "NCT04436510",
+        "key": 3,
+        "hit_count": 15,
+        "n_texts": 15,
+        "chars": 24265,
+        "own_contextual": false,
+        "permuted_contextual": false,
+        "superlative_near": true
+      },
+      {
+        "id": "NCT00386464",
+        "key": 2,
+        "hit_count": 1,
+        "n_texts": 1,
+        "chars": 4918,
+        "own_contextual": false,
+        "permuted_contextual": false,
+        "superlative_near": true
+      },
+      {
+        "id": "NCT00330681",
+        "key": 8,
+        "hit_count": 15,
+        "n_texts": 15,
+        "chars": 22817,
+        "own_contextual": false,
+        "permuted_contextual": false,
+        "superlative_near": true
+      },
+      {
+        "id": "NCT05568615",
+        "key": 0,
+        "hit_count": 2,
+        "n_texts": 2,
+        "chars": 3261,
+        "own_contextual": false,
+        "permuted_contextual": false,
+        "superlative_near": true
+      },
+      {
+        "id": "NCT00868166",
+        "key": 7,
+        "hit_count": 11,
+        "n_texts": 11,
+        "chars": 16451,
+        "own_contextual": false,
+        "permuted_contextual": false,
+        "superlative_near": true
+      },
+      {
+        "id": "NCT00415519",
+        "key": 0,
+        "hit_count": 11,
+        "n_texts": 11,
+        "chars": 17199,
+        "own_contextual": false,
+        "permuted_contextual": false,
+        "superlative_near": true
+      },
+      {
+        "id": "NCT03505021",
+        "key": 5,
+        "hit_count": 8,
+        "n_texts": 8,
+        "chars": 14709,
+        "own_contextual": false,
+        "permuted_contextual": false,
+        "superlative_near": true
+      },
+      {
+        "id": "NCT05842941",
+        "key": 7,
+        "hit_count": 6,
+        "n_texts": 6,
+        "chars": 9289,
+        "own_contextual": false,
+        "permuted_contextual": false,
+        "superlative_near": false
+      },
+      {
+        "id": "NCT00424463",
+        "key": 6,
+        "hit_count": 9,
+        "n_texts": 9,
+        "chars": 11462,
+        "own_contextual": false,
+        "permuted_contextual": false,
+        "superlative_near": true
+      },
+      {
+        "id": "NCT00706147",
+        "key": 3,
+        "hit_count": 33,
+        "n_texts": 25,
+        "chars": 38958,
+        "own_contextual": false,
+        "permuted_contextual": false,
+        "superlative_near": true
+      },
+      {
+        "id": "NCT00125203",
+        "key": 9,
+        "hit_count": 1,
+        "n_texts": 1,
+        "chars": 6329,
+        "own_contextual": false,
+        "permuted_contextual": false,
+        "superlative_near": true
+      },
+      {
+        "id": "NCT04436497",
+        "key": 3,
+        "hit_count": 11,
+        "n_texts": 11,
+        "chars": 14940,
+        "own_contextual": false,
+        "permuted_contextual": false,
+        "superlative_near": true
+      },
+      {
+        "id": "NCT03548311",
+        "key": 7,
+        "hit_count": 12,
+        "n_texts": 12,
+        "chars": 21377,
+        "own_contextual": false,
+        "permuted_contextual": false,
+        "superlative_near": false
+      },
+      {
+        "id": "NCT00136110",
+        "key": 1,
+        "hit_count": 8,
+        "n_texts": 8,
+        "chars": 12613,
+        "own_contextual": true,
+        "permuted_contextual": false,
+        "superlative_near": true
+      },
+      {
+        "id": "NCT01281189",
+        "key": 3,
+        "hit_count": 14,
+        "n_texts": 14,
+        "chars": 26836,
+        "own_contextual": false,
+        "permuted_contextual": false,
+        "superlative_near": true
+      },
+      {
+        "id": "NCT01933321",
+        "key": 1,
+        "hit_count": 10,
+        "n_texts": 10,
+        "chars": 13556,
+        "own_contextual": false,
+        "permuted_contextual": false,
+        "superlative_near": true
+      },
+      {
+        "id": "NCT02496767",
+        "key": 6,
+        "hit_count": 15,
+        "n_texts": 15,
+        "chars": 24868,
+        "own_contextual": false,
+        "permuted_contextual": false,
+        "superlative_near": true
+      },
+      {
+        "id": "NCT00876772",
+        "key": 6,
+        "hit_count": 3,
+        "n_texts": 3,
+        "chars": 4669,
+        "own_contextual": false,
+        "permuted_contextual": false,
+        "superlative_near": true
+      },
+      {
+        "id": "NCT04615923",
+        "key": 7,
+        "hit_count": 19,
+        "n_texts": 19,
+        "chars": 31029,
+        "own_contextual": false,
+        "permuted_contextual": false,
+        "superlative_near": true
+      },
+      {
+        "id": "NCT05619783",
+        "key": 1,
+        "hit_count": 3,
+        "n_texts": 3,
+        "chars": 4964,
+        "own_contextual": false,
+        "permuted_contextual": false,
+        "superlative_near": true
+      },
+      {
+        "id": "NCT00349622",
+        "key": 4,
+        "hit_count": 24,
+        "n_texts": 24,
+        "chars": 36373,
+        "own_contextual": false,
+        "permuted_contextual": false,
+        "superlative_near": true
+      },
+      {
+        "id": "NCT00833820",
+        "key": 1,
+        "hit_count": 0,
+        "n_texts": 0,
+        "chars": 0
+      },
+      {
+        "id": "NCT01492686",
+        "key": 8,
+        "hit_count": 36,
+        "n_texts": 25,
+        "chars": 42295,
+        "own_contextual": false,
+        "permuted_contextual": false,
+        "superlative_near": true
+      },
+      {
+        "id": "NCT01776970",
+        "key": 1,
+        "hit_count": 2,
+        "n_texts": 2,
+        "chars": 4361,
+        "own_contextual": false,
+        "permuted_contextual": false,
+        "superlative_near": true
+      },
+      {
+        "id": "NCT03070119",
+        "key": 10,
+        "hit_count": 41,
+        "n_texts": 25,
+        "chars": 36490,
+        "own_contextual": false,
+        "permuted_contextual": false,
+        "superlative_near": true
+      },
+      {
+        "id": "NCT00965497",
+        "key": 1,
+        "hit_count": 2,
+        "n_texts": 2,
+        "chars": 3484,
+        "own_contextual": false,
+        "permuted_contextual": false,
+        "superlative_near": false
+      },
+      {
+        "id": "NCT00047723",
+        "key": 1,
+        "hit_count": 11,
+        "n_texts": 11,
+        "chars": 16060,
+        "own_contextual": false,
+        "permuted_contextual": false,
+        "superlative_near": true
+      },
+      {
+        "id": "NCT00035815",
+        "key": 2,
+        "hit_count": 5,
+        "n_texts": 5,
+        "chars": 5580,
+        "own_contextual": false,
+        "permuted_contextual": false,
+        "superlative_near": false
+      },
+      {
+        "id": "NCT00573443",
+        "key": 6,
+        "hit_count": 4,
+        "n_texts": 4,
+        "chars": 6646,
+        "own_contextual": false,
+        "permuted_contextual": false,
+        "superlative_near": false
+      },
+      {
+        "id": "NCT03280056",
+        "key": 3,
+        "hit_count": 41,
+        "n_texts": 25,
+        "chars": 40928,
+        "own_contextual": false,
+        "permuted_contextual": false,
+        "superlative_near": true
+      },
+      {
+        "id": "NCT02936635",
+        "key": 4,
+        "hit_count": 2,
+        "n_texts": 2,
+        "chars": 3433,
+        "own_contextual": false,
+        "permuted_contextual": false,
+        "superlative_near": true
+      },
+      {
+        "id": "NCT04745299",
+        "key": 3,
+        "hit_count": 20,
+        "n_texts": 20,
+        "chars": 28950,
+        "own_contextual": false,
+        "permuted_contextual": false,
+        "superlative_near": true
+      },
+      {
+        "id": "NCT03491462",
+        "key": 3,
+        "hit_count": 25,
+        "n_texts": 25,
+        "chars": 36212,
+        "own_contextual": false,
+        "permuted_contextual": false,
+        "superlative_near": true
+      },
+      {
+        "id": "NCT05178810",
+        "key": 18,
+        "hit_count": 15,
+        "n_texts": 15,
+        "chars": 26812,
+        "own_contextual": false,
+        "permuted_contextual": false,
+        "superlative_near": true
+      },
+      {
+        "id": "NCT04577404",
+        "key": 0,
+        "hit_count": 12,
+        "n_texts": 12,
+        "chars": 18645,
+        "own_contextual": false,
+        "permuted_contextual": false,
+        "superlative_near": true
+      },
+      {
+        "id": "NCT04516096",
+        "key": 0,
+        "hit_count": 4,
+        "n_texts": 4,
+        "chars": 5794,
+        "own_contextual": false,
+        "permuted_contextual": false,
+        "superlative_near": true
+      },
+      {
+        "id": "NCT00021697",
+        "key": 0,
+        "hit_count": 1,
+        "n_texts": 1,
+        "chars": 2648,
+        "own_contextual": false,
+        "permuted_contextual": true,
+        "superlative_near": false
+      },
+      {
+        "id": "NCT01825551",
+        "key": 4,
+        "hit_count": 4,
+        "n_texts": 4,
+        "chars": 6428,
+        "own_contextual": false,
+        "permuted_contextual": false,
+        "superlative_near": true
+      },
+      {
+        "id": "NCT00444613",
+        "key": 2,
+        "hit_count": 8,
+        "n_texts": 8,
+        "chars": 12937,
+        "own_contextual": false,
+        "permuted_contextual": false,
+        "superlative_near": true
+      },
+      {
+        "id": "NCT03293069",
+        "key": 10,
+        "hit_count": 21,
+        "n_texts": 21,
+        "chars": 32656,
+        "own_contextual": false,
+        "permuted_contextual": true,
+        "superlative_near": true
+      },
+      {
+        "id": "NCT05740813",
+        "key": 6,
+        "hit_count": 5,
+        "n_texts": 5,
+        "chars": 9352,
+        "own_contextual": false,
+        "permuted_contextual": false,
+        "superlative_near": true
+      },
+      {
+        "id": "NCT02588677",
+        "key": 3,
+        "hit_count": 28,
+        "n_texts": 25,
+        "chars": 36790,
+        "own_contextual": false,
+        "permuted_contextual": false,
+        "superlative_near": true
+      }
+    ],
+    "n_covered": 49,
+    "prose_coverage": 0.9608,
+    "prose_coverage_ci95": [
+      0.8678,
+      0.9892
+    ],
+    "n_informative": 49,
+    "own_contextual_frac": 0.0408,
+    "permuted_contextual_frac": 0.0612,
+    "excess": -0.0204,
+    "mcnemar_b": 2,
+    "mcnemar_c": 3,
+    "mcnemar_p": 1.0,
+    "own_ci95": [
+      0.0113,
+      0.1371
+    ],
+    "n_superlative": 42
+  },
+  "science and technology": {
+    "category": "science and technology",
+    "answer": "2403.07505",
+    "n_members": 15,
+    "key_definition": "number of authors",
+    "corpus": "arXiv per-record metadata (public abs view)",
+    "members": [
+      {
+        "id": "2403.07224",
+        "api_key": 2,
+        "derived_author_count": 2,
+        "derivable": true,
+        "agrees": true,
+        "superlative_near": false,
+        "own_contextual": false
+      },
+      {
+        "id": "2403.07375",
+        "api_key": 3,
+        "derived_author_count": 3,
+        "derivable": true,
+        "agrees": true,
+        "superlative_near": false,
+        "own_contextual": false
+      },
+      {
+        "id": "2403.07395",
+        "api_key": 5,
+        "derived_author_count": 5,
+        "derivable": true,
+        "agrees": true,
+        "superlative_near": false,
+        "own_contextual": false
+      },
+      {
+        "id": "2403.07424",
+        "api_key": 3,
+        "derived_author_count": 3,
+        "derivable": true,
+        "agrees": true,
+        "superlative_near": false,
+        "own_contextual": false
+      },
+      {
+        "id": "2403.07427",
+        "api_key": 1,
+        "derived_author_count": 1,
+        "derivable": true,
+        "agrees": true,
+        "superlative_near": false,
+        "own_contextual": false
+      },
+      {
+        "id": "2403.07505",
+        "api_key": 20,
+        "derived_author_count": 20,
+        "derivable": true,
+        "agrees": true,
+        "superlative_near": false,
+        "own_contextual": false
+      },
+      {
+        "id": "2403.07507",
+        "api_key": 4,
+        "derived_author_count": 4,
+        "derivable": true,
+        "agrees": true,
+        "superlative_near": false,
+        "own_contextual": false
+      },
+      {
+        "id": "2403.07694",
+        "api_key": 2,
+        "derived_author_count": 2,
+        "derivable": true,
+        "agrees": true,
+        "superlative_near": false,
+        "own_contextual": false
+      },
+      {
+        "id": "2403.07696",
+        "api_key": 1,
+        "derived_author_count": 1,
+        "derivable": true,
+        "agrees": true,
+        "superlative_near": false,
+        "own_contextual": false
+      },
+      {
+        "id": "2403.07716",
+        "api_key": 1,
+        "derived_author_count": 1,
+        "derivable": true,
+        "agrees": true,
+        "superlative_near": true,
+        "own_contextual": false
+      },
+      {
+        "id": "2403.07727",
+        "api_key": 2,
+        "derived_author_count": 2,
+        "derivable": true,
+        "agrees": true,
+        "superlative_near": false,
+        "own_contextual": false
+      },
+      {
+        "id": "2403.07801",
+        "api_key": 3,
+        "derived_author_count": 3,
+        "derivable": true,
+        "agrees": true,
+        "superlative_near": true,
+        "own_contextual": false
+      },
+      {
+        "id": "2403.07983",
+        "api_key": 5,
+        "derived_author_count": 5,
+        "derivable": true,
+        "agrees": true,
+        "superlative_near": false,
+        "own_contextual": false
+      },
+      {
+        "id": "2403.08830",
+        "api_key": 2,
+        "derived_author_count": 2,
+        "derivable": true,
+        "agrees": true,
+        "superlative_near": false,
+        "own_contextual": false
+      },
+      {
+        "id": "2403.08014",
+        "api_key": 5,
+        "derived_author_count": 5,
+        "derivable": true,
+        "agrees": true,
+        "superlative_near": false,
+        "own_contextual": false
+      }
+    ],
+    "n_derivable": 15,
+    "derivability_frac": 1.0,
+    "derivability_ci95": [
+      0.7961,
+      1.0
+    ],
+    "n_key_agrees": 15,
+    "key_agreement_frac": 1.0,
+    "key_agreement_ci95": [
+      0.7961,
+      1.0
+    ],
+    "n_informative": 15,
+    "n_superlative": 2,
+    "disagreements": []
+  }
+}

@@ -1,0 +1,2268 @@
+{
+  "generated": "2026-08-11T16:14:04Z",
+  "n_gap": 52,
+  "n_control": 20,
+  "names_sourced_from": "legalpages.json / CAP volume metadata",
+  "triples": [
+    {
+      "vol": 460,
+      "page": 1033,
+      "name": "Michigan v. Clifford",
+      "token": "michigan",
+      "lii_serves": false,
+      "probes": {
+        "courtlistener": {
+          "status": 200,
+          "count": 7,
+          "n_rows": 7,
+          "confirms": true,
+          "names": [
+            "falls city industries, inc. v. vanco beverage, inc.",
+            "first national city bank v. banco para el comercio exterior de cuba"
+          ]
+        },
+        "loc.gov": {
+          "status": 200,
+          "n_results": 10,
+          "confirms": false,
+          "titles": [
+            "u.s. reports: table of cases reported, 460 u.s. v (1982).",
+            "u.s. reports: orders, 460 u.s. 1001 (1983)."
+          ]
+        },
+        "static.case.law/cases": {
+          "status": 200,
+          "confirms": false,
+          "name": "in re disbarment of coburn",
+          "independent_of_primary": false
+        }
+      }
+    },
+    {
+      "vol": 465,
+      "page": 1075,
+      "name": "Edmisten v. Gingles",
+      "token": "edmisten",
+      "lii_serves": false,
+      "probes": {
+        "courtlistener": {
+          "status": 200,
+          "count": 6,
+          "n_rows": 6,
+          "confirms": true,
+          "names": [
+            "taylor v. maggio",
+            "daly v. united states"
+          ]
+        },
+        "loc.gov": {
+          "status": 200,
+          "n_results": 10,
+          "confirms": false,
+          "titles": [
+            "u.s. reports: table of cases reported, 465 u.s. v (1983).",
+            "u.s. reports: orders, 465 u.s. 1001 (1984)."
+          ]
+        },
+        "static.case.law/cases": {
+          "status": 200,
+          "confirms": false,
+          "name": "taylor v. maggio",
+          "independent_of_primary": false
+        }
+      }
+    },
+    {
+      "vol": 470,
+      "page": 1023,
+      "name": "Lindsey v. Alabama",
+      "token": "lindsey",
+      "lii_serves": false,
+      "probes": {
+        "courtlistener": {
+          "status": 200,
+          "count": 2,
+          "n_rows": 2,
+          "confirms": true,
+          "names": [
+            "mckinley v. illinois",
+            "lindsey v. alabama"
+          ]
+        },
+        "loc.gov": {
+          "status": 200,
+          "n_results": 10,
+          "confirms": false,
+          "titles": [
+            "u.s. reports: orders, 470 u.s. 1001 (1985).",
+            "u.s. reports: table of cases reported, 470 u.s. ix (1984)."
+          ]
+        },
+        "static.case.law/cases": {
+          "status": 200,
+          "confirms": false,
+          "name": "mckinley v. illinois",
+          "independent_of_primary": false
+        }
+      }
+    },
+    {
+      "vol": 475,
+      "page": 1006,
+      "name": "Nantahala Power & Light Co. v. Thornburg",
+      "token": "nantahala",
+      "lii_serves": false,
+      "probes": {
+        "courtlistener": {
+          "status": 200,
+          "count": 9,
+          "n_rows": 9,
+          "confirms": true,
+          "names": [
+            "o'connor v. united states",
+            "smalis v. pennsylvania"
+          ]
+        },
+        "loc.gov": {
+          "status": 200,
+          "n_results": 10,
+          "confirms": false,
+          "titles": [
+            "u.s. reports: table of cases reported, 475 u.s. v (1985).",
+            "u.s. reports: orders, 475 u.s. 1001 (1986)."
+          ]
+        },
+        "static.case.law/cases": {
+          "status": 200,
+          "confirms": false,
+          "name": "baker v. general motors corp.",
+          "independent_of_primary": false
+        }
+      }
+    },
+    {
+      "vol": 480,
+      "page": 917,
+      "name": "Japan Air Lines Co. v. Dole",
+      "token": "japan",
+      "lii_serves": false,
+      "probes": {
+        "courtlistener": {
+          "status": 200,
+          "count": 24,
+          "n_rows": 20,
+          "confirms": true,
+          "names": [
+            "coombs v. maine department of human services",
+            "eling v. jones"
+          ]
+        },
+        "loc.gov": {
+          "status": 200,
+          "n_results": 10,
+          "confirms": false,
+          "titles": [
+            "u.s. reports: table of cases reported, 480 u.s. v (1986).",
+            "u.s. reports: maryland v. garrison, 480 u.s. 79 (1987)."
+          ]
+        },
+        "static.case.law/cases": {
+          "status": 200,
+          "confirms": false,
+          "name": "jackson v. ohio",
+          "independent_of_primary": false
+        }
+      }
+    },
+    {
+      "vol": 485,
+      "page": 929,
+      "name": "Williamson v. Florida",
+      "token": "williamson",
+      "lii_serves": false,
+      "probes": {
+        "courtlistener": {
+          "status": 200,
+          "count": 2,
+          "n_rows": 2,
+          "confirms": true,
+          "names": [
+            "williamson v. florida",
+            "williamson v. florida"
+          ]
+        },
+        "loc.gov": {
+          "status": 200,
+          "n_results": 0,
+          "confirms": false,
+          "titles": []
+        },
+        "static.case.law/cases": {
+          "status": 200,
+          "confirms": true,
+          "name": "williamson v. florida",
+          "independent_of_primary": false
+        }
+      }
+    },
+    {
+      "vol": 490,
+      "page": 1011,
+      "name": "Duckworth v. Dudley",
+      "token": "duckworth",
+      "lii_serves": false,
+      "probes": {
+        "courtlistener": {
+          "status": 200,
+          "count": 25,
+          "n_rows": 20,
+          "confirms": true,
+          "names": [
+            "haile v. united states",
+            "braxton v. blanks"
+          ]
+        },
+        "loc.gov": {
+          "status": 200,
+          "n_results": 10,
+          "confirms": false,
+          "titles": [
+            "u.s. reports: table of cases reported, 490 u.s. ix (1988).",
+            "u.s. reports: green v. bock laundry machine co., 490 u.s. 504 (1989)."
+          ]
+        },
+        "static.case.law/cases": {
+          "status": 200,
+          "confirms": false,
+          "name": "johnson v. united states",
+          "independent_of_primary": false
+        }
+      }
+    },
+    {
+      "vol": 495,
+      "page": 949,
+      "name": "Mikesell v. Department of Transportation",
+      "token": "transportation",
+      "lii_serves": false,
+      "probes": {
+        "courtlistener": {
+          "status": 200,
+          "count": 30,
+          "n_rows": 20,
+          "confirms": true,
+          "names": [
+            "moering v. united states",
+            "banks-el v. clark"
+          ]
+        },
+        "loc.gov": {
+          "status": "IncompleteRead",
+          "confirms": false
+        },
+        "static.case.law/cases": {
+          "status": 200,
+          "confirms": false,
+          "name": "moering v. united states",
+          "independent_of_primary": false
+        }
+      }
+    },
+    {
+      "vol": 495,
+      "page": 926,
+      "name": "Benitez v. Port Authority Trans-Hudson Corp.",
+      "token": "authority",
+      "lii_serves": false,
+      "probes": {
+        "courtlistener": {
+          "status": 200,
+          "count": 8,
+          "n_rows": 8,
+          "confirms": true,
+          "names": [
+            "stokes v. armontrout",
+            "stokes v. delo"
+          ]
+        },
+        "loc.gov": {
+          "status": 200,
+          "n_results": 10,
+          "confirms": false,
+          "titles": [
+            "u.s. reports: delo v. stokes, 495 u.s. 320 (1990).",
+            "u.s. reports: table of cases reported, 495 u.s. v (1989)."
+          ]
+        },
+        "static.case.law/cases": {
+          "status": 200,
+          "confirms": false,
+          "name": "stokes v. armontrout",
+          "independent_of_primary": false
+        }
+      }
+    },
+    {
+      "vol": 498,
+      "page": 805,
+      "name": "In re Flowers",
+      "token": "flowers",
+      "lii_serves": false,
+      "probes": {
+        "courtlistener": {
+          "status": 200,
+          "count": 14,
+          "n_rows": 14,
+          "confirms": true,
+          "names": [
+            "minnick v. mississippi",
+            "pletten v. newman"
+          ]
+        },
+        "loc.gov": {
+          "status": 200,
+          "n_results": 10,
+          "confirms": false,
+          "titles": [
+            "u.s. reports: table of cases reported, 498 u.s. xliii (1990).",
+            "u.s. reports: table of cases cited, 498 u.s. clxxvii (1990)."
+          ]
+        },
+        "static.case.law/cases": {
+          "status": 200,
+          "confirms": false,
+          "name": "united states v. first federal savings & loan ass'n of temple",
+          "independent_of_primary": false
+        }
+      }
+    },
+    {
+      "vol": 498,
+      "page": 1080,
+      "name": "In re Proffitt",
+      "token": "proffitt",
+      "lii_serves": false,
+      "probes": {
+        "courtlistener": {
+          "status": 200,
+          "count": 10,
+          "n_rows": 10,
+          "confirms": true,
+          "names": [
+            "freytag v. commissioner",
+            "in re proffitt"
+          ]
+        },
+        "loc.gov": {
+          "status": 200,
+          "n_results": 10,
+          "confirms": false,
+          "titles": [
+            "u.s. reports: table of cases reported, 498 u.s. xliii (1990).",
+            "u.s. reports: table of cases cited, 498 u.s. clxxvii (1990)."
+          ]
+        },
+        "static.case.law/cases": {
+          "status": 200,
+          "confirms": false,
+          "name": "freytag v. commissioner",
+          "independent_of_primary": false
+        }
+      }
+    },
+    {
+      "vol": 498,
+      "page": 1016,
+      "name": "International Union of Operating Engineers, Local 406 v. Guidry",
+      "token": "international",
+      "lii_serves": false,
+      "probes": {
+        "courtlistener": {
+          "status": 200,
+          "count": 28,
+          "n_rows": 20,
+          "confirms": true,
+          "names": [
+            "quinonez-ledezma v. united states",
+            "general wood preserving co. v. national labor relations board"
+          ]
+        },
+        "loc.gov": {
+          "status": 200,
+          "n_results": 0,
+          "confirms": false,
+          "titles": []
+        },
+        "static.case.law/cases": {
+          "status": 200,
+          "confirms": false,
+          "name": "hughes v. united states",
+          "independent_of_primary": false
+        }
+      }
+    },
+    {
+      "vol": 498,
+      "page": 1109,
+      "name": "Peer International Corp. v. Pausa Records, Inc.",
+      "token": "international",
+      "lii_serves": false,
+      "probes": {
+        "courtlistener": {
+          "status": 200,
+          "count": 20,
+          "n_rows": 20,
+          "confirms": true,
+          "names": [
+            "southern bell telephone & telegraph co. v. hamm",
+            "peer international corp. v. pausa records, inc."
+          ]
+        },
+        "loc.gov": {
+          "status": 200,
+          "n_results": 10,
+          "confirms": false,
+          "titles": [
+            "u.s. reports: table of cases reported, 498 u.s. xliii (1990).",
+            "u.s. reports: orders for october 1, 1990, through february 28, 1991, 498 u.s. 801 (1990)."
+          ]
+        },
+        "static.case.law/cases": {
+          "status": 200,
+          "confirms": false,
+          "name": "141st street corp. v. united states",
+          "independent_of_primary": false
+        }
+      }
+    },
+    {
+      "vol": 504,
+      "page": 937,
+      "name": "Black v. Collins",
+      "token": "collins",
+      "lii_serves": false,
+      "probes": {
+        "courtlistener": {
+          "status": 200,
+          "count": 5,
+          "n_rows": 5,
+          "confirms": true,
+          "names": [
+            "black v. collins",
+            "black v. collins"
+          ]
+        },
+        "loc.gov": {
+          "status": 200,
+          "n_results": 10,
+          "confirms": false,
+          "titles": [
+            "u.s. reports: orders, 504 u.s. 901 (1992).",
+            "u.s. reports: table of cases reported, 504 u.s. v (1991)."
+          ]
+        },
+        "static.case.law/cases": {
+          "status": 200,
+          "confirms": true,
+          "name": "romero v. collins",
+          "independent_of_primary": false
+        }
+      }
+    },
+    {
+      "vol": 505,
+      "page": 1244,
+      "name": "Medina v. California",
+      "token": "california",
+      "lii_serves": false,
+      "probes": {
+        "courtlistener": {
+          "status": 200,
+          "count": 2,
+          "n_rows": 2,
+          "confirms": true,
+          "names": [
+            "medina v. california",
+            "medina v. california"
+          ]
+        },
+        "loc.gov": {
+          "status": 200,
+          "n_results": 10,
+          "confirms": false,
+          "titles": [
+            "u.s. reports: table of cases reported, 505 u.s. v (1991).",
+            "u.s. reports: orders, 505 u.s. 1201 (1992)."
+          ]
+        },
+        "static.case.law/cases": {
+          "status": 200,
+          "confirms": true,
+          "name": "medina v. california",
+          "independent_of_primary": false
+        }
+      }
+    },
+    {
+      "vol": 505,
+      "page": 1229,
+      "name": "Parker v. King",
+      "token": "parker",
+      "lii_serves": false,
+      "probes": {
+        "courtlistener": {
+          "status": 200,
+          "count": 22,
+          "n_rows": 20,
+          "confirms": true,
+          "names": [
+            "haberstroh v. burkett",
+            "hudson v. washington"
+          ]
+        },
+        "loc.gov": {
+          "status": 200,
+          "n_results": 10,
+          "confirms": false,
+          "titles": [
+            "u.s. reports: table of cases reported, 505 u.s. v (1991).",
+            "u.s. reports: orders, 505 u.s. 1201 (1992)."
+          ]
+        },
+        "static.case.law/cases": {
+          "status": 200,
+          "confirms": false,
+          "name": "bailey v. united states",
+          "independent_of_primary": false
+        }
+      }
+    },
+    {
+      "vol": 505,
+      "page": 1232,
+      "name": "Wetherell v. De Grandy",
+      "token": "wetherell",
+      "lii_serves": false,
+      "probes": {
+        "courtlistener": {
+          "status": 200,
+          "count": 6,
+          "n_rows": 6,
+          "confirms": true,
+          "names": [
+            "holland v. collins",
+            "wetherell v. de grandy"
+          ]
+        },
+        "loc.gov": {
+          "status": 200,
+          "n_results": 10,
+          "confirms": false,
+          "titles": [
+            "u.s. reports: orders, 505 u.s. 1201 (1992).",
+            "u.s. reports: table of cases reported, 505 u.s. v (1991)."
+          ]
+        },
+        "static.case.law/cases": {
+          "status": 200,
+          "confirms": false,
+          "name": "holland v. collins",
+          "independent_of_primary": false
+        }
+      }
+    },
+    {
+      "vol": 512,
+      "page": 1278,
+      "name": "Turner Broadcasting System, Inc. v. Federal Communications Commission",
+      "token": "communications",
+      "lii_serves": false,
+      "probes": {
+        "courtlistener": {
+          "status": 200,
+          "count": 1,
+          "n_rows": 1,
+          "confirms": true,
+          "names": [
+            "turner broadcasting system, inc. v. federal communications commission"
+          ]
+        },
+        "loc.gov": {
+          "status": 200,
+          "n_results": 10,
+          "confirms": false,
+          "titles": [
+            "u.s. reports: table of cases reported, 512 u.s. xvii (1993).",
+            "u.s. reports: orders, 512 u.s. 1201 (1994)."
+          ]
+        },
+        "static.case.law/cases": {
+          "status": 200,
+          "confirms": true,
+          "name": "turner broadcasting system, inc. v. federal communications commission",
+          "independent_of_primary": false
+        }
+      }
+    },
+    {
+      "vol": 512,
+      "page": 1287,
+      "name": "Missouri v. Jenkins",
+      "token": "missouri",
+      "lii_serves": false,
+      "probes": {
+        "courtlistener": {
+          "status": 200,
+          "count": 4,
+          "n_rows": 4,
+          "confirms": true,
+          "names": [
+            "california department of corrections v. morales",
+            "director, office of workers' compensation programs v. newport news shipbuilding & dry dock co."
+          ]
+        },
+        "loc.gov": {
+          "status": 200,
+          "n_results": 10,
+          "confirms": false,
+          "titles": [
+            "u.s. reports: table of cases reported, 512 u.s. xvii (1993).",
+            "u.s. reports: orders, 512 u.s. 1201 (1994)."
+          ]
+        },
+        "static.case.law/cases": {
+          "status": 200,
+          "confirms": false,
+          "name": "california department of corrections v. morales",
+          "independent_of_primary": false
+        }
+      }
+    },
+    {
+      "vol": 512,
+      "page": 1246,
+      "name": "Robinson v. Texas",
+      "token": "robinson",
+      "lii_serves": false,
+      "probes": {
+        "courtlistener": {
+          "status": 200,
+          "count": 3,
+          "n_rows": 3,
+          "confirms": true,
+          "names": [
+            "robinson v. texas",
+            "aidant, inc. v. sirex, u. s. a., inc."
+          ]
+        },
+        "loc.gov": {
+          "status": 200,
+          "n_results": 10,
+          "confirms": false,
+          "titles": [
+            "u.s. reports: table of cases reported, 512 u.s. xvii (1993).",
+            "u.s. reports: orders, 512 u.s. 1201 (1994)."
+          ]
+        },
+        "static.case.law/cases": {
+          "status": 200,
+          "confirms": false,
+          "name": "aidant, inc. v. sirex, u. s. a., inc.",
+          "independent_of_primary": false
+        }
+      }
+    },
+    {
+      "vol": 517,
+      "page": 1217,
+      "name": "In re Disbarment of Bloomfield",
+      "token": "disbarment",
+      "lii_serves": false,
+      "probes": {
+        "courtlistener": {
+          "status": 200,
+          "count": 14,
+          "n_rows": 14,
+          "confirms": true,
+          "names": [
+            "apache corp. v. moore",
+            "combustion engineering, inc. v. johansen"
+          ]
+        },
+        "loc.gov": {
+          "status": 200,
+          "n_results": 10,
+          "confirms": false,
+          "titles": [
+            "u.s. reports: orders, 517 u.s. 1101 (1996).",
+            "u.s. reports: table of cases reported, 517 u.s. xxvi (1995)."
+          ]
+        },
+        "static.case.law/cases": {
+          "status": 200,
+          "confirms": false,
+          "name": "ford motor co. v. sperau",
+          "independent_of_primary": false
+        }
+      }
+    },
+    {
+      "vol": 517,
+      "page": 820,
+      "name": "Degen v. United States",
+      "token": "degen",
+      "lii_serves": false,
+      "probes": {
+        "courtlistener": {
+          "status": 200,
+          "count": 1,
+          "n_rows": 1,
+          "confirms": true,
+          "names": [
+            "degen v. united states"
+          ]
+        },
+        "loc.gov": {
+          "status": 200,
+          "n_results": 10,
+          "confirms": true,
+          "titles": [
+            "u.s. reports: degen v. united states, 517 u.s. 820 (1996).",
+            "u.s. reports: index, 517 u.s. 1303 (1995)."
+          ]
+        },
+        "static.case.law/cases": {
+          "status": 200,
+          "confirms": true,
+          "name": "degen v. united states",
+          "independent_of_primary": false
+        }
+      }
+    },
+    {
+      "vol": 517,
+      "page": 1251,
+      "name": "Trahan v. Trahan",
+      "token": "trahan",
+      "lii_serves": false,
+      "probes": {
+        "courtlistener": {
+          "status": 200,
+          "count": 19,
+          "n_rows": 19,
+          "confirms": true,
+          "names": [
+            "douglas v. united states",
+            "douglas v. united states"
+          ]
+        },
+        "loc.gov": {
+          "status": 200,
+          "n_results": 10,
+          "confirms": false,
+          "titles": [
+            "u.s. reports: orders, 517 u.s. 1101 (1996).",
+            "u.s. reports: table of cases reported, 517 u.s. xxvi (1995)."
+          ]
+        },
+        "static.case.law/cases": {
+          "status": 200,
+          "confirms": false,
+          "name": "erwin v. united states",
+          "independent_of_primary": false
+        }
+      }
+    },
+    {
+      "vol": 520,
+      "page": 292,
+      "name": "Lambert v. Wicklund",
+      "token": "wicklund",
+      "lii_serves": false,
+      "probes": {
+        "courtlistener": {
+          "status": 200,
+          "count": 1,
+          "n_rows": 1,
+          "confirms": true,
+          "names": [
+            "lambert v. wicklund"
+          ]
+        },
+        "loc.gov": {
+          "status": 200,
+          "n_results": 10,
+          "confirms": true,
+          "titles": [
+            "u.s. reports: lambert v. wicklund, 520 u.s. 292 (1997).",
+            "u.s. reports: index, 520 u.s. 1331 (1996)."
+          ]
+        },
+        "static.case.law/cases": {
+          "status": 200,
+          "confirms": true,
+          "name": "lambert v. wicklund",
+          "independent_of_primary": false
+        }
+      }
+    },
+    {
+      "vol": 520,
+      "page": 1259,
+      "name": "Smith v. Socialist People's Libyan Arab Jamahiriya",
+      "token": "jamahiriya",
+      "lii_serves": false,
+      "probes": {
+        "courtlistener": {
+          "status": 200,
+          "count": 7,
+          "n_rows": 7,
+          "confirms": true,
+          "names": [
+            "smith v. socialist people's libyan arab jamahiriya",
+            "thompson v. calderon"
+          ]
+        },
+        "loc.gov": {
+          "status": 503,
+          "confirms": false
+        },
+        "static.case.law/cases": {
+          "status": 200,
+          "confirms": false,
+          "name": "clark v. e. i. du pont de nemours & co.",
+          "independent_of_primary": false
+        }
+      }
+    },
+    {
+      "vol": 520,
+      "page": 1110,
+      "name": "Tidik v. Tidik",
+      "token": "tidik",
+      "lii_serves": false,
+      "probes": {
+        "courtlistener": {
+          "status": 200,
+          "count": 26,
+          "n_rows": 20,
+          "confirms": true,
+          "names": [
+            "mckinney v. united states",
+            "matthews v. united states"
+          ]
+        },
+        "loc.gov": {
+          "status": 503,
+          "confirms": false
+        },
+        "static.case.law/cases": {
+          "status": 200,
+          "confirms": false,
+          "name": "swaney v. chater",
+          "independent_of_primary": false
+        }
+      }
+    },
+    {
+      "vol": 524,
+      "page": 964,
+      "name": "In re Thompson",
+      "token": "thompson",
+      "lii_serves": false,
+      "probes": {
+        "courtlistener": {
+          "status": 200,
+          "count": 6,
+          "n_rows": 6,
+          "confirms": true,
+          "names": [
+            "henderson v. norris",
+            "in re thompson"
+          ]
+        },
+        "loc.gov": {
+          "status": 503,
+          "confirms": false
+        },
+        "static.case.law/cases": {
+          "status": 200,
+          "confirms": false,
+          "name": "henderson v. norris",
+          "independent_of_primary": false
+        }
+      }
+    },
+    {
+      "vol": 524,
+      "page": 968,
+      "name": "New Jersey v. New York",
+      "token": "jersey",
+      "lii_serves": false,
+      "probes": {
+        "courtlistener": {
+          "status": 200,
+          "count": 2,
+          "n_rows": 2,
+          "confirms": true,
+          "names": [
+            "in re disbarment of plato",
+            "new jersey v. new york"
+          ]
+        },
+        "loc.gov": {
+          "status": 503,
+          "confirms": false
+        },
+        "static.case.law/cases": {
+          "status": 200,
+          "confirms": false,
+          "name": "in re disbarment of plato",
+          "independent_of_primary": false
+        }
+      }
+    },
+    {
+      "vol": 530,
+      "page": 1274,
+      "name": "James v. Zurich-American Insurance",
+      "token": "insurance",
+      "lii_serves": false,
+      "probes": {
+        "courtlistener": {
+          "status": 200,
+          "count": 26,
+          "n_rows": 20,
+          "confirms": true,
+          "names": [
+            "vandel v. standard motor products, inc.",
+            "universal management services, inc. v. united states"
+          ]
+        },
+        "loc.gov": {
+          "status": 503,
+          "confirms": false
+        },
+        "static.case.law/cases": {
+          "status": 200,
+          "confirms": false,
+          "name": "miller v. planned parenthood of greater iowa, inc.",
+          "independent_of_primary": false
+        }
+      }
+    },
+    {
+      "vol": 530,
+      "page": 1260,
+      "name": "Director of Revenue v. CoBank ACB",
+      "token": "director",
+      "lii_serves": false,
+      "probes": {
+        "courtlistener": {
+          "status": 200,
+          "count": 16,
+          "n_rows": 16,
+          "confirms": true,
+          "names": [
+            "traffix devices, inc. v. marketing displays, inc.",
+            "director of revenue v. cobank acb"
+          ]
+        },
+        "loc.gov": {
+          "status": 503,
+          "confirms": false
+        },
+        "static.case.law/cases": {
+          "status": 200,
+          "confirms": false,
+          "name": "in re jeffs",
+          "independent_of_primary": false
+        }
+      }
+    },
+    {
+      "vol": 530,
+      "page": 103,
+      "name": "Sims v. Apfel",
+      "token": "apfel",
+      "lii_serves": false,
+      "probes": {
+        "courtlistener": {
+          "status": 200,
+          "count": 1,
+          "n_rows": 1,
+          "confirms": true,
+          "names": [
+            "sims v. apfel"
+          ]
+        },
+        "loc.gov": {
+          "status": 503,
+          "confirms": false
+        },
+        "static.case.law/cases": {
+          "status": 200,
+          "confirms": true,
+          "name": "sims v. apfel",
+          "independent_of_primary": false
+        }
+      }
+    },
+    {
+      "vol": 533,
+      "page": 194,
+      "name": "Saucier v. Katz",
+      "token": "saucier",
+      "lii_serves": false,
+      "probes": {
+        "courtlistener": {
+          "status": 200,
+          "count": 2,
+          "n_rows": 2,
+          "confirms": true,
+          "names": [
+            "donald saucier v. elliot m. katz and in defense of animals",
+            "saucier v. katz et al."
+          ]
+        },
+        "loc.gov": {
+          "status": 503,
+          "confirms": false
+        },
+        "static.case.law/cases": {
+          "status": 200,
+          "confirms": true,
+          "name": "saucier v. katz",
+          "independent_of_primary": false
+        }
+      }
+    },
+    {
+      "vol": 533,
+      "page": 927,
+      "name": "Wisconsin Department of Health & Family Services v. Blumer",
+      "token": "department",
+      "lii_serves": false,
+      "probes": {
+        "courtlistener": {
+          "status": 200,
+          "count": 16,
+          "n_rows": 16,
+          "confirms": true,
+          "names": [
+            "in re awofolu",
+            "swoyer v. kercher"
+          ]
+        },
+        "loc.gov": {
+          "status": 503,
+          "confirms": false
+        },
+        "static.case.law/cases": {
+          "status": 200,
+          "confirms": false,
+          "name": "brown v. chicago transit authority",
+          "independent_of_primary": false
+        }
+      }
+    },
+    {
+      "vol": 533,
+      "page": 911,
+      "name": "Northern Lights Club v. Northern Light Technology, Inc.",
+      "token": "technology",
+      "lii_serves": false,
+      "probes": {
+        "courtlistener": {
+          "status": 200,
+          "count": 26,
+          "n_rows": 20,
+          "confirms": true,
+          "names": [
+            "acosta-alvarez v. united states",
+            "lawson v. united states"
+          ]
+        },
+        "loc.gov": {
+          "status": 503,
+          "confirms": false
+        },
+        "static.case.law/cases": {
+          "status": 200,
+          "confirms": false,
+          "name": "huerta-vallin v. united states",
+          "independent_of_primary": false
+        }
+      }
+    },
+    {
+      "vol": 545,
+      "page": 1154,
+      "name": "National Wrestling Coaches Ass'n v. Department of Education",
+      "token": "department",
+      "lii_serves": false,
+      "probes": {
+        "courtlistener": {
+          "status": 200,
+          "count": 2,
+          "n_rows": 2,
+          "confirms": true,
+          "names": [
+            "national wrestling coaches ass'n v. department of education",
+            "national wrestling coaches ass'n v. department of education"
+          ]
+        },
+        "loc.gov": {
+          "status": 503,
+          "confirms": false
+        },
+        "static.case.law/cases": {
+          "status": 200,
+          "confirms": true,
+          "name": "national wrestling coaches ass'n v. department of education",
+          "independent_of_primary": false
+        }
+      }
+    },
+    {
+      "vol": 545,
+      "page": 1149,
+      "name": "Patrick v. DeFoy",
+      "token": "patrick",
+      "lii_serves": false,
+      "probes": {
+        "courtlistener": {
+          "status": 200,
+          "count": 22,
+          "n_rows": 20,
+          "confirms": true,
+          "names": [
+            "jackson v. delaware river & bay authority",
+            "public utility district no. 1 v. dynegy power marketing, inc."
+          ]
+        },
+        "loc.gov": {
+          "status": 503,
+          "confirms": false
+        },
+        "static.case.law/cases": {
+          "status": 200,
+          "confirms": false,
+          "name": "tyler v. united states",
+          "independent_of_primary": false
+        }
+      }
+    },
+    {
+      "vol": 545,
+      "page": 1161,
+      "name": "Volvo Trucks North America, Inc. v. Reeder-Simco GMC, Inc.",
+      "token": "america",
+      "lii_serves": false,
+      "probes": {
+        "courtlistener": {
+          "status": 200,
+          "count": 12,
+          "n_rows": 12,
+          "confirms": true,
+          "names": [
+            "wagnon v. prairie band potawatomi nation",
+            "garcetti v. ceballos"
+          ]
+        },
+        "loc.gov": {
+          "status": 200,
+          "n_results": 10,
+          "confirms": false,
+          "titles": [
+            "u.s. reports: table of cases reported, 545 u.s. xv (2005).",
+            "u.s. reports: orders for june 6 through september 29, 2005, 545 u.s. 1101 (2005)."
+          ]
+        },
+        "static.case.law/cases": {
+          "status": 200,
+          "confirms": false,
+          "name": "ibp, inc. v. alvarez",
+          "independent_of_primary": false
+        }
+      }
+    },
+    {
+      "vol": 545,
+      "page": 748,
+      "name": "Town of Castle Rock v. Gonzales",
+      "token": "gonzales",
+      "lii_serves": false,
+      "probes": {
+        "courtlistener": {
+          "status": 200,
+          "count": 1,
+          "n_rows": 1,
+          "confirms": true,
+          "names": [
+            "town of castle rock v. gonzales"
+          ]
+        },
+        "loc.gov": {
+          "status": 200,
+          "n_results": 10,
+          "confirms": true,
+          "titles": [
+            "u.s. reports: castle rock v. gonzales, 545 u.s. 748 (2005).",
+            "u.s. reports: johnson v. california, 545 u.s. 162 (2005)."
+          ]
+        },
+        "static.case.law/cases": {
+          "status": 200,
+          "confirms": true,
+          "name": "town of castle rock v. gonzales",
+          "independent_of_primary": false
+        }
+      }
+    },
+    {
+      "vol": 545,
+      "page": 1,
+      "name": "Gonzales v. Raich",
+      "token": "gonzales",
+      "lii_serves": false,
+      "probes": {
+        "courtlistener": {
+          "status": 200,
+          "count": 1,
+          "n_rows": 1,
+          "confirms": true,
+          "names": [
+            "gonzales v. raich"
+          ]
+        },
+        "loc.gov": {
+          "status": 200,
+          "n_results": 10,
+          "confirms": true,
+          "titles": [
+            "u.s. reports: notes, 545 u.s. iv (2005).",
+            "u.s. reports: reporter's note, 545 u.s. (2005)."
+          ]
+        },
+        "static.case.law/cases": {
+          "status": 200,
+          "confirms": true,
+          "name": "gonzales v. raich",
+          "independent_of_primary": false
+        }
+      }
+    },
+    {
+      "vol": 545,
+      "page": 596,
+      "name": "Orff v. United States",
+      "token": "orff",
+      "lii_serves": false,
+      "probes": {
+        "courtlistener": {
+          "status": 200,
+          "count": 1,
+          "n_rows": 1,
+          "confirms": true,
+          "names": [
+            "orff v. united states"
+          ]
+        },
+        "loc.gov": {
+          "status": 200,
+          "n_results": 10,
+          "confirms": true,
+          "titles": [
+            "u.s. reports: orff v. united states, 545 u.s. 596 (2005).",
+            "u.s. reports: index, 545 u.s. 1167 (2005)."
+          ]
+        },
+        "static.case.law/cases": {
+          "status": 200,
+          "confirms": true,
+          "name": "orff v. united states",
+          "independent_of_primary": false
+        }
+      }
+    },
+    {
+      "vol": 550,
+      "page": 81,
+      "name": "Zuni Public School District No. 89 v. Department of Education",
+      "token": "department",
+      "lii_serves": false,
+      "probes": {
+        "courtlistener": {
+          "status": 200,
+          "count": 1,
+          "n_rows": 1,
+          "confirms": true,
+          "names": [
+            "zuni public school district no. 89 v. department of education"
+          ]
+        },
+        "loc.gov": {
+          "status": 200,
+          "n_results": 10,
+          "confirms": true,
+          "titles": [
+            "u.s. reports: united states v. hunt, 81 u.s. (14 wall.) 550 (1872).",
+            "u.s. reports: zuni public school district no. 89 v. department of education, 550 u.s. 81 (2007)."
+          ]
+        },
+        "static.case.law/cases": {
+          "status": 200,
+          "confirms": true,
+          "name": "zuni public school district no. 89 v. department of education",
+          "independent_of_primary": false
+        }
+      }
+    },
+    {
+      "vol": 550,
+      "page": 429,
+      "name": "EC Term of Years Trust v. United States",
+      "token": "years",
+      "lii_serves": false,
+      "probes": {
+        "courtlistener": {
+          "status": 200,
+          "count": 1,
+          "n_rows": 1,
+          "confirms": true,
+          "names": [
+            "ec term of years trust v. united states"
+          ]
+        },
+        "loc.gov": {
+          "status": 200,
+          "n_results": 10,
+          "confirms": true,
+          "titles": [
+            "u.s. reports: ec term of years trust v. united states, 550 u.s. 429 (2007).",
+            "u.s. reports: index, 550 u.s. 1303 (2007)."
+          ]
+        },
+        "static.case.law/cases": {
+          "status": 200,
+          "confirms": true,
+          "name": "ec term of years trust v. united states",
+          "independent_of_primary": false
+        }
+      }
+    },
+    {
+      "vol": 550,
+      "page": 598,
+      "name": "Roper v. Weaver",
+      "token": "weaver",
+      "lii_serves": false,
+      "probes": {
+        "courtlistener": {
+          "status": 200,
+          "count": 1,
+          "n_rows": 1,
+          "confirms": true,
+          "names": [
+            "roper v. weaver"
+          ]
+        },
+        "loc.gov": {
+          "status": 200,
+          "n_results": 10,
+          "confirms": true,
+          "titles": [
+            "u.s. reports: roper v. weaver, 550 u.s. 598 (2007).",
+            "u.s. reports: index, 550 u.s. 1303 (2007)."
+          ]
+        },
+        "static.case.law/cases": {
+          "status": 200,
+          "confirms": true,
+          "name": "roper v. weaver",
+          "independent_of_primary": false
+        }
+      }
+    },
+    {
+      "vol": 550,
+      "page": 124,
+      "name": "Gonzales v. Carhart",
+      "token": "gonzales",
+      "lii_serves": false,
+      "probes": {
+        "courtlistener": {
+          "status": 200,
+          "count": 1,
+          "n_rows": 1,
+          "confirms": true,
+          "names": [
+            "gonzales v. carhart"
+          ]
+        },
+        "loc.gov": {
+          "status": 200,
+          "n_results": 10,
+          "confirms": true,
+          "titles": [
+            "u.s. reports: gonzales v. carhart, 550 u.s. 124 (2007).",
+            "u.s. reports: table of cases reported, 550 u.s. v (2007)."
+          ]
+        },
+        "static.case.law/cases": {
+          "status": 200,
+          "confirms": true,
+          "name": "gonzales v. carhart",
+          "independent_of_primary": false
+        }
+      }
+    },
+    {
+      "vol": 550,
+      "page": 192,
+      "name": "James v. United States",
+      "token": "james",
+      "lii_serves": false,
+      "probes": {
+        "courtlistener": {
+          "status": 200,
+          "count": 1,
+          "n_rows": 1,
+          "confirms": true,
+          "names": [
+            "james v. united states"
+          ]
+        },
+        "loc.gov": {
+          "status": 503,
+          "confirms": false
+        },
+        "static.case.law/cases": {
+          "status": 200,
+          "confirms": true,
+          "name": "james v. united states",
+          "independent_of_primary": false
+        }
+      }
+    },
+    {
+      "vol": 550,
+      "page": 330,
+      "name": "United Haulers Ass'n v. Oneida-Herkimer Solid Waste Management Authority",
+      "token": "management",
+      "lii_serves": false,
+      "probes": {
+        "courtlistener": {
+          "status": 429,
+          "confirms": false
+        },
+        "loc.gov": {
+          "status": 503,
+          "confirms": false
+        },
+        "static.case.law/cases": {
+          "status": 200,
+          "confirms": true,
+          "name": "united haulers ass'n v. oneida-herkimer solid waste management authori",
+          "independent_of_primary": false
+        }
+      }
+    },
+    {
+      "vol": 555,
+      "page": 323,
+      "name": "Arizona v. Johnson",
+      "token": "arizona",
+      "lii_serves": false,
+      "probes": {
+        "courtlistener": {
+          "status": 200,
+          "count": 1,
+          "n_rows": 1,
+          "confirms": true,
+          "names": [
+            "arizona v. johnson"
+          ]
+        },
+        "loc.gov": {
+          "status": 503,
+          "confirms": false
+        },
+        "static.case.law/cases": {
+          "status": 200,
+          "confirms": true,
+          "name": "arizona v. johnson",
+          "independent_of_primary": false
+        }
+      }
+    },
+    {
+      "vol": 555,
+      "page": 350,
+      "name": "Nelson v. United States",
+      "token": "nelson",
+      "lii_serves": false,
+      "probes": {
+        "courtlistener": {
+          "status": 200,
+          "count": 1,
+          "n_rows": 1,
+          "confirms": true,
+          "names": [
+            "nelson v. united states"
+          ]
+        },
+        "loc.gov": {
+          "status": 503,
+          "confirms": false
+        },
+        "static.case.law/cases": {
+          "status": 200,
+          "confirms": true,
+          "name": "nelson v. united states",
+          "independent_of_primary": false
+        }
+      }
+    },
+    {
+      "vol": 555,
+      "page": 179,
+      "name": "Waddington v. Sarausad",
+      "token": "waddington",
+      "lii_serves": false,
+      "probes": {
+        "courtlistener": {
+          "status": 429,
+          "confirms": false
+        },
+        "loc.gov": {
+          "status": 200,
+          "n_results": 10,
+          "confirms": true,
+          "titles": [
+            "u.s. reports: waddington v. sarausad, 555 u.s. 179 (2009).",
+            "u.s. reports: wyeth v. levine, 555 u.s. 555 (2009)."
+          ]
+        },
+        "static.case.law/cases": {
+          "status": 200,
+          "confirms": true,
+          "name": "waddington v. sarausad",
+          "independent_of_primary": false
+        }
+      }
+    },
+    {
+      "vol": 555,
+      "page": 353,
+      "name": "Ysursa v. Pocatello Education Ass'n",
+      "token": "pocatello",
+      "lii_serves": false,
+      "probes": {
+        "courtlistener": {
+          "status": 200,
+          "count": 1,
+          "n_rows": 1,
+          "confirms": true,
+          "names": [
+            "ysursa v. pocatello education ass'n"
+          ]
+        },
+        "loc.gov": {
+          "status": 200,
+          "n_results": 10,
+          "confirms": true,
+          "titles": [
+            "u.s. reports: ysursa v. pocatello ed. assn., 555 u.s. 353 (2009).",
+            "u.s. reports: wyeth v. levine, 555 u.s. 555 (2009)."
+          ]
+        },
+        "static.case.law/cases": {
+          "status": 200,
+          "confirms": true,
+          "name": "ysursa v. pocatello education ass'n",
+          "independent_of_primary": false
+        }
+      }
+    },
+    {
+      "vol": 555,
+      "page": 122,
+      "name": "Chambers v. United States",
+      "token": "chambers",
+      "lii_serves": false,
+      "probes": {
+        "courtlistener": {
+          "status": 200,
+          "count": 1,
+          "n_rows": 1,
+          "confirms": true,
+          "names": [
+            "chambers v. united states"
+          ]
+        },
+        "loc.gov": {
+          "status": 200,
+          "n_results": 10,
+          "confirms": true,
+          "titles": [
+            "u.s. reports: chambers v. united states, 555 u.s. 122 (2009).",
+            "u.s. reports: index, 555 u.s. 1221 (2009)."
+          ]
+        },
+        "static.case.law/cases": {
+          "status": 200,
+          "confirms": true,
+          "name": "chambers v. united states",
+          "independent_of_primary": false
+        }
+      }
+    },
+    {
+      "vol": 555,
+      "page": 7,
+      "name": "Winter v. Natural Resources Defense Council, Inc.",
+      "token": "resources",
+      "lii_serves": false,
+      "probes": {
+        "courtlistener": {
+          "status": 200,
+          "count": 1,
+          "n_rows": 1,
+          "confirms": true,
+          "names": [
+            "winter v. natural resources defense council, inc."
+          ]
+        },
+        "loc.gov": {
+          "status": 200,
+          "n_results": 0,
+          "confirms": false,
+          "titles": []
+        },
+        "static.case.law/cases": {
+          "status": 200,
+          "confirms": true,
+          "name": "winter v. natural resources defense council, inc.",
+          "independent_of_primary": false
+        }
+      }
+    },
+    {
+      "vol": 495,
+      "page": 731,
+      "name": "Demosthenes v. Baal",
+      "token": "demosthenes",
+      "lii_serves": true,
+      "probes": {
+        "courtlistener": {
+          "status": 200,
+          "count": 1,
+          "n_rows": 1,
+          "confirms": true,
+          "names": [
+            "demosthenes v. baal"
+          ]
+        },
+        "loc.gov": {
+          "status": 200,
+          "n_results": 10,
+          "confirms": true,
+          "titles": [
+            "u.s. reports: demosthenes v. baal, 495 u.s. 731 (1990).",
+            "u.s. reports: venegas v. mitchell, 495 u.s. 82 (1990)."
+          ]
+        },
+        "static.case.law/cases": {
+          "status": 200,
+          "confirms": true,
+          "name": "demosthenes v. baal",
+          "independent_of_primary": false
+        }
+      }
+    },
+    {
+      "vol": 465,
+      "page": 805,
+      "name": "United States v. Arthur Young & Co.",
+      "token": "arthur",
+      "lii_serves": true,
+      "probes": {
+        "courtlistener": {
+          "status": 200,
+          "count": 1,
+          "n_rows": 1,
+          "confirms": true,
+          "names": [
+            "united states v. arthur young & co."
+          ]
+        },
+        "loc.gov": {
+          "status": 200,
+          "n_results": 10,
+          "confirms": true,
+          "titles": [
+            "u.s. reports: united states v. arthur young & co., 465 u.s. 805 (1984).",
+            "u.s. reports: index, 465 u.s. 1307 (1983)."
+          ]
+        },
+        "static.case.law/cases": {
+          "status": 200,
+          "confirms": true,
+          "name": "united states v. arthur young & co.",
+          "independent_of_primary": false
+        }
+      }
+    },
+    {
+      "vol": 530,
+      "page": 428,
+      "name": "Dickerson v. United States",
+      "token": "dickerson",
+      "lii_serves": true,
+      "probes": {
+        "courtlistener": {
+          "status": 200,
+          "count": 1,
+          "n_rows": 1,
+          "confirms": true,
+          "names": [
+            "dickerson v. united states"
+          ]
+        },
+        "loc.gov": {
+          "status": 200,
+          "n_results": 10,
+          "confirms": true,
+          "titles": [
+            "u.s. reports: dickerson v. united states, 530 u.s. 428 (2000).",
+            "u.s. reports: index, 530 u.s. 1309 (1999)."
+          ]
+        },
+        "static.case.law/cases": {
+          "status": 200,
+          "confirms": true,
+          "name": "dickerson v. united states",
+          "independent_of_primary": false
+        }
+      }
+    },
+    {
+      "vol": 465,
+      "page": 668,
+      "name": "Lynch v. Donnelly",
+      "token": "donnelly",
+      "lii_serves": true,
+      "probes": {
+        "courtlistener": {
+          "status": 200,
+          "count": 1,
+          "n_rows": 1,
+          "confirms": true,
+          "names": [
+            "lynch v. donnelly"
+          ]
+        },
+        "loc.gov": {
+          "status": 200,
+          "n_results": 10,
+          "confirms": true,
+          "titles": [
+            "u.s. reports: lynch v. donnelly, 465 u.s. 668 (1984).",
+            "u.s. reports: orders, 465 u.s. 1001 (1984)."
+          ]
+        },
+        "static.case.law/cases": {
+          "status": 200,
+          "confirms": true,
+          "name": "lynch v. donnelly",
+          "independent_of_primary": false
+        }
+      }
+    },
+    {
+      "vol": 510,
+      "page": 1082,
+      "name": "Williamson v. United States",
+      "token": "williamson",
+      "lii_serves": true,
+      "probes": {
+        "courtlistener": {
+          "status": 429,
+          "confirms": false
+        },
+        "loc.gov": {
+          "status": 200,
+          "n_results": 10,
+          "confirms": false,
+          "titles": [
+            "u.s. reports: orders, 510 u.s. 801 (1993).",
+            "u.s. reports: table of cases reported, 510 u.s. xxix (1993)."
+          ]
+        },
+        "static.case.law/cases": {
+          "status": 200,
+          "confirms": false,
+          "name": "vereen v. united states",
+          "independent_of_primary": false
+        }
+      }
+    },
+    {
+      "vol": 505,
+      "page": 247,
+      "name": "American National Red Cross v. S. G.",
+      "token": "american",
+      "lii_serves": true,
+      "probes": {
+        "courtlistener": {
+          "status": 429,
+          "confirms": false
+        },
+        "loc.gov": {
+          "status": 200,
+          "n_results": 10,
+          "confirms": true,
+          "titles": [
+            "u.s. reports: decisions on petitions, 247 u.s. 505 (1918).",
+            "u.s. reports: american nat. red cross v. s. g., 505 u.s. 247 (1992)."
+          ]
+        },
+        "static.case.law/cases": {
+          "status": 200,
+          "confirms": true,
+          "name": "american national red cross v. s. g.",
+          "independent_of_primary": false
+        }
+      }
+    },
+    {
+      "vol": 470,
+      "page": 451,
+      "name": "National Railroad Passenger Corp. v. Atchison, Topeka & Santa Fe Railway Co.",
+      "token": "passenger",
+      "lii_serves": true,
+      "probes": {
+        "courtlistener": {
+          "status": 200,
+          "count": 1,
+          "n_rows": 1,
+          "confirms": true,
+          "names": [
+            "national railroad passenger corp. v. atchison, topeka & santa fe railway co."
+          ]
+        },
+        "loc.gov": {
+          "status": 503,
+          "confirms": false
+        },
+        "static.case.law/cases": {
+          "status": 200,
+          "confirms": true,
+          "name": "national railroad passenger corp. v. atchison, topeka & santa fe railw",
+          "independent_of_primary": false
+        }
+      }
+    },
+    {
+      "vol": 520,
+      "page": 681,
+      "name": "Clinton v. Jones",
+      "token": "clinton",
+      "lii_serves": true,
+      "probes": {
+        "courtlistener": {
+          "status": 200,
+          "count": 1,
+          "n_rows": 1,
+          "confirms": true,
+          "names": [
+            "clinton v. jones"
+          ]
+        },
+        "loc.gov": {
+          "status": 429,
+          "confirms": false
+        },
+        "static.case.law/cases": {
+          "status": 200,
+          "confirms": true,
+          "name": "clinton v. jones",
+          "independent_of_primary": false
+        }
+      }
+    },
+    {
+      "vol": 540,
+      "page": 1035,
+      "name": "Torres v. Mullin",
+      "token": "torres",
+      "lii_serves": true,
+      "probes": {
+        "courtlistener": {
+          "status": 200,
+          "count": 3,
+          "n_rows": 3,
+          "confirms": true,
+          "names": [
+            "arizona v. finch",
+            "torres v. mullin, warden"
+          ]
+        },
+        "loc.gov": {
+          "status": 429,
+          "confirms": false
+        },
+        "static.case.law/cases": {
+          "status": 200,
+          "confirms": false,
+          "name": "arizona v. finch",
+          "independent_of_primary": false
+        }
+      }
+    },
+    {
+      "vol": 540,
+      "page": 375,
+      "name": "Castro v. United States",
+      "token": "castro",
+      "lii_serves": true,
+      "probes": {
+        "courtlistener": {
+          "status": 200,
+          "count": 1,
+          "n_rows": 1,
+          "confirms": true,
+          "names": [
+            "castro v. united states"
+          ]
+        },
+        "loc.gov": {
+          "status": 429,
+          "confirms": false
+        },
+        "static.case.law/cases": {
+          "status": 200,
+          "confirms": true,
+          "name": "castro v. united states",
+          "independent_of_primary": false
+        }
+      }
+    },
+    {
+      "vol": 490,
+      "page": 1040,
+      "name": "Laws v. Armontrout",
+      "token": "armontrout",
+      "lii_serves": true,
+      "probes": {
+        "courtlistener": {
+          "status": 200,
+          "count": 9,
+          "n_rows": 9,
+          "confirms": true,
+          "names": [
+            "caro v. california",
+            "baron v. united states"
+          ]
+        },
+        "loc.gov": {
+          "status": 429,
+          "confirms": false
+        },
+        "static.case.law/cases": {
+          "status": 200,
+          "confirms": false,
+          "name": "ward petroleum corp. v. louisiana land & exploration co.",
+          "independent_of_primary": false
+        }
+      }
+    },
+    {
+      "vol": 530,
+      "page": 327,
+      "name": "Miller v. French",
+      "token": "miller",
+      "lii_serves": true,
+      "probes": {
+        "courtlistener": {
+          "status": 200,
+          "count": 1,
+          "n_rows": 1,
+          "confirms": true,
+          "names": [
+            "miller v. french"
+          ]
+        },
+        "loc.gov": {
+          "status": 429,
+          "confirms": false
+        },
+        "static.case.law/cases": {
+          "status": 200,
+          "confirms": true,
+          "name": "miller v. french",
+          "independent_of_primary": false
+        }
+      }
+    },
+    {
+      "vol": 524,
+      "page": 417,
+      "name": "Clinton v. City of New York",
+      "token": "clinton",
+      "lii_serves": true,
+      "probes": {
+        "courtlistener": {
+          "status": 200,
+          "count": 1,
+          "n_rows": 1,
+          "confirms": true,
+          "names": [
+            "clinton v. city of new york"
+          ]
+        },
+        "loc.gov": {
+          "status": 429,
+          "confirms": false
+        },
+        "static.case.law/cases": {
+          "status": 200,
+          "confirms": true,
+          "name": "clinton v. city of new york",
+          "independent_of_primary": false
+        }
+      }
+    },
+    {
+      "vol": 510,
+      "page": 1319,
+      "name": "Packwood v. Senate Select Committee on Ethics",
+      "token": "committee",
+      "lii_serves": true,
+      "probes": {
+        "courtlistener": {
+          "status": 200,
+          "count": 1,
+          "n_rows": 1,
+          "confirms": true,
+          "names": [
+            "packwood v. senate select committee on ethics"
+          ]
+        },
+        "loc.gov": {
+          "status": 429,
+          "confirms": false
+        },
+        "static.case.law/cases": {
+          "status": 200,
+          "confirms": true,
+          "name": "packwood v. senate select committee on ethics",
+          "independent_of_primary": false
+        }
+      }
+    },
+    {
+      "vol": 490,
+      "page": 163,
+      "name": "Cotton Petroleum Corp. v. New Mexico",
+      "token": "petroleum",
+      "lii_serves": true,
+      "probes": {
+        "courtlistener": {
+          "status": 200,
+          "count": 1,
+          "n_rows": 1,
+          "confirms": true,
+          "names": [
+            "cotton petroleum corp. v. new mexico"
+          ]
+        },
+        "loc.gov": {
+          "status": 429,
+          "confirms": false
+        },
+        "static.case.law/cases": {
+          "status": 200,
+          "confirms": true,
+          "name": "cotton petroleum corp. v. new mexico",
+          "independent_of_primary": false
+        }
+      }
+    },
+    {
+      "vol": 475,
+      "page": 657,
+      "name": "United States v. City of Fulton",
+      "token": "fulton",
+      "lii_serves": true,
+      "probes": {
+        "courtlistener": {
+          "status": 200,
+          "count": 1,
+          "n_rows": 1,
+          "confirms": true,
+          "names": [
+            "united states v. city of fulton"
+          ]
+        },
+        "loc.gov": {
+          "status": 429,
+          "confirms": false
+        },
+        "static.case.law/cases": {
+          "status": 200,
+          "confirms": true,
+          "name": "united states v. city of fulton",
+          "independent_of_primary": false
+        }
+      }
+    },
+    {
+      "vol": 480,
+      "page": 370,
+      "name": "Stringfellow v. Concerned Neighbors in Action",
+      "token": "stringfellow",
+      "lii_serves": true,
+      "probes": {
+        "courtlistener": {
+          "status": 200,
+          "count": 1,
+          "n_rows": 1,
+          "confirms": true,
+          "names": [
+            "stringfellow v. concerned neighbors in action"
+          ]
+        },
+        "loc.gov": {
+          "status": 429,
+          "confirms": false
+        },
+        "static.case.law/cases": {
+          "status": 200,
+          "confirms": true,
+          "name": "stringfellow v. concerned neighbors in action",
+          "independent_of_primary": false
+        }
+      }
+    },
+    {
+      "vol": 504,
+      "page": 127,
+      "name": "Riggins v. Nevada",
+      "token": "riggins",
+      "lii_serves": true,
+      "probes": {
+        "courtlistener": {
+          "status": 200,
+          "count": 1,
+          "n_rows": 1,
+          "confirms": true,
+          "names": [
+            "riggins v. nevada"
+          ]
+        },
+        "loc.gov": {
+          "status": 429,
+          "confirms": false
+        },
+        "static.case.law/cases": {
+          "status": 200,
+          "confirms": true,
+          "name": "riggins v. nevada",
+          "independent_of_primary": false
+        }
+      }
+    },
+    {
+      "vol": 510,
+      "page": 471,
+      "name": "Federal Deposit Insurance v. Meyer",
+      "token": "insurance",
+      "lii_serves": true,
+      "probes": {
+        "courtlistener": {
+          "status": 200,
+          "count": 1,
+          "n_rows": 1,
+          "confirms": true,
+          "names": [
+            "federal deposit insurance v. meyer"
+          ]
+        },
+        "loc.gov": {
+          "status": 429,
+          "confirms": false
+        },
+        "static.case.law/cases": {
+          "status": 200,
+          "confirms": true,
+          "name": "federal deposit insurance v. meyer",
+          "independent_of_primary": false
+        }
+      }
+    },
+    {
+      "vol": 460,
+      "page": 73,
+      "name": "Connecticut v. Johnson",
+      "token": "connecticut",
+      "lii_serves": true,
+      "probes": {
+        "courtlistener": {
+          "status": 200,
+          "count": 1,
+          "n_rows": 1,
+          "confirms": true,
+          "names": [
+            "connecticut v. johnson"
+          ]
+        },
+        "loc.gov": {
+          "status": 429,
+          "confirms": false
+        },
+        "static.case.law/cases": {
+          "status": 200,
+          "confirms": true,
+          "name": "connecticut v. johnson",
+          "independent_of_primary": false
+        }
+      }
+    }
+  ],
+  "operators": {
+    "courtlistener": {
+      "control_confirm": 18,
+      "n_control": 20,
+      "control_rate": 0.9,
+      "gap_confirm": 50,
+      "n_gap": 52,
+      "gap_rate": 0.9615,
+      "instrument_valid": true
+    },
+    "loc.gov": {
+      "control_confirm": 5,
+      "n_control": 20,
+      "control_rate": 0.25,
+      "gap_confirm": 12,
+      "n_gap": 52,
+      "gap_rate": 0.2308,
+      "instrument_valid": false
+    },
+    "static.case.law/cases": {
+      "control_confirm": 17,
+      "n_control": 20,
+      "control_rate": 0.85,
+      "gap_confirm": 24,
+      "n_gap": 52,
+      "gap_rate": 0.4615,
+      "instrument_valid": false
+    }
+  },
+  "viable_replacements": [
+    "courtlistener"
+  ],
+  "verdict": "LII can be replaced by courtlistener; coverage gap closes"
+}

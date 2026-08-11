@@ -1423,14 +1423,71 @@ def gen_legal(vols=(504, 505, 498, 510, 512, 517)):
         answer = str(page)
         token = _cite_token(best["name"])
 
+        # Cornell LII does not carry every page of every volume. Measured on
+        # 132 case-start pages that are correct by construction, only 80
+        # returned HTTP 200 (0.6061); volumes 545, 550 and 555 returned 404 on
+        # every page sampled, and only 2 of 22 volumes were complete
+        # (legalpages.json). The page selection above is not the defect: a row
+        # is only accepted when _official(c) equals f"{vol} U.S. {first_page}".
+        #
+        # Three candidate replacements were measured on the 52 LII-gap pages
+        # with a 20-page LII-served positive control (legalops.json). Only one
+        # cleared a 0.90 control rate, and it is unusable here:
+        #
+        #   operator                    control      gap    verdict
+        #   CourtListener (Free Law)    18/20 .90   .9615   best coverage but
+        #                                                   ALREADY the confirming
+        #                                                   witness below; reusing
+        #                                                   it drops the trap to two
+        #                                                   operators and fails
+        #                                                   validate_trap(min=3)
+        #   static.case.law/cases       17/20 .85   .4615   same operator as the
+        #                                                   collection, not independent
+        #   Library of Congress          5/20 .25   .2308   weak, but the only
+        #                                                   INDEPENDENT third operator
+        #                                                   that works at all
+        #
+        # LOC is therefore taken on purpose despite a 0.23 hit rate. Its failure
+        # mode is a miss, not a wrong answer: when it does not confirm we fall
+        # through to the next volume. Correctness is still carried by the
+        # CourtListener check below, which requires exactly one opinion at the
+        # citation and the token in its case name. Measured end to end, this
+        # lifts the seed grid from 3 of 5 shipping to 5 of 5 (legalfix.json).
+        #
+        # LOC titles read "u.s. reports: {case}, {vol} u.s. {page} ({year})."
+        # and a citation query returns ten titles from the SAME volume, so
+        # requiring the token alone would let a DIFFERENT case confirm the page.
+        # Both the token and the literal citation must occur in one title.
+        cite_str = _norm(f"{vol} u.s. {page}")
         lii = f"https://www.law.cornell.edu/supremecourt/text/{vol}/{page}"
+        loc = ("https://www.loc.gov/collections/united-states-reports/"
+               "?q=" + up.quote(f"{vol} U.S. {page}") + "&fo=json&c=10")
+        conf_url = None
+        conf_operator = None
         try:
             html = net.fetch(lii, timeout=90, attempts=3)
+            if token in _norm(html):
+                conf_url = lii
+                conf_operator = "Cornell Law School Legal Information Institute"
+            else:
+                tried.append(f"vol {vol}: LII page {page} does not name {token!r}")
         except Exception as e:  # noqa: BLE001
             tried.append(f"vol {vol}: LII {type(e).__name__} for {page}")
-            continue
-        if token not in _norm(html):
-            tried.append(f"vol {vol}: LII page {page} does not name {token!r}")
+        if conf_url is None:
+            try:
+                js = net.get_json(loc, timeout=90, attempts=3)
+                titles = [_norm(r.get("title") or "")
+                          for r in (js.get("results") or [])]
+                if any(token in t and cite_str in t for t in titles):
+                    conf_url = loc
+                    conf_operator = "US Library of Congress"
+                else:
+                    tried.append(f"vol {vol}: Library of Congress does not name "
+                                 f"{token!r} at {vol} U.S. {page}")
+            except Exception as e:  # noqa: BLE001
+                tried.append(f"vol {vol}: Library of Congress "
+                             f"{type(e).__name__} for {page}")
+        if conf_url is None:
             continue
 
         cl_q = ('https://www.courtlistener.com/api/rest/v4/search/'
@@ -1449,26 +1506,32 @@ def gen_legal(vols=(504, 505, 498, 510, 512, 517)):
                          f"{rows[0].get('caseName')!r} at that cite")
             continue
 
-        srcs = [_CAP_VOL.format(vol=vol), lii, cl_q]
+        srcs = [_CAP_VOL.format(vol=vol), conf_url, cl_q]
         return Candidate(
             category="legal",
             primary_operator="Harvard Law School Library Innovation Lab", field="United States Reports page", answer=answer,
             entity=best["name"], n_base=len(multi), sources=srcs,
-            confirming_sources=[lii, cl_q],
+            confirming_sources=[conf_url, cl_q],
             api_proof_argument=(
                 f"The volume file is published as one undivided list and carries no "
                 f"alphabetical index, so all {len(multi)} multi-page cases in volume {vol} "
                 "must be read out and sorted by name before the first one can be named, "
                 "and only then does its starting page become visible."),
-            confirmation=(f"Cornell LII serves the text of {best['name']} at "
+            confirmation=(f"{conf_operator} serves the text of {best['name']} at "
                           f"{vol} U.S. {page}, and the Free Law Project citation index "
                           f"resolves that citation to the same case"),
             facts={"volume": vol, "case": best["name"], "page": page,
                    "decision_date": best["date"], "n_multi": len(multi),
                    "n_volume": len(cases),
+                   "text_of_record": conf_operator,
                    "provenance_note": ("CourtListener ingested Caselaw Access Project "
-                                       "data in 2024, so treat Cornell LII as the "
-                                       "independent text of record")},
+                                       f"data in 2024, so treat {conf_operator} as the "
+                                       "independent text of record. Cornell LII carries "
+                                       "only 0.6061 of correctly constructed case-start "
+                                       "pages, so the Library of Congress bound-volume "
+                                       "digitisation is accepted in its place, requiring "
+                                       "the case name and the literal citation in one "
+                                       "title")},
             prompt=build_prompt(
                 "The Caselaw Access Project distributes, as one machine-readable file, "
                 f"metadata for every case reported in volume {vol} of United States "

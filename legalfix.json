@@ -1,0 +1,80 @@
+[
+  {
+    "idx": 0,
+    "seed": {},
+    "ship": true,
+    "answer": "768",
+    "entity": "Allied-Signal, Inc. ex rel. Bendix Corp. v. Director, Division of Taxation",
+    "n_base": 51,
+    "text_of_record": "Cornell Law School Legal Information Institute",
+    "vol": 504
+  },
+  {
+    "idx": 1,
+    "seed": {
+      "vols": [
+        520,
+        524,
+        530,
+        533
+      ]
+    },
+    "ship": true,
+    "answer": "83",
+    "entity": "Adams v. Robertson",
+    "n_base": 69,
+    "text_of_record": "US Library of Congress",
+    "vol": 520
+  },
+  {
+    "idx": 2,
+    "seed": {
+      "vols": [
+        540,
+        545,
+        550,
+        555
+      ]
+    },
+    "ship": true,
+    "answer": "75",
+    "entity": "Alaska v. United States",
+    "n_base": 40,
+    "text_of_record": "US Library of Congress",
+    "vol": 545
+  },
+  {
+    "idx": 3,
+    "seed": {
+      "vols": [
+        460,
+        465,
+        470,
+        475
+      ]
+    },
+    "ship": true,
+    "answer": "200",
+    "entity": "Antone v. Dugger",
+    "n_base": 60,
+    "text_of_record": "Cornell Law School Legal Information Institute",
+    "vol": 465
+  },
+  {
+    "idx": 4,
+    "seed": {
+      "vols": [
+        480,
+        485,
+        490,
+        495
+      ]
+    },
+    "ship": true,
+    "answer": "919",
+    "entity": "Andrews v. Shulsen",
+    "n_base": 91,
+    "text_of_record": "Cornell Law School Legal Information Institute",
+    "vol": 485
+  }
+]

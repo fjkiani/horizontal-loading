@@ -418,7 +418,7 @@
   ],
   "api_proof": true,
   "api_proof_argument": "The volume file is published as one undivided list and carries no alphabetical index, so all 51 multi-page cases in volume 504 must be read out and sorted by name before the first one can be named, and only then does its starting page become visible.",
-  "confirmation": "Cornell LII serves the text of Allied-Signal, Inc. ex rel. Bendix Corp. v. Director, Division of Taxation at 504 U.S. 768, and the Free Law Project citation index resolves that citation to the same case",
+  "confirmation": "Cornell Law School Legal Information Institute serves the text of Allied-Signal, Inc. ex rel. Bendix Corp. v. Director, Division of Taxation at 504 U.S. 768, and the Free Law Project citation index resolves that citation to the same case",
   "prompt": "The Caselaw Access Project distributes, as one machine-readable file, metadata for every case reported in volume 504 of United States Reports, giving each case a short name together with the first and last printed page it occupies. Consider only those cases in that volume which run to more than a single printed page. Order the short names of those cases alphabetically and take whichever name comes first. Report the printed page of United States Reports on which that first-named case begins. Confirm the page against an independently published text of the same decision. Answer with the page number alone, with no volume, no reporter abbreviation and no other words.",
   "source_operators": [
    "Cornell University",
@@ -464,7 +464,8 @@
    "decision_date": "1992-06-15",
    "n_multi": 51,
    "n_volume": 913,
-   "provenance_note": "CourtListener ingested Caselaw Access Project data in 2024, so treat Cornell LII as the independent text of record"
+   "text_of_record": "Cornell Law School Legal Information Institute",
+   "provenance_note": "CourtListener ingested Caselaw Access Project data in 2024, so treat Cornell Law School Legal Information Institute as the independent text of record. Cornell LII carries only 0.6061 of correctly constructed case-start pages, so the Library of Congress bound-volume digitisation is accepted in its place, requiring the case name and the literal citation in one title"
   },
   "verified": true
  },

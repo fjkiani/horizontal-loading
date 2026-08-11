@@ -1,0 +1,1315 @@
+{
+  "generated": "2026-08-11T15:54:11Z",
+  "seeds": [
+    {
+      "idx": 0,
+      "seed": {},
+      "shipped": true,
+      "answer": "768",
+      "entity": "Allied-Signal, Inc. ex rel. Bendix Corp. v. Director, Division of Taxation"
+    },
+    {
+      "idx": 1,
+      "seed": {
+        "vols": [
+          520,
+          524,
+          530,
+          533
+        ]
+      },
+      "shipped": false,
+      "error": "TrapUnavailable: legal: no volume isolated a confirmable case; tried vol 520: LII FetchError for 83; vol 524: LII FetchError for 945; vol 530: LII FetchError for 1269; vol 533: LII FetchError for 146"
+    },
+    {
+      "idx": 2,
+      "seed": {
+        "vols": [
+          540,
+          545,
+          550,
+          555
+        ]
+      },
+      "shipped": false,
+      "error": "TrapUnavailable: legal: no volume isolated a confirmable case; tried vol 540: CourtListener returned 37 for the cite; vol 545: LII FetchError for 75; vol 550: LII FetchError for 233; vol 555: LII FetchError for 70"
+    },
+    {
+      "idx": 3,
+      "seed": {
+        "vols": [
+          460,
+          465,
+          470,
+          475
+        ]
+      },
+      "shipped": true,
+      "answer": "200",
+      "entity": "Antone v. Dugger"
+    },
+    {
+      "idx": 4,
+      "seed": {
+        "vols": [
+          480,
+          485,
+          490,
+          495
+        ]
+      },
+      "shipped": true,
+      "answer": "919",
+      "entity": "Andrews v. Shulsen"
+    }
+  ],
+  "volumes": [
+    {
+      "vol": 460,
+      "n_cap_cases": 762,
+      "n_multi_page": 55,
+      "winner": {
+        "name": "Aloha Airlines, Inc. v. Director of Taxation of Hawaii",
+        "page": 1078,
+        "cite": "460 U.S. 1078",
+        "lii_status": 404,
+        "token": "airlines",
+        "token_in_page": null
+      },
+      "coverage_sample": [
+        {
+          "page": 73,
+          "name": "Connecticut v. Johnson",
+          "status": 200,
+          "token_in_page": true
+        },
+        {
+          "page": 204,
+          "name": "White v. Massachusetts Council of Construction Employers, Inc.",
+          "status": 200,
+          "token_in_page": true
+        },
+        {
+          "page": 575,
+          "name": "Minneapolis Star & Tribune Co. v. Minnesota Commissioner of Revenue",
+          "status": 200,
+          "token_in_page": true
+        },
+        {
+          "page": 289,
+          "name": "Block v. Neal",
+          "status": 200,
+          "token_in_page": true
+        },
+        {
+          "page": 1033,
+          "name": "Michigan v. Clifford",
+          "status": 404,
+          "token_in_page": null
+        },
+        {
+          "page": 536,
+          "name": "Washington v. United States",
+          "status": 200,
+          "token_in_page": true
+        }
+      ],
+      "n_sampled": 6,
+      "n_http_200": 5,
+      "n_token_present": 5,
+      "lii_covers_volume": false
+    },
+    {
+      "vol": 465,
+      "n_cap_cases": 902,
+      "n_multi_page": 60,
+      "winner": {
+        "name": "Antone v. Dugger",
+        "page": 200,
+        "cite": "465 U.S. 200",
+        "lii_status": 200,
+        "token": "antone",
+        "token_in_page": true
+      },
+      "coverage_sample": [
+        {
+          "page": 1075,
+          "name": "Edmisten v. Gingles",
+          "status": 404,
+          "token_in_page": null
+        },
+        {
+          "page": 513,
+          "name": "National Labor Relations Board v. Bildisco & Bildisco",
+          "status": 200,
+          "token_in_page": true
+        },
+        {
+          "page": 1056,
+          "name": "Lehman v. Trout",
+          "status": 200,
+          "token_in_page": true
+        },
+        {
+          "page": 200,
+          "name": "Antone v. Dugger",
+          "status": 200,
+          "token_in_page": true
+        },
+        {
+          "page": 805,
+          "name": "United States v. Arthur Young & Co.",
+          "status": 200,
+          "token_in_page": true
+        },
+        {
+          "page": 668,
+          "name": "Lynch v. Donnelly",
+          "status": 200,
+          "token_in_page": true
+        }
+      ],
+      "n_sampled": 6,
+      "n_http_200": 5,
+      "n_token_present": 5,
+      "lii_covers_volume": false
+    },
+    {
+      "vol": 470,
+      "n_cap_cases": 492,
+      "n_multi_page": 54,
+      "winner": {
+        "name": "Air France v. Saks",
+        "page": 392,
+        "cite": "470 U.S. 392",
+        "lii_status": 200,
+        "token": "france",
+        "token_in_page": true
+      },
+      "coverage_sample": [
+        {
+          "page": 184,
+          "name": "Heckler v. Turner",
+          "status": 200,
+          "token_in_page": true
+        },
+        {
+          "page": 1031,
+          "name": "Peralta Shipping Corp. v. Smith & Johnson (Shipping) Corp.",
+          "status": 200,
+          "token_in_page": true
+        },
+        {
+          "page": 564,
+          "name": "Anderson v. City of Bessemer City",
+          "status": 200,
+          "token_in_page": true
+        },
+        {
+          "page": 1023,
+          "name": "Lindsey v. Alabama",
+          "status": 404,
+          "token_in_page": null
+        },
+        {
+          "page": 451,
+          "name": "National Railroad Passenger Corp. v. Atchison, Topeka & Santa Fe Railway Co.",
+          "status": 200,
+          "token_in_page": true
+        },
+        {
+          "page": 68,
+          "name": "Ake v. Oklahoma",
+          "status": 200,
+          "token_in_page": true
+        }
+      ],
+      "n_sampled": 6,
+      "n_http_200": 5,
+      "n_token_present": 5,
+      "lii_covers_volume": false
+    },
+    {
+      "vol": 475,
+      "n_cap_cases": 1235,
+      "n_multi_page": 82,
+      "winner": {
+        "name": "Aetna Life Insurance v. Lavoie",
+        "page": 813,
+        "cite": "475 U.S. 813",
+        "lii_status": 200,
+        "token": "insurance",
+        "token_in_page": true
+      },
+      "coverage_sample": [
+        {
+          "page": 657,
+          "name": "United States v. City of Fulton",
+          "status": 200,
+          "token_in_page": true
+        },
+        {
+          "page": 292,
+          "name": "Chicago Teachers Union, Local No. 1 v. Hudson",
+          "status": 200,
+          "token_in_page": true
+        },
+        {
+          "page": 1134,
+          "name": "Clark v. Florida",
+          "status": 200,
+          "token_in_page": true
+        },
+        {
+          "page": 1068,
+          "name": "Kemp v. Potts",
+          "status": 200,
+          "token_in_page": true
+        },
+        {
+          "page": 1006,
+          "name": "Nantahala Power & Light Co. v. Thornburg",
+          "status": 404,
+          "token_in_page": null
+        },
+        {
+          "page": 335,
+          "name": "Malley v. Briggs",
+          "status": 200,
+          "token_in_page": true
+        }
+      ],
+      "n_sampled": 6,
+      "n_http_200": 5,
+      "n_token_present": 5,
+      "lii_covers_volume": false
+    },
+    {
+      "vol": 480,
+      "n_cap_cases": 532,
+      "n_multi_page": 46,
+      "winner": {
+        "name": "Adkins v. Chesapeake & Ohio Railway Co.",
+        "page": 942,
+        "cite": "480 U.S. 942",
+        "lii_status": 404,
+        "token": "chesapeake",
+        "token_in_page": null
+      },
+      "coverage_sample": [
+        {
+          "page": 678,
+          "name": "Alaska Airlines, Inc. v. Brock",
+          "status": 200,
+          "token_in_page": true
+        },
+        {
+          "page": 917,
+          "name": "Japan Air Lines Co. v. Dole",
+          "status": 404,
+          "token_in_page": null
+        },
+        {
+          "page": 370,
+          "name": "Stringfellow v. Concerned Neighbors in Action",
+          "status": 200,
+          "token_in_page": true
+        },
+        {
+          "page": 9,
+          "name": "Iowa Mutual Insurance v. LaPlante",
+          "status": 200,
+          "token_in_page": true
+        },
+        {
+          "page": 39,
+          "name": "Pennsylvania v. Ritchie",
+          "status": 200,
+          "token_in_page": true
+        },
+        {
+          "page": 700,
+          "name": "United States v. Cherokee Nation",
+          "status": 200,
+          "token_in_page": true
+        }
+      ],
+      "n_sampled": 6,
+      "n_http_200": 5,
+      "n_token_present": 5,
+      "lii_covers_volume": false
+    },
+    {
+      "vol": 485,
+      "n_cap_cases": 1031,
+      "n_multi_page": 91,
+      "winner": {
+        "name": "Andrews v. Shulsen",
+        "page": 919,
+        "cite": "485 U.S. 919",
+        "lii_status": 200,
+        "token": "andrews",
+        "token_in_page": true
+      },
+      "coverage_sample": [
+        {
+          "page": 1031,
+          "name": "Modjeski v. Carter",
+          "status": 200,
+          "token_in_page": true
+        },
+        {
+          "page": 1024,
+          "name": "Monroe v. Butler",
+          "status": 200,
+          "token_in_page": true
+        },
+        {
+          "page": 929,
+          "name": "Williamson v. Florida",
+          "status": 404,
+          "token_in_page": null
+        },
+        {
+          "page": 624,
+          "name": "Hicks ex rel. Feiock v. Feiock",
+          "status": 200,
+          "token_in_page": true
+        },
+        {
+          "page": 80,
+          "name": "Peralta v. Heights Medical Center, Inc.",
+          "status": 200,
+          "token_in_page": true
+        },
+        {
+          "page": 589,
+          "name": "Regents of the University v. Public Employment Relations Board",
+          "status": 200,
+          "token_in_page": true
+        }
+      ],
+      "n_sampled": 6,
+      "n_http_200": 5,
+      "n_token_present": 5,
+      "lii_covers_volume": false
+    },
+    {
+      "vol": 490,
+      "n_cap_cases": 1149,
+      "n_multi_page": 76,
+      "winner": {
+        "name": "Adams v. Avco Corp.",
+        "page": 1103,
+        "cite": "490 U.S. 1103",
+        "lii_status": 404,
+        "token": "adams",
+        "token_in_page": null
+      },
+      "coverage_sample": [
+        {
+          "page": 1040,
+          "name": "Laws v. Armontrout",
+          "status": 200,
+          "token_in_page": true
+        },
+        {
+          "page": 1011,
+          "name": "Duckworth v. Dudley",
+          "status": 404,
+          "token_in_page": null
+        },
+        {
+          "page": 794,
+          "name": "Alabama v. Smith",
+          "status": 200,
+          "token_in_page": true
+        },
+        {
+          "page": 877,
+          "name": "Sullivan v. Hudson",
+          "status": 200,
+          "token_in_page": true
+        },
+        {
+          "page": 163,
+          "name": "Cotton Petroleum Corp. v. New Mexico",
+          "status": 200,
+          "token_in_page": true
+        },
+        {
+          "page": 1029,
+          "name": "Pueblo of Acoma v. Padilla",
+          "status": 200,
+          "token_in_page": true
+        }
+      ],
+      "n_sampled": 6,
+      "n_http_200": 5,
+      "n_token_present": 5,
+      "lii_covers_volume": false
+    },
+    {
+      "vol": 495,
+      "n_cap_cases": 664,
+      "n_multi_page": 43,
+      "winner": {
+        "name": "American Federation of Government Employees v. Skinner",
+        "page": 923,
+        "cite": "495 U.S. 923",
+        "lii_status": 404,
+        "token": "federation",
+        "token_in_page": null
+      },
+      "coverage_sample": [
+        {
+          "page": 271,
+          "name": "California v. American Stores Co.",
+          "status": 200,
+          "token_in_page": true
+        },
+        {
+          "page": 911,
+          "name": "Swindler v. Lockhart",
+          "status": 200,
+          "token_in_page": true
+        },
+        {
+          "page": 14,
+          "name": "New York v. Harris",
+          "status": 200,
+          "token_in_page": true
+        },
+        {
+          "page": 731,
+          "name": "Demosthenes v. Baal",
+          "status": 200,
+          "token_in_page": true
+        },
+        {
+          "page": 949,
+          "name": "Mikesell v. Department of Transportation",
+          "status": 404,
+          "token_in_page": null
+        },
+        {
+          "page": 926,
+          "name": "Benitez v. Port Authority Trans-Hudson Corp.",
+          "status": 404,
+          "token_in_page": null
+        }
+      ],
+      "n_sampled": 6,
+      "n_http_200": 4,
+      "n_token_present": 4,
+      "lii_covers_volume": false
+    },
+    {
+      "vol": 498,
+      "n_cap_cases": 3429,
+      "n_multi_page": 106,
+      "winner": {
+        "name": "Air Courier Conference of America v. American Postal Workers Union",
+        "page": 517,
+        "cite": "498 U.S. 517",
+        "lii_status": 200,
+        "token": "conference",
+        "token_in_page": true
+      },
+      "coverage_sample": [
+        {
+          "page": 439,
+          "name": "Dennis v. Higgins",
+          "status": 200,
+          "token_in_page": true
+        },
+        {
+          "page": 805,
+          "name": "In re Flowers",
+          "status": 404,
+          "token_in_page": null
+        },
+        {
+          "page": 103,
+          "name": "Moskal v. United States",
+          "status": 200,
+          "token_in_page": true
+        },
+        {
+          "page": 1080,
+          "name": "In re Proffitt",
+          "status": 404,
+          "token_in_page": null
+        },
+        {
+          "page": 1016,
+          "name": "International Union of Operating Engineers, Local 406 v. Guidry",
+          "status": 404,
+          "token_in_page": null
+        },
+        {
+          "page": 1109,
+          "name": "Peer International Corp. v. Pausa Records, Inc.",
+          "status": 404,
+          "token_in_page": null
+        }
+      ],
+      "n_sampled": 6,
+      "n_http_200": 2,
+      "n_token_present": 2,
+      "lii_covers_volume": false
+    },
+    {
+      "vol": 504,
+      "n_cap_cases": 913,
+      "n_multi_page": 51,
+      "winner": {
+        "name": "Allied-Signal, Inc. ex rel. Bendix Corp. v. Director, Division of Taxation",
+        "page": 768,
+        "cite": "504 U.S. 768",
+        "lii_status": 200,
+        "token": "director",
+        "token_in_page": true
+      },
+      "coverage_sample": [
+        {
+          "page": 353,
+          "name": "Fort Gratiot Sanitary Landfill, Inc. v. Michigan Department of Natural Resources",
+          "status": 200,
+          "token_in_page": true
+        },
+        {
+          "page": 937,
+          "name": "Black v. Collins",
+          "status": 404,
+          "token_in_page": null
+        },
+        {
+          "page": 71,
+          "name": "Foucha v. Louisiana",
+          "status": 200,
+          "token_in_page": true
+        },
+        {
+          "page": 655,
+          "name": "United States v. Alvarez-Machain",
+          "status": 200,
+          "token_in_page": true
+        },
+        {
+          "page": 428,
+          "name": "Burdick v. Takushi",
+          "status": 200,
+          "token_in_page": true
+        },
+        {
+          "page": 127,
+          "name": "Riggins v. Nevada",
+          "status": 200,
+          "token_in_page": true
+        }
+      ],
+      "n_sampled": 6,
+      "n_http_200": 5,
+      "n_token_present": 5,
+      "lii_covers_volume": false
+    },
+    {
+      "vol": 505,
+      "n_cap_cases": 456,
+      "n_multi_page": 48,
+      "winner": {
+        "name": "Adkins v. General Motors Corp.",
+        "page": 1230,
+        "cite": "505 U.S. 1230",
+        "lii_status": 404,
+        "token": "general",
+        "token_in_page": null
+      },
+      "coverage_sample": [
+        {
+          "page": 247,
+          "name": "American National Red Cross v. S. G.",
+          "status": 200,
+          "token_in_page": true
+        },
+        {
+          "page": 1244,
+          "name": "Medina v. California",
+          "status": 404,
+          "token_in_page": null
+        },
+        {
+          "page": 1,
+          "name": "Nordlinger v. Hahn",
+          "status": 200,
+          "token_in_page": true
+        },
+        {
+          "page": 1229,
+          "name": "Parker v. King",
+          "status": 404,
+          "token_in_page": null
+        },
+        {
+          "page": 1232,
+          "name": "Wetherell v. De Grandy",
+          "status": 404,
+          "token_in_page": null
+        },
+        {
+          "page": 88,
+          "name": "Gade v. National Solid Wastes Management Ass'n",
+          "status": 200,
+          "token_in_page": true
+        }
+      ],
+      "n_sampled": 6,
+      "n_http_200": 3,
+      "n_token_present": 3,
+      "lii_covers_volume": false
+    },
+    {
+      "vol": 510,
+      "n_cap_cases": 4746,
+      "n_multi_page": 94,
+      "winner": {
+        "name": "ABF Freight System, Inc. v. National Labor Relations Board",
+        "page": 317,
+        "cite": "510 U.S. 317",
+        "lii_status": 200,
+        "token": "relations",
+        "token_in_page": true
+      },
+      "coverage_sample": [
+        {
+          "page": 126,
+          "name": "Oklahoma v. New Mexico",
+          "status": 200,
+          "token_in_page": true
+        },
+        {
+          "page": 1319,
+          "name": "Packwood v. Senate Select Committee on Ethics",
+          "status": 200,
+          "token_in_page": true
+        },
+        {
+          "page": 1082,
+          "name": "Williamson v. United States",
+          "status": 200,
+          "token_in_page": true
+        },
+        {
+          "page": 1034,
+          "name": "In re Disbarment of Sacks",
+          "status": 200,
+          "token_in_page": true
+        },
+        {
+          "page": 471,
+          "name": "Federal Deposit Insurance v. Meyer",
+          "status": 200,
+          "token_in_page": true
+        },
+        {
+          "page": 984,
+          "name": "Grynberg v. United States",
+          "status": 200,
+          "token_in_page": true
+        }
+      ],
+      "n_sampled": 6,
+      "n_http_200": 6,
+      "n_token_present": 6,
+      "lii_covers_volume": true
+    },
+    {
+      "vol": 512,
+      "n_cap_cases": 718,
+      "n_multi_page": 58,
+      "winner": {
+        "name": "Arizona v. Evans",
+        "page": 1286,
+        "cite": "512 U.S. 1286",
+        "lii_status": 404,
+        "token": "arizona",
+        "token_in_page": null
+      },
+      "coverage_sample": [
+        {
+          "page": 1278,
+          "name": "Turner Broadcasting System, Inc. v. Federal Communications Commission",
+          "status": 404,
+          "token_in_page": null
+        },
+        {
+          "page": 246,
+          "name": "Hawaiian Airlines, Inc. v. Norris",
+          "status": 200,
+          "token_in_page": true
+        },
+        {
+          "page": 154,
+          "name": "Simmons v. South Carolina",
+          "status": 200,
+          "token_in_page": true
+        },
+        {
+          "page": 1287,
+          "name": "Missouri v. Jenkins",
+          "status": 404,
+          "token_in_page": null
+        },
+        {
+          "page": 1246,
+          "name": "Robinson v. Texas",
+          "status": 404,
+          "token_in_page": null
+        },
+        {
+          "page": 452,
+          "name": "Davis v. United States",
+          "status": 200,
+          "token_in_page": true
+        }
+      ],
+      "n_sampled": 6,
+      "n_http_200": 3,
+      "n_token_present": 3,
+      "lii_covers_volume": false
+    },
+    {
+      "vol": 517,
+      "n_cap_cases": 1768,
+      "n_multi_page": 58,
+      "winner": {
+        "name": "44 Liquormart, Inc. v. Rhode Island",
+        "page": 484,
+        "cite": "517 U.S. 484",
+        "lii_status": 200,
+        "token": "liquormart",
+        "token_in_page": true
+      },
+      "coverage_sample": [
+        {
+          "page": 292,
+          "name": "Rutledge v. United States",
+          "status": 200,
+          "token_in_page": true
+        },
+        {
+          "page": 1217,
+          "name": "In re Disbarment of Bloomfield",
+          "status": 404,
+          "token_in_page": null
+        },
+        {
+          "page": 392,
+          "name": "Holly Farms Corp. v. National Labor Relations Board",
+          "status": 200,
+          "token_in_page": true
+        },
+        {
+          "page": 820,
+          "name": "Degen v. United States",
+          "status": 404,
+          "token_in_page": null
+        },
+        {
+          "page": 620,
+          "name": "Romer v. Evans",
+          "status": 200,
+          "token_in_page": true
+        },
+        {
+          "page": 1251,
+          "name": "Trahan v. Trahan",
+          "status": 404,
+          "token_in_page": null
+        }
+      ],
+      "n_sampled": 6,
+      "n_http_200": 3,
+      "n_token_present": 3,
+      "lii_covers_volume": false
+    },
+    {
+      "vol": 520,
+      "n_cap_cases": 2235,
+      "n_multi_page": 69,
+      "winner": {
+        "name": "Adams v. Robertson",
+        "page": 83,
+        "cite": "520 U.S. 83",
+        "lii_status": 404,
+        "token": "robertson",
+        "token_in_page": null
+      },
+      "coverage_sample": [
+        {
+          "page": 180,
+          "name": "Turner Broadcasting System, Inc. v. Federal Communications Commission",
+          "status": 200,
+          "token_in_page": true
+        },
+        {
+          "page": 548,
+          "name": "Harbor Tug & Barge Co. v. Papai",
+          "status": 200,
+          "token_in_page": true
+        },
+        {
+          "page": 292,
+          "name": "Lambert v. Wicklund",
+          "status": 404,
+          "token_in_page": null
+        },
+        {
+          "page": 681,
+          "name": "Clinton v. Jones",
+          "status": 200,
+          "token_in_page": true
+        },
+        {
+          "page": 1259,
+          "name": "Smith v. Socialist People's Libyan Arab Jamahiriya",
+          "status": 404,
+          "token_in_page": null
+        },
+        {
+          "page": 1110,
+          "name": "Tidik v. Tidik",
+          "status": 404,
+          "token_in_page": null
+        }
+      ],
+      "n_sampled": 6,
+      "n_http_200": 3,
+      "n_token_present": 3,
+      "lii_covers_volume": false
+    },
+    {
+      "vol": 524,
+      "n_cap_cases": 897,
+      "n_multi_page": 54,
+      "winner": {
+        "name": "American Life & Casualty Insurance v. Trostel",
+        "page": 945,
+        "cite": "524 U.S. 945",
+        "lii_status": 404,
+        "token": "insurance",
+        "token_in_page": null
+      },
+      "coverage_sample": [
+        {
+          "page": 964,
+          "name": "In re Thompson",
+          "status": 404,
+          "token_in_page": null
+        },
+        {
+          "page": 38,
+          "name": "United States v. Beggerly",
+          "status": 200,
+          "token_in_page": true
+        },
+        {
+          "page": 968,
+          "name": "New Jersey v. New York",
+          "status": 404,
+          "token_in_page": null
+        },
+        {
+          "page": 417,
+          "name": "Clinton v. City of New York",
+          "status": 200,
+          "token_in_page": true
+        },
+        {
+          "page": 266,
+          "name": "Forney v. Apfel",
+          "status": 200,
+          "token_in_page": true
+        },
+        {
+          "page": 399,
+          "name": "Swidler & Berlin v. United States",
+          "status": 200,
+          "token_in_page": true
+        }
+      ],
+      "n_sampled": 6,
+      "n_http_200": 4,
+      "n_token_present": 4,
+      "lii_covers_volume": false
+    },
+    {
+      "vol": 530,
+      "n_cap_cases": 1039,
+      "n_multi_page": 50,
+      "winner": {
+        "name": "Anderson v. Johnson",
+        "page": 1269,
+        "cite": "530 U.S. 1269",
+        "lii_status": 404,
+        "token": "anderson",
+        "token_in_page": null
+      },
+      "coverage_sample": [
+        {
+          "page": 428,
+          "name": "Dickerson v. United States",
+          "status": 200,
+          "token_in_page": true
+        },
+        {
+          "page": 604,
+          "name": "Mobil Oil Exploration & Producing Southeast, Inc. v. United States",
+          "status": 200,
+          "token_in_page": true
+        },
+        {
+          "page": 327,
+          "name": "Miller v. French",
+          "status": 200,
+          "token_in_page": true
+        },
+        {
+          "page": 1274,
+          "name": "James v. Zurich-American Insurance",
+          "status": 404,
+          "token_in_page": null
+        },
+        {
+          "page": 1260,
+          "name": "Director of Revenue v. CoBank ACB",
+          "status": 404,
+          "token_in_page": null
+        },
+        {
+          "page": 103,
+          "name": "Sims v. Apfel",
+          "status": 404,
+          "token_in_page": null
+        }
+      ],
+      "n_sampled": 6,
+      "n_http_200": 3,
+      "n_token_present": 3,
+      "lii_covers_volume": false
+    },
+    {
+      "vol": 533,
+      "n_cap_cases": 847,
+      "n_multi_page": 42,
+      "winner": {
+        "name": "Alabama v. Bozeman",
+        "page": 146,
+        "cite": "533 U.S. 146",
+        "lii_status": 404,
+        "token": "alabama",
+        "token_in_page": null
+      },
+      "coverage_sample": [
+        {
+          "page": 194,
+          "name": "Saucier v. Katz",
+          "status": 404,
+          "token_in_page": null
+        },
+        {
+          "page": 289,
+          "name": "Immigration & Naturalization Service v. St. Cyr",
+          "status": 200,
+          "token_in_page": true
+        },
+        {
+          "page": 927,
+          "name": "Wisconsin Department of Health & Family Services v. Blumer",
+          "status": 404,
+          "token_in_page": null
+        },
+        {
+          "page": 98,
+          "name": "Good News Club v. Milford Central School",
+          "status": 200,
+          "token_in_page": true
+        },
+        {
+          "page": 911,
+          "name": "Northern Lights Club v. Northern Light Technology, Inc.",
+          "status": 404,
+          "token_in_page": null
+        },
+        {
+          "page": 606,
+          "name": "Palazzolo v. Rhode Island",
+          "status": 200,
+          "token_in_page": true
+        }
+      ],
+      "n_sampled": 6,
+      "n_http_200": 3,
+      "n_token_present": 3,
+      "lii_covers_volume": false
+    },
+    {
+      "vol": 540,
+      "n_cap_cases": 5253,
+      "n_multi_page": 77,
+      "winner": {
+        "name": "Acosta-Esquivel v. United States",
+        "page": 844,
+        "cite": "540 U.S. 844",
+        "lii_status": 200,
+        "token": "esquivel",
+        "token_in_page": true
+      },
+      "coverage_sample": [
+        {
+          "page": 939,
+          "name": "Ageloff v. United States",
+          "status": 200,
+          "token_in_page": true
+        },
+        {
+          "page": 375,
+          "name": "Castro v. United States",
+          "status": 200,
+          "token_in_page": true
+        },
+        {
+          "page": 1003,
+          "name": "Dodge v. Cotter Corp.",
+          "status": 200,
+          "token_in_page": true
+        },
+        {
+          "page": 938,
+          "name": "Blanks v. Bennett",
+          "status": 200,
+          "token_in_page": true
+        },
+        {
+          "page": 942,
+          "name": "Safouane v. Washington Department of Social & Health Services",
+          "status": 200,
+          "token_in_page": true
+        },
+        {
+          "page": 1035,
+          "name": "Torres v. Mullin",
+          "status": 200,
+          "token_in_page": true
+        }
+      ],
+      "n_sampled": 6,
+      "n_http_200": 6,
+      "n_token_present": 6,
+      "lii_covers_volume": true
+    },
+    {
+      "vol": 545,
+      "n_cap_cases": 702,
+      "n_multi_page": 40,
+      "winner": {
+        "name": "Alaska v. United States",
+        "page": 75,
+        "cite": "545 U.S. 75",
+        "lii_status": 404,
+        "token": "alaska",
+        "token_in_page": null
+      },
+      "coverage_sample": [
+        {
+          "page": 1154,
+          "name": "National Wrestling Coaches Ass'n v. Department of Education",
+          "status": 404,
+          "token_in_page": null
+        },
+        {
+          "page": 1149,
+          "name": "Patrick v. DeFoy",
+          "status": 404,
+          "token_in_page": null
+        },
+        {
+          "page": 1161,
+          "name": "Volvo Trucks North America, Inc. v. Reeder-Simco GMC, Inc.",
+          "status": 404,
+          "token_in_page": null
+        },
+        {
+          "page": 748,
+          "name": "Town of Castle Rock v. Gonzales",
+          "status": 404,
+          "token_in_page": null
+        },
+        {
+          "page": 1,
+          "name": "Gonzales v. Raich",
+          "status": 404,
+          "token_in_page": null
+        },
+        {
+          "page": 596,
+          "name": "Orff v. United States",
+          "status": 404,
+          "token_in_page": null
+        }
+      ],
+      "n_sampled": 6,
+      "n_http_200": 0,
+      "n_token_present": 0,
+      "lii_covers_volume": false
+    },
+    {
+      "vol": 550,
+      "n_cap_cases": 21,
+      "n_multi_page": 21,
+      "winner": {
+        "name": "Abdul-Kabir v. Quarterman",
+        "page": 233,
+        "cite": "550 U.S. 233",
+        "lii_status": 404,
+        "token": "quarterman",
+        "token_in_page": null
+      },
+      "coverage_sample": [
+        {
+          "page": 81,
+          "name": "Zuni Public School District No. 89 v. Department of Education",
+          "status": 404,
+          "token_in_page": null
+        },
+        {
+          "page": 429,
+          "name": "EC Term of Years Trust v. United States",
+          "status": 404,
+          "token_in_page": null
+        },
+        {
+          "page": 598,
+          "name": "Roper v. Weaver",
+          "status": 404,
+          "token_in_page": null
+        },
+        {
+          "page": 124,
+          "name": "Gonzales v. Carhart",
+          "status": 404,
+          "token_in_page": null
+        },
+        {
+          "page": 192,
+          "name": "James v. United States",
+          "status": 404,
+          "token_in_page": null
+        },
+        {
+          "page": 330,
+          "name": "United Haulers Ass'n v. Oneida-Herkimer Solid Waste Management Authority",
+          "status": 404,
+          "token_in_page": null
+        }
+      ],
+      "n_sampled": 6,
+      "n_http_200": 0,
+      "n_token_present": 0,
+      "lii_covers_volume": false
+    },
+    {
+      "vol": 555,
+      "n_cap_cases": 29,
+      "n_multi_page": 29,
+      "winner": {
+        "name": "Altria Group, Inc. v. Good",
+        "page": 70,
+        "cite": "555 U.S. 70",
+        "lii_status": 404,
+        "token": "altria",
+        "token_in_page": null
+      },
+      "coverage_sample": [
+        {
+          "page": 323,
+          "name": "Arizona v. Johnson",
+          "status": 404,
+          "token_in_page": null
+        },
+        {
+          "page": 350,
+          "name": "Nelson v. United States",
+          "status": 404,
+          "token_in_page": null
+        },
+        {
+          "page": 179,
+          "name": "Waddington v. Sarausad",
+          "status": 404,
+          "token_in_page": null
+        },
+        {
+          "page": 353,
+          "name": "Ysursa v. Pocatello Education Ass'n",
+          "status": 404,
+          "token_in_page": null
+        },
+        {
+          "page": 122,
+          "name": "Chambers v. United States",
+          "status": 404,
+          "token_in_page": null
+        },
+        {
+          "page": 7,
+          "name": "Winter v. Natural Resources Defense Council, Inc.",
+          "status": 404,
+          "token_in_page": null
+        }
+      ],
+      "n_sampled": 6,
+      "n_http_200": 0,
+      "n_token_present": 0,
+      "lii_covers_volume": false
+    }
+  ],
+  "summary": {
+    "n_seeds": 5,
+    "n_seeds_shipped": 3,
+    "n_volumes": 22,
+    "n_volumes_lii_complete": 2,
+    "n_volumes_lii_incomplete": 20,
+    "volumes_lii_complete": [
+      510,
+      540
+    ],
+    "volumes_lii_incomplete": [
+      460,
+      465,
+      470,
+      475,
+      480,
+      485,
+      490,
+      495,
+      498,
+      504,
+      505,
+      512,
+      517,
+      520,
+      524,
+      530,
+      533,
+      545,
+      550,
+      555
+    ],
+    "n_correct_pages_tested": 132,
+    "n_correct_pages_http_200": 80,
+    "correct_page_200_rate": 0.6061,
+    "verdict": "page selection is correct; LII coverage is the binding constraint"
+  }
+}

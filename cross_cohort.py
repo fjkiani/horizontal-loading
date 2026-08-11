@@ -24,7 +24,8 @@ import time
 import traceback
 
 import category_traps as ct
-import gen_v2  # noqa: F401  -- installs ct.GENERATORS overrides ON IMPORT
+import gen_v2  # noqa: F401
+import gen_v3  # noqa: F401  # field redesign; must load after gen_v2  -- installs ct.GENERATORS overrides ON IMPORT
 import source_gate as sg
 
 OUT = "cross_cohort.json"

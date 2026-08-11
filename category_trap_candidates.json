@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-11T04:31:22Z",
+  "generated_at": "2026-08-11T05:58:16Z",
   "results": {
     "history": {
       "category": "history",
@@ -8,31 +8,36 @@
         "collection_is_explicit": false,
         "primary_operator": "Nobel Prize Outreach",
         "independent_confirming_operators": [
+          "German National Library",
           "Wikimedia Foundation"
         ],
         "category": "history",
-        "field": "award year",
-        "answer": "1975",
-        "entity": "Physics prize led by Aage Niels Bohr",
+        "field": "GND identifier",
+        "answer": "113163827",
+        "entity": "Aage Niels Bohr",
         "n_base": 21,
         "sources": [
-          "https://api.nobelprize.org/2.1/nobelPrizes?limit=1000&nobelPrizeYear=1901&yearTo=2024",
+          "https://api.nobelprize.org/2.1/laureates",
           "https://www.wikidata.org/wiki/Q103854",
-          "https://api.crossref.org/works?query.bibliographic=Aage%20Niels%20Bohr%20Nobel%20lecture"
+          "https://d-nb.info/gnd/113163827",
+          "https://api.openalex.org/authors?search=Aage%20Niels%20Bohr"
         ],
         "confirming_sources": [
+          "https://d-nb.info/gnd/113163827",
           "https://www.wikidata.org/wiki/Q103854"
         ],
         "api_proof": true,
-        "api_proof_argument": "The prize registry returns awards in year order and offers no way to filter by the number of laureates or to sort by laureate name, so all 21 qualifying awards must be assembled and ordered by the solver. The alphabetical key is deliberately orthogonal to the registry's chronology: measured rho 0.261.",
-        "confirmation": "Wikidata Q103854 property P166 returns 'Nobel Prize in Physics' for Aage Niels Bohr",
-        "prompt": "The Nobel Prize registry records every Physics award with its year and the full list of laureates who shared it. Consider only the Physics awards made between 1901 and 2000 that were divided among 3 or more laureates, and take the first laureate listed on each of those awards. Order those first-listed laureates alphabetically by full name; one of them stands before all the others. Report the year of the award on which that single laureate is listed first. Confirm the laureate against an independent structured knowledge base before answering. Give the four digits of the year alone, with no other words.",
+        "api_proof_argument": "The prize registry returns awards in year order and offers no way to filter by the number of laureates or to sort by laureate name, so all 21 qualifying awards must be assembled and ordered by the solver. The answer is an authority-file identifier rather than the award year, so identifying the award does not hand the solver the answer. Measured rho for the name key against registry chronology is 0.261.",
+        "confirmation": "German National Library record d-nb.info/gnd/113163827 names Aage Niels Bohr, and Wikidata Q103854 property P227 returns the same identifier",
+        "prompt": "The Nobel Prize registry records every Physics award with its year and the full list of laureates who shared it, and national libraries maintain authority files that assign each person a stable numeric identifier. Consider only the Physics awards made between 1901 and 2000 that were divided among 3 or more laureates, and take the first laureate listed on each of those awards. Order those lead laureates by name and take the one that comes first. Report the GND authority identifier assigned to that lead laureate. Resolve the identifier at the national library before answering. Give the identifier alone, digits and any trailing check character only.",
         "source_operators": [
-          "Crossref",
+          "German National Library",
           "Nobel Prize Outreach",
+          "OurResearch (OpenAlex)",
           "Wikimedia Foundation"
         ],
         "confirming_operators": [
+          "German National Library",
           "Wikimedia Foundation"
         ],
         "track": "api-native",
@@ -70,9 +75,12 @@
           "n": 21,
           "lead_laureate": "Aage Niels Bohr",
           "second_alphabetical": "antoine henri becquerel",
+          "award_year": 1975,
           "n_laureates": 3,
-          "partial_confirmation": true,
-          "provenance_note": "Wikidata independently confirms that this laureate received the prize, but records the year as a statement qualifier rather than a directly queryable value, so the year itself rests on the prize registry."
+          "answer_field_class": "identifier",
+          "guess_space": "p_answer_by_uniform_guess is measured over laureate identity. The GND authority file assigns exactly one record per person and _gnd() rejects any laureate whose Wikidata P227 is not single-valued, so laureate identity and identifier are in bijection and the two probabilities are equal.",
+          "replaces": "award year (attribute; measured recallable)",
+          "resolved_defect": "the award-year answer could only be confirmed by the prize registry itself, because Wikidata stores the year as a statement qualifier; the identifier answer is confirmed by the German National Library, which runs neither the registry nor Wikidata"
         }
       },
       "validation": {
@@ -408,31 +416,36 @@
         "collection_is_explicit": false,
         "primary_operator": "Nobel Prize Outreach",
         "independent_confirming_operators": [
+          "German National Library",
           "Wikimedia Foundation"
         ],
         "category": "celebrities/public figures",
-        "field": "city of birth",
-        "answer": "Leiden",
+        "field": "GND identifier",
+        "answer": "119009846",
         "entity": "Johannes Diderik van der Waals",
         "n_base": 104,
         "sources": [
           "https://api.nobelprize.org/2.1/laureates",
           "https://www.wikidata.org/wiki/Q131721",
+          "https://d-nb.info/gnd/119009846",
           "https://api.openalex.org/authors?search=Johannes%20Diderik%20van%20der%20Waals"
         ],
         "confirming_sources": [
+          "https://d-nb.info/gnd/119009846",
           "https://www.wikidata.org/wiki/Q131721"
         ],
         "api_proof": true,
-        "api_proof_argument": "The laureate registry is paginated and returned in alphabetical name order with no birth-date sort, so all 104 qualifying laureates must be pulled and compared. The date key is chosen precisely because the alphabetical alternative reproduces the registry's own ordering exactly; measured rho for the date key is -0.0293.",
-        "confirmation": "Wikidata Q131721 property P19 returns 'Leiden'",
-        "prompt": "The Nobel Prize registry publishes a record for every laureate, giving the person's name, date of birth and the place where they were born. Restrict attention to the laureates recognised in Physics for awards made between 1901 and 1975 whose record carries a complete date of birth. Among that group one laureate was born earlier than every other. Report the city recorded as that single laureate's place of birth. Confirm the birthplace against an independent structured knowledge base before answering. Give the city name alone, spelled as the registry records it.",
+        "api_proof_argument": "The laureate registry is paginated and returned in alphabetical name order with no birth-date sort, so all 104 qualifying laureates must be pulled and compared. The answer is an authority-file identifier, not a property of the person that could be recalled once the person is named, so recognising the laureate is not sufficient: the identifier must be looked up. Measured rho for the date key against registry order is -0.0293.",
+        "confirmation": "German National Library record d-nb.info/gnd/119009846 names Johannes Diderik van der Waals, and Wikidata Q131721 property P227 returns the same identifier",
+        "prompt": "The Nobel Prize registry publishes a record for every laureate giving the person's name and date of birth, and national libraries maintain authority files that assign each person a stable numeric identifier. Restrict attention to the laureates recognised in Physics for awards made between 1901 and 1975 whose record carries a complete date of birth. Among that group one laureate was born earlier than every other. Report the GND authority identifier that the German National Library assigns to that single laureate. Resolve the identifier at the national library before answering. Give the identifier alone, digits and any trailing check character only.",
         "source_operators": [
+          "German National Library",
           "Nobel Prize Outreach",
           "OurResearch (OpenAlex)",
           "Wikimedia Foundation"
         ],
         "confirming_operators": [
+          "German National Library",
           "Wikimedia Foundation"
         ],
         "track": "api-native",
@@ -454,11 +467,11 @@
             "1845-08-16",
             "1850-06-06"
           ],
-          "answer_field_distinct_values": 90,
+          "answer_field_distinct_values": 103,
           "answer_field_n_values": 104,
-          "answer_field_max_count": 6,
+          "answer_field_max_count": 2,
           "answer_field_count_of_answer": 1,
-          "answer_field_modal_share": 0.057692,
+          "answer_field_modal_share": 0.019231,
           "p_answer_by_uniform_guess": 0.009615
         },
         "facts": {
@@ -471,7 +484,10 @@
           "dob": "1837-11-23",
           "second_earliest_dob": "1842-11-12",
           "award_year": 1910,
-          "laureate_id": "15"
+          "laureate_id": "15",
+          "answer_field_class": "identifier",
+          "guess_space": "p_answer_by_uniform_guess is measured over laureate identity. The GND authority file assigns exactly one record per person and _gnd() rejects any laureate whose Wikidata P227 is not single-valued, so laureate identity and identifier are in bijection and the two probabilities are equal.",
+          "replaces": "city of birth (attribute; measured recallable)"
         }
       },
       "validation": {
@@ -492,21 +508,21 @@
         ],
         "category": "education",
         "field": "internet domain",
-        "answer": "wit.ie",
-        "entity": "Waterford Institute Of Technology",
-        "n_base": 27,
+        "answer": "ntnu.no",
+        "entity": "Norwegian University of Science and Technology",
+        "n_base": 25,
         "sources": [
-          "http://universities.hipolabs.com/search?country=Ireland",
-          "https://www.wikidata.org/wiki/Q7974025",
+          "http://universities.hipolabs.com/search?country=Norway",
+          "https://www.wikidata.org/wiki/Q314536",
           "https://nces.ed.gov/ipeds/datacenter/"
         ],
         "confirming_sources": [
-          "https://www.wikidata.org/wiki/Q7974025"
+          "https://www.wikidata.org/wiki/Q314536"
         ],
         "api_proof": true,
-        "api_proof_argument": "The register returns an unsorted national list and supports no ordering parameter, so all 27 institutions must be pulled before their domains can be ranked.",
-        "confirmation": "Wikidata Q7974025 resolves Waterford Institute Of Technology and its P856 official website prints the same host 'wit.ie'",
-        "prompt": "A public register of higher education institutions lists the universities and colleges of Ireland, recording the internet domain each one uses. Consider only the institutions that this register places in Ireland and for which it records at least one domain. Order the primary domains of those institutions as text, from first to last. One domain falls later in that ordering than every other. Report that single last-ordered domain. Confirm the institution through an independent structured knowledge base. Give the domain alone, in lower case, with no protocol and no path.",
+        "api_proof_argument": "The register returns an unsorted national list and supports no ordering parameter, so all 25 institutions must be pulled before their domains can be ranked. The ordering is applied to the reversed domain string specifically so that it cannot be read off the register's own return order: measured rho for this key is 0.0746, against +0.4685 to +0.9498 for the forward-alphabetical key across the ten countries tested.",
+        "confirmation": "Wikidata Q314536 resolves Norwegian University of Science and Technology and its P856 official website prints the same host 'ntnu.no'",
+        "prompt": "A public register of higher education institutions lists the universities and colleges of Norway, recording the internet domain each one uses. Consider only the institutions that this register places in Norway and for which it records at least one domain. Write each institution's primary domain backwards, character by character, and order those reversed strings as text. One of them falls later in that ordering than every other. Report the original, unreversed domain of that single institution. Confirm the institution through an independent structured knowledge base. Give the domain alone, in lower case, with no protocol and no path.",
         "source_operators": [
           "Hipo Labs",
           "US Department of Education",
@@ -519,41 +535,44 @@
         "ranking_evidence": {
           "label": "education",
           "mode": "max",
-          "n_base": 27,
-          "n_ranked": 27,
-          "spearman_key_vs_api_order": 0.7888,
+          "n_base": 25,
+          "n_ranked": 25,
+          "spearman_key_vs_api_order": 0.0746,
           "n_tied_at_extremum": 1,
-          "distinct_keys": 27,
-          "winner_position_in_api_order": 23,
+          "distinct_keys": 24,
+          "winner_position_in_api_order": 15,
           "winner_is_first_returned": false,
           "winner_is_last_returned": false,
           "top_keys": [
-            "wit.ie",
-            "universityofgalway.ie",
-            "ul.ie",
-            "ucd.ie",
-            "ucc.ie"
+            "on.untn",
+            "on.tiu",
+            "on.siu",
+            "on.shtev",
+            "on.oiu"
           ],
-          "answer_field_distinct_values": 27,
-          "answer_field_n_values": 27,
-          "answer_field_max_count": 1,
+          "answer_field_distinct_values": 24,
+          "answer_field_n_values": 25,
+          "answer_field_max_count": 2,
           "answer_field_count_of_answer": 1,
-          "answer_field_modal_share": 0.037037,
-          "p_answer_by_uniform_guess": 0.037037
+          "answer_field_modal_share": 0.08,
+          "p_answer_by_uniform_guess": 0.04
         },
         "facts": {
-          "country": "Ireland",
-          "n": 27,
-          "inst": "Waterford Institute Of Technology",
-          "witness_qid": "Q7974025",
-          "witness_p856": "http://www.wit.ie",
+          "country": "Norway",
+          "n": 25,
+          "inst": "Norwegian University of Science and Technology",
+          "witness_qid": "Q314536",
+          "witness_p856": "https://ntnu.no",
           "n_p856_values": 1,
           "all_p856_hosts": [
-            "wit.ie"
+            "ntnu.no"
           ],
+          "answer_field_class": "identifier",
+          "spearman_this_key": 0.0746,
+          "replaces": "Ireland / alphabetically-last domain -> wit.ie, whose institution was dissolved on 2022-05-01, ranked by a key that leaked the register's order at rho +0.7741",
           "witness_scope": "P856 confirms the DOMAIN BINDING only. It does not confirm that the institution still exists.",
-          "known_defect_order_leak": "The ranking key (alphabetically-last domain) correlates with this register's return order at rho +0.47..+0.95 across all 10 countries measured, because the register returns roughly name-alphabetical order and names predict domains.",
-          "known_defect_entity_state": "Waterford Institute of Technology was dissolved into South East Technological University on 2022-05-01. Wikidata records no succession property for it, so neither the P856 equality check nor a P576/P7888/P1366 liveness guard detects this."
+          "known_defect_answer_is_derivable": "MEASURED, NOT FIXED. The two defects this rebuild addressed were the order leak and the dead institution. Recallability is a third and separate defect and it survives: the answer ntnu.no is derivable from the institution's name without consulting the register at all, and the string draws 174 Wikipedia mentions. This is weaker than memorisation, since the solver must still identify which institution wins the ordering, but the domain field cannot be called opaque the way an arXiv, NCT or GND identifier can. Fixing it needs a different answer field, not a different country or key.",
+          "known_defect_liveness": "The liveness guard remains non-functional in general: Wikidata carries no succession properties for dissolved institutions in the cases measured, so a future seed could again name a merged institution without this check noticing. This seed was chosen because NTNU is unambiguously operating, not because the check would catch it if it were not."
         }
       },
       "validation": {
@@ -641,7 +660,7 @@
         "violations": [],
         "unmapped_hosts": []
       },
-      "secs": 1.0
+      "secs": 0.5
     },
     "health and medicine": {
       "category": "health and medicine",
@@ -1204,7 +1223,7 @@
         "violations": [],
         "unmapped_hosts": []
       },
-      "secs": 11.9
+      "secs": 11.5
     },
     "video games": {
       "category": "video games",

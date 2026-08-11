@@ -157,7 +157,13 @@ def t2_guessability(ev):
 
 
 MIN_RANKED = 5          # T0: a ranking over fewer than this does no isolating work
-MAX_ABS_SPEARMAN = 0.95  # T3b: |rho| above this means the key tracks the file order
+MAX_ABS_SPEARMAN = 0.45  # T3b: |rho| above this means the key tracks the file order
+# Lowered from 0.95. At 0.95 the test was almost unfalsifiable: the 13 served
+# non-education traps all sit at |rho| <= 0.2610, while the education
+# domain-alphabetical key sat at +0.4685..+0.9498 across ten countries and
+# still passed. A ceiling no shipped trap approaches from below, and which the
+# one leaking trap cleared anyway, measures nothing. 0.45 sits above every
+# clean trap measured and below every leaking one measured.
 
 
 def t0_base_adequacy(ev):

@@ -28,9 +28,23 @@ GENERATOR_CALLERS = ["cross_cohort", "run_category_traps"]
 # gen_v2 owns these. If any silently falls back to category_traps, the caller is
 # exercising a generator that is not the live one.
 OWNED_BY_GEN_V2 = {
-    "finance", "business", "politics", "history", "celebrities/public figures",
+    "finance", "business", "politics",
     "geography", "shopping", "tv shows and movies", "video games",
 }
+
+# gen_v3 replaced the ANSWER FIELD for these two: the Nobel population and the
+# ranking are unchanged, but the value read off the winning record is now the
+# laureate's GND identifier instead of a birth city or an award year. Both of
+# those were measured recallable (Leiden 145,636 Wikipedia views/yr, 1975
+# 77,453), which made the traversal decorative. Pinned separately so a caller
+# that loads gen_v2 but forgets gen_v3 fails here rather than silently shipping
+# the memorable answers again.
+OWNED_BY_GEN_V3 = {"history", "celebrities/public figures"}
+
+OVERRIDE_OWNER = dict(
+    [(k, "gen_v2") for k in OWNED_BY_GEN_V2] +
+    [(k, "gen_v3") for k in OWNED_BY_GEN_V3]
+)
 
 
 def _run(code):
@@ -48,11 +62,13 @@ def test_caller_sees_overridden_generators(caller):
         "import category_traps as ct, json\n"
         "print(json.dumps({k: v.__module__ for k, v in ct.GENERATORS.items()}))"
     ))
-    overridden = {k for k, v in mods.items() if v == "gen_v2"}
-    missing = sorted(OWNED_BY_GEN_V2 - overridden)
-    assert not missing, (
-        f"{caller} does not install gen_v2 for {missing}; it is exercising the "
-        f"base generators. Add `import gen_v2` to {caller}.py."
+    wrong = sorted((cat, want, mods.get(cat))
+                   for cat, want in OVERRIDE_OWNER.items()
+                   if mods.get(cat) != want)
+    assert not wrong, (
+        f"{caller} resolves the wrong generator module for {wrong} "
+        "(category, expected, actual). It is exercising generators that are not "
+        f"the live ones. Add `import gen_v2` and `import gen_v3` to {caller}.py."
     )
 
 

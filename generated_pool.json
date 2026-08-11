@@ -1,1003 +1,1022 @@
 [
-  {
-    "collection_is_explicit": false,
-    "primary_operator": "Nobel Prize Outreach",
-    "independent_confirming_operators": [
-      "Wikimedia Foundation"
-    ],
-    "category": "history",
-    "field": "award year",
-    "answer": "1975",
-    "entity": "Physics prize led by Aage Niels Bohr",
-    "n_base": 21,
-    "sources": [
-      "https://api.nobelprize.org/2.1/nobelPrizes?limit=1000&nobelPrizeYear=1901&yearTo=2024",
-      "https://www.wikidata.org/wiki/Q103854",
-      "https://api.crossref.org/works?query.bibliographic=Aage%20Niels%20Bohr%20Nobel%20lecture"
-    ],
-    "confirming_sources": [
-      "https://www.wikidata.org/wiki/Q103854"
-    ],
-    "api_proof": true,
-    "api_proof_argument": "The prize registry returns awards in year order and offers no way to filter by the number of laureates or to sort by laureate name, so all 21 qualifying awards must be assembled and ordered by the solver. The alphabetical key is deliberately orthogonal to the registry's chronology: measured rho 0.261.",
-    "confirmation": "Wikidata Q103854 property P166 returns 'Nobel Prize in Physics' for Aage Niels Bohr",
-    "prompt": "The Nobel Prize registry records every Physics award with its year and the full list of laureates who shared it. Consider only the Physics awards made between 1901 and 2000 that were divided among 3 or more laureates, and take the first laureate listed on each of those awards. Order those first-listed laureates alphabetically by full name; one of them stands before all the others. Report the year of the award on which that single laureate is listed first. Confirm the laureate against an independent structured knowledge base before answering. Give the four digits of the year alone, with no other words.",
-    "source_operators": [
-      "Crossref",
-      "Nobel Prize Outreach",
-      "Wikimedia Foundation"
-    ],
-    "confirming_operators": [
-      "Wikimedia Foundation"
-    ],
-    "track": "api-native",
-    "ranking_evidence": {
-      "label": "history",
-      "mode": "min",
-      "n_base": 21,
-      "n_ranked": 21,
-      "spearman_key_vs_api_order": 0.261,
-      "n_tied_at_extremum": 1,
-      "distinct_keys": 21,
-      "winner_position_in_api_order": 8,
-      "winner_is_first_returned": false,
-      "winner_is_last_returned": false,
-      "top_keys": [
-        "aage niels bohr",
-        "antoine henri becquerel",
-        "charles hard townes",
-        "david m. lee",
-        "ernst ruska"
-      ],
-      "answer_field_distinct_values": 21,
-      "answer_field_n_values": 21,
-      "answer_field_max_count": 1,
-      "answer_field_count_of_answer": 1,
-      "answer_field_modal_share": 0.047619,
-      "p_answer_by_uniform_guess": 0.047619
-    },
-    "facts": {
-      "category": "Physics",
-      "window": [
-        1901,
-        2000
-      ],
-      "n": 21,
-      "lead_laureate": "Aage Niels Bohr",
-      "second_alphabetical": "antoine henri becquerel",
-      "n_laureates": 3,
-      "partial_confirmation": true,
-      "provenance_note": "Wikidata independently confirms that this laureate received the prize, but records the year as a statement qualifier rather than a directly queryable value, so the year itself rests on the prize registry."
-    },
-    "verified": true
+ {
+  "collection_is_explicit": false,
+  "primary_operator": "Nobel Prize Outreach",
+  "independent_confirming_operators": [
+   "German National Library",
+   "Wikimedia Foundation"
+  ],
+  "category": "history",
+  "field": "GND identifier",
+  "answer": "113163827",
+  "entity": "Aage Niels Bohr",
+  "n_base": 21,
+  "sources": [
+   "https://api.nobelprize.org/2.1/laureates",
+   "https://www.wikidata.org/wiki/Q103854",
+   "https://d-nb.info/gnd/113163827",
+   "https://api.openalex.org/authors?search=Aage%20Niels%20Bohr"
+  ],
+  "confirming_sources": [
+   "https://d-nb.info/gnd/113163827",
+   "https://www.wikidata.org/wiki/Q103854"
+  ],
+  "api_proof": true,
+  "api_proof_argument": "The prize registry returns awards in year order and offers no way to filter by the number of laureates or to sort by laureate name, so all 21 qualifying awards must be assembled and ordered by the solver. The answer is an authority-file identifier rather than the award year, so identifying the award does not hand the solver the answer. Measured rho for the name key against registry chronology is 0.261.",
+  "confirmation": "German National Library record d-nb.info/gnd/113163827 names Aage Niels Bohr, and Wikidata Q103854 property P227 returns the same identifier",
+  "prompt": "The Nobel Prize registry records every Physics award with its year and the full list of laureates who shared it, and national libraries maintain authority files that assign each person a stable numeric identifier. Consider only the Physics awards made between 1901 and 2000 that were divided among 3 or more laureates, and take the first laureate listed on each of those awards. Order those lead laureates by name and take the one that comes first. Report the GND authority identifier assigned to that lead laureate. Resolve the identifier at the national library before answering. Give the identifier alone, digits and any trailing check character only.",
+  "source_operators": [
+   "German National Library",
+   "Nobel Prize Outreach",
+   "OurResearch (OpenAlex)",
+   "Wikimedia Foundation"
+  ],
+  "confirming_operators": [
+   "German National Library",
+   "Wikimedia Foundation"
+  ],
+  "track": "api-native",
+  "ranking_evidence": {
+   "label": "history",
+   "mode": "min",
+   "n_base": 21,
+   "n_ranked": 21,
+   "spearman_key_vs_api_order": 0.261,
+   "n_tied_at_extremum": 1,
+   "distinct_keys": 21,
+   "winner_position_in_api_order": 8,
+   "winner_is_first_returned": false,
+   "winner_is_last_returned": false,
+   "top_keys": [
+    "aage niels bohr",
+    "antoine henri becquerel",
+    "charles hard townes",
+    "david m. lee",
+    "ernst ruska"
+   ],
+   "answer_field_distinct_values": 21,
+   "answer_field_n_values": 21,
+   "answer_field_max_count": 1,
+   "answer_field_count_of_answer": 1,
+   "answer_field_modal_share": 0.047619,
+   "p_answer_by_uniform_guess": 0.047619
   },
-  {
-    "collection_is_explicit": false,
-    "primary_operator": "Cornell University",
-    "independent_confirming_operators": [
-      "DataCite",
-      "OurResearch (OpenAlex)"
-    ],
-    "category": "science and technology",
-    "field": "arXiv identifier",
-    "answer": "2403.07505",
-    "entity": "Rotational Evolution of Classical T Tauri Stars: Models and Observations",
-    "n_base": 15,
-    "sources": [
-      "http://export.arxiv.org/api/query?search_query=cat:astro-ph.EP+AND+submittedDate:[202403120000+TO+202403122359]&start=0&max_results=200&sortBy=submittedDate&sortOrder=ascending",
-      "https://api.datacite.org/dois/10.48550/arxiv.2403.07505",
-      "https://api.openalex.org/works/doi:10.48550/arxiv.2403.07505"
-    ],
-    "confirming_sources": [
-      "https://api.datacite.org/dois/10.48550/arxiv.2403.07505",
-      "https://api.openalex.org/works/doi:10.48550/arxiv.2403.07505"
-    ],
-    "api_proof": true,
-    "api_proof_argument": "The arXiv interface can sort only by relevance or submission time and exposes no author-count filter, so all 15 submissions listed for that day under astro-ph.EP must be retrieved and their author lists counted.",
-    "confirmation": "DataCite and OpenAlex both resolve 10.48550/arxiv.2403.07505 to the same title, from two registries independent of arXiv",
-    "prompt": "The arXiv preprint server publishes a dated listing of every submission indexed under the subject class astro-ph.EP, each entry carrying its full author list and its arXiv identifier. Consider only the submissions that arXiv timestamps to 2024-03-12 in Coordinated Universal Time. Among only those submissions, exactly one credits more named authors than any other. Report the arXiv identifier of that single submission. Resolve the identifier through two registration agencies independent of the preprint server before answering. Give the identifier alone, without any version suffix and with no other words.",
-    "source_operators": [
-      "Cornell University",
-      "DataCite",
-      "OurResearch (OpenAlex)"
-    ],
-    "confirming_operators": [
-      "DataCite",
-      "OurResearch (OpenAlex)"
-    ],
-    "track": "api-native",
-    "ranking_evidence": {
-      "label": "science astro-ph.EP/2024-03-12",
-      "mode": "max",
-      "n_base": 15,
-      "n_ranked": 15,
-      "spearman_key_vs_api_order": 0.0255,
-      "n_tied_at_extremum": 1,
-      "distinct_keys": 6,
-      "winner_position_in_api_order": 5,
-      "winner_is_first_returned": false,
-      "winner_is_last_returned": false,
-      "top_keys": [
-        "20",
-        "5",
-        "5",
-        "5",
-        "4"
-      ],
-      "answer_field_distinct_values": 15,
-      "answer_field_n_values": 15,
-      "answer_field_max_count": 1,
-      "answer_field_count_of_answer": 1,
-      "answer_field_modal_share": 0.066667,
-      "p_answer_by_uniform_guess": 0.066667
-    },
-    "facts": {
-      "cat": "astro-ph.EP",
-      "day": "2024-03-12",
-      "n": 15,
-      "authors": 20,
-      "doi": "10.48550/arxiv.2403.07505"
-    },
-    "verified": true
+  "facts": {
+   "category": "Physics",
+   "window": [
+    1901,
+    2000
+   ],
+   "n": 21,
+   "lead_laureate": "Aage Niels Bohr",
+   "second_alphabetical": "antoine henri becquerel",
+   "award_year": 1975,
+   "n_laureates": 3,
+   "answer_field_class": "identifier",
+   "guess_space": "p_answer_by_uniform_guess is measured over laureate identity. The GND authority file assigns exactly one record per person and _gnd() rejects any laureate whose Wikidata P227 is not single-valued, so laureate identity and identifier are in bijection and the two probabilities are equal.",
+   "replaces": "award year (attribute; measured recallable)",
+   "resolved_defect": "the award-year answer could only be confirmed by the prize registry itself, because Wikidata stores the year as a statement qualifier; the identifier answer is confirmed by the German National Library, which runs neither the registry nor Wikidata"
   },
-  {
-    "collection_is_explicit": false,
-    "primary_operator": "Metropolitan Museum of Art",
-    "independent_confirming_operators": [
-      "Wikimedia Foundation"
-    ],
-    "category": "art",
-    "field": "accession number",
-    "answer": "71.84",
-    "entity": "Man in Armor (Mars?)",
-    "n_base": 89,
-    "sources": [
-      "https://collectionapi.metmuseum.org/public/collection/v1/objects/437416",
-      "https://www.wikidata.org/wiki/Q19905220",
-      "https://api.europeana.eu/record/v2/search.json?query=rembrandt"
-    ],
-    "confirming_sources": [
-      "https://collectionapi.metmuseum.org/public/collection/v1/objects/437416",
-      "https://www.wikidata.org/wiki/Q19905220"
-    ],
-    "api_proof": true,
-    "api_proof_argument": "The museum search endpoint returns only object identifiers; accession years are available only by retrieving each record individually, so all 89 qualifying objects must be fetched before the earliest can be identified.",
-    "confirmation": "the object record reports accession year 1871; independently, Wikidata Q19905220 ('Man in Armor (Mars?)') carries P217 '71.84' scoped to the museum collection Q160236",
-    "prompt": "The Metropolitan Museum of Art publishes an open catalogue of its holdings, giving each object an accession number and recording the year it entered the collection. Restrict attention to catalogued works attributed to Rembrandt that the museum marks as public domain and for which it holds images. Among only those works, one entered the museum's collection in an earlier year than any other. Report the accession number that the museum assigned to that single earliest work. Corroborate the attribution against an independent cultural heritage aggregator. Give the accession number exactly as the museum prints it, punctuation included.",
-    "source_operators": [
-      "Europeana Foundation",
-      "Metropolitan Museum of Art",
-      "Wikimedia Foundation"
-    ],
-    "confirming_operators": [
-      "Metropolitan Museum of Art",
-      "Wikimedia Foundation"
-    ],
-    "track": "api-native",
-    "ranking_evidence": {
-      "label": "art",
-      "mode": "min",
-      "n_base": 89,
-      "n_ranked": 89,
-      "spearman_key_vs_api_order": -0.0252,
-      "n_tied_at_extremum": 1,
-      "distinct_keys": 33,
-      "winner_position_in_api_order": 32,
-      "winner_is_first_returned": false,
-      "winner_is_last_returned": false,
-      "top_keys": [
-        "1871",
-        "1889",
-        "1891",
-        "1914",
-        "1914"
-      ],
-      "answer_field_distinct_values": 89,
-      "answer_field_n_values": 89,
-      "answer_field_max_count": 1,
-      "answer_field_count_of_answer": 1,
-      "answer_field_modal_share": 0.011236,
-      "p_answer_by_uniform_guess": 0.011236
-    },
-    "facts": {
-      "artist": "Rembrandt",
-      "n": 89,
-      "year": "1871",
-      "witness_qid": "Q19905220",
-      "witness_label": "Man in Armor (Mars?)",
-      "witness_note": "P217 alone is ambiguous across museums; the P195 collection scope is what makes the match identifying"
-    },
-    "verified": true
+  "verified": true
+ },
+ {
+  "collection_is_explicit": false,
+  "primary_operator": "Cornell University",
+  "independent_confirming_operators": [
+   "DataCite",
+   "OurResearch (OpenAlex)"
+  ],
+  "category": "science and technology",
+  "field": "arXiv identifier",
+  "answer": "2403.07505",
+  "entity": "Rotational Evolution of Classical T Tauri Stars: Models and Observations",
+  "n_base": 15,
+  "sources": [
+   "http://export.arxiv.org/api/query?search_query=cat:astro-ph.EP+AND+submittedDate:[202403120000+TO+202403122359]&start=0&max_results=200&sortBy=submittedDate&sortOrder=ascending",
+   "https://api.datacite.org/dois/10.48550/arxiv.2403.07505",
+   "https://api.openalex.org/works/doi:10.48550/arxiv.2403.07505"
+  ],
+  "confirming_sources": [
+   "https://api.datacite.org/dois/10.48550/arxiv.2403.07505",
+   "https://api.openalex.org/works/doi:10.48550/arxiv.2403.07505"
+  ],
+  "api_proof": true,
+  "api_proof_argument": "The arXiv interface can sort only by relevance or submission time and exposes no author-count filter, so all 15 submissions listed for that day under astro-ph.EP must be retrieved and their author lists counted.",
+  "confirmation": "DataCite and OpenAlex both resolve 10.48550/arxiv.2403.07505 to the same title, from two registries independent of arXiv",
+  "prompt": "The arXiv preprint server publishes a dated listing of every submission indexed under the subject class astro-ph.EP, each entry carrying its full author list and its arXiv identifier. Consider only the submissions that arXiv timestamps to 2024-03-12 in Coordinated Universal Time. Among only those submissions, exactly one credits more named authors than any other. Report the arXiv identifier of that single submission. Resolve the identifier through two registration agencies independent of the preprint server before answering. Give the identifier alone, without any version suffix and with no other words.",
+  "source_operators": [
+   "Cornell University",
+   "DataCite",
+   "OurResearch (OpenAlex)"
+  ],
+  "confirming_operators": [
+   "DataCite",
+   "OurResearch (OpenAlex)"
+  ],
+  "track": "api-native",
+  "ranking_evidence": {
+   "label": "science astro-ph.EP/2024-03-12",
+   "mode": "max",
+   "n_base": 15,
+   "n_ranked": 15,
+   "spearman_key_vs_api_order": 0.0255,
+   "n_tied_at_extremum": 1,
+   "distinct_keys": 6,
+   "winner_position_in_api_order": 5,
+   "winner_is_first_returned": false,
+   "winner_is_last_returned": false,
+   "top_keys": [
+    "20",
+    "5",
+    "5",
+    "5",
+    "4"
+   ],
+   "answer_field_distinct_values": 15,
+   "answer_field_n_values": 15,
+   "answer_field_max_count": 1,
+   "answer_field_count_of_answer": 1,
+   "answer_field_modal_share": 0.066667,
+   "p_answer_by_uniform_guess": 0.066667
   },
-  {
-    "collection_is_explicit": false,
-    "primary_operator": "US Securities and Exchange Commission",
-    "independent_confirming_operators": [
-      "Wikimedia Foundation"
-    ],
-    "category": "business",
-    "field": "SEC Central Index Key",
-    "answer": "1341439",
-    "entity": "Oracle Corporation",
-    "n_base": 154,
-    "sources": [
-      "https://data.sec.gov/api/xbrl/frames/us-gaap/ResearchAndDevelopmentExpense/USD/CY2015.json",
-      "https://data.sec.gov/submissions/CIK0001341439.json",
-      "https://www.wikidata.org/wiki/Q19900",
-      "https://api.gleif.org/api/v1/lei-records?filter[entity.legalName]=Oracle%20Corporation"
-    ],
-    "confirming_sources": [
-      "https://www.wikidata.org/wiki/Q19900",
-      "https://data.sec.gov/submissions/CIK0001341439.json"
-    ],
-    "api_proof": true,
-    "api_proof_argument": "The XBRL frames endpoint returns all 2427 filers reporting the concept for CY2015 in a single unordered array with no ranking parameter, so the 154 filers recorded at US-TX must be separated out and compared by the solver.",
-    "confirmation": "Wikidata Q19900 property P5531 returns 0001341439, and the SEC submissions endpoint resolves CIK 0001341439",
-    "prompt": "The United States securities regulator publishes a structured frame for each accounting concept and calendar year, listing every filer that reported that concept together with the business address it has on record. Take the frame for research and development expense covering calendar year 2015, and keep only those filers whose recorded business address places them in Texas. Within that restricted group one filer reported a larger figure for the concept than every other. Report the Central Index Key that the regulator assigns to that single filer. Confirm the key against an independent structured knowledge base before answering. Give the digits of the key alone, without leading zeros or any label.",
-    "source_operators": [
-      "Global Legal Entity Identifier Foundation",
-      "US Securities and Exchange Commission",
-      "Wikimedia Foundation"
-    ],
-    "confirming_operators": [
-      "US Securities and Exchange Commission",
-      "Wikimedia Foundation"
-    ],
-    "track": "api-native",
-    "ranking_evidence": {
-      "label": "business",
-      "mode": "max",
-      "n_base": 154,
-      "n_ranked": 154,
-      "spearman_key_vs_api_order": -0.065,
-      "n_tied_at_extremum": 1,
-      "distinct_keys": 144,
-      "winner_position_in_api_order": 99,
-      "winner_is_first_returned": false,
-      "winner_is_last_returned": false,
-      "top_keys": [
-        "5787000000.0",
-        "1676000000.0",
-        "1267000000.0",
-        "1094000000.0",
-        "1051000000.0"
-      ],
-      "answer_field_distinct_values": 154,
-      "answer_field_n_values": 154,
-      "answer_field_max_count": 1,
-      "answer_field_count_of_answer": 1,
-      "answer_field_modal_share": 0.006494,
-      "p_answer_by_uniform_guess": 0.006494
-    },
-    "facts": {
-      "loc": "US-TX",
-      "concept": "ResearchAndDevelopmentExpense",
-      "year": 2015,
-      "n": 154,
-      "val": 5787000000,
-      "runner_up": 1676000000.0,
-      "sep_ratio": 3.453,
-      "accn": "0001193125-18-201034",
-      "period_end": "2016-05-31",
-      "provenance_note": "The SEC `loc` field records the filer's business address as currently registered, not necessarily its address during the reporting year, so the prompt scopes the set by the recorded field rather than by historical headquarters."
-    },
-    "verified": true
+  "facts": {
+   "cat": "astro-ph.EP",
+   "day": "2024-03-12",
+   "n": 15,
+   "authors": 20,
+   "doi": "10.48550/arxiv.2403.07505"
   },
-  {
-    "collection_is_explicit": false,
-    "primary_operator": "Nobel Prize Outreach",
-    "independent_confirming_operators": [
-      "Wikimedia Foundation"
-    ],
-    "category": "celebrities/public figures",
-    "field": "city of birth",
-    "answer": "Leiden",
-    "entity": "Johannes Diderik van der Waals",
-    "n_base": 104,
-    "sources": [
-      "https://api.nobelprize.org/2.1/laureates",
-      "https://www.wikidata.org/wiki/Q131721",
-      "https://api.openalex.org/authors?search=Johannes%20Diderik%20van%20der%20Waals"
-    ],
-    "confirming_sources": [
-      "https://www.wikidata.org/wiki/Q131721"
-    ],
-    "api_proof": true,
-    "api_proof_argument": "The laureate registry is paginated and returned in alphabetical name order with no birth-date sort, so all 104 qualifying laureates must be pulled and compared. The date key is chosen precisely because the alphabetical alternative reproduces the registry's own ordering exactly; measured rho for the date key is -0.0293.",
-    "confirmation": "Wikidata Q131721 property P19 returns 'Leiden'",
-    "prompt": "The Nobel Prize registry publishes a record for every laureate, giving the person's name, date of birth and the place where they were born. Restrict attention to the laureates recognised in Physics for awards made between 1901 and 1975 whose record carries a complete date of birth. Among that group one laureate was born earlier than every other. Report the city recorded as that single laureate's place of birth. Confirm the birthplace against an independent structured knowledge base before answering. Give the city name alone, spelled as the registry records it.",
-    "source_operators": [
-      "Nobel Prize Outreach",
-      "OurResearch (OpenAlex)",
-      "Wikimedia Foundation"
-    ],
-    "confirming_operators": [
-      "Wikimedia Foundation"
-    ],
-    "track": "api-native",
-    "ranking_evidence": {
-      "label": "celebrities",
-      "mode": "min",
-      "n_base": 104,
-      "n_ranked": 104,
-      "spearman_key_vs_api_order": -0.0293,
-      "n_tied_at_extremum": 1,
-      "distinct_keys": 103,
-      "winner_position_in_api_order": 51,
-      "winner_is_first_returned": false,
-      "winner_is_last_returned": false,
-      "top_keys": [
-        "1837-11-23",
-        "1842-11-12",
-        "1845-03-27",
-        "1845-08-16",
-        "1850-06-06"
-      ],
-      "answer_field_distinct_values": 90,
-      "answer_field_n_values": 104,
-      "answer_field_max_count": 6,
-      "answer_field_count_of_answer": 1,
-      "answer_field_modal_share": 0.057692,
-      "p_answer_by_uniform_guess": 0.009615
-    },
-    "facts": {
-      "category": "Physics",
-      "window": [
-        1901,
-        1975
-      ],
-      "n": 104,
-      "dob": "1837-11-23",
-      "second_earliest_dob": "1842-11-12",
-      "award_year": 1910,
-      "laureate_id": "15"
-    },
-    "verified": true
+  "verified": true
+ },
+ {
+  "collection_is_explicit": false,
+  "primary_operator": "Metropolitan Museum of Art",
+  "independent_confirming_operators": [
+   "Wikimedia Foundation"
+  ],
+  "category": "art",
+  "field": "accession number",
+  "answer": "71.84",
+  "entity": "Man in Armor (Mars?)",
+  "n_base": 89,
+  "sources": [
+   "https://collectionapi.metmuseum.org/public/collection/v1/objects/437416",
+   "https://www.wikidata.org/wiki/Q19905220",
+   "https://api.europeana.eu/record/v2/search.json?query=rembrandt"
+  ],
+  "confirming_sources": [
+   "https://collectionapi.metmuseum.org/public/collection/v1/objects/437416",
+   "https://www.wikidata.org/wiki/Q19905220"
+  ],
+  "api_proof": true,
+  "api_proof_argument": "The museum search endpoint returns only object identifiers; accession years are available only by retrieving each record individually, so all 89 qualifying objects must be fetched before the earliest can be identified.",
+  "confirmation": "the object record reports accession year 1871; independently, Wikidata Q19905220 ('Man in Armor (Mars?)') carries P217 '71.84' scoped to the museum collection Q160236",
+  "prompt": "The Metropolitan Museum of Art publishes an open catalogue of its holdings, giving each object an accession number and recording the year it entered the collection. Restrict attention to catalogued works attributed to Rembrandt that the museum marks as public domain and for which it holds images. Among only those works, one entered the museum's collection in an earlier year than any other. Report the accession number that the museum assigned to that single earliest work. Corroborate the attribution against an independent cultural heritage aggregator. Give the accession number exactly as the museum prints it, punctuation included.",
+  "source_operators": [
+   "Europeana Foundation",
+   "Metropolitan Museum of Art",
+   "Wikimedia Foundation"
+  ],
+  "confirming_operators": [
+   "Metropolitan Museum of Art",
+   "Wikimedia Foundation"
+  ],
+  "track": "api-native",
+  "ranking_evidence": {
+   "label": "art",
+   "mode": "min",
+   "n_base": 89,
+   "n_ranked": 89,
+   "spearman_key_vs_api_order": -0.0252,
+   "n_tied_at_extremum": 1,
+   "distinct_keys": 33,
+   "winner_position_in_api_order": 32,
+   "winner_is_first_returned": false,
+   "winner_is_last_returned": false,
+   "top_keys": [
+    "1871",
+    "1889",
+    "1891",
+    "1914",
+    "1914"
+   ],
+   "answer_field_distinct_values": 89,
+   "answer_field_n_values": 89,
+   "answer_field_max_count": 1,
+   "answer_field_count_of_answer": 1,
+   "answer_field_modal_share": 0.011236,
+   "p_answer_by_uniform_guess": 0.011236
   },
-  {
-    "collection_is_explicit": false,
-    "primary_operator": "Hipo Labs",
-    "independent_confirming_operators": [
-      "Wikimedia Foundation"
-    ],
-    "category": "education",
-    "field": "internet domain",
-    "answer": "wit.ie",
-    "entity": "Waterford Institute Of Technology",
-    "n_base": 27,
-    "sources": [
-      "http://universities.hipolabs.com/search?country=Ireland",
-      "https://www.wikidata.org/wiki/Q7974025",
-      "https://nces.ed.gov/ipeds/datacenter/"
-    ],
-    "confirming_sources": [
-      "https://www.wikidata.org/wiki/Q7974025"
-    ],
-    "api_proof": true,
-    "api_proof_argument": "The register returns an unsorted national list and supports no ordering parameter, so all 27 institutions must be pulled before their domains can be ranked.",
-    "confirmation": "Wikidata Q7974025 resolves Waterford Institute Of Technology and its P856 official website prints the same host 'wit.ie'",
-    "prompt": "A public register of higher education institutions lists the universities and colleges of Ireland, recording the internet domain each one uses. Consider only the institutions that this register places in Ireland and for which it records at least one domain. Order the primary domains of those institutions as text, from first to last. One domain falls later in that ordering than every other. Report that single last-ordered domain. Confirm the institution through an independent structured knowledge base. Give the domain alone, in lower case, with no protocol and no path.",
-    "source_operators": [
-      "Hipo Labs",
-      "US Department of Education",
-      "Wikimedia Foundation"
-    ],
-    "confirming_operators": [
-      "Wikimedia Foundation"
-    ],
-    "track": "api-native",
-    "ranking_evidence": {
-      "label": "education",
-      "mode": "max",
-      "n_base": 27,
-      "n_ranked": 27,
-      "spearman_key_vs_api_order": 0.7888,
-      "n_tied_at_extremum": 1,
-      "distinct_keys": 27,
-      "winner_position_in_api_order": 23,
-      "winner_is_first_returned": false,
-      "winner_is_last_returned": false,
-      "top_keys": [
-        "wit.ie",
-        "universityofgalway.ie",
-        "ul.ie",
-        "ucd.ie",
-        "ucc.ie"
-      ],
-      "answer_field_distinct_values": 27,
-      "answer_field_n_values": 27,
-      "answer_field_max_count": 1,
-      "answer_field_count_of_answer": 1,
-      "answer_field_modal_share": 0.037037,
-      "p_answer_by_uniform_guess": 0.037037
-    },
-    "facts": {
-      "country": "Ireland",
-      "n": 27,
-      "inst": "Waterford Institute Of Technology",
-      "witness_qid": "Q7974025",
-      "witness_p856": "http://www.wit.ie",
-      "n_p856_values": 1,
-      "all_p856_hosts": [
-        "wit.ie"
-      ],
-      "witness_scope": "P856 confirms the DOMAIN BINDING only. It does not confirm that the institution still exists.",
-      "known_defect_order_leak": "The ranking key (alphabetically-last domain) correlates with this register's return order at rho +0.47..+0.95 across all 10 countries measured, because the register returns roughly name-alphabetical order and names predict domains.",
-      "known_defect_entity_state": "Waterford Institute of Technology was dissolved into South East Technological University on 2022-05-01. Wikidata records no succession property for it, so neither the P856 equality check nor a P576/P7888/P1366 liveness guard detects this."
-    },
-    "verified": true
+  "facts": {
+   "artist": "Rembrandt",
+   "n": 89,
+   "year": "1871",
+   "witness_qid": "Q19905220",
+   "witness_label": "Man in Armor (Mars?)",
+   "witness_note": "P217 alone is ambiguous across museums; the P195 collection scope is what makes the match identifying"
   },
-  {
-    "collection_is_explicit": false,
-    "primary_operator": "OurAirports",
-    "independent_confirming_operators": [
-      "OpenFlights",
-      "Wikimedia Foundation"
-    ],
-    "category": "geography",
-    "field": "ICAO identifier",
-    "answer": "SKIP",
-    "entity": "San Luis Airport",
-    "n_base": 42,
-    "sources": [
-      "https://davidmegginson.github.io/ourairports-data/airports.csv",
-      "https://www.wikidata.org/wiki/Q1321708",
-      "https://raw.githubusercontent.com/jpatokal/openflights/master/data/airports.dat",
-      "https://restcountries.com/v3.1/alpha/CO"
-    ],
-    "confirming_sources": [
-      "https://www.wikidata.org/wiki/Q1321708",
-      "https://raw.githubusercontent.com/jpatokal/openflights/master/data/airports.dat"
-    ],
-    "api_proof": true,
-    "api_proof_argument": "OurAirports publishes a flat CSV with no server-side sort or filter, so the highest-elevation qualifying aerodrome cannot be requested; the full national set of 42 records must be pulled and ordered by the solver.",
-    "confirmation": "Wikidata Q1321708 property P239 returns SKIP, and OpenFlights lists the same identifier for 'San Luis Airport'",
-    "prompt": "The OurAirports open dataset lists every civil aerodrome in Colombia with its elevation, service status and identifier codes. Restrict attention to aerodromes in that country classified as medium or large and flagged as currently having scheduled commercial service. Among only those, one sits at a greater elevation above sea level than any other. Identify that single aerodrome and report its four-character ICAO identifier. Confirm the same identifier against two independent references before answering. Give the identifier alone, in capital letters, with no surrounding words.",
-    "source_operators": [
-      "OpenFlights",
-      "OurAirports",
-      "REST Countries project",
-      "Wikimedia Foundation"
-    ],
-    "confirming_operators": [
-      "OpenFlights",
-      "Wikimedia Foundation"
-    ],
-    "track": "api-native",
-    "ranking_evidence": {
-      "label": "geography",
-      "mode": "max",
-      "n_base": 42,
-      "n_ranked": 42,
-      "spearman_key_vs_api_order": -0.0349,
-      "n_tied_at_extremum": 1,
-      "distinct_keys": 42,
-      "winner_position_in_api_order": 16,
-      "winner_is_first_returned": false,
-      "winner_is_last_returned": false,
-      "top_keys": [
-        "9765",
-        "8361",
-        "6955",
-        "6871",
-        "5951"
-      ],
-      "answer_field_distinct_values": 42,
-      "answer_field_n_values": 42,
-      "answer_field_max_count": 1,
-      "answer_field_count_of_answer": 1,
-      "answer_field_modal_share": 0.02381,
-      "p_answer_by_uniform_guess": 0.02381
-    },
-    "facts": {
-      "country": "Colombia",
-      "n": 42,
-      "elev": 9765,
-      "runner_up_elev": 8361,
-      "openflights_name": "San Luis Airport"
-    },
-    "verified": true
+  "verified": true
+ },
+ {
+  "collection_is_explicit": false,
+  "primary_operator": "US Securities and Exchange Commission",
+  "independent_confirming_operators": [
+   "Wikimedia Foundation"
+  ],
+  "category": "business",
+  "field": "SEC Central Index Key",
+  "answer": "1341439",
+  "entity": "Oracle Corporation",
+  "n_base": 154,
+  "sources": [
+   "https://data.sec.gov/api/xbrl/frames/us-gaap/ResearchAndDevelopmentExpense/USD/CY2015.json",
+   "https://data.sec.gov/submissions/CIK0001341439.json",
+   "https://www.wikidata.org/wiki/Q19900",
+   "https://api.gleif.org/api/v1/lei-records?filter[entity.legalName]=Oracle%20Corporation"
+  ],
+  "confirming_sources": [
+   "https://www.wikidata.org/wiki/Q19900",
+   "https://data.sec.gov/submissions/CIK0001341439.json"
+  ],
+  "api_proof": true,
+  "api_proof_argument": "The XBRL frames endpoint returns all 2427 filers reporting the concept for CY2015 in a single unordered array with no ranking parameter, so the 154 filers recorded at US-TX must be separated out and compared by the solver.",
+  "confirmation": "Wikidata Q19900 property P5531 returns 0001341439, and the SEC submissions endpoint resolves CIK 0001341439",
+  "prompt": "The United States securities regulator publishes a structured frame for each accounting concept and calendar year, listing every filer that reported that concept together with the business address it has on record. Take the frame for research and development expense covering calendar year 2015, and keep only those filers whose recorded business address places them in Texas. Within that restricted group one filer reported a larger figure for the concept than every other. Report the Central Index Key that the regulator assigns to that single filer. Confirm the key against an independent structured knowledge base before answering. Give the digits of the key alone, without leading zeros or any label.",
+  "source_operators": [
+   "Global Legal Entity Identifier Foundation",
+   "US Securities and Exchange Commission",
+   "Wikimedia Foundation"
+  ],
+  "confirming_operators": [
+   "US Securities and Exchange Commission",
+   "Wikimedia Foundation"
+  ],
+  "track": "api-native",
+  "ranking_evidence": {
+   "label": "business",
+   "mode": "max",
+   "n_base": 154,
+   "n_ranked": 154,
+   "spearman_key_vs_api_order": -0.065,
+   "n_tied_at_extremum": 1,
+   "distinct_keys": 144,
+   "winner_position_in_api_order": 99,
+   "winner_is_first_returned": false,
+   "winner_is_last_returned": false,
+   "top_keys": [
+    "5787000000.0",
+    "1676000000.0",
+    "1267000000.0",
+    "1094000000.0",
+    "1051000000.0"
+   ],
+   "answer_field_distinct_values": 154,
+   "answer_field_n_values": 154,
+   "answer_field_max_count": 1,
+   "answer_field_count_of_answer": 1,
+   "answer_field_modal_share": 0.006494,
+   "p_answer_by_uniform_guess": 0.006494
   },
-  {
-    "collection_is_explicit": false,
-    "primary_operator": "US National Institutes of Health",
-    "independent_confirming_operators": [
-      "EMBL-EBI",
-      "Wikimedia Foundation"
-    ],
-    "category": "health and medicine",
-    "field": "trial registry identifier",
-    "answer": "NCT00021697",
-    "entity": "Safety/Efficacy of AVP-923 in the Treatment of Emotional Lability (Uncontrolled Crying & Laughing) in Patients With ALS",
-    "n_base": 51,
-    "sources": [
-      "https://clinicaltrials.gov/api/v2/studies?pageSize=200&query.cond=amyotrophic+lateral+sclerosis&filter.overallStatus=COMPLETED&aggFilters=phase:3&fields=NCTId,BriefTitle,StartDate,CompletionDate,LeadSponsorName",
-      "https://www.wikidata.org/wiki/Q66059502",
-      "https://api.fda.gov/drug/label.json?search=amyotrophic+lateral+sclerosis",
-      "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=ACCESSION_ID%3A%22NCT00021697%22&format=json&pageSize=3"
-    ],
-    "confirming_sources": [
-      "https://www.wikidata.org/wiki/Q66059502",
-      "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=ACCESSION_ID%3A%22NCT00021697%22&format=json&pageSize=3"
-    ],
-    "api_proof": true,
-    "api_proof_argument": "The registry filters by condition, phase and status but will not return the earliest-starting study, so all 51 completed phase 3 records must be enumerated and ordered by start date.",
-    "confirmation": "Wikidata Q66059502 carries clinical trial identifier NCT00021697; Europe PMC returns 1 record(s) carrying accession NCT00021697 ('Treatment for cramps in amyotrophic lateral sclerosis/motor neuron dis')",
-    "prompt": "The United States public clinical trials registry records interventional studies of amyotrophic lateral sclerosis, each with a phase, a recruitment status and a start date. Consider only those studies recorded as phase 3 and as having reached completion. Within that set exactly one began earlier than every other. Report the registry identifier assigned to that single earliest study. Verify the identifier appears on an independent structured knowledge base. Answer with the identifier alone, in its standard eight-digit registry form.",
-    "source_operators": [
-      "EMBL-EBI",
-      "US Food and Drug Administration",
-      "US National Institutes of Health",
-      "Wikimedia Foundation"
-    ],
-    "confirming_operators": [
-      "EMBL-EBI",
-      "Wikimedia Foundation"
-    ],
-    "track": "api-native",
-    "ranking_evidence": {
-      "label": "health",
-      "mode": "min",
-      "n_base": 51,
-      "n_ranked": 51,
-      "spearman_key_vs_api_order": 0.1455,
-      "n_tied_at_extremum": 1,
-      "distinct_keys": 50,
-      "winner_position_in_api_order": 45,
-      "winner_is_first_returned": false,
-      "winner_is_last_returned": false,
-      "top_keys": [
-        "2001-01",
-        "2002-04",
-        "2003-01",
-        "2003-06",
-        "2003-07"
-      ],
-      "answer_field_distinct_values": 51,
-      "answer_field_n_values": 51,
-      "answer_field_max_count": 1,
-      "answer_field_count_of_answer": 1,
-      "answer_field_modal_share": 0.019608,
-      "p_answer_by_uniform_guess": 0.019608
-    },
-    "facts": {
-      "condition": "amyotrophic lateral sclerosis",
-      "n": 51,
-      "europepmc_hits": 1,
-      "europepmc_title": "Treatment for cramps in amyotrophic lateral sclerosis/motor neuron disease."
-    },
-    "verified": true
+  "facts": {
+   "loc": "US-TX",
+   "concept": "ResearchAndDevelopmentExpense",
+   "year": 2015,
+   "n": 154,
+   "val": 5787000000,
+   "runner_up": 1676000000.0,
+   "sep_ratio": 3.453,
+   "accn": "0001193125-18-201034",
+   "period_end": "2016-05-31",
+   "provenance_note": "The SEC `loc` field records the filer's business address as currently registered, not necessarily its address during the reporting year, so the prompt scopes the set by the recorded field rather than by historical headquarters."
   },
-  {
-    "collection_is_explicit": false,
-    "primary_operator": "Harvard Law School Library Innovation Lab",
-    "independent_confirming_operators": [
-      "Cornell University",
-      "Free Law Project"
-    ],
-    "category": "legal",
-    "field": "United States Reports page",
-    "answer": "768",
-    "entity": "Allied-Signal, Inc. ex rel. Bendix Corp. v. Director, Division of Taxation",
-    "n_base": 51,
-    "sources": [
-      "https://static.case.law/us/504/CasesMetadata.json",
-      "https://www.law.cornell.edu/supremecourt/text/504/768",
-      "https://www.courtlistener.com/api/rest/v4/search/?q=citation%3A%28%22504+U.S.+768%22%29&type=o&court=scotus"
-    ],
-    "confirming_sources": [
-      "https://www.law.cornell.edu/supremecourt/text/504/768",
-      "https://www.courtlistener.com/api/rest/v4/search/?q=citation%3A%28%22504+U.S.+768%22%29&type=o&court=scotus"
-    ],
-    "api_proof": true,
-    "api_proof_argument": "The volume file is published as one undivided list and carries no alphabetical index, so all 51 multi-page cases in volume 504 must be read out and sorted by name before the first one can be named, and only then does its starting page become visible.",
-    "confirmation": "Cornell LII serves the text of Allied-Signal, Inc. ex rel. Bendix Corp. v. Director, Division of Taxation at 504 U.S. 768, and the Free Law Project citation index resolves that citation to the same case",
-    "prompt": "The Caselaw Access Project distributes, as one machine-readable file, metadata for every case reported in volume 504 of United States Reports, giving each case a short name together with the first and last printed page it occupies. Consider only those cases in that volume which run to more than a single printed page. Order the short names of those cases alphabetically and take whichever name comes first. Report the printed page of United States Reports on which that first-named case begins. Confirm the page against an independently published text of the same decision. Answer with the page number alone, with no volume, no reporter abbreviation and no other words.",
-    "source_operators": [
-      "Cornell University",
-      "Free Law Project",
-      "Harvard Law School Library Innovation Lab"
-    ],
-    "confirming_operators": [
-      "Cornell University",
-      "Free Law Project"
-    ],
-    "track": "api-native",
-    "ranking_evidence": {
-      "label": "legal vol 504",
-      "mode": "min",
-      "n_base": 51,
-      "n_ranked": 51,
-      "spearman_key_vs_api_order": 0.0064,
-      "n_tied_at_extremum": 1,
-      "distinct_keys": 51,
-      "winner_position_in_api_order": 27,
-      "winner_is_first_returned": false,
-      "winner_is_last_returned": false,
-      "top_keys": [
-        "allied-signal, inc. ex rel. bendix corp. v. director, division of taxation",
-        "ankenbrandt ex rel. l. r. v. richards",
-        "black v. collins",
-        "burdick v. takushi",
-        "burlington northern railroad v. ford"
-      ],
-      "answer_field_distinct_values": 51,
-      "answer_field_n_values": 51,
-      "answer_field_max_count": 1,
-      "answer_field_count_of_answer": 1,
-      "answer_field_modal_share": 0.019608,
-      "p_answer_by_uniform_guess": 0.019608
-    },
-    "facts": {
-      "volume": 504,
-      "case": "Allied-Signal, Inc. ex rel. Bendix Corp. v. Director, Division of Taxation",
-      "page": 768,
-      "decision_date": "1992-06-15",
-      "n_multi": 51,
-      "n_volume": 913,
-      "provenance_note": "CourtListener ingested Caselaw Access Project data in 2024, so treat Cornell LII as the independent text of record"
-    },
-    "verified": true
+  "verified": true
+ },
+ {
+  "collection_is_explicit": false,
+  "primary_operator": "Nobel Prize Outreach",
+  "independent_confirming_operators": [
+   "German National Library",
+   "Wikimedia Foundation"
+  ],
+  "category": "celebrities/public figures",
+  "field": "GND identifier",
+  "answer": "119009846",
+  "entity": "Johannes Diderik van der Waals",
+  "n_base": 104,
+  "sources": [
+   "https://api.nobelprize.org/2.1/laureates",
+   "https://www.wikidata.org/wiki/Q131721",
+   "https://d-nb.info/gnd/119009846",
+   "https://api.openalex.org/authors?search=Johannes%20Diderik%20van%20der%20Waals"
+  ],
+  "confirming_sources": [
+   "https://d-nb.info/gnd/119009846",
+   "https://www.wikidata.org/wiki/Q131721"
+  ],
+  "api_proof": true,
+  "api_proof_argument": "The laureate registry is paginated and returned in alphabetical name order with no birth-date sort, so all 104 qualifying laureates must be pulled and compared. The answer is an authority-file identifier, not a property of the person that could be recalled once the person is named, so recognising the laureate is not sufficient: the identifier must be looked up. Measured rho for the date key against registry order is -0.0293.",
+  "confirmation": "German National Library record d-nb.info/gnd/119009846 names Johannes Diderik van der Waals, and Wikidata Q131721 property P227 returns the same identifier",
+  "prompt": "The Nobel Prize registry publishes a record for every laureate giving the person's name and date of birth, and national libraries maintain authority files that assign each person a stable numeric identifier. Restrict attention to the laureates recognised in Physics for awards made between 1901 and 1975 whose record carries a complete date of birth. Among that group one laureate was born earlier than every other. Report the GND authority identifier that the German National Library assigns to that single laureate. Resolve the identifier at the national library before answering. Give the identifier alone, digits and any trailing check character only.",
+  "source_operators": [
+   "German National Library",
+   "Nobel Prize Outreach",
+   "OurResearch (OpenAlex)",
+   "Wikimedia Foundation"
+  ],
+  "confirming_operators": [
+   "German National Library",
+   "Wikimedia Foundation"
+  ],
+  "track": "api-native",
+  "ranking_evidence": {
+   "label": "celebrities",
+   "mode": "min",
+   "n_base": 104,
+   "n_ranked": 104,
+   "spearman_key_vs_api_order": -0.0293,
+   "n_tied_at_extremum": 1,
+   "distinct_keys": 103,
+   "winner_position_in_api_order": 51,
+   "winner_is_first_returned": false,
+   "winner_is_last_returned": false,
+   "top_keys": [
+    "1837-11-23",
+    "1842-11-12",
+    "1845-03-27",
+    "1845-08-16",
+    "1850-06-06"
+   ],
+   "answer_field_distinct_values": 103,
+   "answer_field_n_values": 104,
+   "answer_field_max_count": 2,
+   "answer_field_count_of_answer": 1,
+   "answer_field_modal_share": 0.019231,
+   "p_answer_by_uniform_guess": 0.009615
   },
-  {
-    "collection_is_explicit": false,
-    "primary_operator": "US Office of the Federal Register",
-    "independent_confirming_operators": [
-      "Wikimedia Foundation"
-    ],
-    "category": "politics",
-    "field": "executive order number",
-    "answer": "13292",
-    "entity": "Further Amendment to Executive Order 12958, as Amended, Classified National Security Information",
-    "n_base": 40,
-    "sources": [
-      "https://www.federalregister.gov/api/v1/documents.json?conditions[type][]=PRESDOCU&conditions[presidential_document_type][]=executive_order&conditions[publication_date][gte]=2003-01-01&conditions[publication_date][lte]=2003-12-31&fields[]=executive_order_number&fields[]=title&fields[]=page_length&fields[]=publication_date&fields[]=citation&fields[]=start_page&fields[]=end_page&per_page=1000&order=oldest",
-      "https://www.federalregister.gov/documents/2003-03-28",
-      "https://www.govinfo.gov/app/collection/FR",
-      "https://www.wikidata.org/wiki/Q5419886"
-    ],
-    "confirming_sources": [
-      "https://www.federalregister.gov/documents/2003-03-28",
-      "https://www.wikidata.org/wiki/Q5419886"
-    ],
-    "api_proof": true,
-    "api_proof_argument": "The Federal Register document API returns the 40 executive orders of 2003 in publication order with no length field to sort on, so every record's printed extent must be read and compared. Ranking by printed length is deliberately unrelated to issuance order: measured spearman rho against return order is -0.3685.",
-    "confirmation": "the register's own document record for 2003-03-28 carries citation 68 FR 15315 spanning pages 15315 to 15334; Wikidata item Q5419886 is titled 'Executive Order 13292' and independently binds the number to the order",
-    "prompt": "The United States Office of the Federal Register publishes every presidential executive order, recording for each one its sequential order number, its title and the span of printed pages it occupies. Consider only the executive orders that the register published during 2003, each counted by the number of printed pages it fills. Among those orders one occupies more printed pages than any other issued that year. Report the sequential order number that the register assigns to that single longest order. The register offers no view sorted by printed extent, so the comparison must be built from the records themselves. Give the order number alone as digits, with no prefix or other words.",
-    "source_operators": [
-      "US Government Publishing Office",
-      "US Office of the Federal Register",
-      "Wikimedia Foundation"
-    ],
-    "confirming_operators": [
-      "US Office of the Federal Register",
-      "Wikimedia Foundation"
-    ],
-    "track": "api-native",
-    "ranking_evidence": {
-      "label": "politics",
-      "mode": "max",
-      "n_base": 40,
-      "n_ranked": 40,
-      "spearman_key_vs_api_order": -0.3685,
-      "n_tied_at_extremum": 1,
-      "distinct_keys": 9,
-      "winner_position_in_api_order": 10,
-      "winner_is_first_returned": false,
-      "winner_is_last_returned": false,
-      "top_keys": [
-        "20",
-        "15",
-        "10",
-        "8",
-        "8"
-      ],
-      "answer_field_distinct_values": 40,
-      "answer_field_n_values": 40,
-      "answer_field_max_count": 1,
-      "answer_field_count_of_answer": 1,
-      "answer_field_modal_share": 0.025,
-      "p_answer_by_uniform_guess": 0.025
-    },
-    "facts": {
-      "year": 2003,
-      "n": 40,
-      "pages": 20,
-      "runner_up": 15,
-      "title": "Further Amendment to Executive Order 12958, as Amended, Classified National Security Information",
-      "citation": "68 FR 15315",
-      "publication_date": "2003-03-28",
-      "single_witness": false,
-      "wikidata_eo_qid": "Q5419886",
-      "govinfo_granule_check": "all 130 granules of the issue were paged; none reference the order number and only one granule is presidential, so GovInfo is a co-publisher of the issue but not a witness of the order",
-      "provenance_note": "Executive order numbers are assigned and published only by the Office of the Federal Register. Wikidata catalogues the order as a subject in its own right, which is why it can witness the number without restating the register's ranking; the page-length ranking itself has no second witness."
-    },
-    "verified": true
+  "facts": {
+   "category": "Physics",
+   "window": [
+    1901,
+    1975
+   ],
+   "n": 104,
+   "dob": "1837-11-23",
+   "second_earliest_dob": "1842-11-12",
+   "award_year": 1910,
+   "laureate_id": "15",
+   "answer_field_class": "identifier",
+   "guess_space": "p_answer_by_uniform_guess is measured over laureate identity. The GND authority file assigns exactly one record per person and _gnd() rejects any laureate whose Wikidata P227 is not single-valued, so laureate identity and identifier are in bijection and the two probabilities are equal.",
+   "replaces": "city of birth (attribute; measured recallable)"
   },
-  {
-    "collection_is_explicit": false,
-    "primary_operator": "Major League Baseball",
-    "independent_confirming_operators": [
-      "Retrosheet",
-      "Wikimedia Foundation"
-    ],
-    "category": "sports",
-    "field": "city of birth",
-    "answer": "Newton",
-    "entity": "Jim Corsi",
-    "n_base": 48,
-    "sources": [
-      "https://statsapi.mlb.com/api/v1/teams/111/roster?season=1999&rosterType=fullSeason",
-      "https://www.retrosheet.org/BIOFILE.TXT",
-      "https://www.wikidata.org/wiki/Q3806513"
-    ],
-    "confirming_sources": [
-      "https://www.retrosheet.org/BIOFILE.TXT",
-      "https://www.wikidata.org/wiki/Q3806513"
-    ],
-    "api_proof": true,
-    "api_proof_argument": "The roster endpoint returns players in uniform-number order and offers no birth-date sort, so all 48 players the club carried that season must be pulled and compared.",
-    "confirmation": "Retrosheet and Wikidata independently record the same birthplace for that player",
-    "prompt": "The official Major League Baseball statistics service publishes the full season roster of the Boston Red Sox for 1999, listing every player the club carried that year with his date and place of birth. Consider only the players appearing on that full season roster. Exactly one of them was born earlier than every other player on the list. Report the city of birth that the service records for that single oldest player. Confirm the birthplace against two references independent of the league. Give the city name alone, as recorded, with no state, no country and no other words.",
-    "source_operators": [
-      "Major League Baseball",
-      "Retrosheet",
-      "Wikimedia Foundation"
-    ],
-    "confirming_operators": [
-      "Retrosheet",
-      "Wikimedia Foundation"
-    ],
-    "track": "api-native",
-    "ranking_evidence": {
-      "label": "sports Boston Red Sox 1999",
-      "mode": "min",
-      "n_base": 48,
-      "n_ranked": 48,
-      "spearman_key_vs_api_order": 0.0731,
-      "n_tied_at_extremum": 1,
-      "distinct_keys": 47,
-      "winner_position_in_api_order": 6,
-      "winner_is_first_returned": false,
-      "winner_is_last_returned": false,
-      "top_keys": [
-        "1961-09-09",
-        "1962-10-30",
-        "1963-06-25",
-        "1964-04-11",
-        "1964-08-24"
-      ],
-      "answer_field_distinct_values": 45,
-      "answer_field_n_values": 48,
-      "answer_field_max_count": 2,
-      "answer_field_count_of_answer": 1,
-      "answer_field_modal_share": 0.041667,
-      "p_answer_by_uniform_guess": 0.020833
-    },
-    "facts": {
-      "team": "Boston Red Sox",
-      "season": 1999,
-      "n": 48,
-      "player": "Jim Corsi",
-      "dob": "1961-09-09"
-    },
-    "verified": true
+  "verified": true
+ },
+ {
+  "collection_is_explicit": false,
+  "primary_operator": "Hipo Labs",
+  "independent_confirming_operators": [
+   "Wikimedia Foundation"
+  ],
+  "category": "education",
+  "field": "internet domain",
+  "answer": "ntnu.no",
+  "entity": "Norwegian University of Science and Technology",
+  "n_base": 25,
+  "sources": [
+   "http://universities.hipolabs.com/search?country=Norway",
+   "https://www.wikidata.org/wiki/Q314536",
+   "https://nces.ed.gov/ipeds/datacenter/"
+  ],
+  "confirming_sources": [
+   "https://www.wikidata.org/wiki/Q314536"
+  ],
+  "api_proof": true,
+  "api_proof_argument": "The register returns an unsorted national list and supports no ordering parameter, so all 25 institutions must be pulled before their domains can be ranked. The ordering is applied to the reversed domain string specifically so that it cannot be read off the register's own return order: measured rho for this key is 0.0746, against +0.4685 to +0.9498 for the forward-alphabetical key across the ten countries tested.",
+  "confirmation": "Wikidata Q314536 resolves Norwegian University of Science and Technology and its P856 official website prints the same host 'ntnu.no'",
+  "prompt": "A public register of higher education institutions lists the universities and colleges of Norway, recording the internet domain each one uses. Consider only the institutions that this register places in Norway and for which it records at least one domain. Write each institution's primary domain backwards, character by character, and order those reversed strings as text. One of them falls later in that ordering than every other. Report the original, unreversed domain of that single institution. Confirm the institution through an independent structured knowledge base. Give the domain alone, in lower case, with no protocol and no path.",
+  "source_operators": [
+   "Hipo Labs",
+   "US Department of Education",
+   "Wikimedia Foundation"
+  ],
+  "confirming_operators": [
+   "Wikimedia Foundation"
+  ],
+  "track": "api-native",
+  "ranking_evidence": {
+   "label": "education",
+   "mode": "max",
+   "n_base": 25,
+   "n_ranked": 25,
+   "spearman_key_vs_api_order": 0.0746,
+   "n_tied_at_extremum": 1,
+   "distinct_keys": 24,
+   "winner_position_in_api_order": 15,
+   "winner_is_first_returned": false,
+   "winner_is_last_returned": false,
+   "top_keys": [
+    "on.untn",
+    "on.tiu",
+    "on.siu",
+    "on.shtev",
+    "on.oiu"
+   ],
+   "answer_field_distinct_values": 24,
+   "answer_field_n_values": 25,
+   "answer_field_max_count": 2,
+   "answer_field_count_of_answer": 1,
+   "answer_field_modal_share": 0.08,
+   "p_answer_by_uniform_guess": 0.04
   },
-  {
-    "collection_is_explicit": false,
-    "primary_operator": "OpenFlights",
-    "independent_confirming_operators": [
-      "OurAirports",
-      "Wikimedia Foundation"
-    ],
-    "category": "travel",
-    "field": "IATA code",
-    "answer": "IVL",
-    "entity": "Ivalo Airport",
-    "n_base": 73,
-    "sources": [
-      "https://raw.githubusercontent.com/jpatokal/openflights/master/data/routes.dat",
-      "https://davidmegginson.github.io/ourairports-data/airports.csv",
-      "https://www.wikidata.org/wiki/Q850269"
-    ],
-    "confirming_sources": [
-      "https://davidmegginson.github.io/ourairports-data/airports.csv",
-      "https://www.wikidata.org/wiki/Q850269"
-    ],
-    "api_proof": true,
-    "api_proof_argument": "OpenFlights distributes routes and airports as two separate flat files with no query interface. The northernmost destination exists only after joining the two and ordering 73 destinations by latitude.",
-    "confirmation": "OurAirports lists IVL at latitude 68.6073; Wikidata Q850269 ('Ivalo Airport') carries P238 'IVL' uniquely",
-    "prompt": "The OpenFlights project distributes an airline route table and a separate airport table, each as a plain delimited file covering worldwide civil aviation. Consider only the nonstop destinations served by the carrier with IATA code AY departing from its hub at HEL, as recorded in that route table. Join those destinations to the airport table and find the one lying furthest north. Report the three-letter IATA code of that single northernmost destination. Cross-check the coordinates against a second independent aerodrome register. Answer with the three-letter code only, capitalised, and nothing else.",
-    "source_operators": [
-      "OpenFlights",
-      "OurAirports",
-      "Wikimedia Foundation"
-    ],
-    "confirming_operators": [
-      "OurAirports",
-      "Wikimedia Foundation"
-    ],
-    "track": "api-native",
-    "ranking_evidence": {
-      "label": "travel",
-      "mode": "max",
-      "n_base": 73,
-      "n_ranked": 73,
-      "spearman_key_vs_api_order": -0.2042,
-      "n_tied_at_extremum": 1,
-      "distinct_keys": 73,
-      "winner_position_in_api_order": 6,
-      "winner_is_first_returned": false,
-      "winner_is_last_returned": false,
-      "top_keys": [
-        "68.607299804688",
-        "66.564796447754",
-        "65.987602233887",
-        "65.778701782227",
-        "64.930099487305"
-      ],
-      "answer_field_distinct_values": 73,
-      "answer_field_n_values": 73,
-      "answer_field_max_count": 1,
-      "answer_field_count_of_answer": 1,
-      "answer_field_modal_share": 0.013699,
-      "p_answer_by_uniform_guess": 0.013699
-    },
-    "facts": {
-      "airline": "AY",
-      "hub": "HEL",
-      "n": 73,
-      "witness_qid": "Q850269",
-      "wikidata_p238_hits": 1
-    },
-    "verified": true
+  "facts": {
+   "country": "Norway",
+   "n": 25,
+   "inst": "Norwegian University of Science and Technology",
+   "witness_qid": "Q314536",
+   "witness_p856": "https://ntnu.no",
+   "n_p856_values": 1,
+   "all_p856_hosts": [
+    "ntnu.no"
+   ],
+   "answer_field_class": "identifier",
+   "spearman_this_key": 0.0746,
+   "replaces": "Ireland / alphabetically-last domain -> wit.ie, whose institution was dissolved on 2022-05-01, ranked by a key that leaked the register's order at rho +0.7741",
+   "witness_scope": "P856 confirms the DOMAIN BINDING only. It does not confirm that the institution still exists.",
+   "known_defect_answer_is_derivable": "MEASURED, NOT FIXED. The two defects this rebuild addressed were the order leak and the dead institution. Recallability is a third and separate defect and it survives: the answer ntnu.no is derivable from the institution's name without consulting the register at all, and the string draws 174 Wikipedia mentions. This is weaker than memorisation, since the solver must still identify which institution wins the ordering, but the domain field cannot be called opaque the way an arXiv, NCT or GND identifier can. Fixing it needs a different answer field, not a different country or key.",
+   "known_defect_liveness": "The liveness guard remains non-functional in general: Wikidata carries no succession properties for dissolved institutions in the cases measured, so a future seed could again name a merged institution without this check noticing. This seed was chosen because NTNU is unambiguously operating, not because the check would catch it if it were not."
   },
-  {
-    "collection_is_explicit": false,
-    "primary_operator": "IMDb (Amazon)",
-    "independent_confirming_operators": [
-      "Wikimedia Foundation"
-    ],
-    "category": "tv shows and movies",
-    "field": "IMDb title identifier",
-    "answer": "tt1278381",
-    "entity": "Je ne suis pas morte",
-    "n_base": 211,
-    "sources": [
-      "https://datasets.imdbws.com/title.basics.tsv.gz",
-      "https://www.wikidata.org/wiki/Q3163471",
-      "https://api.tvmaze.com/search/shows?q=Je%20ne%20suis%20pas%20morte",
-      "https://www.imdb.com/title/tt1278381/"
-    ],
-    "confirming_sources": [
-      "https://www.wikidata.org/wiki/Q3163471"
-    ],
-    "api_proof": true,
-    "api_proof_argument": "The IMDb basics export is a single gzipped table with no query interface, so the 211 feature titles of that year and genre must be extracted and compared on runtime by the solver.",
-    "confirmation": "Wikidata Q3163471 property P345 returns tt1278381",
-    "prompt": "The IMDb public title export records, for every film it lists, the title, the year of release, the genres assigned to it and the running time in minutes. Restrict attention to titles typed as feature films with a release year of 2008 that carry the Fantasy genre and a recorded running time. Among only those, one film runs longer than every other. Report the IMDb title identifier of that single longest film. Confirm the identifier against an independent structured knowledge base before answering. Give the identifier alone, beginning with the two letters that prefix it, and nothing else.",
-    "source_operators": [
-      "IMDb (Amazon)",
-      "TVmaze",
-      "Wikimedia Foundation"
-    ],
-    "confirming_operators": [
-      "Wikimedia Foundation"
-    ],
-    "track": "api-native",
-    "ranking_evidence": {
-      "label": "tv shows and movies",
-      "mode": "max",
-      "n_base": 211,
-      "n_ranked": 211,
-      "spearman_key_vs_api_order": -0.2021,
-      "n_tied_at_extremum": 1,
-      "distinct_keys": 76,
-      "winner_position_in_api_order": 104,
-      "winner_is_first_returned": false,
-      "winner_is_last_returned": false,
-      "top_keys": [
-        "190",
-        "166",
-        "164",
-        "156",
-        "154"
-      ],
-      "answer_field_distinct_values": 211,
-      "answer_field_n_values": 211,
-      "answer_field_max_count": 1,
-      "answer_field_count_of_answer": 1,
-      "answer_field_modal_share": 0.004739,
-      "p_answer_by_uniform_guess": 0.004739
-    },
-    "facts": {
-      "year": 2008,
-      "genre": "Fantasy",
-      "n": 211,
-      "runtime": 190,
-      "runner_up": 166,
-      "title": "Je ne suis pas morte"
-    },
-    "verified": true
+  "verified": true
+ },
+ {
+  "collection_is_explicit": false,
+  "primary_operator": "OurAirports",
+  "independent_confirming_operators": [
+   "OpenFlights",
+   "Wikimedia Foundation"
+  ],
+  "category": "geography",
+  "field": "ICAO identifier",
+  "answer": "SKIP",
+  "entity": "San Luis Airport",
+  "n_base": 42,
+  "sources": [
+   "https://davidmegginson.github.io/ourairports-data/airports.csv",
+   "https://www.wikidata.org/wiki/Q1321708",
+   "https://raw.githubusercontent.com/jpatokal/openflights/master/data/airports.dat",
+   "https://restcountries.com/v3.1/alpha/CO"
+  ],
+  "confirming_sources": [
+   "https://www.wikidata.org/wiki/Q1321708",
+   "https://raw.githubusercontent.com/jpatokal/openflights/master/data/airports.dat"
+  ],
+  "api_proof": true,
+  "api_proof_argument": "OurAirports publishes a flat CSV with no server-side sort or filter, so the highest-elevation qualifying aerodrome cannot be requested; the full national set of 42 records must be pulled and ordered by the solver.",
+  "confirmation": "Wikidata Q1321708 property P239 returns SKIP, and OpenFlights lists the same identifier for 'San Luis Airport'",
+  "prompt": "The OurAirports open dataset lists every civil aerodrome in Colombia with its elevation, service status and identifier codes. Restrict attention to aerodromes in that country classified as medium or large and flagged as currently having scheduled commercial service. Among only those, one sits at a greater elevation above sea level than any other. Identify that single aerodrome and report its four-character ICAO identifier. Confirm the same identifier against two independent references before answering. Give the identifier alone, in capital letters, with no surrounding words.",
+  "source_operators": [
+   "OpenFlights",
+   "OurAirports",
+   "REST Countries project",
+   "Wikimedia Foundation"
+  ],
+  "confirming_operators": [
+   "OpenFlights",
+   "Wikimedia Foundation"
+  ],
+  "track": "api-native",
+  "ranking_evidence": {
+   "label": "geography",
+   "mode": "max",
+   "n_base": 42,
+   "n_ranked": 42,
+   "spearman_key_vs_api_order": -0.0349,
+   "n_tied_at_extremum": 1,
+   "distinct_keys": 42,
+   "winner_position_in_api_order": 16,
+   "winner_is_first_returned": false,
+   "winner_is_last_returned": false,
+   "top_keys": [
+    "9765",
+    "8361",
+    "6955",
+    "6871",
+    "5951"
+   ],
+   "answer_field_distinct_values": 42,
+   "answer_field_n_values": 42,
+   "answer_field_max_count": 1,
+   "answer_field_count_of_answer": 1,
+   "answer_field_modal_share": 0.02381,
+   "p_answer_by_uniform_guess": 0.02381
   },
-  {
-    "collection_is_explicit": true,
-    "primary_operator": "Valve Corporation",
-    "independent_confirming_operators": [
-      "PCGamingWiki",
-      "Wikimedia Foundation"
-    ],
-    "category": "video games",
-    "field": "developing studio",
-    "answer": "Colossal Order",
-    "entity": "Cities: Skylines",
-    "n_base": 14,
-    "sources": [
-      "https://store.steampowered.com/api/appdetails?appids=255710",
-      "https://www.wikidata.org/wiki/Q18149274",
-      "https://pegi.info/search-pegi?q=Cities%3A%20Skylines",
-      "https://www.pcgamingwiki.com/w/api.php?action=query&prop=revisions&rvprop=content&rvslots=main&format=json&titles=Cities%3A%20Skylines"
-    ],
-    "confirming_sources": [
-      "https://www.wikidata.org/wiki/Q18149274",
-      "https://www.wikidata.org/wiki/Q16829899",
-      "https://www.pcgamingwiki.com/w/api.php?action=query&prop=revisions&rvprop=content&rvslots=main&format=json&titles=Cities%3A%20Skylines"
-    ],
-    "api_proof": true,
-    "api_proof_argument": "The storefront exposes one record per application number and offers no cross-title ordering, so all 14 records must be fetched individually and their printed names compared before the first can be known. The alphabetical key replaces a release-date key that had spearman rho 0.993 against the application number sequence.",
-    "confirmation": "Wikidata Q18149274 property P178 returns 'Colossal Order' (item Q16829899, label language mul)",
-    "prompt": "The Valve storefront exposes a public record for each catalogue title, giving the name the store prints for it and the studio credited with developing it. Consider the titles carried under the store application numbers 4000, 6910, 22380, 39210, 105600, 108600, 220200, 236850, 255710, 268910, 322330, 367520, 413150 and 427520, taking each name exactly as printed. Reduce each printed name to its letters and digits in lower case, then order those reduced names; one stands before all the others. Report the developing studio that the store credits for that single first-ordered title. Confirm the studio against an independent structured knowledge base before answering. Give the studio name alone, exactly as the store prints it.",
-    "source_operators": [
-      "PCGamingWiki",
-      "Pan European Game Information",
-      "Valve Corporation",
-      "Wikimedia Foundation"
-    ],
-    "confirming_operators": [
-      "PCGamingWiki",
-      "Wikimedia Foundation"
-    ],
-    "track": "api-native",
-    "ranking_evidence": {
-      "label": "video games",
-      "mode": "min",
-      "n_base": 14,
-      "n_ranked": 14,
-      "spearman_key_vs_api_order": -0.0637,
-      "n_tied_at_extremum": 1,
-      "distinct_keys": 14,
-      "winner_position_in_api_order": 8,
-      "winner_is_first_returned": false,
-      "winner_is_last_returned": false,
-      "top_keys": [
-        "citiesskylines",
-        "cuphead",
-        "deusexgameoftheyearedition",
-        "dontstarvetogether",
-        "europauniversalisiv"
-      ],
-      "answer_field_distinct_values": 14,
-      "answer_field_n_values": 14,
-      "answer_field_max_count": 1,
-      "answer_field_count_of_answer": 1,
-      "answer_field_modal_share": 0.071429,
-      "p_answer_by_uniform_guess": 0.071429
-    },
-    "facts": {
-      "n": 14,
-      "title": "Cities: Skylines",
-      "appid": 255710,
-      "n_distinct_studios": 14,
-      "pcgamingwiki_confirms": true,
-      "pcgamingwiki_developers_listed": [
-        "Colossal Order",
-        "Tantalus Media"
-      ],
-      "co_developer_note": "PCGamingWiki lists more than one developer for this title; the answer is the studio the storefront prints first, and the witness is that PCGamingWiki also credits it, not that it is the sole developer.",
-      "collection_is_explicit": true,
-      "rejected_answer_field": "store release date: Steam and Wikidata P577 agree for only 3 of 12 measured titles, with four off by exactly one day in the same direction and five off by 307-5257 days",
-      "provenance_note": "The application numbers are named in the prompt, so the solver sees the whole collection and no return-order information is withheld. The exemption is not load-bearing: rho between the alphabetical key and the appid sequence is near zero and the winner is interior to the fetch order."
-    },
-    "verified": true
-  }
+  "facts": {
+   "country": "Colombia",
+   "n": 42,
+   "elev": 9765,
+   "runner_up_elev": 8361,
+   "openflights_name": "San Luis Airport"
+  },
+  "verified": true
+ },
+ {
+  "collection_is_explicit": false,
+  "primary_operator": "US National Institutes of Health",
+  "independent_confirming_operators": [
+   "EMBL-EBI",
+   "Wikimedia Foundation"
+  ],
+  "category": "health and medicine",
+  "field": "trial registry identifier",
+  "answer": "NCT00021697",
+  "entity": "Safety/Efficacy of AVP-923 in the Treatment of Emotional Lability (Uncontrolled Crying & Laughing) in Patients With ALS",
+  "n_base": 51,
+  "sources": [
+   "https://clinicaltrials.gov/api/v2/studies?pageSize=200&query.cond=amyotrophic+lateral+sclerosis&filter.overallStatus=COMPLETED&aggFilters=phase:3&fields=NCTId,BriefTitle,StartDate,CompletionDate,LeadSponsorName",
+   "https://www.wikidata.org/wiki/Q66059502",
+   "https://api.fda.gov/drug/label.json?search=amyotrophic+lateral+sclerosis",
+   "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=ACCESSION_ID%3A%22NCT00021697%22&format=json&pageSize=3"
+  ],
+  "confirming_sources": [
+   "https://www.wikidata.org/wiki/Q66059502",
+   "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=ACCESSION_ID%3A%22NCT00021697%22&format=json&pageSize=3"
+  ],
+  "api_proof": true,
+  "api_proof_argument": "The registry filters by condition, phase and status but will not return the earliest-starting study, so all 51 completed phase 3 records must be enumerated and ordered by start date.",
+  "confirmation": "Wikidata Q66059502 carries clinical trial identifier NCT00021697; Europe PMC returns 1 record(s) carrying accession NCT00021697 ('Treatment for cramps in amyotrophic lateral sclerosis/motor neuron dis')",
+  "prompt": "The United States public clinical trials registry records interventional studies of amyotrophic lateral sclerosis, each with a phase, a recruitment status and a start date. Consider only those studies recorded as phase 3 and as having reached completion. Within that set exactly one began earlier than every other. Report the registry identifier assigned to that single earliest study. Verify the identifier appears on an independent structured knowledge base. Answer with the identifier alone, in its standard eight-digit registry form.",
+  "source_operators": [
+   "EMBL-EBI",
+   "US Food and Drug Administration",
+   "US National Institutes of Health",
+   "Wikimedia Foundation"
+  ],
+  "confirming_operators": [
+   "EMBL-EBI",
+   "Wikimedia Foundation"
+  ],
+  "track": "api-native",
+  "ranking_evidence": {
+   "label": "health",
+   "mode": "min",
+   "n_base": 51,
+   "n_ranked": 51,
+   "spearman_key_vs_api_order": 0.1455,
+   "n_tied_at_extremum": 1,
+   "distinct_keys": 50,
+   "winner_position_in_api_order": 45,
+   "winner_is_first_returned": false,
+   "winner_is_last_returned": false,
+   "top_keys": [
+    "2001-01",
+    "2002-04",
+    "2003-01",
+    "2003-06",
+    "2003-07"
+   ],
+   "answer_field_distinct_values": 51,
+   "answer_field_n_values": 51,
+   "answer_field_max_count": 1,
+   "answer_field_count_of_answer": 1,
+   "answer_field_modal_share": 0.019608,
+   "p_answer_by_uniform_guess": 0.019608
+  },
+  "facts": {
+   "condition": "amyotrophic lateral sclerosis",
+   "n": 51,
+   "europepmc_hits": 1,
+   "europepmc_title": "Treatment for cramps in amyotrophic lateral sclerosis/motor neuron disease."
+  },
+  "verified": true
+ },
+ {
+  "collection_is_explicit": false,
+  "primary_operator": "Harvard Law School Library Innovation Lab",
+  "independent_confirming_operators": [
+   "Cornell University",
+   "Free Law Project"
+  ],
+  "category": "legal",
+  "field": "United States Reports page",
+  "answer": "768",
+  "entity": "Allied-Signal, Inc. ex rel. Bendix Corp. v. Director, Division of Taxation",
+  "n_base": 51,
+  "sources": [
+   "https://static.case.law/us/504/CasesMetadata.json",
+   "https://www.law.cornell.edu/supremecourt/text/504/768",
+   "https://www.courtlistener.com/api/rest/v4/search/?q=citation%3A%28%22504+U.S.+768%22%29&type=o&court=scotus"
+  ],
+  "confirming_sources": [
+   "https://www.law.cornell.edu/supremecourt/text/504/768",
+   "https://www.courtlistener.com/api/rest/v4/search/?q=citation%3A%28%22504+U.S.+768%22%29&type=o&court=scotus"
+  ],
+  "api_proof": true,
+  "api_proof_argument": "The volume file is published as one undivided list and carries no alphabetical index, so all 51 multi-page cases in volume 504 must be read out and sorted by name before the first one can be named, and only then does its starting page become visible.",
+  "confirmation": "Cornell LII serves the text of Allied-Signal, Inc. ex rel. Bendix Corp. v. Director, Division of Taxation at 504 U.S. 768, and the Free Law Project citation index resolves that citation to the same case",
+  "prompt": "The Caselaw Access Project distributes, as one machine-readable file, metadata for every case reported in volume 504 of United States Reports, giving each case a short name together with the first and last printed page it occupies. Consider only those cases in that volume which run to more than a single printed page. Order the short names of those cases alphabetically and take whichever name comes first. Report the printed page of United States Reports on which that first-named case begins. Confirm the page against an independently published text of the same decision. Answer with the page number alone, with no volume, no reporter abbreviation and no other words.",
+  "source_operators": [
+   "Cornell University",
+   "Free Law Project",
+   "Harvard Law School Library Innovation Lab"
+  ],
+  "confirming_operators": [
+   "Cornell University",
+   "Free Law Project"
+  ],
+  "track": "api-native",
+  "ranking_evidence": {
+   "label": "legal vol 504",
+   "mode": "min",
+   "n_base": 51,
+   "n_ranked": 51,
+   "spearman_key_vs_api_order": 0.0064,
+   "n_tied_at_extremum": 1,
+   "distinct_keys": 51,
+   "winner_position_in_api_order": 27,
+   "winner_is_first_returned": false,
+   "winner_is_last_returned": false,
+   "top_keys": [
+    "allied-signal, inc. ex rel. bendix corp. v. director, division of taxation",
+    "ankenbrandt ex rel. l. r. v. richards",
+    "black v. collins",
+    "burdick v. takushi",
+    "burlington northern railroad v. ford"
+   ],
+   "answer_field_distinct_values": 51,
+   "answer_field_n_values": 51,
+   "answer_field_max_count": 1,
+   "answer_field_count_of_answer": 1,
+   "answer_field_modal_share": 0.019608,
+   "p_answer_by_uniform_guess": 0.019608
+  },
+  "facts": {
+   "volume": 504,
+   "case": "Allied-Signal, Inc. ex rel. Bendix Corp. v. Director, Division of Taxation",
+   "page": 768,
+   "decision_date": "1992-06-15",
+   "n_multi": 51,
+   "n_volume": 913,
+   "provenance_note": "CourtListener ingested Caselaw Access Project data in 2024, so treat Cornell LII as the independent text of record"
+  },
+  "verified": true
+ },
+ {
+  "collection_is_explicit": false,
+  "primary_operator": "US Office of the Federal Register",
+  "independent_confirming_operators": [
+   "Wikimedia Foundation"
+  ],
+  "category": "politics",
+  "field": "executive order number",
+  "answer": "13292",
+  "entity": "Further Amendment to Executive Order 12958, as Amended, Classified National Security Information",
+  "n_base": 40,
+  "sources": [
+   "https://www.federalregister.gov/api/v1/documents.json?conditions[type][]=PRESDOCU&conditions[presidential_document_type][]=executive_order&conditions[publication_date][gte]=2003-01-01&conditions[publication_date][lte]=2003-12-31&fields[]=executive_order_number&fields[]=title&fields[]=page_length&fields[]=publication_date&fields[]=citation&fields[]=start_page&fields[]=end_page&per_page=1000&order=oldest",
+   "https://www.federalregister.gov/documents/2003-03-28",
+   "https://www.govinfo.gov/app/collection/FR",
+   "https://www.wikidata.org/wiki/Q5419886"
+  ],
+  "confirming_sources": [
+   "https://www.federalregister.gov/documents/2003-03-28",
+   "https://www.wikidata.org/wiki/Q5419886"
+  ],
+  "api_proof": true,
+  "api_proof_argument": "The Federal Register document API returns the 40 executive orders of 2003 in publication order with no length field to sort on, so every record's printed extent must be read and compared. Ranking by printed length is deliberately unrelated to issuance order: measured spearman rho against return order is -0.3685.",
+  "confirmation": "the register's own document record for 2003-03-28 carries citation 68 FR 15315 spanning pages 15315 to 15334; Wikidata item Q5419886 is titled 'Executive Order 13292' and independently binds the number to the order",
+  "prompt": "The United States Office of the Federal Register publishes every presidential executive order, recording for each one its sequential order number, its title and the span of printed pages it occupies. Consider only the executive orders that the register published during 2003, each counted by the number of printed pages it fills. Among those orders one occupies more printed pages than any other issued that year. Report the sequential order number that the register assigns to that single longest order. The register offers no view sorted by printed extent, so the comparison must be built from the records themselves. Give the order number alone as digits, with no prefix or other words.",
+  "source_operators": [
+   "US Government Publishing Office",
+   "US Office of the Federal Register",
+   "Wikimedia Foundation"
+  ],
+  "confirming_operators": [
+   "US Office of the Federal Register",
+   "Wikimedia Foundation"
+  ],
+  "track": "api-native",
+  "ranking_evidence": {
+   "label": "politics",
+   "mode": "max",
+   "n_base": 40,
+   "n_ranked": 40,
+   "spearman_key_vs_api_order": -0.3685,
+   "n_tied_at_extremum": 1,
+   "distinct_keys": 9,
+   "winner_position_in_api_order": 10,
+   "winner_is_first_returned": false,
+   "winner_is_last_returned": false,
+   "top_keys": [
+    "20",
+    "15",
+    "10",
+    "8",
+    "8"
+   ],
+   "answer_field_distinct_values": 40,
+   "answer_field_n_values": 40,
+   "answer_field_max_count": 1,
+   "answer_field_count_of_answer": 1,
+   "answer_field_modal_share": 0.025,
+   "p_answer_by_uniform_guess": 0.025
+  },
+  "facts": {
+   "year": 2003,
+   "n": 40,
+   "pages": 20,
+   "runner_up": 15,
+   "title": "Further Amendment to Executive Order 12958, as Amended, Classified National Security Information",
+   "citation": "68 FR 15315",
+   "publication_date": "2003-03-28",
+   "single_witness": false,
+   "wikidata_eo_qid": "Q5419886",
+   "govinfo_granule_check": "all 130 granules of the issue were paged; none reference the order number and only one granule is presidential, so GovInfo is a co-publisher of the issue but not a witness of the order",
+   "provenance_note": "Executive order numbers are assigned and published only by the Office of the Federal Register. Wikidata catalogues the order as a subject in its own right, which is why it can witness the number without restating the register's ranking; the page-length ranking itself has no second witness."
+  },
+  "verified": true
+ },
+ {
+  "collection_is_explicit": false,
+  "primary_operator": "Major League Baseball",
+  "independent_confirming_operators": [
+   "Retrosheet",
+   "Wikimedia Foundation"
+  ],
+  "category": "sports",
+  "field": "city of birth",
+  "answer": "Newton",
+  "entity": "Jim Corsi",
+  "n_base": 48,
+  "sources": [
+   "https://statsapi.mlb.com/api/v1/teams/111/roster?season=1999&rosterType=fullSeason",
+   "https://www.retrosheet.org/BIOFILE.TXT",
+   "https://www.wikidata.org/wiki/Q3806513"
+  ],
+  "confirming_sources": [
+   "https://www.retrosheet.org/BIOFILE.TXT",
+   "https://www.wikidata.org/wiki/Q3806513"
+  ],
+  "api_proof": true,
+  "api_proof_argument": "The roster endpoint returns players in uniform-number order and offers no birth-date sort, so all 48 players the club carried that season must be pulled and compared.",
+  "confirmation": "Retrosheet and Wikidata independently record the same birthplace for that player",
+  "prompt": "The official Major League Baseball statistics service publishes the full season roster of the Boston Red Sox for 1999, listing every player the club carried that year with his date and place of birth. Consider only the players appearing on that full season roster. Exactly one of them was born earlier than every other player on the list. Report the city of birth that the service records for that single oldest player. Confirm the birthplace against two references independent of the league. Give the city name alone, as recorded, with no state, no country and no other words.",
+  "source_operators": [
+   "Major League Baseball",
+   "Retrosheet",
+   "Wikimedia Foundation"
+  ],
+  "confirming_operators": [
+   "Retrosheet",
+   "Wikimedia Foundation"
+  ],
+  "track": "api-native",
+  "ranking_evidence": {
+   "label": "sports Boston Red Sox 1999",
+   "mode": "min",
+   "n_base": 48,
+   "n_ranked": 48,
+   "spearman_key_vs_api_order": 0.0731,
+   "n_tied_at_extremum": 1,
+   "distinct_keys": 47,
+   "winner_position_in_api_order": 6,
+   "winner_is_first_returned": false,
+   "winner_is_last_returned": false,
+   "top_keys": [
+    "1961-09-09",
+    "1962-10-30",
+    "1963-06-25",
+    "1964-04-11",
+    "1964-08-24"
+   ],
+   "answer_field_distinct_values": 45,
+   "answer_field_n_values": 48,
+   "answer_field_max_count": 2,
+   "answer_field_count_of_answer": 1,
+   "answer_field_modal_share": 0.041667,
+   "p_answer_by_uniform_guess": 0.020833
+  },
+  "facts": {
+   "team": "Boston Red Sox",
+   "season": 1999,
+   "n": 48,
+   "player": "Jim Corsi",
+   "dob": "1961-09-09"
+  },
+  "verified": true
+ },
+ {
+  "collection_is_explicit": false,
+  "primary_operator": "OpenFlights",
+  "independent_confirming_operators": [
+   "OurAirports",
+   "Wikimedia Foundation"
+  ],
+  "category": "travel",
+  "field": "IATA code",
+  "answer": "IVL",
+  "entity": "Ivalo Airport",
+  "n_base": 73,
+  "sources": [
+   "https://raw.githubusercontent.com/jpatokal/openflights/master/data/routes.dat",
+   "https://davidmegginson.github.io/ourairports-data/airports.csv",
+   "https://www.wikidata.org/wiki/Q850269"
+  ],
+  "confirming_sources": [
+   "https://davidmegginson.github.io/ourairports-data/airports.csv",
+   "https://www.wikidata.org/wiki/Q850269"
+  ],
+  "api_proof": true,
+  "api_proof_argument": "OpenFlights distributes routes and airports as two separate flat files with no query interface. The northernmost destination exists only after joining the two and ordering 73 destinations by latitude.",
+  "confirmation": "OurAirports lists IVL at latitude 68.6073; Wikidata Q850269 ('Ivalo Airport') carries P238 'IVL' uniquely",
+  "prompt": "The OpenFlights project distributes an airline route table and a separate airport table, each as a plain delimited file covering worldwide civil aviation. Consider only the nonstop destinations served by the carrier with IATA code AY departing from its hub at HEL, as recorded in that route table. Join those destinations to the airport table and find the one lying furthest north. Report the three-letter IATA code of that single northernmost destination. Cross-check the coordinates against a second independent aerodrome register. Answer with the three-letter code only, capitalised, and nothing else.",
+  "source_operators": [
+   "OpenFlights",
+   "OurAirports",
+   "Wikimedia Foundation"
+  ],
+  "confirming_operators": [
+   "OurAirports",
+   "Wikimedia Foundation"
+  ],
+  "track": "api-native",
+  "ranking_evidence": {
+   "label": "travel",
+   "mode": "max",
+   "n_base": 73,
+   "n_ranked": 73,
+   "spearman_key_vs_api_order": -0.2042,
+   "n_tied_at_extremum": 1,
+   "distinct_keys": 73,
+   "winner_position_in_api_order": 6,
+   "winner_is_first_returned": false,
+   "winner_is_last_returned": false,
+   "top_keys": [
+    "68.607299804688",
+    "66.564796447754",
+    "65.987602233887",
+    "65.778701782227",
+    "64.930099487305"
+   ],
+   "answer_field_distinct_values": 73,
+   "answer_field_n_values": 73,
+   "answer_field_max_count": 1,
+   "answer_field_count_of_answer": 1,
+   "answer_field_modal_share": 0.013699,
+   "p_answer_by_uniform_guess": 0.013699
+  },
+  "facts": {
+   "airline": "AY",
+   "hub": "HEL",
+   "n": 73,
+   "witness_qid": "Q850269",
+   "wikidata_p238_hits": 1
+  },
+  "verified": true
+ },
+ {
+  "collection_is_explicit": false,
+  "primary_operator": "IMDb (Amazon)",
+  "independent_confirming_operators": [
+   "Wikimedia Foundation"
+  ],
+  "category": "tv shows and movies",
+  "field": "IMDb title identifier",
+  "answer": "tt1278381",
+  "entity": "Je ne suis pas morte",
+  "n_base": 211,
+  "sources": [
+   "https://datasets.imdbws.com/title.basics.tsv.gz",
+   "https://www.wikidata.org/wiki/Q3163471",
+   "https://api.tvmaze.com/search/shows?q=Je%20ne%20suis%20pas%20morte",
+   "https://www.imdb.com/title/tt1278381/"
+  ],
+  "confirming_sources": [
+   "https://www.wikidata.org/wiki/Q3163471"
+  ],
+  "api_proof": true,
+  "api_proof_argument": "The IMDb basics export is a single gzipped table with no query interface, so the 211 feature titles of that year and genre must be extracted and compared on runtime by the solver.",
+  "confirmation": "Wikidata Q3163471 property P345 returns tt1278381",
+  "prompt": "The IMDb public title export records, for every film it lists, the title, the year of release, the genres assigned to it and the running time in minutes. Restrict attention to titles typed as feature films with a release year of 2008 that carry the Fantasy genre and a recorded running time. Among only those, one film runs longer than every other. Report the IMDb title identifier of that single longest film. Confirm the identifier against an independent structured knowledge base before answering. Give the identifier alone, beginning with the two letters that prefix it, and nothing else.",
+  "source_operators": [
+   "IMDb (Amazon)",
+   "TVmaze",
+   "Wikimedia Foundation"
+  ],
+  "confirming_operators": [
+   "Wikimedia Foundation"
+  ],
+  "track": "api-native",
+  "ranking_evidence": {
+   "label": "tv shows and movies",
+   "mode": "max",
+   "n_base": 211,
+   "n_ranked": 211,
+   "spearman_key_vs_api_order": -0.2021,
+   "n_tied_at_extremum": 1,
+   "distinct_keys": 76,
+   "winner_position_in_api_order": 104,
+   "winner_is_first_returned": false,
+   "winner_is_last_returned": false,
+   "top_keys": [
+    "190",
+    "166",
+    "164",
+    "156",
+    "154"
+   ],
+   "answer_field_distinct_values": 211,
+   "answer_field_n_values": 211,
+   "answer_field_max_count": 1,
+   "answer_field_count_of_answer": 1,
+   "answer_field_modal_share": 0.004739,
+   "p_answer_by_uniform_guess": 0.004739
+  },
+  "facts": {
+   "year": 2008,
+   "genre": "Fantasy",
+   "n": 211,
+   "runtime": 190,
+   "runner_up": 166,
+   "title": "Je ne suis pas morte"
+  },
+  "verified": true
+ },
+ {
+  "collection_is_explicit": true,
+  "primary_operator": "Valve Corporation",
+  "independent_confirming_operators": [
+   "PCGamingWiki",
+   "Wikimedia Foundation"
+  ],
+  "category": "video games",
+  "field": "developing studio",
+  "answer": "Colossal Order",
+  "entity": "Cities: Skylines",
+  "n_base": 14,
+  "sources": [
+   "https://store.steampowered.com/api/appdetails?appids=255710",
+   "https://www.wikidata.org/wiki/Q18149274",
+   "https://pegi.info/search-pegi?q=Cities%3A%20Skylines",
+   "https://www.pcgamingwiki.com/w/api.php?action=query&prop=revisions&rvprop=content&rvslots=main&format=json&titles=Cities%3A%20Skylines"
+  ],
+  "confirming_sources": [
+   "https://www.wikidata.org/wiki/Q18149274",
+   "https://www.wikidata.org/wiki/Q16829899",
+   "https://www.pcgamingwiki.com/w/api.php?action=query&prop=revisions&rvprop=content&rvslots=main&format=json&titles=Cities%3A%20Skylines"
+  ],
+  "api_proof": true,
+  "api_proof_argument": "The storefront exposes one record per application number and offers no cross-title ordering, so all 14 records must be fetched individually and their printed names compared before the first can be known. The alphabetical key replaces a release-date key that had spearman rho 0.993 against the application number sequence.",
+  "confirmation": "Wikidata Q18149274 property P178 returns 'Colossal Order' (item Q16829899, label language mul)",
+  "prompt": "The Valve storefront exposes a public record for each catalogue title, giving the name the store prints for it and the studio credited with developing it. Consider the titles carried under the store application numbers 4000, 6910, 22380, 39210, 105600, 108600, 220200, 236850, 255710, 268910, 322330, 367520, 413150 and 427520, taking each name exactly as printed. Reduce each printed name to its letters and digits in lower case, then order those reduced names; one stands before all the others. Report the developing studio that the store credits for that single first-ordered title. Confirm the studio against an independent structured knowledge base before answering. Give the studio name alone, exactly as the store prints it.",
+  "source_operators": [
+   "PCGamingWiki",
+   "Pan European Game Information",
+   "Valve Corporation",
+   "Wikimedia Foundation"
+  ],
+  "confirming_operators": [
+   "PCGamingWiki",
+   "Wikimedia Foundation"
+  ],
+  "track": "api-native",
+  "ranking_evidence": {
+   "label": "video games",
+   "mode": "min",
+   "n_base": 14,
+   "n_ranked": 14,
+   "spearman_key_vs_api_order": -0.0637,
+   "n_tied_at_extremum": 1,
+   "distinct_keys": 14,
+   "winner_position_in_api_order": 8,
+   "winner_is_first_returned": false,
+   "winner_is_last_returned": false,
+   "top_keys": [
+    "citiesskylines",
+    "cuphead",
+    "deusexgameoftheyearedition",
+    "dontstarvetogether",
+    "europauniversalisiv"
+   ],
+   "answer_field_distinct_values": 14,
+   "answer_field_n_values": 14,
+   "answer_field_max_count": 1,
+   "answer_field_count_of_answer": 1,
+   "answer_field_modal_share": 0.071429,
+   "p_answer_by_uniform_guess": 0.071429
+  },
+  "facts": {
+   "n": 14,
+   "title": "Cities: Skylines",
+   "appid": 255710,
+   "n_distinct_studios": 14,
+   "pcgamingwiki_confirms": true,
+   "pcgamingwiki_developers_listed": [
+    "Colossal Order",
+    "Tantalus Media"
+   ],
+   "co_developer_note": "PCGamingWiki lists more than one developer for this title; the answer is the studio the storefront prints first, and the witness is that PCGamingWiki also credits it, not that it is the sole developer.",
+   "collection_is_explicit": true,
+   "rejected_answer_field": "store release date: Steam and Wikidata P577 agree for only 3 of 12 measured titles, with four off by exactly one day in the same direction and five off by 307-5257 days",
+   "provenance_note": "The application numbers are named in the prompt, so the solver sees the whole collection and no return-order information is withheld. The exemption is not load-bearing: rho between the alphabetical key and the appid sequence is near zero and the winner is interior to the fetch order."
+  },
+  "verified": true
+ }
 ]

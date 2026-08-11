@@ -1,5 +1,5 @@
 {
-  "evaluated_at": "2026-08-11T04:31:22Z",
+  "evaluated_at": "2026-08-11T05:58:16Z",
   "thresholds": {
     "max_uniform_guess": 0.1,
     "min_confirming_operators": 2,
@@ -11,8 +11,8 @@
   "per_trap": [
     {
       "category": "history",
-      "answer": "1975",
-      "field": "award year",
+      "answer": "113163827",
+      "field": "GND identifier",
       "tests": {
         "T0_base_adequacy": {
           "pass": true,
@@ -32,15 +32,15 @@
         },
         "T3b_monotone_key": {
           "pass": true,
-          "detail": "spearman(key, api_index)=0.261 (|rho| <= 0.95); key is off-axis"
+          "detail": "spearman(key, api_index)=0.261 (|rho| <= 0.45); key is off-axis"
         },
         "T4_separation": {
           "pass": true,
           "detail": "top1='aage niels bohr' top2='antoine henri becquerel' (non-numeric key, distinct)"
         },
         "T5_confirmation": {
-          "pass": false,
-          "detail": "1 independent witness(es): ['Wikimedia Foundation']; primary='Nobel Prize Outreach'; 3 source operator(s): ['Crossref', 'Nobel Prize Outreach', 'Wikimedia Foundation']"
+          "pass": true,
+          "detail": "2 independent witness(es): ['German National Library', 'Wikimedia Foundation']; primary='Nobel Prize Outreach'; 4 source operator(s): ['German National Library', 'Nobel Prize Outreach', 'OurResearch (OpenAlex)', 'Wikimedia Foundation']"
         },
         "T6_gate": {
           "pass": true,
@@ -48,16 +48,17 @@
         },
         "T7_prompt_leak": {
           "pass": true,
-          "detail": "word count 102; years named in prompt: 1901,2000"
+          "detail": "word count 106; years named in prompt: 1901,2000"
         }
       },
       "collection_is_explicit": false,
-      "verdict": "hold",
+      "verdict": "ship",
       "primary_operator": "Nobel Prize Outreach",
       "independent_witnesses": [
+        "German National Library",
         "Wikimedia Foundation"
       ],
-      "witness_tier": "silver",
+      "witness_tier": "gold",
       "evidence": {
         "label": "history",
         "mode": "min",
@@ -114,7 +115,7 @@
         },
         "T3b_monotone_key": {
           "pass": true,
-          "detail": "spearman(key, api_index)=0.0255 (|rho| <= 0.95); key is off-axis"
+          "detail": "spearman(key, api_index)=0.0255 (|rho| <= 0.45); key is off-axis"
         },
         "T4_separation": {
           "pass": true,
@@ -191,7 +192,7 @@
         },
         "T3b_monotone_key": {
           "pass": true,
-          "detail": "spearman(key, api_index)=-0.0252 (|rho| <= 0.95); key is off-axis"
+          "detail": "spearman(key, api_index)=-0.0252 (|rho| <= 0.45); key is off-axis"
         },
         "T4_separation": {
           "pass": true,
@@ -267,7 +268,7 @@
         },
         "T3b_monotone_key": {
           "pass": true,
-          "detail": "spearman(key, api_index)=-0.065 (|rho| <= 0.95); key is off-axis"
+          "detail": "spearman(key, api_index)=-0.065 (|rho| <= 0.45); key is off-axis"
         },
         "T4_separation": {
           "pass": true,
@@ -322,8 +323,8 @@
     },
     {
       "category": "celebrities/public figures",
-      "answer": "Leiden",
-      "field": "city of birth",
+      "answer": "119009846",
+      "field": "GND identifier",
       "tests": {
         "T0_base_adequacy": {
           "pass": true,
@@ -335,7 +336,7 @@
         },
         "T2_guessability": {
           "pass": true,
-          "detail": "answer occurs 1/104 times (p=0.009615), modal count 6, 90 distinct values, answer_is_strict_mode=False"
+          "detail": "answer occurs 1/104 times (p=0.009615), modal count 2, 103 distinct values, answer_is_strict_mode=False"
         },
         "T3_order_leak": {
           "pass": true,
@@ -343,15 +344,15 @@
         },
         "T3b_monotone_key": {
           "pass": true,
-          "detail": "spearman(key, api_index)=-0.0293 (|rho| <= 0.95); key is off-axis"
+          "detail": "spearman(key, api_index)=-0.0293 (|rho| <= 0.45); key is off-axis"
         },
         "T4_separation": {
           "pass": true,
           "detail": "top1='1837-11-23' top2='1842-11-12' (non-numeric key, distinct)"
         },
         "T5_confirmation": {
-          "pass": false,
-          "detail": "1 independent witness(es): ['Wikimedia Foundation']; primary='Nobel Prize Outreach'; 3 source operator(s): ['Nobel Prize Outreach', 'OurResearch (OpenAlex)', 'Wikimedia Foundation']"
+          "pass": true,
+          "detail": "2 independent witness(es): ['German National Library', 'Wikimedia Foundation']; primary='Nobel Prize Outreach'; 4 source operator(s): ['German National Library', 'Nobel Prize Outreach', 'OurResearch (OpenAlex)', 'Wikimedia Foundation']"
         },
         "T6_gate": {
           "pass": true,
@@ -359,16 +360,17 @@
         },
         "T7_prompt_leak": {
           "pass": true,
-          "detail": "word count 91; years named in prompt: 1901,1975"
+          "detail": "word count 101; years named in prompt: 1901,1975"
         }
       },
       "collection_is_explicit": false,
-      "verdict": "hold",
+      "verdict": "ship",
       "primary_operator": "Nobel Prize Outreach",
       "independent_witnesses": [
+        "German National Library",
         "Wikimedia Foundation"
       ],
-      "witness_tier": "silver",
+      "witness_tier": "gold",
       "evidence": {
         "label": "celebrities",
         "mode": "min",
@@ -387,23 +389,23 @@
           "1845-08-16",
           "1850-06-06"
         ],
-        "answer_field_distinct_values": 90,
+        "answer_field_distinct_values": 103,
         "answer_field_n_values": 104,
-        "answer_field_max_count": 6,
+        "answer_field_max_count": 2,
         "answer_field_count_of_answer": 1,
-        "answer_field_modal_share": 0.057692,
+        "answer_field_modal_share": 0.019231,
         "p_answer_by_uniform_guess": 0.009615,
         "_collection_is_explicit": false
       }
     },
     {
       "category": "education",
-      "answer": "wit.ie",
+      "answer": "ntnu.no",
       "field": "internet domain",
       "tests": {
         "T0_base_adequacy": {
           "pass": true,
-          "detail": "n_ranked=27 (>= 5); isolation chooses among candidates"
+          "detail": "n_ranked=25 (>= 5); isolation chooses among candidates"
         },
         "T1_uniqueness": {
           "pass": true,
@@ -411,19 +413,19 @@
         },
         "T2_guessability": {
           "pass": true,
-          "detail": "answer occurs 1/27 times (p=0.03704), modal count 1, 27 distinct values, answer_is_strict_mode=False"
+          "detail": "answer occurs 1/25 times (p=0.04), modal count 2, 24 distinct values, answer_is_strict_mode=False"
         },
         "T3_order_leak": {
           "pass": true,
-          "detail": "winner at index 23 of 27 (depth 0.8846), first=False last=False, H0 P(first|last)=0.0741"
+          "detail": "winner at index 15 of 25 (depth 0.625), first=False last=False, H0 P(first|last)=0.08"
         },
         "T3b_monotone_key": {
           "pass": true,
-          "detail": "spearman(key, api_index)=0.7888 (|rho| <= 0.95); key is off-axis"
+          "detail": "spearman(key, api_index)=0.0746 (|rho| <= 0.45); key is off-axis"
         },
         "T4_separation": {
           "pass": true,
-          "detail": "top1='wit.ie' top2='universityofgalway.ie' (non-numeric key, distinct)"
+          "detail": "top1='on.untn' top2='on.tiu' (non-numeric key, distinct)"
         },
         "T5_confirmation": {
           "pass": false,
@@ -435,7 +437,7 @@
         },
         "T7_prompt_leak": {
           "pass": true,
-          "detail": "word count 90"
+          "detail": "word count 98"
         }
       },
       "collection_is_explicit": false,
@@ -448,27 +450,27 @@
       "evidence": {
         "label": "education",
         "mode": "max",
-        "n_base": 27,
-        "n_ranked": 27,
-        "spearman_key_vs_api_order": 0.7888,
+        "n_base": 25,
+        "n_ranked": 25,
+        "spearman_key_vs_api_order": 0.0746,
         "n_tied_at_extremum": 1,
-        "distinct_keys": 27,
-        "winner_position_in_api_order": 23,
+        "distinct_keys": 24,
+        "winner_position_in_api_order": 15,
         "winner_is_first_returned": false,
         "winner_is_last_returned": false,
         "top_keys": [
-          "wit.ie",
-          "universityofgalway.ie",
-          "ul.ie",
-          "ucd.ie",
-          "ucc.ie"
+          "on.untn",
+          "on.tiu",
+          "on.siu",
+          "on.shtev",
+          "on.oiu"
         ],
-        "answer_field_distinct_values": 27,
-        "answer_field_n_values": 27,
-        "answer_field_max_count": 1,
+        "answer_field_distinct_values": 24,
+        "answer_field_n_values": 25,
+        "answer_field_max_count": 2,
         "answer_field_count_of_answer": 1,
-        "answer_field_modal_share": 0.037037,
-        "p_answer_by_uniform_guess": 0.037037,
+        "answer_field_modal_share": 0.08,
+        "p_answer_by_uniform_guess": 0.04,
         "_collection_is_explicit": false
       }
     },
@@ -495,7 +497,7 @@
         },
         "T3b_monotone_key": {
           "pass": true,
-          "detail": "spearman(key, api_index)=-0.0349 (|rho| <= 0.95); key is off-axis"
+          "detail": "spearman(key, api_index)=-0.0349 (|rho| <= 0.45); key is off-axis"
         },
         "T4_separation": {
           "pass": true,
@@ -572,7 +574,7 @@
         },
         "T3b_monotone_key": {
           "pass": true,
-          "detail": "spearman(key, api_index)=0.1455 (|rho| <= 0.95); key is off-axis"
+          "detail": "spearman(key, api_index)=0.1455 (|rho| <= 0.45); key is off-axis"
         },
         "T4_separation": {
           "pass": true,
@@ -649,7 +651,7 @@
         },
         "T3b_monotone_key": {
           "pass": true,
-          "detail": "spearman(key, api_index)=0.0064 (|rho| <= 0.95); key is off-axis"
+          "detail": "spearman(key, api_index)=0.0064 (|rho| <= 0.45); key is off-axis"
         },
         "T4_separation": {
           "pass": true,
@@ -726,7 +728,7 @@
         },
         "T3b_monotone_key": {
           "pass": true,
-          "detail": "spearman(key, api_index)=-0.3685 (|rho| <= 0.95); key is off-axis"
+          "detail": "spearman(key, api_index)=-0.3685 (|rho| <= 0.45); key is off-axis"
         },
         "T4_separation": {
           "pass": true,
@@ -808,7 +810,7 @@
         },
         "T3b_monotone_key": {
           "pass": true,
-          "detail": "spearman(key, api_index)=0.0731 (|rho| <= 0.95); key is off-axis"
+          "detail": "spearman(key, api_index)=0.0731 (|rho| <= 0.45); key is off-axis"
         },
         "T4_separation": {
           "pass": true,
@@ -885,7 +887,7 @@
         },
         "T3b_monotone_key": {
           "pass": true,
-          "detail": "spearman(key, api_index)=-0.2042 (|rho| <= 0.95); key is off-axis"
+          "detail": "spearman(key, api_index)=-0.2042 (|rho| <= 0.45); key is off-axis"
         },
         "T4_separation": {
           "pass": true,
@@ -962,7 +964,7 @@
         },
         "T3b_monotone_key": {
           "pass": true,
-          "detail": "spearman(key, api_index)=-0.2021 (|rho| <= 0.95); key is off-axis"
+          "detail": "spearman(key, api_index)=-0.2021 (|rho| <= 0.45); key is off-axis"
         },
         "T4_separation": {
           "pass": true,
@@ -1116,13 +1118,13 @@
         0.4951,
         0.4952,
         0.54,
+        0.625,
         0.6471,
-        0.8846,
         0.9
       ],
-      "mean_depth": 0.457,
-      "ks_statistic": 0.2292,
-      "ks_p_approx": 0.448757
+      "mean_depth": 0.437,
+      "ks_statistic": 0.276,
+      "ks_p_approx": 0.232678
     },
     "C4_key_monotonicity": {
       "h0": "ranking keys are unrelated to API return order (rho ~ 0)",
@@ -1135,14 +1137,14 @@
         0.0349,
         0.065,
         0.0731,
+        0.0746,
         0.1455,
         0.2021,
         0.2042,
         0.261,
-        0.3685,
-        0.7888
+        0.3685
       ],
-      "mean_abs_rho": 0.1715,
+      "mean_abs_rho": 0.1166,
       "n_over_threshold": 0
     },
     "C1_positional_leak": {
@@ -1154,7 +1156,7 @@
         0.0225,
         0.013,
         0.0192,
-        0.0741,
+        0.08,
         0.0476,
         0.0392,
         0.0392,
@@ -1163,22 +1165,22 @@
         0.0274,
         0.0095
       ],
-      "expected_first_or_last": 0.6119,
+      "expected_first_or_last": 0.6179,
       "observed_first_or_last": 0,
       "exact_two_sided_p": 1.0
     },
     "C2_guess_yield": {
       "h0": "a guesser draws uniformly from the observed answer-field values",
       "n_traps_tested": 14,
-      "expected_hits_across_corpus": 0.3774,
-      "p_at_least_one_hit": 0.320044,
+      "expected_hits_across_corpus": 0.3804,
+      "p_at_least_one_hit": 0.322136,
       "n_traps_over_threshold": 0,
       "threshold": 0.1
     }
   },
   "counts": {
-    "ship": 7,
+    "ship": 9,
     "unavailable": 2,
-    "hold": 7
+    "hold": 5
   }
 }

@@ -24,7 +24,8 @@ import time
 import traceback
 
 import category_traps as ct
-import gen_v2  # noqa: F401  installs the redesigned generators into ct.GENERATORS
+import gen_v2  # noqa: F401
+import gen_v3  # noqa: F401  # field redesign; must load after gen_v2  installs the redesigned generators into ct.GENERATORS
 import source_gate as sg
 
 OUT = os.path.join(os.path.dirname(os.path.abspath(__file__)),

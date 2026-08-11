@@ -185,6 +185,13 @@ OPERATOR_MAP = {
     "artic.edu": "Art Institute of Chicago",
     "clevelandart.org": "Cleveland Museum of Art",
     "nobelprize.org": "Nobel Prize Outreach",
+    # German National Library. Runs neither the Nobel registry nor Wikidata,
+    # so a GND record resolving there is an independent witness for the
+    # answer-to-entity binding. culturegraph.org is also DNB-operated and is
+    # mapped to the same operator so it can never be double-counted.
+    "d-nb.info": "German National Library",
+    "dnb.de": "German National Library",
+    "culturegraph.org": "German National Library",
     "openfoodfacts.org": "Open Food Facts",
     "restcountries.com": "REST Countries project",
     "ourairports.com": "OurAirports",

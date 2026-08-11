@@ -1,5 +1,5 @@
 {
-  "evaluated_at": "2026-08-11T06:05:44Z",
+  "evaluated_at": "2026-08-11T11:10:18Z",
   "thresholds": {
     "max_uniform_guess": 0.1,
     "min_confirming_operators": 2,
@@ -11,85 +11,14 @@
   "per_trap": [
     {
       "category": "history",
-      "answer": "113163827",
-      "field": "GND identifier",
-      "tests": {
-        "T0_base_adequacy": {
-          "pass": true,
-          "detail": "n_ranked=21 (>= 5); isolation chooses among candidates"
-        },
-        "T1_uniqueness": {
-          "pass": true,
-          "detail": "n_tied_at_extremum=1"
-        },
-        "T2_guessability": {
-          "pass": true,
-          "detail": "answer occurs 1/21 times (p=0.04762), modal count 1, 21 distinct values, answer_is_strict_mode=False"
-        },
-        "T3_order_leak": {
-          "pass": true,
-          "detail": "winner at index 8 of 21 (depth 0.4), first=False last=False, H0 P(first|last)=0.0952"
-        },
-        "T3b_monotone_key": {
-          "pass": true,
-          "detail": "spearman(key, api_index)=0.261 (|rho| <= 0.45); key is off-axis"
-        },
-        "T4_separation": {
-          "pass": true,
-          "detail": "top1='aage niels bohr' top2='antoine henri becquerel' (non-numeric key, distinct)"
-        },
-        "T5_confirmation": {
-          "pass": true,
-          "detail": "2 independent witness(es): ['German National Library', 'Wikimedia Foundation']; primary='Nobel Prize Outreach'; 4 source operator(s): ['German National Library', 'Nobel Prize Outreach', 'OurResearch (OpenAlex)', 'Wikimedia Foundation']"
-        },
-        "T6_gate": {
-          "pass": true,
-          "detail": "clean"
-        },
-        "T7_prompt_leak": {
-          "pass": true,
-          "detail": "word count 106; years named in prompt: 1901,2000"
-        }
-      },
-      "collection_is_explicit": false,
-      "verdict": "ship",
-      "primary_operator": "Nobel Prize Outreach",
-      "independent_witnesses": [
-        "German National Library",
-        "Wikimedia Foundation"
-      ],
-      "witness_tier": "gold",
-      "evidence": {
-        "label": "history",
-        "mode": "min",
-        "n_base": 21,
-        "n_ranked": 21,
-        "spearman_key_vs_api_order": 0.261,
-        "n_tied_at_extremum": 1,
-        "distinct_keys": 21,
-        "winner_position_in_api_order": 8,
-        "winner_is_first_returned": false,
-        "winner_is_last_returned": false,
-        "top_keys": [
-          "aage niels bohr",
-          "antoine henri becquerel",
-          "charles hard townes",
-          "david m. lee",
-          "ernst ruska"
-        ],
-        "answer_field_distinct_values": 21,
-        "answer_field_n_values": 21,
-        "answer_field_max_count": 1,
-        "answer_field_count_of_answer": 1,
-        "answer_field_modal_share": 0.047619,
-        "p_answer_by_uniform_guess": 0.047619,
-        "_collection_is_explicit": false
-      }
+      "verdict": "unavailable",
+      "error": "history: withdrawn. The Nobel API default order is alphabetical and it honours limit, so nobelPrizes?nobelPrizeCategory=phy&limit=1 returns the answer in one call; measured T9b recall without any API access is 0.9524.",
+      "tests": {}
     },
     {
       "category": "finance",
       "verdict": "unavailable",
-      "error": "gate rejected: [\"R3c every confirming source is run by the primary operator 'US Department of the Treasury'; a source restating itself is not a witness\"]",
+      "error": "finance: withdrawn. The auctions service honours 228 orderings, so raw fields are one call away; the indirect-over-primary ratio key is structurally leaky because a ratio's argmax sits in the small-denominator tail (shallow in 15 of 15 seeds); and the two non-ratio replacements passed 1 of 22 searched configurations and 0 of 8 held-out years, with a bootstrap hit rate of 0.635.",
       "tests": {}
     },
     {
@@ -117,9 +46,21 @@
           "pass": true,
           "detail": "spearman(key, api_index)=0.0255 (|rho| <= 0.45); key is off-axis"
         },
+        "T3c_key_derivable_depth": {
+          "pass": true,
+          "detail": "key has no served component fields to sort on"
+        },
+        "T3d_derivable_key": {
+          "pass": true,
+          "detail": "0 served fields swept for rank equivalence; none reproduces the key ordering"
+        },
         "T4_separation": {
           "pass": true,
           "detail": "top1=20 top2=5 gap=15 rel=0.75"
+        },
+        "T4b_fragility": {
+          "pass": true,
+          "detail": "key is per-row, not aggregated; flip condition does not apply"
         },
         "T5_confirmation": {
           "pass": true,
@@ -166,84 +107,22 @@
         "answer_field_count_of_answer": 1,
         "answer_field_modal_share": 0.066667,
         "p_answer_by_uniform_guess": 0.066667,
+        "key_component_depths": {},
+        "key_is_aggregated": false,
+        "equivalent_served_fields": [],
+        "n_fields_swept": 0,
+        "sort_field_rejected_by_service": [
+          "sortBy=authorCount",
+          "sortBy=authors"
+        ],
         "_collection_is_explicit": false
       }
     },
     {
       "category": "art",
-      "answer": "71.84",
-      "field": "accession number",
-      "tests": {
-        "T0_base_adequacy": {
-          "pass": true,
-          "detail": "n_ranked=89 (>= 5); isolation chooses among candidates"
-        },
-        "T1_uniqueness": {
-          "pass": true,
-          "detail": "n_tied_at_extremum=1"
-        },
-        "T2_guessability": {
-          "pass": true,
-          "detail": "answer occurs 1/89 times (p=0.01124), modal count 1, 89 distinct values, answer_is_strict_mode=False"
-        },
-        "T3_order_leak": {
-          "pass": true,
-          "detail": "winner at index 32 of 89 (depth 0.3636), first=False last=False, H0 P(first|last)=0.0225"
-        },
-        "T3b_monotone_key": {
-          "pass": true,
-          "detail": "spearman(key, api_index)=-0.0252 (|rho| <= 0.45); key is off-axis"
-        },
-        "T4_separation": {
-          "pass": true,
-          "detail": "top1=1871 top2=1889 gap=18 rel=0.009621"
-        },
-        "T5_confirmation": {
-          "pass": false,
-          "detail": "1 independent witness(es): ['Wikimedia Foundation']; primary='Metropolitan Museum of Art'; self-confirming and not counted: ['Metropolitan Museum of Art']; 3 source operator(s): ['Europeana Foundation', 'Metropolitan Museum of Art', 'Wikimedia Foundation']"
-        },
-        "T6_gate": {
-          "pass": true,
-          "detail": "clean"
-        },
-        "T7_prompt_leak": {
-          "pass": true,
-          "detail": "word count 97"
-        }
-      },
-      "collection_is_explicit": false,
-      "verdict": "hold",
-      "primary_operator": "Metropolitan Museum of Art",
-      "independent_witnesses": [
-        "Wikimedia Foundation"
-      ],
-      "witness_tier": "silver",
-      "evidence": {
-        "label": "art",
-        "mode": "min",
-        "n_base": 89,
-        "n_ranked": 89,
-        "spearman_key_vs_api_order": -0.0252,
-        "n_tied_at_extremum": 1,
-        "distinct_keys": 33,
-        "winner_position_in_api_order": 32,
-        "winner_is_first_returned": false,
-        "winner_is_last_returned": false,
-        "top_keys": [
-          "1871",
-          "1889",
-          "1891",
-          "1914",
-          "1914"
-        ],
-        "answer_field_distinct_values": 89,
-        "answer_field_n_values": 89,
-        "answer_field_max_count": 1,
-        "answer_field_count_of_answer": 1,
-        "answer_field_modal_share": 0.011236,
-        "p_answer_by_uniform_guess": 0.011236,
-        "_collection_is_explicit": false
-      }
+      "verdict": "unavailable",
+      "error": "art: withdrawn. The Met slice returns total=0; the AIC replacement route honours 10/10 sort orderings so colour keys are one call away; the composite colour key's argmax ranks 1st/3rd/6th/7th on served color.s; and museum accession numbers are not globally unique -- the only one resolving outside AIC (2011.70) matches three works in three other museums, none of them the Chicago object.",
+      "tests": {}
     },
     {
       "category": "business",
@@ -270,9 +149,21 @@
           "pass": true,
           "detail": "spearman(key, api_index)=-0.065 (|rho| <= 0.45); key is off-axis"
         },
+        "T3c_key_derivable_depth": {
+          "pass": null,
+          "detail": "no component-depth evidence recorded; correlation alone does not bound how near the top of a derivable ordering the answer sits"
+        },
+        "T3d_derivable_key": {
+          "pass": null,
+          "detail": "no rank-equivalence sweep recorded"
+        },
         "T4_separation": {
           "pass": true,
           "detail": "top1=5787000000.0 top2=1676000000.0 gap=4.111e+09 rel=0.7104"
+        },
+        "T4b_fragility": {
+          "pass": true,
+          "detail": "key is per-row, not aggregated; flip condition does not apply"
         },
         "T5_confirmation": {
           "pass": false,
@@ -323,80 +214,9 @@
     },
     {
       "category": "celebrities/public figures",
-      "answer": "119009846",
-      "field": "GND identifier",
-      "tests": {
-        "T0_base_adequacy": {
-          "pass": true,
-          "detail": "n_ranked=104 (>= 5); isolation chooses among candidates"
-        },
-        "T1_uniqueness": {
-          "pass": true,
-          "detail": "n_tied_at_extremum=1"
-        },
-        "T2_guessability": {
-          "pass": true,
-          "detail": "answer occurs 1/104 times (p=0.009615), modal count 2, 103 distinct values, answer_is_strict_mode=False"
-        },
-        "T3_order_leak": {
-          "pass": true,
-          "detail": "winner at index 51 of 104 (depth 0.4951), first=False last=False, H0 P(first|last)=0.0192"
-        },
-        "T3b_monotone_key": {
-          "pass": true,
-          "detail": "spearman(key, api_index)=-0.0293 (|rho| <= 0.45); key is off-axis"
-        },
-        "T4_separation": {
-          "pass": true,
-          "detail": "top1='1837-11-23' top2='1842-11-12' (non-numeric key, distinct)"
-        },
-        "T5_confirmation": {
-          "pass": true,
-          "detail": "2 independent witness(es): ['German National Library', 'Wikimedia Foundation']; primary='Nobel Prize Outreach'; 4 source operator(s): ['German National Library', 'Nobel Prize Outreach', 'OurResearch (OpenAlex)', 'Wikimedia Foundation']"
-        },
-        "T6_gate": {
-          "pass": true,
-          "detail": "clean"
-        },
-        "T7_prompt_leak": {
-          "pass": true,
-          "detail": "word count 101; years named in prompt: 1901,1975"
-        }
-      },
-      "collection_is_explicit": false,
-      "verdict": "ship",
-      "primary_operator": "Nobel Prize Outreach",
-      "independent_witnesses": [
-        "German National Library",
-        "Wikimedia Foundation"
-      ],
-      "witness_tier": "gold",
-      "evidence": {
-        "label": "celebrities",
-        "mode": "min",
-        "n_base": 104,
-        "n_ranked": 104,
-        "spearman_key_vs_api_order": -0.0293,
-        "n_tied_at_extremum": 1,
-        "distinct_keys": 103,
-        "winner_position_in_api_order": 51,
-        "winner_is_first_returned": false,
-        "winner_is_last_returned": false,
-        "top_keys": [
-          "1837-11-23",
-          "1842-11-12",
-          "1845-03-27",
-          "1845-08-16",
-          "1850-06-06"
-        ],
-        "answer_field_distinct_values": 103,
-        "answer_field_n_values": 104,
-        "answer_field_max_count": 2,
-        "answer_field_count_of_answer": 1,
-        "answer_field_modal_share": 0.019231,
-        "p_answer_by_uniform_guess": 0.009615,
-        "_collection_is_explicit": false
-      }
+      "verdict": "unavailable",
+      "error": "celebrities: withdrawn. laureates?birthDate=1800-01-01&birthDateTo=1840-01-01 returns count=1 and that record IS the answer; measured T9b recall without any API access is 1.00.",
+      "tests": {}
     },
     {
       "category": "education",
@@ -423,9 +243,21 @@
           "pass": true,
           "detail": "spearman(key, api_index)=0.0746 (|rho| <= 0.45); key is off-axis"
         },
+        "T3c_key_derivable_depth": {
+          "pass": null,
+          "detail": "no component-depth evidence recorded; correlation alone does not bound how near the top of a derivable ordering the answer sits"
+        },
+        "T3d_derivable_key": {
+          "pass": null,
+          "detail": "no rank-equivalence sweep recorded"
+        },
         "T4_separation": {
           "pass": true,
           "detail": "top1='on.untn' top2='on.tiu' (non-numeric key, distinct)"
+        },
+        "T4b_fragility": {
+          "pass": true,
+          "detail": "key is per-row, not aggregated; flip condition does not apply"
         },
         "T5_confirmation": {
           "pass": false,
@@ -499,9 +331,21 @@
           "pass": true,
           "detail": "spearman(key, api_index)=-0.0349 (|rho| <= 0.45); key is off-axis"
         },
+        "T3c_key_derivable_depth": {
+          "pass": true,
+          "detail": "collection arrives as a bulk file, so there is no server to perform an ordering; any sort costs a full download first, which is the enumeration the trap asks for"
+        },
+        "T3d_derivable_key": {
+          "pass": true,
+          "detail": "bulk file: a rank-equivalent column is no shortcut when reading any column requires downloading every row"
+        },
         "T4_separation": {
           "pass": true,
           "detail": "top1=9765 top2=8361 gap=1404 rel=0.1438"
+        },
+        "T4b_fragility": {
+          "pass": true,
+          "detail": "key is per-row, not aggregated; flip condition does not apply"
         },
         "T5_confirmation": {
           "pass": true,
@@ -548,12 +392,14 @@
         "answer_field_count_of_answer": 1,
         "answer_field_modal_share": 0.02381,
         "p_answer_by_uniform_guess": 0.02381,
+        "collection_is_bulk_download": true,
+        "key_is_aggregated": false,
         "_collection_is_explicit": false
       }
     },
     {
       "category": "health and medicine",
-      "answer": "NCT00021697",
+      "answer": "NCT05178810",
       "field": "trial registry identifier",
       "tests": {
         "T0_base_adequacy": {
@@ -570,19 +416,31 @@
         },
         "T3_order_leak": {
           "pass": true,
-          "detail": "winner at index 45 of 51 (depth 0.9), first=False last=False, H0 P(first|last)=0.0392"
+          "detail": "winner at index 42 of 51 (depth 0.84), first=False last=False, H0 P(first|last)=0.0392"
         },
         "T3b_monotone_key": {
           "pass": true,
-          "detail": "spearman(key, api_index)=0.1455 (|rho| <= 0.45); key is off-axis"
+          "detail": "spearman(key, api_index)=0.064 (|rho| <= 0.45); key is off-axis"
+        },
+        "T3c_key_derivable_depth": {
+          "pass": true,
+          "detail": "key has no served component fields to sort on"
+        },
+        "T3d_derivable_key": {
+          "pass": true,
+          "detail": "4 served fields swept for rank equivalence; none reproduces the key ordering"
         },
         "T4_separation": {
           "pass": true,
-          "detail": "top1='2001-01' top2='2002-04' (non-numeric key, distinct)"
+          "detail": "top1=18 top2=10 gap=8 rel=0.4444"
+        },
+        "T4b_fragility": {
+          "pass": true,
+          "detail": "key is per-row, not aggregated; flip condition does not apply"
         },
         "T5_confirmation": {
           "pass": true,
-          "detail": "2 independent witness(es): ['EMBL-EBI', 'Wikimedia Foundation']; primary='US National Institutes of Health'; 4 source operator(s): ['EMBL-EBI', 'US Food and Drug Administration', 'US National Institutes of Health', 'Wikimedia Foundation']"
+          "detail": "2 independent witness(es): ['EMBL-EBI', 'OurResearch (OpenAlex)']; primary='US National Institutes of Health'; 4 source operator(s): ['EMBL-EBI', 'OurResearch (OpenAlex)', 'US Food and Drug Administration', 'US National Institutes of Health']"
         },
         "T6_gate": {
           "pass": true,
@@ -590,7 +448,7 @@
         },
         "T7_prompt_leak": {
           "pass": true,
-          "detail": "word count 79"
+          "detail": "word count 95"
         }
       },
       "collection_is_explicit": false,
@@ -598,26 +456,26 @@
       "primary_operator": "US National Institutes of Health",
       "independent_witnesses": [
         "EMBL-EBI",
-        "Wikimedia Foundation"
+        "OurResearch (OpenAlex)"
       ],
       "witness_tier": "gold",
       "evidence": {
         "label": "health",
-        "mode": "min",
+        "mode": "max",
         "n_base": 51,
         "n_ranked": 51,
-        "spearman_key_vs_api_order": 0.1455,
+        "spearman_key_vs_api_order": 0.064,
         "n_tied_at_extremum": 1,
-        "distinct_keys": 50,
-        "winner_position_in_api_order": 45,
+        "distinct_keys": 12,
+        "winner_position_in_api_order": 42,
         "winner_is_first_returned": false,
         "winner_is_last_returned": false,
         "top_keys": [
-          "2001-01",
-          "2002-04",
-          "2003-01",
-          "2003-06",
-          "2003-07"
+          "18",
+          "10",
+          "10",
+          "9",
+          "8"
         ],
         "answer_field_distinct_values": 51,
         "answer_field_n_values": 51,
@@ -625,6 +483,11 @@
         "answer_field_count_of_answer": 1,
         "answer_field_modal_share": 0.019608,
         "p_answer_by_uniform_guess": 0.019608,
+        "key_component_depths": {},
+        "key_is_aggregated": false,
+        "equivalent_served_fields": [],
+        "n_fields_swept": 4,
+        "k_robustness": 7,
         "_collection_is_explicit": false
       }
     },
@@ -653,9 +516,21 @@
           "pass": true,
           "detail": "spearman(key, api_index)=0.0064 (|rho| <= 0.45); key is off-axis"
         },
+        "T3c_key_derivable_depth": {
+          "pass": true,
+          "detail": "collection arrives as a bulk file, so there is no server to perform an ordering; any sort costs a full download first, which is the enumeration the trap asks for"
+        },
+        "T3d_derivable_key": {
+          "pass": true,
+          "detail": "bulk file: a rank-equivalent column is no shortcut when reading any column requires downloading every row"
+        },
         "T4_separation": {
           "pass": true,
           "detail": "top1='allied-signal, inc. ex rel. bendix corp. v. director, division of taxation' top2='ankenbrandt ex rel. l. r. v. richards' (non-numeric key, distinct)"
+        },
+        "T4b_fragility": {
+          "pass": true,
+          "detail": "key is per-row, not aggregated; flip condition does not apply"
         },
         "T5_confirmation": {
           "pass": true,
@@ -702,6 +577,8 @@
         "answer_field_count_of_answer": 1,
         "answer_field_modal_share": 0.019608,
         "p_answer_by_uniform_guess": 0.019608,
+        "collection_is_bulk_download": true,
+        "key_is_aggregated": false,
         "_collection_is_explicit": false
       }
     },
@@ -730,9 +607,21 @@
           "pass": true,
           "detail": "spearman(key, api_index)=-0.3685 (|rho| <= 0.45); key is off-axis"
         },
+        "T3c_key_derivable_depth": {
+          "pass": null,
+          "detail": "no component-depth evidence recorded; correlation alone does not bound how near the top of a derivable ordering the answer sits"
+        },
+        "T3d_derivable_key": {
+          "pass": null,
+          "detail": "no rank-equivalence sweep recorded"
+        },
         "T4_separation": {
           "pass": true,
           "detail": "top1=20 top2=15 gap=5 rel=0.25"
+        },
+        "T4b_fragility": {
+          "pass": true,
+          "detail": "key is per-row, not aggregated; flip condition does not apply"
         },
         "T5_confirmation": {
           "pass": false,
@@ -812,9 +701,21 @@
           "pass": true,
           "detail": "spearman(key, api_index)=-0.1124 (|rho| <= 0.45); key is off-axis"
         },
+        "T3c_key_derivable_depth": {
+          "pass": true,
+          "detail": "key has no served component fields to sort on"
+        },
+        "T3d_derivable_key": {
+          "pass": true,
+          "detail": "0 served fields swept for rank equivalence; none reproduces the key ordering"
+        },
         "T4_separation": {
           "pass": true,
           "detail": "top1='1945-04-02' top2='1949-09-13' (non-numeric key, distinct)"
+        },
+        "T4b_fragility": {
+          "pass": true,
+          "detail": "key is per-row, not aggregated; flip condition does not apply"
         },
         "T5_confirmation": {
           "pass": true,
@@ -861,6 +762,12 @@
         "answer_field_count_of_answer": 1,
         "answer_field_modal_share": 0.026316,
         "p_answer_by_uniform_guess": 0.026316,
+        "key_component_depths": {},
+        "key_is_aggregated": false,
+        "equivalent_served_fields": [],
+        "n_fields_swept": 0,
+        "orderings_probed": 6,
+        "orderings_honoured": 0,
         "_collection_is_explicit": false
       }
     },
@@ -889,9 +796,21 @@
           "pass": true,
           "detail": "spearman(key, api_index)=-0.2042 (|rho| <= 0.45); key is off-axis"
         },
+        "T3c_key_derivable_depth": {
+          "pass": true,
+          "detail": "collection arrives as a bulk file, so there is no server to perform an ordering; any sort costs a full download first, which is the enumeration the trap asks for"
+        },
+        "T3d_derivable_key": {
+          "pass": true,
+          "detail": "bulk file: a rank-equivalent column is no shortcut when reading any column requires downloading every row"
+        },
         "T4_separation": {
           "pass": true,
           "detail": "top1=68.607299804688 top2=66.564796447754 gap=2.0425 rel=0.02977"
+        },
+        "T4b_fragility": {
+          "pass": true,
+          "detail": "key is per-row, not aggregated; flip condition does not apply"
         },
         "T5_confirmation": {
           "pass": true,
@@ -938,6 +857,8 @@
         "answer_field_count_of_answer": 1,
         "answer_field_modal_share": 0.013699,
         "p_answer_by_uniform_guess": 0.013699,
+        "collection_is_bulk_download": true,
+        "key_is_aggregated": false,
         "_collection_is_explicit": false
       }
     },
@@ -966,9 +887,21 @@
           "pass": true,
           "detail": "spearman(key, api_index)=-0.2021 (|rho| <= 0.45); key is off-axis"
         },
+        "T3c_key_derivable_depth": {
+          "pass": null,
+          "detail": "no component-depth evidence recorded; correlation alone does not bound how near the top of a derivable ordering the answer sits"
+        },
+        "T3d_derivable_key": {
+          "pass": null,
+          "detail": "no rank-equivalence sweep recorded"
+        },
         "T4_separation": {
           "pass": true,
           "detail": "top1=190 top2=166 gap=24 rel=0.1263"
+        },
+        "T4b_fragility": {
+          "pass": true,
+          "detail": "key is per-row, not aggregated; flip condition does not apply"
         },
         "T5_confirmation": {
           "pass": false,
@@ -1019,143 +952,61 @@
     },
     {
       "category": "video games",
-      "answer": "Colossal Order",
-      "field": "developing studio",
-      "tests": {
-        "T0_base_adequacy": {
-          "pass": true,
-          "detail": "n_ranked=14 (>= 5); isolation chooses among candidates"
-        },
-        "T1_uniqueness": {
-          "pass": true,
-          "detail": "n_tied_at_extremum=1"
-        },
-        "T2_guessability": {
-          "pass": true,
-          "detail": "answer occurs 1/14 times (p=0.07143), modal count 1, 14 distinct values, answer_is_strict_mode=False"
-        },
-        "T3_order_leak": {
-          "pass": true,
-          "detail": "EXEMPT (collection_is_explicit): the prompt enumerates every member of the base collection by identifier, so the API return order carries no information the solver does not already hold. Both order tests assume the ordering is hidden; that assumption is false here, so they are reported as not-applicable rather than passed. (measured index 8 of 14, first=False last=False)"
-        },
-        "T3b_monotone_key": {
-          "pass": true,
-          "detail": "EXEMPT (collection_is_explicit): the prompt enumerates every member of the base collection by identifier, so the API return order carries no information the solver does not already hold. Both order tests assume the ordering is hidden; that assumption is false here, so they are reported as not-applicable rather than passed. (measured rho=-0.0637)"
-        },
-        "T4_separation": {
-          "pass": true,
-          "detail": "top1='citiesskylines' top2='cuphead' (non-numeric key, distinct)"
-        },
-        "T5_confirmation": {
-          "pass": true,
-          "detail": "2 independent witness(es): ['PCGamingWiki', 'Wikimedia Foundation']; primary='Valve Corporation'; 4 source operator(s): ['PCGamingWiki', 'Pan European Game Information', 'Valve Corporation', 'Wikimedia Foundation']"
-        },
-        "T6_gate": {
-          "pass": true,
-          "detail": "clean"
-        },
-        "T7_prompt_leak": {
-          "pass": true,
-          "detail": "word count 114"
-        }
-      },
-      "collection_is_explicit": true,
-      "verdict": "ship",
-      "primary_operator": "Valve Corporation",
-      "independent_witnesses": [
-        "PCGamingWiki",
-        "Wikimedia Foundation"
-      ],
-      "witness_tier": "gold",
-      "evidence": {
-        "label": "video games",
-        "mode": "min",
-        "n_base": 14,
-        "n_ranked": 14,
-        "spearman_key_vs_api_order": -0.0637,
-        "n_tied_at_extremum": 1,
-        "distinct_keys": 14,
-        "winner_position_in_api_order": 8,
-        "winner_is_first_returned": false,
-        "winner_is_last_returned": false,
-        "top_keys": [
-          "citiesskylines",
-          "cuphead",
-          "deusexgameoftheyearedition",
-          "dontstarvetogether",
-          "europauniversalisiv"
-        ],
-        "answer_field_distinct_values": 14,
-        "answer_field_n_values": 14,
-        "answer_field_max_count": 1,
-        "answer_field_count_of_answer": 1,
-        "answer_field_modal_share": 0.071429,
-        "p_answer_by_uniform_guess": 0.071429,
-        "_collection_is_explicit": true
-      }
+      "verdict": "unavailable",
+      "error": "video games: withdrawn. The prompt prints the app-id roster and 'citiesskylines' sorts first among the 14, so the answer is derivable from the prompt without calling Steam; measured T9b recall is 0.75.",
+      "tests": {}
     }
   ],
   "corpus": {
     "order_test_exemptions": {
       "rule": "collection_is_explicit traps are excluded from C1/C3/C4",
       "reason": "EXEMPT (collection_is_explicit): the prompt enumerates every member of the base collection by identifier, so the API return order carries no information the solver does not already hold. Both order tests assume the ordering is hidden; that assumption is false here, so they are reported as not-applicable rather than passed.",
-      "categories": [
-        "video games"
-      ],
-      "n_excluded": 1
+      "categories": [],
+      "n_excluded": 0
     },
     "C3_depth_uniformity": {
       "h0": "winner relative depth pos/(n-1) is Uniform(0,1) across the corpus",
-      "n": 13,
+      "n": 10,
       "depths": [
         0.0833,
         0.2564,
         0.3571,
-        0.3636,
         0.3902,
-        0.4,
-        0.4951,
         0.4952,
         0.54,
         0.625,
         0.6471,
-        0.9,
+        0.84,
         0.9189
       ],
-      "mean_depth": 0.4979,
-      "ks_statistic": 0.2033,
-      "ks_p_approx": 0.604336
+      "mean_depth": 0.5153,
+      "ks_statistic": 0.1571,
+      "ks_p_approx": 0.948704
     },
     "C4_key_monotonicity": {
       "h0": "ranking keys are unrelated to API return order (rho ~ 0)",
-      "n": 13,
+      "n": 10,
       "abs_rho": [
         0.0064,
-        0.0252,
         0.0255,
-        0.0293,
         0.0349,
+        0.064,
         0.065,
         0.0746,
         0.1124,
-        0.1455,
         0.2021,
         0.2042,
-        0.261,
         0.3685
       ],
-      "mean_abs_rho": 0.1196,
+      "mean_abs_rho": 0.1158,
       "n_over_threshold": 0
     },
     "C1_positional_leak": {
       "h0": "winner index is uniform over the n_base records the API returned",
-      "n_traps_tested": 13,
+      "n_traps_tested": 10,
       "per_trap_p_first_or_last": [
-        0.0952,
         0.1333,
-        0.0225,
         0.013,
-        0.0192,
         0.08,
         0.0476,
         0.0392,
@@ -1165,22 +1016,22 @@
         0.0274,
         0.0095
       ],
-      "expected_first_or_last": 0.6288,
+      "expected_first_or_last": 0.4919,
       "observed_first_or_last": 0,
       "exact_two_sided_p": 1.0
     },
     "C2_guess_yield": {
       "h0": "a guesser draws uniformly from the observed answer-field values",
-      "n_traps_tested": 14,
-      "expected_hits_across_corpus": 0.3858,
-      "p_at_least_one_hit": 0.325932,
+      "n_traps_tested": 10,
+      "expected_hits_across_corpus": 0.2459,
+      "p_at_least_one_hit": 0.221639,
       "n_traps_over_threshold": 0,
       "threshold": 0.1
     }
   },
   "counts": {
-    "ship": 9,
-    "unavailable": 2,
-    "hold": 5
+    "ship": 6,
+    "unavailable": 6,
+    "hold": 4
   }
 }

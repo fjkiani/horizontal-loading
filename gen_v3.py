@@ -137,6 +137,17 @@ def _nobel_sources(gnd, qid, name):
 # Now: the laureate's GND identifier, which no solver carries in memory.
 # =========================================================================
 def gen_celebrities(category_key="Physics", y0=1901, y1=1975):
+    # WITHDRAWN -- measured one-call solvable, not a research task.
+    # The laureate endpoint filters on birth date server-side. The request
+    #   .../laureates?birthDate=1800-01-01&birthDateTo=1840-01-01
+    # returns count=1, and that single record is van der Waals -- the answer.
+    # The generator's own framing ("the earliest-born laureate") is therefore a
+    # server-side filter, not a ranking the solver must perform. T9b recall for
+    # this answer is 1.00, so it is also fully memorised.
+    raise TrapUnavailable(
+        "celebrities: withdrawn. laureates?birthDate=1800-01-01&birthDateTo="
+        "1840-01-01 returns count=1 and that record IS the answer; measured T9b "
+        "recall without any API access is 1.00.")
     rows = []
     for L in gen_v2._nobel_laureates():
         b = L.get("birth") or {}
@@ -218,6 +229,21 @@ def gen_celebrities(category_key="Physics", y0=1901, y1=1975):
 # confirms directly. This upgrades the witness as well as the answer.
 # =========================================================================
 def gen_history(category_key="Physics", y0=1901, y1=2000, min_laureates=3):
+    # WITHDRAWN -- measured one-call solvable, not a research task.
+    # The Nobel Prize Outreach API returns laureates in ALPHABETICAL order by
+    # default, and it honours limit. A single request,
+    #   .../nobelPrizes?nobelPrizeCategory=phy&limit=1
+    # returns Aage N. Bohr, which is the answer this generator was producing.
+    # No enumeration of the prize list is required, so the trap measures
+    # nothing. Separately, T9b recall for this answer is 0.9524: a solver that
+    # never touches the API recovers it from memory anyway. Both defects would
+    # have to be fixed at once, and re-pointing the answer to an opaque
+    # identifier does not fix either, because the identifier is printed in the
+    # laureate's own article.
+    raise TrapUnavailable(
+        "history: withdrawn. The Nobel API default order is alphabetical and it "
+        "honours limit, so nobelPrizes?nobelPrizeCategory=phy&limit=1 returns the "
+        "answer in one call; measured T9b recall without any API access is 0.9524.")
     prizes = net.get_json(gen_v2._NOBEL_PRIZES, timeout=240,
                           attempts=5).get("nobelPrizes", [])
     base = [p for p in prizes
@@ -458,6 +484,15 @@ def gen_sports(pairs=((147, "New York Yankees", 1998), (111, "Boston Red Sox", 1
             best = ct._pick_extreme(people, lambda p: p["birthDate"],
                                     "sports %s %d" % (team_name, season), mode="min",
                                     valuefn=lambda p: p["fullName"])
+            # measured: statsapi honoured 0 of 6 ordering parameters tried
+            # (sortBy/order/sort/orderBy on birthDate, and sortBy=nameFirstLast);
+            # the roster comes back in fixed alphabetical order every time.
+            ct.LAST_RANK["key_component_depths"] = {}
+            ct.LAST_RANK["key_is_aggregated"] = False
+            ct.LAST_RANK["equivalent_served_fields"] = []
+            ct.LAST_RANK["n_fields_swept"] = 0
+            ct.LAST_RANK["orderings_probed"] = 6
+            ct.LAST_RANK["orderings_honoured"] = 0
         except TrapUnavailable as te:
             tried.append(str(te))
             continue

@@ -234,6 +234,12 @@ OPERATOR_MAP = {
     # though the two indexes overlap on content: EBI runs its own ingest,
     # its own identifier extraction and its own REST service.
     "ebi.ac.uk": "EMBL-EBI",
+    # Europe PMC is operated by EMBL-EBI. Mapping it to the SAME operator string
+    # as ebi.ac.uk is a DEDUPE, not an addition: it stops a trap from counting
+    # Europe PMC and EBI as two independent witnesses. Required now because the
+    # only working PMC PDF route lives on the europepmc.org host.
+    "europepmc.org": "EMBL-EBI",
+    "osti.gov": "US Department of Energy",
     "imdbws.com": "IMDb (Amazon)",
     "imdb.com": "IMDb (Amazon)",
     "mlb.com": "Major League Baseball",
@@ -392,12 +398,50 @@ def check_sources(sources, min_operators=3, confirming_sources=None,
     return v
 
 
+# Operators that are NOT independent of other operators, because the first is
+# governed or jointly operated by the second. This is a DIRECTED, PAIRWISE
+# relation, deliberately not an equivalence class: the Research Organization
+# Registry is jointly governed by the California Digital Library, Crossref and
+# DataCite, so ROR is not an independent witness alongside any of those three --
+# but Crossref and DataCite remain independent OF EACH OTHER, since they are
+# separately incorporated DOI registration agencies with separate boards.
+# Collapsing them into one group would wrongly demote traps that legitimately
+# cite both.
+NOT_INDEPENDENT_OF = {
+    "Research Organization Registry": {
+        "California Digital Library", "Crossref", "DataCite",
+    },
+}
+
+# Hosts proven to ECHO the query back -- they return a populated page for
+# fabricated identifiers, so a "hit" there confirms nothing. These must never be
+# added to OPERATOR_MAP. Recorded here so the finding is not re-litigated.
+REJECTED_ECHO_SOURCES = {
+    "freepatentsonline.com": "returns a populated page for fabricated patent numbers",
+    "lens.org": "returns a populated page for fabricated patent numbers",
+    "patents.google.com": "bare-queried search echoes fabricated numbers 9999998 / 8888887",
+}
+
+
 def independent_witnesses(sources, confirming_sources, primary_operator):
-    """Operators that confirm the answer and did NOT supply the ranked collection."""
+    """Operators that confirm the answer and did NOT supply the ranked collection.
+
+    Beyond dropping the primary operator and unresolved hosts, this collapses
+    operators that share governance with a co-present operator (see
+    NOT_INDEPENDENT_OF). Without that collapse a registry jointly run by two
+    other cited operators would be counted as a third, independent voice.
+    """
     conf = [c for c in (confirming_sources or []) if c in list(sources or [])]
-    return sorted(o for o in vetted_operators(conf)
-                  if o != primary_operator
-                  and not str(o).startswith("UNRESOLVED-"))
+    ops = set(o for o in vetted_operators(conf)
+              if o != primary_operator
+              and not str(o).startswith("UNRESOLVED-"))
+    # A dependent operator is dropped when any of its governing operators is
+    # also present, or when a governing operator IS the primary -- in the latter
+    # case the registry would be the primary speaking under a second name.
+    for dependent, governors in NOT_INDEPENDENT_OF.items():
+        if dependent in ops and (ops & governors or primary_operator in governors):
+            ops.discard(dependent)
+    return sorted(ops)
 
 
 def check_category(category):

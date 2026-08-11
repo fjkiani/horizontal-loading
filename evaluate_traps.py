@@ -202,6 +202,99 @@ def t3b_monotone_key(ev):
                 + ("key tracks the natural order" if not ok else "key is off-axis"))
 
 
+MIN_COMPONENT_DEPTH = 0.10  # T3c: answer must sit below the top decile of each key input
+
+
+def t3c_key_derivable_depth(ev):
+    """The gate the art probe proved was missing, in its corrected form.
+
+    T3b asks whether the key correlates with the order the API returns records
+    in. That is not enough: a key can be off-axis against the default order and
+    still place its answer a few rows from the top of some ordering the server
+    will perform on request.
+
+    The first version of this test flagged any served field that put the answer
+    in the top 20 rows. That over-fired. Health's answer is rank 5-15 on every
+    `:desc` ordering and 34-47 on every `:asc` ordering out of 51 records, but
+    that is ONE fact -- the trial is recent, large and multi-site -- not seven
+    shortcuts, and none of those fields is inferable from a key that counts
+    declared secondary outcomes. A solver holding the top five by first-posted
+    date has no way to know the answer is among them.
+
+    What is exploitable is a shallow ordering on a field the solver can DERIVE
+    FROM THE KEY DEFINITION ITSELF. Finance is the clean example: the key is
+    indirect awards over primary-dealer awards, and the answer ranks 9th of 336
+    on primary-dealer awards ASCENDING -- the key's own denominator. A ratio is
+    dominated by a small denominator, so "smallest denominator" is the first
+    thing anyone tries, and it costs nine rows. The numerator, by contrast,
+    ranks 51st and 67th, exactly the asymmetry the algebra predicts.
+
+    So: normalise by population size, and score only the key's own inputs."""
+    if ev.get("_collection_is_explicit"):
+        return True, EXEMPT_REASON
+    if ev.get("collection_is_bulk_download"):
+        return True, ("collection arrives as a bulk file, so there is no server "
+                      "to perform an ordering; any sort costs a full download "
+                      "first, which is the enumeration the trap asks for")
+    depths = ev.get("key_component_depths")
+    if depths is None:
+        return None, ("no component-depth evidence recorded; correlation alone "
+                      "does not bound how near the top of a derivable ordering "
+                      "the answer sits")
+    if not depths:
+        return True, "key has no served component fields to sort on"
+    worst = min(depths.values())
+    bad = sorted(k for k, v in depths.items() if v < MIN_COMPONENT_DEPTH)
+    ok = not bad
+    return ok, (f"shallowest depth over {len(depths)} key-input orderings is "
+                f"{round(worst, 4)} (need >= {MIN_COMPONENT_DEPTH}); "
+                + ("no key input brings the answer near the top" if ok
+                   else f"derivable shortcut via {bad}"))
+
+
+def t3d_derivable_key(ev):
+    """A composite key only protects if no single served field reproduces its
+    ordering. Swept locally against every numeric field the service returns, so
+    it costs no requests and cannot be skipped."""
+    if ev.get("_collection_is_explicit"):
+        return True, EXEMPT_REASON
+    if ev.get("collection_is_bulk_download"):
+        return True, ("bulk file: a rank-equivalent column is no shortcut when "
+                      "reading any column requires downloading every row")
+    eq = ev.get("equivalent_served_fields")
+    if eq is None:
+        return None, "no rank-equivalence sweep recorded"
+    ok = len(eq) == 0
+    return ok, (f"{ev.get('n_fields_swept', '?')} served fields swept for rank "
+                f"equivalence; " + ("none reproduces the key ordering" if ok
+                                    else f"reproduced by {eq}"))
+
+
+def t4b_fragility(ev):
+    """The exact flip condition, replacing the discredited concentration ceiling.
+
+    For an AGGREGATED key, let V be the winner's total, S the share of V from
+    its single largest component, and sep = (V - R)/V the relative separation
+    over the runner-up. Reattributing that one component flips the argmax iff
+    S > sep. Checked against nine cohorts, where it separated cleanly; the 0.50
+    concentration ceiling it replaces scored rho = -0.0833 (p = 0.83) against
+    the same outcome, explaining 0.7% of rank variance.
+
+    SCOPED: it applies only where the key aggregates components. For a per-row
+    key -- one artwork's hue, one trial's outcome count -- a wide margin means a
+    stable answer, not a fragile one, so the test is skipped, not inverted."""
+    if not ev.get("key_is_aggregated"):
+        return True, "key is per-row, not aggregated; flip condition does not apply"
+    s, sep = ev.get("top_component_share"), ev.get("rel_separation")
+    if s is None or sep is None:
+        return None, "aggregated key but no component-share evidence recorded"
+    ok = s < sep
+    return ok, (f"top component contributes S={s} of the winner's total against "
+                f"separation sep={sep}; argmax flips iff S > sep, so this is "
+                + ("stable" if ok else
+                   f"FRAGILE by a factor of {round(s / sep, 3) if sep else 'inf'}"))
+
+
 def t3_order_leak(ev):
     n = ev.get("n_base")
     pos = ev.get("winner_position_in_api_order")
@@ -309,7 +402,9 @@ def t7_prompt_leak(trap):
 TESTS_EV = [("T0_base_adequacy", t0_base_adequacy),
             ("T1_uniqueness", t1_uniqueness), ("T2_guessability", t2_guessability),
             ("T3_order_leak", t3_order_leak), ("T3b_monotone_key", t3b_monotone_key),
-            ("T4_separation", t4_separation)]
+            ("T3c_key_derivable_depth", t3c_key_derivable_depth),
+            ("T3d_derivable_key", t3d_derivable_key),
+            ("T4_separation", t4_separation), ("T4b_fragility", t4b_fragility)]
 TESTS_TRAP = [("T5_confirmation", t5_confirmation), ("T6_gate", t6_gate),
               ("T7_prompt_leak", t7_prompt_leak)]
 

@@ -1,174 +1,19 @@
 {
-  "generated_at": "2026-08-11T06:05:44Z",
+  "generated_at": "2026-08-11T11:10:18Z",
   "results": {
     "history": {
       "category": "history",
-      "status": "ok",
-      "trap": {
-        "collection_is_explicit": false,
-        "primary_operator": "Nobel Prize Outreach",
-        "independent_confirming_operators": [
-          "German National Library",
-          "Wikimedia Foundation"
-        ],
-        "category": "history",
-        "field": "GND identifier",
-        "answer": "113163827",
-        "entity": "Aage Niels Bohr",
-        "n_base": 21,
-        "sources": [
-          "https://api.nobelprize.org/2.1/laureates",
-          "https://www.wikidata.org/wiki/Q103854",
-          "https://d-nb.info/gnd/113163827",
-          "https://api.openalex.org/authors?search=Aage%20Niels%20Bohr"
-        ],
-        "confirming_sources": [
-          "https://d-nb.info/gnd/113163827",
-          "https://www.wikidata.org/wiki/Q103854"
-        ],
-        "api_proof": true,
-        "api_proof_argument": "The prize registry returns awards in year order and offers no way to filter by the number of laureates or to sort by laureate name, so all 21 qualifying awards must be assembled and ordered by the solver. The answer is an authority-file identifier rather than the award year, so identifying the award does not hand the solver the answer. Measured rho for the name key against registry chronology is 0.261.",
-        "confirmation": "German National Library record d-nb.info/gnd/113163827 names Aage Niels Bohr, and Wikidata Q103854 property P227 returns the same identifier",
-        "prompt": "The Nobel Prize registry records every Physics award with its year and the full list of laureates who shared it, and national libraries maintain authority files that assign each person a stable numeric identifier. Consider only the Physics awards made between 1901 and 2000 that were divided among 3 or more laureates, and take the first laureate listed on each of those awards. Order those lead laureates by name and take the one that comes first. Report the GND authority identifier assigned to that lead laureate. Resolve the identifier at the national library before answering. Give the identifier alone, digits and any trailing check character only.",
-        "source_operators": [
-          "German National Library",
-          "Nobel Prize Outreach",
-          "OurResearch (OpenAlex)",
-          "Wikimedia Foundation"
-        ],
-        "confirming_operators": [
-          "German National Library",
-          "Wikimedia Foundation"
-        ],
-        "track": "api-native",
-        "ranking_evidence": {
-          "label": "history",
-          "mode": "min",
-          "n_base": 21,
-          "n_ranked": 21,
-          "spearman_key_vs_api_order": 0.261,
-          "n_tied_at_extremum": 1,
-          "distinct_keys": 21,
-          "winner_position_in_api_order": 8,
-          "winner_is_first_returned": false,
-          "winner_is_last_returned": false,
-          "top_keys": [
-            "aage niels bohr",
-            "antoine henri becquerel",
-            "charles hard townes",
-            "david m. lee",
-            "ernst ruska"
-          ],
-          "answer_field_distinct_values": 21,
-          "answer_field_n_values": 21,
-          "answer_field_max_count": 1,
-          "answer_field_count_of_answer": 1,
-          "answer_field_modal_share": 0.047619,
-          "p_answer_by_uniform_guess": 0.047619
-        },
-        "facts": {
-          "category": "Physics",
-          "window": [
-            1901,
-            2000
-          ],
-          "n": 21,
-          "lead_laureate": "Aage Niels Bohr",
-          "second_alphabetical": "antoine henri becquerel",
-          "award_year": 1975,
-          "n_laureates": 3,
-          "answer_field_class": "identifier",
-          "guess_space": "p_answer_by_uniform_guess is measured over laureate identity. The GND authority file assigns exactly one record per person and _gnd() rejects any laureate whose Wikidata P227 is not single-valued, so laureate identity and identifier are in bijection and the two probabilities are equal.",
-          "replaces": "award year (attribute; measured recallable)",
-          "resolved_defect": "the award-year answer could only be confirmed by the prize registry itself, because Wikidata stores the year as a statement qualifier; the identifier answer is confirmed by the German National Library, which runs neither the registry nor Wikidata"
-        }
-      },
-      "validation": {
-        "ok": true,
-        "violations": [],
-        "unmapped_hosts": []
-      },
+      "status": "fail",
+      "error": "history: withdrawn. The Nobel API default order is alphabetical and it honours limit, so nobelPrizes?nobelPrizeCategory=phy&limit=1 returns the answer in one call; measured T9b recall without any API access is 0.9524.",
+      "etype": "TrapUnavailable",
       "secs": 0.0
     },
     "finance": {
       "category": "finance",
       "status": "fail",
-      "trap": {
-        "collection_is_explicit": false,
-        "primary_operator": "US Department of the Treasury",
-        "independent_confirming_operators": [],
-        "category": "finance",
-        "field": "closing balance in millions of dollars",
-        "answer": "419376",
-        "entity": "Federal Reserve Account, 2018-04-30",
-        "n_base": 251,
-        "sources": [
-          "https://api.fiscaldata.treasury.gov/services/api/fiscal_service/v1/accounting/dts/operating_cash_balance?filter=record_date:gte:2018-01-01,record_date:lte:2018-12-31&page[size]=2000&sort=record_date",
-          "https://www.wikidata.org/wiki/Q1128489",
-          "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0000320193"
-        ],
-        "confirming_sources": [
-          "https://api.fiscaldata.treasury.gov/services/api/fiscal_service/v1/accounting/dts/operating_cash_balance?filter=record_date:gte:2018-01-01,record_date:lte:2018-12-31&page[size]=2000&sort=record_date"
-        ],
-        "api_proof": true,
-        "api_proof_argument": "The Daily Treasury Statement endpoint serves the year as a flat dated series of 251 rows with no maximum view and no server-side ordering by balance, so the extreme value can only be found by pulling every row. The answer is the balance itself rather than its date, because across nine scanned years eight of nine annual maxima fell on a month-end day (binomial upper tail p = 1.4e-06), which would let a solver guess the date without reading the series.",
-        "confirmation": "the same endpoint returns close_today_bal 419376 on 2018-04-30, exceeding the next highest 413686",
-        "prompt": "The United States Treasury publishes the Daily Treasury Statement as a dated series, recording the closing balance of the Federal Reserve Account for every business day of 2018. Restrict attention to the rows whose account type is the Federal Reserve Account and whose record date falls inside 2018. Across that single year the closing balance reached its highest level on exactly one of those business days. Report that highest closing balance as the statement prints it, in millions of dollars. The series is published without any ranking view, so the ordering must be established from the records themselves. Give the whole number alone, with no separators, currency sign or words.",
-        "source_operators": [
-          "US Department of the Treasury",
-          "US Securities and Exchange Commission",
-          "Wikimedia Foundation"
-        ],
-        "confirming_operators": [
-          "US Department of the Treasury"
-        ],
-        "track": "api-native",
-        "ranking_evidence": {
-          "label": "finance",
-          "mode": "max",
-          "n_base": 251,
-          "n_ranked": 251,
-          "spearman_key_vs_api_order": 0.6162,
-          "n_tied_at_extremum": 1,
-          "distinct_keys": 250,
-          "winner_position_in_api_order": 82,
-          "winner_is_first_returned": false,
-          "winner_is_last_returned": false,
-          "top_keys": [
-            "419376.0",
-            "413686.0",
-            "413608.0",
-            "406195.0",
-            "405951.0"
-          ],
-          "answer_field_distinct_values": 250,
-          "answer_field_n_values": 251,
-          "answer_field_max_count": 2,
-          "answer_field_count_of_answer": 1,
-          "answer_field_modal_share": 0.007968,
-          "p_answer_by_uniform_guess": 0.003984
-        },
-        "facts": {
-          "year": 2018,
-          "n": 251,
-          "date": "2018-04-30",
-          "runner_up": 413686,
-          "sep_ratio": 1.0138,
-          "argmax_depth": 0.328,
-          "single_witness": true,
-          "provenance_note": "Only the Treasury publishes this daily series, so no second operator independently witnesses the numeric value."
-        }
-      },
-      "validation": {
-        "ok": false,
-        "violations": [
-          "R3c every confirming source is run by the primary operator 'US Department of the Treasury'; a source restating itself is not a witness"
-        ],
-        "unmapped_hosts": []
-      },
-      "secs": 0.0,
-      "error": "gate rejected: [\"R3c every confirming source is run by the primary operator 'US Department of the Treasury'; a source restating itself is not a witness\"]",
-      "etype": "GateRejected"
+      "error": "finance: withdrawn. The auctions service honours 228 orderings, so raw fields are one call away; the indirect-over-primary ratio key is structurally leaky because a ratio's argmax sits in the small-denominator tail (shallow in 15 of 15 seeds); and the two non-ratio replacements passed 1 of 22 searched configurations and 0 of 8 held-out years, with a bootstrap hit rate of 0.635.",
+      "etype": "TrapUnavailable",
+      "secs": 0.0
     },
     "science and technology": {
       "category": "science and technology",
@@ -231,7 +76,15 @@
           "answer_field_max_count": 1,
           "answer_field_count_of_answer": 1,
           "answer_field_modal_share": 0.066667,
-          "p_answer_by_uniform_guess": 0.066667
+          "p_answer_by_uniform_guess": 0.066667,
+          "key_component_depths": {},
+          "key_is_aggregated": false,
+          "equivalent_served_fields": [],
+          "n_fields_swept": 0,
+          "sort_field_rejected_by_service": [
+            "sortBy=authorCount",
+            "sortBy=authors"
+          ]
         },
         "facts": {
           "cat": "astro-ph.EP",
@@ -250,80 +103,9 @@
     },
     "art": {
       "category": "art",
-      "status": "ok",
-      "trap": {
-        "collection_is_explicit": false,
-        "primary_operator": "Metropolitan Museum of Art",
-        "independent_confirming_operators": [
-          "Wikimedia Foundation"
-        ],
-        "category": "art",
-        "field": "accession number",
-        "answer": "71.84",
-        "entity": "Man in Armor (Mars?)",
-        "n_base": 89,
-        "sources": [
-          "https://collectionapi.metmuseum.org/public/collection/v1/objects/437416",
-          "https://www.wikidata.org/wiki/Q19905220",
-          "https://api.europeana.eu/record/v2/search.json?query=rembrandt"
-        ],
-        "confirming_sources": [
-          "https://collectionapi.metmuseum.org/public/collection/v1/objects/437416",
-          "https://www.wikidata.org/wiki/Q19905220"
-        ],
-        "api_proof": true,
-        "api_proof_argument": "The museum search endpoint returns only object identifiers; accession years are available only by retrieving each record individually, so all 89 qualifying objects must be fetched before the earliest can be identified.",
-        "confirmation": "the object record reports accession year 1871; independently, Wikidata Q19905220 ('Man in Armor (Mars?)') carries P217 '71.84' scoped to the museum collection Q160236",
-        "prompt": "The Metropolitan Museum of Art publishes an open catalogue of its holdings, giving each object an accession number and recording the year it entered the collection. Restrict attention to catalogued works attributed to Rembrandt that the museum marks as public domain and for which it holds images. Among only those works, one entered the museum's collection in an earlier year than any other. Report the accession number that the museum assigned to that single earliest work. Corroborate the attribution against an independent cultural heritage aggregator. Give the accession number exactly as the museum prints it, punctuation included.",
-        "source_operators": [
-          "Europeana Foundation",
-          "Metropolitan Museum of Art",
-          "Wikimedia Foundation"
-        ],
-        "confirming_operators": [
-          "Metropolitan Museum of Art",
-          "Wikimedia Foundation"
-        ],
-        "track": "api-native",
-        "ranking_evidence": {
-          "label": "art",
-          "mode": "min",
-          "n_base": 89,
-          "n_ranked": 89,
-          "spearman_key_vs_api_order": -0.0252,
-          "n_tied_at_extremum": 1,
-          "distinct_keys": 33,
-          "winner_position_in_api_order": 32,
-          "winner_is_first_returned": false,
-          "winner_is_last_returned": false,
-          "top_keys": [
-            "1871",
-            "1889",
-            "1891",
-            "1914",
-            "1914"
-          ],
-          "answer_field_distinct_values": 89,
-          "answer_field_n_values": 89,
-          "answer_field_max_count": 1,
-          "answer_field_count_of_answer": 1,
-          "answer_field_modal_share": 0.011236,
-          "p_answer_by_uniform_guess": 0.011236
-        },
-        "facts": {
-          "artist": "Rembrandt",
-          "n": 89,
-          "year": "1871",
-          "witness_qid": "Q19905220",
-          "witness_label": "Man in Armor (Mars?)",
-          "witness_note": "P217 alone is ambiguous across museums; the P195 collection scope is what makes the match identifying"
-        }
-      },
-      "validation": {
-        "ok": true,
-        "violations": [],
-        "unmapped_hosts": []
-      },
+      "status": "fail",
+      "error": "art: withdrawn. The Met slice returns total=0; the AIC replacement route honours 10/10 sort orderings so colour keys are one call away; the composite colour key's argmax ranks 1st/3rd/6th/7th on served color.s; and museum accession numbers are not globally unique -- the only one resolving outside AIC (2011.70) matches three works in three other museums, none of them the Chicago object.",
+      "etype": "TrapUnavailable",
       "secs": 0.0
     },
     "business": {
@@ -411,91 +193,10 @@
     },
     "celebrities/public figures": {
       "category": "celebrities/public figures",
-      "status": "ok",
-      "trap": {
-        "collection_is_explicit": false,
-        "primary_operator": "Nobel Prize Outreach",
-        "independent_confirming_operators": [
-          "German National Library",
-          "Wikimedia Foundation"
-        ],
-        "category": "celebrities/public figures",
-        "field": "GND identifier",
-        "answer": "119009846",
-        "entity": "Johannes Diderik van der Waals",
-        "n_base": 104,
-        "sources": [
-          "https://api.nobelprize.org/2.1/laureates",
-          "https://www.wikidata.org/wiki/Q131721",
-          "https://d-nb.info/gnd/119009846",
-          "https://api.openalex.org/authors?search=Johannes%20Diderik%20van%20der%20Waals"
-        ],
-        "confirming_sources": [
-          "https://d-nb.info/gnd/119009846",
-          "https://www.wikidata.org/wiki/Q131721"
-        ],
-        "api_proof": true,
-        "api_proof_argument": "The laureate registry is paginated and returned in alphabetical name order with no birth-date sort, so all 104 qualifying laureates must be pulled and compared. The answer is an authority-file identifier, not a property of the person that could be recalled once the person is named, so recognising the laureate is not sufficient: the identifier must be looked up. Measured rho for the date key against registry order is -0.0293.",
-        "confirmation": "German National Library record d-nb.info/gnd/119009846 names Johannes Diderik van der Waals, and Wikidata Q131721 property P227 returns the same identifier",
-        "prompt": "The Nobel Prize registry publishes a record for every laureate giving the person's name and date of birth, and national libraries maintain authority files that assign each person a stable numeric identifier. Restrict attention to the laureates recognised in Physics for awards made between 1901 and 1975 whose record carries a complete date of birth. Among that group one laureate was born earlier than every other. Report the GND authority identifier that the German National Library assigns to that single laureate. Resolve the identifier at the national library before answering. Give the identifier alone, digits and any trailing check character only.",
-        "source_operators": [
-          "German National Library",
-          "Nobel Prize Outreach",
-          "OurResearch (OpenAlex)",
-          "Wikimedia Foundation"
-        ],
-        "confirming_operators": [
-          "German National Library",
-          "Wikimedia Foundation"
-        ],
-        "track": "api-native",
-        "ranking_evidence": {
-          "label": "celebrities",
-          "mode": "min",
-          "n_base": 104,
-          "n_ranked": 104,
-          "spearman_key_vs_api_order": -0.0293,
-          "n_tied_at_extremum": 1,
-          "distinct_keys": 103,
-          "winner_position_in_api_order": 51,
-          "winner_is_first_returned": false,
-          "winner_is_last_returned": false,
-          "top_keys": [
-            "1837-11-23",
-            "1842-11-12",
-            "1845-03-27",
-            "1845-08-16",
-            "1850-06-06"
-          ],
-          "answer_field_distinct_values": 103,
-          "answer_field_n_values": 104,
-          "answer_field_max_count": 2,
-          "answer_field_count_of_answer": 1,
-          "answer_field_modal_share": 0.019231,
-          "p_answer_by_uniform_guess": 0.009615
-        },
-        "facts": {
-          "category": "Physics",
-          "window": [
-            1901,
-            1975
-          ],
-          "n": 104,
-          "dob": "1837-11-23",
-          "second_earliest_dob": "1842-11-12",
-          "award_year": 1910,
-          "laureate_id": "15",
-          "answer_field_class": "identifier",
-          "guess_space": "p_answer_by_uniform_guess is measured over laureate identity. The GND authority file assigns exactly one record per person and _gnd() rejects any laureate whose Wikidata P227 is not single-valued, so laureate identity and identifier are in bijection and the two probabilities are equal.",
-          "replaces": "city of birth (attribute; measured recallable)"
-        }
-      },
-      "validation": {
-        "ok": true,
-        "violations": [],
-        "unmapped_hosts": []
-      },
-      "secs": 0.1
+      "status": "fail",
+      "error": "celebrities: withdrawn. laureates?birthDate=1800-01-01&birthDateTo=1840-01-01 returns count=1 and that record IS the answer; measured T9b recall without any API access is 1.00.",
+      "etype": "TrapUnavailable",
+      "secs": 0.0
     },
     "education": {
       "category": "education",
@@ -645,7 +346,9 @@
           "answer_field_max_count": 1,
           "answer_field_count_of_answer": 1,
           "answer_field_modal_share": 0.02381,
-          "p_answer_by_uniform_guess": 0.02381
+          "p_answer_by_uniform_guess": 0.02381,
+          "collection_is_bulk_download": true,
+          "key_is_aggregated": false
         },
         "facts": {
           "country": "Colombia",
@@ -670,68 +373,88 @@
         "primary_operator": "US National Institutes of Health",
         "independent_confirming_operators": [
           "EMBL-EBI",
-          "Wikimedia Foundation"
+          "OurResearch (OpenAlex)"
         ],
         "category": "health and medicine",
         "field": "trial registry identifier",
-        "answer": "NCT00021697",
-        "entity": "Safety/Efficacy of AVP-923 in the Treatment of Emotional Lability (Uncontrolled Crying & Laughing) in Patients With ALS",
+        "answer": "NCT05178810",
+        "entity": "Study to Investigate the Efficacy and Safety of FAB122 (Daily Oral Edaravone) in Patients With Amyotrophic Lateral Scler",
         "n_base": 51,
         "sources": [
-          "https://clinicaltrials.gov/api/v2/studies?pageSize=200&query.cond=amyotrophic+lateral+sclerosis&filter.overallStatus=COMPLETED&aggFilters=phase:3&fields=NCTId,BriefTitle,StartDate,CompletionDate,LeadSponsorName",
-          "https://www.wikidata.org/wiki/Q66059502",
-          "https://api.fda.gov/drug/label.json?search=amyotrophic+lateral+sclerosis",
-          "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=ACCESSION_ID%3A%22NCT00021697%22&format=json&pageSize=3"
+          "https://clinicaltrials.gov/api/v2/studies?pageSize=200&query.cond=amyotrophic+lateral+sclerosis&filter.overallStatus=COMPLETED&aggFilters=phase:3&countTotal=true",
+          "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=ACCESSION_ID%3A%22NCT05178810%22&format=json&pageSize=50&resultType=core",
+          "https://api.openalex.org/works?filter=fulltext.search:NCT05178810&per-page=50&mailto=fahad@crispro.ai",
+          "https://api.fda.gov/drug/label.json?search=amyotrophic+lateral+sclerosis"
         ],
         "confirming_sources": [
-          "https://www.wikidata.org/wiki/Q66059502",
-          "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=ACCESSION_ID%3A%22NCT00021697%22&format=json&pageSize=3"
+          "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=ACCESSION_ID%3A%22NCT05178810%22&format=json&pageSize=50&resultType=core",
+          "https://api.openalex.org/works?filter=fulltext.search:NCT05178810&per-page=50&mailto=fahad@crispro.ai"
         ],
         "api_proof": true,
-        "api_proof_argument": "The registry filters by condition, phase and status but will not return the earliest-starting study, so all 51 completed phase 3 records must be enumerated and ordered by start date.",
-        "confirmation": "Wikidata Q66059502 carries clinical trial identifier NCT00021697; Europe PMC returns 1 record(s) carrying accession NCT00021697 ('Treatment for cramps in amyotrophic lateral sclerosis/motor neuron dis')",
-        "prompt": "The United States public clinical trials registry records interventional studies of amyotrophic lateral sclerosis, each with a phase, a recruitment status and a start date. Consider only those studies recorded as phase 3 and as having reached completion. Within that set exactly one began earlier than every other. Report the registry identifier assigned to that single earliest study. Verify the identifier appears on an independent structured knowledge base. Answer with the identifier alone, in its standard eight-digit registry form.",
+        "api_proof_argument": "The registry filters by condition, phase and status, and it does honour a number of sort fields, so the argument is not that ordering is impossible in general. It is that ordering on THIS field is refused. A 26-ordering probe of this exact collection found 16 sort fields honoured and 10 rejected outright; SecondaryOutcomeCount and OutcomeMeasureCount are both in the rejected set, as are BriefTitle, LeadSponsorName and NCTId. No honoured ordering places the answer in row one. All 51 completed phase 3 records must therefore be retrieved and their declared secondary outcome measures compared client-side.",
+        "confirmation": "Europe PMC (EMBL-EBI) returns 9 record(s) whose mined accession set contains NCT05178810 ('Small RNA sequencing identifies serum tDR-1:34-Gly-GCC tiRNA levels as'); the unissued control accession NCT99999999 returns 0, so the field is a filter and not a ranker; OpenAlex (OurResearch) full-text search returns 12 work(s) carrying NCT05178810, of which 7 are absent from the Europe PMC set, so the two indexes are not echoes of one another; the unissued control accession NCT88888888 returns 0",
+        "prompt": "The United States public clinical trials registry records interventional studies of amyotrophic lateral sclerosis, each carrying a phase, a recruitment status, and a protocol section listing the outcome measures the investigators declared, separated into primary and secondary. Consider only those studies recorded as phase 3 and as having reached completion. Within that set exactly one study declares more secondary outcome measures than any other study declares. Report the registry identifier assigned to that single study. Verify the identifier appears on an independent structured knowledge base. Answer with the identifier alone, in its standard registry form.",
         "source_operators": [
           "EMBL-EBI",
+          "OurResearch (OpenAlex)",
           "US Food and Drug Administration",
-          "US National Institutes of Health",
-          "Wikimedia Foundation"
+          "US National Institutes of Health"
         ],
         "confirming_operators": [
           "EMBL-EBI",
-          "Wikimedia Foundation"
+          "OurResearch (OpenAlex)"
         ],
         "track": "api-native",
         "ranking_evidence": {
           "label": "health",
-          "mode": "min",
+          "mode": "max",
           "n_base": 51,
           "n_ranked": 51,
-          "spearman_key_vs_api_order": 0.1455,
+          "spearman_key_vs_api_order": 0.064,
           "n_tied_at_extremum": 1,
-          "distinct_keys": 50,
-          "winner_position_in_api_order": 45,
+          "distinct_keys": 12,
+          "winner_position_in_api_order": 42,
           "winner_is_first_returned": false,
           "winner_is_last_returned": false,
           "top_keys": [
-            "2001-01",
-            "2002-04",
-            "2003-01",
-            "2003-06",
-            "2003-07"
+            "18",
+            "10",
+            "10",
+            "9",
+            "8"
           ],
           "answer_field_distinct_values": 51,
           "answer_field_n_values": 51,
           "answer_field_max_count": 1,
           "answer_field_count_of_answer": 1,
           "answer_field_modal_share": 0.019608,
-          "p_answer_by_uniform_guess": 0.019608
+          "p_answer_by_uniform_guess": 0.019608,
+          "key_component_depths": {},
+          "key_is_aggregated": false,
+          "equivalent_served_fields": [],
+          "n_fields_swept": 4,
+          "k_robustness": 7
         },
         "facts": {
           "condition": "amyotrophic lateral sclerosis",
           "n": 51,
-          "europepmc_hits": 1,
-          "europepmc_title": "Treatment for cramps in amyotrophic lateral sclerosis/motor neuron disease."
+          "key": "n_secondary_outcomes",
+          "winner_n_secondary": 18,
+          "runner_up_n_secondary": 10,
+          "k_robustness": 7,
+          "sort_field_rejected_by_registry": [
+            "SecondaryOutcomeCount",
+            "OutcomeMeasureCount"
+          ],
+          "orderings_probed": 26,
+          "orderings_honoured": 16,
+          "orderings_exposing_answer_in_row_one": 0,
+          "europepmc_hits": 9,
+          "europepmc_title": "Small RNA sequencing identifies serum tDR-1:34-Gly-GCC tiRNA levels as a biomarker for survival in amyotrophic lateral sclerosis.",
+          "europepmc_control_hits": 0,
+          "openalex_hits": 12,
+          "openalex_control_hits": 0,
+          "openalex_not_in_europepmc": 7
         }
       },
       "validation": {
@@ -802,7 +525,9 @@
           "answer_field_max_count": 1,
           "answer_field_count_of_answer": 1,
           "answer_field_modal_share": 0.019608,
-          "p_answer_by_uniform_guess": 0.019608
+          "p_answer_by_uniform_guess": 0.019608,
+          "collection_is_bulk_download": true,
+          "key_is_aggregated": false
         },
         "facts": {
           "volume": 504,
@@ -1055,7 +780,13 @@
           "answer_field_max_count": 1,
           "answer_field_count_of_answer": 1,
           "answer_field_modal_share": 0.026316,
-          "p_answer_by_uniform_guess": 0.026316
+          "p_answer_by_uniform_guess": 0.026316,
+          "key_component_depths": {},
+          "key_is_aggregated": false,
+          "equivalent_served_fields": [],
+          "n_fields_swept": 0,
+          "orderings_probed": 6,
+          "orderings_honoured": 0
         },
         "facts": {
           "team": "Los Angeles Dodgers",
@@ -1139,7 +870,9 @@
           "answer_field_max_count": 1,
           "answer_field_count_of_answer": 1,
           "answer_field_modal_share": 0.013699,
-          "p_answer_by_uniform_guess": 0.013699
+          "p_answer_by_uniform_guess": 0.013699,
+          "collection_is_bulk_download": true,
+          "key_is_aggregated": false
         },
         "facts": {
           "airline": "AY",
@@ -1235,97 +968,15 @@
     },
     "video games": {
       "category": "video games",
-      "status": "ok",
-      "trap": {
-        "collection_is_explicit": true,
-        "primary_operator": "Valve Corporation",
-        "independent_confirming_operators": [
-          "PCGamingWiki",
-          "Wikimedia Foundation"
-        ],
-        "category": "video games",
-        "field": "developing studio",
-        "answer": "Colossal Order",
-        "entity": "Cities: Skylines",
-        "n_base": 14,
-        "sources": [
-          "https://store.steampowered.com/api/appdetails?appids=255710",
-          "https://www.wikidata.org/wiki/Q18149274",
-          "https://pegi.info/search-pegi?q=Cities%3A%20Skylines",
-          "https://www.pcgamingwiki.com/w/api.php?action=query&prop=revisions&rvprop=content&rvslots=main&format=json&titles=Cities%3A%20Skylines"
-        ],
-        "confirming_sources": [
-          "https://www.wikidata.org/wiki/Q18149274",
-          "https://www.wikidata.org/wiki/Q16829899",
-          "https://www.pcgamingwiki.com/w/api.php?action=query&prop=revisions&rvprop=content&rvslots=main&format=json&titles=Cities%3A%20Skylines"
-        ],
-        "api_proof": true,
-        "api_proof_argument": "The storefront exposes one record per application number and offers no cross-title ordering, so all 14 records must be fetched individually and their printed names compared before the first can be known. The alphabetical key replaces a release-date key that had spearman rho 0.993 against the application number sequence.",
-        "confirmation": "Wikidata Q18149274 property P178 returns 'Colossal Order' (item Q16829899, label language mul)",
-        "prompt": "The Valve storefront exposes a public record for each catalogue title, giving the name the store prints for it and the studio credited with developing it. Consider the titles carried under the store application numbers 4000, 6910, 22380, 39210, 105600, 108600, 220200, 236850, 255710, 268910, 322330, 367520, 413150 and 427520, taking each name exactly as printed. Reduce each printed name to its letters and digits in lower case, then order those reduced names; one stands before all the others. Report the developing studio that the store credits for that single first-ordered title. Confirm the studio against an independent structured knowledge base before answering. Give the studio name alone, exactly as the store prints it.",
-        "source_operators": [
-          "PCGamingWiki",
-          "Pan European Game Information",
-          "Valve Corporation",
-          "Wikimedia Foundation"
-        ],
-        "confirming_operators": [
-          "PCGamingWiki",
-          "Wikimedia Foundation"
-        ],
-        "track": "api-native",
-        "ranking_evidence": {
-          "label": "video games",
-          "mode": "min",
-          "n_base": 14,
-          "n_ranked": 14,
-          "spearman_key_vs_api_order": -0.0637,
-          "n_tied_at_extremum": 1,
-          "distinct_keys": 14,
-          "winner_position_in_api_order": 8,
-          "winner_is_first_returned": false,
-          "winner_is_last_returned": false,
-          "top_keys": [
-            "citiesskylines",
-            "cuphead",
-            "deusexgameoftheyearedition",
-            "dontstarvetogether",
-            "europauniversalisiv"
-          ],
-          "answer_field_distinct_values": 14,
-          "answer_field_n_values": 14,
-          "answer_field_max_count": 1,
-          "answer_field_count_of_answer": 1,
-          "answer_field_modal_share": 0.071429,
-          "p_answer_by_uniform_guess": 0.071429
-        },
-        "facts": {
-          "n": 14,
-          "title": "Cities: Skylines",
-          "appid": 255710,
-          "n_distinct_studios": 14,
-          "pcgamingwiki_confirms": true,
-          "pcgamingwiki_developers_listed": [
-            "Colossal Order",
-            "Tantalus Media"
-          ],
-          "co_developer_note": "PCGamingWiki lists more than one developer for this title; the answer is the studio the storefront prints first, and the witness is that PCGamingWiki also credits it, not that it is the sole developer.",
-          "collection_is_explicit": true,
-          "rejected_answer_field": "store release date: Steam and Wikidata P577 agree for only 3 of 12 measured titles, with four off by exactly one day in the same direction and five off by 307-5257 days",
-          "provenance_note": "The application numbers are named in the prompt, so the solver sees the whole collection and no return-order information is withheld. The exemption is not load-bearing: rho between the alphabetical key and the appid sequence is near zero and the winner is interior to the fetch order."
-        }
-      },
-      "validation": {
-        "ok": true,
-        "violations": [],
-        "unmapped_hosts": []
-      },
+      "status": "fail",
+      "error": "video games: withdrawn. The prompt prints the app-id roster and 'citiesskylines' sorts first among the 14, so the answer is derivable from the prompt without calling Steam; measured T9b recall is 0.75.",
+      "etype": "TrapUnavailable",
       "secs": 0.0
     }
   },
   "counts": {
-    "ok": 14,
-    "fail": 2,
+    "ok": 10,
+    "fail": 6,
     "total": 16
   }
 }

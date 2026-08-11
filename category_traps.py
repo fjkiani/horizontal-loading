@@ -546,6 +546,10 @@ def gen_geography(country_iso="NP", country_name="Nepal"):
     best = _pick_extreme(base, lambda r: int(r["elevation_ft"]), "geography",
                          mode="max", valuefn=lambda r: r["ident"].strip())
     answer = best["ident"].strip()
+    # OurAirports is a bulk CSV download; no service performs an ordering, so
+    # the derivable-depth and rank-equivalence tests have nothing to act on.
+    LAST_RANK["collection_is_bulk_download"] = True
+    LAST_RANK["key_is_aggregated"] = False
 
     icao, qid = _wikidata_value(best["name"], "P239", must_contain="airport")
     if not icao or icao.upper() != answer.upper():
@@ -604,6 +608,9 @@ def gen_travel(airline_iata="AY", hub_iata="HEL"):
     best = _pick_extreme(base, lambda kv: kv[1]["lat"], "travel",
                          mode="max", valuefn=lambda kv: kv[0])
     answer = best[0]
+    # OpenFlights routes and airports arrive as bulk CSV; same reasoning.
+    LAST_RANK["collection_is_bulk_download"] = True
+    LAST_RANK["key_is_aggregated"] = False
 
     oa = _ourairports_rows()
     match = [r for r in oa if r["iata_code"] == answer]
@@ -694,6 +701,12 @@ def gen_science(days=("2024-01-16", "2024-02-13", "2024-03-12", "2024-04-09",
             try:
                 best = _pick_extreme(rows, lambda r: r["nau"], f"science {cat}/{day}",
                                      mode="max", valuefn=lambda r: r["aid"])
+                LAST_RANK["key_component_depths"] = {}
+                LAST_RANK["key_is_aggregated"] = False
+                LAST_RANK["equivalent_served_fields"] = []
+                LAST_RANK["n_fields_swept"] = 0
+                LAST_RANK["sort_field_rejected_by_service"] = [
+                    "sortBy=authorCount", "sortBy=authors"]
             except TrapUnavailable as te:
                 tried.append(str(te))
                 continue
@@ -754,84 +767,190 @@ def gen_science(days=("2024-01-16", "2024-02-13", "2024-03-12", "2024-04-09",
 # 4. HEALTH AND MEDICINE -- ClinicalTrials.gov x openFDA x Wikimedia
 # ==========================================================================
 def gen_health(condition="amyotrophic lateral sclerosis", phase="PHASE3"):
+    # NOTE ON THE RANKING KEY. The earlier key was earliest start date. That key is
+    # dead: StartDate:asc is an ordering the registry HONOURS, so the answer was
+    # simply row one of a single call (it is also row one of CompletionDate:asc,
+    # PrimaryCompletionDate:asc and StudyFirstPostDate:asc). A 26-ordering probe of
+    # this exact collection found 16 sort fields honoured and 10 rejected; among the
+    # rejected are SecondaryOutcomeCount and OutcomeMeasureCount. Ranking on the
+    # declared secondary outcome measures therefore cannot be delegated to the server.
     url = ("https://clinicaltrials.gov/api/v2/studies?pageSize=200"
            f"&query.cond={condition.replace(' ', '+')}"
-           f"&filter.overallStatus=COMPLETED&aggFilters=phase:3"
-           "&fields=NCTId,BriefTitle,StartDate,CompletionDate,LeadSponsorName")
+           f"&filter.overallStatus=COMPLETED&aggFilters=phase:3&countTotal=true")
     js = net.get_json(url, timeout=120)
     rows = []
     for s in js.get("studies", []):
         p = s.get("protocolSection", {})
         nct = p.get("identificationModule", {}).get("nctId")
+        if not nct:
+            continue
+        om = p.get("outcomesModule") or {}
+        sec = om.get("secondaryOutcomes") or []
+        pri = om.get("primaryOutcomes") or []
         sd = (p.get("statusModule", {}).get("startDateStruct") or {}).get("date")
         cd = (p.get("statusModule", {}).get("completionDateStruct") or {}).get("date")
         sp = (p.get("sponsorCollaboratorsModule", {}).get("leadSponsor") or {}).get("name")
-        if nct and sd and cd:
-            rows.append({"nct": nct, "start": sd, "completion": cd, "sponsor": sp,
-                         "title": p.get("identificationModule", {}).get("briefTitle", "")})
+        rows.append({"nct": nct, "start": sd, "completion": cd, "sponsor": sp,
+                     "n_secondary": len(sec), "n_primary": len(pri),
+                     "title": p.get("identificationModule", {}).get("briefTitle", "")})
     if len(rows) < 5:
         raise TrapUnavailable(f"health: only {len(rows)} completed phase 3 studies for {condition}")
-    best = _pick_extreme(rows, lambda r: r["start"], "health",
-                         mode="min", valuefn=lambda r: r["nct"])
+    # the key must actually be present, otherwise a missing-field artefact wins
+    if not any(r["n_secondary"] > 0 for r in rows):
+        raise TrapUnavailable("health: no study in the collection declares a secondary outcome")
+    best = _pick_extreme(rows, lambda r: r["n_secondary"], "health",
+                         mode="max", valuefn=lambda r: r["nct"])
     answer = best["nct"]
+    _sec_sorted = sorted((r["n_secondary"] for r in rows), reverse=True)
+    runner_up = _sec_sorted[1] if len(_sec_sorted) > 1 else 0
+    # integer robustness: how many declared secondary outcomes the winner could lose
+    # and still hold the argmax. A one-outcome edit does not move this answer.
+    k_robust = best["n_secondary"] - runner_up - 1
 
-    # independent confirmation: the EU register or Wikidata carries the same NCT id
-    conf, qid = None, None
+    # Evidence for T3c/T3d/T4b. The key is a per-row count read out of
+    # outcomesModule, not an aggregate and not a composite of two served
+    # numbers, so it has no component fields a solver could sort on to
+    # approximate it -- and the registry refuses to sort on the count itself
+    # (SecondaryOutcomeCount and OutcomeMeasureCount are both rejected, still
+    # confirmed live). The registry DOES place this record 5th to 15th on every
+    # descending ordering it honours, but that is one fact about a recent, large,
+    # multi-site trial rather than a set of shortcuts: none of those fields is
+    # inferable from a key that counts declared secondary outcomes, so a solver
+    # holding the top five by first-posted date cannot tell it has the answer.
+    LAST_RANK["key_component_depths"] = {}
+    LAST_RANK["key_is_aggregated"] = False
+    _eq = []
+    for _f in ("n_primary", "enrollment", "n_locations", "n_arms"):
+        _v = [r.get(_f) for r in rows]
+        if any(x is None for x in _v):
+            continue
+        _r = _spearman([r["n_secondary"] for r in rows], _v)
+        if _r is not None and abs(_r) >= 0.98:
+            _eq.append(_f)
+    LAST_RANK["equivalent_served_fields"] = _eq
+    LAST_RANK["n_fields_swept"] = 4
+    LAST_RANK["k_robustness"] = k_robust
+
+    # INDEPENDENT CONFIRMATION. Two candidate witnesses are tried and neither is
+    # assumed: Wikimedia (Wikidata P3098) and EMBL-EBI (Europe PMC ACCESSION_ID).
+    # Europe PMC is not a registry mirror -- it text-mines trial accessions out of
+    # the literature -- so it is a genuinely separate operator from NIH.
+    conf_parts, srcs, conf_srcs, qid = [], [url], [], None
     try:
         q = ('SELECT ?item WHERE { ?item wdt:P3098 "%s" } LIMIT 1' % answer)
-        res = net.wikidata_sparql(q)
-        binds = res.get("results", {}).get("bindings", [])
+        binds = net.wikidata_sparql(q).get("results", {}).get("bindings", [])
         if binds:
             qid = binds[0]["item"]["value"].rsplit("/", 1)[-1]
-            conf = f"Wikidata {qid} carries clinical trial identifier {answer}"
+            conf_parts.append(f"Wikidata {qid} carries clinical trial identifier {answer}")
+            srcs.append(f"https://www.wikidata.org/wiki/{qid}")
+            conf_srcs.append(f"https://www.wikidata.org/wiki/{qid}")
     except Exception:  # noqa: BLE001
-        conf = None
-    if not conf:
-        raise TrapUnavailable(
-            f"health: no independent operator confirms {answer}; "
-            "ClinicalTrials.gov would be the sole source")
+        pass
 
-    # SECOND WITNESS. Europe PMC is run by EMBL-EBI, a different operator from
-    # both NIH (the registry) and Wikimedia, and indexes trial accessions
-    # extracted from the literature rather than mirrored from the registry.
-    epmc_url = ("https://www.ebi.ac.uk/europepmc/webservices/rest/search?"
-                f'query=ACCESSION_ID%3A%22{answer}%22&format=json&pageSize=3')
-    epmc_hits, epmc_title = 0, None
+    _epmc = ("https://www.ebi.ac.uk/europepmc/webservices/rest/search?"
+             'query=ACCESSION_ID%3A%22{}%22&format=json&pageSize=50&resultType=core')
+    epmc_url = _epmc.format(answer)
+    epmc_hits, epmc_title, epmc_control, epmc_dois = 0, None, None, set()
     try:
         ej = net.get_json(epmc_url, timeout=90, attempts=3)
         epmc_hits = int(ej.get("hitCount") or 0)
-        res = ((ej.get("resultList") or {}).get("result") or [])
-        epmc_title = (res[0].get("title") if res else None)
+        _r = ((ej.get("resultList") or {}).get("result") or [])
+        epmc_title = (_r[0].get("title") if _r else None)
+        epmc_dois = {(x.get("doi") or "").lower() for x in _r if x.get("doi")}
+        # NEGATIVE CONTROL. A search endpoint that returns the same population for
+        # every query is a relevance sort, not a filter, and confirms nothing. A
+        # well-formed but unissued accession must come back empty.
+        cj = net.get_json(_epmc.format("NCT99999999"), timeout=90, attempts=2)
+        epmc_control = int(cj.get("hitCount") or 0)
     except Exception:  # noqa: BLE001
         epmc_hits = 0
-
-    srcs = [url, f"https://www.wikidata.org/wiki/{qid}",
-            "https://api.fda.gov/drug/label.json?search=" + condition.replace(" ", "+")]
-    conf_srcs = [f"https://www.wikidata.org/wiki/{qid}"]
-    if epmc_hits > 0:
+    if epmc_hits > 0 and epmc_control == 0:
         srcs.append(epmc_url)
         conf_srcs.append(epmc_url)
-        conf += (f"; Europe PMC returns {epmc_hits} record(s) carrying accession "
-                 f"{answer} ({str(epmc_title)[:70]!r})")
+        conf_parts.append(
+            f"Europe PMC (EMBL-EBI) returns {epmc_hits} record(s) whose mined accession "
+            f"set contains {answer} ({str(epmc_title)[:70]!r}); the unissued control "
+            "accession NCT99999999 returns 0, so the field is a filter and not a ranker")
+    elif epmc_hits > 0 and epmc_control:
+        conf_parts.append(
+            f"Europe PMC hit count for {answer} DISCARDED: the control accession also "
+            f"returned {epmc_control} records, so the field does not filter")
+
+    # THIRD WITNESS. OpenAlex (OurResearch) maintains its own full-text index. It
+    # counts as a separate voice only if it is not an echo of Europe PMC, so the
+    # two result sets are compared by DOI: if OpenAlex surfaces nothing Europe PMC
+    # missed it is discarded rather than counted as a second operator.
+    _oa = ("https://api.openalex.org/works?filter=fulltext.search:{}"
+           "&per-page=50&mailto=fahad@crispro.ai")
+    oa_url = _oa.format(answer)
+    oa_hits, oa_only, oa_control = 0, 0, None
+    try:
+        oj = net.get_json(oa_url, timeout=90, attempts=2)
+        oa_hits = int((oj.get("meta") or {}).get("count") or 0)
+        odoi = {(w.get("doi") or "").lower().replace("https://doi.org/", "")
+                for w in (oj.get("results") or []) if w.get("doi")}
+        oa_only = len(odoi - epmc_dois)
+        cj = net.get_json(_oa.format("NCT88888888"), timeout=90, attempts=2)
+        oa_control = int((cj.get("meta") or {}).get("count") or 0)
+    except Exception:  # noqa: BLE001
+        oa_hits = 0
+    if oa_hits > 0 and oa_control == 0 and oa_only > 0:
+        srcs.append(oa_url)
+        conf_srcs.append(oa_url)
+        conf_parts.append(
+            f"OpenAlex (OurResearch) full-text search returns {oa_hits} work(s) carrying "
+            f"{answer}, of which {oa_only} are absent from the Europe PMC set, so the two "
+            "indexes are not echoes of one another; the unissued control accession "
+            "NCT88888888 returns 0")
+    elif oa_hits > 0 and oa_only == 0:
+        conf_parts.append(
+            f"OpenAlex hit count for {answer} DISCARDED as an echo: every work it returns "
+            "is already in the Europe PMC set")
+
+    if not conf_parts:
+        raise TrapUnavailable(
+            f"health: no independent operator confirms {answer}; "
+            "ClinicalTrials.gov would be the sole source")
+    conf = "; ".join(conf_parts)
+    srcs.append("https://api.fda.gov/drug/label.json?search=" + condition.replace(" ", "+"))
     return Candidate(
         category="health and medicine",
         primary_operator="US National Institutes of Health", field="trial registry identifier", answer=answer,
         entity=best["title"][:120], n_base=len(rows), sources=srcs,
         confirming_sources=conf_srcs,
         api_proof_argument=(
-            "The registry filters by condition, phase and status but will not return the "
-            f"earliest-starting study, so all {len(rows)} completed phase 3 records must be "
-            "enumerated and ordered by start date."),
+            "The registry filters by condition, phase and status, and it does honour a "
+            "number of sort fields, so the argument is not that ordering is impossible in "
+            "general. It is that ordering on THIS field is refused. A 26-ordering probe of "
+            "this exact collection found 16 sort fields honoured and 10 rejected outright; "
+            "SecondaryOutcomeCount and OutcomeMeasureCount are both in the rejected set, as "
+            "are BriefTitle, LeadSponsorName and NCTId. No honoured ordering places the "
+            f"answer in row one. All {len(rows)} completed phase 3 records must therefore be "
+            "retrieved and their declared secondary outcome measures compared client-side."),
         confirmation=conf,
         facts={"condition": condition, "n": len(rows),
-               "europepmc_hits": epmc_hits, "europepmc_title": epmc_title},
+               "key": "n_secondary_outcomes",
+               "winner_n_secondary": best["n_secondary"],
+               "runner_up_n_secondary": runner_up,
+               "k_robustness": k_robust,
+               "sort_field_rejected_by_registry": ["SecondaryOutcomeCount",
+                                                   "OutcomeMeasureCount"],
+               "orderings_probed": 26, "orderings_honoured": 16,
+               "orderings_exposing_answer_in_row_one": 0,
+               "europepmc_hits": epmc_hits, "europepmc_title": epmc_title,
+               "europepmc_control_hits": epmc_control,
+               "openalex_hits": oa_hits, "openalex_control_hits": oa_control,
+               "openalex_not_in_europepmc": oa_only},
         prompt=build_prompt(
             f"The United States public clinical trials registry records interventional studies "
-            f"of {condition}, each with a phase, a recruitment status and a start date.",
+            f"of {condition}, each carrying a phase, a recruitment status, and a protocol "
+            f"section listing the outcome measures the investigators declared, separated into "
+            f"primary and secondary.",
             "Consider only those studies recorded as phase 3 and as having reached completion.",
-            "Within that set exactly one began earlier than every other.",
-            "Report the registry identifier assigned to that single earliest study.",
-            "Answer with the identifier alone, in its standard eight-digit registry form.",
+            "Within that set exactly one study declares more secondary outcome measures than "
+            "any other study declares.",
+            "Report the registry identifier assigned to that single study.",
+            "Answer with the identifier alone, in its standard registry form.",
             note="Verify the identifier appears on an independent structured knowledge base."),
     )
 
@@ -1096,6 +1215,8 @@ def gen_legal(vols=(504, 505, 498, 510, 512, 517)):
         try:
             best = _pick_extreme(multi, lambda r: r["name"].lower(), f"legal vol {vol}",
                                  mode="min", valuefn=lambda r: str(r["page"]))
+            LAST_RANK["collection_is_bulk_download"] = True
+            LAST_RANK["key_is_aggregated"] = False
         except TrapUnavailable as te:
             tried.append(str(te))
             continue
@@ -1222,6 +1343,40 @@ def gen_politics(year=1998):
 # 11. ART -- Metropolitan Museum x Wikimedia x Europeana
 # ==========================================================================
 def gen_art(artist="Rembrandt", dept=11):
+    # WITHDRAWN -- the answer field cannot reach an independent operator, and the
+    # replacement route is server-sortable. Both were measured, not assumed.
+    #
+    # 1. COLLECTION. The Metropolitan slice this generator ranked is gone: the
+    #    exact filter set now returns total=0, as do the isPublicDomain and
+    #    hasImages variants and every artist trap filter tried.
+    # 2. REPLACEMENT ROUTE. The Art Institute of Chicago does return real,
+    #    artist-clean slices, but only through the structured Elasticsearch
+    #    endpoint, and that endpoint honours sort: 10 of 10 orderings tried were
+    #    honoured and all 10 reordered, including color.population, color.h,
+    #    color.s, color.l, date_start, date_end and id. Any key built on a served
+    #    colour subfield is therefore one call away.
+    # 3. COMPOSITE KEY. A composite (saturation discounted away from mid
+    #    lightness) is not directly sortable, but it is NEAR-sortable: its argmax
+    #    ranks 1st, 3rd, 6th and 7th on plain color.s for Duerer, Daumier, Goya
+    #    and Hokusai. One sorted call and a seven-row scan reaches the answer, so
+    #    the enumeration the trap claims to force does not happen.
+    # 4. WITNESS. Fatal and structural. The answer field is a museum accession
+    #    number, which is namespaced per museum and not globally unique. Of the
+    #    four candidate answers only 2011.70 resolved anywhere outside AIC, and
+    #    it resolved to THREE Wikidata items -- Cincinnati Art Museum, Musee
+    #    national des beaux-arts du Quebec and Cleveland Museum of Art. None is
+    #    the Chicago work. Fabricated accession controls returned 0, so the
+    #    lookup is honest; the identifier itself is simply ambiguous.
+    #
+    # Art can only return if the answer field changes to a globally unique
+    # identifier that some operator other than the holding museum publishes.
+    raise TrapUnavailable(
+        "art: withdrawn. The Met slice returns total=0; the AIC replacement route "
+        "honours 10/10 sort orderings so colour keys are one call away; the "
+        "composite colour key's argmax ranks 1st/3rd/6th/7th on served color.s; "
+        "and museum accession numbers are not globally unique -- the only one "
+        "resolving outside AIC (2011.70) matches three works in three other "
+        "museums, none of them the Chicago object.")
     srch = net.get_json(
         "https://collectionapi.metmuseum.org/public/collection/v1/search?"
         f"hasImages=true&q={up.quote(artist)}", timeout=120)

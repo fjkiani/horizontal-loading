@@ -476,6 +476,12 @@ def gen_geography(country_iso="CO", country_name="Colombia"):
     best = _pick_extreme(base, lambda r: int(r["elevation_ft"]), "geography",
                          mode="max", valuefn=lambda r: r["gps_code"].strip())
     answer = best["gps_code"].strip()
+    # OurAirports is a bulk CSV download. No service performs an ordering here,
+    # so there is nothing for the derivable-depth or rank-equivalence tests to
+    # act on: any sort costs a full download first, which is the enumeration the
+    # trap asks for.
+    ct.LAST_RANK["collection_is_bulk_download"] = True
+    ct.LAST_RANK["key_is_aggregated"] = False
 
     # Confirm by the ANSWER, not by the airport's name. Measured: a label
     # search for "San Luis Airport" resolves to the Argentine airport
@@ -746,6 +752,21 @@ def _vg_key(name):
 
 
 def gen_video_games(appids=_VG_ROSTER):
+    # WITHDRAWN -- the key is derivable from the prompt itself.
+    # The prompt prints the roster of application identifiers. Among the 14
+    # printed ids, `citiesskylines` sorts first, and the answer is its studio,
+    # Colossal Order. A solver that never calls Steam recovers the answer by
+    # sorting a list that the prompt handed it. This is the DERIVABLE_KEY_FAKE_HARD
+    # failure: the collection is explicit, so the enumeration the trap claims to
+    # force has already been done for the solver. Measured T9b recall is 0.75.
+    # A redesign exists on paper -- a key that requires a per-app call, such as
+    # the count of supported languages or of achievements, with the studio
+    # resolved to a Wikidata P1733 or GLEIF identifier -- but the witness tier is
+    # unresolved and may force this category to stay unavailable.
+    raise TrapUnavailable(
+        "video games: withdrawn. The prompt prints the app-id roster and "
+        "'citiesskylines' sorts first among the 14, so the answer is derivable "
+        "from the prompt without calling Steam; measured T9b recall is 0.75.")
     base = []
     for a in appids:
         js = net.get_json(f"https://store.steampowered.com/api/appdetails?"

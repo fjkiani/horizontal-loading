@@ -85,10 +85,9 @@ export default function App() {
               </select>
             </div>
             <div className="ctl">
-              <label htmlFor="so">difficulty</label>
-              <select id="so" value={stumpOnly ? "1" : ""} onChange={(e) => setStumpOnly(!!e.target.value)}>
-                <option value="">any</option>
-                <option value="1">stumped the solver</option>
+              <label htmlFor="so">solver difficulty</label>
+              <select id="so" value="" disabled title="No solver measurement exists: the available key is a trial key capped at 1000 calls/month and is exhausted. Every gate here measures leakage, not difficulty.">
+                <option value="">not measured</option>
               </select>
             </div>
             <button className="ghost" onClick={() => { setCat(""); setTier(""); setStumpOnly(false); }}>reset</button>

@@ -111,10 +111,32 @@ def main():
             # by waiting). Left explicitly null rather than defaulted, so the UI
             # shows "not measured" instead of implying a passing score.
             stump=None,
-            witness_tier=("gold" if verdicts.get(cat) == "ship" else "silver"),
+            # Witness tier is a property of how many INDEPENDENT operators
+            # confirm the answer, not of whether the trap passed the leakage
+            # gates. Deriving it from the verdict conflated two different things
+            # and could label a single-witness trap gold.
+            witness_tier=(
+                "gold" if len(t.get("independent_confirming_operators") or []) >= 2
+                else "silver" if len(t.get("independent_confirming_operators") or []) == 1
+                else "unwitnessed"),
             verdict=verdicts.get(cat),
-            difficulty=dict(
+            # There is no solver measurement. Every gate in this pipeline
+            # measures LEAKAGE -- whether the answer can be reached by sorting,
+            # guessing, reading the prompt, or recalling it from training -- and
+            # none measures whether a model actually fails to find it. Those are
+            # different quantities and the catalog must not print one under the
+            # other's name. Null until a solver key exists.
+            solver_difficulty=None,
+            solver_difficulty_status=(
+                "unmeasured: no solver quota. The available Cohere key is a trial "
+                "key capped at 1000 calls/month and is exhausted (HTTP 429 with an "
+                "explicit trial-quota message). A usable measurement needs about "
+                "600 calls: the shipping traps x 3 access conditions (no tools, "
+                "search only, full API) x ~20 repeats for workable intervals."),
+            memorization_proxy=dict(
                 measured_by="wikipedia-recall-proxy",
+                caveat=("a proxy for whether the answer is memorable, NOT for "
+                        "whether the trap is hard"),
                 answer_wikipedia_mentions=m.get("search_hits"),
                 answer_pageviews_365=m.get("pageviews_365"),
                 exact_article=m.get("exact_article"),

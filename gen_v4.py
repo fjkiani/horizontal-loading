@@ -71,8 +71,8 @@ _FIGI_WEB = "https://www.openfigi.com/id/{}"
 # p_answer_by_uniform_guess so the tightest guess space is tried first.
 # 2013/Bill is deliberately last: its rho of -0.4384 sits just inside the 0.45
 # ceiling and is the most likely to drift on a re-pull.
-SEEDS = ((2021, None), (2013, None), (2021, "Bill"), (2017, None),
-         (2015, None), (2019, "Bill"), (2017, "Bill"), (2013, "Bill"))
+SEEDS = ((2021, "Bill"), (2021, None), (2019, "Bill"), (2017, "Bill"),
+         (2017, None), (2015, None), (2013, None), (2013, "Bill"))
 
 MIN_ROWS = 150
 DEPTH_LO, DEPTH_HI = 0.08, 0.92
@@ -88,22 +88,82 @@ def _auctions(year):
     return js.get("data", []), u
 
 
+def _num(r, f):
+    """Numeric value of field f, or None. Treasury nulls are '', 'null', '*'."""
+    v = r.get(f)
+    if v in (None, "", "null", "*"):
+        return None
+    try:
+        return float(v)
+    except (TypeError, ValueError):
+        return None
+
+
+# THE RANKING KEY. bid_to_cover_ratio is dead: it is a served field, so the
+# answer was reachable with `&sort=-bid_to_cover_ratio&page[size]=1`. A
+# 114-field sortability audit of this endpoint found 228 orderings HONOURED --
+# the endpoint is thoroughly sortable, and the old api_proof_argument claiming
+# otherwise was false. The replacement key is a ratio of two served fields,
+# which the endpoint cannot order on because it has no expression evaluator.
+_KEY_NUM = "indirect_bidder_accepted"
+_KEY_DEN = "primary_dealer_accepted"
+
+
 def _clean(rows, security_type):
     out = []
     for r in rows:
         if security_type and (r.get("security_type") or "") != security_type:
             continue
         cu = (r.get("cusip") or "").strip()
-        btc = r.get("bid_to_cover_ratio")
-        if not cu or btc in (None, "", "null", "*"):
+        if not cu:
             continue
-        try:
-            rr = dict(r)
-            rr["_btc"] = float(btc)
-        except (TypeError, ValueError):
+        x, y = _num(r, _KEY_NUM), _num(r, _KEY_DEN)
+        if x is None or y is None or y == 0:
             continue
+        rr = dict(r)
+        rr["_key"] = x / y
+        rr["_btc"] = _num(r, "bid_to_cover_ratio")
         out.append(rr)
     return out
+
+
+def _equivalent_served_fields(rows, thresh=0.98):
+    """Served fields whose own ordering reproduces the composite key.
+
+    If any single field ranks the auctions the same way the composite does, the
+    composite is decorative: the solver sorts on that field server-side and
+    reads row one. This is checked locally against every numeric field actually
+    present in the payload, so it costs no requests.
+    """
+    vals = [r["_key"] for r in rows]
+    fields = set()
+    for r in rows[:40]:
+        fields.update(r.keys())
+    bad = []
+    for f in sorted(fields):
+        if f.startswith("_") or f in (_KEY_NUM, _KEY_DEN):
+            continue
+        fv = []
+        for r in rows:
+            v = _num(r, f)
+            if v is None:
+                fv = None
+                break
+            fv.append(v)
+        if not fv:
+            continue
+        rho = ct._spearman(fv, vals) if hasattr(ct, "_spearman") else None
+        if rho is None:
+            a, b = ct._rankdata(fv), ct._rankdata(vals)
+            n = len(a)
+            ma, mb = sum(a) / n, sum(b) / n
+            num = sum((a[i] - ma) * (b[i] - mb) for i in range(n))
+            da = sum((x - ma) ** 2 for x in a) ** 0.5
+            db = sum((x - mb) ** 2 for x in b) ** 0.5
+            rho = (num / (da * db)) if da and db else 0.0
+        if abs(rho) >= thresh:
+            bad.append({"field": f, "rho": round(rho, 4)})
+    return bad
 
 
 # ------------------------------------------------------------------ witnesses
@@ -178,6 +238,44 @@ def _figi_confirms(cusip):
 
 # ------------------------------------------------------------------ generator
 def gen_finance(seeds=SEEDS):
+    # WITHDRAWN -- the service is too capable to trap, measured three ways.
+    #
+    # 1. RAW SERVED FIELDS are dead: the endpoint honours 228 of 450 orderings
+    #    tried, and 222 of them genuinely reorder. Bid-to-cover died here.
+    # 2. THE RATIO KEY IS STRUCTURALLY DEAD, not unlucky. The composite
+    #    indirect_bidder_accepted / primary_dealer_accepted put its answer 9th
+    #    of 336 on primary_dealer_accepted ASCENDING -- its own denominator.
+    #    Sweeping 15 seeds, ALL 15 rejected and the denominator was shallow in
+    #    every one. That is a property of the key family: over a heavy-tailed
+    #    denominator the argmax of x/y is drawn almost surely from the
+    #    smallest-y tail, so "sort ascending on the denominator" reaches it in a
+    #    handful of rows whatever year is chosen. The numerator leaked nothing
+    #    by comparison (ranks 51 and 67), which is the asymmetry the algebra
+    #    predicts.
+    # 3. NON-RATIO KEYS FAIL VALIDATION. Two families that are not tail-
+    #    dominated by construction -- the least-squares residual of indirect on
+    #    primary, and the difference of within-population percentile ranks --
+    #    were tried across 11 seeds, 22 configurations. Exactly one passed
+    #    (2023 all securities, rank difference, 91282CJR3, shallowest component
+    #    depth 0.1332 against a 0.10 bar). One pass in 22 is the signature of a
+    #    key hunted until something cleared, so it was validated rather than
+    #    adopted: on EIGHT held-out years never touched by the search it passed
+    #    ZERO times, depths 0.0037 to 0.094. Bootstrap resampling of the 2023
+    #    population reproduced that winner only 63.5% of the time. The single
+    #    pass was selection noise.
+    #
+    # The general lesson, which now gates other categories: a service that will
+    # sort on a hundred numeric fields cannot be trapped by any key built from
+    # those fields, because some derivable ordering will place the answer near
+    # the top. Finance can only return on a collection whose ranking quantity is
+    # not a served, sortable column.
+    raise ct.TrapUnavailable(
+        "finance: withdrawn. The auctions service honours 228 orderings, so raw "
+        "fields are one call away; the indirect-over-primary ratio key is "
+        "structurally leaky because a ratio's argmax sits in the small-denominator "
+        "tail (shallow in 15 of 15 seeds); and the two non-ratio replacements "
+        "passed 1 of 22 searched configurations and 0 of 8 held-out years, with a "
+        "bootstrap hit rate of 0.635.")
     tried = []
     for year, stype in seeds:
         tag = "%d/%s" % (year, stype or "all")
@@ -192,7 +290,7 @@ def gen_finance(seeds=SEEDS):
             continue
 
         try:
-            best = ct._pick_extreme(rows, lambda r: r["_btc"],
+            best = ct._pick_extreme(rows, lambda r: r["_key"],
                                     "finance %s" % tag, mode="max",
                                     valuefn=lambda r: r["cusip"])
         except TrapUnavailable as te:
@@ -215,11 +313,28 @@ def gen_finance(seeds=SEEDS):
             tried.append("%s: p_uniform %.4f" % (tag, p_unif))
             continue
 
+        # DERIVABLE-KEY GATE. The endpoint honours 228 orderings. The composite
+        # only survives if no single served field ranks the auctions the way it
+        # does; otherwise the solver sorts on that field and reads row one.
+        equiv = _equivalent_served_fields(rows)
+        if equiv:
+            tried.append("%s: key reproduced by served field %s (rho %.4f)"
+                         % (tag, equiv[0]["field"], equiv[0]["rho"]))
+            continue
+
         cusip = best["cusip"].strip()
         adate = (best.get("auction_date") or "")[:10]
         term = best.get("security_term") or best.get("security_type") or ""
-        btcs = sorted((r["_btc"] for r in rows), reverse=True)
-        runner = btcs[1] if len(btcs) > 1 else None
+        keys = sorted((r["_key"] for r in rows), reverse=True)
+        runner = keys[1] if len(keys) > 1 else None
+        rel_sep = ((keys[0] - runner) / abs(keys[0])) if runner and keys[0] else None
+        # is the answer also the argmax of the DEAD key? if so nothing changed
+        _btcs = [(r["_btc"], r["cusip"]) for r in rows if r["_btc"] is not None]
+        btc_winner = max(_btcs)[1] if _btcs else None
+        if btc_winner == cusip:
+            tried.append("%s: new key returns the same CUSIP as the dead "
+                         "bid-to-cover key" % tag)
+            continue
 
         # ---- verify each witness rather than asserting it
         conf, notes = [], {}
@@ -263,21 +378,39 @@ def gen_finance(seeds=SEEDS):
             sources=srcs,
             confirming_sources=conf,
             api_proof_argument=(
-                "The auctions endpoint serves %d priced %d auctions as a "
-                "date-ordered series with no ranking view and no server-side sort "
-                "on bid-to-cover, so every row must be pulled and compared. "
-                "Measured rho for the ratio against served order is %s and the "
-                "winner sits at relative depth %.4f, so neither the first nor the "
-                "last row is the answer. The answer is the security's CUSIP, which "
-                "appears in no encyclopaedia article and cannot be derived from the "
-                "auction date or the term, so recognising the auction does not "
-                "supply it." % (len(rows), year, rho, depth)),
+                "This endpoint is highly sortable and the argument does not pretend "
+                "otherwise: an audit of its 114 served fields found 228 orderings "
+                "honoured, of which 222 genuinely reorder the %d %d auctions. That "
+                "is exactly why the earlier bid-to-cover key was worthless -- it was "
+                "a served field, so one call with sort and a page size of one "
+                "returned the answer. The ranking key here is a ratio of two served "
+                "fields, and the service exposes no expression evaluator, so it "
+                "cannot be ordered on. No single served field reproduces its "
+                "ordering (checked against every numeric field in the payload at "
+                "generation time), and the winner is not row one of any honoured "
+                "ordering. Measured rho against served order is %s and the winner "
+                "sits at relative depth %.4f. The answer is the security's CUSIP, "
+                "which appears in no encyclopaedia article and cannot be derived "
+                "from the auction date or the term."
+                % (len(rows), year, rho, depth)),
             confirmation="; ".join(wit),
             facts={
                 "year": year, "security_type": stype or "all", "n": len(rows),
                 "cusip": cusip, "auction_date": adate, "security_term": term,
-                "max_bid_to_cover": best["_btc"], "runner_up_bid_to_cover": runner,
-                "separation": round(best["_btc"] - runner, 4) if runner else None,
+                "key": "indirect_to_primary_ratio",
+                "key_gloss": "ratio of indirect-bidder to primary-dealer awards",
+                "key_input_fields": [_KEY_NUM, _KEY_DEN],
+                "max_key": round(best["_key"], 8),
+                "runner_up_key": round(runner, 8) if runner else None,
+                "rel_separation": round(rel_sep, 6) if rel_sep else None,
+                "equivalent_served_fields": equiv,
+                "n_orderings_honoured": 228,
+                "n_orderings_that_reorder": 222,
+                "winner_of_dead_bid_to_cover_key": btc_winner,
+                "replaced_key": "bid_to_cover_ratio",
+                "replaced_key_defect": (
+                    "served field; &sort=-bid_to_cover_ratio&page[size]=1 "
+                    "returned the answer in one call"),
                 "argmax_depth": round(depth, 4),
                 "spearman_key_vs_api_order": rho,
                 "p_answer_by_uniform_guess": p_unif,
@@ -297,12 +430,15 @@ def gen_finance(seeds=SEEDS):
             },
             prompt=build_prompt(
                 "The United States Treasury publishes a record of every marketable "
-                "security it auctions, giving each auction its date, its term, its "
-                "bid-to-cover ratio and the CUSIP of the security sold.",
-                "Consider only the auctions the Treasury records during the %d "
-                "calendar year whose entry carries a bid-to-cover ratio." % year,
-                "Across that year exactly one auction drew a higher bid-to-cover "
-                "ratio than every other auction in the record.",
+                "security it auctions, giving each auction its date, its term, the "
+                "CUSIP of the security sold, and the amount awarded to each class "
+                "of bidder, including indirect bidders and primary dealers.",
+                "Consider only the %sauctions the Treasury records during the %d "
+                "calendar year whose entry reports an award to both indirect "
+                "bidders and primary dealers."
+                % (("%s " % stype.lower()) if stype else "", year),
+                "Across that year exactly one auction awarded indirect bidders the "
+                "largest amount relative to what it awarded primary dealers.",
                 "Report the CUSIP of the security sold at that single auction.",
                 "Give the nine-character CUSIP alone.",
                 note="Confirm the identifier against a market data source before answering."),

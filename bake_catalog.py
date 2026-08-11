@@ -43,12 +43,22 @@ RECALL_EVIDENCE = {
         "was": "1975", "was_pageviews_365": 77453,
         "now": "GND identifier", "now_wikipedia_mentions": 0},
     "sports": {
-        "was": "Newton", "was_pageviews_365": 26976, "now": None,
-        "note": "still an attribute; GND covers 1 of 4 MLB players probed, so "
-                "the identifier fix does not transfer"},
+        "was": "Newton", "was_pageviews_365": 26976,
+        "now": "FAST identifier", "now_wikipedia_mentions": 0,
+        "note": "GND covers 1 of 4 MLB players probed and ISNI/VIAF resolvers "
+                "are 403 from here, but OCLC FAST is single-valued for 4 of 4. "
+                "The first probe called FAST unreachable on an HTTP 406, which "
+                "is content negotiation, not absence."},
     "video games": {
         "was": "Colossal Order", "was_pageviews_365": 40617, "now": None,
-        "note": "still an attribute; GND covers 0 of 3 studios probed"},
+        "note": "NOT FIXED, and not for want of trying. No reachable authority "
+                "covers game studios: GND 0 of 3, ISNI and VIAF 403, BnF has no "
+                "record for the winning studio, MobyGames and IGDB both 403, "
+                "and the two remaining single-valued Wikidata properties are a "
+                "Basque library ID and a Mod DB slug, neither of which is an "
+                "authority file. The answer stays an attribute and stays "
+                "flagged rather than being given a witness that does not "
+                "exist."},
 }
 
 

@@ -43,6 +43,12 @@ from category_traps import Candidate, TrapUnavailable, build_prompt
 import net
 
 _DNB = "https://d-nb.info/gnd/{}"
+# Proven-reachable FAST endpoint. id.worldcat.org answers 406 to
+# Accept: application/json and 200 to application/rdf+xml, so the earlier
+# probe that reported FAST unreachable was measuring content negotiation, not
+# availability. fast.oclc.org/fast/{id}/ is the property's canonical formatter
+# and resolves to the same record.
+_FAST = "https://id.worldcat.org/fast/{}"
 
 
 def _gnd(name):
@@ -56,18 +62,62 @@ def _gnd(name):
     return vals[0], qid
 
 
+def _name_tokens(name):
+    """Surname plus the longest given name, both normalised."""
+    parts = [ct._norm(x) for x in ct._SUFFIX.sub("", name).strip().split() if len(x) > 1]
+    if not parts:
+        raise TrapUnavailable("witness: cannot tokenise name %r" % name)
+    given = max(parts[:-1], key=len) if len(parts) > 1 else parts[-1]
+    return parts[-1], given
+
+
 def _dnb_confirms(gnd, name):
-    """German National Library must return a record naming the same person."""
-    surname = ct._norm(name.split()[-1])
+    """German National Library must return a record naming the same person.
+
+    Surname alone is not enough. An authority file is full of records that
+    merely contain a common surname, so a surname-only match can confirm the
+    wrong record and a false witness is worse than no witness. Require the
+    surname AND a given name.
+    """
+    surname, given = _name_tokens(name)
     try:
         txt = net.fetch(_DNB.format(gnd), timeout=45, attempts=3,
                         headers={"Accept": "application/ld+json"})
     except Exception as exc:
         raise TrapUnavailable("gnd: d-nb.info did not serve %s (%s)"
                               % (gnd, type(exc).__name__))
-    if surname not in ct._norm(txt):
-        raise TrapUnavailable(
-            "gnd: d-nb.info record %s does not name %r" % (gnd, surname))
+    norm = ct._norm(txt)
+    missing = [t for t in (surname, given) if t not in norm]
+    if missing:
+        raise TrapUnavailable("gnd: d-nb.info record %s does not name %s"
+                              % (gnd, missing))
+    return True
+
+
+def _fast_confirms(fast_id, name):
+    """OCLC must return a PERSON authority record naming the same person.
+
+    FAST carries subject headings as well as names, so a surname-only match
+    could be satisfied by a place or a corporate body that happens to contain
+    the token. Require schema.org/Person and both name parts. Verified against
+    FAST 22477, which returns rdf:type schema.org/Person and prefLabel
+    "Sutton, Don, 1945-".
+    """
+    surname, given = _name_tokens(name)
+    try:
+        txt = net.fetch(_FAST.format(fast_id), timeout=45, attempts=3,
+                        headers={"Accept": "application/rdf+xml"})
+    except Exception as exc:
+        raise TrapUnavailable("fast: OCLC did not serve %s (%s)"
+                              % (fast_id, type(exc).__name__))
+    if "schema.org/Person" not in txt:
+        raise TrapUnavailable("fast: OCLC record %s is not typed as a Person"
+                              % fast_id)
+    norm = ct._norm(txt)
+    missing = [t for t in (surname, given) if t not in norm]
+    if missing:
+        raise TrapUnavailable("fast: OCLC record %s does not name %s"
+                              % (fast_id, missing))
     return True
 
 
@@ -347,9 +397,139 @@ def gen_education(country="Norway"):
     )
 
 
+# =========================================================================
+# SPORTS -- the last category whose answer was measured recallable and could
+# still be fixed from here.
+#
+# Was: 'city of birth' -> Newton / Houston / Tuscaloosa / Sellersville across
+# the four seeds tried. Newton draws 26,976 Wikipedia views a year. Once the
+# solver names the player the city is free, so the roster traversal and the
+# earliest-birth-date ranking never bind.
+#
+# GND does not cover MLB players: the probe found single-valued P227 for 1 of 4.
+# ISNI (P213) and VIAF (P214) are carried by Wikidata but neither resolver is
+# reachable from this sandbox -- both return HTTP 403 behind a Cloudflare
+# challenge, which is an access artifact rather than a data fact. P244 is the
+# Library of Congress name authority and loc.gov is banned by policy.
+#
+# What is left, and what works, is OCLC FAST (P2163): single-valued for 4 of 4
+# players probed. The first reachability check reported it dead on an HTTP 406,
+# but 406 is Not Acceptable, not Not Found -- id.worldcat.org simply refuses
+# Accept: application/json. With application/rdf+xml it returns 200 and 3,408
+# bytes naming "Rice, Jim, 1953-". OCLC runs neither the league nor Wikidata,
+# so the record is an independent witness.
+# =========================================================================
+def gen_sports(pairs=((147, "New York Yankees", 1998), (111, "Boston Red Sox", 1999),
+                      (119, "Los Angeles Dodgers", 1988), (158, "Milwaukee Brewers", 1982),
+                      (117, "Houston Astros", 2005))):
+    tried = []
+    for team_id, team_name, season in pairs:
+        try:
+            rj = net.get_json(
+                "https://statsapi.mlb.com/api/v1/teams/%d/roster?season=%d"
+                "&rosterType=fullSeason" % (team_id, season), timeout=120)
+            roster = rj.get("roster", [])
+            if len(roster) < 20:
+                tried.append("%s %d: roster %d" % (team_name, season, len(roster)))
+                continue
+            ids = ",".join(str(p["person"]["id"]) for p in roster)
+            pj = net.get_json(
+                "https://statsapi.mlb.com/api/v1/people?personIds=" + ids, timeout=120)
+        except Exception as e:  # noqa: BLE001
+            tried.append("%s %d: %s" % (team_name, season, type(e).__name__))
+            continue
+        people = [p for p in pj.get("people", []) if p.get("birthDate")]
+        if len(people) < 20:
+            tried.append("%s %d: only %d dated players" % (team_name, season, len(people)))
+            continue
+        try:
+            # Same population and same key as the shipped trap, so its measured
+            # ranking properties carry over. Only the value read off the winner
+            # changes. valuefn returns the player name because FAST assigns one
+            # authority record per person, so guessing the identifier and
+            # guessing the player are the same event.
+            best = ct._pick_extreme(people, lambda p: p["birthDate"],
+                                    "sports %s %d" % (team_name, season), mode="min",
+                                    valuefn=lambda p: p["fullName"])
+        except TrapUnavailable as te:
+            tried.append(str(te))
+            continue
+
+        plain = ct._SUFFIX.sub("", best["fullName"]).strip()
+        try:
+            vals, qid = ct._wikidata_values(plain, "P2163")
+        except Exception as e:  # noqa: BLE001
+            tried.append("%s %d: Wikidata %s" % (team_name, season, type(e).__name__))
+            continue
+        vals = [v for v in vals if v]
+        if len(vals) != 1:
+            tried.append("%s %d: P2163 for %r returned %d values"
+                         % (team_name, season, plain, len(vals)))
+            continue
+        fast_id = vals[0]
+        try:
+            _fast_confirms(fast_id, plain)
+        except TrapUnavailable as te:
+            tried.append("%s %d: %s" % (team_name, season, te))
+            continue
+
+        dobs = sorted(p["birthDate"] for p in people)
+        srcs = ["https://statsapi.mlb.com/api/v1/teams/%d/roster?season=%d" % (team_id, season),
+                _FAST.format(fast_id),
+                "https://www.wikidata.org/wiki/%s" % qid,
+                "https://www.retrosheet.org/biofile.htm"]
+        return Candidate(
+            category="sports",
+            primary_operator="Major League Baseball",
+            field="FAST identifier", answer=fast_id, entity=plain, n_base=len(people),
+            sources=srcs,
+            confirming_sources=[_FAST.format(fast_id),
+                                "https://www.wikidata.org/wiki/%s" % qid],
+            api_proof_argument=(
+                "The league returns a full-season roster with no birth-date sort, so "
+                "all %d dated players must be pulled and compared. The answer is an "
+                "authority-file identifier rather than a property of the player, so "
+                "recognising who the earliest-born player is does not supply it. "
+                "Measured rho for the date key against roster order is %s."
+                % (len(people), ct.LAST_RANK.get("spearman_key_vs_api_order"))),
+            confirmation=("OCLC FAST record %s names %s, and Wikidata %s property "
+                          "P2163 returns the same identifier" % (fast_id, plain, qid)),
+            facts={"team": team_name, "season": season, "n": len(people),
+                   "player": plain, "dob": best["birthDate"],
+                   "second_earliest_dob": dobs[1],
+                   "birth_city_not_asked": best.get("birthCity"),
+                   "answer_field_class": "identifier",
+                   "guess_space": ("p_answer_by_uniform_guess is measured over player "
+                                   "identity. FAST assigns one authority record per "
+                                   "person and the generator rejects any player whose "
+                                   "P2163 is not single-valued, so the two "
+                                   "probabilities are equal."),
+                   "replaces": "city of birth (attribute; 26,976 Wikipedia views/yr)",
+                   "rejected_alternatives": (
+                       "GND single-valued for 1 of 4 players probed; ISNI and VIAF are "
+                       "carried by Wikidata but both resolvers return HTTP 403 from "
+                       "this sandbox; the Library of Congress name authority is banned "
+                       "by policy.")},
+            prompt=build_prompt(
+                "A league statistics service publishes the full-season roster of every "
+                "club, giving each player's name and date of birth, and bibliographic "
+                "authority files assign each person a stable numeric identifier.",
+                "Consider only the players the service lists on the %d full-season "
+                "roster of the %s whose record carries a date of birth."
+                % (season, team_name),
+                "Among those players one was born earlier than every other.",
+                "Report the FAST authority identifier assigned to that single player.",
+                "Give the identifier alone, digits only.",
+                note="Resolve the identifier at the authority file before answering."),
+        )
+    raise TrapUnavailable("sports: no seed produced a confirmable FAST identifier: "
+                          + "; ".join(tried[:5]))
+
+
 _OVERRIDES = {
     "celebrities/public figures": gen_celebrities,
     "history": gen_history,
     "education": gen_education,
+    "sports": gen_sports,
 }
 ct.GENERATORS.update(_OVERRIDES)

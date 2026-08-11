@@ -1,5 +1,5 @@
 {
-  "evaluated_at": "2026-08-11T05:58:16Z",
+  "evaluated_at": "2026-08-11T06:05:44Z",
   "thresholds": {
     "max_uniform_guess": 0.1,
     "min_confirming_operators": 2,
@@ -789,12 +789,12 @@
     },
     {
       "category": "sports",
-      "answer": "Newton",
-      "field": "city of birth",
+      "answer": "22477",
+      "field": "FAST identifier",
       "tests": {
         "T0_base_adequacy": {
           "pass": true,
-          "detail": "n_ranked=48 (>= 5); isolation chooses among candidates"
+          "detail": "n_ranked=38 (>= 5); isolation chooses among candidates"
         },
         "T1_uniqueness": {
           "pass": true,
@@ -802,23 +802,23 @@
         },
         "T2_guessability": {
           "pass": true,
-          "detail": "answer occurs 1/48 times (p=0.02083), modal count 2, 45 distinct values, answer_is_strict_mode=False"
+          "detail": "answer occurs 1/38 times (p=0.02632), modal count 1, 38 distinct values, answer_is_strict_mode=False"
         },
         "T3_order_leak": {
           "pass": true,
-          "detail": "winner at index 6 of 48 (depth 0.1277), first=False last=False, H0 P(first|last)=0.0417"
+          "detail": "winner at index 34 of 38 (depth 0.9189), first=False last=False, H0 P(first|last)=0.0526"
         },
         "T3b_monotone_key": {
           "pass": true,
-          "detail": "spearman(key, api_index)=0.0731 (|rho| <= 0.45); key is off-axis"
+          "detail": "spearman(key, api_index)=-0.1124 (|rho| <= 0.45); key is off-axis"
         },
         "T4_separation": {
           "pass": true,
-          "detail": "top1='1961-09-09' top2='1962-10-30' (non-numeric key, distinct)"
+          "detail": "top1='1945-04-02' top2='1949-09-13' (non-numeric key, distinct)"
         },
         "T5_confirmation": {
           "pass": true,
-          "detail": "2 independent witness(es): ['Retrosheet', 'Wikimedia Foundation']; primary='Major League Baseball'; 3 source operator(s): ['Major League Baseball', 'Retrosheet', 'Wikimedia Foundation']"
+          "detail": "2 independent witness(es): ['OCLC', 'Wikimedia Foundation']; primary='Major League Baseball'; 4 source operator(s): ['Major League Baseball', 'OCLC', 'Retrosheet', 'Wikimedia Foundation']"
         },
         "T6_gate": {
           "pass": true,
@@ -826,41 +826,41 @@
         },
         "T7_prompt_leak": {
           "pass": true,
-          "detail": "word count 98; years named in prompt: 1999"
+          "detail": "word count 89; years named in prompt: 1988"
         }
       },
       "collection_is_explicit": false,
       "verdict": "ship",
       "primary_operator": "Major League Baseball",
       "independent_witnesses": [
-        "Retrosheet",
+        "OCLC",
         "Wikimedia Foundation"
       ],
       "witness_tier": "gold",
       "evidence": {
-        "label": "sports Boston Red Sox 1999",
+        "label": "sports Los Angeles Dodgers 1988",
         "mode": "min",
-        "n_base": 48,
-        "n_ranked": 48,
-        "spearman_key_vs_api_order": 0.0731,
+        "n_base": 38,
+        "n_ranked": 38,
+        "spearman_key_vs_api_order": -0.1124,
         "n_tied_at_extremum": 1,
-        "distinct_keys": 47,
-        "winner_position_in_api_order": 6,
+        "distinct_keys": 38,
+        "winner_position_in_api_order": 34,
         "winner_is_first_returned": false,
         "winner_is_last_returned": false,
         "top_keys": [
-          "1961-09-09",
-          "1962-10-30",
-          "1963-06-25",
-          "1964-04-11",
-          "1964-08-24"
+          "1945-04-02",
+          "1949-09-13",
+          "1954-02-02",
+          "1955-03-15",
+          "1955-11-26"
         ],
-        "answer_field_distinct_values": 45,
-        "answer_field_n_values": 48,
-        "answer_field_max_count": 2,
+        "answer_field_distinct_values": 38,
+        "answer_field_n_values": 38,
+        "answer_field_max_count": 1,
         "answer_field_count_of_answer": 1,
-        "answer_field_modal_share": 0.041667,
-        "p_answer_by_uniform_guess": 0.020833,
+        "answer_field_modal_share": 0.026316,
+        "p_answer_by_uniform_guess": 0.026316,
         "_collection_is_explicit": false
       }
     },
@@ -1109,7 +1109,6 @@
       "n": 13,
       "depths": [
         0.0833,
-        0.1277,
         0.2564,
         0.3571,
         0.3636,
@@ -1120,11 +1119,12 @@
         0.54,
         0.625,
         0.6471,
-        0.9
+        0.9,
+        0.9189
       ],
-      "mean_depth": 0.437,
-      "ks_statistic": 0.276,
-      "ks_p_approx": 0.232678
+      "mean_depth": 0.4979,
+      "ks_statistic": 0.2033,
+      "ks_p_approx": 0.604336
     },
     "C4_key_monotonicity": {
       "h0": "ranking keys are unrelated to API return order (rho ~ 0)",
@@ -1136,15 +1136,15 @@
         0.0293,
         0.0349,
         0.065,
-        0.0731,
         0.0746,
+        0.1124,
         0.1455,
         0.2021,
         0.2042,
         0.261,
         0.3685
       ],
-      "mean_abs_rho": 0.1166,
+      "mean_abs_rho": 0.1196,
       "n_over_threshold": 0
     },
     "C1_positional_leak": {
@@ -1161,19 +1161,19 @@
         0.0392,
         0.0392,
         0.05,
-        0.0417,
+        0.0526,
         0.0274,
         0.0095
       ],
-      "expected_first_or_last": 0.6179,
+      "expected_first_or_last": 0.6288,
       "observed_first_or_last": 0,
       "exact_two_sided_p": 1.0
     },
     "C2_guess_yield": {
       "h0": "a guesser draws uniformly from the observed answer-field values",
       "n_traps_tested": 14,
-      "expected_hits_across_corpus": 0.3804,
-      "p_at_least_one_hit": 0.322136,
+      "expected_hits_across_corpus": 0.3858,
+      "p_at_least_one_hit": 0.325932,
       "n_traps_over_threshold": 0,
       "threshold": 0.1
     }

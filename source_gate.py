@@ -190,6 +190,11 @@ OPERATOR_MAP = {
     # answer-to-entity binding. culturegraph.org is also DNB-operated and is
     # mapped to the same operator so it can never be double-counted.
     "d-nb.info": "German National Library",
+    # OCLC runs the FAST subject/name authority and WorldCat. Independent of
+    # Major League Baseball and of Wikimedia, so a FAST record resolving to the
+    # same person is a genuine witness for a player identifier.
+    "worldcat.org": "OCLC",
+    "oclc.org": "OCLC",
     "dnb.de": "German National Library",
     "culturegraph.org": "German National Library",
     "openfoodfacts.org": "Open Food Facts",

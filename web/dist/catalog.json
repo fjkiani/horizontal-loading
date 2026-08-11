@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-08-11T05:59:48Z",
+ "generated_at": "2026-08-11T06:06:00Z",
  "traps": [
   {
    "collection_is_explicit": false,
@@ -869,70 +869,78 @@
    "collection_is_explicit": false,
    "primary_operator": "Major League Baseball",
    "independent_confirming_operators": [
-    "Retrosheet",
+    "OCLC",
     "Wikimedia Foundation"
    ],
    "category": "sports",
-   "field": "city of birth",
-   "answer": "Newton",
-   "entity": "Jim Corsi",
-   "n_base": 48,
+   "field": "FAST identifier",
+   "answer": "22477",
+   "entity": "Don Sutton",
+   "n_base": 38,
    "sources": [
-    "https://statsapi.mlb.com/api/v1/teams/111/roster?season=1999&rosterType=fullSeason",
-    "https://www.retrosheet.org/BIOFILE.TXT",
-    "https://www.wikidata.org/wiki/Q3806513"
+    "https://statsapi.mlb.com/api/v1/teams/119/roster?season=1988",
+    "https://id.worldcat.org/fast/22477",
+    "https://www.wikidata.org/wiki/Q3035912",
+    "https://www.retrosheet.org/biofile.htm"
    ],
    "confirming_sources": [
-    "https://www.retrosheet.org/BIOFILE.TXT",
-    "https://www.wikidata.org/wiki/Q3806513"
+    "https://id.worldcat.org/fast/22477",
+    "https://www.wikidata.org/wiki/Q3035912"
    ],
    "api_proof": true,
-   "api_proof_argument": "The roster endpoint returns players in uniform-number order and offers no birth-date sort, so all 48 players the club carried that season must be pulled and compared.",
-   "confirmation": "Retrosheet and Wikidata independently record the same birthplace for that player",
-   "prompt": "The official Major League Baseball statistics service publishes the full season roster of the Boston Red Sox for 1999, listing every player the club carried that year with his date and place of birth. Consider only the players appearing on that full season roster. Exactly one of them was born earlier than every other player on the list. Report the city of birth that the service records for that single oldest player. Confirm the birthplace against two references independent of the league. Give the city name alone, as recorded, with no state, no country and no other words.",
+   "api_proof_argument": "The league returns a full-season roster with no birth-date sort, so all 38 dated players must be pulled and compared. The answer is an authority-file identifier rather than a property of the player, so recognising who the earliest-born player is does not supply it. Measured rho for the date key against roster order is -0.1124.",
+   "confirmation": "OCLC FAST record 22477 names Don Sutton, and Wikidata Q3035912 property P2163 returns the same identifier",
+   "prompt": "A league statistics service publishes the full-season roster of every club, giving each player's name and date of birth, and bibliographic authority files assign each person a stable numeric identifier. Consider only the players the service lists on the 1988 full-season roster of the Los Angeles Dodgers whose record carries a date of birth. Among those players one was born earlier than every other. Report the FAST authority identifier assigned to that single player. Resolve the identifier at the authority file before answering. Give the identifier alone, digits only.",
    "source_operators": [
     "Major League Baseball",
+    "OCLC",
     "Retrosheet",
     "Wikimedia Foundation"
    ],
    "confirming_operators": [
-    "Retrosheet",
+    "OCLC",
     "Wikimedia Foundation"
    ],
    "track": "api-native",
    "ranking_evidence": {
-    "label": "sports Boston Red Sox 1999",
+    "label": "sports Los Angeles Dodgers 1988",
     "mode": "min",
-    "n_base": 48,
-    "n_ranked": 48,
-    "spearman_key_vs_api_order": 0.0731,
+    "n_base": 38,
+    "n_ranked": 38,
+    "spearman_key_vs_api_order": -0.1124,
     "n_tied_at_extremum": 1,
-    "distinct_keys": 47,
-    "winner_position_in_api_order": 6,
+    "distinct_keys": 38,
+    "winner_position_in_api_order": 34,
     "winner_is_first_returned": false,
     "winner_is_last_returned": false,
     "top_keys": [
-     "1961-09-09",
-     "1962-10-30",
-     "1963-06-25",
-     "1964-04-11",
-     "1964-08-24"
+     "1945-04-02",
+     "1949-09-13",
+     "1954-02-02",
+     "1955-03-15",
+     "1955-11-26"
     ],
-    "answer_field_distinct_values": 45,
-    "answer_field_n_values": 48,
-    "answer_field_max_count": 2,
+    "answer_field_distinct_values": 38,
+    "answer_field_n_values": 38,
+    "answer_field_max_count": 1,
     "answer_field_count_of_answer": 1,
-    "answer_field_modal_share": 0.041667,
-    "p_answer_by_uniform_guess": 0.020833
+    "answer_field_modal_share": 0.026316,
+    "p_answer_by_uniform_guess": 0.026316
    },
    "facts": {
-    "team": "Boston Red Sox",
-    "season": 1999,
-    "n": 48,
-    "player": "Jim Corsi",
-    "dob": "1961-09-09"
+    "team": "Los Angeles Dodgers",
+    "season": 1988,
+    "n": 38,
+    "player": "Don Sutton",
+    "dob": "1945-04-02",
+    "second_earliest_dob": "1949-09-13",
+    "birth_city_not_asked": "Clio",
+    "answer_field_class": "identifier",
+    "guess_space": "p_answer_by_uniform_guess is measured over player identity. FAST assigns one authority record per person and the generator rejects any player whose P2163 is not single-valued, so the two probabilities are equal.",
+    "replaces": "city of birth (attribute; 26,976 Wikipedia views/yr)",
+    "rejected_alternatives": "GND single-valued for 1 of 4 players probed; ISNI and VIAF are carried by Wikidata but both resolvers return HTTP 403 from this sandbox; the Library of Congress name authority is banned by policy."
    },
-   "field_class": "attribute",
+   "field_class": "identifier",
    "stump": null,
    "witness_tier": "gold",
    "verdict": "ship",
@@ -942,12 +950,13 @@
     "answer_pageviews_365": null,
     "exact_article": null,
     "verdict": null,
-    "field_class": "attribute",
+    "field_class": "identifier",
     "changed_this_build": {
      "was": "Newton",
      "was_pageviews_365": 26976,
-     "now": null,
-     "note": "still an attribute; GND covers 1 of 4 MLB players probed, so the identifier fix does not transfer"
+     "now": "FAST identifier",
+     "now_wikipedia_mentions": 0,
+     "note": "GND covers 1 of 4 MLB players probed and ISNI/VIAF resolvers are 403 from here, but OCLC FAST is single-valued for 4 of 4. The first probe called FAST unreachable on an HTTP 406, which is content negotiation, not absence."
     }
    }
   },
@@ -1205,7 +1214,7 @@
      "was": "Colossal Order",
      "was_pageviews_365": 40617,
      "now": null,
-     "note": "still an attribute; GND covers 0 of 3 studios probed"
+     "note": "NOT FIXED, and not for want of trying. No reachable authority covers game studios: GND 0 of 3, ISNI and VIAF 403, BnF has no record for the winning studio, MobyGames and IGDB both 403, and the two remaining single-valued Wikidata properties are a Basque library ID and a Mod DB slug, neither of which is an authority file. The answer stays an attribute and stays flagged rather than being given a witness that does not exist."
     }
    }
   }

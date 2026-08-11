@@ -7,3 +7,5 @@ stress_selftest.json
 *.log
 .commitmsg
 pool_ledger.json
+tmp_smoke_ledger.json
+poolsmoke_local.json

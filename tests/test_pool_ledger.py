@@ -75,6 +75,53 @@ def test_window_expiry_burns_and_blocks_reissue(led):
     assert meta["n_burned"] == 1
 
 
+def test_the_window_closes_exactly_at_the_boundary_not_after_it(led):
+    """`_expire` uses `<= now`, so T+W burns and T+W-1 does not.
+
+    The live smoke could not see this: it finished inside the window, so every
+    spent prompt was still `served` and `n_burned` read 0 across the board. The
+    boundary is only observable on an injected clock.
+    """
+    pl.upsert(_traps(3), path=led)
+    T, W = 1_800_000_000.0, pl.REISSUE_SECONDS
+    for i in range(3):
+        assert pl.serve("science and technology", f"k{i}", path=led, now=T)[0] is not None
+
+    just_inside = pl.status(path=led, now=T + W - 1)["categories"][0]
+    assert (just_inside["n_served"], just_inside["n_burned"]) == (3, 0), \
+        "one second before the window closes the prompts are still reissuable"
+    at_boundary = pl.status(path=led, now=T + W)["categories"][0]
+    assert (at_boundary["n_served"], at_boundary["n_burned"]) == (0, 3), \
+        "the window must close AT T+W, not after it"
+
+
+def test_expiry_never_returns_a_prompt_to_available(led):
+    """Closing a reissue window must burn, never restore.
+
+    If an expired reservation fell back to `available` the ledger would re-serve
+    a prompt a solver has already seen, which is the single failure the whole
+    design exists to prevent. Availability must be flat across the boundary
+    while served -> burned moves one-for-one.
+    """
+    pl.upsert(_traps(5), path=led)
+    T, W = 1_800_000_000.0, pl.REISSUE_SECONDS
+    for i in range(2):
+        pl.serve("science and technology", f"k{i}", path=led, now=T)
+
+    seen = []
+    for now in (T, T + W - 1, T + W, T + W + 1, T + 10 * W):
+        row = pl.status(path=led, now=now)["categories"][0]
+        seen.append((row["n_available"], row["n_served"], row["n_burned"], row["n_total"]))
+
+    avail = [s[0] for s in seen]
+    assert avail == [3] * 5, f"expiry moved availability: {avail}"
+    burned = [s[2] for s in seen]
+    assert burned == sorted(burned), f"a burned prompt un-burned: {burned}"
+    assert burned[-1] == 2 and seen[-1][1] == 0, "both reservations must end burned"
+    for a, s, b, n in seen:
+        assert a + s + b == n, f"records lost or double-counted: {a}+{s}+{b} != {n}"
+
+
 def test_upsert_cannot_resurrect_a_spent_prompt(led):
     """Re-running the sweep must not silently un-spend anything."""
     pl.upsert(_traps(1), path=led)

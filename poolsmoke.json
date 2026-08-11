@@ -1,0 +1,1125 @@
+{
+  "origin": "https://seal-prompt-generator.onrender.com",
+  "started": "2026-08-11T19:49:15Z",
+  "banned_list_source": "source_gate.BANNED_DOMAINS",
+  "n_banned_domains": 20,
+  "checks": [
+    {
+      "check": "origin answers /api/health 200",
+      "ok": true,
+      "detail": "200 in 0.8s"
+    },
+    {
+      "check": "GET /api/pool 200",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "check": "pool holds 14 available prompts at rest",
+      "ok": true,
+      "detail": "summed=14 reported=14"
+    },
+    {
+      "check": "stock spans exactly 5 categories",
+      "ok": true,
+      "detail": "{'geography': 2, 'health and medicine': 1, 'legal': 3, 'science and technology': 4, 'travel': 4}"
+    },
+    {
+      "check": "low-water alarm trips on the thin categories",
+      "ok": true,
+      "detail": "low_water=['art', 'business', 'celebrities/public figures', 'education', 'finance', 'geography', 'health and medicine', 'history', 'politics', 'shopping', 'sports', 'tv shows and movies', 'video games']"
+    },
+    {
+      "check": "/api/pool states prompts are not recycled",
+      "ok": true,
+      "detail": "\"the ledger is a file on the service's ephemeral disk; a redeploy restocks it from the baked catalog, so consumption counts are per-deploy, not lifetime\""
+    },
+    {
+      "check": "GET /api/categories 200",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "check": "all 16 taxonomy categories are reported",
+      "ok": true,
+      "detail": "n=16"
+    },
+    {
+      "check": "never-baked categories report unstocked, not exhausted",
+      "ok": true,
+      "detail": "unstocked=11 ['art', 'business', 'celebrities/public figures', 'education', 'finance', 'history', 'politics', 'shopping', 'sports', 'tv shows and movies', 'video games'] | exhausted=[]"
+    },
+    {
+      "check": "legacy n_served alias equals n_available",
+      "ok": true,
+      "detail": "checked 16 rows"
+    },
+    {
+      "check": "health and medicine serves its single prompt",
+      "ok": true,
+      "detail": "200 09b069c01a5dd774"
+    },
+    {
+      "check": "draining to zero reports n_available=0",
+      "ok": true,
+      "detail": "n_available=0"
+    },
+    {
+      "check": "an empty category refuses with 409, never a silent reissue",
+      "ok": true,
+      "detail": "status=409"
+    },
+    {
+      "check": "the 409 body names the shortfall",
+      "ok": true,
+      "detail": "{\"status\": \"exhausted\", \"n_available\": 0, \"n_burned\": 0, \"n_served\": 1, \"n_total\": 1, \"replenish\": \"/api/pool\"}"
+    },
+    {
+      "check": "science and technology serves 4 distinct prompts",
+      "ok": true,
+      "detail": "n=4 distinct=4"
+    },
+    {
+      "check": "the countdown is 3,2,1,0 with no off-by-one",
+      "ok": true,
+      "detail": "counts=[3, 2, 1, 0]"
+    },
+    {
+      "check": "the 5th draw is refused",
+      "ok": true,
+      "detail": "status=409"
+    },
+    {
+      "check": "no science answer repeats within the run",
+      "ok": true,
+      "detail": "['2203.11011', '2211.04278', '2302.07287', '2403.07505', None]"
+    },
+    {
+      "check": "travel serves three requests",
+      "ok": true,
+      "detail": "200 200 200"
+    },
+    {
+      "check": "a repeated request_key returns the identical prompt",
+      "ok": true,
+      "detail": "f6bce9e07340ae0f vs f6bce9e07340ae0f"
+    },
+    {
+      "check": "a repeated request_key burns nothing",
+      "ok": true,
+      "detail": "n_available 3 -> 3 reissued=True"
+    },
+    {
+      "check": "a different request_key gets a different prompt",
+      "ok": true,
+      "detail": "40b7ef806d9e870d"
+    },
+    {
+      "check": "a genuinely new request does decrement",
+      "ok": true,
+      "detail": "3 -> 2"
+    },
+    {
+      "check": "no live-served prompt cites a banned source",
+      "ok": true,
+      "detail": "8 prompts / 25 sources / 20 banned domains checked"
+    },
+    {
+      "check": "every prompt spent is a prompt this test drew",
+      "ok": true,
+      "detail": "ledger says {'health and medicine': 1, 'science and technology': 4, 'travel': 2} / test drew {'health and medicine': 1, 'science and technology': 4, 'travel': 2}"
+    },
+    {
+      "check": "untouched categories did not move",
+      "ok": true,
+      "detail": "{'geography': 0, 'legal': 0}"
+    }
+  ],
+  "steps": {
+    "wake": {
+      "status": 200,
+      "body": {
+        "status": "ok",
+        "service": "seal-prompt-generator"
+      },
+      "cold_start_s": 0.1
+    },
+    "pool_initial": {
+      "status": 200,
+      "body": {
+        "generated_at": "2026-08-11T19:49:17Z",
+        "reissue_seconds": 600,
+        "low_water_mark": 2,
+        "categories": [
+          {
+            "category": "art",
+            "n_total": 0,
+            "n_available": 0,
+            "n_served": 0,
+            "n_burned": 0,
+            "n_retired": 0,
+            "low_water": true,
+            "exhausted": true
+          },
+          {
+            "category": "business",
+            "n_total": 0,
+            "n_available": 0,
+            "n_served": 0,
+            "n_burned": 0,
+            "n_retired": 0,
+            "low_water": true,
+            "exhausted": true
+          },
+          {
+            "category": "celebrities/public figures",
+            "n_total": 0,
+            "n_available": 0,
+            "n_served": 0,
+            "n_burned": 0,
+            "n_retired": 0,
+            "low_water": true,
+            "exhausted": true
+          },
+          {
+            "category": "education",
+            "n_total": 0,
+            "n_available": 0,
+            "n_served": 0,
+            "n_burned": 0,
+            "n_retired": 0,
+            "low_water": true,
+            "exhausted": true
+          },
+          {
+            "category": "finance",
+            "n_total": 0,
+            "n_available": 0,
+            "n_served": 0,
+            "n_burned": 0,
+            "n_retired": 0,
+            "low_water": true,
+            "exhausted": true
+          },
+          {
+            "category": "geography",
+            "n_total": 2,
+            "n_available": 2,
+            "n_served": 0,
+            "n_burned": 0,
+            "n_retired": 0,
+            "low_water": true,
+            "exhausted": false
+          },
+          {
+            "category": "health and medicine",
+            "n_total": 1,
+            "n_available": 1,
+            "n_served": 0,
+            "n_burned": 0,
+            "n_retired": 0,
+            "low_water": true,
+            "exhausted": false
+          },
+          {
+            "category": "history",
+            "n_total": 0,
+            "n_available": 0,
+            "n_served": 0,
+            "n_burned": 0,
+            "n_retired": 0,
+            "low_water": true,
+            "exhausted": true
+          },
+          {
+            "category": "legal",
+            "n_total": 3,
+            "n_available": 3,
+            "n_served": 0,
+            "n_burned": 0,
+            "n_retired": 0,
+            "low_water": false,
+            "exhausted": false
+          },
+          {
+            "category": "politics",
+            "n_total": 0,
+            "n_available": 0,
+            "n_served": 0,
+            "n_burned": 0,
+            "n_retired": 0,
+            "low_water": true,
+            "exhausted": true
+          },
+          {
+            "category": "science and technology",
+            "n_total": 4,
+            "n_available": 4,
+            "n_served": 0,
+            "n_burned": 0,
+            "n_retired": 0,
+            "low_water": false,
+            "exhausted": false
+          },
+          {
+            "category": "shopping",
+            "n_total": 0,
+            "n_available": 0,
+            "n_served": 0,
+            "n_burned": 0,
+            "n_retired": 0,
+            "low_water": true,
+            "exhausted": true
+          },
+          {
+            "category": "sports",
+            "n_total": 0,
+            "n_available": 0,
+            "n_served": 0,
+            "n_burned": 0,
+            "n_retired": 0,
+            "low_water": true,
+            "exhausted": true
+          },
+          {
+            "category": "travel",
+            "n_total": 4,
+            "n_available": 4,
+            "n_served": 0,
+            "n_burned": 0,
+            "n_retired": 0,
+            "low_water": false,
+            "exhausted": false
+          },
+          {
+            "category": "tv shows and movies",
+            "n_total": 0,
+            "n_available": 0,
+            "n_served": 0,
+            "n_burned": 0,
+            "n_retired": 0,
+            "low_water": true,
+            "exhausted": true
+          },
+          {
+            "category": "video games",
+            "n_total": 0,
+            "n_available": 0,
+            "n_served": 0,
+            "n_burned": 0,
+            "n_retired": 0,
+            "low_water": true,
+            "exhausted": true
+          }
+        ],
+        "n_available_total": 14,
+        "n_burned_total": 0,
+        "exhausted_categories": [
+          "art",
+          "business",
+          "celebrities/public figures",
+          "education",
+          "finance",
+          "history",
+          "politics",
+          "shopping",
+          "sports",
+          "tv shows and movies",
+          "video games"
+        ],
+        "low_water_categories": [
+          "art",
+          "business",
+          "celebrities/public figures",
+          "education",
+          "finance",
+          "geography",
+          "health and medicine",
+          "history",
+          "politics",
+          "shopping",
+          "sports",
+          "tv shows and movies",
+          "video games"
+        ],
+        "replenishment": "Prompts are not recycled. A burned prompt is spent permanently, because re-serving it would measure recall rather than the capability the trap probes. Refill by running expand_seeds.py over the seed roster and re-upserting; low_water marks the categories that need it.",
+        "catalog_traps": 14,
+        "seeded_at_startup": {
+          "added": [
+            "48985b65af0be1a7",
+            "8e46eb428fca0447",
+            "09b069c01a5dd774",
+            "73812a2701d969fa",
+            "6d7f695d51f8d823",
+            "22e90dcfd1513fd1",
+            "85b6f35922fb3589",
+            "a67a390ce46966e8",
+            "c545461c81470175",
+            "5fe273d07bb17d54",
+            "f6bce9e07340ae0f",
+            "40b7ef806d9e870d",
+            "108faddc89f2e88a",
+            "f6d151c39be9cc95"
+          ],
+          "refreshed": [],
+          "n_total": 14
+        },
+        "persistence": "the ledger is a file on the service's ephemeral disk; a redeploy restocks it from the baked catalog, so consumption counts are per-deploy, not lifetime"
+      }
+    },
+    "categories": {
+      "status": 200,
+      "body": {
+        "categories": [
+          {
+            "category": "science and technology",
+            "n_served": 4,
+            "n_available": 4,
+            "n_total": 4,
+            "n_burned": 0,
+            "n_in_window": 0,
+            "n_retired": 0,
+            "low_water": false,
+            "exhausted": false,
+            "unstocked": false
+          },
+          {
+            "category": "art",
+            "n_served": 0,
+            "n_available": 0,
+            "n_total": 0,
+            "n_burned": 0,
+            "n_in_window": 0,
+            "n_retired": 0,
+            "low_water": true,
+            "exhausted": false,
+            "unstocked": true
+          },
+          {
+            "category": "business",
+            "n_served": 0,
+            "n_available": 0,
+            "n_total": 0,
+            "n_burned": 0,
+            "n_in_window": 0,
+            "n_retired": 0,
+            "low_water": true,
+            "exhausted": false,
+            "unstocked": true
+          },
+          {
+            "category": "celebrities/public figures",
+            "n_served": 0,
+            "n_available": 0,
+            "n_total": 0,
+            "n_burned": 0,
+            "n_in_window": 0,
+            "n_retired": 0,
+            "low_water": true,
+            "exhausted": false,
+            "unstocked": true
+          },
+          {
+            "category": "education",
+            "n_served": 0,
+            "n_available": 0,
+            "n_total": 0,
+            "n_burned": 0,
+            "n_in_window": 0,
+            "n_retired": 0,
+            "low_water": true,
+            "exhausted": false,
+            "unstocked": true
+          },
+          {
+            "category": "finance",
+            "n_served": 0,
+            "n_available": 0,
+            "n_total": 0,
+            "n_burned": 0,
+            "n_in_window": 0,
+            "n_retired": 0,
+            "low_water": true,
+            "exhausted": false,
+            "unstocked": true
+          },
+          {
+            "category": "geography",
+            "n_served": 2,
+            "n_available": 2,
+            "n_total": 2,
+            "n_burned": 0,
+            "n_in_window": 0,
+            "n_retired": 0,
+            "low_water": true,
+            "exhausted": false,
+            "unstocked": false
+          },
+          {
+            "category": "health and medicine",
+            "n_served": 1,
+            "n_available": 1,
+            "n_total": 1,
+            "n_burned": 0,
+            "n_in_window": 0,
+            "n_retired": 0,
+            "low_water": true,
+            "exhausted": false,
+            "unstocked": false
+          },
+          {
+            "category": "history",
+            "n_served": 0,
+            "n_available": 0,
+            "n_total": 0,
+            "n_burned": 0,
+            "n_in_window": 0,
+            "n_retired": 0,
+            "low_water": true,
+            "exhausted": false,
+            "unstocked": true
+          },
+          {
+            "category": "legal",
+            "n_served": 3,
+            "n_available": 3,
+            "n_total": 3,
+            "n_burned": 0,
+            "n_in_window": 0,
+            "n_retired": 0,
+            "low_water": false,
+            "exhausted": false,
+            "unstocked": false
+          },
+          {
+            "category": "politics",
+            "n_served": 0,
+            "n_available": 0,
+            "n_total": 0,
+            "n_burned": 0,
+            "n_in_window": 0,
+            "n_retired": 0,
+            "low_water": true,
+            "exhausted": false,
+            "unstocked": true
+          },
+          {
+            "category": "shopping",
+            "n_served": 0,
+            "n_available": 0,
+            "n_total": 0,
+            "n_burned": 0,
+            "n_in_window": 0,
+            "n_retired": 0,
+            "low_water": true,
+            "exhausted": false,
+            "unstocked": true
+          },
+          {
+            "category": "sports",
+            "n_served": 0,
+            "n_available": 0,
+            "n_total": 0,
+            "n_burned": 0,
+            "n_in_window": 0,
+            "n_retired": 0,
+            "low_water": true,
+            "exhausted": false,
+            "unstocked": true
+          },
+          {
+            "category": "travel",
+            "n_served": 4,
+            "n_available": 4,
+            "n_total": 4,
+            "n_burned": 0,
+            "n_in_window": 0,
+            "n_retired": 0,
+            "low_water": false,
+            "exhausted": false,
+            "unstocked": false
+          },
+          {
+            "category": "tv shows and movies",
+            "n_served": 0,
+            "n_available": 0,
+            "n_total": 0,
+            "n_burned": 0,
+            "n_in_window": 0,
+            "n_retired": 0,
+            "low_water": true,
+            "exhausted": false,
+            "unstocked": true
+          },
+          {
+            "category": "video games",
+            "n_served": 0,
+            "n_available": 0,
+            "n_total": 0,
+            "n_burned": 0,
+            "n_in_window": 0,
+            "n_retired": 0,
+            "low_water": true,
+            "exhausted": false,
+            "unstocked": true
+          }
+        ],
+        "n_categories": 16,
+        "n_served_total": 14,
+        "n_available_total": 14,
+        "n_burned_total": 0,
+        "unservable": [
+          "art",
+          "business",
+          "celebrities/public figures",
+          "education",
+          "finance",
+          "history",
+          "politics",
+          "shopping",
+          "sports",
+          "tv shows and movies",
+          "video games"
+        ],
+        "exhausted": [],
+        "unstocked": [
+          "art",
+          "business",
+          "celebrities/public figures",
+          "education",
+          "finance",
+          "history",
+          "politics",
+          "shopping",
+          "sports",
+          "tv shows and movies",
+          "video games"
+        ],
+        "low_water": [
+          "geography",
+          "health and medicine"
+        ]
+      }
+    },
+    "drain_health": {
+      "first": {
+        "status": 200,
+        "body": {
+          "status": "served",
+          "source": "pool",
+          "category": "health and medicine",
+          "trap_id": "09b069c01a5dd774",
+          "request_key": "c6e67c415da6",
+          "reissued": false,
+          "reissue_expires_at": 1786478364.125456,
+          "n_available": 0,
+          "result": {
+            "id": "api-native:health and medicine:trial registry identifier",
+            "track": "api-native",
+            "category": "health and medicine",
+            "field": "trial registry identifier",
+            "answer": "NCT05178810",
+            "entity": "Study to Investigate the Efficacy and Safety of FAB122 (Daily Oral Edaravone) in Patients With Amyotrophic Lateral Scler",
+            "prompt": "The United States public clinical trials registry records interventional studies of amyotrophic lateral sclerosis, each carrying a phase, a recruitment status, and a protocol section listing the outcome measures the investigators declared, separated into primary and secondary. Consider only those studies recorded as phase 3 and as having reached completion. Within that set exactly one study declares more secondary outcome measures than any other study declares. Report the registry identifier assigned to that single study. Verify the identifier appears on an independent structured knowledge base. Answer with the identifier alone, in its standard registry form.",
+            "verified": false,
+            "api_proof": true,
+            "n_base": 51,
+            "primary_operator": "US National Institutes of Health",
+            "source_operators": [
+              "EMBL-EBI",
+              "OurResearch (OpenAlex)",
+              "US Food and Drug Administration",
+              "US National Institutes of Health"
+            ],
+            "independent_confirming_operators": [
+              "EMBL-EBI",
+              "OurResearch (OpenAlex)"
+            ],
+            "witness_tier": "gold",
+            "confirmation": "Europe PMC (EMBL-EBI) returns 9 record(s) whose mined accession set contains NCT05178810 ('Small RNA sequencing identifies serum tDR-1:34-Gly-GCC tiRNA levels as'); the unissued control accession NCT99999999 returns 0, so the field is a filter and not a ranker; OpenAlex (OurResearch) full-text search returns 12 work(s) carrying NCT05178810, of which 7 are absent from the Europe PMC set, so the two indexes are not echoes of one another; the unissued control accession NCT88888888 returns 0",
+            "sources": [
+              "https://clinicaltrials.gov/api/v2/studies?pageSize=200&query.cond=amyotrophic+lateral+sclerosis&filter.overallStatus=COMPLETED&aggFilters=phase:3&countTotal=true",
+              "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=ACCESSION_ID%3A%22NCT05178810%22&format=json&pageSize=50&resultType=core",
+              "https://api.openalex.org/works?filter=fulltext.search:NCT05178810&per-page=50&mailto=fahad@crispro.ai",
+              "https://api.fda.gov/drug/label.json?search=amyotrophic+lateral+sclerosis"
+            ],
+            "facts": {
+              "condition": "amyotrophic lateral sclerosis",
+              "n": 51,
+              "key": "n_secondary_outcomes",
+              "winner_n_secondary": 18,
+              "runner_up_n_secondary": 10,
+              "k_robustness": 7,
+              "sort_field_rejected_by_registry": [
+                "SecondaryOutcomeCount",
+                "OutcomeMeasureCount"
+              ],
+              "orderings_probed": 26,
+              "orderings_honoured": 16,
+              "orderings_exposing_answer_in_row_one": 0,
+              "europepmc_hits": 9,
+              "europepmc_title": "Small RNA sequencing identifies serum tDR-1:34-Gly-GCC tiRNA levels as a biomarker for survival in amyotrophic lateral sclerosis.",
+              "europepmc_control_hits": 0,
+              "openalex_hits": 12,
+              "openalex_control_hits": 0,
+              "openalex_not_in_europepmc": 7
+            },
+            "known_defects": {},
+            "witness_scope": null,
+            "evaluation": {
+              "verdict": "ship",
+              "witness_tier": "gold",
+              "independent_witnesses": [
+                "EMBL-EBI",
+                "OurResearch (OpenAlex)"
+              ],
+              "source": "catalog bake (13-test battery at build time)"
+            },
+            "verdict": "ship",
+            "solver_difficulty": null,
+            "solver_difficulty_status": "not measured: a solver-based difficulty score needs a production LLM key; the trial key is exhausted (1000 calls/month) and the measurement design needs roughly 600 calls. Leakage tests below bound what a solver could SHORTCUT, which is not the same quantity.",
+            "image_url": null
+          },
+          "note": "this prompt is now spent; the same request_key returns it again for 600 s, a different key gets a different prompt"
+        }
+      },
+      "second": {
+        "status": 409,
+        "body": {
+          "status": "exhausted",
+          "category": "health and medicine",
+          "n_available": 0,
+          "n_burned": 0,
+          "n_served": 1,
+          "n_retired": 0,
+          "n_total": 1,
+          "detail": "the health and medicine pool is spent: 0 prompt(s) burned, 1 still inside their reissue window. Prompts are not recycled -- refill by sweeping the seed roster (expand_seeds.py) and re-baking the catalog. Pass fresh=true to mint one live instead, which traverses the source APIs and may refuse.",
+          "replenish": "/api/pool"
+        }
+      }
+    },
+    "countdown_science": {
+      "rows": [
+        {
+          "i": 0,
+          "status": 200,
+          "trap_id": "85b6f35922fb3589",
+          "n_available": 3,
+          "answer": "2203.11011"
+        },
+        {
+          "i": 1,
+          "status": 200,
+          "trap_id": "a67a390ce46966e8",
+          "n_available": 2,
+          "answer": "2211.04278"
+        },
+        {
+          "i": 2,
+          "status": 200,
+          "trap_id": "c545461c81470175",
+          "n_available": 1,
+          "answer": "2302.07287"
+        },
+        {
+          "i": 3,
+          "status": 200,
+          "trap_id": "5fe273d07bb17d54",
+          "n_available": 0,
+          "answer": "2403.07505"
+        },
+        {
+          "i": 4,
+          "status": 409,
+          "trap_id": null,
+          "n_available": 0,
+          "answer": null,
+          "body": {
+            "status": "exhausted",
+            "category": "science and technology",
+            "n_available": 0,
+            "n_burned": 0,
+            "n_served": 4,
+            "n_retired": 0,
+            "n_total": 4,
+            "detail": "the science and technology pool is spent: 0 prompt(s) burned, 4 still inside their reissue window. Prompts are not recycled -- refill by sweeping the seed roster (expand_seeds.py) and re-baking the catalog. Pass fresh=true to mint one live instead, which traverses the source APIs and may refuse.",
+            "replenish": "/api/pool"
+          }
+        }
+      ]
+    },
+    "request_key": {
+      "a": {
+        "status": 200,
+        "trap_id": "f6bce9e07340ae0f",
+        "n_available": 3
+      },
+      "b": {
+        "status": 200,
+        "trap_id": "f6bce9e07340ae0f",
+        "n_available": 3,
+        "reissued": true
+      },
+      "c": {
+        "status": 200,
+        "trap_id": "40b7ef806d9e870d",
+        "n_available": 2
+      }
+    },
+    "banned_audit": {
+      "n_prompts_audited": 8,
+      "n_sources": 25,
+      "violations": []
+    },
+    "pool_final": {
+      "status": 200,
+      "body": {
+        "generated_at": "2026-08-11T19:49:38Z",
+        "reissue_seconds": 600,
+        "low_water_mark": 2,
+        "categories": [
+          {
+            "category": "art",
+            "n_total": 0,
+            "n_available": 0,
+            "n_served": 0,
+            "n_burned": 0,
+            "n_retired": 0,
+            "low_water": true,
+            "exhausted": true
+          },
+          {
+            "category": "business",
+            "n_total": 0,
+            "n_available": 0,
+            "n_served": 0,
+            "n_burned": 0,
+            "n_retired": 0,
+            "low_water": true,
+            "exhausted": true
+          },
+          {
+            "category": "celebrities/public figures",
+            "n_total": 0,
+            "n_available": 0,
+            "n_served": 0,
+            "n_burned": 0,
+            "n_retired": 0,
+            "low_water": true,
+            "exhausted": true
+          },
+          {
+            "category": "education",
+            "n_total": 0,
+            "n_available": 0,
+            "n_served": 0,
+            "n_burned": 0,
+            "n_retired": 0,
+            "low_water": true,
+            "exhausted": true
+          },
+          {
+            "category": "finance",
+            "n_total": 0,
+            "n_available": 0,
+            "n_served": 0,
+            "n_burned": 0,
+            "n_retired": 0,
+            "low_water": true,
+            "exhausted": true
+          },
+          {
+            "category": "geography",
+            "n_total": 2,
+            "n_available": 2,
+            "n_served": 0,
+            "n_burned": 0,
+            "n_retired": 0,
+            "low_water": true,
+            "exhausted": false
+          },
+          {
+            "category": "health and medicine",
+            "n_total": 1,
+            "n_available": 0,
+            "n_served": 1,
+            "n_burned": 0,
+            "n_retired": 0,
+            "low_water": true,
+            "exhausted": true
+          },
+          {
+            "category": "history",
+            "n_total": 0,
+            "n_available": 0,
+            "n_served": 0,
+            "n_burned": 0,
+            "n_retired": 0,
+            "low_water": true,
+            "exhausted": true
+          },
+          {
+            "category": "legal",
+            "n_total": 3,
+            "n_available": 3,
+            "n_served": 0,
+            "n_burned": 0,
+            "n_retired": 0,
+            "low_water": false,
+            "exhausted": false
+          },
+          {
+            "category": "politics",
+            "n_total": 0,
+            "n_available": 0,
+            "n_served": 0,
+            "n_burned": 0,
+            "n_retired": 0,
+            "low_water": true,
+            "exhausted": true
+          },
+          {
+            "category": "science and technology",
+            "n_total": 4,
+            "n_available": 0,
+            "n_served": 4,
+            "n_burned": 0,
+            "n_retired": 0,
+            "low_water": true,
+            "exhausted": true
+          },
+          {
+            "category": "shopping",
+            "n_total": 0,
+            "n_available": 0,
+            "n_served": 0,
+            "n_burned": 0,
+            "n_retired": 0,
+            "low_water": true,
+            "exhausted": true
+          },
+          {
+            "category": "sports",
+            "n_total": 0,
+            "n_available": 0,
+            "n_served": 0,
+            "n_burned": 0,
+            "n_retired": 0,
+            "low_water": true,
+            "exhausted": true
+          },
+          {
+            "category": "travel",
+            "n_total": 4,
+            "n_available": 2,
+            "n_served": 2,
+            "n_burned": 0,
+            "n_retired": 0,
+            "low_water": true,
+            "exhausted": false
+          },
+          {
+            "category": "tv shows and movies",
+            "n_total": 0,
+            "n_available": 0,
+            "n_served": 0,
+            "n_burned": 0,
+            "n_retired": 0,
+            "low_water": true,
+            "exhausted": true
+          },
+          {
+            "category": "video games",
+            "n_total": 0,
+            "n_available": 0,
+            "n_served": 0,
+            "n_burned": 0,
+            "n_retired": 0,
+            "low_water": true,
+            "exhausted": true
+          }
+        ],
+        "n_available_total": 7,
+        "n_burned_total": 0,
+        "exhausted_categories": [
+          "art",
+          "business",
+          "celebrities/public figures",
+          "education",
+          "finance",
+          "health and medicine",
+          "history",
+          "politics",
+          "science and technology",
+          "shopping",
+          "sports",
+          "tv shows and movies",
+          "video games"
+        ],
+        "low_water_categories": [
+          "art",
+          "business",
+          "celebrities/public figures",
+          "education",
+          "finance",
+          "geography",
+          "health and medicine",
+          "history",
+          "politics",
+          "science and technology",
+          "shopping",
+          "sports",
+          "travel",
+          "tv shows and movies",
+          "video games"
+        ],
+        "replenishment": "Prompts are not recycled. A burned prompt is spent permanently, because re-serving it would measure recall rather than the capability the trap probes. Refill by running expand_seeds.py over the seed roster and re-upserting; low_water marks the categories that need it.",
+        "catalog_traps": 14,
+        "seeded_at_startup": {
+          "added": [
+            "48985b65af0be1a7",
+            "8e46eb428fca0447",
+            "09b069c01a5dd774",
+            "73812a2701d969fa",
+            "6d7f695d51f8d823",
+            "22e90dcfd1513fd1",
+            "85b6f35922fb3589",
+            "a67a390ce46966e8",
+            "c545461c81470175",
+            "5fe273d07bb17d54",
+            "f6bce9e07340ae0f",
+            "40b7ef806d9e870d",
+            "108faddc89f2e88a",
+            "f6d151c39be9cc95"
+          ],
+          "refreshed": [],
+          "n_total": 14
+        },
+        "persistence": "the ledger is a file on the service's ephemeral disk; a redeploy restocks it from the baked catalog, so consumption counts are per-deploy, not lifetime"
+      }
+    }
+  },
+  "served": [
+    {
+      "category": "health and medicine",
+      "trap_id": "09b069c01a5dd774",
+      "request_key": "c6e67c415da6",
+      "reissued": false,
+      "n_available": 0,
+      "answer": "NCT05178810",
+      "sources": [
+        "https://clinicaltrials.gov/api/v2/studies?pageSize=200&query.cond=amyotrophic+lateral+sclerosis&filter.overallStatus=COMPLETED&aggFilters=phase:3&countTotal=true",
+        "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=ACCESSION_ID%3A%22NCT05178810%22&format=json&pageSize=50&resultType=core",
+        "https://api.openalex.org/works?filter=fulltext.search:NCT05178810&per-page=50&mailto=fahad@crispro.ai",
+        "https://api.fda.gov/drug/label.json?search=amyotrophic+lateral+sclerosis"
+      ]
+    },
+    {
+      "category": "science and technology",
+      "trap_id": "85b6f35922fb3589",
+      "request_key": "43e1a7ff98e7",
+      "reissued": false,
+      "n_available": 3,
+      "answer": "2203.11011",
+      "sources": [
+        "http://export.arxiv.org/api/query?search_query=cat:cs.LG+AND+submittedDate:[202203080000+TO+202203082359]&start=0&max_results=200&sortBy=submittedDate&sortOrder=ascending",
+        "https://api.datacite.org/dois/10.48550/arxiv.2203.11011",
+        "https://api.openalex.org/works/doi:10.48550/arxiv.2203.11011"
+      ]
+    },
+    {
+      "category": "science and technology",
+      "trap_id": "a67a390ce46966e8",
+      "request_key": "bbac6064cbee",
+      "reissued": false,
+      "n_available": 2,
+      "answer": "2211.04278",
+      "sources": [
+        "http://export.arxiv.org/api/query?search_query=cat:cs.DS+AND+submittedDate:[202211080000+TO+202211082359]&start=0&max_results=200&sortBy=submittedDate&sortOrder=ascending",
+        "https://api.datacite.org/dois/10.48550/arxiv.2211.04278",
+        "https://api.openalex.org/works/doi:10.48550/arxiv.2211.04278"
+      ]
+    },
+    {
+      "category": "science and technology",
+      "trap_id": "c545461c81470175",
+      "request_key": "6cb33dcc7929",
+      "reissued": false,
+      "n_available": 1,
+      "answer": "2302.07287",
+      "sources": [
+        "http://export.arxiv.org/api/query?search_query=cat:cs.CR+AND+submittedDate:[202302140000+TO+202302142359]&start=0&max_results=200&sortBy=submittedDate&sortOrder=ascending",
+        "https://api.datacite.org/dois/10.48550/arxiv.2302.07287",
+        "https://api.openalex.org/works/doi:10.48550/arxiv.2302.07287"
+      ]
+    },
+    {
+      "category": "science and technology",
+      "trap_id": "5fe273d07bb17d54",
+      "request_key": "9f848a2609c0",
+      "reissued": false,
+      "n_available": 0,
+      "answer": "2403.07505",
+      "sources": [
+        "http://export.arxiv.org/api/query?search_query=cat:astro-ph.EP+AND+submittedDate:[202403120000+TO+202403122359]&start=0&max_results=200&sortBy=submittedDate&sortOrder=ascending",
+        "https://api.datacite.org/dois/10.48550/arxiv.2403.07505",
+        "https://api.openalex.org/works/doi:10.48550/arxiv.2403.07505"
+      ]
+    },
+    {
+      "category": "travel",
+      "trap_id": "f6bce9e07340ae0f",
+      "request_key": "smoke-1",
+      "reissued": false,
+      "n_available": 3,
+      "answer": "6296543",
+      "sources": [
+        "https://raw.githubusercontent.com/jpatokal/openflights/master/data/routes.dat",
+        "https://davidmegginson.github.io/ourairports-data/airports.csv",
+        "https://sws.geonames.org/6296543/"
+      ]
+    },
+    {
+      "category": "travel",
+      "trap_id": "f6bce9e07340ae0f",
+      "request_key": "smoke-1",
+      "reissued": true,
+      "n_available": 3,
+      "answer": "6296543",
+      "sources": [
+        "https://raw.githubusercontent.com/jpatokal/openflights/master/data/routes.dat",
+        "https://davidmegginson.github.io/ourairports-data/airports.csv",
+        "https://sws.geonames.org/6296543/"
+      ]
+    },
+    {
+      "category": "travel",
+      "trap_id": "40b7ef806d9e870d",
+      "request_key": "smoke-2",
+      "reissued": false,
+      "n_available": 2,
+      "answer": "6296778",
+      "sources": [
+        "https://raw.githubusercontent.com/jpatokal/openflights/master/data/routes.dat",
+        "https://davidmegginson.github.io/ourairports-data/airports.csv",
+        "https://sws.geonames.org/6296778/"
+      ]
+    }
+  ],
+  "done": true,
+  "spent_by_category": {
+    "geography": 0,
+    "health and medicine": 1,
+    "legal": 0,
+    "science and technology": 4,
+    "travel": 2
+  },
+  "remaining_available_total": 7,
+  "summary": {
+    "n_checks": 26,
+    "n_pass": 26,
+    "n_fail": 0,
+    "failed": []
+  },
+  "finished": "2026-08-11T19:49:40Z"
+}

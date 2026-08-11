@@ -1,0 +1,81 @@
+{
+  "origin": "https://seal-prompt-generator.onrender.com",
+  "service": "srv-d9qf1najobas738066lg",
+  "phases": {
+    "before": {
+      "n_available_total": 7,
+      "n_burned_total": 0,
+      "n_served_total": 7,
+      "by_cat": {
+        "geography": 2,
+        "health and medicine": 0,
+        "legal": 3,
+        "science and technology": 0,
+        "travel": 2
+      },
+      "n_added": 14,
+      "n_refreshed": 0,
+      "catalog_traps": 14
+    },
+    "trigger": {
+      "status": 201,
+      "deploy_id": "dep-d9tns7f40ujc73epgg50",
+      "commit": "75fa65c27e0cfcd8df42b5029acdd7f294f95866"
+    },
+    "deploy": {
+      "status": "live",
+      "elapsed_s": 47,
+      "finishedAt": "2026-08-11T19:55:46.376449Z"
+    },
+    "after": {
+      "n_available_total": 14,
+      "n_burned_total": 0,
+      "n_served_total": 0,
+      "by_cat": {
+        "geography": 2,
+        "health and medicine": 1,
+        "legal": 3,
+        "science and technology": 4,
+        "travel": 4
+      },
+      "n_added": 14,
+      "n_refreshed": 0,
+      "catalog_traps": 14
+    }
+  },
+  "started": "2026-08-11T19:55:07Z",
+  "done": true,
+  "checks": [
+    {
+      "check": "stock is back to the full baked catalog",
+      "ok": true,
+      "detail": "available=14 catalog=14"
+    },
+    {
+      "check": "every category is restocked to its baked count",
+      "ok": true,
+      "detail": "{'geography': 2, 'health and medicine': 1, 'legal': 3, 'science and technology': 4, 'travel': 4}"
+    },
+    {
+      "check": "nothing is carried over as burned or served",
+      "ok": true,
+      "detail": "burned=0 served=0"
+    },
+    {
+      "check": "the disk was wiped, not merely re-upserted (added=14, refreshed=0)",
+      "ok": true,
+      "detail": "added=14 refreshed=0"
+    },
+    {
+      "check": "this is a restart effect, not an un-burn: prior stock really was spent",
+      "ok": true,
+      "detail": "7 -> 14"
+    }
+  ],
+  "summary": {
+    "n_checks": 5,
+    "n_pass": 5,
+    "failed": []
+  },
+  "finished": "2026-08-11T19:55:58Z"
+}

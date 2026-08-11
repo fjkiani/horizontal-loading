@@ -1430,38 +1430,37 @@ def gen_legal(vols=(504, 505, 498, 510, 512, 517)):
         # (legalpages.json). The page selection above is not the defect: a row
         # is only accepted when _official(c) equals f"{vol} U.S. {first_page}".
         #
-        # Three candidate replacements were measured on the 52 LII-gap pages
-        # with a 20-page LII-served positive control (legalops.json). Only one
-        # cleared a 0.90 control rate, and it is unusable here:
+        # That coverage number is the trap's ceiling, not a bug to route around.
+        # Three replacements were measured on the 52 LII-gap pages against a
+        # 20-page LII-served positive control (legalops.json), and every one is
+        # unusable for a structural reason rather than a coverage one:
         #
-        #   operator                    control      gap    verdict
-        #   CourtListener (Free Law)    18/20 .90   .9615   best coverage but
-        #                                                   ALREADY the confirming
-        #                                                   witness below; reusing
-        #                                                   it drops the trap to two
-        #                                                   operators and fails
-        #                                                   validate_trap(min=3)
-        #   static.case.law/cases       17/20 .85   .4615   same operator as the
-        #                                                   collection, not independent
-        #   Library of Congress          5/20 .25   .2308   weak, but the only
-        #                                                   INDEPENDENT third operator
-        #                                                   that works at all
+        #   operator                   control      gap   why not
+        #   CourtListener (Free Law)   18/20 .90   .9615  already the confirming
+        #                                                 witness below; reusing it
+        #                                                 leaves two operators and
+        #                                                 fails validate_trap(min=3)
+        #   static.case.law/cases      17/20 .85   .4615  same operator as the
+        #                                                 collection, not independent
+        #   Library of Congress         5/20 .25   .2308  loc.gov is on
+        #                                                 source_gate.BANNED_DOMAINS
+        #                                                 (audit defect D1); it is in
+        #                                                 OPERATOR_MAP so the ban can
+        #                                                 FIRE, not to permit it
         #
-        # LOC is therefore taken on purpose despite a 0.23 hit rate. Its failure
-        # mode is a miss, not a wrong answer: when it does not confirm we fall
-        # through to the next volume. Correctness is still carried by the
-        # CourtListener check below, which requires exactly one opinion at the
-        # citation and the token in its case name. Measured end to end, this
-        # lifts the seed grid from 3 of 5 shipping to 5 of 5 (legalfix.json).
+        # I did add a LOC tier here and it was wrong. It generated fine and was
+        # then refused at T6_gate with "R4 banned source ... (banned domain:
+        # loc.gov)" on exactly the two seeds it was meant to rescue, because the
+        # probe that blessed it called this generator directly and never ran
+        # sg.validate_trap. Net production gain was zero.
         #
-        # LOC titles read "u.s. reports: {case}, {vol} u.s. {page} ({year})."
-        # and a citation query returns ten titles from the SAME volume, so
-        # requiring the token alone would let a DIFFERENT case confirm the page.
-        # Both the token and the literal citation must occur in one title.
-        cite_str = _norm(f"{vol} u.s. {page}")
+        # So legal has exactly two independent operators of its own, Harvard LIL
+        # for the collection and Free Law Project for confirmation, and a
+        # three-operator gate can only be met where Cornell serves the text.
+        # Shippable coverage is therefore bounded by Cornell's page coverage:
+        # predicted 0.6061, observed seed ship rate 3 of 5 = 0.60. Raising it
+        # requires a new independent operator that is not banned, not a fallback.
         lii = f"https://www.law.cornell.edu/supremecourt/text/{vol}/{page}"
-        loc = ("https://www.loc.gov/collections/united-states-reports/"
-               "?q=" + up.quote(f"{vol} U.S. {page}") + "&fo=json&c=10")
         conf_url = None
         conf_operator = None
         try:
@@ -1473,20 +1472,6 @@ def gen_legal(vols=(504, 505, 498, 510, 512, 517)):
                 tried.append(f"vol {vol}: LII page {page} does not name {token!r}")
         except Exception as e:  # noqa: BLE001
             tried.append(f"vol {vol}: LII {type(e).__name__} for {page}")
-        if conf_url is None:
-            try:
-                js = net.get_json(loc, timeout=90, attempts=3)
-                titles = [_norm(r.get("title") or "")
-                          for r in (js.get("results") or [])]
-                if any(token in t and cite_str in t for t in titles):
-                    conf_url = loc
-                    conf_operator = "US Library of Congress"
-                else:
-                    tried.append(f"vol {vol}: Library of Congress does not name "
-                                 f"{token!r} at {vol} U.S. {page}")
-            except Exception as e:  # noqa: BLE001
-                tried.append(f"vol {vol}: Library of Congress "
-                             f"{type(e).__name__} for {page}")
         if conf_url is None:
             continue
 
@@ -1528,10 +1513,9 @@ def gen_legal(vols=(504, 505, 498, 510, 512, 517)):
                                        f"data in 2024, so treat {conf_operator} as the "
                                        "independent text of record. Cornell LII carries "
                                        "only 0.6061 of correctly constructed case-start "
-                                       "pages, so the Library of Congress bound-volume "
-                                       "digitisation is accepted in its place, requiring "
-                                       "the case name and the literal citation in one "
-                                       "title")},
+                                       "pages, and no unbanned independent operator "
+                                       "covers the remainder, so that fraction is this "
+                                       "trap's coverage ceiling rather than a defect")},
             prompt=build_prompt(
                 "The Caselaw Access Project distributes, as one machine-readable file, "
                 f"metadata for every case reported in volume {vol} of United States "

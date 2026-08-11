@@ -162,6 +162,15 @@ OPERATOR_MAP = {
     "congress.gov": "US Congress",
     "fec.gov": "US Federal Election Commission",
     "bts.gov": "US Bureau of Transportation Statistics",
+    "usda.gov": "US Department of Agriculture",
+    # The Federal Reserve Banks are NOT the Treasury. The Fed is a separate
+    # legal entity that buys Treasury paper on the open market, so when the New
+    # York Fed's SOMA holdings file lists a CUSIP it is a genuine witness to a
+    # security Treasury issued, not Treasury restating itself. Without this
+    # entry the host resolved to the bare string "newyorkfed.org", which the
+    # gate would have counted as an operator anyway but could never audit.
+    "newyorkfed.org": "Federal Reserve Bank of New York",
+    "federalreserve.gov": "US Federal Reserve Board",
 
     # --- non-US public bodies ---
     "clinicaltrialsregister.eu": "European Medicines Agency",
@@ -197,6 +206,11 @@ OPERATOR_MAP = {
     "oclc.org": "OCLC",
     "dnb.de": "German National Library",
     "culturegraph.org": "German National Library",
+    # OpenFIGI is Bloomberg's open security-identifier service. Bloomberg is a
+    # private company with no relationship to Treasury, the SEC or the Fed, so
+    # a CUSIP -> FIGI mapping is a fourth independent line on the same security.
+    "openfigi.com": "Bloomberg L.P.",
+    "bloomberg.com": "Bloomberg L.P.",
     "openfoodfacts.org": "Open Food Facts",
     "restcountries.com": "REST Countries project",
     "ourairports.com": "OurAirports",
@@ -211,6 +225,10 @@ OPERATOR_MAP = {
     "openalex.org": "OurResearch (OpenAlex)",
     "crossref.org": "Crossref",
     "datacite.org": "DataCite",
+    # ORCID, Inc. is the registrar OF the identifier, so it is the authoritative
+    # witness for an ORCID iD and is institutionally independent of any index
+    # that merely cites one (OpenAlex, Crossref, Europe PMC).
+    "orcid.org": "ORCID, Inc.",
     "europeana.eu": "Europeana Foundation",
     # Europe PMC is operated by EMBL-EBI. Distinct operator from NIH/NLM even
     # though the two indexes overlap on content: EBI runs its own ingest,
@@ -260,6 +278,40 @@ def resolve_operators(sources) -> dict:
     return out
 
 
+def vetted_operator(url: str):
+    """Operator ONLY when it came from an explicit mapping, else None.
+
+    resolve_operator() ends with ``OPERATOR_MAP.get(rd, rd)``, so a host that was
+    never vetted resolves to its own bare registrable domain.  Counting that
+    string as an operator promotes an unvetted site to an institution: a probe
+    of pre-1976 US patents reported "two independent confirming operators" when
+    the second was the literal string 'freepatentsonline.com', a commercial
+    mirror of the very USPTO data being confirmed.  Independence has to be
+    asserted by a human once, in OPERATOR_MAP, not inferred from DNS.
+    """
+    low = str(url or "").lower()
+    for prefix, op in SOURCE_OVERRIDES:
+        if prefix in low:
+            return op
+    return OPERATOR_MAP.get(registrable_domain(url))
+
+
+def vetted_operators(sources) -> dict:
+    """Map vetted operator -> source URLs. Unvetted hosts are dropped."""
+    out: dict[str, list] = {}
+    for s in sources or []:
+        op = vetted_operator(s)
+        if op:
+            out.setdefault(op, []).append(s)
+    return out
+
+
+def unvetted_hosts(sources) -> list:
+    """Registrable domains that are absent from OPERATOR_MAP / SOURCE_OVERRIDES."""
+    return sorted({registrable_domain(s) for s in (sources or [])
+                   if vetted_operator(s) is None and registrable_domain(s)})
+
+
 # --------------------------------------------------------------------------
 # Gate.
 # --------------------------------------------------------------------------
@@ -299,16 +351,26 @@ def check_sources(sources, min_operators=3, confirming_sources=None,
     for url, reason in banned_violations(srcs):
         v.append(f"R4 banned source {url} ({reason})")
 
-    ops = resolve_operators(srcs)
+    # Only explicitly mapped operators count. An unvetted host is not an
+    # institution just because it resolves in DNS.
+    ops = {op: u for op, u in vetted_operators(srcs).items()
+           if not str(op).startswith("UNRESOLVED-")}
     if len(ops) < min_operators:
         v.append(
             f"R3 only {len(ops)} independent operator(s) across {len(srcs)} source(s): "
             + "; ".join(f"{op} x{len(u)}" for op, u in sorted(ops.items()))
         )
 
-    unresolved = [op for op in ops if str(op).startswith("UNRESOLVED-")]
+    unresolved = [op for op in resolve_operators(srcs)
+                  if str(op).startswith("UNRESOLVED-")]
     if unresolved:
         v.append(f"R3 unattributable source host(s), operator cannot be verified: {unresolved}")
+
+    unvetted = unvetted_hosts(srcs)
+    if unvetted:
+        v.append(
+            "R3d unvetted source host(s) absent from OPERATOR_MAP, so they cannot "
+            f"be counted as independent operators: {unvetted}")
 
     if confirming_sources is None:
         v.append("R3b no answer-confirming source asserted")
@@ -320,8 +382,9 @@ def check_sources(sources, min_operators=3, confirming_sources=None,
             v.append("R3c no primary operator asserted, so self-confirmation "
                      "cannot be ruled out")
         else:
-            witness = sorted(o for o in resolve_operators(conf)
-                             if o != primary_operator)
+            witness = sorted(o for o in vetted_operators(conf)
+                             if o != primary_operator
+                             and not str(o).startswith("UNRESOLVED-"))
             if not witness:
                 v.append(
                     f"R3c every confirming source is run by the primary operator "
@@ -332,7 +395,9 @@ def check_sources(sources, min_operators=3, confirming_sources=None,
 def independent_witnesses(sources, confirming_sources, primary_operator):
     """Operators that confirm the answer and did NOT supply the ranked collection."""
     conf = [c for c in (confirming_sources or []) if c in list(sources or [])]
-    return sorted(o for o in resolve_operators(conf) if o != primary_operator)
+    return sorted(o for o in vetted_operators(conf)
+                  if o != primary_operator
+                  and not str(o).startswith("UNRESOLVED-"))
 
 
 def check_category(category):

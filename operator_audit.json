@@ -1,0 +1,505 @@
+{
+ "summary": {
+  "n_traps_audited": 14,
+  "R3_flips": [],
+  "T5_flips": [],
+  "n_R3_flips": 0,
+  "n_T5_flips": 0,
+  "unmapped_domains_in_catalog": {},
+  "defect": "source_gate.resolve_operator falls back to the bare registrable domain for hosts absent from OPERATOR_MAP, so an unvetted domain is counted as an independent institutional operator by R3 and by independent_witnesses()/T5."
+ },
+ "rows": [
+  {
+   "category": "history",
+   "answer": "113163827",
+   "primary_operator": "Nobel Prize Outreach",
+   "shipped_verdict": "ship",
+   "shipped_witness_tier": "gold",
+   "n_sources": 4,
+   "n_confirming_listed": 2,
+   "n_confirming_in_sources": 2,
+   "operators_as_shipped": [
+    "German National Library",
+    "Nobel Prize Outreach",
+    "OurResearch (OpenAlex)",
+    "Wikimedia Foundation"
+   ],
+   "operators_strict": [
+    "German National Library",
+    "Nobel Prize Outreach",
+    "OurResearch (OpenAlex)",
+    "Wikimedia Foundation"
+   ],
+   "unmapped_domains_counted_as_operators": [],
+   "witnesses_as_shipped": [
+    "German National Library",
+    "Wikimedia Foundation"
+   ],
+   "witnesses_strict": [
+    "German National Library",
+    "Wikimedia Foundation"
+   ],
+   "R3_pass_as_shipped": true,
+   "R3_pass_strict": true,
+   "T5_gold_as_shipped": true,
+   "T5_gold_strict": true,
+   "R3_flips": false,
+   "T5_flips": false
+  },
+  {
+   "category": "science and technology",
+   "answer": "2403.07505",
+   "primary_operator": "Cornell University",
+   "shipped_verdict": "ship",
+   "shipped_witness_tier": "gold",
+   "n_sources": 3,
+   "n_confirming_listed": 2,
+   "n_confirming_in_sources": 2,
+   "operators_as_shipped": [
+    "Cornell University",
+    "DataCite",
+    "OurResearch (OpenAlex)"
+   ],
+   "operators_strict": [
+    "Cornell University",
+    "DataCite",
+    "OurResearch (OpenAlex)"
+   ],
+   "unmapped_domains_counted_as_operators": [],
+   "witnesses_as_shipped": [
+    "DataCite",
+    "OurResearch (OpenAlex)"
+   ],
+   "witnesses_strict": [
+    "DataCite",
+    "OurResearch (OpenAlex)"
+   ],
+   "R3_pass_as_shipped": true,
+   "R3_pass_strict": true,
+   "T5_gold_as_shipped": true,
+   "T5_gold_strict": true,
+   "R3_flips": false,
+   "T5_flips": false
+  },
+  {
+   "category": "art",
+   "answer": "71.84",
+   "primary_operator": "Metropolitan Museum of Art",
+   "shipped_verdict": "hold",
+   "shipped_witness_tier": "silver",
+   "n_sources": 3,
+   "n_confirming_listed": 2,
+   "n_confirming_in_sources": 2,
+   "operators_as_shipped": [
+    "Europeana Foundation",
+    "Metropolitan Museum of Art",
+    "Wikimedia Foundation"
+   ],
+   "operators_strict": [
+    "Europeana Foundation",
+    "Metropolitan Museum of Art",
+    "Wikimedia Foundation"
+   ],
+   "unmapped_domains_counted_as_operators": [],
+   "witnesses_as_shipped": [
+    "Wikimedia Foundation"
+   ],
+   "witnesses_strict": [
+    "Wikimedia Foundation"
+   ],
+   "R3_pass_as_shipped": true,
+   "R3_pass_strict": true,
+   "T5_gold_as_shipped": false,
+   "T5_gold_strict": false,
+   "R3_flips": false,
+   "T5_flips": false
+  },
+  {
+   "category": "business",
+   "answer": "1341439",
+   "primary_operator": "US Securities and Exchange Commission",
+   "shipped_verdict": "hold",
+   "shipped_witness_tier": "silver",
+   "n_sources": 4,
+   "n_confirming_listed": 2,
+   "n_confirming_in_sources": 2,
+   "operators_as_shipped": [
+    "Global Legal Entity Identifier Foundation",
+    "US Securities and Exchange Commission",
+    "Wikimedia Foundation"
+   ],
+   "operators_strict": [
+    "Global Legal Entity Identifier Foundation",
+    "US Securities and Exchange Commission",
+    "Wikimedia Foundation"
+   ],
+   "unmapped_domains_counted_as_operators": [],
+   "witnesses_as_shipped": [
+    "Wikimedia Foundation"
+   ],
+   "witnesses_strict": [
+    "Wikimedia Foundation"
+   ],
+   "R3_pass_as_shipped": true,
+   "R3_pass_strict": true,
+   "T5_gold_as_shipped": false,
+   "T5_gold_strict": false,
+   "R3_flips": false,
+   "T5_flips": false
+  },
+  {
+   "category": "celebrities/public figures",
+   "answer": "119009846",
+   "primary_operator": "Nobel Prize Outreach",
+   "shipped_verdict": "ship",
+   "shipped_witness_tier": "gold",
+   "n_sources": 4,
+   "n_confirming_listed": 2,
+   "n_confirming_in_sources": 2,
+   "operators_as_shipped": [
+    "German National Library",
+    "Nobel Prize Outreach",
+    "OurResearch (OpenAlex)",
+    "Wikimedia Foundation"
+   ],
+   "operators_strict": [
+    "German National Library",
+    "Nobel Prize Outreach",
+    "OurResearch (OpenAlex)",
+    "Wikimedia Foundation"
+   ],
+   "unmapped_domains_counted_as_operators": [],
+   "witnesses_as_shipped": [
+    "German National Library",
+    "Wikimedia Foundation"
+   ],
+   "witnesses_strict": [
+    "German National Library",
+    "Wikimedia Foundation"
+   ],
+   "R3_pass_as_shipped": true,
+   "R3_pass_strict": true,
+   "T5_gold_as_shipped": true,
+   "T5_gold_strict": true,
+   "R3_flips": false,
+   "T5_flips": false
+  },
+  {
+   "category": "education",
+   "answer": "ntnu.no",
+   "primary_operator": "Hipo Labs",
+   "shipped_verdict": "hold",
+   "shipped_witness_tier": "silver",
+   "n_sources": 3,
+   "n_confirming_listed": 1,
+   "n_confirming_in_sources": 1,
+   "operators_as_shipped": [
+    "Hipo Labs",
+    "US Department of Education",
+    "Wikimedia Foundation"
+   ],
+   "operators_strict": [
+    "Hipo Labs",
+    "US Department of Education",
+    "Wikimedia Foundation"
+   ],
+   "unmapped_domains_counted_as_operators": [],
+   "witnesses_as_shipped": [
+    "Wikimedia Foundation"
+   ],
+   "witnesses_strict": [
+    "Wikimedia Foundation"
+   ],
+   "R3_pass_as_shipped": true,
+   "R3_pass_strict": true,
+   "T5_gold_as_shipped": false,
+   "T5_gold_strict": false,
+   "R3_flips": false,
+   "T5_flips": false
+  },
+  {
+   "category": "geography",
+   "answer": "SKIP",
+   "primary_operator": "OurAirports",
+   "shipped_verdict": "ship",
+   "shipped_witness_tier": "gold",
+   "n_sources": 4,
+   "n_confirming_listed": 2,
+   "n_confirming_in_sources": 2,
+   "operators_as_shipped": [
+    "OpenFlights",
+    "OurAirports",
+    "REST Countries project",
+    "Wikimedia Foundation"
+   ],
+   "operators_strict": [
+    "OpenFlights",
+    "OurAirports",
+    "REST Countries project",
+    "Wikimedia Foundation"
+   ],
+   "unmapped_domains_counted_as_operators": [],
+   "witnesses_as_shipped": [
+    "OpenFlights",
+    "Wikimedia Foundation"
+   ],
+   "witnesses_strict": [
+    "OpenFlights",
+    "Wikimedia Foundation"
+   ],
+   "R3_pass_as_shipped": true,
+   "R3_pass_strict": true,
+   "T5_gold_as_shipped": true,
+   "T5_gold_strict": true,
+   "R3_flips": false,
+   "T5_flips": false
+  },
+  {
+   "category": "health and medicine",
+   "answer": "NCT00021697",
+   "primary_operator": "US National Institutes of Health",
+   "shipped_verdict": "ship",
+   "shipped_witness_tier": "gold",
+   "n_sources": 4,
+   "n_confirming_listed": 2,
+   "n_confirming_in_sources": 2,
+   "operators_as_shipped": [
+    "EMBL-EBI",
+    "US Food and Drug Administration",
+    "US National Institutes of Health",
+    "Wikimedia Foundation"
+   ],
+   "operators_strict": [
+    "EMBL-EBI",
+    "US Food and Drug Administration",
+    "US National Institutes of Health",
+    "Wikimedia Foundation"
+   ],
+   "unmapped_domains_counted_as_operators": [],
+   "witnesses_as_shipped": [
+    "EMBL-EBI",
+    "Wikimedia Foundation"
+   ],
+   "witnesses_strict": [
+    "EMBL-EBI",
+    "Wikimedia Foundation"
+   ],
+   "R3_pass_as_shipped": true,
+   "R3_pass_strict": true,
+   "T5_gold_as_shipped": true,
+   "T5_gold_strict": true,
+   "R3_flips": false,
+   "T5_flips": false
+  },
+  {
+   "category": "legal",
+   "answer": "768",
+   "primary_operator": "Harvard Law School Library Innovation Lab",
+   "shipped_verdict": "ship",
+   "shipped_witness_tier": "gold",
+   "n_sources": 3,
+   "n_confirming_listed": 2,
+   "n_confirming_in_sources": 2,
+   "operators_as_shipped": [
+    "Cornell University",
+    "Free Law Project",
+    "Harvard Law School Library Innovation Lab"
+   ],
+   "operators_strict": [
+    "Cornell University",
+    "Free Law Project",
+    "Harvard Law School Library Innovation Lab"
+   ],
+   "unmapped_domains_counted_as_operators": [],
+   "witnesses_as_shipped": [
+    "Cornell University",
+    "Free Law Project"
+   ],
+   "witnesses_strict": [
+    "Cornell University",
+    "Free Law Project"
+   ],
+   "R3_pass_as_shipped": true,
+   "R3_pass_strict": true,
+   "T5_gold_as_shipped": true,
+   "T5_gold_strict": true,
+   "R3_flips": false,
+   "T5_flips": false
+  },
+  {
+   "category": "politics",
+   "answer": "13292",
+   "primary_operator": "US Office of the Federal Register",
+   "shipped_verdict": "hold",
+   "shipped_witness_tier": "silver",
+   "n_sources": 4,
+   "n_confirming_listed": 2,
+   "n_confirming_in_sources": 2,
+   "operators_as_shipped": [
+    "US Government Publishing Office",
+    "US Office of the Federal Register",
+    "Wikimedia Foundation"
+   ],
+   "operators_strict": [
+    "US Government Publishing Office",
+    "US Office of the Federal Register",
+    "Wikimedia Foundation"
+   ],
+   "unmapped_domains_counted_as_operators": [],
+   "witnesses_as_shipped": [
+    "Wikimedia Foundation"
+   ],
+   "witnesses_strict": [
+    "Wikimedia Foundation"
+   ],
+   "R3_pass_as_shipped": true,
+   "R3_pass_strict": true,
+   "T5_gold_as_shipped": false,
+   "T5_gold_strict": false,
+   "R3_flips": false,
+   "T5_flips": false
+  },
+  {
+   "category": "sports",
+   "answer": "22477",
+   "primary_operator": "Major League Baseball",
+   "shipped_verdict": "ship",
+   "shipped_witness_tier": "gold",
+   "n_sources": 4,
+   "n_confirming_listed": 2,
+   "n_confirming_in_sources": 2,
+   "operators_as_shipped": [
+    "Major League Baseball",
+    "OCLC",
+    "Retrosheet",
+    "Wikimedia Foundation"
+   ],
+   "operators_strict": [
+    "Major League Baseball",
+    "OCLC",
+    "Retrosheet",
+    "Wikimedia Foundation"
+   ],
+   "unmapped_domains_counted_as_operators": [],
+   "witnesses_as_shipped": [
+    "OCLC",
+    "Wikimedia Foundation"
+   ],
+   "witnesses_strict": [
+    "OCLC",
+    "Wikimedia Foundation"
+   ],
+   "R3_pass_as_shipped": true,
+   "R3_pass_strict": true,
+   "T5_gold_as_shipped": true,
+   "T5_gold_strict": true,
+   "R3_flips": false,
+   "T5_flips": false
+  },
+  {
+   "category": "travel",
+   "answer": "IVL",
+   "primary_operator": "OpenFlights",
+   "shipped_verdict": "ship",
+   "shipped_witness_tier": "gold",
+   "n_sources": 3,
+   "n_confirming_listed": 2,
+   "n_confirming_in_sources": 2,
+   "operators_as_shipped": [
+    "OpenFlights",
+    "OurAirports",
+    "Wikimedia Foundation"
+   ],
+   "operators_strict": [
+    "OpenFlights",
+    "OurAirports",
+    "Wikimedia Foundation"
+   ],
+   "unmapped_domains_counted_as_operators": [],
+   "witnesses_as_shipped": [
+    "OurAirports",
+    "Wikimedia Foundation"
+   ],
+   "witnesses_strict": [
+    "OurAirports",
+    "Wikimedia Foundation"
+   ],
+   "R3_pass_as_shipped": true,
+   "R3_pass_strict": true,
+   "T5_gold_as_shipped": true,
+   "T5_gold_strict": true,
+   "R3_flips": false,
+   "T5_flips": false
+  },
+  {
+   "category": "tv shows and movies",
+   "answer": "tt1278381",
+   "primary_operator": "IMDb (Amazon)",
+   "shipped_verdict": "hold",
+   "shipped_witness_tier": "silver",
+   "n_sources": 4,
+   "n_confirming_listed": 1,
+   "n_confirming_in_sources": 1,
+   "operators_as_shipped": [
+    "IMDb (Amazon)",
+    "TVmaze",
+    "Wikimedia Foundation"
+   ],
+   "operators_strict": [
+    "IMDb (Amazon)",
+    "TVmaze",
+    "Wikimedia Foundation"
+   ],
+   "unmapped_domains_counted_as_operators": [],
+   "witnesses_as_shipped": [
+    "Wikimedia Foundation"
+   ],
+   "witnesses_strict": [
+    "Wikimedia Foundation"
+   ],
+   "R3_pass_as_shipped": true,
+   "R3_pass_strict": true,
+   "T5_gold_as_shipped": false,
+   "T5_gold_strict": false,
+   "R3_flips": false,
+   "T5_flips": false
+  },
+  {
+   "category": "video games",
+   "answer": "Colossal Order",
+   "primary_operator": "Valve Corporation",
+   "shipped_verdict": "ship",
+   "shipped_witness_tier": "gold",
+   "n_sources": 4,
+   "n_confirming_listed": 3,
+   "n_confirming_in_sources": 2,
+   "operators_as_shipped": [
+    "PCGamingWiki",
+    "Pan European Game Information",
+    "Valve Corporation",
+    "Wikimedia Foundation"
+   ],
+   "operators_strict": [
+    "PCGamingWiki",
+    "Pan European Game Information",
+    "Valve Corporation",
+    "Wikimedia Foundation"
+   ],
+   "unmapped_domains_counted_as_operators": [],
+   "witnesses_as_shipped": [
+    "PCGamingWiki",
+    "Wikimedia Foundation"
+   ],
+   "witnesses_strict": [
+    "PCGamingWiki",
+    "Wikimedia Foundation"
+   ],
+   "R3_pass_as_shipped": true,
+   "R3_pass_strict": true,
+   "T5_gold_as_shipped": true,
+   "T5_gold_strict": true,
+   "R3_flips": false,
+   "T5_flips": false
+  }
+ ]
+}

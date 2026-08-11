@@ -1,5 +1,5 @@
 {
-  "evaluated_at": "2026-08-11T12:02:56Z",
+  "evaluated_at": "2026-08-11T13:58:40Z",
   "thresholds": {
     "max_uniform_guess": 0.1,
     "min_confirming_operators": 2,
@@ -814,8 +814,8 @@
     },
     {
       "category": "travel",
-      "answer": "IVL",
-      "field": "IATA code",
+      "answer": "6296543",
+      "field": "GeoNames identifier",
       "tests": {
         "T0_base_adequacy": {
           "pass": true,
@@ -859,7 +859,7 @@
         },
         "T5_confirmation": {
           "pass": true,
-          "detail": "2 independent witness(es): ['OurAirports', 'Wikimedia Foundation']; primary='OpenFlights'; 3 source operator(s): ['OpenFlights', 'OurAirports', 'Wikimedia Foundation']"
+          "detail": "3 independent witness(es): ['GeoNames', 'OurAirports', 'Wikimedia Foundation']; primary='OpenFlights'; 4 source operator(s): ['GeoNames', 'OpenFlights', 'OurAirports', 'Wikimedia Foundation']"
         },
         "T6_gate": {
           "pass": true,
@@ -867,13 +867,14 @@
         },
         "T7_prompt_leak": {
           "pass": true,
-          "detail": "word count 91"
+          "detail": "word count 90"
         }
       },
       "collection_is_explicit": false,
       "verdict": "ship",
       "primary_operator": "OpenFlights",
       "independent_witnesses": [
+        "GeoNames",
         "OurAirports",
         "Wikimedia Foundation"
       ],

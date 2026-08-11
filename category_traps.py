@@ -691,17 +691,43 @@ def gen_travel(airline_iata="AY", hub_iata="HEL"):
     # the IATA code, so an exact-value match cannot collide on a shared label
     # the way the geography name lookup did. Require uniqueness.
     wd = _wikidata_by_value("P238", answer, limit=5)
+    if len(wd) != 1:
+        raise TrapUnavailable(
+            f"travel: Wikidata P238 returned {len(wd)} items for {answer!r}, so the "
+            "winning airport cannot be pinned to one entity")
+    wq = wd[0]["qid"]
+    # ANSWER FIELD. The IATA code is printed in the winner's own encyclopaedia
+    # article (measured: yes for IVL, yes for ICAO EFIV, no for the GeoNames
+    # id), so answering with it hands stage 2 to recall. The GeoNames id is
+    # carried by a different operator and is absent from that article.
+    ent = net.wikidata_entity(wq)
+    claims = (ent.get("entities", {}).get(wq, {}) or {}).get("claims", {}) or {}
+    gn = [c["mainsnak"].get("datavalue", {}).get("value")
+          for c in claims.get("P1566", [])]
+    gn = [g for g in gn if isinstance(g, str) and g.strip()]
+    if len(gn) != 1:
+        raise TrapUnavailable(
+            f"travel: Wikidata {wq} carries {len(gn)} GeoNames ids for {answer}, "
+            "so the answer is not single-valued")
+    geoname_id = gn[0].strip()
+    try:
+        rdf = net.fetch(f"https://sws.geonames.org/{geoname_id}/about.rdf", timeout=90)
+    except Exception as e:  # noqa: BLE001
+        raise TrapUnavailable(
+            f"travel: GeoNames {geoname_id} did not resolve ({type(e).__name__})")
+    place = best[1]["name"].split()[0]
+    if place.lower() not in rdf.lower():
+        raise TrapUnavailable(
+            f"travel: GeoNames {geoname_id} does not name {place!r}")
     srcs = [_OPENFLIGHTS_RT, _OURAIRPORTS,
-            f"https://www.wikidata.org/w/index.php?search={answer}+airport"]
-    conf_srcs = [_OURAIRPORTS]
-    wq = None
-    if len(wd) == 1:
-        wq = wd[0]["qid"]
-        srcs[2] = f"https://www.wikidata.org/wiki/{wq}"
-        conf_srcs.append(srcs[2])
+            f"https://www.wikidata.org/wiki/{wq}",
+            f"https://sws.geonames.org/{geoname_id}/"]
+    conf_srcs = [_OURAIRPORTS, f"https://www.wikidata.org/wiki/{wq}",
+                 f"https://sws.geonames.org/{geoname_id}/"]
     return Candidate(
         category="travel",
-        primary_operator="OpenFlights", field="IATA code", answer=answer,
+        primary_operator="OpenFlights", field="GeoNames identifier",
+        answer=geoname_id,
         entity=best[1]["name"], n_base=len(base), sources=srcs,
         confirming_sources=conf_srcs,
         api_proof_argument=(
@@ -709,22 +735,29 @@ def gen_travel(airline_iata="AY", hub_iata="HEL"):
             "query interface. The northernmost destination exists only after joining the two "
             f"and ordering {len(base)} destinations by latitude."),
         confirmation=(f"OurAirports lists {answer} at latitude "
-                      f"{match[0]['latitude_deg']}"
-                      + (f"; Wikidata {wq} ({wd[0].get('label')!r}) carries P238 "
-                         f"{answer!r} uniquely" if wq else
-                         f"; Wikidata P238 returned {len(wd)} items for {answer!r}, "
-                         "so no second witness is claimed")),
+                      f"{match[0]['latitude_deg']}; Wikidata {wq} "
+                      f"({wd[0].get('label')!r}) carries P238 {answer!r} uniquely "
+                      f"and P1566 {geoname_id} uniquely; the GeoNames record "
+                      f"{geoname_id} resolves and names the place"),
         facts={"airline": airline_iata, "hub": hub_iata, "n": len(base),
-               "witness_qid": wq, "wikidata_p238_hits": len(wd)},
+               "witness_qid": wq, "wikidata_p238_hits": len(wd),
+               "iata_not_asked": answer,
+               "answer_field_class": "identifier",
+               "replaces": ("IATA code, withdrawn: measured as printed in the "
+                            "winner's own Wikipedia article, so stage 2 was "
+                            "free by recall while stage 1 was not"),
+               "stage1_key_leak": ("latitude found in 0 of 22 destination "
+                                   "articles, permuted control also 0.0, "
+                                   "excess 0.0, McNemar p = 1.0")},
         prompt=build_prompt(
             f"The OpenFlights project distributes an airline route table and a separate "
             f"airport table, each as a plain delimited file covering worldwide civil aviation.",
             f"Consider only the nonstop destinations served by the carrier with IATA code "
             f"{airline_iata} departing from its hub at {hub_iata}, as recorded in that route table.",
             "Join those destinations to the airport table and find the one lying furthest north.",
-            "Report the three-letter IATA code of that single northernmost destination.",
-            "Answer with the three-letter code only, capitalised, and nothing else.",
-            note="Cross-check the coordinates against a second independent aerodrome register."),
+            "Report the GeoNames database identifier of that single northernmost destination.",
+            "Answer with the numeric identifier only, digits and nothing else.",
+            note="Resolve the identifier at the gazetteer before answering."),
     )
 
 

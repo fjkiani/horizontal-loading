@@ -239,6 +239,7 @@ OPERATOR_MAP = {
     # Europe PMC and EBI as two independent witnesses. Required now because the
     # only working PMC PDF route lives on the europepmc.org host.
     "europepmc.org": "EMBL-EBI",
+    "geonames.org": "GeoNames",
     "osti.gov": "US Department of Energy",
     "imdbws.com": "IMDb (Amazon)",
     "imdb.com": "IMDb (Amazon)",

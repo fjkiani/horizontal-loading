@@ -19,7 +19,7 @@ from fastapi import FastAPI, HTTPException
 from fastapi.responses import FileResponse
 from fastapi.staticfiles import StaticFiles
 from pydantic import BaseModel
-from typing import Optional
+from typing import Any, Optional
 
 _REPO = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 sys.path.insert(0, _REPO)
@@ -28,6 +28,13 @@ import verify_joins as vj
 import stress_test_runner as str_
 import trap_generator as tg
 import source_gate as sg
+# Category-trap stack. Import order is load-bearing: gen_v2 then gen_v3 both mutate
+# ct.GENERATORS in place, and gen_v3 must win on the categories it re-points
+# (history, celebrities/public figures, education, sports).
+import category_traps as ct
+import gen_v2  # noqa: F401  installs its overrides into ct.GENERATORS on import
+import gen_v3  # noqa: F401  installs its overrides on top of gen_v2's
+import seed_roster
 from app import solvers
 
 WORKSPACE = _REPO
@@ -122,10 +129,58 @@ def prompt_image(pid: str):
 
 
 class GenerateRequest(BaseModel):
-    trap_class: str = "vision"           # only 'vision' is supported
+    # 'category' runs the API-native category track; 'vision' runs the
+    # newspaper walk. The console previously had no way to reach the first,
+    # which is why every category served one frozen trap.
+    trap_class: str = "vision"
+    category: Optional[str] = None       # category track: which of the 16
+    seed: Optional[Any] = None           # dict of generator kwargs, or int index
     lccn: Optional[str] = None           # newspaper to draw from (default: random seed)
     start_date: Optional[str] = None     # YYYY-MM-DD seed; default: randomized for novelty
     max_steps: int = 8                   # how many front pages to walk before giving up
+
+
+def _run_category_generate(job_id, category, kwargs, seed_index):
+    """Generate one category trap on demand and gate it before returning.
+
+    The gate result is reported, not hidden. A seed that fails is a measured
+    refusal with a stated reason -- an argmax at an endpoint, a population too
+    small for the guessability ceiling, a witness run by the primary operator --
+    and the console shows that reason rather than silently falling back to the
+    frozen trap.
+    """
+    def _p(phase, **extra):
+        with _JOBS_LOCK:
+            j = _JOBS.get(job_id)
+            if j and j.get("status") == "running":
+                j["progress"] = dict({"phase": phase}, **extra)
+                j.setdefault("log", []).append(j["progress"])
+                del j["log"][:-12]
+
+    try:
+        _p("traversing source APIs", category=category, seed=kwargs)
+        fn = ct.GENERATORS[category]
+        cand = fn(**kwargs)
+        trap = cand.to_trap()
+        _p("checking source independence")
+        ok, violations = sg.validate_trap(trap)
+        result = _api_trap_summary(trap) if ok else None
+        with _JOBS_LOCK:
+            _JOBS.setdefault(job_id, {}).update({
+                "status": "done" if ok else "refused",
+                "ended": time.time(),
+                "seed": kwargs, "seed_index": seed_index,
+                "result": result,
+                "violations": violations,
+                "detail": None if ok else
+                          "seed refused by the source gate: " + "; ".join(violations),
+            })
+    except Exception as e:  # noqa: BLE001
+        with _JOBS_LOCK:
+            _JOBS.setdefault(job_id, {}).update(
+                {"status": "refused" if type(e).__name__ == "TrapUnavailable" else "error",
+                 "seed": kwargs, "seed_index": seed_index,
+                 "detail": "%s: %s" % (type(e).__name__, e), "ended": time.time()})
 
 
 # Tracks the furthest date walked per paper so repeated Generate calls keep
@@ -200,8 +255,36 @@ def generate(req: GenerateRequest):
     NOTE: OCR-derived answers are NOT guaranteed correct until confirmed — two
     OCR engines have been observed to converge on the same wrong digit on
     degraded mastheads. Confirmed traps are in GET /api/generated."""
+    if req.trap_class == "category" or req.category:
+        cat = req.category
+        if cat not in ct.GENERATORS:
+            raise HTTPException(400, "unknown category %r; expected one of %s"
+                                % (cat, list(sg.CATEGORIES)))
+        if isinstance(req.seed, dict):
+            try:
+                kwargs, idx = seed_roster.validate_kwargs(cat, req.seed), None
+            except TypeError as e:
+                raise HTTPException(400, str(e))
+        elif isinstance(req.seed, int):
+            roster = seed_roster.seeds_for(cat)
+            idx = req.seed % len(roster)
+            kwargs = roster[idx]
+        else:
+            kwargs, idx = seed_roster.next_seed(cat)
+        job_id = uuid.uuid4().hex[:12]
+        with _JOBS_LOCK:
+            _JOBS[job_id] = {"status": "running", "started": time.time(),
+                             "category": cat, "seed": kwargs, "seed_index": idx,
+                             "progress": {"phase": "starting"}, "log": []}
+        threading.Thread(target=_run_category_generate,
+                         args=(job_id, cat, kwargs, idx), daemon=True).start()
+        return {"job_id": job_id, "status": "running",
+                "poll": "/api/generate/%s" % job_id, "category": cat,
+                "seed": kwargs, "seed_index": idx,
+                "note": "category generation traverses live source APIs; poll the job URL"}
+
     if req.trap_class != "vision":
-        raise HTTPException(400, "only trap_class='vision' is currently supported; "
+        raise HTTPException(400, "trap_class must be 'vision' or 'category'; "
                                  "the NIH ranking class was removed as non-reproducible")
     import random, datetime
     lccn = req.lccn or random.choice(list(tg.SEEDS.keys()))
@@ -226,6 +309,18 @@ def generate(req: GenerateRequest):
             "note": "generation runs in the background; poll the job URL for the result"}
 
 
+@app.get("/api/seeds")
+def list_seeds(category: str | None = None):
+    """The measured seed roster: 81 seeds across 16 categories, 53 of which
+    produced a gate-valid trap in the expansion sweep."""
+    if category is not None:
+        if category not in ct.GENERATORS:
+            raise HTTPException(400, "unknown category %r" % category)
+        return {"category": category, "seeds": seed_roster.seeds_for(category)}
+    return {"counts": seed_roster.roster_summary(),
+            "seeds": {c: seed_roster.seeds_for(c) for c in ct.GENERATORS}}
+
+
 @app.get("/api/generate/{job_id}")
 def generate_status(job_id: str):
     with _JOBS_LOCK:
@@ -239,10 +334,33 @@ def generate_status(job_id: str):
                 "progress": job.get("progress") or {},
                 "log": job.get("log") or []}
     if job["status"] == "error":
-        return {"job_id": job_id, "status": "error", "detail": job["detail"],
+        return {"job_id": job_id, "status": "error", "detail": job.get("detail"),
                 "elapsed": round(job.get("ended", time.time()) - job.get("started", time.time()), 1),
                 "log": job.get("log") or []}
-    return {"job_id": job_id, "status": "done", "result": job["result"]}
+    if job["status"] == "refused":
+        # A refusal is a RESULT, not a failure. The seed was traversed and the
+        # trap was rejected for a stated reason -- a tie at the extremum, a
+        # population too small for the guessability ceiling, or a witness run by
+        # the primary operator. Surfacing the reason is the whole point; the
+        # previous code fell through to the 'done' branch and raised KeyError
+        # on the missing 'result', turning every honest refusal into a 500.
+        return {"job_id": job_id, "status": "refused",
+                "detail": job.get("detail"),
+                "violations": job.get("violations") or [],
+                "category": job.get("category"), "seed": job.get("seed"),
+                "seed_index": job.get("seed_index"),
+                "elapsed": round(job.get("ended", time.time()) - job.get("started", time.time()), 1),
+                "log": job.get("log") or []}
+    if "result" not in job:
+        # Defensive: never let an unexpected terminal state 500. Report the
+        # state we actually observed instead of pretending it produced a trap.
+        return {"job_id": job_id, "status": job.get("status", "unknown"),
+                "detail": job.get("detail") or "terminal state carried no result",
+                "log": job.get("log") or []}
+    return {"job_id": job_id, "status": "done", "result": job["result"],
+            "category": job.get("category"), "seed": job.get("seed"),
+            "seed_index": job.get("seed_index"),
+            "elapsed": round(job.get("ended", time.time()) - job.get("started", time.time()), 1)}
 
 
 def _api_trap_summary(t):

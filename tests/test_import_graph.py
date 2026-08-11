@@ -39,7 +39,12 @@ OWNED_BY_GEN_V2 = {
 # 77,453), which made the traversal decorative. Pinned separately so a caller
 # that loads gen_v2 but forgets gen_v3 fails here rather than silently shipping
 # the memorable answers again.
-OWNED_BY_GEN_V3 = {"history", "celebrities/public figures"}
+# gen_v3 re-points four categories off memorable ANSWER FIELDS onto opaque
+# authority identifiers. education and sports were added in the same pass as
+# history and celebrities and must be pinned here too, or a regression that
+# silently hands them back to gen_v2 would reintroduce 'wit.ie' and 'Newton'
+# without failing a single test.
+OWNED_BY_GEN_V3 = {"history", "celebrities/public figures", "education", "sports"}
 
 OVERRIDE_OWNER = dict(
     [(k, "gen_v2") for k in OWNED_BY_GEN_V2] +

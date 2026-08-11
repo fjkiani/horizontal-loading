@@ -1,0 +1,87 @@
+{
+  "started": 1786428954.4709764,
+  "checks": {
+    "health": {
+      "code": 200,
+      "ok": true,
+      "at": 1786428955.4918666
+    },
+    "seeds": {
+      "code": 200,
+      "categories": 2,
+      "sample": "{'counts': {'geography': 7, 'travel': 6, 'science and technology': 4, 'health and medicine': 6, 'finance': 5, 'business': 6, 'history': 4, 'celebrities/public figures': 5, 'legal': 5, 'politics': 4, 'art': 6, 'sports': 4, 'tv shows and movies': 3, 'video games': 3, 'shopping': 5, 'education': 8}, 's",
+      "at": 1786428955.4968092
+    },
+    "seeds_filtered": {
+      "code": 200,
+      "body": "{'category': 'celebrities/public figures', 'seeds': [{}, {'category_key': 'Chemistry', 'y0': 1901, 'y1': 1975}, {'category_key': 'Physiology or Medicine', 'y0': 1901, 'y1': 1970}, {'category_key': 'Literature', 'y0': 1901, 'y1': 1980}, {'category_key': 'Peace', 'y0': 1901, 'y1': 1975}]}",
+      "at": 1786428955.5004234
+    },
+    "bad_category": {
+      "code": 400,
+      "expect": 400,
+      "pass_": true,
+      "detail": "{'detail': \"unknown category 'astrology'; expected one of ['science and technology', 'art', 'business', 'celebrities/public figures', 'education', 'finance', 'geography', 'health and medicine', 'histo",
+      "at": 1786428955.5045593
+    },
+    "bad_seed": {
+      "code": 400,
+      "expect": 400,
+      "pass_": true,
+      "detail": "{'detail': \"unknown seed parameters for 'celebrities/public figures': ['bogus']; accepted: ['category_key', 'y0', 'y1']\"}",
+      "at": 1786428955.507598
+    },
+    "celeb_submit": {
+      "code": 200,
+      "body": "{'job_id': 'fc7e97e81de9', 'status': 'running', 'poll': '/api/generate/fc7e97e81de9', 'category': 'celebrities/public figures', 'seed': {}, 'seed_index': 0, 'note': 'category generation traverses live source APIs; poll the job URL'}",
+      "at": 1786428955.52347
+    },
+    "celeb_result": {
+      "status": "done",
+      "answer": "119009846",
+      "field": "GND identifier",
+      "detail": "None",
+      "expect_answer": "119009846",
+      "pass_": true,
+      "at": 1786428957.5444953
+    },
+    "sports_result": {
+      "status": "done",
+      "answer": "22477",
+      "field": "FAST identifier",
+      "detail": "None",
+      "expect_answer": "22477",
+      "pass_": true,
+      "at": 1786428959.554056
+    },
+    "geography_roster": {
+      "n": 7,
+      "seeds": "[{}, {'country_iso': 'CH', 'country_name': 'Switzerland'}, {'country_iso': 'PE', 'country_name': 'Peru'}, {'country_iso': 'NP', 'country_name': 'Nepal'}, {'country_iso': 'BO', 'country_name': 'Bolivia'}, {'country_iso': 'EC', 'country_name': 'Ecuador'}, {'country_iso': 'KE', 'country_name': 'Kenya'}]",
+      "at": 1786428959.5545702
+    },
+    "geography_seed_1": {
+      "status": "refused",
+      "answer": null,
+      "detail": "TrapUnavailable: geography: only 5 qualifying aerodromes in CH; a uniform guess would be too strong",
+      "violations": "[]",
+      "at": 1786428961.7259512
+    },
+    "refusal_probe": {
+      "found_refusing_seed": 1,
+      "pass_": true,
+      "at": 1786428961.7264993
+    },
+    "vision_branch_error": {
+      "code": 400,
+      "detail": "{'detail': \"trap_class must be 'vision' or 'category'; the NIH ranking class was removed as non-reproducible\"}",
+      "pass_": true,
+      "at": 1786428961.7290463
+    }
+  },
+  "ended": 1786428961.7296085,
+  "elapsed_s": 7.3,
+  "summary": {
+    "passed": 6,
+    "failed": []
+  }
+}

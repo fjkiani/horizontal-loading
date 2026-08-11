@@ -1,0 +1,515 @@
+{
+ "countries": {
+  "Austria": {
+   "country": "Austria",
+   "n": 46,
+   "candidates": {
+    "domain_longest": {
+     "mode": "max",
+     "phrase": "whose primary internet domain is the longest",
+     "n": 46,
+     "ties_at_extremum_on_stated_property": 2,
+     "p_uniform": 0.0217,
+     "rho_vs_api_order": -0.1418,
+     "abs_rho": 0.1418,
+     "verdict": "refuse: extremum not unique on the stated property"
+    },
+    "domain_label_reversed_last": {
+     "mode": "max",
+     "phrase": "whose primary internet domain, with the characters of its first label read in reverse, sorts alphabetically last",
+     "n": 46,
+     "ties_at_extremum_on_stated_property": 1,
+     "p_uniform": 0.0217,
+     "rho_vs_api_order": 0.1256,
+     "abs_rho": 0.1256,
+     "winner_domain": "moz.ac.at",
+     "winner_name": "Universit\u00e4t Mozarteum Salzburg",
+     "winner_position": 28,
+     "depth": 0.6222,
+     "max_endpoint_exploit": 0.0,
+     "witness": {
+      "ok": false,
+      "p856_host": "uni-mozarteum.at",
+      "qid": "Q871369",
+      "reason": "P856 host 'uni-mozarteum.at' != key domain 'moz.ac.at'"
+     },
+     "verdict": "refuse: witness P856 host 'uni-mozarteum.at' != key domain 'moz.ac.at'"
+    }
+   }
+  },
+  "Chile": {
+   "country": "Chile",
+   "n": 65,
+   "candidates": {
+    "domain_longest": {
+     "mode": "max",
+     "phrase": "whose primary internet domain is the longest",
+     "n": 65,
+     "ties_at_extremum_on_stated_property": 1,
+     "p_uniform": 0.0154,
+     "rho_vs_api_order": -0.1694,
+     "abs_rho": 0.1694,
+     "winner_domain": "universidadarcis.cl",
+     "winner_name": "Universidad Arcis",
+     "winner_position": 49,
+     "depth": 0.7656,
+     "max_endpoint_exploit": 0.0,
+     "witness": {
+      "ok": false,
+      "p856_host": "uarcis.cl",
+      "qid": "Q7895089",
+      "reason": "P856 host 'uarcis.cl' != key domain 'universidadarcis.cl'"
+     },
+     "verdict": "refuse: witness P856 host 'uarcis.cl' != key domain 'universidadarcis.cl'"
+    },
+    "domain_label_reversed_last": {
+     "mode": "max",
+     "phrase": "whose primary internet domain, with the characters of its first label read in reverse, sorts alphabetically last",
+     "n": 65,
+     "ties_at_extremum_on_stated_property": 1,
+     "p_uniform": 0.0154,
+     "rho_vs_api_order": 0.0485,
+     "abs_rho": 0.0485,
+     "winner_domain": "uv.cl",
+     "winner_name": "Universidad de Valparaiso",
+     "winner_position": 61,
+     "depth": 0.9531,
+     "max_endpoint_exploit": 0.2,
+     "verdict": "refuse: endpoint exploit 0.2000 > 0.1"
+    }
+   }
+  },
+  "Portugal": {
+   "country": "Portugal",
+   "n": 65,
+   "candidates": {
+    "domain_longest": {
+     "mode": "max",
+     "phrase": "whose primary internet domain is the longest",
+     "n": 65,
+     "ties_at_extremum_on_stated_property": 1,
+     "p_uniform": 0.0154,
+     "rho_vs_api_order": 0.0839,
+     "abs_rho": 0.0839,
+     "winner_domain": "universidade-autonoma.pt",
+     "winner_name": "Universidade Aut\u00f3noma de Lisboa Lu\u00eds de Camoes",
+     "winner_position": 55,
+     "depth": 0.8594,
+     "max_endpoint_exploit": 0.1,
+     "witness": {
+      "ok": false,
+      "p856_host": "autonoma.pt",
+      "qid": "Q168458",
+      "reason": "P856 host 'autonoma.pt' != key domain 'universidade-autonoma.pt'"
+     },
+     "verdict": "refuse: witness P856 host 'autonoma.pt' != key domain 'universidade-autonoma.pt'"
+    },
+    "domain_label_reversed_last": {
+     "mode": "max",
+     "phrase": "whose primary internet domain, with the characters of its first label read in reverse, sorts alphabetically last",
+     "n": 65,
+     "ties_at_extremum_on_stated_property": 1,
+     "p_uniform": 0.0154,
+     "rho_vs_api_order": 0.072,
+     "abs_rho": 0.072,
+     "winner_domain": "europeanuniversity.pt",
+     "winner_name": "European University Portugal",
+     "winner_position": 4,
+     "depth": 0.0625,
+     "max_endpoint_exploit": 0.0,
+     "witness": {
+      "ok": false,
+      "reason": "no P856 on the matched item",
+      "qid": null
+     },
+     "verdict": "refuse: witness no P856 on the matched item"
+    }
+   }
+  },
+  "Hungary": {
+   "country": "Hungary",
+   "n": 42,
+   "candidates": {
+    "domain_longest": {
+     "mode": "max",
+     "phrase": "whose primary internet domain is the longest",
+     "n": 42,
+     "ties_at_extremum_on_stated_property": 1,
+     "p_uniform": 0.0238,
+     "rho_vs_api_order": 0.3092,
+     "abs_rho": 0.3092,
+     "winner_domain": "uni-corvinus.hu",
+     "winner_name": "Corvinus University of Budapest",
+     "winner_position": 38,
+     "depth": 0.9268,
+     "max_endpoint_exploit": 0.2,
+     "verdict": "refuse: endpoint exploit 0.2000 > 0.1"
+    },
+    "domain_label_reversed_last": {
+     "mode": "max",
+     "phrase": "whose primary internet domain, with the characters of its first label read in reverse, sorts alphabetically last",
+     "n": 42,
+     "ties_at_extremum_on_stated_property": 1,
+     "p_uniform": 0.0238,
+     "rho_vs_api_order": -0.1151,
+     "abs_rho": 0.1151,
+     "winner_domain": "filmacademy.hu",
+     "winner_name": "Academy of Drama and Film",
+     "winner_position": 14,
+     "depth": 0.3415,
+     "max_endpoint_exploit": 0.0,
+     "witness": {
+      "ok": false,
+      "p856_host": "szfe.hu",
+      "qid": "Q1303297",
+      "reason": "P856 host 'szfe.hu' != key domain 'filmacademy.hu'"
+     },
+     "verdict": "refuse: witness P856 host 'szfe.hu' != key domain 'filmacademy.hu'"
+    }
+   }
+  },
+  "Ireland": {
+   "country": "Ireland",
+   "n": 27,
+   "candidates": {
+    "domain_longest": {
+     "mode": "max",
+     "phrase": "whose primary internet domain is the longest",
+     "n": 27,
+     "ties_at_extremum_on_stated_property": 1,
+     "p_uniform": 0.037,
+     "rho_vs_api_order": 0.037,
+     "abs_rho": 0.037,
+     "winner_domain": "shannoncollege.com",
+     "winner_name": "Shannon College of Hotel Management",
+     "winner_position": 16,
+     "depth": 0.6154,
+     "max_endpoint_exploit": 0.0,
+     "witness": {
+      "ok": true,
+      "p856_host": "shannoncollege.com",
+      "qid": "Q7488842",
+      "reason": ""
+     },
+     "verdict": "ACCEPT"
+    },
+    "domain_label_reversed_last": {
+     "mode": "max",
+     "phrase": "whose primary internet domain, with the characters of its first label read in reverse, sorts alphabetically last",
+     "n": 27,
+     "ties_at_extremum_on_stated_property": 1,
+     "p_uniform": 0.037,
+     "rho_vs_api_order": -0.0531,
+     "abs_rho": 0.0531,
+     "winner_domain": "nuigalway.ie",
+     "winner_name": "University of Galway",
+     "winner_position": 21,
+     "depth": 0.8077,
+     "max_endpoint_exploit": 0.1,
+     "witness": {
+      "ok": false,
+      "p856_host": "universityofgalway.ie",
+      "qid": "Q644478",
+      "reason": "P856 host 'universityofgalway.ie' != key domain 'nuigalway.ie'"
+     },
+     "verdict": "refuse: witness P856 host 'universityofgalway.ie' != key domain 'nuigalway.ie'"
+    }
+   }
+  },
+  "Denmark": {
+   "country": "Denmark",
+   "n": 34,
+   "candidates": {
+    "domain_longest": {
+     "mode": "max",
+     "phrase": "whose primary internet domain is the longest",
+     "n": 34,
+     "ties_at_extremum_on_stated_property": 1,
+     "p_uniform": 0.0294,
+     "rho_vs_api_order": 0.4308,
+     "abs_rho": 0.4308,
+     "winner_domain": "knightsbridgeuniversity.com",
+     "winner_name": "Knightsbridge University",
+     "winner_position": 21,
+     "depth": 0.6364,
+     "max_endpoint_exploit": 0.0,
+     "verdict": "refuse: abs_rho 0.4308 > 0.4"
+    },
+    "domain_label_reversed_last": {
+     "mode": "max",
+     "phrase": "whose primary internet domain, with the characters of its first label read in reverse, sorts alphabetically last",
+     "n": 34,
+     "ties_at_extremum_on_stated_property": 1,
+     "p_uniform": 0.0294,
+     "rho_vs_api_order": 0.086,
+     "abs_rho": 0.086,
+     "winner_domain": "knightsbridgeuniversity.com",
+     "winner_name": "Knightsbridge University",
+     "winner_position": 21,
+     "depth": 0.6364,
+     "max_endpoint_exploit": 0.0,
+     "witness": {
+      "ok": false,
+      "reason": "no P856 on the matched item",
+      "qid": "Q6422555"
+     },
+     "verdict": "refuse: witness no P856 on the matched item"
+    }
+   }
+  },
+  "Israel": {
+   "country": "Israel",
+   "n": 24,
+   "candidates": {
+    "domain_longest": {
+     "mode": "max",
+     "phrase": "whose primary internet domain is the longest",
+     "n": 24,
+     "ties_at_extremum_on_stated_property": 1,
+     "p_uniform": 0.0417,
+     "rho_vs_api_order": 0.1192,
+     "abs_rho": 0.1192,
+     "winner_domain": "rbni.technion.ac.il",
+     "winner_name": "Russell Berrie Nanotechnology Institute",
+     "winner_position": 15,
+     "depth": 0.6522,
+     "max_endpoint_exploit": 0.1,
+     "witness": {
+      "ok": true,
+      "p856_host": "rbni.technion.ac.il",
+      "qid": "Q7381357",
+      "reason": ""
+     },
+     "verdict": "ACCEPT"
+    },
+    "domain_label_reversed_last": {
+     "mode": "max",
+     "phrase": "whose primary internet domain, with the characters of its first label read in reverse, sorts alphabetically last",
+     "n": 24,
+     "ties_at_extremum_on_stated_property": 1,
+     "p_uniform": 0.0417,
+     "rho_vs_api_order": 0.1374,
+     "abs_rho": 0.1374,
+     "winner_domain": "openu.ac.il",
+     "winner_name": "Open University of Israel",
+     "winner_position": 14,
+     "depth": 0.6087,
+     "max_endpoint_exploit": 0.1,
+     "witness": {
+      "ok": true,
+      "p856_host": "openu.ac.il",
+      "qid": "Q1423960",
+      "reason": ""
+     },
+     "verdict": "ACCEPT"
+    }
+   }
+  },
+  "Finland": {
+   "country": "Finland",
+   "n": 35,
+   "candidates": {
+    "domain_longest": {
+     "mode": "max",
+     "phrase": "whose primary internet domain is the longest",
+     "n": 35,
+     "ties_at_extremum_on_stated_property": 1,
+     "p_uniform": 0.0286,
+     "rho_vs_api_order": 0.0865,
+     "abs_rho": 0.0865,
+     "winner_domain": "metropolia.fi",
+     "winner_name": "Metropolia University of Applied Sciences",
+     "winner_position": 33,
+     "depth": 0.9706,
+     "max_endpoint_exploit": 0.3333,
+     "verdict": "refuse: endpoint exploit 0.3333 > 0.1"
+    },
+    "domain_label_reversed_last": {
+     "mode": "max",
+     "phrase": "whose primary internet domain, with the characters of its first label read in reverse, sorts alphabetically last",
+     "n": 35,
+     "ties_at_extremum_on_stated_property": 1,
+     "p_uniform": 0.0286,
+     "rho_vs_api_order": -0.2048,
+     "abs_rho": 0.2048,
+     "winner_domain": "puv.fi",
+     "winner_name": "Vaasa University of Applied Sciences",
+     "winner_position": 15,
+     "depth": 0.4412,
+     "max_endpoint_exploit": 0.0,
+     "witness": {
+      "ok": true,
+      "p856_host": "puv.fi",
+      "qid": "Q834778",
+      "reason": ""
+     },
+     "verdict": "ACCEPT"
+    }
+   }
+  },
+  "Norway": {
+   "country": "Norway",
+   "n": 25,
+   "candidates": {
+    "domain_longest": {
+     "mode": "max",
+     "phrase": "whose primary internet domain is the longest",
+     "n": 25,
+     "ties_at_extremum_on_stated_property": 1,
+     "p_uniform": 0.04,
+     "rho_vs_api_order": 0.1686,
+     "abs_rho": 0.1686,
+     "winner_domain": "kristiania.no",
+     "winner_name": "Kristiania University College",
+     "winner_position": 23,
+     "depth": 0.9583,
+     "max_endpoint_exploit": 0.3333,
+     "verdict": "refuse: endpoint exploit 0.3333 > 0.1"
+    },
+    "domain_label_reversed_last": {
+     "mode": "max",
+     "phrase": "whose primary internet domain, with the characters of its first label read in reverse, sorts alphabetically last",
+     "n": 25,
+     "ties_at_extremum_on_stated_property": 1,
+     "p_uniform": 0.04,
+     "rho_vs_api_order": 0.0746,
+     "abs_rho": 0.0746,
+     "winner_domain": "ntnu.no",
+     "winner_name": "Norwegian University of Science and Technology",
+     "winner_position": 15,
+     "depth": 0.625,
+     "max_endpoint_exploit": 0.1,
+     "witness": {
+      "ok": true,
+      "p856_host": "ntnu.no",
+      "qid": "Q314536",
+      "reason": ""
+     },
+     "verdict": "ACCEPT"
+    }
+   }
+  }
+ },
+ "thresholds": {
+  "MAX_ABS_RHO": 0.4,
+  "MAX_EXPLOIT": 0.1,
+  "MIN_N": 20
+ },
+ "accepted": [
+  {
+   "country": "Ireland",
+   "key": "domain_longest",
+   "mode": "max",
+   "phrase": "whose primary internet domain is the longest",
+   "n": 27,
+   "ties_at_extremum_on_stated_property": 1,
+   "p_uniform": 0.037,
+   "rho_vs_api_order": 0.037,
+   "abs_rho": 0.037,
+   "winner_domain": "shannoncollege.com",
+   "winner_name": "Shannon College of Hotel Management",
+   "winner_position": 16,
+   "depth": 0.6154,
+   "max_endpoint_exploit": 0.0,
+   "witness": {
+    "ok": true,
+    "p856_host": "shannoncollege.com",
+    "qid": "Q7488842",
+    "reason": ""
+   },
+   "verdict": "ACCEPT"
+  },
+  {
+   "country": "Israel",
+   "key": "domain_longest",
+   "mode": "max",
+   "phrase": "whose primary internet domain is the longest",
+   "n": 24,
+   "ties_at_extremum_on_stated_property": 1,
+   "p_uniform": 0.0417,
+   "rho_vs_api_order": 0.1192,
+   "abs_rho": 0.1192,
+   "winner_domain": "rbni.technion.ac.il",
+   "winner_name": "Russell Berrie Nanotechnology Institute",
+   "winner_position": 15,
+   "depth": 0.6522,
+   "max_endpoint_exploit": 0.1,
+   "witness": {
+    "ok": true,
+    "p856_host": "rbni.technion.ac.il",
+    "qid": "Q7381357",
+    "reason": ""
+   },
+   "verdict": "ACCEPT"
+  },
+  {
+   "country": "Israel",
+   "key": "domain_label_reversed_last",
+   "mode": "max",
+   "phrase": "whose primary internet domain, with the characters of its first label read in reverse, sorts alphabetically last",
+   "n": 24,
+   "ties_at_extremum_on_stated_property": 1,
+   "p_uniform": 0.0417,
+   "rho_vs_api_order": 0.1374,
+   "abs_rho": 0.1374,
+   "winner_domain": "openu.ac.il",
+   "winner_name": "Open University of Israel",
+   "winner_position": 14,
+   "depth": 0.6087,
+   "max_endpoint_exploit": 0.1,
+   "witness": {
+    "ok": true,
+    "p856_host": "openu.ac.il",
+    "qid": "Q1423960",
+    "reason": ""
+   },
+   "verdict": "ACCEPT"
+  },
+  {
+   "country": "Finland",
+   "key": "domain_label_reversed_last",
+   "mode": "max",
+   "phrase": "whose primary internet domain, with the characters of its first label read in reverse, sorts alphabetically last",
+   "n": 35,
+   "ties_at_extremum_on_stated_property": 1,
+   "p_uniform": 0.0286,
+   "rho_vs_api_order": -0.2048,
+   "abs_rho": 0.2048,
+   "winner_domain": "puv.fi",
+   "winner_name": "Vaasa University of Applied Sciences",
+   "winner_position": 15,
+   "depth": 0.4412,
+   "max_endpoint_exploit": 0.0,
+   "witness": {
+    "ok": true,
+    "p856_host": "puv.fi",
+    "qid": "Q834778",
+    "reason": ""
+   },
+   "verdict": "ACCEPT"
+  },
+  {
+   "country": "Norway",
+   "key": "domain_label_reversed_last",
+   "mode": "max",
+   "phrase": "whose primary internet domain, with the characters of its first label read in reverse, sorts alphabetically last",
+   "n": 25,
+   "ties_at_extremum_on_stated_property": 1,
+   "p_uniform": 0.04,
+   "rho_vs_api_order": 0.0746,
+   "abs_rho": 0.0746,
+   "winner_domain": "ntnu.no",
+   "winner_name": "Norwegian University of Science and Technology",
+   "winner_position": 15,
+   "depth": 0.625,
+   "max_endpoint_exploit": 0.1,
+   "witness": {
+    "ok": true,
+    "p856_host": "ntnu.no",
+    "qid": "Q314536",
+    "reason": ""
+   },
+   "verdict": "ACCEPT"
+  }
+ ]
+}

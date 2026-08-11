@@ -1,0 +1,70 @@
+{
+ "subjects": {
+  "SHIPPED:wit.ie": {
+   "name": "Waterford Institute of Technology",
+   "domain": "wit.ie",
+   "matched_label": "Waterford Institute of Technology",
+   "qid": "Q7974025",
+   "p856_host": "wit.ie",
+   "p856_matches_domain": true,
+   "death_signals": {},
+   "is_live": true,
+   "verdict": "USABLE"
+  },
+  "Ireland:shannoncollege.com": {
+   "name": "Shannon College of Hotel Management",
+   "domain": "shannoncollege.com",
+   "matched_label": "Shannon College of Hotel Management",
+   "qid": "Q7488842",
+   "p856_host": "shannoncollege.com",
+   "p856_matches_domain": true,
+   "death_signals": {},
+   "is_live": true,
+   "verdict": "USABLE"
+  },
+  "Israel:rbni.technion.ac.il": {
+   "name": "Russell Berrie Nanotechnology Institute",
+   "domain": "rbni.technion.ac.il",
+   "matched_label": "Russell Berrie Nanotechnology Institute",
+   "qid": "Q7381357",
+   "p856_host": "rbni.technion.ac.il",
+   "p856_matches_domain": true,
+   "death_signals": {},
+   "is_live": true,
+   "verdict": "USABLE"
+  },
+  "Israel:openu.ac.il": {
+   "name": "Open University of Israel",
+   "domain": "openu.ac.il",
+   "matched_label": "Open University of Israel",
+   "qid": "Q1423960",
+   "p856_host": "openu.ac.il",
+   "p856_matches_domain": true,
+   "death_signals": {},
+   "is_live": true,
+   "verdict": "USABLE"
+  },
+  "Finland:puv.fi": {
+   "name": "Vaasa University of Applied Sciences",
+   "domain": "puv.fi",
+   "matched_label": "Vaasa University of Applied Sciences",
+   "qid": "Q834778",
+   "p856_host": "puv.fi",
+   "p856_matches_domain": true,
+   "death_signals": {},
+   "is_live": true,
+   "verdict": "USABLE"
+  },
+  "Norway:ntnu.no": {
+   "name": "Norwegian University of Science and Technology",
+   "domain": "ntnu.no",
+   "matched_label": "Norwegian University of Science and Technology",
+   "qid": "Q314536",
+   "p856_host": "ntnu.no",
+   "p856_matches_domain": true,
+   "death_signals": {},
+   "is_live": true,
+   "verdict": "USABLE"
+  }
+ }
+}

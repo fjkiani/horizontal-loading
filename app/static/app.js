@@ -45,6 +45,15 @@ function showGenerated(t) {
       html += `<div class="kv warn">One witness only. A single confirming operator cannot be cross-checked against a second, so a systematic error in that operator's record would not be detected here.</div>`;
     }
     if (t.confirmation) html += `<div class="kv"><b>Confirmation:</b> ${esc(t.confirmation)}</div>`;
+    if (t.witness_scope) html += `<div class="kv"><b>What the witness covers:</b> ${esc(t.witness_scope)}</div>`;
+    // Defects measured on this trap are shown next to the answer, not buried in
+    // a report. A trap that is served with a known leak has to say so.
+    const kd = t.known_defects || {};
+    const kdk = Object.keys(kd);
+    if (kdk.length) {
+      html += `<div class="kv warn"><b>Known defects measured on this trap (${kdk.length}):</b><ul class="trace">` +
+        kdk.map((k) => `<li>${esc(kd[k])}</li>`).join("") + `</ul></div>`;
+    }
     if (t.source_operators) html += `<div class="kv"><b>All operators:</b> ${esc((t.source_operators || []).join(", "))}</div>`;
   } else {
     html += `<div class="kv"><b>Paper:</b> ${esc(t.paper)} · <b>Date:</b> ${esc(t.date)} · <b>Field:</b> ${esc(t.field)}</div>`;

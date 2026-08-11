@@ -272,6 +272,14 @@ def _api_trap_summary(t):
         "witness_tier": "gold" if len(ind) >= 2 else ("silver" if ind else "unwitnessed"),
         "confirmation": t.get("confirmation"),
         "sources": t.get("sources"),
+        # Surface facts, and lift any key named known_defect_* into a top-level
+        # list. A measured defect recorded only in the generator is a defect the
+        # consumer never sees; the whole point of writing them down is that
+        # anything serving this trap has to see them too.
+        "facts": t.get("facts") or {},
+        "known_defects": {k: v for k, v in (t.get("facts") or {}).items()
+                          if k.startswith("known_defect")},
+        "witness_scope": (t.get("facts") or {}).get("witness_scope"),
         "image_url": None,
     }
 

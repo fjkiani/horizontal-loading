@@ -225,20 +225,33 @@ def main():
                 # result. Gate-pass is NOT ship -- the retracted legalfix probe
                 # made exactly this error and produced a false "5 of 5 seeds".
                 # A prompt only enters the pool with an evaluate_one verdict.
-                ev, verdict, tier, failing = None, "error", None, None
+                ev, verdict, tier, failing, unproven = None, "error", None, None, None
                 try:
                     ev = et.evaluate_one(cat, {"status": "ok", "trap": trap})
                     verdict = ev.get("verdict")
                     tier = ev.get("witness_tier")
+                    # evaluate_one returns tests[name] = {"pass": bool|None,
+                    # "detail": str}. The original predicate here was `if not v`,
+                    # and v is a non-empty dict, so it was ALWAYS falsey-negative:
+                    # every one of the 81 seeds recorded failing_tests == [],
+                    # including all 24 holds. The verdict was still correct
+                    # (it is read straight off ev["verdict"]), but the REASON
+                    # for every hold was silently discarded, and the roadmap
+                    # built on it was wrong. `pass is False` and `pass is None`
+                    # are kept apart: False is a measured failure, None is an
+                    # unproven test, and conflating them is how a hold gets
+                    # mistaken for a refusal.
                     failing = sorted(k for k, v in (ev.get("tests") or {}).items()
-                                     if not v)
+                                     if isinstance(v, dict) and v.get("pass") is False)
+                    unproven = sorted(k for k, v in (ev.get("tests") or {}).items()
+                                      if isinstance(v, dict) and v.get("pass") is None)
                 except Exception as ee:  # noqa: BLE001
                     rec["eval_error"] = f"{type(ee).__name__}: {ee}"
                 rank = dict(ct.LAST_RANK or {})
                 rec.update({
                     "ok": bool(ok), "violations": viol,
                     "verdict": verdict, "witness_tier": tier,
-                    "failing_tests": failing,
+                    "failing_tests": failing, "unproven_tests": unproven,
                     "ships": verdict == "ship",
                     "trap_id": trap_id(cat, trap.get("field"),
                                        str(trap.get("answer"))),

@@ -751,7 +751,7 @@ def _vg_key(name):
     return re.sub(r"[^a-z0-9]+", "", str(name or "").lower())
 
 
-def gen_video_games(appids=_VG_ROSTER):
+def gen_video_games(appids=_VG_ROSTER, **_seed_ignored):
     # WITHDRAWN -- the key is derivable from the prompt itself.
     # The prompt prints the roster of application identifiers. Among the 14
     # printed ids, `citiesskylines` sorts first, and the answer is its studio,

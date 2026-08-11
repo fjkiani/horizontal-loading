@@ -19,10 +19,12 @@ Failure is reported, never padded.
 """
 from __future__ import annotations
 
+import contextlib as _contextlib
 import csv
 import io
 import json
 import re
+import threading as _threading
 import datetime as _dt
 import urllib.parse as up
 import xml.etree.ElementTree as ET
@@ -33,7 +35,29 @@ import source_gate as sg
 
 
 class TrapUnavailable(RuntimeError):
-    """Raised when a category cannot yield a spec-compliant trap right now."""
+    """Raised when a category cannot yield a spec-compliant trap right now.
+
+    WITHDRAWN-GENERATOR CONVENTION. A generator that has been withdrawn on
+    measured grounds raises this as its first statement and takes
+    `**_seed_ignored`. The withdrawal is a property of the category, not of the
+    arguments, so it must hold under every seed -- including seeds written for
+    the signature the generator had BEFORE it was withdrawn.
+
+    This is not cosmetic. The live API rotates a seed roster, and the finance
+    roster still carried {"year": 2010|2014|2021|2023} from the pre-withdrawal
+    signature. Because the raise sat after `def gen_finance(seeds=SEEDS)`,
+    Python rejected the call at binding time and the deployed service returned
+
+        TypeError: gen_finance() got an unexpected keyword argument 'year'
+
+    as a job status of "error" -- indistinguishable from a crash -- instead of
+    the honest "refused" that art returned. An audit of all 81 roster seeds
+    against all 16 live signatures (apifix_audit.py) found exactly 4 such
+    bindings, all finance; `**_seed_ignored` on the five withdrawn stubs closes
+    the class, and tests/test_seed_roster.py pins it so a future signature
+    change cannot reopen it. LIVE generators deliberately do NOT get
+    `**_seed_ignored`: there a drifted seed must still fail loudly.
+    """
 
 
 @dataclass
@@ -107,9 +131,53 @@ def build_prompt(collection, constraint, isolation, ask, fmt, note=""):
     return p
 
 
+# ClinicalTrials.gov serves 200 studies per page. Ten pages is 2000 studies,
+# well past every condition in the seed roster (largest: multiple sclerosis at
+# 235) while still bounding the cost of a pathological seed.
+_CT_MAX_PAGES = 10
+
 # Ranking evidence for the most recent _pick_extreme call. The runner clears this
 # before each generator and Candidate.to_trap() attaches it to the emitted trap.
 LAST_RANK = {}
+
+# LAST_RANK is a MODULE GLOBAL that _pick_extreme rebinds and to_trap() reads
+# after the generator's witness round trips have completed. The build driver is
+# single-threaded so it never noticed, but the API spawns one daemon thread per
+# /api/generate request and held no lock: any generation that ranked inside
+# another's witness window overwrote the evidence the first one was about to
+# attach. Measured with two interleaved fake generators (apirace.py, 200 trials,
+# 2 ms witness window): 200 of 200 contaminated -- trap A, n=40, shipped with
+# trap B's evidence, n_base 17 and top key 119. Deterministic, not flaky.
+#
+# That matters more now than it did before, because every depth / order-leak /
+# separation / guessability test reads ranking_evidence. An unlocked API would
+# have been scoring the wrong population and calling the verdict measured.
+#
+# Fix is the minimal correct one: serialize ranking-through-emission. These are
+# network-bound single-trap builds on a 0.1 vCPU instance, so there was never
+# parallel throughput to lose.
+GENERATION_LOCK = _threading.RLock()
+
+
+@_contextlib.contextmanager
+def generation():
+    """Hold the generation lock and start from clean ranking evidence.
+
+    Everything from the generator call through Candidate.to_trap() must run
+    inside one block, because to_trap() is where LAST_RANK is read:
+
+        with ct.generation():
+            cand = ct.GENERATORS[cat](**kwargs)
+            trap = cand.to_trap()
+
+    LAST_RANK is deliberately NOT cleared on exit: callers legitimately inspect
+    it after the block, and clearing there would silently blank the evidence a
+    caller had already decided to read.
+    """
+    global LAST_RANK
+    with GENERATION_LOCK:
+        LAST_RANK = {}
+        yield
 
 
 def _rankdata(xs):
@@ -682,10 +750,18 @@ def gen_science(days=("2024-01-16", "2024-02-13", "2024-03-12", "2024-04-09",
                    f"cat:{cat}+AND+submittedDate:[{d}0000+TO+{d}2359]"
                    "&start=0&max_results=200&sortBy=submittedDate&sortOrder=ascending")
             try:
-                root = ET.fromstring(net.fetch(url, timeout=120))
+                _raw = net.fetch(url, timeout=120)
+                root = ET.fromstring(_raw)
             except Exception as e:  # noqa: BLE001
                 tried.append(f"{cat}/{day}: fetch {type(e).__name__}")
                 continue
+            # arXiv reports the size of the matched set in the OpenSearch
+            # header. The `<=190` heuristic below was a proxy for "not at the
+            # page cap"; this is the quantity itself, so T0b can check the
+            # enumeration rather than infer it.
+            _m = re.search(r"<opensearch:totalResults[^>]*>(\d+)<",
+                           _raw if isinstance(_raw, str) else _raw.decode("utf-8", "replace"))
+            _n_true = int(_m.group(1)) if _m else None
             rows = []
             for e in root.findall("a:entry", ns):
                 raw = (e.find("a:id", ns).text or "").rsplit("/", 1)[-1]
@@ -707,6 +783,9 @@ def gen_science(days=("2024-01-16", "2024-02-13", "2024-03-12", "2024-04-09",
                 LAST_RANK["n_fields_swept"] = 0
                 LAST_RANK["sort_field_rejected_by_service"] = [
                     "sortBy=authorCount", "sortBy=authors"]
+                LAST_RANK["n_true"] = _n_true
+                LAST_RANK["page_cap"] = 200
+                LAST_RANK["pages_fetched"] = 1
             except TrapUnavailable as te:
                 tried.append(str(te))
                 continue
@@ -774,25 +853,54 @@ def gen_health(condition="amyotrophic lateral sclerosis", phase="PHASE3"):
     # this exact collection found 16 sort fields honoured and 10 rejected; among the
     # rejected are SecondaryOutcomeCount and OutcomeMeasureCount. Ranking on the
     # declared secondary outcome measures therefore cannot be delegated to the server.
-    url = ("https://clinicaltrials.gov/api/v2/studies?pageSize=200"
-           f"&query.cond={condition.replace(' ', '+')}"
-           f"&filter.overallStatus=COMPLETED&aggFilters=phase:3&countTotal=true")
-    js = net.get_json(url, timeout=120)
+    # PAGINATION. This used to issue ONE request at pageSize=200 and rank
+    # whatever came back. For amyotrophic lateral sclerosis that is the whole
+    # collection (51 studies) so the defect never showed, but the API's seed
+    # roster reaches conditions where it is not: multiple sclerosis has 235
+    # completed phase 3 studies, so the generator ranked 200 of them -- 85.1% --
+    # and served the argmax of a PREFIX as the argmax of the set, which is the
+    # trap's entire premise. n_base landing exactly on the page cap is the
+    # fingerprint; the twelve-test battery passed it, because no test asked
+    # whether the enumeration was complete.
+    #
+    # Enumerating the remaining 35 for multiple sclerosis did not move the
+    # answer (NCT01817166 either way, k-robustness 26 either way) and none of
+    # the six roster conditions changes answer under full enumeration. That is
+    # reassuring and irrelevant: the claim has to be verified, not lucky.
+    base = ("https://clinicaltrials.gov/api/v2/studies?pageSize=200"
+            f"&query.cond={condition.replace(' ', '+')}"
+            f"&filter.overallStatus=COMPLETED&aggFilters=phase:3&countTotal=true")
+    url = base
     rows = []
-    for s in js.get("studies", []):
-        p = s.get("protocolSection", {})
-        nct = p.get("identificationModule", {}).get("nctId")
-        if not nct:
-            continue
-        om = p.get("outcomesModule") or {}
-        sec = om.get("secondaryOutcomes") or []
-        pri = om.get("primaryOutcomes") or []
-        sd = (p.get("statusModule", {}).get("startDateStruct") or {}).get("date")
-        cd = (p.get("statusModule", {}).get("completionDateStruct") or {}).get("date")
-        sp = (p.get("sponsorCollaboratorsModule", {}).get("leadSponsor") or {}).get("name")
-        rows.append({"nct": nct, "start": sd, "completion": cd, "sponsor": sp,
-                     "n_secondary": len(sec), "n_primary": len(pri),
-                     "title": p.get("identificationModule", {}).get("briefTitle", "")})
+    n_true, npages, tok = None, 0, None
+    while npages < _CT_MAX_PAGES:
+        js = net.get_json(base + (f"&pageToken={tok}" if tok else ""), timeout=120)
+        if n_true is None:
+            n_true = js.get("totalCount")
+        for s in js.get("studies", []):
+            p = s.get("protocolSection", {})
+            nct = p.get("identificationModule", {}).get("nctId")
+            if not nct:
+                continue
+            om = p.get("outcomesModule") or {}
+            sec = om.get("secondaryOutcomes") or []
+            pri = om.get("primaryOutcomes") or []
+            sd = (p.get("statusModule", {}).get("startDateStruct") or {}).get("date")
+            cd = (p.get("statusModule", {}).get("completionDateStruct") or {}).get("date")
+            sp = (p.get("sponsorCollaboratorsModule", {}).get("leadSponsor") or {}).get("name")
+            rows.append({"nct": nct, "start": sd, "completion": cd, "sponsor": sp,
+                         "n_secondary": len(sec), "n_primary": len(pri),
+                         "title": p.get("identificationModule", {}).get("briefTitle", "")})
+        npages += 1
+        tok = js.get("nextPageToken")
+        if not tok:
+            break
+    if tok:
+        raise TrapUnavailable(
+            f"health: {condition} reports {n_true} completed phase 3 studies, more "
+            f"than the {_CT_MAX_PAGES * 200} this generator will enumerate. Ranking a "
+            f"prefix would make the prompt's 'among all' claim false, so the seed "
+            f"is refused rather than answered from a partial collection.")
     if len(rows) < 5:
         raise TrapUnavailable(f"health: only {len(rows)} completed phase 3 studies for {condition}")
     # the key must actually be present, otherwise a missing-field artefact wins
@@ -819,6 +927,11 @@ def gen_health(condition="amyotrophic lateral sclerosis", phase="PHASE3"):
     # holding the top five by first-posted date cannot tell it has the answer.
     LAST_RANK["key_component_depths"] = {}
     LAST_RANK["key_is_aggregated"] = False
+    # completeness evidence for T0b: the server's own count of the collection,
+    # against the number of records actually ranked.
+    LAST_RANK["n_true"] = n_true
+    LAST_RANK["page_cap"] = 200
+    LAST_RANK["pages_fetched"] = npages
     _eq = []
     for _f in ("n_primary", "enrollment", "n_locations", "n_arms"):
         _v = [r.get(_f) for r in rows]
@@ -1342,7 +1455,7 @@ def gen_politics(year=1998):
 # ==========================================================================
 # 11. ART -- Metropolitan Museum x Wikimedia x Europeana
 # ==========================================================================
-def gen_art(artist="Rembrandt", dept=11):
+def gen_art(artist="Rembrandt", dept=11, **_seed_ignored):
     # WITHDRAWN -- the answer field cannot reach an independent operator, and the
     # replacement route is server-sortable. Both were measured, not assumed.
     #

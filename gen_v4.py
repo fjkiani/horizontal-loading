@@ -237,7 +237,7 @@ def _figi_confirms(cusip):
 
 
 # ------------------------------------------------------------------ generator
-def gen_finance(seeds=SEEDS):
+def gen_finance(seeds=SEEDS, **_seed_ignored):
     # WITHDRAWN -- the service is too capable to trap, measured three ways.
     #
     # 1. RAW SERVED FIELDS are dead: the endpoint honours 228 of 450 orderings

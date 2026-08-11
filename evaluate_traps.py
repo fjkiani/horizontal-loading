@@ -179,6 +179,67 @@ def t0_base_adequacy(ev):
                    if n <= 1 else "isolation chooses among candidates"))
 
 
+def t0b_population_complete(ev):
+    """Was the ranked collection the WHOLE collection, or one page of it?
+
+    Every one of these prompts makes a superlative claim over a named set --
+    "among all completed phase 3 studies of X", "of every paper submitted to
+    that category that day". The isolation step is only sound if the generator
+    saw the set. The argmax of a prefix is not the argmax of the set, and no
+    other test in this battery notices the difference: T0 checks that the
+    population is big enough to choose from, T2 that the answer is not
+    guessable, T3 that it is not sitting at an endpoint of the returned order.
+    All three are perfectly happy with a truncated page.
+
+    This was not hypothetical. The health generator issued one request at
+    pageSize=200 and ranked the response. For the baked ALS seed that is the
+    whole collection (51 studies), so the build pipeline never saw it. The live
+    API rotates a seed roster, and multiple sclerosis has 235 such studies --
+    so the deployed service ranked 200 of them, 85.1%, and all twelve tests
+    passed. n_base landing exactly on the declared page cap is the fingerprint.
+
+    Full enumeration of all six roster conditions afterwards showed the answer
+    did not actually move in any of them (multiple sclerosis: NCT01817166 with
+    k-robustness 26 on both the 200-row prefix and the 235-row set). That is
+    luck, and luck is not a gate. The claim has to be checked.
+
+    Three states, deliberately distinguished:
+      True   the source reported a total and the generator ranked all of it,
+             or the collection arrives as a complete bulk file
+      False  the generator ranked strictly fewer records than the source says
+             exist, or sat exactly on a declared page cap with no total to
+             check against
+      None   no total was reported and no cap was declared, so completeness is
+             UNPROVEN -- which is not the same as fine
+    """
+    if ev.get("collection_is_bulk_download"):
+        return True, ("collection arrives as a complete bulk file; there is no "
+                      "pagination that could truncate it")
+    n = ev.get("n_ranked", ev.get("n_base"))
+    n_true = ev.get("n_true")
+    cap = ev.get("page_cap")
+    if n is None:
+        return None, "no base size recorded"
+    if n_true is None:
+        if cap is not None and n >= cap:
+            return False, (f"ranked {n} records against a declared page cap of "
+                           f"{cap} and the source reported no total; a population "
+                           f"sitting exactly on its page cap is a truncated page "
+                           f"until proven otherwise")
+        return None, (f"ranked {n} records but the source reported no collection "
+                      f"total, so complete enumeration is unproven"
+                      + (f" (page cap {cap})" if cap else ""))
+    if n < n_true:
+        return False, (f"ranked {n} of {n_true} records "
+                       f"({n / max(1, n_true):.2%}); the {n_true - n} unseen "
+                       f"records could each hold the extremum, so the "
+                       f"superlative claim is unverified")
+    return True, (f"ranked {n} of {n_true} records reported by the source "
+                  f"(complete enumeration"
+                  + (f", {ev['pages_fetched']} page(s)" if ev.get("pages_fetched")
+                     else "") + ")")
+
+
 EXEMPT_REASON = (
     "EXEMPT (collection_is_explicit): the prompt enumerates every member of the "
     "base collection by identifier, so the API return order carries no "
@@ -400,6 +461,7 @@ def t7_prompt_leak(trap):
 
 
 TESTS_EV = [("T0_base_adequacy", t0_base_adequacy),
+            ("T0b_population_complete", t0b_population_complete),
             ("T1_uniqueness", t1_uniqueness), ("T2_guessability", t2_guessability),
             ("T3_order_leak", t3_order_leak), ("T3b_monotone_key", t3b_monotone_key),
             ("T3c_key_derivable_depth", t3c_key_derivable_depth),

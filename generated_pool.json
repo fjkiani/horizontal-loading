@@ -65,7 +65,10 @@
    "sort_field_rejected_by_service": [
     "sortBy=authorCount",
     "sortBy=authors"
-   ]
+   ],
+   "n_true": 15,
+   "page_cap": 200,
+   "pages_fetched": 1
   },
   "facts": {
    "cat": "astro-ph.EP",
@@ -362,6 +365,9 @@
    "p_answer_by_uniform_guess": 0.019608,
    "key_component_depths": {},
    "key_is_aggregated": false,
+   "n_true": 51,
+   "page_cap": 200,
+   "pages_fetched": 1,
    "equivalent_served_fields": [],
    "n_fields_swept": 4,
    "k_robustness": 7
@@ -603,7 +609,10 @@
    "equivalent_served_fields": [],
    "n_fields_swept": 0,
    "orderings_probed": 6,
-   "orderings_honoured": 0
+   "orderings_honoured": 0,
+   "n_true": 38,
+   "page_cap": null,
+   "pages_fetched": 1
   },
   "facts": {
    "team": "Los Angeles Dodgers",

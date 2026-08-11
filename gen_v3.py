@@ -136,7 +136,7 @@ def _nobel_sources(gnd, qid, name):
 # names the laureate, so the ranking never binds.
 # Now: the laureate's GND identifier, which no solver carries in memory.
 # =========================================================================
-def gen_celebrities(category_key="Physics", y0=1901, y1=1975):
+def gen_celebrities(category_key="Physics", y0=1901, y1=1975, **_seed_ignored):
     # WITHDRAWN -- measured one-call solvable, not a research task.
     # The laureate endpoint filters on birth date server-side. The request
     #   .../laureates?birthDate=1800-01-01&birthDateTo=1840-01-01
@@ -228,7 +228,7 @@ def gen_celebrities(category_key="Physics", y0=1901, y1=1975):
 # Now: the lead laureate's GND identifier, which the German National Library
 # confirms directly. This upgrades the witness as well as the answer.
 # =========================================================================
-def gen_history(category_key="Physics", y0=1901, y1=2000, min_laureates=3):
+def gen_history(category_key="Physics", y0=1901, y1=2000, min_laureates=3, **_seed_ignored):
     # WITHDRAWN -- measured one-call solvable, not a research task.
     # The Nobel Prize Outreach API returns laureates in ALPHABETICAL order by
     # default, and it honours limit. A single request,
@@ -493,6 +493,14 @@ def gen_sports(pairs=((147, "New York Yankees", 1998), (111, "Boston Red Sox", 1
             ct.LAST_RANK["n_fields_swept"] = 0
             ct.LAST_RANK["orderings_probed"] = 6
             ct.LAST_RANK["orderings_honoured"] = 0
+            # T0b completeness: the roster endpoint returns the full-season
+            # roster in one response with no paging parameter and no total
+            # count, so the collection IS the response. Recorded explicitly so
+            # completeness is asserted by the generator that knows, rather than
+            # left unproven by a test that cannot tell.
+            ct.LAST_RANK["n_true"] = len(roster)
+            ct.LAST_RANK["page_cap"] = None
+            ct.LAST_RANK["pages_fetched"] = 1
         except TrapUnavailable as te:
             tried.append(str(te))
             continue

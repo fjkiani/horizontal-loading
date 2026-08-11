@@ -1,5 +1,5 @@
 {
-  "evaluated_at": "2026-08-11T11:10:18Z",
+  "evaluated_at": "2026-08-11T11:42:07Z",
   "thresholds": {
     "max_uniform_guess": 0.1,
     "min_confirming_operators": 2,
@@ -29,6 +29,10 @@
         "T0_base_adequacy": {
           "pass": true,
           "detail": "n_ranked=15 (>= 5); isolation chooses among candidates"
+        },
+        "T0b_population_complete": {
+          "pass": true,
+          "detail": "ranked 15 of 15 records reported by the source (complete enumeration, 1 page(s))"
         },
         "T1_uniqueness": {
           "pass": true,
@@ -115,6 +119,9 @@
           "sortBy=authorCount",
           "sortBy=authors"
         ],
+        "n_true": 15,
+        "page_cap": 200,
+        "pages_fetched": 1,
         "_collection_is_explicit": false
       }
     },
@@ -132,6 +139,10 @@
         "T0_base_adequacy": {
           "pass": true,
           "detail": "n_ranked=154 (>= 5); isolation chooses among candidates"
+        },
+        "T0b_population_complete": {
+          "pass": null,
+          "detail": "ranked 154 records but the source reported no collection total, so complete enumeration is unproven"
         },
         "T1_uniqueness": {
           "pass": true,
@@ -227,6 +238,10 @@
           "pass": true,
           "detail": "n_ranked=25 (>= 5); isolation chooses among candidates"
         },
+        "T0b_population_complete": {
+          "pass": null,
+          "detail": "ranked 25 records but the source reported no collection total, so complete enumeration is unproven"
+        },
         "T1_uniqueness": {
           "pass": true,
           "detail": "n_tied_at_extremum=1"
@@ -314,6 +329,10 @@
         "T0_base_adequacy": {
           "pass": true,
           "detail": "n_ranked=42 (>= 5); isolation chooses among candidates"
+        },
+        "T0b_population_complete": {
+          "pass": true,
+          "detail": "collection arrives as a complete bulk file; there is no pagination that could truncate it"
         },
         "T1_uniqueness": {
           "pass": true,
@@ -406,6 +425,10 @@
           "pass": true,
           "detail": "n_ranked=51 (>= 5); isolation chooses among candidates"
         },
+        "T0b_population_complete": {
+          "pass": true,
+          "detail": "ranked 51 of 51 records reported by the source (complete enumeration, 1 page(s))"
+        },
         "T1_uniqueness": {
           "pass": true,
           "detail": "n_tied_at_extremum=1"
@@ -485,6 +508,9 @@
         "p_answer_by_uniform_guess": 0.019608,
         "key_component_depths": {},
         "key_is_aggregated": false,
+        "n_true": 51,
+        "page_cap": 200,
+        "pages_fetched": 1,
         "equivalent_served_fields": [],
         "n_fields_swept": 4,
         "k_robustness": 7,
@@ -499,6 +525,10 @@
         "T0_base_adequacy": {
           "pass": true,
           "detail": "n_ranked=51 (>= 5); isolation chooses among candidates"
+        },
+        "T0b_population_complete": {
+          "pass": true,
+          "detail": "collection arrives as a complete bulk file; there is no pagination that could truncate it"
         },
         "T1_uniqueness": {
           "pass": true,
@@ -590,6 +620,10 @@
         "T0_base_adequacy": {
           "pass": true,
           "detail": "n_ranked=40 (>= 5); isolation chooses among candidates"
+        },
+        "T0b_population_complete": {
+          "pass": null,
+          "detail": "ranked 40 records but the source reported no collection total, so complete enumeration is unproven"
         },
         "T1_uniqueness": {
           "pass": true,
@@ -685,6 +719,10 @@
           "pass": true,
           "detail": "n_ranked=38 (>= 5); isolation chooses among candidates"
         },
+        "T0b_population_complete": {
+          "pass": true,
+          "detail": "ranked 38 of 38 records reported by the source (complete enumeration, 1 page(s))"
+        },
         "T1_uniqueness": {
           "pass": true,
           "detail": "n_tied_at_extremum=1"
@@ -768,6 +806,9 @@
         "n_fields_swept": 0,
         "orderings_probed": 6,
         "orderings_honoured": 0,
+        "n_true": 38,
+        "page_cap": null,
+        "pages_fetched": 1,
         "_collection_is_explicit": false
       }
     },
@@ -779,6 +820,10 @@
         "T0_base_adequacy": {
           "pass": true,
           "detail": "n_ranked=73 (>= 5); isolation chooses among candidates"
+        },
+        "T0b_population_complete": {
+          "pass": true,
+          "detail": "collection arrives as a complete bulk file; there is no pagination that could truncate it"
         },
         "T1_uniqueness": {
           "pass": true,
@@ -870,6 +915,10 @@
         "T0_base_adequacy": {
           "pass": true,
           "detail": "n_ranked=211 (>= 5); isolation chooses among candidates"
+        },
+        "T0b_population_complete": {
+          "pass": null,
+          "detail": "ranked 211 records but the source reported no collection total, so complete enumeration is unproven"
         },
         "T1_uniqueness": {
           "pass": true,

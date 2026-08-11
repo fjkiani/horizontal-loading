@@ -35,6 +35,9 @@ import category_traps as ct
 import gen_v2  # noqa: F401  installs its overrides into ct.GENERATORS on import
 import gen_v3  # noqa: F401  installs its overrides on top of gen_v2's
 import gen_v4  # noqa: F401  finance only; must load last so it wins that key
+# The SAME battery the build pipeline runs. Imported here so the deployed
+# service cannot apply a weaker gate than the catalog it serves alongside.
+import evaluate_traps as et
 import seed_roster
 from app import solvers
 
@@ -149,6 +152,26 @@ def _run_category_generate(job_id, category, kwargs, seed_index):
     small for the guessability ceiling, a witness run by the primary operator --
     and the console shows that reason rather than silently falling back to the
     frozen trap.
+
+    THE GATE USED TO BE ONE TEST WIDE. This function called sg.validate_trap()
+    and nothing else, which checks source independence and word count. The
+    build pipeline runs TWELVE tests (T0 base adequacy, T1 uniqueness, T2
+    guessability, T3 order leak, T3b monotone key, T3c key-derivable depth, T3d
+    derivable key, T4 separation, T4b fragility, T5 confirmation, T6 gate, T7
+    prompt leak) and holds anything that fails. So the deployed service was
+    shipping, as "done", traps that the build gate would never have shipped.
+
+    That was not hypothetical. A live smoke test of the health category returned
+    NCT04300920 from seed {"condition": "multiple sclerosis"} on a base of 30 --
+    a trap that had never been through the depth or witness measurement that
+    qualified the baked answer NCT05178810 (n_base 51). Travel likewise served
+    HEL on n_base 171 against a baked IVL on 73. The API was a second, weaker
+    authority disagreeing with the catalog.
+
+    The fix is to run the SAME battery the build runs, on the freshly generated
+    trap, and let its verdict decide the job status. `ship` is served; `hold`
+    and `unproven` are refused with the failing test names and their measured
+    reasons attached, so a refusal stays a result rather than becoming an error.
     """
     def _p(phase, **extra):
         with _JOBS_LOCK:
@@ -160,21 +183,60 @@ def _run_category_generate(job_id, category, kwargs, seed_index):
 
     try:
         _p("traversing source APIs", category=category, seed=kwargs)
-        fn = ct.GENERATORS[category]
-        cand = fn(**kwargs)
-        trap = cand.to_trap()
+        # ct.generation() serializes ranking-through-emission. LAST_RANK is a
+        # module global that _pick_extreme rebinds and to_trap() reads AFTER the
+        # witness round trips, so two overlapping requests handed each other's
+        # ranking evidence to the gate -- 200/200 in a two-thread reproduction.
+        # Every test below reads that evidence, so the lock is load-bearing for
+        # the gate's correctness, not just for tidy bookkeeping.
+        with ct.generation():
+            fn = ct.GENERATORS[category]
+            cand = fn(**kwargs)
+            trap = cand.to_trap()
         _p("checking source independence")
-        ok, violations = sg.validate_trap(trap)
-        result = _api_trap_summary(trap) if ok else None
+        ok_gate, violations = sg.validate_trap(trap, min_operators=3)
+        _p("scoring the full trap battery", tests=len(et.TESTS_EV) + len(et.TESTS_TRAP))
+        ev = et.evaluate_one(category, {"trap": trap})
+        failed = sorted(n for n, r in ev["tests"].items() if r["pass"] is False)
+        unproven = sorted(n for n, r in ev["tests"].items() if r["pass"] is None)
+        verdict = ev["verdict"]
+        ok = (verdict == "ship") and ok_gate
+        evaluation = {
+            "verdict": verdict,
+            "witness_tier": ev.get("witness_tier"),
+            "independent_witnesses": ev.get("independent_witnesses"),
+            "failed_tests": failed,
+            "unproven_tests": unproven,
+            "tests": ev["tests"],
+            "n_tests": len(ev["tests"]),
+        }
+        if ok:
+            detail = None
+        elif failed:
+            detail = ("trap held: %d of %d tests failed -- %s"
+                      % (len(failed), len(ev["tests"]), "; ".join(
+                          "%s: %s" % (n, ev["tests"][n]["detail"]) for n in failed)))
+        elif unproven:
+            detail = ("trap unproven: %d of %d tests could not be measured -- %s"
+                      % (len(unproven), len(ev["tests"]), "; ".join(
+                          "%s: %s" % (n, ev["tests"][n]["detail"]) for n in unproven)))
+        else:
+            detail = "seed refused by the source gate: " + "; ".join(map(str, violations))
         with _JOBS_LOCK:
             _JOBS.setdefault(job_id, {}).update({
                 "status": "done" if ok else "refused",
                 "ended": time.time(),
                 "seed": kwargs, "seed_index": seed_index,
-                "result": result,
+                "result": _api_trap_summary(trap, evaluation) if ok else None,
                 "violations": violations,
-                "detail": None if ok else
-                          "seed refused by the source gate: " + "; ".join(violations),
+                "evaluation": evaluation,
+                # A refused trap still carries what it WOULD have answered, so
+                # the console can show the reader exactly which candidate the
+                # gate rejected instead of an anonymous failure.
+                "rejected_candidate": None if ok else {
+                    "answer": trap.get("answer"), "field": trap.get("field"),
+                    "entity": trap.get("entity"), "n_base": trap.get("n_base")},
+                "detail": detail,
             })
     except Exception as e:  # noqa: BLE001
         with _JOBS_LOCK:
@@ -348,6 +410,8 @@ def generate_status(job_id: str):
         return {"job_id": job_id, "status": "refused",
                 "detail": job.get("detail"),
                 "violations": job.get("violations") or [],
+                "evaluation": job.get("evaluation"),
+                "rejected_candidate": job.get("rejected_candidate"),
                 "category": job.get("category"), "seed": job.get("seed"),
                 "seed_index": job.get("seed_index"),
                 "elapsed": round(job.get("ended", time.time()) - job.get("started", time.time()), 1),
@@ -359,12 +423,13 @@ def generate_status(job_id: str):
                 "detail": job.get("detail") or "terminal state carried no result",
                 "log": job.get("log") or []}
     return {"job_id": job_id, "status": "done", "result": job["result"],
+            "evaluation": job.get("evaluation"),
             "category": job.get("category"), "seed": job.get("seed"),
             "seed_index": job.get("seed_index"),
             "elapsed": round(job.get("ended", time.time()) - job.get("started", time.time()), 1)}
 
 
-def _api_trap_summary(t):
+def _api_trap_summary(t, evaluation=None):
     """Summary for an API-native trap.
 
     These have no lccn, date, paper or scan image, so the scan-trap summary
@@ -399,6 +464,19 @@ def _api_trap_summary(t):
         "known_defects": {k: v for k, v in (t.get("facts") or {}).items()
                           if k.startswith("known_defect")},
         "witness_scope": (t.get("facts") or {}).get("witness_scope"),
+        # The full gate verdict travels WITH the trap. A consumer that receives
+        # an answer without knowing which of the twelve tests were measured, and
+        # which merely went unmeasured, cannot tell a proven trap from an
+        # unproven one -- and that is precisely the confusion that let the API
+        # serve an unvalidated health answer beside a validated catalog.
+        "evaluation": evaluation,
+        "verdict": (evaluation or {}).get("verdict"),
+        "solver_difficulty": None,
+        "solver_difficulty_status": (
+            "not measured: a solver-based difficulty score needs a production "
+            "LLM key; the trial key is exhausted (1000 calls/month) and the "
+            "measurement design needs roughly 600 calls. Leakage tests below "
+            "bound what a solver could SHORTCUT, which is not the same quantity."),
         "image_url": None,
     }
 

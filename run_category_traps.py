@@ -66,11 +66,15 @@ def save(state):
 
 def run_one(cat):
     fn = ct.GENERATORS[cat]
-    ct.LAST_RANK = {}   # ranking evidence is per-generator
     t0 = time.time()
     try:
-        cand = fn()
-        trap = cand.to_trap()
+        # ct.generation() clears LAST_RANK and holds the generation lock across
+        # ranking-through-emission. This driver is single-threaded so the lock
+        # is free here, but using the same context manager the API uses keeps
+        # ONE definition of "a generation" instead of two that can drift apart.
+        with ct.generation():
+            cand = fn()
+            trap = cand.to_trap()
         ok, violations = sg.validate_trap(trap, min_operators=3)
         unmapped = sg.audit_operators(trap.get("sources"))
         rec = {

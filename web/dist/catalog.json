@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-08-11T12:02:56Z",
+ "generated_at": "2026-08-11T13:58:40Z",
  "traps": [
   {
    "collection_is_explicit": false,
@@ -763,33 +763,38 @@
    "collection_is_explicit": false,
    "primary_operator": "OpenFlights",
    "independent_confirming_operators": [
+    "GeoNames",
     "OurAirports",
     "Wikimedia Foundation"
    ],
    "category": "travel",
-   "field": "IATA code",
-   "answer": "IVL",
+   "field": "GeoNames identifier",
+   "answer": "6296543",
    "entity": "Ivalo Airport",
    "n_base": 73,
    "sources": [
     "https://raw.githubusercontent.com/jpatokal/openflights/master/data/routes.dat",
     "https://davidmegginson.github.io/ourairports-data/airports.csv",
-    "https://www.wikidata.org/wiki/Q850269"
+    "https://www.wikidata.org/wiki/Q850269",
+    "https://sws.geonames.org/6296543/"
    ],
    "confirming_sources": [
     "https://davidmegginson.github.io/ourairports-data/airports.csv",
-    "https://www.wikidata.org/wiki/Q850269"
+    "https://www.wikidata.org/wiki/Q850269",
+    "https://sws.geonames.org/6296543/"
    ],
    "api_proof": true,
    "api_proof_argument": "OpenFlights distributes routes and airports as two separate flat files with no query interface. The northernmost destination exists only after joining the two and ordering 73 destinations by latitude.",
-   "confirmation": "OurAirports lists IVL at latitude 68.6073; Wikidata Q850269 ('Ivalo Airport') carries P238 'IVL' uniquely",
-   "prompt": "The OpenFlights project distributes an airline route table and a separate airport table, each as a plain delimited file covering worldwide civil aviation. Consider only the nonstop destinations served by the carrier with IATA code AY departing from its hub at HEL, as recorded in that route table. Join those destinations to the airport table and find the one lying furthest north. Report the three-letter IATA code of that single northernmost destination. Cross-check the coordinates against a second independent aerodrome register. Answer with the three-letter code only, capitalised, and nothing else.",
+   "confirmation": "OurAirports lists IVL at latitude 68.6073; Wikidata Q850269 ('Ivalo Airport') carries P238 'IVL' uniquely and P1566 6296543 uniquely; the GeoNames record 6296543 resolves and names the place",
+   "prompt": "The OpenFlights project distributes an airline route table and a separate airport table, each as a plain delimited file covering worldwide civil aviation. Consider only the nonstop destinations served by the carrier with IATA code AY departing from its hub at HEL, as recorded in that route table. Join those destinations to the airport table and find the one lying furthest north. Report the GeoNames database identifier of that single northernmost destination. Resolve the identifier at the gazetteer before answering. Answer with the numeric identifier only, digits and nothing else.",
    "source_operators": [
+    "GeoNames",
     "OpenFlights",
     "OurAirports",
     "Wikimedia Foundation"
    ],
    "confirming_operators": [
+    "GeoNames",
     "OurAirports",
     "Wikimedia Foundation"
    ],
@@ -826,7 +831,11 @@
     "hub": "HEL",
     "n": 73,
     "witness_qid": "Q850269",
-    "wikidata_p238_hits": 1
+    "wikidata_p238_hits": 1,
+    "iata_not_asked": "IVL",
+    "answer_field_class": "identifier",
+    "replaces": "IATA code, withdrawn: measured as printed in the winner's own Wikipedia article, so stage 2 was free by recall while stage 1 was not",
+    "stage1_key_leak": "latitude found in 0 of 22 destination articles, permuted control also 0.0, excess 0.0, McNemar p = 1.0"
    },
    "field_class": "identifier",
    "stump": null,

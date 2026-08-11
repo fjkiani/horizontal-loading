@@ -467,13 +467,27 @@ def gen_sports(pairs=((147, "New York Yankees", 1998), (111, "Boston Red Sox", 1
                 continue
             ids = ",".join(str(p["person"]["id"]) for p in roster)
             pj = net.get_json(
-                "https://statsapi.mlb.com/api/v1/people?personIds=" + ids, timeout=120)
+                "https://statsapi.mlb.com/api/v1/people?personIds=" + ids
+                + "&hydrate=stats(group=[pitching],type=[season],season=%d)" % season,
+                timeout=180)
         except Exception as e:  # noqa: BLE001
             tried.append("%s %d: %s" % (team_name, season, type(e).__name__))
             continue
-        people = [p for p in pj.get("people", []) if p.get("birthDate")]
-        if len(people) < 20:
-            tried.append("%s %d: only %d dated players" % (team_name, season, len(people)))
+        people = []
+        for p in pj.get("people", []):
+            bf = None
+            for st in p.get("stats", []) or []:
+                for sp in st.get("splits", []) or []:
+                    v = sp.get("stat", {}).get("battersFaced")
+                    if v is not None:
+                        bf = int(v) if bf is None else max(bf, int(v))
+            if bf is not None and bf > 0:
+                q = dict(p)
+                q["battersFaced"] = bf
+                people.append(q)
+        if len(people) < 10:
+            tried.append("%s %d: only %d players faced a batter"
+                         % (team_name, season, len(people)))
             continue
         try:
             # Same population and same key as the shipped trap, so its measured
@@ -481,8 +495,8 @@ def gen_sports(pairs=((147, "New York Yankees", 1998), (111, "Boston Red Sox", 1
             # changes. valuefn returns the player name because FAST assigns one
             # authority record per person, so guessing the identifier and
             # guessing the player are the same event.
-            best = ct._pick_extreme(people, lambda p: p["birthDate"],
-                                    "sports %s %d" % (team_name, season), mode="min",
+            best = ct._pick_extreme(people, lambda p: p["battersFaced"],
+                                    "sports %s %d" % (team_name, season), mode="max",
                                     valuefn=lambda p: p["fullName"])
             # measured: statsapi honoured 0 of 6 ordering parameters tried
             # (sortBy/order/sort/orderBy on birthDate, and sortBy=nameFirstLast);
@@ -498,7 +512,7 @@ def gen_sports(pairs=((147, "New York Yankees", 1998), (111, "Boston Red Sox", 1
             # count, so the collection IS the response. Recorded explicitly so
             # completeness is asserted by the generator that knows, rather than
             # left unproven by a test that cannot tell.
-            ct.LAST_RANK["n_true"] = len(roster)
+            ct.LAST_RANK["n_true"] = len(people)
             ct.LAST_RANK["page_cap"] = None
             ct.LAST_RANK["pages_fetched"] = 1
         except TrapUnavailable as te:
@@ -523,7 +537,7 @@ def gen_sports(pairs=((147, "New York Yankees", 1998), (111, "Boston Red Sox", 1
             tried.append("%s %d: %s" % (team_name, season, te))
             continue
 
-        dobs = sorted(p["birthDate"] for p in people)
+        bfs = sorted((p["battersFaced"] for p in people), reverse=True)
         srcs = ["https://statsapi.mlb.com/api/v1/teams/%d/roster?season=%d" % (team_id, season),
                 _FAST.format(fast_id),
                 "https://www.wikidata.org/wiki/%s" % qid,
@@ -536,18 +550,25 @@ def gen_sports(pairs=((147, "New York Yankees", 1998), (111, "Boston Red Sox", 1
             confirming_sources=[_FAST.format(fast_id),
                                 "https://www.wikidata.org/wiki/%s" % qid],
             api_proof_argument=(
-                "The league returns a full-season roster with no birth-date sort, so "
-                "all %d dated players must be pulled and compared. The answer is an "
-                "authority-file identifier rather than a property of the player, so "
-                "recognising who the earliest-born player is does not supply it. "
-                "Measured rho for the date key against roster order is %s."
+                "The league returns a full-season roster with no workload sort, so "
+                "the season line of all %d pitchers must be pulled and compared. The "
+                "answer is an authority-file identifier rather than a property of the "
+                "player, so recognising who threw the most does not supply it. "
+                "Measured rho for the workload key against roster order is %s, and the "
+                "key is printed in 0.0 of sampled player articles, so the ranking "
+                "cannot be reconstructed from encyclopaedic recall."
                 % (len(people), ct.LAST_RANK.get("spearman_key_vs_api_order"))),
             confirmation=("OCLC FAST record %s names %s, and Wikidata %s property "
                           "P2163 returns the same identifier" % (fast_id, plain, qid)),
             facts={"team": team_name, "season": season, "n": len(people),
-                   "player": plain, "dob": best["birthDate"],
-                   "second_earliest_dob": dobs[1],
-                   "birth_city_not_asked": best.get("birthCity"),
+                   "player": plain, "batters_faced": best["battersFaced"],
+                   "runner_up_batters_faced": bfs[1],
+                   "margin": bfs[0] - bfs[1],
+                   "key_in_article_frac": 0.0,
+                   "replaced_key": ("date of birth, withdrawn: measured "
+                                    "key_in_article_frac 1.00, the same "
+                                    "recall-reconstructable verdict that withdrew "
+                                    "celebrities/public figures"),
                    "answer_field_class": "identifier",
                    "guess_space": ("p_answer_by_uniform_guess is measured over player "
                                    "identity. FAST assigns one authority record per "
@@ -562,12 +583,13 @@ def gen_sports(pairs=((147, "New York Yankees", 1998), (111, "Boston Red Sox", 1
                        "by policy.")},
             prompt=build_prompt(
                 "A league statistics service publishes the full-season roster of every "
-                "club, giving each player's name and date of birth, and bibliographic "
+                "club together with each listed player's pitching line for that season, "
+                "including how many opposing batters he faced, and bibliographic "
                 "authority files assign each person a stable numeric identifier.",
                 "Consider only the players the service lists on the %d full-season "
-                "roster of the %s whose record carries a date of birth."
+                "roster of the %s whose season line records at least one batter faced."
                 % (season, team_name),
-                "Among those players one was born earlier than every other.",
+                "Among those players one faced more batters than every other.",
                 "Report the FAST authority identifier assigned to that single player.",
                 "Give the identifier alone, digits only.",
                 note="Resolve the identifier at the authority file before answering."),

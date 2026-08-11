@@ -11,6 +11,7 @@ import hashlib
 import io
 import json
 import os
+import shutil
 import ssl
 import time
 import urllib.error
@@ -90,7 +91,11 @@ def get_json(url, body=None, **kw):
 
 
 def get_gzip_lines(url, max_lines=None, **kw):
-    """Stream a .gz text resource (IMDb datasets, NCES) into a list of lines."""
+    """Stream a .gz text resource (IMDb datasets, NCES) into a list of lines.
+
+    Materialises every line. For anything the size of IMDb title.basics use
+    stream_gzip_lines() instead -- see the measurement in its docstring.
+    """
     raw = fetch(url, binary=True, **kw)
     buf = io.BytesIO(raw)
     with gzip.GzipFile(fileobj=buf) as gz:
@@ -100,6 +105,70 @@ def get_gzip_lines(url, max_lines=None, **kw):
                 break
             out.append(line.decode("utf-8", "replace").rstrip("\n"))
     return out
+
+
+def cached_path(url, timeout=900, attempts=3, base_sleep=2.0):
+    """Ensure a binary resource is on disk and return its path.
+
+    fetch(binary=True) returns the whole body as a bytes object before it ever
+    reaches the cache, so the peak is the file size even on a cache hit. This
+    streams straight to disk in 1 MiB chunks and never holds the body.
+
+    Downloads land on a .part file and are renamed only on success, so an
+    interrupted download can never be mistaken for a complete cache entry.
+    """
+    path = os.path.join(CACHE, _key(url, None) + ".bin")
+    if os.path.exists(path) and os.path.getsize(path) > 0:
+        return path
+    os.makedirs(CACHE, exist_ok=True)
+    tmp = path + ".part"
+    # identity: the resource is ALREADY gzip; asking for transport gzip too
+    # would hand back a doubly-encoded body that gzip.open cannot read.
+    h = {"User-Agent": UA, "Accept": "*/*", "Accept-Encoding": "identity"}
+    last = None
+    for i in range(attempts):
+        try:
+            req = urllib.request.Request(url, headers=h)
+            with urllib.request.urlopen(req, timeout=timeout, context=_CTX) as r, \
+                    open(tmp, "wb") as fh:
+                shutil.copyfileobj(r, fh, 1 << 20)
+            if os.path.getsize(tmp) == 0:
+                raise FetchError("empty body")
+            os.replace(tmp, path)
+            return path
+        except urllib.error.HTTPError as e:
+            last = f"HTTP {e.code}"
+            if e.code not in RETRY_STATUS:
+                raise FetchError(f"{url} -> HTTP {e.code}") from None
+        except Exception as e:  # noqa: BLE001
+            last = f"{type(e).__name__}: {e}"
+        finally:
+            if os.path.exists(tmp):
+                try:
+                    os.remove(tmp)
+                except OSError:
+                    pass
+        if i < attempts - 1:
+            time.sleep(base_sleep * (2 ** i))
+    raise FetchError(f"{url} -> gave up after {attempts} attempts ({last})")
+
+
+def stream_gzip_lines(url, timeout=900, attempts=3):
+    """Yield decoded lines from a remote .gz one at a time.
+
+    get_gzip_lines() builds a list of every line in the file. For IMDb
+    title.basics.tsv.gz that is ~11.7M Python strings, and it was MEASURED at
+    5442 MB peak RSS -- 10.6x the 512 MB the deployed container has. The
+    service was SIGKILLed mid-request whenever the tv category was asked for,
+    with no traceback, taking every concurrent request down with it.
+
+    This holds the decompression window and one line. The caller decides what
+    to retain.
+    """
+    path = cached_path(url, timeout=timeout, attempts=attempts)
+    with gzip.open(path, "rt", encoding="utf-8", errors="replace") as gz:
+        for line in gz:
+            yield line.rstrip("\n")
 
 
 def wikidata_sparql(query, timeout=90):

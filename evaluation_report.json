@@ -1,5 +1,5 @@
 {
-  "evaluated_at": "2026-08-11T11:42:07Z",
+  "evaluated_at": "2026-08-11T12:02:56Z",
   "thresholds": {
     "max_uniform_guess": 0.1,
     "min_confirming_operators": 2,
@@ -712,16 +712,16 @@
     },
     {
       "category": "sports",
-      "answer": "22477",
+      "answer": "243777",
       "field": "FAST identifier",
       "tests": {
         "T0_base_adequacy": {
           "pass": true,
-          "detail": "n_ranked=38 (>= 5); isolation chooses among candidates"
+          "detail": "n_ranked=19 (>= 5); isolation chooses among candidates"
         },
         "T0b_population_complete": {
           "pass": true,
-          "detail": "ranked 38 of 38 records reported by the source (complete enumeration, 1 page(s))"
+          "detail": "ranked 19 of 19 records reported by the source (complete enumeration, 1 page(s))"
         },
         "T1_uniqueness": {
           "pass": true,
@@ -729,15 +729,15 @@
         },
         "T2_guessability": {
           "pass": true,
-          "detail": "answer occurs 1/38 times (p=0.02632), modal count 1, 38 distinct values, answer_is_strict_mode=False"
+          "detail": "answer occurs 1/19 times (p=0.05263), modal count 1, 19 distinct values, answer_is_strict_mode=False"
         },
         "T3_order_leak": {
           "pass": true,
-          "detail": "winner at index 34 of 38 (depth 0.9189), first=False last=False, H0 P(first|last)=0.0526"
+          "detail": "winner at index 5 of 19 (depth 0.2778), first=False last=False, H0 P(first|last)=0.1053"
         },
         "T3b_monotone_key": {
           "pass": true,
-          "detail": "spearman(key, api_index)=-0.1124 (|rho| <= 0.45); key is off-axis"
+          "detail": "spearman(key, api_index)=0.1754 (|rho| <= 0.45); key is off-axis"
         },
         "T3c_key_derivable_depth": {
           "pass": true,
@@ -749,7 +749,7 @@
         },
         "T4_separation": {
           "pass": true,
-          "detail": "top1='1945-04-02' top2='1949-09-13' (non-numeric key, distinct)"
+          "detail": "top1=1068 top2=932 gap=136 rel=0.1273"
         },
         "T4b_fragility": {
           "pass": true,
@@ -765,7 +765,7 @@
         },
         "T7_prompt_leak": {
           "pass": true,
-          "detail": "word count 89; years named in prompt: 1988"
+          "detail": "word count 100; years named in prompt: 1988"
         }
       },
       "collection_is_explicit": false,
@@ -778,35 +778,35 @@
       "witness_tier": "gold",
       "evidence": {
         "label": "sports Los Angeles Dodgers 1988",
-        "mode": "min",
-        "n_base": 38,
-        "n_ranked": 38,
-        "spearman_key_vs_api_order": -0.1124,
+        "mode": "max",
+        "n_base": 19,
+        "n_ranked": 19,
+        "spearman_key_vs_api_order": 0.1754,
         "n_tied_at_extremum": 1,
-        "distinct_keys": 38,
-        "winner_position_in_api_order": 34,
+        "distinct_keys": 19,
+        "winner_position_in_api_order": 5,
         "winner_is_first_returned": false,
         "winner_is_last_returned": false,
         "top_keys": [
-          "1945-04-02",
-          "1949-09-13",
-          "1954-02-02",
-          "1955-03-15",
-          "1955-11-26"
+          "1068",
+          "932",
+          "794",
+          "719",
+          "626"
         ],
-        "answer_field_distinct_values": 38,
-        "answer_field_n_values": 38,
+        "answer_field_distinct_values": 19,
+        "answer_field_n_values": 19,
         "answer_field_max_count": 1,
         "answer_field_count_of_answer": 1,
-        "answer_field_modal_share": 0.026316,
-        "p_answer_by_uniform_guess": 0.026316,
+        "answer_field_modal_share": 0.052632,
+        "p_answer_by_uniform_guess": 0.052632,
         "key_component_depths": {},
         "key_is_aggregated": false,
         "equivalent_served_fields": [],
         "n_fields_swept": 0,
         "orderings_probed": 6,
         "orderings_honoured": 0,
-        "n_true": 38,
+        "n_true": 19,
         "page_cap": null,
         "pages_fetched": 1,
         "_collection_is_explicit": false
@@ -917,8 +917,8 @@
           "detail": "n_ranked=211 (>= 5); isolation chooses among candidates"
         },
         "T0b_population_complete": {
-          "pass": null,
-          "detail": "ranked 211 records but the source reported no collection total, so complete enumeration is unproven"
+          "pass": true,
+          "detail": "collection arrives as a complete bulk file; there is no pagination that could truncate it"
         },
         "T1_uniqueness": {
           "pass": true,
@@ -937,12 +937,12 @@
           "detail": "spearman(key, api_index)=-0.2021 (|rho| <= 0.45); key is off-axis"
         },
         "T3c_key_derivable_depth": {
-          "pass": null,
-          "detail": "no component-depth evidence recorded; correlation alone does not bound how near the top of a derivable ordering the answer sits"
+          "pass": true,
+          "detail": "collection arrives as a bulk file, so there is no server to perform an ordering; any sort costs a full download first, which is the enumeration the trap asks for"
         },
         "T3d_derivable_key": {
-          "pass": null,
-          "detail": "no rank-equivalence sweep recorded"
+          "pass": true,
+          "detail": "bulk file: a rank-equivalent column is no shortcut when reading any column requires downloading every row"
         },
         "T4_separation": {
           "pass": true,
@@ -996,6 +996,8 @@
         "answer_field_count_of_answer": 1,
         "answer_field_modal_share": 0.004739,
         "p_answer_by_uniform_guess": 0.004739,
+        "collection_is_bulk_download": true,
+        "n_true": 211,
         "_collection_is_explicit": false
       }
     },
@@ -1019,18 +1021,18 @@
       "depths": [
         0.0833,
         0.2564,
+        0.2778,
         0.3571,
         0.3902,
         0.4952,
         0.54,
         0.625,
         0.6471,
-        0.84,
-        0.9189
+        0.84
       ],
-      "mean_depth": 0.5153,
-      "ks_statistic": 0.1571,
-      "ks_p_approx": 0.948704
+      "mean_depth": 0.4512,
+      "ks_statistic": 0.2529,
+      "ks_p_approx": 0.482147
     },
     "C4_key_monotonicity": {
       "h0": "ranking keys are unrelated to API return order (rho ~ 0)",
@@ -1042,12 +1044,12 @@
         0.064,
         0.065,
         0.0746,
-        0.1124,
+        0.1754,
         0.2021,
         0.2042,
         0.3685
       ],
-      "mean_abs_rho": 0.1158,
+      "mean_abs_rho": 0.1221,
       "n_over_threshold": 0
     },
     "C1_positional_leak": {
@@ -1061,19 +1063,19 @@
         0.0392,
         0.0392,
         0.05,
-        0.0526,
+        0.1053,
         0.0274,
         0.0095
       ],
-      "expected_first_or_last": 0.4919,
+      "expected_first_or_last": 0.5445,
       "observed_first_or_last": 0,
       "exact_two_sided_p": 1.0
     },
     "C2_guess_yield": {
       "h0": "a guesser draws uniformly from the observed answer-field values",
       "n_traps_tested": 10,
-      "expected_hits_across_corpus": 0.2459,
-      "p_at_least_one_hit": 0.221639,
+      "expected_hits_across_corpus": 0.2723,
+      "p_at_least_one_hit": 0.242675,
       "n_traps_over_threshold": 0,
       "threshold": 0.1
     }

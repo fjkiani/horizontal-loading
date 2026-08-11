@@ -34,6 +34,7 @@ import source_gate as sg
 import category_traps as ct
 import gen_v2  # noqa: F401  installs its overrides into ct.GENERATORS on import
 import gen_v3  # noqa: F401  installs its overrides on top of gen_v2's
+import gen_v4  # noqa: F401  finance only; must load last so it wins that key
 import seed_roster
 from app import solvers
 

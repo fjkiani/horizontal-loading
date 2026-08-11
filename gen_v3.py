@@ -148,6 +148,13 @@ def gen_celebrities(category_key="Physics", y0=1901, y1=1975):
                     and y0 <= int(p.get("awardYear") or 0) <= y1):
                 rows.append({"name": nm, "dob": b["date"], "id": L.get("id"),
                              "year": int(p["awardYear"])})
+                # One row per PERSON, not per prize. Without this break John
+                # Bardeen (Physics 1956 and 1972) is appended twice, so n_base
+                # reported 104 over 103 distinct laureates and every
+                # p_answer_by_uniform_guess denominator was inflated by one.
+                # The population the prompt describes is the laureates, so a
+                # second prize must not create a second member.
+                break
     if len(rows) < 20:
         raise TrapUnavailable("celebrities: only %d %s laureates with a full "
                               "birth date in %d-%d" % (len(rows), category_key, y0, y1))

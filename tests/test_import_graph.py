@@ -28,7 +28,7 @@ GENERATOR_CALLERS = ["cross_cohort", "run_category_traps"]
 # gen_v2 owns these. If any silently falls back to category_traps, the caller is
 # exercising a generator that is not the live one.
 OWNED_BY_GEN_V2 = {
-    "finance", "business", "politics",
+    "business", "politics",
     "geography", "shopping", "tv shows and movies", "video games",
 }
 
@@ -46,9 +46,21 @@ OWNED_BY_GEN_V2 = {
 # without failing a single test.
 OWNED_BY_GEN_V3 = {"history", "celebrities/public figures", "education", "sports"}
 
+# gen_v4 rescues finance. gen_v2 still registers a finance generator, so gen_v4
+# only wins if it is imported LAST -- import order is load-bearing here in a way
+# it is not for gen_v2/gen_v3, which own disjoint keys.
+#
+# finance was moved OUT of OWNED_BY_GEN_V2 when gen_v4 took it. Leaving it
+# unpinned would be worse than leaving it in the wrong set: a caller that drops
+# `import gen_v4` would silently fall back to gen_v2's Treasury-BALANCE
+# generator, which the source gate refuses, and no test would fail. Pinning the
+# key to gen_v4 makes the import-order requirement enforceable.
+OWNED_BY_GEN_V4 = {"finance"}
+
 OVERRIDE_OWNER = dict(
     [(k, "gen_v2") for k in OWNED_BY_GEN_V2] +
-    [(k, "gen_v3") for k in OWNED_BY_GEN_V3]
+    [(k, "gen_v3") for k in OWNED_BY_GEN_V3] +
+    [(k, "gen_v4") for k in OWNED_BY_GEN_V4]
 )
 
 

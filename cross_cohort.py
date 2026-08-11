@@ -26,6 +26,7 @@ import traceback
 import category_traps as ct
 import gen_v2  # noqa: F401
 import gen_v3  # noqa: F401  # field redesign; must load after gen_v2  -- installs ct.GENERATORS overrides ON IMPORT
+import gen_v4  # noqa: F401  # finance rescue; must load after gen_v2, which owned finance before
 import source_gate as sg
 
 OUT = "cross_cohort.json"
@@ -54,7 +55,12 @@ ALT = {
     # utl.pt, whose institution merged into Universidade de Lisboa in 2013, so
     # the P856 equality check should refuse rather than ship a stale domain.
     "education": dict(country="Portugal"),
-    "finance": dict(year=2010),
+    # gen_v4 replaced gen_v2's gen_finance(year=...) with gen_finance(seeds=...),
+    # where each seed is (auction_year, security_type). The old year=2010 kwarg
+    # no longer binds. Cross-cohort exists to re-run the generator on a DIFFERENT
+    # population than the shipped one, so this deliberately picks 2013 rather
+    # than the shipped 2021: same construction, disjoint auction set.
+    "finance": dict(seeds=((2013, None),)),
     "geography": dict(country_iso="CH", country_name="Switzerland"),
     "health and medicine": dict(condition="multiple sclerosis", phase="PHASE3"),
     # widened from y1=1935, which had no Chemistry prize shared by >= 3

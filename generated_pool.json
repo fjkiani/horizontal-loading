@@ -417,7 +417,13 @@
       "inst": "Waterford Institute Of Technology",
       "witness_qid": "Q7974025",
       "witness_p856": "http://www.wit.ie",
-      "stationarity_note": "the institution merged into South East Technological University in 2022; the P856 equality check is what stops a register lag from shipping"
+      "n_p856_values": 1,
+      "all_p856_hosts": [
+        "wit.ie"
+      ],
+      "witness_scope": "P856 confirms the DOMAIN BINDING only. It does not confirm that the institution still exists.",
+      "known_defect_order_leak": "The ranking key (alphabetically-last domain) correlates with this register's return order at rho +0.47..+0.95 across all 10 countries measured, because the register returns roughly name-alphabetical order and names predict domains.",
+      "known_defect_entity_state": "Waterford Institute of Technology was dissolved into South East Technological University on 2022-05-01. Wikidata records no succession property for it, so neither the P856 equality check nor a P576/P7888/P1366 liveness guard detects this."
     },
     "verified": true
   },

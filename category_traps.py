@@ -348,6 +348,38 @@ def _ourairports_rows():
     return list(csv.DictReader(io.StringIO(txt)))
 
 
+def _wikidata_values(qid_or_search, prop, must_contain=""):
+    """Return ALL values of `prop` on the matching entity, plus the qid.
+
+    Wikidata properties are multi-valued and their order is not meaningful.
+    South East Technological University carries two P856 official websites,
+    https://www.tuse.ie and https://www.setu.ie, so any check that reads only
+    the first value silently depends on claim order -- fail-arbitrary, not
+    fail-closed. Callers that need a single value should say so explicitly.
+    """
+    qid = qid_or_search
+    if not re.fullmatch(r"Q\d+", str(qid_or_search)):
+        hits = net.wikidata_search(qid_or_search).get("search", [])
+        if must_contain:
+            hits = [h for h in hits
+                    if must_contain.lower() in (h.get("description", "") + h.get("label", "")).lower()] or hits
+        if not hits:
+            return [], None
+        qid = hits[0]["id"]
+    ent = net.wikidata_entity(qid)
+    claims = ent.get("entities", {}).get(qid, {}).get("claims", {})
+    vals = []
+    for c in claims.get(prop, []):
+        dv = c.get("mainsnak", {}).get("datavalue", {}).get("value")
+        if isinstance(dv, str):
+            vals.append(dv)
+        elif isinstance(dv, dict) and "time" in dv:
+            vals.append(dv["time"])
+        elif isinstance(dv, dict) and "amount" in dv:
+            vals.append(dv["amount"])
+    return vals, qid
+
+
 def _wikidata_value(qid_or_search, prop, must_contain=""):
     """Return the first value of `prop` on the matching Wikidata entity."""
     qid = qid_or_search
@@ -1601,20 +1633,40 @@ def gen_education(country="Ireland"):
     if not qid:
         raise TrapUnavailable(f"education: Wikidata could not resolve {best['name']}")
 
-    # WITNESS. Resolving the institution is not confirming the ANSWER: the
-    # answer is the domain. Require Wikidata P856 to print the same registrable
-    # host. This is deliberately fail-closed against register lag -- Waterford
-    # Institute of Technology merged into South East Technological University
-    # in 2022 and ROR already links setu.ie, so if the knowledge base moves
-    # first the generator refuses rather than serving a stale domain.
-    site, _ = _wikidata_value(qid, "P856")
-    site_host = re.sub(r"^https?://", "", str(site or "")).split("/")[0].lower()
-    site_host = site_host[4:] if site_host.startswith("www.") else site_host
-    if site_host != answer.lower():
+    # WITNESS. Resolving the institution is not confirming the ANSWER: the answer
+    # is the domain. Require some Wikidata P856 official website to print the
+    # same registrable host.
+    #
+    # Compare against EVERY P856 value, not p856[0]. Wikidata claim order is not
+    # meaningful and multi-valued P856 is common -- South East Technological
+    # University lists both tuse.ie and setu.ie -- so reading the first value
+    # makes the outcome depend on claim order.
+    #
+    # MEASURED LIMIT, stated because the previous version of this comment
+    # overclaimed: this check is NOT fail-closed against an institution ceasing
+    # to exist. Waterford Institute of Technology was dissolved into SETU on
+    # 2022-05-01, yet its P856 still reads wit.ie, so the equality holds and the
+    # trap ships a domain whose institution is gone. A liveness guard on P576
+    # (dissolved), P7888 (merged into) and P1366 (replaced by) does not help:
+    # Q7974025 carries 37 properties and none is a succession property, a SPARQL
+    # sweep for succession links in either direction returns 0 rows, and the
+    # successor Q55670387 has no P1365 and even records inception as 1970. The
+    # merger is absent from Wikidata, so nothing here can detect it. What this
+    # check does confirm is the DOMAIN BINDING, and only that.
+    sites, _ = _wikidata_values(qid, "P856")
+
+    def _host(u):
+        h = re.sub(r"^https?://", "", str(u or "")).split("/")[0].lower()
+        return h[4:] if h.startswith("www.") else h
+
+    hosts = [_host(s) for s in sites]
+    if answer.lower() not in hosts:
         raise TrapUnavailable(
-            f"education: Wikidata P856 for {qid} prints {site_host!r}, not the "
-            f"register domain {answer!r}; the register is the primary and "
-            "cannot confirm itself")
+            f"education: Wikidata P856 for {qid} prints {hosts or 'nothing'}, "
+            f"none of which is the register domain {answer!r}; the register is "
+            "the primary and cannot confirm itself")
+    site = sites[hosts.index(answer.lower())]
+    site_host = answer.lower()
 
     srcs = ["http://universities.hipolabs.com/search?country=" + country.replace(" ", "%20"),
             f"https://www.wikidata.org/wiki/{qid}",
@@ -1631,10 +1683,19 @@ def gen_education(country="Ireland"):
                       f"official website prints the same host {site_host!r}"),
         facts={"country": country, "n": len(rows), "inst": best["name"],
                "witness_qid": qid, "witness_p856": site,
-               "stationarity_note": ("the institution merged into South East "
-                                     "Technological University in 2022; the "
-                                     "P856 equality check is what stops a "
-                                     "register lag from shipping")},
+               "n_p856_values": len(sites), "all_p856_hosts": hosts,
+               "witness_scope": ("P856 confirms the DOMAIN BINDING only. It does "
+                                 "not confirm that the institution still exists."),
+               "known_defect_order_leak": (
+                   "The ranking key (alphabetically-last domain) correlates with "
+                   "this register's return order at rho +0.47..+0.95 across all "
+                   "10 countries measured, because the register returns roughly "
+                   "name-alphabetical order and names predict domains."),
+               "known_defect_entity_state": (
+                   "Waterford Institute of Technology was dissolved into South "
+                   "East Technological University on 2022-05-01. Wikidata records "
+                   "no succession property for it, so neither the P856 equality "
+                   "check nor a P576/P7888/P1366 liveness guard detects this.")},
         prompt=build_prompt(
             f"A public register of higher education institutions lists the universities and "
             f"colleges of {country}, recording the internet domain each one uses.",

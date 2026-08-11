@@ -1,0 +1,118 @@
+{
+ "generated": "2026-08-11T18:37:00Z",
+ "why": "Classify every generator's Wikimedia dependency by MUTATING Wikidata.",
+ "n_categories": 2,
+ "rows": [
+  {
+   "category": "geography",
+   "baseline": {
+    "status": "ok",
+    "answer": "SKIP",
+    "field": "ICAO identifier",
+    "etype": null
+   },
+   "verdict": "LOAD_BEARING_LOGIC",
+   "why": "T0: with the call unavailable the generator raises (FetchError: banned domain wikidata.org (simulated by wikimut T0)), so the ban breaks it and the check must be repointed, not just unlinked",
+   "ambiguity_behaviour": "fail-closed: two colliding items caused a refusal",
+   "T0": {
+    "outcome": "raised",
+    "etype": "FetchError",
+    "error": "FetchError: banned domain wikidata.org (simulated by wikimut T0)",
+    "tb": "n run_patched\n    cand = ct.GENERATORS[cat]()\n           ^^^^^^^^^^^^^^^^^^^^\n  File \"/workspace/seal_deploy/gen_v2.py\", line 490, in gen_geography\n    hits = ct._wikidata_by_value(\"P239\", answer)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/workspace/seal_deploy/category_traps.py\", line 593, in _wikidata_by_value\n    binds = net.wikidata_sparql(q).get(\"results\", {}).get(\"bindings\", [])\n            ^^^^^^^^^^^^^^^^^^^^^^\n  File \"/workspace/seal_deploy/wikimut.py\", line 99, in _banned\n    raise ct.net.FetchError(\nnet.FetchError: banned domain wikidata.org (simulated by wikimut T0)\n",
+    "secs": 0.5
+   },
+   "T1": {
+    "outcome": "returned",
+    "answer": "SKIP",
+    "field": "ICAO identifier",
+    "operators": [
+     "OpenFlights",
+     "OurAirports",
+     "REST Countries project",
+     "Wikimedia Foundation"
+    ],
+    "secs": 0.5
+   },
+   "T2": {
+    "outcome": "returned",
+    "answer": "SKIP",
+    "field": "ICAO identifier",
+    "operators": [
+     "OpenFlights",
+     "OurAirports",
+     "REST Countries project",
+     "Wikimedia Foundation"
+    ],
+    "secs": 0.5
+   },
+   "T4": {
+    "outcome": "raised",
+    "etype": "TrapUnavailable",
+    "error": "geography: Wikidata P239 = SKIP matched 2 items (['Q90', 'Q99999991']); confirmation must be unambiguous",
+    "secs": 0.4
+   }
+  },
+  {
+   "category": "science and technology",
+   "baseline": {
+    "status": "ok",
+    "answer": "2403.07505",
+    "field": "arXiv identifier",
+    "etype": null
+   },
+   "verdict": "SAFE_TO_DROP",
+   "why": "T0: ships the baseline answer '2403.07505' with Wikidata unreachable, so only the URL and the operator credit need removing",
+   "ambiguity_behaviour": "fail-arbitrary: two colliding items were accepted and it shipped '2403.07505'",
+   "T0": {
+    "outcome": "returned",
+    "answer": "2403.07505",
+    "field": "arXiv identifier",
+    "operators": [
+     "Cornell University",
+     "DataCite",
+     "OurResearch (OpenAlex)"
+    ],
+    "secs": 0.0
+   },
+   "T1": {
+    "outcome": "returned",
+    "answer": "2403.07505",
+    "field": "arXiv identifier",
+    "operators": [
+     "Cornell University",
+     "DataCite",
+     "OurResearch (OpenAlex)"
+    ],
+    "secs": 0.0
+   },
+   "T2": {
+    "outcome": "returned",
+    "answer": "2403.07505",
+    "field": "arXiv identifier",
+    "operators": [
+     "Cornell University",
+     "DataCite",
+     "OurResearch (OpenAlex)"
+    ],
+    "secs": 0.0
+   },
+   "T4": {
+    "outcome": "returned",
+    "answer": "2403.07505",
+    "field": "arXiv identifier",
+    "operators": [
+     "Cornell University",
+     "DataCite",
+     "OurResearch (OpenAlex)"
+    ],
+    "secs": 0.0
+   }
+  }
+ ],
+ "summary": {
+  "LOAD_BEARING_LOGIC": 1,
+  "SAFE_TO_DROP": 1
+ },
+ "answer_bearing": [],
+ "verdict": "0 generator(s) let a public wiki set the answer: none"
+}

@@ -1,240 +1,10 @@
 [
  {
   "collection_is_explicit": false,
-  "primary_operator": "Cornell University",
-  "independent_confirming_operators": [
-   "DataCite",
-   "OurResearch (OpenAlex)"
-  ],
-  "category": "science and technology",
-  "field": "arXiv identifier",
-  "answer": "2403.07505",
-  "entity": "Rotational Evolution of Classical T Tauri Stars: Models and Observations",
-  "n_base": 15,
-  "sources": [
-   "http://export.arxiv.org/api/query?search_query=cat:astro-ph.EP+AND+submittedDate:[202403120000+TO+202403122359]&start=0&max_results=200&sortBy=submittedDate&sortOrder=ascending",
-   "https://api.datacite.org/dois/10.48550/arxiv.2403.07505",
-   "https://api.openalex.org/works/doi:10.48550/arxiv.2403.07505"
-  ],
-  "confirming_sources": [
-   "https://api.datacite.org/dois/10.48550/arxiv.2403.07505",
-   "https://api.openalex.org/works/doi:10.48550/arxiv.2403.07505"
-  ],
-  "api_proof": true,
-  "api_proof_argument": "The arXiv interface can sort only by relevance or submission time and exposes no author-count filter, so all 15 submissions listed for that day under astro-ph.EP must be retrieved and their author lists counted.",
-  "confirmation": "DataCite and OpenAlex both resolve 10.48550/arxiv.2403.07505 to the same title, from two registries independent of arXiv",
-  "prompt": "The arXiv preprint server publishes a dated listing of every submission indexed under the subject class astro-ph.EP, each entry carrying its full author list and its arXiv identifier. Consider only the submissions that arXiv timestamps to 2024-03-12 in Coordinated Universal Time. Among only those submissions, exactly one credits more named authors than any other. Report the arXiv identifier of that single submission. Resolve the identifier through two registration agencies independent of the preprint server before answering. Give the identifier alone, without any version suffix and with no other words.",
-  "source_operators": [
-   "Cornell University",
-   "DataCite",
-   "OurResearch (OpenAlex)"
-  ],
-  "confirming_operators": [
-   "DataCite",
-   "OurResearch (OpenAlex)"
-  ],
-  "track": "api-native",
-  "ranking_evidence": {
-   "label": "science astro-ph.EP/2024-03-12",
-   "mode": "max",
-   "n_base": 15,
-   "n_ranked": 15,
-   "spearman_key_vs_api_order": 0.0255,
-   "n_tied_at_extremum": 1,
-   "distinct_keys": 6,
-   "winner_position_in_api_order": 5,
-   "winner_is_first_returned": false,
-   "winner_is_last_returned": false,
-   "top_keys": [
-    "20",
-    "5",
-    "5",
-    "5",
-    "4"
-   ],
-   "answer_field_distinct_values": 15,
-   "answer_field_n_values": 15,
-   "answer_field_max_count": 1,
-   "answer_field_count_of_answer": 1,
-   "answer_field_modal_share": 0.066667,
-   "p_answer_by_uniform_guess": 0.066667,
-   "key_component_depths": {},
-   "key_is_aggregated": false,
-   "equivalent_served_fields": [],
-   "n_fields_swept": 0,
-   "sort_field_rejected_by_service": [
-    "sortBy=authorCount",
-    "sortBy=authors"
-   ],
-   "n_true": 15,
-   "page_cap": 200,
-   "pages_fetched": 1
-  },
-  "facts": {
-   "cat": "astro-ph.EP",
-   "day": "2024-03-12",
-   "n": 15,
-   "authors": 20,
-   "doi": "10.48550/arxiv.2403.07505"
-  },
-  "verified": true
- },
- {
-  "collection_is_explicit": false,
-  "primary_operator": "US Securities and Exchange Commission",
-  "independent_confirming_operators": [
-   "Wikimedia Foundation"
-  ],
-  "category": "business",
-  "field": "SEC Central Index Key",
-  "answer": "1341439",
-  "entity": "Oracle Corporation",
-  "n_base": 154,
-  "sources": [
-   "https://data.sec.gov/api/xbrl/frames/us-gaap/ResearchAndDevelopmentExpense/USD/CY2015.json",
-   "https://data.sec.gov/submissions/CIK0001341439.json",
-   "https://www.wikidata.org/wiki/Q19900",
-   "https://api.gleif.org/api/v1/lei-records?filter[entity.legalName]=Oracle%20Corporation"
-  ],
-  "confirming_sources": [
-   "https://www.wikidata.org/wiki/Q19900",
-   "https://data.sec.gov/submissions/CIK0001341439.json"
-  ],
-  "api_proof": true,
-  "api_proof_argument": "The XBRL frames endpoint returns all 2427 filers reporting the concept for CY2015 in a single unordered array with no ranking parameter, so the 154 filers recorded at US-TX must be separated out and compared by the solver.",
-  "confirmation": "Wikidata Q19900 property P5531 returns 0001341439, and the SEC submissions endpoint resolves CIK 0001341439",
-  "prompt": "The United States securities regulator publishes a structured frame for each accounting concept and calendar year, listing every filer that reported that concept together with the business address it has on record. Take the frame for research and development expense covering calendar year 2015, and keep only those filers whose recorded business address places them in Texas. Within that restricted group one filer reported a larger figure for the concept than every other. Report the Central Index Key that the regulator assigns to that single filer. Confirm the key against an independent structured knowledge base before answering. Give the digits of the key alone, without leading zeros or any label.",
-  "source_operators": [
-   "Global Legal Entity Identifier Foundation",
-   "US Securities and Exchange Commission",
-   "Wikimedia Foundation"
-  ],
-  "confirming_operators": [
-   "US Securities and Exchange Commission",
-   "Wikimedia Foundation"
-  ],
-  "track": "api-native",
-  "ranking_evidence": {
-   "label": "business",
-   "mode": "max",
-   "n_base": 154,
-   "n_ranked": 154,
-   "spearman_key_vs_api_order": -0.065,
-   "n_tied_at_extremum": 1,
-   "distinct_keys": 144,
-   "winner_position_in_api_order": 99,
-   "winner_is_first_returned": false,
-   "winner_is_last_returned": false,
-   "top_keys": [
-    "5787000000.0",
-    "1676000000.0",
-    "1267000000.0",
-    "1094000000.0",
-    "1051000000.0"
-   ],
-   "answer_field_distinct_values": 154,
-   "answer_field_n_values": 154,
-   "answer_field_max_count": 1,
-   "answer_field_count_of_answer": 1,
-   "answer_field_modal_share": 0.006494,
-   "p_answer_by_uniform_guess": 0.006494
-  },
-  "facts": {
-   "loc": "US-TX",
-   "concept": "ResearchAndDevelopmentExpense",
-   "year": 2015,
-   "n": 154,
-   "val": 5787000000,
-   "runner_up": 1676000000.0,
-   "sep_ratio": 3.453,
-   "accn": "0001193125-18-201034",
-   "period_end": "2016-05-31",
-   "provenance_note": "The SEC `loc` field records the filer's business address as currently registered, not necessarily its address during the reporting year, so the prompt scopes the set by the recorded field rather than by historical headquarters."
-  },
-  "verified": true
- },
- {
-  "collection_is_explicit": false,
-  "primary_operator": "Hipo Labs",
-  "independent_confirming_operators": [
-   "Wikimedia Foundation"
-  ],
-  "category": "education",
-  "field": "internet domain",
-  "answer": "ntnu.no",
-  "entity": "Norwegian University of Science and Technology",
-  "n_base": 25,
-  "sources": [
-   "http://universities.hipolabs.com/search?country=Norway",
-   "https://www.wikidata.org/wiki/Q314536",
-   "https://nces.ed.gov/ipeds/datacenter/"
-  ],
-  "confirming_sources": [
-   "https://www.wikidata.org/wiki/Q314536"
-  ],
-  "api_proof": true,
-  "api_proof_argument": "The register returns an unsorted national list and supports no ordering parameter, so all 25 institutions must be pulled before their domains can be ranked. The ordering is applied to the reversed domain string specifically so that it cannot be read off the register's own return order: measured rho for this key is 0.0746, against +0.4685 to +0.9498 for the forward-alphabetical key across the ten countries tested.",
-  "confirmation": "Wikidata Q314536 resolves Norwegian University of Science and Technology and its P856 official website prints the same host 'ntnu.no'",
-  "prompt": "A public register of higher education institutions lists the universities and colleges of Norway, recording the internet domain each one uses. Consider only the institutions that this register places in Norway and for which it records at least one domain. Write each institution's primary domain backwards, character by character, and order those reversed strings as text. One of them falls later in that ordering than every other. Report the original, unreversed domain of that single institution. Confirm the institution through an independent structured knowledge base. Give the domain alone, in lower case, with no protocol and no path.",
-  "source_operators": [
-   "Hipo Labs",
-   "US Department of Education",
-   "Wikimedia Foundation"
-  ],
-  "confirming_operators": [
-   "Wikimedia Foundation"
-  ],
-  "track": "api-native",
-  "ranking_evidence": {
-   "label": "education",
-   "mode": "max",
-   "n_base": 25,
-   "n_ranked": 25,
-   "spearman_key_vs_api_order": 0.0746,
-   "n_tied_at_extremum": 1,
-   "distinct_keys": 24,
-   "winner_position_in_api_order": 15,
-   "winner_is_first_returned": false,
-   "winner_is_last_returned": false,
-   "top_keys": [
-    "on.untn",
-    "on.tiu",
-    "on.siu",
-    "on.shtev",
-    "on.oiu"
-   ],
-   "answer_field_distinct_values": 24,
-   "answer_field_n_values": 25,
-   "answer_field_max_count": 2,
-   "answer_field_count_of_answer": 1,
-   "answer_field_modal_share": 0.08,
-   "p_answer_by_uniform_guess": 0.04
-  },
-  "facts": {
-   "country": "Norway",
-   "n": 25,
-   "inst": "Norwegian University of Science and Technology",
-   "witness_qid": "Q314536",
-   "witness_p856": "https://ntnu.no",
-   "n_p856_values": 1,
-   "all_p856_hosts": [
-    "ntnu.no"
-   ],
-   "answer_field_class": "identifier",
-   "spearman_this_key": 0.0746,
-   "replaces": "Ireland / alphabetically-last domain -> wit.ie, whose institution was dissolved on 2022-05-01, ranked by a key that leaked the register's order at rho +0.7741",
-   "witness_scope": "P856 confirms the DOMAIN BINDING only. It does not confirm that the institution still exists.",
-   "known_defect_answer_is_derivable": "MEASURED, NOT FIXED. The two defects this rebuild addressed were the order leak and the dead institution. Recallability is a third and separate defect and it survives: the answer ntnu.no is derivable from the institution's name without consulting the register at all, and the string draws 174 Wikipedia mentions. This is weaker than memorisation, since the solver must still identify which institution wins the ordering, but the domain field cannot be called opaque the way an arXiv, NCT or GND identifier can. Fixing it needs a different answer field, not a different country or key.",
-   "known_defect_liveness": "The liveness guard remains non-functional in general: Wikidata carries no succession properties for dissolved institutions in the cases measured, so a future seed could again name a merged institution without this check noticing. This seed was chosen because NTNU is unambiguously operating, not because the check would catch it if it were not."
-  },
-  "verified": true
- },
- {
-  "collection_is_explicit": false,
   "primary_operator": "OurAirports",
   "independent_confirming_operators": [
    "OpenFlights",
-   "Wikimedia Foundation"
+   "US National Oceanic and Atmospheric Administration"
   ],
   "category": "geography",
   "field": "ICAO identifier",
@@ -243,27 +13,27 @@
   "n_base": 42,
   "sources": [
    "https://davidmegginson.github.io/ourairports-data/airports.csv",
-   "https://www.wikidata.org/wiki/Q1321708",
+   "https://aviationweather.gov/api/data/stationinfo?ids=SKIP&format=json",
    "https://raw.githubusercontent.com/jpatokal/openflights/master/data/airports.dat",
    "https://restcountries.com/v3.1/alpha/CO"
   ],
   "confirming_sources": [
-   "https://www.wikidata.org/wiki/Q1321708",
+   "https://aviationweather.gov/api/data/stationinfo?ids=SKIP&format=json",
    "https://raw.githubusercontent.com/jpatokal/openflights/master/data/airports.dat"
   ],
   "api_proof": true,
   "api_proof_argument": "OurAirports publishes a flat CSV with no server-side sort or filter, so the highest-elevation qualifying aerodrome cannot be requested; the full national set of 42 records must be pulled and ordered by the solver.",
-  "confirmation": "Wikidata Q1321708 property P239 returns SKIP, and OpenFlights lists the same identifier for 'San Luis Airport'",
+  "confirmation": "The NOAA Aviation Weather Center station table returns exactly one record for ICAO SKIP ('Ipiales/San Luis Arpt'), and OpenFlights lists the same identifier for 'San Luis Airport'",
   "prompt": "The OurAirports open dataset lists every civil aerodrome in Colombia with its elevation, service status and identifier codes. Restrict attention to aerodromes in that country classified as medium or large and flagged as currently having scheduled commercial service. Among only those, one sits at a greater elevation above sea level than any other. Identify that single aerodrome and report its four-character ICAO identifier. Confirm the same identifier against two independent references before answering. Give the identifier alone, in capital letters, with no surrounding words.",
   "source_operators": [
    "OpenFlights",
    "OurAirports",
    "REST Countries project",
-   "Wikimedia Foundation"
+   "US National Oceanic and Atmospheric Administration"
   ],
   "confirming_operators": [
    "OpenFlights",
-   "Wikimedia Foundation"
+   "US National Oceanic and Atmospheric Administration"
   ],
   "track": "api-native",
   "ranking_evidence": {
@@ -300,6 +70,85 @@
    "runner_up_elev": 8361,
    "openflights_name": "San Luis Airport"
   },
+  "seed_repr": "{}",
+  "verdict": "ship",
+  "witness_tier": "gold",
+  "verified": true
+ },
+ {
+  "collection_is_explicit": false,
+  "primary_operator": "OurAirports",
+  "independent_confirming_operators": [
+   "OpenFlights",
+   "US National Oceanic and Atmospheric Administration"
+  ],
+  "category": "geography",
+  "field": "ICAO identifier",
+  "answer": "SPJL",
+  "entity": "Inca Manco Capac International Airport",
+  "n_base": 24,
+  "sources": [
+   "https://davidmegginson.github.io/ourairports-data/airports.csv",
+   "https://aviationweather.gov/api/data/stationinfo?ids=SPJL&format=json",
+   "https://raw.githubusercontent.com/jpatokal/openflights/master/data/airports.dat",
+   "https://restcountries.com/v3.1/alpha/PE"
+  ],
+  "confirming_sources": [
+   "https://aviationweather.gov/api/data/stationinfo?ids=SPJL&format=json",
+   "https://raw.githubusercontent.com/jpatokal/openflights/master/data/airports.dat"
+  ],
+  "api_proof": true,
+  "api_proof_argument": "OurAirports publishes a flat CSV with no server-side sort or filter, so the highest-elevation qualifying aerodrome cannot be requested; the full national set of 24 records must be pulled and ordered by the solver.",
+  "confirmation": "The NOAA Aviation Weather Center station table returns exactly one record for ICAO SPJL ('Juliaca Arpt'), and OpenFlights lists the same identifier for 'Inca Manco Capac International Airport'",
+  "prompt": "The OurAirports open dataset lists every civil aerodrome in Peru with its elevation, service status and identifier codes. Restrict attention to aerodromes in that country classified as medium or large and flagged as currently having scheduled commercial service. Among only those, one sits at a greater elevation above sea level than any other. Identify that single aerodrome and report its four-character ICAO identifier. Confirm the same identifier against two independent references before answering. Give the identifier alone, in capital letters, with no surrounding words.",
+  "source_operators": [
+   "OpenFlights",
+   "OurAirports",
+   "REST Countries project",
+   "US National Oceanic and Atmospheric Administration"
+  ],
+  "confirming_operators": [
+   "OpenFlights",
+   "US National Oceanic and Atmospheric Administration"
+  ],
+  "track": "api-native",
+  "ranking_evidence": {
+   "label": "geography",
+   "mode": "max",
+   "n_base": 24,
+   "n_ranked": 24,
+   "spearman_key_vs_api_order": 0.1243,
+   "n_tied_at_extremum": 1,
+   "distinct_keys": 24,
+   "winner_position_in_api_order": 7,
+   "winner_is_first_returned": false,
+   "winner_is_last_returned": false,
+   "top_keys": [
+    "12552",
+    "11034",
+    "10860",
+    "8917",
+    "8781"
+   ],
+   "answer_field_distinct_values": 24,
+   "answer_field_n_values": 24,
+   "answer_field_max_count": 1,
+   "answer_field_count_of_answer": 1,
+   "answer_field_modal_share": 0.041667,
+   "p_answer_by_uniform_guess": 0.041667,
+   "collection_is_bulk_download": true,
+   "key_is_aggregated": false
+  },
+  "facts": {
+   "country": "Peru",
+   "n": 24,
+   "elev": 12552,
+   "runner_up_elev": 11034,
+   "openflights_name": "Inca Manco Capac International Airport"
+  },
+  "seed_repr": "{\"country_iso\": \"PE\", \"country_name\": \"Peru\"}",
+  "verdict": "ship",
+  "witness_tier": "gold",
   "verified": true
  },
  {
@@ -393,6 +242,86 @@
    "openalex_control_hits": 0,
    "openalex_not_in_europepmc": 7
   },
+  "seed_repr": "{}",
+  "verdict": "ship",
+  "witness_tier": "gold",
+  "verified": true
+ },
+ {
+  "collection_is_explicit": false,
+  "primary_operator": "Harvard Law School Library Innovation Lab",
+  "independent_confirming_operators": [
+   "Cornell University",
+   "Free Law Project"
+  ],
+  "category": "legal",
+  "field": "United States Reports page",
+  "answer": "200",
+  "entity": "Antone v. Dugger",
+  "n_base": 60,
+  "sources": [
+   "https://static.case.law/us/465/CasesMetadata.json",
+   "https://www.law.cornell.edu/supremecourt/text/465/200",
+   "https://www.courtlistener.com/api/rest/v4/search/?q=citation%3A%28%22465+U.S.+200%22%29&type=o&court=scotus"
+  ],
+  "confirming_sources": [
+   "https://www.law.cornell.edu/supremecourt/text/465/200",
+   "https://www.courtlistener.com/api/rest/v4/search/?q=citation%3A%28%22465+U.S.+200%22%29&type=o&court=scotus"
+  ],
+  "api_proof": true,
+  "api_proof_argument": "The volume file is published as one undivided list and carries no alphabetical index, so all 60 multi-page cases in volume 465 must be read out and sorted by name before the first one can be named, and only then does its starting page become visible.",
+  "confirmation": "Cornell Law School Legal Information Institute serves the text of Antone v. Dugger at 465 U.S. 200, and the Free Law Project citation index resolves that citation to the same case",
+  "prompt": "The Caselaw Access Project distributes, as one machine-readable file, metadata for every case reported in volume 465 of United States Reports, giving each case a short name together with the first and last printed page it occupies. Consider only those cases in that volume which run to more than a single printed page. Order the short names of those cases alphabetically and take whichever name comes first. Report the printed page of United States Reports on which that first-named case begins. Confirm the page against an independently published text of the same decision. Answer with the page number alone, with no volume, no reporter abbreviation and no other words.",
+  "source_operators": [
+   "Cornell University",
+   "Free Law Project",
+   "Harvard Law School Library Innovation Lab"
+  ],
+  "confirming_operators": [
+   "Cornell University",
+   "Free Law Project"
+  ],
+  "track": "api-native",
+  "ranking_evidence": {
+   "label": "legal vol 465",
+   "mode": "min",
+   "n_base": 60,
+   "n_ranked": 60,
+   "spearman_key_vs_api_order": -0.1885,
+   "n_tied_at_extremum": 1,
+   "distinct_keys": 59,
+   "winner_position_in_api_order": 5,
+   "winner_is_first_returned": false,
+   "winner_is_last_returned": false,
+   "top_keys": [
+    "antone v. dugger",
+    "autry v. mckaskle",
+    "autry v. mckaskle",
+    "blum v. stenson",
+    "brown v. hotel & restaurant employees & bartenders international union local 54"
+   ],
+   "answer_field_distinct_values": 60,
+   "answer_field_n_values": 60,
+   "answer_field_max_count": 1,
+   "answer_field_count_of_answer": 1,
+   "answer_field_modal_share": 0.016667,
+   "p_answer_by_uniform_guess": 0.016667,
+   "collection_is_bulk_download": true,
+   "key_is_aggregated": false
+  },
+  "facts": {
+   "volume": 465,
+   "case": "Antone v. Dugger",
+   "page": 200,
+   "decision_date": "1984-01-25",
+   "n_multi": 60,
+   "n_volume": 902,
+   "text_of_record": "Cornell Law School Legal Information Institute",
+   "provenance_note": "CourtListener ingested Caselaw Access Project data in 2024, so treat Cornell Law School Legal Information Institute as the independent text of record. Cornell LII carries only 0.6061 of correctly constructed case-start pages, and no unbanned independent operator covers the remainder, so that fraction is this trap's coverage ceiling rather than a defect"
+  },
+  "seed_repr": "{\"vols\": [460, 465, 470, 475]}",
+  "verdict": "ship",
+  "witness_tier": "gold",
   "verified": true
  },
  {
@@ -467,169 +396,418 @@
    "text_of_record": "Cornell Law School Legal Information Institute",
    "provenance_note": "CourtListener ingested Caselaw Access Project data in 2024, so treat Cornell Law School Legal Information Institute as the independent text of record. Cornell LII carries only 0.6061 of correctly constructed case-start pages, and no unbanned independent operator covers the remainder, so that fraction is this trap's coverage ceiling rather than a defect"
   },
+  "seed_repr": "{}",
+  "verdict": "ship",
+  "witness_tier": "gold",
   "verified": true
  },
  {
   "collection_is_explicit": false,
-  "primary_operator": "US Office of the Federal Register",
+  "primary_operator": "Harvard Law School Library Innovation Lab",
   "independent_confirming_operators": [
-   "Wikimedia Foundation"
+   "Cornell University",
+   "Free Law Project"
   ],
-  "category": "politics",
-  "field": "executive order number",
-  "answer": "13292",
-  "entity": "Further Amendment to Executive Order 12958, as Amended, Classified National Security Information",
-  "n_base": 40,
+  "category": "legal",
+  "field": "United States Reports page",
+  "answer": "919",
+  "entity": "Andrews v. Shulsen",
+  "n_base": 91,
   "sources": [
-   "https://www.federalregister.gov/api/v1/documents.json?conditions[type][]=PRESDOCU&conditions[presidential_document_type][]=executive_order&conditions[publication_date][gte]=2003-01-01&conditions[publication_date][lte]=2003-12-31&fields[]=executive_order_number&fields[]=title&fields[]=page_length&fields[]=publication_date&fields[]=citation&fields[]=start_page&fields[]=end_page&per_page=1000&order=oldest",
-   "https://www.federalregister.gov/documents/2003-03-28",
-   "https://www.govinfo.gov/app/collection/FR",
-   "https://www.wikidata.org/wiki/Q5419886"
+   "https://static.case.law/us/485/CasesMetadata.json",
+   "https://www.law.cornell.edu/supremecourt/text/485/919",
+   "https://www.courtlistener.com/api/rest/v4/search/?q=citation%3A%28%22485+U.S.+919%22%29&type=o&court=scotus"
   ],
   "confirming_sources": [
-   "https://www.federalregister.gov/documents/2003-03-28",
-   "https://www.wikidata.org/wiki/Q5419886"
+   "https://www.law.cornell.edu/supremecourt/text/485/919",
+   "https://www.courtlistener.com/api/rest/v4/search/?q=citation%3A%28%22485+U.S.+919%22%29&type=o&court=scotus"
   ],
   "api_proof": true,
-  "api_proof_argument": "The Federal Register document API returns the 40 executive orders of 2003 in publication order with no length field to sort on, so every record's printed extent must be read and compared. Ranking by printed length is deliberately unrelated to issuance order: measured spearman rho against return order is -0.3685.",
-  "confirmation": "the register's own document record for 2003-03-28 carries citation 68 FR 15315 spanning pages 15315 to 15334; Wikidata item Q5419886 is titled 'Executive Order 13292' and independently binds the number to the order",
-  "prompt": "The United States Office of the Federal Register publishes every presidential executive order, recording for each one its sequential order number, its title and the span of printed pages it occupies. Consider only the executive orders that the register published during 2003, each counted by the number of printed pages it fills. Among those orders one occupies more printed pages than any other issued that year. Report the sequential order number that the register assigns to that single longest order. The register offers no view sorted by printed extent, so the comparison must be built from the records themselves. Give the order number alone as digits, with no prefix or other words.",
+  "api_proof_argument": "The volume file is published as one undivided list and carries no alphabetical index, so all 91 multi-page cases in volume 485 must be read out and sorted by name before the first one can be named, and only then does its starting page become visible.",
+  "confirmation": "Cornell Law School Legal Information Institute serves the text of Andrews v. Shulsen at 485 U.S. 919, and the Free Law Project citation index resolves that citation to the same case",
+  "prompt": "The Caselaw Access Project distributes, as one machine-readable file, metadata for every case reported in volume 485 of United States Reports, giving each case a short name together with the first and last printed page it occupies. Consider only those cases in that volume which run to more than a single printed page. Order the short names of those cases alphabetically and take whichever name comes first. Report the printed page of United States Reports on which that first-named case begins. Confirm the page against an independently published text of the same decision. Answer with the page number alone, with no volume, no reporter abbreviation and no other words.",
   "source_operators": [
-   "US Government Publishing Office",
-   "US Office of the Federal Register",
-   "Wikimedia Foundation"
+   "Cornell University",
+   "Free Law Project",
+   "Harvard Law School Library Innovation Lab"
   ],
   "confirming_operators": [
-   "US Office of the Federal Register",
-   "Wikimedia Foundation"
+   "Cornell University",
+   "Free Law Project"
   ],
   "track": "api-native",
   "ranking_evidence": {
-   "label": "politics",
-   "mode": "max",
-   "n_base": 40,
-   "n_ranked": 40,
-   "spearman_key_vs_api_order": -0.3685,
+   "label": "legal vol 485",
+   "mode": "min",
+   "n_base": 91,
+   "n_ranked": 91,
+   "spearman_key_vs_api_order": 0.0622,
    "n_tied_at_extremum": 1,
-   "distinct_keys": 9,
-   "winner_position_in_api_order": 10,
+   "distinct_keys": 90,
+   "winner_position_in_api_order": 49,
    "winner_is_first_returned": false,
    "winner_is_last_returned": false,
    "top_keys": [
-    "20",
-    "15",
-    "10",
-    "8",
-    "8"
+    "andrews v. shulsen",
+    "arambulo v. united states",
+    "arkansas best corp. v. commissioner",
+    "basic inc. v. levinson",
+    "beech aircraft corp. v. rainey"
    ],
-   "answer_field_distinct_values": 40,
-   "answer_field_n_values": 40,
+   "answer_field_distinct_values": 91,
+   "answer_field_n_values": 91,
    "answer_field_max_count": 1,
    "answer_field_count_of_answer": 1,
-   "answer_field_modal_share": 0.025,
-   "p_answer_by_uniform_guess": 0.025
+   "answer_field_modal_share": 0.010989,
+   "p_answer_by_uniform_guess": 0.010989,
+   "collection_is_bulk_download": true,
+   "key_is_aggregated": false
   },
   "facts": {
-   "year": 2003,
-   "n": 40,
-   "pages": 20,
-   "runner_up": 15,
-   "title": "Further Amendment to Executive Order 12958, as Amended, Classified National Security Information",
-   "citation": "68 FR 15315",
-   "publication_date": "2003-03-28",
-   "single_witness": false,
-   "wikidata_eo_qid": "Q5419886",
-   "govinfo_granule_check": "all 130 granules of the issue were paged; none reference the order number and only one granule is presidential, so GovInfo is a co-publisher of the issue but not a witness of the order",
-   "provenance_note": "Executive order numbers are assigned and published only by the Office of the Federal Register. Wikidata catalogues the order as a subject in its own right, which is why it can witness the number without restating the register's ranking; the page-length ranking itself has no second witness."
+   "volume": 485,
+   "case": "Andrews v. Shulsen",
+   "page": 919,
+   "decision_date": "1988-02-29",
+   "n_multi": 91,
+   "n_volume": 1031,
+   "text_of_record": "Cornell Law School Legal Information Institute",
+   "provenance_note": "CourtListener ingested Caselaw Access Project data in 2024, so treat Cornell Law School Legal Information Institute as the independent text of record. Cornell LII carries only 0.6061 of correctly constructed case-start pages, and no unbanned independent operator covers the remainder, so that fraction is this trap's coverage ceiling rather than a defect"
   },
+  "seed_repr": "{\"vols\": [480, 485, 490, 495]}",
+  "verdict": "ship",
+  "witness_tier": "gold",
   "verified": true
  },
  {
   "collection_is_explicit": false,
-  "primary_operator": "Major League Baseball",
+  "primary_operator": "Cornell University",
   "independent_confirming_operators": [
-   "OCLC",
-   "Wikimedia Foundation"
+   "DataCite",
+   "OurResearch (OpenAlex)"
   ],
-  "category": "sports",
-  "field": "FAST identifier",
-  "answer": "243777",
-  "entity": "Orel Hershiser",
-  "n_base": 19,
+  "category": "science and technology",
+  "field": "arXiv identifier",
+  "answer": "2203.11011",
+  "entity": "Reinforced MOOCs Concept Recommendation in Heterogeneous Information Networks",
+  "n_base": 94,
   "sources": [
-   "https://statsapi.mlb.com/api/v1/teams/119/roster?season=1988",
-   "https://id.worldcat.org/fast/243777",
-   "https://www.wikidata.org/wiki/Q2410775",
-   "https://www.retrosheet.org/biofile.htm"
+   "http://export.arxiv.org/api/query?search_query=cat:cs.LG+AND+submittedDate:[202203080000+TO+202203082359]&start=0&max_results=200&sortBy=submittedDate&sortOrder=ascending",
+   "https://api.datacite.org/dois/10.48550/arxiv.2203.11011",
+   "https://api.openalex.org/works/doi:10.48550/arxiv.2203.11011"
   ],
   "confirming_sources": [
-   "https://id.worldcat.org/fast/243777",
-   "https://www.wikidata.org/wiki/Q2410775"
+   "https://api.datacite.org/dois/10.48550/arxiv.2203.11011",
+   "https://api.openalex.org/works/doi:10.48550/arxiv.2203.11011"
   ],
   "api_proof": true,
-  "api_proof_argument": "The league returns a full-season roster with no workload sort, so the season line of all 19 pitchers must be pulled and compared. The answer is an authority-file identifier rather than a property of the player, so recognising who threw the most does not supply it. Measured rho for the workload key against roster order is 0.1754, and the key is printed in 0.0 of sampled player articles, so the ranking cannot be reconstructed from encyclopaedic recall.",
-  "confirmation": "OCLC FAST record 243777 names Orel Hershiser, and Wikidata Q2410775 property P2163 returns the same identifier",
-  "prompt": "A league statistics service publishes the full-season roster of every club together with each listed player's pitching line for that season, including how many opposing batters he faced, and bibliographic authority files assign each person a stable numeric identifier. Consider only the players the service lists on the 1988 full-season roster of the Los Angeles Dodgers whose season line records at least one batter faced. Among those players one faced more batters than every other. Report the FAST authority identifier assigned to that single player. Resolve the identifier at the authority file before answering. Give the identifier alone, digits only.",
+  "api_proof_argument": "The arXiv interface can sort only by relevance or submission time and exposes no author-count filter, so all 94 submissions listed for that day under cs.LG must be retrieved and their author lists counted.",
+  "confirmation": "DataCite and OpenAlex both resolve 10.48550/arxiv.2203.11011 to the same title, from two registries independent of arXiv",
+  "prompt": "The arXiv preprint server publishes a dated listing of every submission indexed under the subject class cs.LG, each entry carrying its full author list and its arXiv identifier. Consider only the submissions that arXiv timestamps to 2022-03-08 in Coordinated Universal Time. Among only those submissions, exactly one credits more named authors than any other. Report the arXiv identifier of that single submission. Resolve the identifier through two registration agencies independent of the preprint server before answering. Give the identifier alone, without any version suffix and with no other words.",
   "source_operators": [
-   "Major League Baseball",
-   "OCLC",
-   "Retrosheet",
-   "Wikimedia Foundation"
+   "Cornell University",
+   "DataCite",
+   "OurResearch (OpenAlex)"
   ],
   "confirming_operators": [
-   "OCLC",
-   "Wikimedia Foundation"
+   "DataCite",
+   "OurResearch (OpenAlex)"
   ],
   "track": "api-native",
   "ranking_evidence": {
-   "label": "sports Los Angeles Dodgers 1988",
+   "label": "science cs.LG/2022-03-08",
    "mode": "max",
-   "n_base": 19,
-   "n_ranked": 19,
-   "spearman_key_vs_api_order": 0.1754,
+   "n_base": 94,
+   "n_ranked": 94,
+   "spearman_key_vs_api_order": -0.0984,
    "n_tied_at_extremum": 1,
-   "distinct_keys": 19,
-   "winner_position_in_api_order": 5,
+   "distinct_keys": 10,
+   "winner_position_in_api_order": 12,
    "winner_is_first_returned": false,
    "winner_is_last_returned": false,
    "top_keys": [
-    "1068",
-    "932",
-    "794",
-    "719",
-    "626"
+    "11",
+    "9",
+    "8",
+    "8",
+    "7"
    ],
-   "answer_field_distinct_values": 19,
-   "answer_field_n_values": 19,
+   "answer_field_distinct_values": 94,
+   "answer_field_n_values": 94,
    "answer_field_max_count": 1,
    "answer_field_count_of_answer": 1,
-   "answer_field_modal_share": 0.052632,
-   "p_answer_by_uniform_guess": 0.052632,
+   "answer_field_modal_share": 0.010638,
+   "p_answer_by_uniform_guess": 0.010638,
    "key_component_depths": {},
    "key_is_aggregated": false,
    "equivalent_served_fields": [],
    "n_fields_swept": 0,
-   "orderings_probed": 6,
-   "orderings_honoured": 0,
-   "n_true": 19,
-   "page_cap": null,
+   "sort_field_rejected_by_service": [
+    "sortBy=authorCount",
+    "sortBy=authors"
+   ],
+   "n_true": 94,
+   "page_cap": 200,
    "pages_fetched": 1
   },
   "facts": {
-   "team": "Los Angeles Dodgers",
-   "season": 1988,
-   "n": 19,
-   "player": "Orel Hershiser",
-   "batters_faced": 1068,
-   "runner_up_batters_faced": 932,
-   "margin": 136,
-   "key_in_article_frac": 0.0,
-   "replaced_key": "date of birth, withdrawn: measured key_in_article_frac 1.00, the same recall-reconstructable verdict that withdrew celebrities/public figures",
-   "answer_field_class": "identifier",
-   "guess_space": "p_answer_by_uniform_guess is measured over player identity. FAST assigns one authority record per person and the generator rejects any player whose P2163 is not single-valued, so the two probabilities are equal.",
-   "replaces": "city of birth (attribute; 26,976 Wikipedia views/yr)",
-   "rejected_alternatives": "GND single-valued for 1 of 4 players probed; ISNI and VIAF are carried by Wikidata but both resolvers return HTTP 403 from this sandbox; the Library of Congress name authority is banned by policy."
+   "cat": "cs.LG",
+   "day": "2022-03-08",
+   "n": 94,
+   "authors": 11,
+   "doi": "10.48550/arxiv.2203.11011"
   },
+  "seed_repr": "{\"cats\": [\"cs.LG\", \"math.CO\", \"cond-mat.supr-con\", \"astro-ph.HE\", \"q-bio.NC\", \"physics.optics\"], \"days\": [\"2022-03-08\", \"2022-06-14\", \"2022-10-11\", \"2023-01-10\", \"2023-04-11\", \"2023-07-11\"]}",
+  "verdict": "ship",
+  "witness_tier": "gold",
+  "verified": true
+ },
+ {
+  "collection_is_explicit": false,
+  "primary_operator": "Cornell University",
+  "independent_confirming_operators": [
+   "DataCite",
+   "OurResearch (OpenAlex)"
+  ],
+  "category": "science and technology",
+  "field": "arXiv identifier",
+  "answer": "2211.04278",
+  "entity": "Tight Complexity Bounds for Counting Generalized Dominating Sets in Bounded-Treewidth Graphs Part I: Algorithmic Results",
+  "n_base": 20,
+  "sources": [
+   "http://export.arxiv.org/api/query?search_query=cat:cs.DS+AND+submittedDate:[202211080000+TO+202211082359]&start=0&max_results=200&sortBy=submittedDate&sortOrder=ascending",
+   "https://api.datacite.org/dois/10.48550/arxiv.2211.04278",
+   "https://api.openalex.org/works/doi:10.48550/arxiv.2211.04278"
+  ],
+  "confirming_sources": [
+   "https://api.datacite.org/dois/10.48550/arxiv.2211.04278",
+   "https://api.openalex.org/works/doi:10.48550/arxiv.2211.04278"
+  ],
+  "api_proof": true,
+  "api_proof_argument": "The arXiv interface can sort only by relevance or submission time and exposes no author-count filter, so all 20 submissions listed for that day under cs.DS must be retrieved and their author lists counted.",
+  "confirmation": "DataCite and OpenAlex both resolve 10.48550/arxiv.2211.04278 to the same title, from two registries independent of arXiv",
+  "prompt": "The arXiv preprint server publishes a dated listing of every submission indexed under the subject class cs.DS, each entry carrying its full author list and its arXiv identifier. Consider only the submissions that arXiv timestamps to 2022-11-08 in Coordinated Universal Time. Among only those submissions, exactly one credits more named authors than any other. Report the arXiv identifier of that single submission. Resolve the identifier through two registration agencies independent of the preprint server before answering. Give the identifier alone, without any version suffix and with no other words.",
+  "source_operators": [
+   "Cornell University",
+   "DataCite",
+   "OurResearch (OpenAlex)"
+  ],
+  "confirming_operators": [
+   "DataCite",
+   "OurResearch (OpenAlex)"
+  ],
+  "track": "api-native",
+  "ranking_evidence": {
+   "label": "science cs.DS/2022-11-08",
+   "mode": "max",
+   "n_base": 20,
+   "n_ranked": 20,
+   "spearman_key_vs_api_order": -0.2934,
+   "n_tied_at_extremum": 1,
+   "distinct_keys": 6,
+   "winner_position_in_api_order": 11,
+   "winner_is_first_returned": false,
+   "winner_is_last_returned": false,
+   "top_keys": [
+    "7",
+    "6",
+    "4",
+    "4",
+    "4"
+   ],
+   "answer_field_distinct_values": 20,
+   "answer_field_n_values": 20,
+   "answer_field_max_count": 1,
+   "answer_field_count_of_answer": 1,
+   "answer_field_modal_share": 0.05,
+   "p_answer_by_uniform_guess": 0.05,
+   "key_component_depths": {},
+   "key_is_aggregated": false,
+   "equivalent_served_fields": [],
+   "n_fields_swept": 0,
+   "sort_field_rejected_by_service": [
+    "sortBy=authorCount",
+    "sortBy=authors"
+   ],
+   "n_true": 20,
+   "page_cap": 200,
+   "pages_fetched": 1
+  },
+  "facts": {
+   "cat": "cs.DS",
+   "day": "2022-11-08",
+   "n": 20,
+   "authors": 7,
+   "doi": "10.48550/arxiv.2211.04278"
+  },
+  "seed_repr": "{\"cats\": [\"cs.DS\", \"math.NT\", \"cond-mat.soft\", \"astro-ph.SR\", \"q-bio.QM\", \"physics.plasm-ph\"], \"days\": [\"2021-05-11\", \"2021-09-14\", \"2022-01-11\", \"2022-04-12\", \"2022-08-09\", \"2022-11-08\"]}",
+  "verdict": "ship",
+  "witness_tier": "gold",
+  "verified": true
+ },
+ {
+  "collection_is_explicit": false,
+  "primary_operator": "Cornell University",
+  "independent_confirming_operators": [
+   "DataCite",
+   "OurResearch (OpenAlex)"
+  ],
+  "category": "science and technology",
+  "field": "arXiv identifier",
+  "answer": "2302.07287",
+  "entity": "Forward Pass: On the Security Implications of Email Forwarding Mechanism and Policy",
+  "n_base": 12,
+  "sources": [
+   "http://export.arxiv.org/api/query?search_query=cat:cs.CR+AND+submittedDate:[202302140000+TO+202302142359]&start=0&max_results=200&sortBy=submittedDate&sortOrder=ascending",
+   "https://api.datacite.org/dois/10.48550/arxiv.2302.07287",
+   "https://api.openalex.org/works/doi:10.48550/arxiv.2302.07287"
+  ],
+  "confirming_sources": [
+   "https://api.datacite.org/dois/10.48550/arxiv.2302.07287",
+   "https://api.openalex.org/works/doi:10.48550/arxiv.2302.07287"
+  ],
+  "api_proof": true,
+  "api_proof_argument": "The arXiv interface can sort only by relevance or submission time and exposes no author-count filter, so all 12 submissions listed for that day under cs.CR must be retrieved and their author lists counted.",
+  "confirmation": "DataCite and OpenAlex both resolve 10.48550/arxiv.2302.07287 to the same title, from two registries independent of arXiv",
+  "prompt": "The arXiv preprint server publishes a dated listing of every submission indexed under the subject class cs.CR, each entry carrying its full author list and its arXiv identifier. Consider only the submissions that arXiv timestamps to 2023-02-14 in Coordinated Universal Time. Among only those submissions, exactly one credits more named authors than any other. Report the arXiv identifier of that single submission. Resolve the identifier through two registration agencies independent of the preprint server before answering. Give the identifier alone, without any version suffix and with no other words.",
+  "source_operators": [
+   "Cornell University",
+   "DataCite",
+   "OurResearch (OpenAlex)"
+  ],
+  "confirming_operators": [
+   "DataCite",
+   "OurResearch (OpenAlex)"
+  ],
+  "track": "api-native",
+  "ranking_evidence": {
+   "label": "science cs.CR/2023-02-14",
+   "mode": "max",
+   "n_base": 12,
+   "n_ranked": 12,
+   "spearman_key_vs_api_order": 0.4461,
+   "n_tied_at_extremum": 1,
+   "distinct_keys": 7,
+   "winner_position_in_api_order": 10,
+   "winner_is_first_returned": false,
+   "winner_is_last_returned": false,
+   "top_keys": [
+    "7",
+    "6",
+    "6",
+    "5",
+    "4"
+   ],
+   "answer_field_distinct_values": 12,
+   "answer_field_n_values": 12,
+   "answer_field_max_count": 1,
+   "answer_field_count_of_answer": 1,
+   "answer_field_modal_share": 0.083333,
+   "p_answer_by_uniform_guess": 0.083333,
+   "key_component_depths": {},
+   "key_is_aggregated": false,
+   "equivalent_served_fields": [],
+   "n_fields_swept": 0,
+   "sort_field_rejected_by_service": [
+    "sortBy=authorCount",
+    "sortBy=authors"
+   ],
+   "n_true": 12,
+   "page_cap": 200,
+   "pages_fetched": 1
+  },
+  "facts": {
+   "cat": "cs.CR",
+   "day": "2023-02-14",
+   "n": 12,
+   "authors": 7,
+   "doi": "10.48550/arxiv.2302.07287"
+  },
+  "seed_repr": "{\"cats\": [\"cs.CR\", \"math.PR\", \"cond-mat.mes-hall\", \"astro-ph.GA\", \"q-bio.PE\", \"physics.flu-dyn\"], \"days\": [\"2023-02-14\", \"2023-05-16\", \"2023-09-12\", \"2023-11-14\", \"2024-09-10\", \"2024-10-08\"]}",
+  "verdict": "ship",
+  "witness_tier": "gold",
+  "verified": true
+ },
+ {
+  "collection_is_explicit": false,
+  "primary_operator": "Cornell University",
+  "independent_confirming_operators": [
+   "DataCite",
+   "OurResearch (OpenAlex)"
+  ],
+  "category": "science and technology",
+  "field": "arXiv identifier",
+  "answer": "2403.07505",
+  "entity": "Rotational Evolution of Classical T Tauri Stars: Models and Observations",
+  "n_base": 15,
+  "sources": [
+   "http://export.arxiv.org/api/query?search_query=cat:astro-ph.EP+AND+submittedDate:[202403120000+TO+202403122359]&start=0&max_results=200&sortBy=submittedDate&sortOrder=ascending",
+   "https://api.datacite.org/dois/10.48550/arxiv.2403.07505",
+   "https://api.openalex.org/works/doi:10.48550/arxiv.2403.07505"
+  ],
+  "confirming_sources": [
+   "https://api.datacite.org/dois/10.48550/arxiv.2403.07505",
+   "https://api.openalex.org/works/doi:10.48550/arxiv.2403.07505"
+  ],
+  "api_proof": true,
+  "api_proof_argument": "The arXiv interface can sort only by relevance or submission time and exposes no author-count filter, so all 15 submissions listed for that day under astro-ph.EP must be retrieved and their author lists counted.",
+  "confirmation": "DataCite and OpenAlex both resolve 10.48550/arxiv.2403.07505 to the same title, from two registries independent of arXiv",
+  "prompt": "The arXiv preprint server publishes a dated listing of every submission indexed under the subject class astro-ph.EP, each entry carrying its full author list and its arXiv identifier. Consider only the submissions that arXiv timestamps to 2024-03-12 in Coordinated Universal Time. Among only those submissions, exactly one credits more named authors than any other. Report the arXiv identifier of that single submission. Resolve the identifier through two registration agencies independent of the preprint server before answering. Give the identifier alone, without any version suffix and with no other words.",
+  "source_operators": [
+   "Cornell University",
+   "DataCite",
+   "OurResearch (OpenAlex)"
+  ],
+  "confirming_operators": [
+   "DataCite",
+   "OurResearch (OpenAlex)"
+  ],
+  "track": "api-native",
+  "ranking_evidence": {
+   "label": "science astro-ph.EP/2024-03-12",
+   "mode": "max",
+   "n_base": 15,
+   "n_ranked": 15,
+   "spearman_key_vs_api_order": 0.0255,
+   "n_tied_at_extremum": 1,
+   "distinct_keys": 6,
+   "winner_position_in_api_order": 5,
+   "winner_is_first_returned": false,
+   "winner_is_last_returned": false,
+   "top_keys": [
+    "20",
+    "5",
+    "5",
+    "5",
+    "4"
+   ],
+   "answer_field_distinct_values": 15,
+   "answer_field_n_values": 15,
+   "answer_field_max_count": 1,
+   "answer_field_count_of_answer": 1,
+   "answer_field_modal_share": 0.066667,
+   "p_answer_by_uniform_guess": 0.066667,
+   "key_component_depths": {},
+   "key_is_aggregated": false,
+   "equivalent_served_fields": [],
+   "n_fields_swept": 0,
+   "sort_field_rejected_by_service": [
+    "sortBy=authorCount",
+    "sortBy=authors"
+   ],
+   "n_true": 15,
+   "page_cap": 200,
+   "pages_fetched": 1
+  },
+  "facts": {
+   "cat": "astro-ph.EP",
+   "day": "2024-03-12",
+   "n": 15,
+   "authors": 20,
+   "doi": "10.48550/arxiv.2403.07505"
+  },
+  "seed_repr": "{}",
+  "verdict": "ship",
+  "witness_tier": "gold",
   "verified": true
  },
  {
@@ -637,8 +815,7 @@
   "primary_operator": "OpenFlights",
   "independent_confirming_operators": [
    "GeoNames",
-   "OurAirports",
-   "Wikimedia Foundation"
+   "OurAirports"
   ],
   "category": "travel",
   "field": "GeoNames identifier",
@@ -648,28 +825,24 @@
   "sources": [
    "https://raw.githubusercontent.com/jpatokal/openflights/master/data/routes.dat",
    "https://davidmegginson.github.io/ourairports-data/airports.csv",
-   "https://www.wikidata.org/wiki/Q850269",
    "https://sws.geonames.org/6296543/"
   ],
   "confirming_sources": [
    "https://davidmegginson.github.io/ourairports-data/airports.csv",
-   "https://www.wikidata.org/wiki/Q850269",
    "https://sws.geonames.org/6296543/"
   ],
   "api_proof": true,
   "api_proof_argument": "OpenFlights distributes routes and airports as two separate flat files with no query interface. The northernmost destination exists only after joining the two and ordering 73 destinations by latitude.",
-  "confirmation": "OurAirports lists IVL at latitude 68.6073; Wikidata Q850269 ('Ivalo Airport') carries P238 'IVL' uniquely and P1566 6296543 uniquely; the GeoNames record 6296543 resolves and names the place",
+  "confirmation": "OurAirports lists IVL at latitude 68.6073; GeoNames returns exactly one airport record, 6296543, within 0.05 degrees of the position OpenFlights and OurAirports agree on (observed disagreement 3e-05 degrees), and that record resolves and carries its own identifier",
   "prompt": "The OpenFlights project distributes an airline route table and a separate airport table, each as a plain delimited file covering worldwide civil aviation. Consider only the nonstop destinations served by the carrier with IATA code AY departing from its hub at HEL, as recorded in that route table. Join those destinations to the airport table and find the one lying furthest north. Report the GeoNames database identifier of that single northernmost destination. Resolve the identifier at the gazetteer before answering. Answer with the numeric identifier only, digits and nothing else.",
   "source_operators": [
    "GeoNames",
    "OpenFlights",
-   "OurAirports",
-   "Wikimedia Foundation"
+   "OurAirports"
   ],
   "confirming_operators": [
    "GeoNames",
-   "OurAirports",
-   "Wikimedia Foundation"
+   "OurAirports"
   ],
   "track": "api-native",
   "ranking_evidence": {
@@ -699,89 +872,266 @@
    "collection_is_bulk_download": true,
    "key_is_aggregated": false,
    "margin_deg": 2.042503,
-   "cross_source_disagreement_deg": 0.001469
+   "cross_source_disagreement_deg": 0.001469,
+   "geonames_coord_disagreement_deg": 3e-05
   },
   "facts": {
    "airline": "AY",
    "hub": "HEL",
    "n": 73,
-   "witness_qid": "Q850269",
-   "wikidata_p238_hits": 1,
+   "geonames_coord_disagreement_deg": 3e-05,
+   "witness_route": "GeoNames search, coordinate-verified; replaced the Wikidata P1566 read that travelbear.json measured as answer-bearing with guard discrimination 0.5",
    "iata_not_asked": "IVL",
    "answer_field_class": "identifier",
    "replaces": "IATA code, withdrawn: measured as printed in the winner's own Wikipedia article, so stage 2 was free by recall while stage 1 was not",
    "stage1_key_leak": "latitude found in 0 of 22 destination articles, permuted control also 0.0, excess 0.0, McNemar p = 1.0"
   },
+  "seed_repr": "{}",
+  "verdict": "ship",
+  "witness_tier": "gold",
   "verified": true
  },
  {
   "collection_is_explicit": false,
-  "primary_operator": "IMDb (Amazon)",
+  "primary_operator": "OpenFlights",
   "independent_confirming_operators": [
-   "Wikimedia Foundation"
+   "GeoNames",
+   "OurAirports"
   ],
-  "category": "tv shows and movies",
-  "field": "IMDb title identifier",
-  "answer": "tt1278381",
-  "entity": "Je ne suis pas morte",
-  "n_base": 211,
+  "category": "travel",
+  "field": "GeoNames identifier",
+  "answer": "6296778",
+  "entity": "Trondheim Airport V\u00e6rnes",
+  "n_base": 81,
   "sources": [
-   "https://datasets.imdbws.com/title.basics.tsv.gz",
-   "https://www.wikidata.org/wiki/Q3163471",
-   "https://api.tvmaze.com/search/shows?q=Je%20ne%20suis%20pas%20morte",
-   "https://www.imdb.com/title/tt1278381/"
+   "https://raw.githubusercontent.com/jpatokal/openflights/master/data/routes.dat",
+   "https://davidmegginson.github.io/ourairports-data/airports.csv",
+   "https://sws.geonames.org/6296778/"
   ],
   "confirming_sources": [
-   "https://www.wikidata.org/wiki/Q3163471"
+   "https://davidmegginson.github.io/ourairports-data/airports.csv",
+   "https://sws.geonames.org/6296778/"
   ],
   "api_proof": true,
-  "api_proof_argument": "The IMDb basics export is a single gzipped table with no query interface, so the 211 feature titles of that year and genre must be extracted and compared on runtime by the solver.",
-  "confirmation": "Wikidata Q3163471 property P345 returns tt1278381",
-  "prompt": "The IMDb public title export records, for every film it lists, the title, the year of release, the genres assigned to it and the running time in minutes. Restrict attention to titles typed as feature films with a release year of 2008 that carry the Fantasy genre and a recorded running time. Among only those, one film runs longer than every other. Report the IMDb title identifier of that single longest film. Confirm the identifier against an independent structured knowledge base before answering. Give the identifier alone, beginning with the two letters that prefix it, and nothing else.",
+  "api_proof_argument": "OpenFlights distributes routes and airports as two separate flat files with no query interface. The northernmost destination exists only after joining the two and ordering 81 destinations by latitude.",
+  "confirmation": "OurAirports lists TRD at latitude 63.457802; GeoNames returns exactly one airport record, 6296778, within 0.05 degrees of the position OpenFlights and OurAirports agree on (observed disagreement 0.00025 degrees), and that record resolves and carries its own identifier",
+  "prompt": "The OpenFlights project distributes an airline route table and a separate airport table, each as a plain delimited file covering worldwide civil aviation. Consider only the nonstop destinations served by the carrier with IATA code SK departing from its hub at CPH, as recorded in that route table. Join those destinations to the airport table and find the one lying furthest north. Report the GeoNames database identifier of that single northernmost destination. Resolve the identifier at the gazetteer before answering. Answer with the numeric identifier only, digits and nothing else.",
   "source_operators": [
-   "IMDb (Amazon)",
-   "TVmaze",
-   "Wikimedia Foundation"
+   "GeoNames",
+   "OpenFlights",
+   "OurAirports"
   ],
   "confirming_operators": [
-   "Wikimedia Foundation"
+   "GeoNames",
+   "OurAirports"
   ],
   "track": "api-native",
   "ranking_evidence": {
-   "label": "tv shows and movies",
+   "label": "travel",
    "mode": "max",
-   "n_base": 211,
-   "n_ranked": 211,
-   "spearman_key_vs_api_order": -0.2021,
+   "n_base": 81,
+   "n_ranked": 81,
+   "spearman_key_vs_api_order": -0.0984,
    "n_tied_at_extremum": 1,
-   "distinct_keys": 76,
-   "winner_position_in_api_order": 104,
+   "distinct_keys": 81,
+   "winner_position_in_api_order": 14,
    "winner_is_first_returned": false,
    "winner_is_last_returned": false,
    "top_keys": [
-    "190",
-    "166",
-    "164",
-    "156",
-    "154"
+    "63.4578018",
+    "62.5625",
+    "60.514099121094",
+    "60.317199707031",
+    "60.29339981"
    ],
-   "answer_field_distinct_values": 211,
-   "answer_field_n_values": 211,
+   "answer_field_distinct_values": 81,
+   "answer_field_n_values": 81,
    "answer_field_max_count": 1,
    "answer_field_count_of_answer": 1,
-   "answer_field_modal_share": 0.004739,
-   "p_answer_by_uniform_guess": 0.004739,
+   "answer_field_modal_share": 0.012346,
+   "p_answer_by_uniform_guess": 0.012346,
    "collection_is_bulk_download": true,
-   "n_true": 211
+   "key_is_aggregated": false,
+   "margin_deg": 0.895302,
+   "cross_source_disagreement_deg": 0.002057,
+   "geonames_coord_disagreement_deg": 0.00025
   },
   "facts": {
-   "year": 2008,
-   "genre": "Fantasy",
-   "n": 211,
-   "runtime": 190,
-   "runner_up": 166,
-   "title": "Je ne suis pas morte"
+   "airline": "SK",
+   "hub": "CPH",
+   "n": 81,
+   "geonames_coord_disagreement_deg": 0.00025,
+   "witness_route": "GeoNames search, coordinate-verified; replaced the Wikidata P1566 read that travelbear.json measured as answer-bearing with guard discrimination 0.5",
+   "iata_not_asked": "TRD",
+   "answer_field_class": "identifier",
+   "replaces": "IATA code, withdrawn: measured as printed in the winner's own Wikipedia article, so stage 2 was free by recall while stage 1 was not",
+   "stage1_key_leak": "latitude found in 0 of 22 destination articles, permuted control also 0.0, excess 0.0, McNemar p = 1.0"
   },
+  "seed_repr": "{\"airline_iata\": \"SK\", \"hub_iata\": \"CPH\"}",
+  "verdict": "ship",
+  "witness_tier": "gold",
+  "verified": true
+ },
+ {
+  "collection_is_explicit": false,
+  "primary_operator": "OpenFlights",
+  "independent_confirming_operators": [
+   "GeoNames",
+   "OurAirports"
+  ],
+  "category": "travel",
+  "field": "GeoNames identifier",
+  "answer": "6300971",
+  "entity": "Pulkovo Airport",
+  "n_base": 50,
+  "sources": [
+   "https://raw.githubusercontent.com/jpatokal/openflights/master/data/routes.dat",
+   "https://davidmegginson.github.io/ourairports-data/airports.csv",
+   "https://sws.geonames.org/6300971/"
+  ],
+  "confirming_sources": [
+   "https://davidmegginson.github.io/ourairports-data/airports.csv",
+   "https://sws.geonames.org/6300971/"
+  ],
+  "api_proof": true,
+  "api_proof_argument": "OpenFlights distributes routes and airports as two separate flat files with no query interface. The northernmost destination exists only after joining the two and ordering 50 destinations by latitude.",
+  "confirmation": "OurAirports lists LED at latitude 59.800301; GeoNames returns exactly one airport record, 6300971, within 0.05 degrees of the position OpenFlights and OurAirports agree on (observed disagreement 1.1e-05 degrees), and that record resolves and carries its own identifier",
+  "prompt": "The OpenFlights project distributes an airline route table and a separate airport table, each as a plain delimited file covering worldwide civil aviation. Consider only the nonstop destinations served by the carrier with IATA code LO departing from its hub at WAW, as recorded in that route table. Join those destinations to the airport table and find the one lying furthest north. Report the GeoNames database identifier of that single northernmost destination. Resolve the identifier at the gazetteer before answering. Answer with the numeric identifier only, digits and nothing else.",
+  "source_operators": [
+   "GeoNames",
+   "OpenFlights",
+   "OurAirports"
+  ],
+  "confirming_operators": [
+   "GeoNames",
+   "OurAirports"
+  ],
+  "track": "api-native",
+  "ranking_evidence": {
+   "label": "travel",
+   "mode": "max",
+   "n_base": 50,
+   "n_ranked": 50,
+   "spearman_key_vs_api_order": -0.0073,
+   "n_tied_at_extremum": 1,
+   "distinct_keys": 50,
+   "winner_position_in_api_order": 10,
+   "winner_is_first_returned": false,
+   "winner_is_last_returned": false,
+   "top_keys": [
+    "59.80030059814453",
+    "59.651901245117",
+    "59.41329956049999",
+    "56.92359924316406",
+    "55.972599"
+   ],
+   "answer_field_distinct_values": 50,
+   "answer_field_n_values": 50,
+   "answer_field_max_count": 1,
+   "answer_field_count_of_answer": 1,
+   "answer_field_modal_share": 0.02,
+   "p_answer_by_uniform_guess": 0.02,
+   "collection_is_bulk_download": true,
+   "key_is_aggregated": false,
+   "margin_deg": 0.148399,
+   "cross_source_disagreement_deg": 0.003411,
+   "geonames_coord_disagreement_deg": 1.1e-05
+  },
+  "facts": {
+   "airline": "LO",
+   "hub": "WAW",
+   "n": 50,
+   "geonames_coord_disagreement_deg": 1.1e-05,
+   "witness_route": "GeoNames search, coordinate-verified; replaced the Wikidata P1566 read that travelbear.json measured as answer-bearing with guard discrimination 0.5",
+   "iata_not_asked": "LED",
+   "answer_field_class": "identifier",
+   "replaces": "IATA code, withdrawn: measured as printed in the winner's own Wikipedia article, so stage 2 was free by recall while stage 1 was not",
+   "stage1_key_leak": "latitude found in 0 of 22 destination articles, permuted control also 0.0, excess 0.0, McNemar p = 1.0"
+  },
+  "seed_repr": "{\"airline_iata\": \"LO\", \"hub_iata\": \"WAW\"}",
+  "verdict": "ship",
+  "witness_tier": "gold",
+  "verified": true
+ },
+ {
+  "collection_is_explicit": false,
+  "primary_operator": "OpenFlights",
+  "independent_confirming_operators": [
+   "GeoNames",
+   "OurAirports"
+  ],
+  "category": "travel",
+  "field": "GeoNames identifier",
+  "answer": "6301511",
+  "entity": "Helsinki Vantaa Airport",
+  "n_base": 171,
+  "sources": [
+   "https://raw.githubusercontent.com/jpatokal/openflights/master/data/routes.dat",
+   "https://davidmegginson.github.io/ourairports-data/airports.csv",
+   "https://sws.geonames.org/6301511/"
+  ],
+  "confirming_sources": [
+   "https://davidmegginson.github.io/ourairports-data/airports.csv",
+   "https://sws.geonames.org/6301511/"
+  ],
+  "api_proof": true,
+  "api_proof_argument": "OpenFlights distributes routes and airports as two separate flat files with no query interface. The northernmost destination exists only after joining the two and ordering 171 destinations by latitude.",
+  "confirmation": "OurAirports lists HEL at latitude 60.318363; GeoNames returns exactly one airport record, 6301511, within 0.05 degrees of the position OpenFlights and OurAirports agree on (observed disagreement 0.001143 degrees), and that record resolves and carries its own identifier",
+  "prompt": "The OpenFlights project distributes an airline route table and a separate airport table, each as a plain delimited file covering worldwide civil aviation. Consider only the nonstop destinations served by the carrier with IATA code LH departing from its hub at FRA, as recorded in that route table. Join those destinations to the airport table and find the one lying furthest north. Report the GeoNames database identifier of that single northernmost destination. Resolve the identifier at the gazetteer before answering. Answer with the numeric identifier only, digits and nothing else.",
+  "source_operators": [
+   "GeoNames",
+   "OpenFlights",
+   "OurAirports"
+  ],
+  "confirming_operators": [
+   "GeoNames",
+   "OurAirports"
+  ],
+  "track": "api-native",
+  "ranking_evidence": {
+   "label": "travel",
+   "mode": "max",
+   "n_base": 171,
+   "n_ranked": 171,
+   "spearman_key_vs_api_order": -0.0514,
+   "n_tied_at_extremum": 1,
+   "distinct_keys": 171,
+   "winner_position_in_api_order": 62,
+   "winner_is_first_returned": false,
+   "winner_is_last_returned": false,
+   "top_keys": [
+    "60.317199707031",
+    "60.29339981",
+    "60.121",
+    "59.80030059814453",
+    "59.651901245117"
+   ],
+   "answer_field_distinct_values": 171,
+   "answer_field_n_values": 171,
+   "answer_field_max_count": 1,
+   "answer_field_count_of_answer": 1,
+   "answer_field_modal_share": 0.005848,
+   "p_answer_by_uniform_guess": 0.005848,
+   "collection_is_bulk_download": true,
+   "key_is_aggregated": false,
+   "margin_deg": 0.0238,
+   "cross_source_disagreement_deg": 0.001163,
+   "geonames_coord_disagreement_deg": 0.001143
+  },
+  "facts": {
+   "airline": "LH",
+   "hub": "FRA",
+   "n": 171,
+   "geonames_coord_disagreement_deg": 0.001143,
+   "witness_route": "GeoNames search, coordinate-verified; replaced the Wikidata P1566 read that travelbear.json measured as answer-bearing with guard discrimination 0.5",
+   "iata_not_asked": "HEL",
+   "answer_field_class": "identifier",
+   "replaces": "IATA code, withdrawn: measured as printed in the winner's own Wikipedia article, so stage 2 was free by recall while stage 1 was not",
+   "stage1_key_leak": "latitude found in 0 of 22 destination articles, permuted control also 0.0, excess 0.0, McNemar p = 1.0"
+  },
+  "seed_repr": "{\"airline_iata\": \"LH\", \"hub_iata\": \"FRA\"}",
+  "verdict": "ship",
+  "witness_tier": "gold",
   "verified": true
  }
 ]

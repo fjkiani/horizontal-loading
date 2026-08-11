@@ -20,12 +20,49 @@ import sys
 import time
 import traceback
 
+import hashlib
+
 import category_traps as ct
-import gen_v2  # noqa: F401  -- installs the real generators; see tests/test_import_graph.py
-import source_gate as sg
+# ORDER MATTERS. Each module overrides entries in ct.GENERATORS, so importing
+# only gen_v2 -- as this script did until now -- silently ran the WRONG
+# generator for celebrities, education, finance, history and sports. Sports
+# would have ignored the validated pitching_battersFaced key swap entirely.
+# assert_ownership() below is the guard; mirrors tests/test_import_graph.py.
+import gen_v2  # noqa: F401,E402
+import gen_v3  # noqa: F401,E402
+import gen_v4  # noqa: F401,E402
+import source_gate as sg  # noqa: E402
+import evaluate_traps as et  # noqa: E402
 
 SHARD = os.environ.get("EXPAND_SHARD", "A")
 OUT = os.environ.get("EXPAND_OUT", f"expand_{SHARD}.json")
+
+_OWNER = {
+    "business": "gen_v2", "politics": "gen_v2", "geography": "gen_v2",
+    "shopping": "gen_v2", "tv shows and movies": "gen_v2", "video games": "gen_v2",
+    "history": "gen_v3", "celebrities/public figures": "gen_v3",
+    "education": "gen_v3", "sports": "gen_v3",
+    "finance": "gen_v4",
+    "art": "category_traps", "health and medicine": "category_traps",
+    "legal": "category_traps", "science and technology": "category_traps",
+    "travel": "category_traps",
+}
+
+
+def assert_ownership():
+    """Fail loudly rather than sweep 81 seeds through stale code."""
+    bad = [f"{c}: expected {w}, got {getattr(ct.GENERATORS.get(c), '__module__', None)}"
+           for c, w in _OWNER.items()
+           if getattr(ct.GENERATORS.get(c), "__module__", None) != w]
+    if bad:
+        raise SystemExit("GENERATOR OWNERSHIP MISMATCH\n  " + "\n  ".join(bad))
+    print(f"ownership ok: {len(_OWNER)} categories match tests/test_import_graph.py")
+
+
+def trap_id(category, field, answer):
+    """Pool identity. Two seeds yielding one answer are ONE prompt; travel's
+    measured distinct_answer_rate is 0.8, so collisions are real."""
+    return hashlib.sha256(f"{category}|{field}|{answer}".encode()).hexdigest()[:16]
 
 # An identifier is a token whose value cannot be inferred or recalled from
 # knowing the entity; an attribute is a fact about the entity that a model may
@@ -144,15 +181,27 @@ GRID = {
     ],
 }
 
+# HOST-DISJOINT shards. The grouping is by upstream operator, not by size.
+# legalops3 self-rate-limited (107 of 132 rows HTTP 429) because two workers
+# hit loc.gov concurrently, which invalidated its verdict outright. No two
+# shards may share an upstream host.
+#   W0 imdb/tvmaze + pcgamingwiki   W1 openflights/ourairports/geonames
+#   W2 cornell+courtlistener        W3 arxiv/openalex/datacite/ctgov/hipolabs
+#   W4 sec/gleif/govinfo/mlb/aic/gs1/wikidata-free remainder
 SHARDS = {
-    "A": ["science and technology", "art", "business", "celebrities/public figures"],
-    "B": ["education", "geography", "health and medicine", "history", "legal"],
-    "C": ["politics", "sports", "travel", "tv shows and movies", "video games"],
-    "D": ["finance", "shopping"],
+    "W0": ["tv shows and movies", "video games"],
+    "W1": ["geography", "travel"],
+    "W2": ["legal", "history"],
+    "W3": ["science and technology", "health and medicine", "education"],
+    "W4": ["business", "finance", "politics", "sports", "art", "shopping",
+           "celebrities/public figures"],
 }
 
 
 def main():
+    assert_ownership()
+    if SHARD not in SHARDS:
+        raise SystemExit(f"unknown shard {SHARD!r}; have {sorted(SHARDS)}")
     cats = SHARDS[SHARD]
     state = json.load(open(OUT)) if os.path.exists(OUT) else {"results": []}
     done = {(r["category"], r["seed_repr"]) for r in state["results"]}
@@ -172,9 +221,28 @@ def main():
                 cand = gen(**seed)
                 trap = cand.to_trap()
                 ok, viol = sg.validate_trap(trap)
+                # DEFECT: this script used to stop at the gate and call that a
+                # result. Gate-pass is NOT ship -- the retracted legalfix probe
+                # made exactly this error and produced a false "5 of 5 seeds".
+                # A prompt only enters the pool with an evaluate_one verdict.
+                ev, verdict, tier, failing = None, "error", None, None
+                try:
+                    ev = et.evaluate_one(cat, {"status": "ok", "trap": trap})
+                    verdict = ev.get("verdict")
+                    tier = ev.get("witness_tier")
+                    failing = sorted(k for k, v in (ev.get("tests") or {}).items()
+                                     if not v)
+                except Exception as ee:  # noqa: BLE001
+                    rec["eval_error"] = f"{type(ee).__name__}: {ee}"
                 rank = dict(ct.LAST_RANK or {})
                 rec.update({
                     "ok": bool(ok), "violations": viol,
+                    "verdict": verdict, "witness_tier": tier,
+                    "failing_tests": failing,
+                    "ships": verdict == "ship",
+                    "trap_id": trap_id(cat, trap.get("field"),
+                                       str(trap.get("answer"))),
+                    "trap": trap,
                     "field": trap.get("field"), "answer": str(trap.get("answer")),
                     "entity": trap.get("entity"), "n_base": trap.get("n_base"),
                     "field_class": field_class(trap.get("field")),
@@ -196,10 +264,16 @@ def main():
             with open(OUT + ".tmp", "w") as fh:
                 json.dump(state, fh, indent=1)
             os.replace(OUT + ".tmp", OUT)
-            flag = "OK " if rec["ok"] else "-- "
-            print(f"{flag}{cat:28s} {sr[:52]:52s} {rec.get('answer') or rec.get('error','')[:60]}")
+            flag = ("SHIP" if rec.get("ships") else
+                    ("gate" if rec["ok"] else "--  "))
+            print(f"{flag} {cat:28s} {sr[:44]:44s} "
+                  f"{str(rec.get('verdict')):11s} "
+                  f"{rec.get('answer') or rec.get('error','')[:52]}")
     n_ok = sum(1 for r in state["results"] if r["ok"])
-    print(f"\nshard {SHARD}: {n_ok}/{len(state['results'])} gate-valid -> {OUT}")
+    n_ship = sum(1 for r in state["results"] if r.get("ships"))
+    n_uniq = len({r["trap_id"] for r in state["results"] if r.get("ships")})
+    print(f"\nshard {SHARD}: {len(state['results'])} seeds -> {n_ok} gate-valid "
+          f"-> {n_ship} SHIP -> {n_uniq} distinct answers  [{OUT}]")
     return 0
 
 

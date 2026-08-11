@@ -1,5 +1,5 @@
 import { useEffect, useMemo, useState } from "react";
-import { loadCatalog, warm } from "./api.js";
+import { loadCatalog, warm, poolStatus } from "./api.js";
 import CategoryGrid from "./components/CategoryGrid.jsx";
 import TrapCard from "./components/TrapCard.jsx";
 import GeneratePanel from "./components/GeneratePanel.jsx";
@@ -11,10 +11,17 @@ export default function App() {
   const [data, setData] = useState(null);
   const [err, setErr] = useState("");
   const [warmState, setWarmState] = useState("unknown");
+  const [pool, setPool] = useState(null);
+
+  // Consumption is live state and cannot be baked into the build, so the pool
+  // readout only appears once the origin answers. Its absence is not an error:
+  // the catalog still renders with the origin asleep, it just shows how many
+  // traps EXIST rather than how many are unspent.
+  const refreshPool = () => poolStatus().then(setPool, () => setPool(null));
 
   useEffect(() => {
     loadCatalog().then(setData, (e) => setErr(String(e.message || e)));
-    warm().then(setWarmState);
+    warm().then((w) => { setWarmState(w); if (w === "awake") refreshPool(); });
   }, []);
 
   const traps = data ? data.traps : [];
@@ -65,7 +72,22 @@ export default function App() {
           <div className="stat"><span className="k">dead traps</span><span className="v">{stats.dead}</span></div>
           <div className="stat"><span className="k">mean stump</span><span className="v">{stats.mean === null ? "—" : Math.round(stats.mean * 100) + "%"}</span></div>
           <div className="stat"><span className="k">refused cats</span><span className="v">{stats.refused}</span></div>
+          <div className="stat">
+            <span className="k">unspent</span>
+            <span className="v">{pool ? pool.n_available_total : "—"}</span>
+          </div>
+          <div className="stat">
+            <span className="k">burned</span>
+            <span className="v">{pool ? pool.n_burned_total : "—"}</span>
+          </div>
         </div>
+        {pool && pool.low_water_categories.length > 0 && (
+          <div className="notice">
+            low water ({pool.low_water_mark} or fewer left):{" "}
+            {pool.low_water_categories.join(", ")}. Prompts are not recycled — refill
+            by sweeping the seed roster and re-baking.
+          </div>
+        )}
       </header>
 
       {err && <div className="notice err">catalog unavailable: {err}</div>}
@@ -73,7 +95,7 @@ export default function App() {
 
       {data && (
         <>
-          <CategoryGrid categories={data.categories} active={cat} onPick={setCat} />
+          <CategoryGrid categories={data.categories} pool={pool} active={cat} onPick={setCat} />
 
           <div className="controls">
             <div className="ctl">
@@ -100,7 +122,8 @@ export default function App() {
           {shown.length === 0 && <div className="empty">No trap matches these filters.</div>}
           {shown.map((t) => <TrapCard key={t.category + "-" + t.answer} trap={t} />)}
 
-          <GeneratePanel categories={data.categories} warmState={warmState} />
+          <GeneratePanel categories={data.categories} pool={pool}
+                         warmState={warmState} onSpend={refreshPool} />
         </>
       )}
     </div>

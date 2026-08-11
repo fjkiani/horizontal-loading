@@ -125,3 +125,47 @@ def test_every_admitted_trap_carries_one_of_the_sixteen_categories(isolated_pool
     tg.admit_api_trap(_api_trap())
     pool = json.load(open(isolated_pool))
     assert all(p["category"] in sg.CATEGORIES for p in pool)
+
+
+# ------------------------------------------------- the shipped artifact itself
+def _catalog():
+    p = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))),
+                     "web", "public", "catalog.json")
+    with open(p) as fh:
+        return json.load(fh)
+
+
+def test_the_baked_category_counts_match_the_baked_traps():
+    """The catalog carries a `categories` summary AND the traps it summarises.
+
+    Those drifted: a rebake replaced `traps` and carried `categories` over
+    unchanged, so the shipped artifact advertised business, education, politics,
+    sports and tv shows as stocked with one trap each after the Wikimedia ban
+    had emptied them -- 14 traps mis-advertised in total. The SPA reads this
+    block when the origin is asleep, so the stale summary was the reader's only
+    view. Recomputing it is a one-line fix; keeping it from drifting again is
+    this test.
+    """
+    doc = _catalog()
+    counted = {}
+    for t in doc["traps"]:
+        counted[t["category"]] = counted.get(t["category"], 0) + 1
+    for row in doc["categories"]:
+        assert row["n_served"] == counted.get(row["category"], 0), (
+            "categories block claims %d for %s, traps hold %d"
+            % (row["n_served"], row["category"], counted.get(row["category"], 0)))
+    assert sum(r["n_served"] for r in doc["categories"]) == len(doc["traps"])
+
+
+def test_a_category_is_gold_only_if_every_trap_in_it_is_gold():
+    """One silver trap in a pair must not let the category advertise gold."""
+    doc = _catalog()
+    tiers = {}
+    for t in doc["traps"]:
+        tiers.setdefault(t["category"], set()).add(t.get("witness_tier"))
+    for row in doc["categories"]:
+        seen = tiers.get(row["category"])
+        if not seen:
+            assert row["tier"] is None
+        elif row["tier"] == "gold":
+            assert seen == {"gold"}, (row["category"], seen)

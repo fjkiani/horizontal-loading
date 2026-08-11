@@ -1,0 +1,648 @@
+{
+  "generated": "2026-08-11T18:37:39Z",
+  "why": "Classify every generator's Wikimedia dependency by MUTATING Wikidata.",
+  "n_categories": 16,
+  "rows": [
+    {
+      "category": "geography",
+      "baseline": {
+        "status": "ok",
+        "answer": "SKIP",
+        "field": "ICAO identifier",
+        "etype": null
+      },
+      "verdict": "LOAD_BEARING_LOGIC",
+      "why": "T0: with the call unavailable the generator raises (FetchError: banned domain wikidata.org (simulated by wikimut T0)), so the ban breaks it and the check must be repointed, not just unlinked",
+      "ambiguity_behaviour": "fail-closed: two colliding items caused a refusal",
+      "T0": {
+        "outcome": "raised",
+        "etype": "FetchError",
+        "error": "FetchError: banned domain wikidata.org (simulated by wikimut T0)",
+        "tb": "n run_patched\n    cand = ct.GENERATORS[cat]()\n           ^^^^^^^^^^^^^^^^^^^^\n  File \"/workspace/seal_deploy/gen_v2.py\", line 490, in gen_geography\n    hits = ct._wikidata_by_value(\"P239\", answer)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/workspace/seal_deploy/category_traps.py\", line 593, in _wikidata_by_value\n    binds = net.wikidata_sparql(q).get(\"results\", {}).get(\"bindings\", [])\n            ^^^^^^^^^^^^^^^^^^^^^^\n  File \"/workspace/seal_deploy/wikimut.py\", line 99, in _banned\n    raise ct.net.FetchError(\nnet.FetchError: banned domain wikidata.org (simulated by wikimut T0)\n",
+        "secs": 0.5
+      },
+      "T1": {
+        "outcome": "returned",
+        "answer": "SKIP",
+        "field": "ICAO identifier",
+        "operators": [
+          "OpenFlights",
+          "OurAirports",
+          "REST Countries project",
+          "Wikimedia Foundation"
+        ],
+        "secs": 0.5
+      },
+      "T2": {
+        "outcome": "returned",
+        "answer": "SKIP",
+        "field": "ICAO identifier",
+        "operators": [
+          "OpenFlights",
+          "OurAirports",
+          "REST Countries project",
+          "Wikimedia Foundation"
+        ],
+        "secs": 0.5
+      },
+      "T4": {
+        "outcome": "raised",
+        "etype": "TrapUnavailable",
+        "error": "geography: Wikidata P239 = SKIP matched 2 items (['Q90', 'Q99999991']); confirmation must be unambiguous",
+        "secs": 0.4
+      }
+    },
+    {
+      "category": "travel",
+      "baseline": {
+        "status": "ok",
+        "answer": "6296543",
+        "field": "GeoNames identifier",
+        "etype": null
+      },
+      "verdict": "ANSWER_BEARING",
+      "why": "SUPERSEDED. T1/T2/T4 here are vacuous for travel: category_traps.py:751 reads `(...).get('claims', {}) or {}` and the _Claims mock was an empty (falsy) dict subclass, so the mutation was discarded before the generator saw it. travelbear.py rewrote one real P1566 claim and the shipped answer moved 6296543 -> 656220 while evaluate_one still returned ship/gold/0 failing.",
+      "ambiguity_behaviour": "fail-closed: two colliding items caused a refusal",
+      "T0": {
+        "outcome": "raised",
+        "etype": "FetchError",
+        "error": "FetchError: banned domain wikidata.org (simulated by wikimut T0)",
+        "tb": "\n    cand = ct.GENERATORS[cat]()\n           ^^^^^^^^^^^^^^^^^^^^\n  File \"/workspace/seal_deploy/category_traps.py\", line 740, in gen_travel\n    wd = _wikidata_by_value(\"P238\", answer, limit=5)\n         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/workspace/seal_deploy/category_traps.py\", line 593, in _wikidata_by_value\n    binds = net.wikidata_sparql(q).get(\"results\", {}).get(\"bindings\", [])\n            ^^^^^^^^^^^^^^^^^^^^^^\n  File \"/workspace/seal_deploy/wikimut.py\", line 99, in _banned\n    raise ct.net.FetchError(\nnet.FetchError: banned domain wikidata.org (simulated by wikimut T0)\n",
+        "secs": 0.5
+      },
+      "T1": {
+        "outcome": "raised",
+        "etype": "TrapUnavailable",
+        "error": "travel: Wikidata Q900000001 carries 0 GeoNames ids for IVL, so the answer is not single-valued",
+        "secs": 0.5
+      },
+      "T2": {
+        "outcome": "raised",
+        "etype": "TrapUnavailable",
+        "error": "travel: Wikidata Q90 carries 0 GeoNames ids for IVL, so the answer is not single-valued",
+        "secs": 0.5
+      },
+      "T4": {
+        "outcome": "raised",
+        "etype": "TrapUnavailable",
+        "error": "travel: Wikidata P238 returned 2 items for 'IVL', so the winning airport cannot be pinned to one entity",
+        "secs": 0.5
+      },
+      "verdict_superseded_by": "travelbear.json",
+      "verdict_original": "LOAD_BEARING_LOGIC"
+    },
+    {
+      "category": "science and technology",
+      "baseline": {
+        "status": "ok",
+        "answer": "2403.07505",
+        "field": "arXiv identifier",
+        "etype": null
+      },
+      "verdict": "SAFE_TO_DROP",
+      "why": "T0: ships the baseline answer '2403.07505' with Wikidata unreachable, so only the URL and the operator credit need removing",
+      "ambiguity_behaviour": "fail-arbitrary: two colliding items were accepted and it shipped '2403.07505'",
+      "T0": {
+        "outcome": "returned",
+        "answer": "2403.07505",
+        "field": "arXiv identifier",
+        "operators": [
+          "Cornell University",
+          "DataCite",
+          "OurResearch (OpenAlex)"
+        ],
+        "secs": 0.0
+      },
+      "T1": {
+        "outcome": "returned",
+        "answer": "2403.07505",
+        "field": "arXiv identifier",
+        "operators": [
+          "Cornell University",
+          "DataCite",
+          "OurResearch (OpenAlex)"
+        ],
+        "secs": 0.0
+      },
+      "T2": {
+        "outcome": "returned",
+        "answer": "2403.07505",
+        "field": "arXiv identifier",
+        "operators": [
+          "Cornell University",
+          "DataCite",
+          "OurResearch (OpenAlex)"
+        ],
+        "secs": 0.0
+      },
+      "T4": {
+        "outcome": "returned",
+        "answer": "2403.07505",
+        "field": "arXiv identifier",
+        "operators": [
+          "Cornell University",
+          "DataCite",
+          "OurResearch (OpenAlex)"
+        ],
+        "secs": 0.0
+      }
+    },
+    {
+      "category": "health and medicine",
+      "baseline": {
+        "status": "ok",
+        "answer": "NCT05178810",
+        "field": "trial registry identifier",
+        "etype": null
+      },
+      "verdict": "SAFE_TO_DROP",
+      "why": "T0: ships the baseline answer 'NCT05178810' with Wikidata unreachable, so only the URL and the operator credit need removing",
+      "ambiguity_behaviour": "fail-arbitrary: two colliding items were accepted and it shipped 'NCT05178810'",
+      "T0": {
+        "outcome": "returned",
+        "answer": "NCT05178810",
+        "field": "trial registry identifier",
+        "operators": [
+          "EMBL-EBI",
+          "OurResearch (OpenAlex)",
+          "US Food and Drug Administration",
+          "US National Institutes of Health"
+        ],
+        "secs": 0.0
+      },
+      "T1": {
+        "outcome": "returned",
+        "answer": "NCT05178810",
+        "field": "trial registry identifier",
+        "operators": [
+          "EMBL-EBI",
+          "OurResearch (OpenAlex)",
+          "US Food and Drug Administration",
+          "US National Institutes of Health",
+          "Wikimedia Foundation"
+        ],
+        "secs": 0.0
+      },
+      "T2": {
+        "outcome": "returned",
+        "answer": "NCT05178810",
+        "field": "trial registry identifier",
+        "operators": [
+          "EMBL-EBI",
+          "OurResearch (OpenAlex)",
+          "US Food and Drug Administration",
+          "US National Institutes of Health",
+          "Wikimedia Foundation"
+        ],
+        "secs": 0.0
+      },
+      "T4": {
+        "outcome": "returned",
+        "answer": "NCT05178810",
+        "field": "trial registry identifier",
+        "operators": [
+          "EMBL-EBI",
+          "OurResearch (OpenAlex)",
+          "US Food and Drug Administration",
+          "US National Institutes of Health",
+          "Wikimedia Foundation"
+        ],
+        "secs": 0.0
+      }
+    },
+    {
+      "category": "finance",
+      "baseline": {
+        "status": "fail",
+        "answer": null,
+        "field": null,
+        "etype": "TrapUnavailable"
+      },
+      "verdict": "UNINFORMATIVE",
+      "why": "baseline is fail (TrapUnavailable), so nothing observed under mutation is attributable to Wikidata",
+      "ambiguity_behaviour": "not measured",
+      "T0": {
+        "outcome": "skipped",
+        "error": "baseline not ok; mutation uninformative"
+      },
+      "T1": {
+        "outcome": "skipped",
+        "error": "baseline not ok; mutation uninformative"
+      },
+      "T2": {
+        "outcome": "skipped",
+        "error": "baseline not ok; mutation uninformative"
+      },
+      "T4": {
+        "outcome": "skipped",
+        "error": "baseline not ok; mutation uninformative"
+      }
+    },
+    {
+      "category": "business",
+      "baseline": {
+        "status": "ok",
+        "answer": "1341439",
+        "field": "SEC Central Index Key",
+        "etype": null
+      },
+      "verdict": "LOAD_BEARING_LOGIC",
+      "why": "T0: with the call unavailable the generator raises (FetchError: banned domain wikidata.org (simulated by wikimut T0)), so the ban breaks it and the check must be repointed, not just unlinked",
+      "ambiguity_behaviour": "fail-closed: two colliding items caused a refusal",
+      "T0": {
+        "outcome": "raised",
+        "etype": "FetchError",
+        "error": "FetchError: banned domain wikidata.org (simulated by wikimut T0)",
+        "tb": "ct.GENERATORS[cat]()\n           ^^^^^^^^^^^^^^^^^^^^\n  File \"/workspace/seal_deploy/gen_v2.py\", line 132, in gen_business\n    wd_cik, qid = _wikidata_value(best[\"entityName\"], \"P5531\")\n                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/workspace/seal_deploy/category_traps.py\", line 455, in _wikidata_value\n    hits = net.wikidata_search(qid_or_search).get(\"search\", [])\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/workspace/seal_deploy/wikimut.py\", line 99, in _banned\n    raise ct.net.FetchError(\nnet.FetchError: banned domain wikidata.org (simulated by wikimut T0)\n",
+        "secs": 0.0
+      },
+      "T1": {
+        "outcome": "raised",
+        "etype": "TrapUnavailable",
+        "error": "business: Wikidata P5531 did not independently confirm CIK 1341439 for 'Oracle Corporation' (got 'MUTANTVALUE1')",
+        "secs": 0.0
+      },
+      "T2": {
+        "outcome": "raised",
+        "etype": "TrapUnavailable",
+        "error": "business: Wikidata P5531 did not independently confirm CIK 1341439 for 'Oracle Corporation' (got '0000320193')",
+        "secs": 0.0
+      },
+      "T4": {
+        "outcome": "raised",
+        "etype": "TrapUnavailable",
+        "error": "business: Wikidata P5531 did not independently confirm CIK 1341439 for 'Oracle Corporation' (got '0000320193')",
+        "secs": 0.0
+      }
+    },
+    {
+      "category": "history",
+      "baseline": {
+        "status": "fail",
+        "answer": null,
+        "field": null,
+        "etype": "TrapUnavailable"
+      },
+      "verdict": "UNINFORMATIVE",
+      "why": "baseline is fail (TrapUnavailable), so nothing observed under mutation is attributable to Wikidata",
+      "ambiguity_behaviour": "not measured",
+      "T0": {
+        "outcome": "skipped",
+        "error": "baseline not ok; mutation uninformative"
+      },
+      "T1": {
+        "outcome": "skipped",
+        "error": "baseline not ok; mutation uninformative"
+      },
+      "T2": {
+        "outcome": "skipped",
+        "error": "baseline not ok; mutation uninformative"
+      },
+      "T4": {
+        "outcome": "skipped",
+        "error": "baseline not ok; mutation uninformative"
+      }
+    },
+    {
+      "category": "celebrities/public figures",
+      "baseline": {
+        "status": "fail",
+        "answer": null,
+        "field": null,
+        "etype": "TrapUnavailable"
+      },
+      "verdict": "UNINFORMATIVE",
+      "why": "baseline is fail (TrapUnavailable), so nothing observed under mutation is attributable to Wikidata",
+      "ambiguity_behaviour": "not measured",
+      "T0": {
+        "outcome": "skipped",
+        "error": "baseline not ok; mutation uninformative"
+      },
+      "T1": {
+        "outcome": "skipped",
+        "error": "baseline not ok; mutation uninformative"
+      },
+      "T2": {
+        "outcome": "skipped",
+        "error": "baseline not ok; mutation uninformative"
+      },
+      "T4": {
+        "outcome": "skipped",
+        "error": "baseline not ok; mutation uninformative"
+      }
+    },
+    {
+      "category": "legal",
+      "baseline": {
+        "status": "ok",
+        "answer": "768",
+        "field": "United States Reports page",
+        "etype": null
+      },
+      "verdict": "SAFE_TO_DROP",
+      "why": "T0: ships the baseline answer '768' with Wikidata unreachable, so only the URL and the operator credit need removing",
+      "ambiguity_behaviour": "fail-arbitrary: two colliding items were accepted and it shipped '768'",
+      "T0": {
+        "outcome": "returned",
+        "answer": "768",
+        "field": "United States Reports page",
+        "operators": [
+          "Cornell University",
+          "Free Law Project",
+          "Harvard Law School Library Innovation Lab"
+        ],
+        "secs": 0.0
+      },
+      "T1": {
+        "outcome": "returned",
+        "answer": "768",
+        "field": "United States Reports page",
+        "operators": [
+          "Cornell University",
+          "Free Law Project",
+          "Harvard Law School Library Innovation Lab"
+        ],
+        "secs": 0.0
+      },
+      "T2": {
+        "outcome": "returned",
+        "answer": "768",
+        "field": "United States Reports page",
+        "operators": [
+          "Cornell University",
+          "Free Law Project",
+          "Harvard Law School Library Innovation Lab"
+        ],
+        "secs": 0.0
+      },
+      "T4": {
+        "outcome": "returned",
+        "answer": "768",
+        "field": "United States Reports page",
+        "operators": [
+          "Cornell University",
+          "Free Law Project",
+          "Harvard Law School Library Innovation Lab"
+        ],
+        "secs": 0.0
+      }
+    },
+    {
+      "category": "politics",
+      "baseline": {
+        "status": "ok",
+        "answer": "13292",
+        "field": "executive order number",
+        "etype": null
+      },
+      "verdict": "LOAD_BEARING_LOGIC",
+      "why": "T0: with the call unavailable the generator raises (FetchError: banned domain wikidata.org (simulated by wikimut T0)), so the ban breaks it and the check must be repointed, not just unlinked",
+      "ambiguity_behaviour": "fail-arbitrary: two colliding items were accepted and it shipped '13292'",
+      "T0": {
+        "outcome": "raised",
+        "etype": "FetchError",
+        "error": "FetchError: banned domain wikidata.org (simulated by wikimut T0)",
+        "tb": "ut.py\", line 178, in run_patched\n    cand = ct.GENERATORS[cat]()\n           ^^^^^^^^^^^^^^^^^^^^\n  File \"/workspace/seal_deploy/gen_v2.py\", line 198, in gen_politics\n    return _politics_one(y)\n           ^^^^^^^^^^^^^^^^\n  File \"/workspace/seal_deploy/gen_v2.py\", line 226, in _politics_one\n    wd_eo = ct.net.wikidata_search(f\"Executive Order {answer}\").get(\"search\", [])\n            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/workspace/seal_deploy/wikimut.py\", line 99, in _banned\n    raise ct.net.FetchError(\nnet.FetchError: banned domain wikidata.org (simulated by wikimut T0)\n",
+        "secs": 0.0
+      },
+      "T1": {
+        "outcome": "returned",
+        "answer": "13292",
+        "field": "executive order number",
+        "operators": [
+          "US Government Publishing Office",
+          "US Office of the Federal Register",
+          "Wikimedia Foundation"
+        ],
+        "secs": 0.0
+      },
+      "T2": {
+        "outcome": "returned",
+        "answer": "13292",
+        "field": "executive order number",
+        "operators": [
+          "US Government Publishing Office",
+          "US Office of the Federal Register",
+          "Wikimedia Foundation"
+        ],
+        "secs": 0.0
+      },
+      "T4": {
+        "outcome": "returned",
+        "answer": "13292",
+        "field": "executive order number",
+        "operators": [
+          "US Government Publishing Office",
+          "US Office of the Federal Register",
+          "Wikimedia Foundation"
+        ],
+        "secs": 0.0
+      }
+    },
+    {
+      "category": "art",
+      "baseline": {
+        "status": "fail",
+        "answer": null,
+        "field": null,
+        "etype": "TrapUnavailable"
+      },
+      "verdict": "UNINFORMATIVE",
+      "why": "baseline is fail (TrapUnavailable), so nothing observed under mutation is attributable to Wikidata",
+      "ambiguity_behaviour": "not measured",
+      "T0": {
+        "outcome": "skipped",
+        "error": "baseline not ok; mutation uninformative"
+      },
+      "T1": {
+        "outcome": "skipped",
+        "error": "baseline not ok; mutation uninformative"
+      },
+      "T2": {
+        "outcome": "skipped",
+        "error": "baseline not ok; mutation uninformative"
+      },
+      "T4": {
+        "outcome": "skipped",
+        "error": "baseline not ok; mutation uninformative"
+      }
+    },
+    {
+      "category": "sports",
+      "baseline": {
+        "status": "ok",
+        "answer": "243777",
+        "field": "FAST identifier",
+        "etype": null
+      },
+      "verdict": "LOAD_BEARING_LOGIC",
+      "why": "T0: with the call unavailable the generator raises (sports: no seed produced a confirmable FAST identifier: New York Yankees 1998: Wikidata FetchError; Boston Red Sox 1999:), so the ban breaks it and the check must be repointed, not just unlinked",
+      "ambiguity_behaviour": "fail-closed: two colliding items caused a refusal",
+      "T0": {
+        "outcome": "raised",
+        "etype": "TrapUnavailable",
+        "error": "sports: no seed produced a confirmable FAST identifier: New York Yankees 1998: Wikidata FetchError; Boston Red Sox 1999: Wikidata FetchError; Los Angeles Dodgers 1988: Wikidata FetchError; Milwaukee Brewers 1982: Wikidata FetchError; Houston Astros 2005: Wikidata FetchError",
+        "secs": 0.2
+      },
+      "T1": {
+        "outcome": "raised",
+        "etype": "TrapUnavailable",
+        "error": "sports: no seed produced a confirmable FAST identifier: New York Yankees 1998: P2163 for 'Andy Pettitte' returned 3 values; Boston Red Sox 1999: P2163 for 'Pedro Mart\u00ednez' returned 3 values; Los Angeles Dodgers 1988: P2163 for 'Orel Hershiser' returned 3 values; Milwaukee Brewers 1982: P2163 for 'Mike Caldwell' returned 3 values; Houston Astros 2005: P2163 for 'Roy Oswalt' returned 3 values",
+        "secs": 0.0
+      },
+      "T2": {
+        "outcome": "raised",
+        "etype": "TrapUnavailable",
+        "error": "sports: no seed produced a confirmable FAST identifier: New York Yankees 1998: P2163 for 'Andy Pettitte' returned 3 values; Boston Red Sox 1999: P2163 for 'Pedro Mart\u00ednez' returned 3 values; Los Angeles Dodgers 1988: P2163 for 'Orel Hershiser' returned 3 values; Milwaukee Brewers 1982: P2163 for 'Mike Caldwell' returned 3 values; Houston Astros 2005: P2163 for 'Roy Oswalt' returned 3 values",
+        "secs": 0.0
+      },
+      "T4": {
+        "outcome": "raised",
+        "etype": "TrapUnavailable",
+        "error": "sports: no seed produced a confirmable FAST identifier: New York Yankees 1998: P2163 for 'Andy Pettitte' returned 3 values; Boston Red Sox 1999: P2163 for 'Pedro Mart\u00ednez' returned 3 values; Los Angeles Dodgers 1988: P2163 for 'Orel Hershiser' returned 3 values; Milwaukee Brewers 1982: P2163 for 'Mike Caldwell' returned 3 values; Houston Astros 2005: P2163 for 'Roy Oswalt' returned 3 values",
+        "secs": 0.0
+      }
+    },
+    {
+      "category": "tv shows and movies",
+      "baseline": {
+        "status": "ok",
+        "answer": "tt1278381",
+        "field": "IMDb title identifier",
+        "etype": null
+      },
+      "verdict": "LOAD_BEARING_LOGIC",
+      "why": "T0: with the call unavailable the generator raises (FetchError: banned domain wikidata.org (simulated by wikimut T0)), so the ban breaks it and the check must be repointed, not just unlinked",
+      "ambiguity_behaviour": "fail-closed: two colliding items caused a refusal",
+      "T0": {
+        "outcome": "raised",
+        "etype": "FetchError",
+        "error": "FetchError: banned domain wikidata.org (simulated by wikimut T0)",
+        "tb": "ATORS[cat]()\n           ^^^^^^^^^^^^^^^^^^^^\n  File \"/workspace/seal_deploy/gen_v2.py\", line 714, in gen_tv\n    wd, qid = _wikidata_value(best[\"title\"], \"P345\", must_contain=\"\")\n              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/workspace/seal_deploy/category_traps.py\", line 455, in _wikidata_value\n    hits = net.wikidata_search(qid_or_search).get(\"search\", [])\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/workspace/seal_deploy/wikimut.py\", line 99, in _banned\n    raise ct.net.FetchError(\nnet.FetchError: banned domain wikidata.org (simulated by wikimut T0)\n",
+        "secs": 12.2
+      },
+      "T1": {
+        "outcome": "raised",
+        "etype": "TrapUnavailable",
+        "error": "tv: 2008/Fantasy: Wikidata P345 gave 'MUTANTVALUE1' not tt1278381 | 1996/Fantasy: Wikidata P345 gave 'MUTANTVALUE1' not tt0117436 | 2003/Sci-Fi: Wikidata P345 gave 'MUTANTVALUE1' not tt0366886 | 1991/Mystery: Wikidata P345 gave 'MUTANTVALUE1' not tt0155147 | 2003/Mystery: Wikidata P345 gave 'MUTANTVALUE1' not tt0349115 | 1998/Musical: n=29",
+        "secs": 12.2
+      },
+      "T2": {
+        "outcome": "raised",
+        "etype": "TrapUnavailable",
+        "error": "tv: 2008/Fantasy: Wikidata P345 gave 'tt0111161' not tt1278381 | 1996/Fantasy: Wikidata P345 gave 'tt0111161' not tt0117436 | 2003/Sci-Fi: Wikidata P345 gave 'tt0111161' not tt0366886 | 1991/Mystery: Wikidata P345 gave 'tt0111161' not tt0155147 | 2003/Mystery: Wikidata P345 gave 'tt0111161' not tt0349115 | 1998/Musical: n=29",
+        "secs": 12.2
+      },
+      "T4": {
+        "outcome": "raised",
+        "etype": "TrapUnavailable",
+        "error": "tv: 2008/Fantasy: Wikidata P345 gave 'tt0111161' not tt1278381 | 1996/Fantasy: Wikidata P345 gave 'tt0111161' not tt0117436 | 2003/Sci-Fi: Wikidata P345 gave 'tt0111161' not tt0366886 | 1991/Mystery: Wikidata P345 gave 'tt0111161' not tt0155147 | 2003/Mystery: Wikidata P345 gave 'tt0111161' not tt0349115 | 1998/Musical: n=29",
+        "secs": 12.2
+      }
+    },
+    {
+      "category": "video games",
+      "baseline": {
+        "status": "fail",
+        "answer": null,
+        "field": null,
+        "etype": "TrapUnavailable"
+      },
+      "verdict": "UNINFORMATIVE",
+      "why": "baseline is fail (TrapUnavailable), so nothing observed under mutation is attributable to Wikidata",
+      "ambiguity_behaviour": "not measured",
+      "T0": {
+        "outcome": "skipped",
+        "error": "baseline not ok; mutation uninformative"
+      },
+      "T1": {
+        "outcome": "skipped",
+        "error": "baseline not ok; mutation uninformative"
+      },
+      "T2": {
+        "outcome": "skipped",
+        "error": "baseline not ok; mutation uninformative"
+      },
+      "T4": {
+        "outcome": "skipped",
+        "error": "baseline not ok; mutation uninformative"
+      }
+    },
+    {
+      "category": "shopping",
+      "baseline": {
+        "status": "fail",
+        "answer": "7613036900096",
+        "field": "product barcode",
+        "etype": "GateRejected"
+      },
+      "verdict": "UNINFORMATIVE",
+      "why": "baseline is fail (GateRejected), so nothing observed under mutation is attributable to Wikidata",
+      "ambiguity_behaviour": "not measured",
+      "T0": {
+        "outcome": "skipped",
+        "error": "baseline not ok; mutation uninformative"
+      },
+      "T1": {
+        "outcome": "skipped",
+        "error": "baseline not ok; mutation uninformative"
+      },
+      "T2": {
+        "outcome": "skipped",
+        "error": "baseline not ok; mutation uninformative"
+      },
+      "T4": {
+        "outcome": "skipped",
+        "error": "baseline not ok; mutation uninformative"
+      }
+    },
+    {
+      "category": "education",
+      "baseline": {
+        "status": "ok",
+        "answer": "ntnu.no",
+        "field": "internet domain",
+        "etype": null
+      },
+      "verdict": "LOAD_BEARING_LOGIC",
+      "why": "T0: with the call unavailable the generator raises (FetchError: banned domain wikidata.org (simulated by wikimut T0)), so the ban breaks it and the check must be repointed, not just unlinked",
+      "ambiguity_behaviour": "fail-closed: two colliding items caused a refusal",
+      "T0": {
+        "outcome": "raised",
+        "etype": "FetchError",
+        "error": "FetchError: banned domain wikidata.org (simulated by wikimut T0)",
+        "tb": "  File \"/workspace/seal_deploy/gen_v3.py\", line 354, in gen_education\n    _inception, qid = ct._wikidata_value(best[\"name\"], \"P571\", must_contain=\"universit\")\n                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/workspace/seal_deploy/category_traps.py\", line 455, in _wikidata_value\n    hits = net.wikidata_search(qid_or_search).get(\"search\", [])\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/workspace/seal_deploy/wikimut.py\", line 99, in _banned\n    raise ct.net.FetchError(\nnet.FetchError: banned domain wikidata.org (simulated by wikimut T0)\n",
+        "secs": 0.0
+      },
+      "T1": {
+        "outcome": "raised",
+        "etype": "TrapUnavailable",
+        "error": "education: Wikidata P856 for Q900000001 prints ['mutantvalue1', '+1901-01-01t00:00:00z', '+11111'], none of which is the register domain 'ntnu.no'; the register is the primary and cannot confirm itself",
+        "secs": 0.0
+      },
+      "T2": {
+        "outcome": "raised",
+        "etype": "TrapUnavailable",
+        "error": "education: Wikidata P856 for Q90 prints ['example.edu', '+1902-02-02t00:00:00z', '+22222'], none of which is the register domain 'ntnu.no'; the register is the primary and cannot confirm itself",
+        "secs": 0.0
+      },
+      "T4": {
+        "outcome": "raised",
+        "etype": "TrapUnavailable",
+        "error": "education: Wikidata P856 for Q90 prints ['example.edu', '+1902-02-02t00:00:00z', '+22222'], none of which is the register domain 'ntnu.no'; the register is the primary and cannot confirm itself",
+        "secs": 0.0
+      }
+    }
+  ],
+  "summary": {
+    "LOAD_BEARING_LOGIC": 6,
+    "ANSWER_BEARING": 1,
+    "SAFE_TO_DROP": 3,
+    "UNINFORMATIVE": 6
+  },
+  "answer_bearing": [
+    "travel"
+  ],
+  "verdict": "1 generator lets a public wiki set the answer: travel (see travelbear.json). This file's original verdict of 'none' was an instrument defect, not a result.",
+  "harness_defect": "_Claims subclassed dict but was empty, so `_Claims() or {}` collapsed to {}. Only category_traps.py:751 uses that idiom; lines 438/463/515/566 do not, so T1/T2/T4 remain valid for every category except travel. T0 is unaffected everywhere because it raises at the call site."
+}

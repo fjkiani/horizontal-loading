@@ -13,6 +13,7 @@ the second measured.
 import json
 import os
 
+import pool_ledger
 import source_gate as sg
 
 # Read the freshly evaluated candidates, not generated_pool.json. The pool file
@@ -20,6 +21,16 @@ import source_gate as sg
 # so baking from it silently shipped the previous build's answers -- Leiden,
 # 1975 and wit.ie -- after the generators had already been repointed. The
 # candidates file is the output of the run that just executed.
+# A MULTI-TRAP source. run_category_traps.py stores results[cat] = rec, one slot
+# per category, so a catalog baked from it can never hold more than one trap per
+# category -- that architecture is why the pool sat at 10 while an 81-seed roster
+# went unused. BAKE_TRAPS points at a flat list of trap dicts (the merged output
+# of expand_seeds.py) and bypasses that ceiling. It goes through the SAME
+# enrichment below as the single-slot path, which the first hand-rolled rebake
+# did not: it wrote traps straight to disk and silently dropped field_class,
+# stump, solver_difficulty_status and memorization_proxy -- four fields the
+# console renders -- from all 14 traps.
+TRAPS_IN = os.environ.get("BAKE_TRAPS", "")
 CANDS = os.environ.get("BAKE_CANDS", "category_trap_candidates.json")
 EVAL = os.environ.get("BAKE_EVAL", "evaluation_report.json")
 POOL = os.environ.get("BAKE_POOL", "generated_pool.json")
@@ -72,13 +83,18 @@ def field_class(t):
 
 
 def main():
-    cands = json.load(open(CANDS))["results"]
-    # A gate-rejected candidate still carries a populated trap dict, so filtering
-    # on the presence of "trap" alone shipped finance and shopping -- both of
-    # which fail R3c because every confirming source is run by the primary
-    # operator. Filter on status, which is what run_category_traps actually sets.
-    pool = [v["trap"] for v in cands.values()
-            if v.get("trap") and v.get("status") == "ok" and not v.get("error")]
+    if TRAPS_IN and os.path.exists(TRAPS_IN):
+        doc = json.load(open(TRAPS_IN))
+        pool = doc["traps"] if isinstance(doc, dict) else doc
+    else:
+        cands = json.load(open(CANDS))["results"]
+        # A gate-rejected candidate still carries a populated trap dict, so
+        # filtering on the presence of "trap" alone shipped finance and shopping
+        # -- both of which fail R3c because every confirming source is run by
+        # the primary operator. Filter on status, which is what
+        # run_category_traps actually sets.
+        pool = [v["trap"] for v in cands.values()
+                if v.get("trap") and v.get("status") == "ok" and not v.get("error")]
 
     # gold means an operator that runs neither the primary source nor the other
     # witness confirmed the answer-to-entity binding; the evaluator encodes that
@@ -106,6 +122,9 @@ def main():
         traps.append(dict(
             t,
             field_class=fc,
+            # Pool identity is the ANSWER, not the seed or the category, so the
+            # ledger and the catalog cannot disagree about what a prompt is.
+            trap_id=pool_ledger.trap_id(cat, t.get("field"), str(t.get("answer"))),
             # No solver measurement is available: the Cohere trial key is out of
             # its 1000-call monthly quota (HTTP 429, no retry-after, not cleared
             # by waiting). Left explicitly null rather than defaulted, so the UI
@@ -119,7 +138,10 @@ def main():
                 "gold" if len(t.get("independent_confirming_operators") or []) >= 2
                 else "silver" if len(t.get("independent_confirming_operators") or []) == 1
                 else "unwitnessed"),
-            verdict=verdicts.get(cat),
+            # A per-trap verdict wins over the per-category one. With several
+            # traps in a category they do not share a verdict, and taking the
+            # category's would stamp one seed's result onto another seed's trap.
+            verdict=t.get("verdict") or verdicts.get(cat),
             # There is no solver measurement. Every gate in this pipeline
             # measures LEAKAGE -- whether the answer can be reached by sorting,
             # guessing, reading the prompt, or recalling it from training -- and
@@ -157,14 +179,32 @@ def main():
     cats = []
     for c in sg.CATEGORIES:
         served = [t for t in traps if t.get("category") == c]
+        tiers = {t.get("witness_tier") for t in served}
         cats.append({"category": c, "n_served": len(served),
-                     "tier": (served[0].get("witness_tier") if served else None)})
+                     # served[0]'s tier used to stand for the whole category.
+                     # With one trap per category that was harmless; with four,
+                     # a gold first trap would advertise gold over a silver
+                     # sibling. Gold requires EVERY trap in the category to be gold.
+                     "tier": (None if not served else
+                              "gold" if tiers == {"gold"} else
+                              "silver" if "silver" in tiers else sorted(tiers)[0])})
+
+    doc = {"generated_at": __import__("datetime").datetime.utcnow()
+           .strftime("%Y-%m-%dT%H:%M:%SZ"),
+           "traps": traps, "categories": cats}
+
+    # Refuse to write a catalog that cites a banned publisher. The gate already
+    # refuses such a trap at generation time, but the catalog is a separate
+    # artifact written by a separate path, and an artifact is only as clean as
+    # the last thing that wrote it.
+    blob = json.dumps(doc).lower()
+    hits = sorted(d for d in sg.BANNED_DOMAINS if d in blob)
+    if hits:
+        raise SystemExit("refusing to bake: catalog cites banned %s" % (hits,))
 
     os.makedirs(os.path.dirname(OUT), exist_ok=True)
     with open(OUT, "w") as fh:
-        json.dump({"generated_at": __import__("datetime").datetime.utcnow()
-                   .strftime("%Y-%m-%dT%H:%M:%SZ"),
-                   "traps": traps, "categories": cats}, fh, indent=1)
+        json.dump(doc, fh, indent=1)
     ident = sum(1 for t in traps if t["field_class"] == "identifier")
     print("baked %s: %d traps, %d categories, %d identifier-field, %d attribute-field"
           % (OUT, len(traps), len(cats), ident, len(traps) - ident))

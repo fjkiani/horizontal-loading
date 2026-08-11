@@ -91,9 +91,12 @@ def test_open_library_is_banned_by_operator_not_by_string():
 
 
 def test_clean_sources_are_not_flagged():
+    # en.wikipedia.org used to stand here as an example of a CLEAN source.
+    # It is now banned, which is the point of the change, so the fixture
+    # needs a genuinely unbanned third party.
     srcs = ["https://data.sec.gov/api/xbrl/companyconcept/CIK0000320193/us-gaap/Assets.json",
             "https://api.gleif.org/api/v1/lei-records",
-            "https://en.wikipedia.org/wiki/Apple_Inc."]
+            "https://aviationweather.gov/api/data/stationinfo?ids=KJFK&format=json"]
     assert sg.banned_violations(srcs) == []
     assert sg.check_sources(
         srcs, confirming_sources=[srcs[1]],
@@ -159,19 +162,28 @@ def test_prompt_text_directing_to_a_banned_operator_is_rejected():
 # regression against the real retired corpus
 # --------------------------------------------------------------------------
 def test_every_retired_prompt_fails_the_gate():
-    """The 23 archived prompts must all be rejected, and for the stated reason."""
+    """Every archived prompt must be rejected, and for a ban reason.
+
+    The count and the reason both moved when Wikimedia joined the ban: the
+    corpus grew from 23 to 30 as seven Wikidata-sourced prompts were
+    retired, so the reason can now be loc.gov OR Wikimedia. Pinning the
+    exact number would make every future policy retirement a test failure,
+    so this asserts the invariant -- all retired, all for a ban -- and
+    checks the count is non-decreasing.
+    """
     path = os.path.join(HERE, "retired_corpus.json")
     if not os.path.exists(path):
         pytest.skip("retired_corpus.json not present")
     retired = json.load(open(path))
     records = retired["generated"] + retired["curated"]
-    assert len(records) == 23, f"expected 23 retired prompts, found {len(records)}"
+    assert len(records) >= 23, f"retired corpus shrank to {len(records)}"
     for r in records:
         trap = {"category": None, "sources": r["sources"],
                 "confirming_sources": None, "prompt": r.get("prompt", "")}
         ok, v = sg.validate_trap(trap)
         assert not ok
-        assert any("loc.gov" in x or "Library of Congress" in x for x in v), (r.get("id"), v)
+        assert any("loc.gov" in x or "Library of Congress" in x
+                   or "wiki" in x.lower() or "Wikimedia" in x for x in v), (r.get("id"), v)
 
 
 def test_served_corpus_contains_no_banned_source():
@@ -189,8 +201,11 @@ def test_served_corpus_contains_no_banned_source():
 # --------------------------------------------------------------------------
 # R3c: a source run by the primary operator is not a witness
 # --------------------------------------------------------------------------
+# Wikidata was the third-party witness here until the Wikimedia ban; the
+# fixture tests R3c (self-confirmation), which is indifferent to which
+# independent operator stands in, so GeoNames does the same job unbanned.
 _SELF = ["https://collectionapi.metmuseum.org/public/collection/v1/objects/437416",
-         "https://www.wikidata.org/wiki/Q19905220",
+         "https://sws.geonames.org/6296543/",
          "https://api.europeana.eu/record/v2/search.json?query=rembrandt"]
 
 
@@ -216,7 +231,7 @@ def test_unnamed_primary_operator_is_itself_a_violation():
 def test_independent_witnesses_excludes_the_primary():
     w = sg.independent_witnesses(_SELF, [_SELF[0], _SELF[1]],
                                  "Metropolitan Museum of Art")
-    assert w == ["Wikimedia Foundation"], w
+    assert w == ["GeoNames"], w
     assert sg.independent_witnesses(_SELF, [_SELF[0]],
                                     "Metropolitan Museum of Art") == []
 

@@ -66,6 +66,26 @@ BANNED_DOMAINS = (
     "hockey-reference.com",
     "fbref.com",
     "stathead.com",
+    # ---- Wikimedia, banned 2026-08-11 ----------------------------------
+    # Requested as "no wikipedia.org so by extension wikidata.org", and the
+    # measurement backs the request rather than merely complying with it:
+    # travelbear.py rewrote ONE Wikidata claim (P1566 on the airport item)
+    # and the shipped travel answer moved 6296543 -> 656220 while
+    # evaluate_one still returned ship / gold / 0 of 13 tests failing. The
+    # only guard was `place.lower() in rdf.lower()` on a single token, and
+    # k = 2 GeoNames records pass it (the airport and the village of the
+    # same name), so its discrimination was 0.5. A public wiki that can set
+    # the answer is a correctness defect, not a citation-style preference.
+    "wikidata.org",
+    "wikipedia.org",
+    "wikimedia.org",
+    "wikisource.org",
+    "wikiquote.org",
+    "wikivoyage.org",
+    "wiktionary.org",
+    "wikibooks.org",
+    "wikinews.org",
+    "wikiversity.org",
 )
 
 # Operators banned wholesale, catching sibling properties that do not contain a
@@ -76,6 +96,11 @@ BANNED_OPERATORS = frozenset({
     "US Library of Congress",
     "HathiTrust",
     "Sports Reference LLC",
+    # Catches every Wikimedia project property under one operator name, the
+    # way "Internet Archive" catches openlibrary.org. pcgamingwiki.com maps
+    # to "PCGamingWiki" and is a different publisher, so it is NOT caught
+    # here; it stays in scope only if you ask for it.
+    "Wikimedia Foundation",
 })
 
 # --------------------------------------------------------------------------
@@ -263,6 +288,9 @@ OPERATOR_MAP = {
 # the registrable domain names the host rather than the publisher.
 SOURCE_OVERRIDES = (
     ("davidmegginson.github.io/ourairports-data", "OurAirports"),
+    # Third independent ICAO publisher, added when the Wikimedia ban left
+    # geography with one confirming witness against a floor of two.
+    ("aviationweather.gov", "US National Oceanic and Atmospheric Administration"),
     ("raw.githubusercontent.com/jpatokal/openflights", "OpenFlights"),
 )
 
@@ -472,7 +500,11 @@ def validate_trap(trap: dict, min_operators=3):
     for phrase, who in (("library of congress", "US Library of Congress"),
                         ("chronicling america", "US Library of Congress"),
                         ("internet archive", "Internet Archive"),
-                        ("hathitrust", "HathiTrust")):
+                        ("hathitrust", "HathiTrust"),
+                        ("wikipedia", "Wikimedia Foundation"),
+                        ("wikidata", "Wikimedia Foundation"),
+                        ("wikisource", "Wikimedia Foundation"),
+                        ("wikimedia", "Wikimedia Foundation")):
         if phrase in prompt:
             v.append(f"R4 prompt text directs the solver to banned operator {who}")
     return (not v), v

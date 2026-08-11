@@ -1,0 +1,331 @@
+{
+ "results": [
+  {
+   "category": "tv shows and movies",
+   "seed_repr": "{}",
+   "ok": false,
+   "violations": [
+    "R4 banned source https://www.wikidata.org/wiki/Q3163471 (banned domain: wikidata.org)"
+   ],
+   "verdict": "hold",
+   "witness_tier": "silver",
+   "failing_tests": [],
+   "ships": false,
+   "trap_id": "6659b1acb251a225",
+   "trap": {
+    "collection_is_explicit": false,
+    "primary_operator": "IMDb (Amazon)",
+    "independent_confirming_operators": [
+     "Wikimedia Foundation"
+    ],
+    "category": "tv shows and movies",
+    "field": "IMDb title identifier",
+    "answer": "tt1278381",
+    "entity": "Je ne suis pas morte",
+    "n_base": 211,
+    "sources": [
+     "https://datasets.imdbws.com/title.basics.tsv.gz",
+     "https://www.wikidata.org/wiki/Q3163471",
+     "https://api.tvmaze.com/search/shows?q=Je%20ne%20suis%20pas%20morte",
+     "https://www.imdb.com/title/tt1278381/"
+    ],
+    "confirming_sources": [
+     "https://www.wikidata.org/wiki/Q3163471"
+    ],
+    "api_proof": true,
+    "api_proof_argument": "The IMDb basics export is a single gzipped table with no query interface, so the 211 feature titles of that year and genre must be extracted and compared on runtime by the solver.",
+    "confirmation": "Wikidata Q3163471 property P345 returns tt1278381",
+    "prompt": "The IMDb public title export records, for every film it lists, the title, the year of release, the genres assigned to it and the running time in minutes. Restrict attention to titles typed as feature films with a release year of 2008 that carry the Fantasy genre and a recorded running time. Among only those, one film runs longer than every other. Report the IMDb title identifier of that single longest film. Confirm the identifier against an independent structured knowledge base before answering. Give the identifier alone, beginning with the two letters that prefix it, and nothing else.",
+    "source_operators": [
+     "IMDb (Amazon)",
+     "TVmaze",
+     "Wikimedia Foundation"
+    ],
+    "confirming_operators": [
+     "Wikimedia Foundation"
+    ],
+    "track": "api-native",
+    "ranking_evidence": {
+     "label": "tv shows and movies",
+     "mode": "max",
+     "n_base": 211,
+     "n_ranked": 211,
+     "spearman_key_vs_api_order": -0.2021,
+     "n_tied_at_extremum": 1,
+     "distinct_keys": 76,
+     "winner_position_in_api_order": 104,
+     "winner_is_first_returned": false,
+     "winner_is_last_returned": false,
+     "top_keys": [
+      "190",
+      "166",
+      "164",
+      "156",
+      "154"
+     ],
+     "answer_field_distinct_values": 211,
+     "answer_field_n_values": 211,
+     "answer_field_max_count": 1,
+     "answer_field_count_of_answer": 1,
+     "answer_field_modal_share": 0.004739,
+     "p_answer_by_uniform_guess": 0.004739,
+     "collection_is_bulk_download": true,
+     "n_true": 211
+    },
+    "facts": {
+     "year": 2008,
+     "genre": "Fantasy",
+     "n": 211,
+     "runtime": 190,
+     "runner_up": 166,
+     "title": "Je ne suis pas morte"
+    }
+   },
+   "field": "IMDb title identifier",
+   "answer": "tt1278381",
+   "entity": "Je ne suis pas morte",
+   "n_base": 211,
+   "field_class": "identifier",
+   "spearman": -0.2021,
+   "ties_at_extremum": 1,
+   "p_uniform_guess": 0.004739,
+   "winner_is_first": false,
+   "winner_is_last": false,
+   "n_confirming": 1,
+   "prompt": "The IMDb public title export records, for every film it lists, the title, the year of release, the genres assigned to it and the running time in minutes. Restrict attention to titles typed as feature films with a release year of 2008 that carry the Fantasy genre and a recorded running time. Among only those, one film runs longer than every other. Report the IMDb title identifier of that single longest film. Confirm the identifier against an independent structured knowledge base before answering. Give the identifier alone, beginning with the two letters that prefix it, and nothing else.",
+   "source_operators": [
+    "IMDb (Amazon)",
+    "TVmaze",
+    "Wikimedia Foundation"
+   ],
+   "primary_operator": "IMDb (Amazon)",
+   "secs": 12.3
+  },
+  {
+   "category": "tv shows and movies",
+   "seed_repr": "{\"seeds\": [[1996, \"Crime\"], [2001, \"Mystery\"], [2005, \"Sci-Fi\"], [1999, \"Fantasy\"], [2010, \"Musical\"], [1994, \"Crime\"]]}",
+   "ok": false,
+   "violations": [
+    "R4 banned source https://www.wikidata.org/wiki/Q208263 (banned domain: wikidata.org)"
+   ],
+   "verdict": "hold",
+   "witness_tier": "silver",
+   "failing_tests": [],
+   "ships": false,
+   "trap_id": "48228993e7a7992a",
+   "trap": {
+    "collection_is_explicit": false,
+    "primary_operator": "IMDb (Amazon)",
+    "independent_confirming_operators": [
+     "Wikimedia Foundation"
+    ],
+    "category": "tv shows and movies",
+    "field": "IMDb title identifier",
+    "answer": "tt0120689",
+    "entity": "The Green Mile",
+    "n_base": 95,
+    "sources": [
+     "https://datasets.imdbws.com/title.basics.tsv.gz",
+     "https://www.wikidata.org/wiki/Q208263",
+     "https://api.tvmaze.com/search/shows?q=The%20Green%20Mile",
+     "https://www.imdb.com/title/tt0120689/"
+    ],
+    "confirming_sources": [
+     "https://www.wikidata.org/wiki/Q208263"
+    ],
+    "api_proof": true,
+    "api_proof_argument": "The IMDb basics export is a single gzipped table with no query interface, so the 95 feature titles of that year and genre must be extracted and compared on runtime by the solver.",
+    "confirmation": "Wikidata Q208263 property P345 returns tt0120689",
+    "prompt": "The IMDb public title export records, for every film it lists, the title, the year of release, the genres assigned to it and the running time in minutes. Restrict attention to titles typed as feature films with a release year of 1999 that carry the Fantasy genre and a recorded running time. Among only those, one film runs longer than every other. Report the IMDb title identifier of that single longest film. Confirm the identifier against an independent structured knowledge base before answering. Give the identifier alone, beginning with the two letters that prefix it, and nothing else.",
+    "source_operators": [
+     "IMDb (Amazon)",
+     "TVmaze",
+     "Wikimedia Foundation"
+    ],
+    "confirming_operators": [
+     "Wikimedia Foundation"
+    ],
+    "track": "api-native",
+    "ranking_evidence": {
+     "label": "tv shows and movies",
+     "mode": "max",
+     "n_base": 95,
+     "n_ranked": 95,
+     "spearman_key_vs_api_order": -0.125,
+     "n_tied_at_extremum": 1,
+     "distinct_keys": 46,
+     "winner_position_in_api_order": 5,
+     "winner_is_first_returned": false,
+     "winner_is_last_returned": false,
+     "top_keys": [
+      "189",
+      "146",
+      "140",
+      "140",
+      "139"
+     ],
+     "answer_field_distinct_values": 95,
+     "answer_field_n_values": 95,
+     "answer_field_max_count": 1,
+     "answer_field_count_of_answer": 1,
+     "answer_field_modal_share": 0.010526,
+     "p_answer_by_uniform_guess": 0.010526,
+     "collection_is_bulk_download": true,
+     "n_true": 95
+    },
+    "facts": {
+     "year": 1999,
+     "genre": "Fantasy",
+     "n": 95,
+     "runtime": 189,
+     "runner_up": 146,
+     "title": "The Green Mile"
+    }
+   },
+   "field": "IMDb title identifier",
+   "answer": "tt0120689",
+   "entity": "The Green Mile",
+   "n_base": 95,
+   "field_class": "identifier",
+   "spearman": -0.125,
+   "ties_at_extremum": 1,
+   "p_uniform_guess": 0.010526,
+   "winner_is_first": false,
+   "winner_is_last": false,
+   "n_confirming": 1,
+   "prompt": "The IMDb public title export records, for every film it lists, the title, the year of release, the genres assigned to it and the running time in minutes. Restrict attention to titles typed as feature films with a release year of 1999 that carry the Fantasy genre and a recorded running time. Among only those, one film runs longer than every other. Report the IMDb title identifier of that single longest film. Confirm the identifier against an independent structured knowledge base before answering. Give the identifier alone, beginning with the two letters that prefix it, and nothing else.",
+   "source_operators": [
+    "IMDb (Amazon)",
+    "TVmaze",
+    "Wikimedia Foundation"
+   ],
+   "primary_operator": "IMDb (Amazon)",
+   "secs": 12.1
+  },
+  {
+   "category": "tv shows and movies",
+   "seed_repr": "{\"seeds\": [[1988, \"Western\"], [1992, \"War\"], [2007, \"Biography\"], [2013, \"Adventure\"], [1985, \"Horror\"], [2016, \"Animation\"]]}",
+   "ok": false,
+   "violations": [
+    "R4 banned source https://www.wikidata.org/wiki/Q7168973 (banned domain: wikidata.org)"
+   ],
+   "verdict": "hold",
+   "witness_tier": "silver",
+   "failing_tests": [],
+   "ships": false,
+   "trap_id": "4874fc8d5a5d93b6",
+   "trap": {
+    "collection_is_explicit": false,
+    "primary_operator": "IMDb (Amazon)",
+    "independent_confirming_operators": [
+     "Wikimedia Foundation"
+    ],
+    "category": "tv shows and movies",
+    "field": "IMDb title identifier",
+    "answer": "tt6944510",
+    "entity": "Periyar",
+    "n_base": 198,
+    "sources": [
+     "https://datasets.imdbws.com/title.basics.tsv.gz",
+     "https://www.wikidata.org/wiki/Q7168973",
+     "https://api.tvmaze.com/search/shows?q=Periyar",
+     "https://www.imdb.com/title/tt6944510/"
+    ],
+    "confirming_sources": [
+     "https://www.wikidata.org/wiki/Q7168973"
+    ],
+    "api_proof": true,
+    "api_proof_argument": "The IMDb basics export is a single gzipped table with no query interface, so the 198 feature titles of that year and genre must be extracted and compared on runtime by the solver.",
+    "confirmation": "Wikidata Q7168973 property P345 returns tt6944510",
+    "prompt": "The IMDb public title export records, for every film it lists, the title, the year of release, the genres assigned to it and the running time in minutes. Restrict attention to titles typed as feature films with a release year of 2007 that carry the Biography genre and a recorded running time. Among only those, one film runs longer than every other. Report the IMDb title identifier of that single longest film. Confirm the identifier against an independent structured knowledge base before answering. Give the identifier alone, beginning with the two letters that prefix it, and nothing else.",
+    "source_operators": [
+     "IMDb (Amazon)",
+     "TVmaze",
+     "Wikimedia Foundation"
+    ],
+    "confirming_operators": [
+     "Wikimedia Foundation"
+    ],
+    "track": "api-native",
+    "ranking_evidence": {
+     "label": "tv shows and movies",
+     "mode": "max",
+     "n_base": 198,
+     "n_ranked": 198,
+     "spearman_key_vs_api_order": -0.4959,
+     "n_tied_at_extremum": 1,
+     "distinct_keys": 78,
+     "winner_position_in_api_order": 192,
+     "winner_is_first_returned": false,
+     "winner_is_last_returned": false,
+     "top_keys": [
+      "173",
+      "160",
+      "157",
+      "155",
+      "149"
+     ],
+     "answer_field_distinct_values": 198,
+     "answer_field_n_values": 198,
+     "answer_field_max_count": 1,
+     "answer_field_count_of_answer": 1,
+     "answer_field_modal_share": 0.005051,
+     "p_answer_by_uniform_guess": 0.005051,
+     "collection_is_bulk_download": true,
+     "n_true": 198
+    },
+    "facts": {
+     "year": 2007,
+     "genre": "Biography",
+     "n": 198,
+     "runtime": 173,
+     "runner_up": 160,
+     "title": "Periyar"
+    }
+   },
+   "field": "IMDb title identifier",
+   "answer": "tt6944510",
+   "entity": "Periyar",
+   "n_base": 198,
+   "field_class": "identifier",
+   "spearman": -0.4959,
+   "ties_at_extremum": 1,
+   "p_uniform_guess": 0.005051,
+   "winner_is_first": false,
+   "winner_is_last": false,
+   "n_confirming": 1,
+   "prompt": "The IMDb public title export records, for every film it lists, the title, the year of release, the genres assigned to it and the running time in minutes. Restrict attention to titles typed as feature films with a release year of 2007 that carry the Biography genre and a recorded running time. Among only those, one film runs longer than every other. Report the IMDb title identifier of that single longest film. Confirm the identifier against an independent structured knowledge base before answering. Give the identifier alone, beginning with the two letters that prefix it, and nothing else.",
+   "source_operators": [
+    "IMDb (Amazon)",
+    "TVmaze",
+    "Wikimedia Foundation"
+   ],
+   "primary_operator": "IMDb (Amazon)",
+   "secs": 13.8
+  },
+  {
+   "category": "video games",
+   "seed_repr": "{}",
+   "ok": false,
+   "error": "TrapUnavailable: video games: withdrawn. The prompt prints the app-id roster and 'citiesskylines' sorts first among the 14, so the answer is derivable from the prompt without calling Steam; measured T9b recall is 0.75.",
+   "tb": "Traceback (most recent call last):\n  File \"/workspace/seal_deploy/expand_seeds.py\", line 221, in main\n    cand = gen(**seed)\n           ^^^^^^^^^^^\n  File \"/workspace/seal_deploy/gen_v2.py\", line 827, in gen_video_games\n    raise TrapUnavailable(\ncategory_traps.TrapUnavailable: video games: withdrawn. The prompt prints the app-id roster and 'citiesskylines' sorts first among the 14, so the answer is derivable from the prompt without calling Steam; measured T9b recall is 0.75.\n",
+   "secs": 0.0
+  },
+  {
+   "category": "video games",
+   "seed_repr": "{\"appids\": [400, 292030, 379720, 588650, 264710, 646570, 204360, 49520, 233450, 275850, 8930, 294100, 219740, 632470]}",
+   "ok": false,
+   "error": "TrapUnavailable: video games: withdrawn. The prompt prints the app-id roster and 'citiesskylines' sorts first among the 14, so the answer is derivable from the prompt without calling Steam; measured T9b recall is 0.75.",
+   "tb": "Traceback (most recent call last):\n  File \"/workspace/seal_deploy/expand_seeds.py\", line 221, in main\n    cand = gen(**seed)\n           ^^^^^^^^^^^\n  File \"/workspace/seal_deploy/gen_v2.py\", line 827, in gen_video_games\n    raise TrapUnavailable(\ncategory_traps.TrapUnavailable: video games: withdrawn. The prompt prints the app-id roster and 'citiesskylines' sorts first among the 14, so the answer is derivable from the prompt without calling Steam; measured T9b recall is 0.75.\n",
+   "secs": 0.0
+  },
+  {
+   "category": "video games",
+   "seed_repr": "{\"appids\": [620, 240, 550, 730, 570, 440, 10, 70, 220, 320, 360, 380, 420, 500]}",
+   "ok": false,
+   "error": "TrapUnavailable: video games: withdrawn. The prompt prints the app-id roster and 'citiesskylines' sorts first among the 14, so the answer is derivable from the prompt without calling Steam; measured T9b recall is 0.75.",
+   "tb": "Traceback (most recent call last):\n  File \"/workspace/seal_deploy/expand_seeds.py\", line 221, in main\n    cand = gen(**seed)\n           ^^^^^^^^^^^\n  File \"/workspace/seal_deploy/gen_v2.py\", line 827, in gen_video_games\n    raise TrapUnavailable(\ncategory_traps.TrapUnavailable: video games: withdrawn. The prompt prints the app-id roster and 'citiesskylines' sorts first among the 14, so the answer is derivable from the prompt without calling Steam; measured T9b recall is 0.75.\n",
+   "secs": 0.0
+  }
+ ]
+}

@@ -76,6 +76,11 @@ button.ghost:hover:not(:disabled) { background: var(--lime); color: var(--ink); 
 .catcell:hover { border-color: var(--ink); background: var(--panel); }
 .catcell.active { border-color: var(--ink); border-width: 2px; background: var(--lime); }
 .catcell.dead { background: #f4efe6; color: var(--mute); }
+/* Spent is not the same failure as dead. Dead means no trap was ever built for
+   the category; spent means every trap it held has been served and burned, and
+   the remedy is a seed sweep rather than a new generator. */
+.catcell.spent { background: #f6e7e4; color: var(--mute); border-style: dashed; }
+.catcell.low { border-color: var(--amber, #ff9400); }
 .catcell .cname { font-weight: 700; font-size: 12.5px; display: block; }
 .catcell .cmeta { font-size: 11px; color: var(--mute); }
 

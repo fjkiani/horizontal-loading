@@ -14,7 +14,13 @@ export async function req(path, opts = {}) {
     try { body = text ? JSON.parse(text) : null; } catch { body = { raw: text }; }
     if (!r.ok) {
       const msg = (body && (body.detail || body.error)) || `HTTP ${r.status}`;
-      throw new Error(typeof msg === "string" ? msg : JSON.stringify(msg));
+      const e = new Error(typeof msg === "string" ? msg : JSON.stringify(msg));
+      // Carry the parsed body and the code. A 409 exhausted-pool response is a
+      // RESULT with counts in it, not an anonymous failure, and the panel has
+      // to be able to tell it apart from a timeout.
+      e.status = r.status;
+      e.body = body;
+      throw e;
     }
     return body;
   } finally {
@@ -40,11 +46,19 @@ export function warm() {
   );
 }
 
-export function generate(category, seed) {
+/** Consumption state. Live-only: the pool is what has been SPENT, which by
+ *  definition cannot be baked into a static build. */
+export function poolStatus() {
+  return req("/api/pool", { timeout: 120000 });
+}
+
+/** Draw a prompt. Without `fresh` this is a synchronous draw from stock and the
+ *  prompt is burned; with it, a live traversal that mints a new one. */
+export function generate(category, { seed = null, requestKey = null, fresh = false } = {}) {
   return req("/api/generate", {
     method: "POST",
     headers: { "Content-Type": "application/json" },
-    body: JSON.stringify({ category, seed: seed || null }),
+    body: JSON.stringify({ category, seed, request_key: requestKey, fresh }),
   });
 }
 

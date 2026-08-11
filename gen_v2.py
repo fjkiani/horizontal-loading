@@ -487,12 +487,34 @@ def gen_geography(country_iso="CO", country_name="Colombia"):
     # search for "San Luis Airport" resolves to the Argentine airport
     # (Q3291597, P239 = SAOU); an exact match on P239 = "SKIP" returns exactly
     # one item, Q1321708, in Colombia. See probe_conf.json.
-    hits = ct._wikidata_by_value("P239", answer)
-    if len(hits) != 1:
+    # WIKIDATA REPLACED BY NOAA. The ban removed "Wikimedia Foundation" from
+    # this trap's witnesses, leaving 3 operators but only 1 confirming
+    # (OpenFlights) against a floor of 2. The NOAA Aviation Weather Center
+    # station table publishes ICAO codes independently, and is a genuinely
+    # separate operator -- a US federal weather agency, not an aviation
+    # hobbyist dataset.
+    #
+    # A second candidate, mwgg/Airports, was REJECTED despite also carrying
+    # SKIP: its coordinates are 0.861925 / -77.6718, matching the OpenFlights
+    # row to all six decimal places. Byte-identical coordinates are evidence of
+    # derivation, not of independent measurement, so counting it would inflate
+    # the witness count without adding a witness. NOAA's own figures differ
+    # (0.858 / -77.677), which is what an independent survey looks like.
+    icao = answer
+    try:
+        st = net.get_json(f"https://aviationweather.gov/api/data/stationinfo"
+                          f"?ids={answer}&format=json", timeout=90)
+    except Exception as e:  # noqa: BLE001
         raise TrapUnavailable(
-            f"geography: Wikidata P239 = {answer} matched {len(hits)} items "
-            f"({[h['qid'] for h in hits]}); confirmation must be unambiguous")
-    qid, icao = hits[0]["qid"], answer
+            f"geography: NOAA station lookup for {answer} failed ({type(e).__name__})")
+    st_rows = st if isinstance(st, list) else [st]
+    st_hit = [r for r in st_rows if isinstance(r, dict)
+              and str(r.get("icaoId", "")).upper() == answer.upper()]
+    if len(st_hit) != 1:
+        raise TrapUnavailable(
+            f"geography: NOAA returned {len(st_hit)} station records for ICAO "
+            f"{answer}, so the identifier is not independently confirmed")
+    noaa_site = str(st_hit[0].get("site") or "")
     of = net.fetch(_OPENFLIGHTS_AP, timeout=200, attempts=4)
     hit = None
     for rec in csv.reader(io.StringIO(of)):
@@ -502,19 +524,21 @@ def gen_geography(country_iso="CO", country_name="Colombia"):
     if not hit:
         raise TrapUnavailable(f"geography: OpenFlights carries no ICAO {answer}")
     elevs = sorted((int(r["elevation_ft"]) for r in base), reverse=True)
-    srcs = [_OURAIRPORTS, f"https://www.wikidata.org/wiki/{qid}", _OPENFLIGHTS_AP,
+    _NOAA = f"https://aviationweather.gov/api/data/stationinfo?ids={answer}&format=json"
+    srcs = [_OURAIRPORTS, _NOAA, _OPENFLIGHTS_AP,
             f"https://restcountries.com/v3.1/alpha/{country_iso}"]
     return Candidate(
         category="geography",
         primary_operator="OurAirports", field="ICAO identifier", answer=answer,
         entity=best["name"], n_base=len(base), sources=srcs,
-        confirming_sources=[f"https://www.wikidata.org/wiki/{qid}", _OPENFLIGHTS_AP],
+        confirming_sources=[_NOAA, _OPENFLIGHTS_AP],
         api_proof_argument=(
             "OurAirports publishes a flat CSV with no server-side sort or filter, so "
             "the highest-elevation qualifying aerodrome cannot be requested; the full "
             f"national set of {len(base)} records must be pulled and ordered by the "
             "solver."),
-        confirmation=(f"Wikidata {qid} property P239 returns {icao}, and OpenFlights "
+        confirmation=(f"The NOAA Aviation Weather Center station table returns exactly "
+                      f"one record for ICAO {icao} ({noaa_site!r}), and OpenFlights "
                       f"lists the same identifier for {hit[1].strip(chr(34))!r}"),
         facts={"country": country_name, "n": len(base),
                "elev": int(best["elevation_ft"]), "runner_up_elev": elevs[1],

@@ -279,6 +279,73 @@ def _uniq_or_fail(rows, keyfn, label, valuefn=None):
 # shared datasets
 # ==========================================================================
 _OURAIRPORTS = "https://davidmegginson.github.io/ourairports-data/airports.csv"
+
+# GeoNames search, used to replace the Wikidata P1566 read that travelbear.json
+# proved answer-bearing. The public accounts share one daily credit pool, so
+# try several: `demo` was already exhausted when this was measured
+# ("the daily limit of 20000 credits for demo has been exceeded"), while
+# `openstreetmap` and `geonamesfree` both answered and both returned the same
+# single hit. Exhaustion raises TrapUnavailable -- an honest refusal -- rather
+# than silently falling through to a weaker witness.
+_GN_USERS = ("openstreetmap", "geonamesfree", "demo")
+# 0.05 deg is about 5.5 km: far tighter than the distance between two distinct
+# airports, far looser than any datum difference. Measured agreement at Ivalo
+# was 3e-05 deg, i.e. three orders of magnitude inside the bar.
+_GN_TOL_DEG = 0.05
+
+
+def _geonames_search(q, feature_class="S", max_rows=20):
+    """Search GeoNames directly. Returns (rows, username_that_answered)."""
+    last = None
+    for user in _GN_USERS:
+        url = ("http://api.geonames.org/searchJSON?q=%s&maxRows=%d"
+               "&featureClass=%s&username=%s"
+               % (up.quote(q), max_rows, feature_class, user))
+        try:
+            j = net.get_json(url, timeout=60)
+        except Exception as e:  # noqa: BLE001
+            last = f"{type(e).__name__}: {e}"
+            continue
+        rows = (j or {}).get("geonames")
+        if rows is None:
+            last = str((j or {}).get("status"))[:160]
+            continue
+        return rows, user
+    raise TrapUnavailable(f"travel: no GeoNames search account answered ({last})")
+
+
+def _geonames_id_for(name, of_lat, of_lon, oa_lat=None, tol_deg=_GN_TOL_DEG):
+    """Pin a GeoNames id by COORDINATE AGREEMENT, not by name substring.
+
+    The retired guard asked whether the first whitespace token of the airport
+    name appeared anywhere in the GeoNames RDF; at Ivalo that admitted both the
+    airport and the village, so its discrimination was 0.5. This instead
+    requires an AIRP-coded record whose position agrees with every source that
+    already established the ranking, and requires that exactly one such record
+    exists. A name collision no longer survives, because a different place is
+    in a different position.
+    """
+    rows, user = _geonames_search(name)
+    cands = []
+    for g in rows:
+        if str(g.get("fcode")) != "AIRP":
+            continue
+        try:
+            glat, glon = float(g["lat"]), float(g["lng"])
+        except (TypeError, ValueError, KeyError):
+            continue
+        d = max(abs(glat - of_lat), abs(glon - of_lon))
+        if oa_lat is not None:
+            d = max(d, abs(glat - oa_lat))
+        if d < tol_deg:
+            cands.append((str(g.get("geonameId")), d, g.get("name")))
+    if len(cands) != 1:
+        raise TrapUnavailable(
+            f"travel: GeoNames search for {name!r} (via {user}) yielded "
+            f"{len(cands)} airport records within {tol_deg} deg of the position "
+            f"OpenFlights and OurAirports agree on, so the identifier is not "
+            f"uniquely pinned")
+    return cands[0][0], round(cands[0][1], 6)
 _OPENFLIGHTS_AP = "https://raw.githubusercontent.com/jpatokal/openflights/master/data/airports.dat"
 _OPENFLIGHTS_RT = "https://raw.githubusercontent.com/jpatokal/openflights/master/data/routes.dat"
 _IMDB_BASICS = "https://datasets.imdbws.com/title.basics.tsv.gz"
@@ -737,40 +804,41 @@ def gen_travel(airline_iata="AY", hub_iata="HEL"):
     # SECOND WITNESS. Confirm by the ANSWER, not by the airport NAME: P238 is
     # the IATA code, so an exact-value match cannot collide on a shared label
     # the way the geography name lookup did. Require uniqueness.
-    wd = _wikidata_by_value("P238", answer, limit=5)
-    if len(wd) != 1:
-        raise TrapUnavailable(
-            f"travel: Wikidata P238 returned {len(wd)} items for {answer!r}, so the "
-            "winning airport cannot be pinned to one entity")
-    wq = wd[0]["qid"]
-    # ANSWER FIELD. The IATA code is printed in the winner's own encyclopaedia
-    # article (measured: yes for IVL, yes for ICAO EFIV, no for the GeoNames
-    # id), so answering with it hands stage 2 to recall. The GeoNames id is
-    # carried by a different operator and is absent from that article.
-    ent = net.wikidata_entity(wq)
-    claims = (ent.get("entities", {}).get(wq, {}) or {}).get("claims", {}) or {}
-    gn = [c["mainsnak"].get("datavalue", {}).get("value")
-          for c in claims.get("P1566", [])]
-    gn = [g for g in gn if isinstance(g, str) and g.strip()]
-    if len(gn) != 1:
-        raise TrapUnavailable(
-            f"travel: Wikidata {wq} carries {len(gn)} GeoNames ids for {answer}, "
-            "so the answer is not single-valued")
-    geoname_id = gn[0].strip()
+    # RE-PLUMBED OFF WIKIDATA, AND STRENGTHENED IN THE SAME MOVE.
+    #
+    # This step used to read the GeoNames id out of Wikidata claim P1566 and
+    # then "verify" it with `place.lower() in rdf.lower()`, where `place` was
+    # the FIRST WHITESPACE TOKEN of the airport name. travelbear.json measured
+    # what that permitted: for the default seed the token is "Ivalo", and of
+    # the two GeoNames ids reachable for that airport BOTH pass the substring
+    # test -- 6296543 (Ivalo Airport) and 656220 (the village of Ivalo). Guard
+    # discrimination 0.5, a coin flip. The probe then wrapped the real
+    # net.wikidata_entity and rewrote ONE datavalue -- P1566, original
+    # ['6296543'] -> 656220 -- leaving the OpenFlights join, the ranking, the
+    # P238 lookup and the GeoNames fetch genuine. The generator shipped 656220
+    # with verdict=ship, witness_tier=gold and 0 of 13 evaluate_one tests
+    # failing. A single upstream edit silently repoints the benchmark answer
+    # and nothing downstream can see it. That is what answer-bearing means.
+    #
+    # Wikimedia is now banned, but merely dropping the CITATION would be the
+    # wrong repair: keeping the read as uncredited logic preserves the defect
+    # and only hides it. So GeoNames is asked for its own identifier, and the
+    # guard becomes COORDINATE AGREEMENT with the two sources that already
+    # established the ranking -- the check the substring test never made.
+    geoname_id, gn_dis = _geonames_id_for(
+        best[1]["name"], best[1]["lat"], best[1]["lon"], _oa_lat(answer))
+    LAST_RANK["geonames_coord_disagreement_deg"] = gn_dis
     try:
         rdf = net.fetch(f"https://sws.geonames.org/{geoname_id}/about.rdf", timeout=90)
     except Exception as e:  # noqa: BLE001
         raise TrapUnavailable(
             f"travel: GeoNames {geoname_id} did not resolve ({type(e).__name__})")
-    place = best[1]["name"].split()[0]
-    if place.lower() not in rdf.lower():
+    if str(geoname_id) not in rdf:
         raise TrapUnavailable(
-            f"travel: GeoNames {geoname_id} does not name {place!r}")
+            f"travel: GeoNames record {geoname_id} does not carry its own id")
     srcs = [_OPENFLIGHTS_RT, _OURAIRPORTS,
-            f"https://www.wikidata.org/wiki/{wq}",
             f"https://sws.geonames.org/{geoname_id}/"]
-    conf_srcs = [_OURAIRPORTS, f"https://www.wikidata.org/wiki/{wq}",
-                 f"https://sws.geonames.org/{geoname_id}/"]
+    conf_srcs = [_OURAIRPORTS, f"https://sws.geonames.org/{geoname_id}/"]
     return Candidate(
         category="travel",
         primary_operator="OpenFlights", field="GeoNames identifier",
@@ -782,12 +850,17 @@ def gen_travel(airline_iata="AY", hub_iata="HEL"):
             "query interface. The northernmost destination exists only after joining the two "
             f"and ordering {len(base)} destinations by latitude."),
         confirmation=(f"OurAirports lists {answer} at latitude "
-                      f"{match[0]['latitude_deg']}; Wikidata {wq} "
-                      f"({wd[0].get('label')!r}) carries P238 {answer!r} uniquely "
-                      f"and P1566 {geoname_id} uniquely; the GeoNames record "
-                      f"{geoname_id} resolves and names the place"),
+                      f"{match[0]['latitude_deg']}; GeoNames returns exactly one "
+                      f"airport record, {geoname_id}, within {_GN_TOL_DEG} degrees "
+                      f"of the position OpenFlights and OurAirports agree on "
+                      f"(observed disagreement {gn_dis} degrees), and that record "
+                      f"resolves and carries its own identifier"),
         facts={"airline": airline_iata, "hub": hub_iata, "n": len(base),
-               "witness_qid": wq, "wikidata_p238_hits": len(wd),
+               "geonames_coord_disagreement_deg": gn_dis,
+               "witness_route": ("GeoNames search, coordinate-verified; replaced "
+                                 "the Wikidata P1566 read that travelbear.json "
+                                 "measured as answer-bearing with guard "
+                                 "discrimination 0.5"),
                "iata_not_asked": answer,
                "answer_field_class": "identifier",
                "replaces": ("IATA code, withdrawn: measured as printed in the "

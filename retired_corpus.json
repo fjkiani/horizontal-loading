@@ -1,5 +1,5 @@
 {
- "retired_at": "2026-08-10T20:53:02.299844+00:00",
+ "retired_at": "2026-08-11T19:23:05.241979+00:00",
  "rule": "Project Seal banned-source list extended with loc.gov and archive.org. Sources are counted by controlling operator, not by URL string.",
  "generated": [
   {
@@ -595,6 +595,204 @@
    "originally_verified": true,
    "original_verifier": "dual-engine agreement + issue-sequence arithmetic",
    "retired_reason": "all sources resolve to the banned operator US Library of Congress"
+  },
+  {
+   "lccn": null,
+   "date": null,
+   "field": "SEC Central Index Key",
+   "answer": "1341439",
+   "paper": null,
+   "prompt": "The United States securities regulator publishes a structured frame for each accounting concept and calendar year, listing every filer that reported that concept together with the business address it has on record. Take the frame for research and development expense covering calendar year 2015, and keep only those filers whose recorded business address places them in Texas. Within that restricted group one filer reported a larger figure for the concept than every other. Report the Central Index Key that the regulator assigns to that single filer. Confirm the key against an independent structured knowledge base before answering. Give the digits of the key alone, without leading zeros or any label.",
+   "sources": [
+    "https://data.sec.gov/api/xbrl/frames/us-gaap/ResearchAndDevelopmentExpense/USD/CY2015.json",
+    "https://data.sec.gov/submissions/CIK0001341439.json",
+    "https://www.wikidata.org/wiki/Q19900",
+    "https://api.gleif.org/api/v1/lei-records?filter[entity.legalName]=Oracle%20Corporation"
+   ],
+   "operators": [
+    "Global Legal Entity Identifier Foundation",
+    "US Securities and Exchange Commission",
+    "Wikimedia Foundation"
+   ],
+   "violating_urls": [
+    "https://www.wikidata.org/wiki/Q19900"
+   ],
+   "violations": [
+    "R4 banned source https://www.wikidata.org/wiki/Q19900 (banned domain: wikidata.org)"
+   ],
+   "originally_verified": true,
+   "original_verifier": null,
+   "retired_reason": "all sources resolve to the banned operator US Library of Congress"
+  },
+  {
+   "lccn": null,
+   "date": null,
+   "field": "internet domain",
+   "answer": "ntnu.no",
+   "paper": null,
+   "prompt": "A public register of higher education institutions lists the universities and colleges of Norway, recording the internet domain each one uses. Consider only the institutions that this register places in Norway and for which it records at least one domain. Write each institution's primary domain backwards, character by character, and order those reversed strings as text. One of them falls later in that ordering than every other. Report the original, unreversed domain of that single institution. Confirm the institution through an independent structured knowledge base. Give the domain alone, in lower case, with no protocol and no path.",
+   "sources": [
+    "http://universities.hipolabs.com/search?country=Norway",
+    "https://www.wikidata.org/wiki/Q314536",
+    "https://nces.ed.gov/ipeds/datacenter/"
+   ],
+   "operators": [
+    "Hipo Labs",
+    "US Department of Education",
+    "Wikimedia Foundation"
+   ],
+   "violating_urls": [
+    "https://www.wikidata.org/wiki/Q314536"
+   ],
+   "violations": [
+    "R4 banned source https://www.wikidata.org/wiki/Q314536 (banned domain: wikidata.org)"
+   ],
+   "originally_verified": true,
+   "original_verifier": null,
+   "retired_reason": "all sources resolve to the banned operator US Library of Congress"
+  },
+  {
+   "lccn": null,
+   "date": null,
+   "field": "ICAO identifier",
+   "answer": "SKIP",
+   "paper": null,
+   "prompt": "The OurAirports open dataset lists every civil aerodrome in Colombia with its elevation, service status and identifier codes. Restrict attention to aerodromes in that country classified as medium or large and flagged as currently having scheduled commercial service. Among only those, one sits at a greater elevation above sea level than any other. Identify that single aerodrome and report its four-character ICAO identifier. Confirm the same identifier against two independent references before answering. Give the identifier alone, in capital letters, with no surrounding words.",
+   "sources": [
+    "https://davidmegginson.github.io/ourairports-data/airports.csv",
+    "https://www.wikidata.org/wiki/Q1321708",
+    "https://raw.githubusercontent.com/jpatokal/openflights/master/data/airports.dat",
+    "https://restcountries.com/v3.1/alpha/CO"
+   ],
+   "operators": [
+    "OpenFlights",
+    "OurAirports",
+    "REST Countries project",
+    "Wikimedia Foundation"
+   ],
+   "violating_urls": [
+    "https://www.wikidata.org/wiki/Q1321708"
+   ],
+   "violations": [
+    "R4 banned source https://www.wikidata.org/wiki/Q1321708 (banned domain: wikidata.org)"
+   ],
+   "originally_verified": true,
+   "original_verifier": null,
+   "retired_reason": "all sources resolve to the banned operator US Library of Congress"
+  },
+  {
+   "lccn": null,
+   "date": null,
+   "field": "executive order number",
+   "answer": "13292",
+   "paper": null,
+   "prompt": "The United States Office of the Federal Register publishes every presidential executive order, recording for each one its sequential order number, its title and the span of printed pages it occupies. Consider only the executive orders that the register published during 2003, each counted by the number of printed pages it fills. Among those orders one occupies more printed pages than any other issued that year. Report the sequential order number that the register assigns to that single longest order. The register offers no view sorted by printed extent, so the comparison must be built from the records themselves. Give the order number alone as digits, with no prefix or other words.",
+   "sources": [
+    "https://www.federalregister.gov/api/v1/documents.json?conditions[type][]=PRESDOCU&conditions[presidential_document_type][]=executive_order&conditions[publication_date][gte]=2003-01-01&conditions[publication_date][lte]=2003-12-31&fields[]=executive_order_number&fields[]=title&fields[]=page_length&fields[]=publication_date&fields[]=citation&fields[]=start_page&fields[]=end_page&per_page=1000&order=oldest",
+    "https://www.federalregister.gov/documents/2003-03-28",
+    "https://www.govinfo.gov/app/collection/FR",
+    "https://www.wikidata.org/wiki/Q5419886"
+   ],
+   "operators": [
+    "US Government Publishing Office",
+    "US Office of the Federal Register",
+    "Wikimedia Foundation"
+   ],
+   "violating_urls": [
+    "https://www.wikidata.org/wiki/Q5419886"
+   ],
+   "violations": [
+    "R4 banned source https://www.wikidata.org/wiki/Q5419886 (banned domain: wikidata.org)"
+   ],
+   "originally_verified": true,
+   "original_verifier": null,
+   "retired_reason": "all sources resolve to the banned operator US Library of Congress"
+  },
+  {
+   "lccn": null,
+   "date": null,
+   "field": "FAST identifier",
+   "answer": "243777",
+   "paper": null,
+   "prompt": "A league statistics service publishes the full-season roster of every club together with each listed player's pitching line for that season, including how many opposing batters he faced, and bibliographic authority files assign each person a stable numeric identifier. Consider only the players the service lists on the 1988 full-season roster of the Los Angeles Dodgers whose season line records at least one batter faced. Among those players one faced more batters than every other. Report the FAST authority identifier assigned to that single player. Resolve the identifier at the authority file before answering. Give the identifier alone, digits only.",
+   "sources": [
+    "https://statsapi.mlb.com/api/v1/teams/119/roster?season=1988",
+    "https://id.worldcat.org/fast/243777",
+    "https://www.wikidata.org/wiki/Q2410775",
+    "https://www.retrosheet.org/biofile.htm"
+   ],
+   "operators": [
+    "Major League Baseball",
+    "OCLC",
+    "Retrosheet",
+    "Wikimedia Foundation"
+   ],
+   "violating_urls": [
+    "https://www.wikidata.org/wiki/Q2410775"
+   ],
+   "violations": [
+    "R4 banned source https://www.wikidata.org/wiki/Q2410775 (banned domain: wikidata.org)"
+   ],
+   "originally_verified": true,
+   "original_verifier": null,
+   "retired_reason": "all sources resolve to the banned operator US Library of Congress"
+  },
+  {
+   "lccn": null,
+   "date": null,
+   "field": "GeoNames identifier",
+   "answer": "6296543",
+   "paper": null,
+   "prompt": "The OpenFlights project distributes an airline route table and a separate airport table, each as a plain delimited file covering worldwide civil aviation. Consider only the nonstop destinations served by the carrier with IATA code AY departing from its hub at HEL, as recorded in that route table. Join those destinations to the airport table and find the one lying furthest north. Report the GeoNames database identifier of that single northernmost destination. Resolve the identifier at the gazetteer before answering. Answer with the numeric identifier only, digits and nothing else.",
+   "sources": [
+    "https://raw.githubusercontent.com/jpatokal/openflights/master/data/routes.dat",
+    "https://davidmegginson.github.io/ourairports-data/airports.csv",
+    "https://www.wikidata.org/wiki/Q850269",
+    "https://sws.geonames.org/6296543/"
+   ],
+   "operators": [
+    "GeoNames",
+    "OpenFlights",
+    "OurAirports",
+    "Wikimedia Foundation"
+   ],
+   "violating_urls": [
+    "https://www.wikidata.org/wiki/Q850269"
+   ],
+   "violations": [
+    "R4 banned source https://www.wikidata.org/wiki/Q850269 (banned domain: wikidata.org)"
+   ],
+   "originally_verified": true,
+   "original_verifier": null,
+   "retired_reason": "all sources resolve to the banned operator US Library of Congress"
+  },
+  {
+   "lccn": null,
+   "date": null,
+   "field": "IMDb title identifier",
+   "answer": "tt1278381",
+   "paper": null,
+   "prompt": "The IMDb public title export records, for every film it lists, the title, the year of release, the genres assigned to it and the running time in minutes. Restrict attention to titles typed as feature films with a release year of 2008 that carry the Fantasy genre and a recorded running time. Among only those, one film runs longer than every other. Report the IMDb title identifier of that single longest film. Confirm the identifier against an independent structured knowledge base before answering. Give the identifier alone, beginning with the two letters that prefix it, and nothing else.",
+   "sources": [
+    "https://datasets.imdbws.com/title.basics.tsv.gz",
+    "https://www.wikidata.org/wiki/Q3163471",
+    "https://api.tvmaze.com/search/shows?q=Je%20ne%20suis%20pas%20morte",
+    "https://www.imdb.com/title/tt1278381/"
+   ],
+   "operators": [
+    "IMDb (Amazon)",
+    "TVmaze",
+    "Wikimedia Foundation"
+   ],
+   "violating_urls": [
+    "https://www.wikidata.org/wiki/Q3163471"
+   ],
+   "violations": [
+    "R4 banned source https://www.wikidata.org/wiki/Q3163471 (banned domain: wikidata.org)"
+   ],
+   "originally_verified": true,
+   "original_verifier": null,
+   "retired_reason": "all sources resolve to the banned operator US Library of Congress"
   }
  ],
  "curated": [
@@ -755,7 +953,7 @@
   }
  ],
  "counts": {
-  "generated": 18,
+  "generated": 25,
   "curated": 5
  }
 }

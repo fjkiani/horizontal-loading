@@ -6,3 +6,4 @@ __pycache__/
 stress_selftest.json
 *.log
 .commitmsg
+pool_ledger.json

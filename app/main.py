@@ -16,7 +16,7 @@ Endpoints:
 from __future__ import annotations
 import json, os, sys, threading, uuid, time
 from fastapi import FastAPI, HTTPException
-from fastapi.responses import FileResponse
+from fastapi.responses import FileResponse, JSONResponse
 from fastapi.staticfiles import StaticFiles
 from pydantic import BaseModel
 from typing import Any, Optional
@@ -39,13 +39,62 @@ import gen_v4  # noqa: F401  finance only; must load last so it wins that key
 # service cannot apply a weaker gate than the catalog it serves alongside.
 import evaluate_traps as et
 import seed_roster
+import pool_ledger as pl
 from app import solvers
 
 WORKSPACE = _REPO
 STATIC = os.path.join(os.path.dirname(__file__), "static")
 AUTHOR_PATH = os.path.join(WORKSPACE, "author_payloads.json")
+CATALOG_PATH = os.path.join(WORKSPACE, "web", "public", "catalog.json")
+
+# The ledger is addressed ABSOLUTELY. pool_ledger's default is the relative
+# "pool_ledger.json", and the service's working directory under gunicorn is not
+# guaranteed to be the repo root -- a relative path would silently open a second,
+# empty ledger and every category would read as freshly stocked.
+pl.LEDGER_PATH = os.environ.get(
+    "SEAL_POOL_LEDGER", os.path.join(WORKSPACE, "pool_ledger.json"))
 
 app = FastAPI(title="Seal Prompt Generator", version="1.0")
+
+
+# --------------------------------------------------------------- prompt pool
+def _catalog_traps():
+    """The baked catalog, as a list. Empty if the bake has not run."""
+    if not os.path.exists(CATALOG_PATH):
+        return []
+    try:
+        with open(CATALOG_PATH) as fh:
+            doc = json.load(fh)
+    except (json.JSONDecodeError, OSError):
+        return []
+    return doc.get("traps") or []
+
+
+def _pool_index():
+    """trap_id -> baked trap. The ledger stores accounting, not prompt text."""
+    idx = {}
+    for t in _catalog_traps():
+        tid = t.get("trap_id") or pl.trap_id(
+            t.get("category"), t.get("field"), str(t.get("answer")))
+        idx[tid] = t
+    return idx
+
+
+def _seed_pool():
+    """Stock the ledger from the catalog at startup.
+
+    Idempotent by construction: pool_ledger.upsert refreshes metadata but never
+    resets a status, so a redeploy cannot un-burn a prompt that was already
+    spent. It CAN lose the ledger entirely, because Render's disk is ephemeral --
+    that is a stated limitation of this deployment, not a property of the model.
+    """
+    try:
+        return pl.upsert(_catalog_traps())
+    except Exception as e:  # noqa: BLE001  never let seeding break startup
+        return {"error": "%s: %s" % (type(e).__name__, e)}
+
+
+_POOL_SEED = _seed_pool()
 
 
 def _load_author():
@@ -142,9 +191,16 @@ class GenerateRequest(BaseModel):
     lccn: Optional[str] = None           # newspaper to draw from (default: random seed)
     start_date: Optional[str] = None     # YYYY-MM-DD seed; default: randomized for novelty
     max_steps: int = 8                   # how many front pages to walk before giving up
+    # Consumption controls. request_key makes a retry idempotent: the same key
+    # inside the reissue window returns the identical prompt instead of burning
+    # a second one. fresh=True bypasses the pool and traverses the source APIs,
+    # which is the slow path and is only correct when the caller WANTS a new
+    # prompt minted rather than one drawn from stock.
+    request_key: Optional[str] = None
+    fresh: bool = False
 
 
-def _run_category_generate(job_id, category, kwargs, seed_index):
+def _run_category_generate(job_id, category, kwargs, seed_index, request_key=None):
     """Generate one category trap on demand and gate it before returning.
 
     The gate result is reported, not hidden. A seed that fails is a measured
@@ -210,8 +266,27 @@ def _run_category_generate(job_id, category, kwargs, seed_index):
             "tests": ev["tests"],
             "n_tests": len(ev["tests"]),
         }
+        pool = None
         if ok:
             detail = None
+            # A freshly minted prompt is a CONSUMED prompt: the caller has now
+            # seen it, so it must enter the ledger already spent. Booking it as
+            # `available` would let the same answer be handed out a second time
+            # through the pool path, which is the exact double-serve this ledger
+            # exists to prevent. upsert() is a no-op on an existing record's
+            # status, so re-minting an answer already in stock cannot resurrect it.
+            try:
+                tid = pl.trap_id(category, trap.get("field"), str(trap.get("answer")))
+                pl.upsert([dict(trap, verdict=verdict,
+                                witness_tier=ev.get("witness_tier"),
+                                seed_repr=repr(kwargs))])
+                rec, meta = pl.book_minted(tid, request_key or ("mint:" + job_id))
+                pool = {"trap_id": tid, "minted": True,
+                        "status": meta.get("status"),
+                        "already_spent": meta.get("already_spent"),
+                        "n_available": meta.get("n_available")}
+            except Exception as e:  # noqa: BLE001  accounting must not eat a good trap
+                pool = {"error": "%s: %s" % (type(e).__name__, e)}
         elif failed:
             detail = ("trap held: %d of %d tests failed -- %s"
                       % (len(failed), len(ev["tests"]), "; ".join(
@@ -237,6 +312,7 @@ def _run_category_generate(job_id, category, kwargs, seed_index):
                     "answer": trap.get("answer"), "field": trap.get("field"),
                     "entity": trap.get("entity"), "n_base": trap.get("n_base")},
                 "detail": detail,
+                "pool": pool,
             })
     except Exception as e:  # noqa: BLE001
         with _JOBS_LOCK:
@@ -323,6 +399,60 @@ def generate(req: GenerateRequest):
         if cat not in ct.GENERATORS:
             raise HTTPException(400, "unknown category %r; expected one of %s"
                                 % (cat, list(sg.CATEGORIES)))
+
+        # POOL FIRST. A plain "give me a prompt for this category" is answered
+        # from stock, synchronously, and the prompt is burned. Two reasons the
+        # pool beats generating on demand here: request latency is bounded (a
+        # live traversal is 30-170 s and can fail mid-request the way legal's
+        # volume walk does), and a served prompt is single-use by construction --
+        # once a solver has seen it, re-serving it measures recall, not the
+        # capability the trap probes. An explicit seed, or fresh=True, still
+        # takes the slow minting path below.
+        if not req.fresh and req.seed is None:
+            key = req.request_key or uuid.uuid4().hex[:12]
+            rec, meta = pl.serve(cat, key)
+            if rec is None:
+                # Exhausted is a REFUSAL, never a silent reissue. There is no
+                # code path that serves a burned prompt.
+                return JSONResponse(status_code=409, content={
+                    "status": "exhausted", "category": cat,
+                    "n_available": 0,
+                    "n_burned": meta.get("n_burned", 0),
+                    "n_served": meta.get("n_served", 0),
+                    "n_retired": meta.get("n_retired", 0),
+                    "n_total": meta.get("n_total", 0),
+                    "detail": ("the %s pool is spent: %d prompt(s) burned, %d "
+                               "still inside their reissue window. Prompts are "
+                               "not recycled -- refill by sweeping the seed "
+                               "roster (expand_seeds.py) and re-baking the "
+                               "catalog. Pass fresh=true to mint one live "
+                               "instead, which traverses the source APIs and "
+                               "may refuse."
+                               % (cat, meta.get("n_burned", 0),
+                                  meta.get("n_served", 0))),
+                    "replenish": "/api/pool",
+                })
+            trap = _pool_index().get(rec["trap_id"])
+            if trap is None:
+                # The ledger knows an id the catalog no longer carries. Report
+                # it rather than 500 -- and do not pretend a prompt was served.
+                raise HTTPException(503, "pool record %s has no baked trap; "
+                                         "the ledger and catalog are out of sync"
+                                    % rec["trap_id"])
+            ev = {"verdict": trap.get("verdict"),
+                  "witness_tier": trap.get("witness_tier"),
+                  "independent_witnesses": trap.get("independent_confirming_operators"),
+                  "source": "catalog bake (13-test battery at build time)"}
+            return {"status": "served", "source": "pool", "category": cat,
+                    "trap_id": rec["trap_id"], "request_key": key,
+                    "reissued": bool(meta.get("reissued")),
+                    "reissue_expires_at": rec.get("reissue_expires_at"),
+                    "n_available": meta.get("n_available"),
+                    "result": _api_trap_summary(trap, ev),
+                    "note": ("this prompt is now spent; the same request_key "
+                             "returns it again for %d s, a different key gets a "
+                             "different prompt" % pl.REISSUE_SECONDS)}
+
         if isinstance(req.seed, dict):
             try:
                 kwargs, idx = seed_roster.validate_kwargs(cat, req.seed), None
@@ -340,7 +470,8 @@ def generate(req: GenerateRequest):
                              "category": cat, "seed": kwargs, "seed_index": idx,
                              "progress": {"phase": "starting"}, "log": []}
         threading.Thread(target=_run_category_generate,
-                         args=(job_id, cat, kwargs, idx), daemon=True).start()
+                         args=(job_id, cat, kwargs, idx, req.request_key),
+                         daemon=True).start()
         return {"job_id": job_id, "status": "running",
                 "poll": "/api/generate/%s" % job_id, "category": cat,
                 "seed": kwargs, "seed_index": idx,
@@ -423,7 +554,7 @@ def generate_status(job_id: str):
                 "detail": job.get("detail") or "terminal state carried no result",
                 "log": job.get("log") or []}
     return {"job_id": job_id, "status": "done", "result": job["result"],
-            "evaluation": job.get("evaluation"),
+            "evaluation": job.get("evaluation"), "pool": job.get("pool"),
             "category": job.get("category"), "seed": job.get("seed"),
             "seed_index": job.get("seed_index"),
             "elapsed": round(job.get("ended", time.time()) - job.get("started", time.time()), 1)}
@@ -503,26 +634,74 @@ def _trap_summary(t):
     }
 
 
+@app.get("/api/pool")
+def pool_status():
+    """Consumption accounting for the prompt pool.
+
+    Answers the question the old API could not: how many prompts are left, how
+    many were spent, and when to refill. `low_water` trips at
+    SEAL_LOW_WATER (default 2) or fewer available, BEFORE exhaustion, because
+    the refill path is a seed sweep that takes tens of minutes, not a request.
+
+    `burned` and `retired` are separate on purpose. Burned means consumed by
+    service. Retired means withdrawn by policy -- the Wikimedia ban retired 7
+    prompts that no caller ever saw, and counting those as consumption would
+    misreport how much of the pool has actually been spent.
+    """
+    st = pl.status(categories=sg.CATEGORIES)
+    st["catalog_traps"] = len(_catalog_traps())
+    st["seeded_at_startup"] = _POOL_SEED
+    st["persistence"] = ("the ledger is a file on the service's ephemeral disk; "
+                         "a redeploy restocks it from the baked catalog, so "
+                         "consumption counts are per-deploy, not lifetime")
+    return st
+
+
 @app.get("/api/categories")
 def list_categories():
-    """The closed 16-value taxonomy, with how many served traps each holds.
+    """The closed 16-value taxonomy, with what each category can actually serve.
 
-    A category with 0 served traps is reported as 0 rather than omitted: the
-    absence is the finding. `unservable` lists the categories whose generator
-    currently produces an answer that no independent operator will confirm, so
-    the gate refuses it.
+    `n_served` used to be the size of the generated pool for the category -- a
+    number that never moved when a prompt was handed out, so a caller could be
+    served the same prompt forever and the API would keep reporting stock. It
+    now means AVAILABLE: prompts this category can still serve. It is kept under
+    the old key so existing clients that use it to decide "can this category be
+    asked?" keep working, and the unambiguous names are alongside it.
+
+    A category with 0 available is reported as 0 rather than omitted: the
+    absence is the finding. `unservable` is now split -- `exhausted` means the
+    pool was spent, `unstocked` means nothing was ever baked for it, and those
+    are different failures with different remedies.
     """
-    pool = tg.list_generated()
-    counts = {c: 0 for c in sg.CATEGORIES}
-    for t in pool:
-        c = t.get("category")
-        if c in counts:
-            counts[c] += 1
-    return {"categories": [{"category": c, "n_served": counts[c]}
-                           for c in sg.CATEGORIES],
+    st = pl.status(categories=sg.CATEGORIES)
+    by_cat = {c["category"]: c for c in st["categories"]}
+    rows = []
+    for c in sg.CATEGORIES:
+        r = by_cat.get(c) or {"n_total": 0, "n_available": 0, "n_served": 0,
+                              "n_burned": 0, "n_retired": 0, "low_water": True,
+                              "exhausted": True}
+        rows.append({
+            "category": c,
+            "n_served": r["n_available"],   # legacy key: what can be served now
+            "n_available": r["n_available"],
+            "n_total": r["n_total"],
+            "n_burned": r["n_burned"],
+            "n_in_window": r["n_served"],
+            "n_retired": r["n_retired"],
+            "low_water": r["low_water"],
+            "exhausted": r["n_total"] > 0 and r["n_available"] == 0,
+            "unstocked": r["n_total"] == 0,
+        })
+    return {"categories": rows,
             "n_categories": len(sg.CATEGORIES),
-            "n_served_total": len(pool),
-            "unservable": [c for c in sg.CATEGORIES if counts[c] == 0]}
+            "n_served_total": st["n_available_total"],
+            "n_available_total": st["n_available_total"],
+            "n_burned_total": st["n_burned_total"],
+            "unservable": [r["category"] for r in rows if not r["n_available"]],
+            "exhausted": [r["category"] for r in rows if r["exhausted"]],
+            "unstocked": [r["category"] for r in rows if r["unstocked"]],
+            "low_water": [r["category"] for r in rows
+                          if r["low_water"] and not r["unstocked"]]}
 
 
 @app.get("/api/retired")

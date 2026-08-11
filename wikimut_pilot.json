@@ -1,0 +1,80 @@
+{
+ "generated": "2026-08-11T18:35:19Z",
+ "why": "Classify every generator's Wikimedia dependency by MUTATING Wikidata.",
+ "n_categories": 2,
+ "rows": [
+  {
+   "category": "science and technology",
+   "baseline": {
+    "status": "ok",
+    "answer": "2403.07505",
+    "field": "arXiv identifier",
+    "etype": null
+   },
+   "T1": {
+    "outcome": "returned",
+    "answer": "2403.07505",
+    "field": "arXiv identifier",
+    "operators": [
+     "Cornell University",
+     "DataCite",
+     "OurResearch (OpenAlex)"
+    ],
+    "secs": 0.0
+   },
+   "T2": {
+    "outcome": "returned",
+    "answer": "2403.07505",
+    "field": "arXiv identifier",
+    "operators": [
+     "Cornell University",
+     "DataCite",
+     "OurResearch (OpenAlex)"
+    ],
+    "secs": 0.0
+   },
+   "verdict": "INDEPENDENT",
+   "why": "both mutations shipped the baseline answer '2403.07505' unchanged"
+  },
+  {
+   "category": "geography",
+   "baseline": {
+    "status": "ok",
+    "answer": "SKIP",
+    "field": "ICAO identifier",
+    "etype": null
+   },
+   "T1": {
+    "outcome": "returned",
+    "answer": "SKIP",
+    "field": "ICAO identifier",
+    "operators": [
+     "OpenFlights",
+     "OurAirports",
+     "REST Countries project",
+     "Wikimedia Foundation"
+    ],
+    "secs": 0.5
+   },
+   "T2": {
+    "outcome": "returned",
+    "answer": "SKIP",
+    "field": "ICAO identifier",
+    "operators": [
+     "OpenFlights",
+     "OurAirports",
+     "REST Countries project",
+     "Wikimedia Foundation"
+    ],
+    "secs": 0.5
+   },
+   "verdict": "INDEPENDENT",
+   "why": "both mutations shipped the baseline answer 'SKIP' unchanged"
+  }
+ ],
+ "summary": {
+  "INDEPENDENT": 2
+ },
+ "answer_bearing": [],
+ "verdict": "0 generator(s) let a public wiki set the answer: none"
+}

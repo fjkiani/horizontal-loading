@@ -1,0 +1,74 @@
+{
+  "generated": "2026-08-11T18:54:23Z",
+  "why": "travelbear -- is gen_travel ANSWER-BEARING on Wikidata?",
+  "root_cause": "category_traps.py:751 uses `(...).get('claims', {}) or {}`; wikimut's _Claims is an empty dict subclass, so the mock collapses to {} and the mutation never reaches the caller. Only site in the repo with that idiom.",
+  "stages": {
+    "1_guard_strength": {
+      "place_token": "Ivalo",
+      "n_wikidata_hits": 5,
+      "n_geonames_ids_found": 2,
+      "candidates": [
+        {
+          "geonames_id": "6296543",
+          "qid": "Q850269",
+          "label": "Ivalo Airport",
+          "description": "airport in Ivalo, Inari, Finland",
+          "rdf_bytes": 2574,
+          "passes_guard": true
+        },
+        {
+          "geonames_id": "656220",
+          "qid": "Q539767",
+          "label": "Ivalo",
+          "description": "village in Inari, Finland",
+          "rdf_bytes": 2889,
+          "passes_guard": true
+        }
+      ],
+      "k_passing_guard": 2,
+      "passing_ids": [
+        "6296543",
+        "656220"
+      ],
+      "baseline_in_passing": true,
+      "guard_discrimination": 0.5
+    },
+    "2_poison": {
+      "outcome": "returned",
+      "answer": "656220",
+      "entity": "Ivalo Airport",
+      "field": "GeoNames identifier",
+      "sources": [
+        "https://raw.githubusercontent.com/jpatokal/openflights/master/data/routes.dat",
+        "https://davidmegginson.github.io/ourairports-data/airports.csv",
+        "https://www.wikidata.org/wiki/Q850269",
+        "https://sws.geonames.org/656220/"
+      ],
+      "confirmation": "OurAirports lists IVL at latitude 68.6073; Wikidata Q850269 ('Ivalo Airport') carries P238 'IVL' uniquely and P1566 656220 uniquely; the GeoNames record 656220 resolves and names the place",
+      "patch": {
+        "n_calls": 1,
+        "n_rewritten": 1,
+        "originals": [
+          "6296543"
+        ]
+      },
+      "secs": 0.6,
+      "collider": "656220"
+    },
+    "3_downstream": {
+      "validate_trap": "PASSED",
+      "verdict": "ship",
+      "witness_tier": "gold",
+      "failing": [],
+      "n_tests": 13
+    }
+  },
+  "baseline": {
+    "status": "ok",
+    "answer": "6296543",
+    "entity": "Ivalo Airport",
+    "field": "GeoNames identifier"
+  },
+  "verdict": "ANSWER_BEARING",
+  "why_verdict": "editing one Wikidata claim (P1566) moved the shipped answer from 6296543 to 656220 with every other operator untouched"
+}

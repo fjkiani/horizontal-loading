@@ -696,7 +696,9 @@
    "answer_field_modal_share": 0.013699,
    "p_answer_by_uniform_guess": 0.013699,
    "collection_is_bulk_download": true,
-   "key_is_aggregated": false
+   "key_is_aggregated": false,
+   "margin_deg": 2.042503,
+   "cross_source_disagreement_deg": 0.001469
   },
   "facts": {
    "airline": "AY",

@@ -1,0 +1,104 @@
+{
+  "n_trials": 200,
+  "n_contaminated": 200,
+  "contamination_rate": 1.0,
+  "witness_delay_s": 0.002,
+  "examples": [
+    {
+      "trial": 0,
+      "rows": [
+        {
+          "tag": "A",
+          "own_n": 40,
+          "evidence_n": 17,
+          "evidence_top": "119",
+          "own_top": 40
+        },
+        {
+          "tag": "B",
+          "own_n": 17,
+          "evidence_n": 17,
+          "evidence_top": "119",
+          "own_top": 119
+        }
+      ]
+    },
+    {
+      "trial": 1,
+      "rows": [
+        {
+          "tag": "A",
+          "own_n": 40,
+          "evidence_n": 17,
+          "evidence_top": "119",
+          "own_top": 40
+        },
+        {
+          "tag": "B",
+          "own_n": 17,
+          "evidence_n": 17,
+          "evidence_top": "119",
+          "own_top": 119
+        }
+      ]
+    },
+    {
+      "trial": 2,
+      "rows": [
+        {
+          "tag": "A",
+          "own_n": 40,
+          "evidence_n": 17,
+          "evidence_top": "119",
+          "own_top": 40
+        },
+        {
+          "tag": "B",
+          "own_n": 17,
+          "evidence_n": 17,
+          "evidence_top": "119",
+          "own_top": 119
+        }
+      ]
+    },
+    {
+      "trial": 3,
+      "rows": [
+        {
+          "tag": "A",
+          "own_n": 40,
+          "evidence_n": 17,
+          "evidence_top": "119",
+          "own_top": 40
+        },
+        {
+          "tag": "B",
+          "own_n": 17,
+          "evidence_n": 17,
+          "evidence_top": "119",
+          "own_top": 119
+        }
+      ]
+    },
+    {
+      "trial": 4,
+      "rows": [
+        {
+          "tag": "A",
+          "own_n": 40,
+          "evidence_n": 17,
+          "evidence_top": "119",
+          "own_top": 40
+        },
+        {
+          "tag": "B",
+          "own_n": 17,
+          "evidence_n": 17,
+          "evidence_top": "119",
+          "own_top": 119
+        }
+      ]
+    }
+  ],
+  "mechanism": "_pick_extreme rebinds the module global LAST_RANK; to_trap() reads it after the witness round trips, so any generation that ranks inside another's witness window overwrites the evidence the gate will score"
+}

@@ -1,0 +1,250 @@
+{
+ "started": 1786456260.3231943,
+ "categories": {
+  "health and medicine": {
+   "category": "health and medicine",
+   "status": "ok",
+   "answer": "NCT05178810",
+   "entity": "Study to Investigate the Efficacy and Safety of FAB122 (Daily Oral Edaravone) in Patients With Amyotrophic Lateral Scler",
+   "n_population": 51,
+   "mode": "max",
+   "key_label": "health",
+   "n_sampled": 25,
+   "n_with_article": 9,
+   "key_in_article_frac": 0.4444,
+   "key_in_OTHER_article_frac": 0.8889,
+   "excess": -0.4444,
+   "mcnemar_b_true_only": 1,
+   "mcnemar_c_perm_only": 5,
+   "mcnemar_p": 0.21875,
+   "key_variant_chars": 1,
+   "examples_key_found": [
+    {
+     "member": "Phase 3 Study of Dexpramipexole in ALS",
+     "article": "Dexpramipexole",
+     "key": "3",
+     "matched_as": "3"
+    },
+    {
+     "member": "Repetitive Transcranial Magnetic Stimulation (rTMS) in Amyotrophic Lateral Sclerosis",
+     "article": "Transcranial magnetic stimulation",
+     "key": "1",
+     "matched_as": "1"
+    },
+    {
+     "member": "Minocycline to Treat Amyotrophic Lateral Sclerosis",
+     "article": "Minocycline",
+     "key": "1",
+     "matched_as": "1"
+    },
+    {
+     "member": "Safety Extension Study of Oral Edaravone Administered in Subjects With Amyotrophic Lateral Sclerosis (ALS)",
+     "article": "ALS",
+     "key": "0",
+     "matched_as": "0"
+    }
+   ],
+   "examples_key_absent": [
+    {
+     "member": "Efficacy and Safety Study of MCI-186 for Treatment of Amyotrophic Lateral Sclerosis (ALS)",
+     "article": "Edaravone",
+     "key": "8",
+     "matched_as": null
+    },
+    {
+     "member": "Phase II/III Randomized, Placebo-controlled Trial of Arimoclomol in SOD1 Positive Familial Amyotrophic Lateral Sclerosis",
+     "article": "Arimoclomol",
+     "key": "3",
+     "matched_as": null
+    },
+    {
+     "member": "Clinical Trial Ceftriaxone in Subjects With ALS",
+     "article": "Ceftriaxone",
+     "key": "4",
+     "matched_as": null
+    },
+    {
+     "member": "Safety and Efficacy on Spasticity Symptoms of a Cannabis Sativa Extract in Motor Neuron Disease",
+     "article": "Tetrahydrocannabinol",
+     "key": "1",
+     "matched_as": null
+    }
+   ],
+   "winner_article": null,
+   "winner_has_article": false,
+   "elapsed_s": 11.1
+  },
+  "science and technology": {
+   "category": "science and technology",
+   "status": "ok",
+   "answer": "2403.07505",
+   "entity": "Rotational Evolution of Classical T Tauri Stars: Models and Observations",
+   "n_population": 15,
+   "mode": "max",
+   "key_label": "science astro-ph.EP/2024-03-12",
+   "n_sampled": 15,
+   "n_with_article": 9,
+   "key_in_article_frac": 0.6667,
+   "key_in_OTHER_article_frac": 1.0,
+   "excess": -0.3333,
+   "mcnemar_b_true_only": 0,
+   "mcnemar_c_perm_only": 3,
+   "mcnemar_p": 0.25,
+   "key_variant_chars": 1,
+   "examples_key_found": [
+    {
+     "member": "A Novel Method to Constrain Tidal Quality Factor from A Non-synchronized Exoplanetary System",
+     "article": "2021 in science",
+     "key": "3",
+     "matched_as": "3"
+    },
+    {
+     "member": "Predicting the Slowing of Stellar Differential Rotation by Instability-Driven Turbulence",
+     "article": "Sun",
+     "key": "5",
+     "matched_as": "5"
+    },
+    {
+     "member": "Precision timing of eclipsing binaries from TESS full frame images. Method and performance",
+     "article": "Kepler space telescope",
+     "key": "2",
+     "matched_as": "2"
+    },
+    {
+     "member": "Main-sequence exoplanet systems: tidal evolution",
+     "article": "Main sequence",
+     "key": "1",
+     "matched_as": "1"
+    }
+   ],
+   "examples_key_absent": [
+    {
+     "member": "White dwarf systems: exoplanets and debris disks",
+     "article": "List of exoplanets and planetary debris around white dwarfs",
+     "key": "1",
+     "matched_as": null
+    },
+    {
+     "member": "Rotational Evolution of Classical T Tauri Stars: Models and Observations",
+     "article": "List of nearest stars by spectral type",
+     "key": "20",
+     "matched_as": null
+    },
+    {
+     "member": "A sub-solar metallicity on the ultra-short period planet HIP 65Ab",
+     "article": "Ultra-short period planet",
+     "key": "5",
+     "matched_as": null
+    }
+   ],
+   "winner_article": "List of nearest stars by spectral type",
+   "winner_has_article": true,
+   "winner_key_in_article": null,
+   "answer_in_winner_article": false,
+   "winner_article_chars": 1012,
+   "elapsed_s": 11.3
+  },
+  "sports": {
+   "category": "sports",
+   "status": "ok",
+   "answer": "243777",
+   "entity": "Orel Hershiser",
+   "n_population": 19,
+   "mode": "max",
+   "key_label": "sports Los Angeles Dodgers 1988",
+   "n_sampled": 19,
+   "n_with_article": 19,
+   "key_in_article_frac": 0.0,
+   "key_in_OTHER_article_frac": 0.1053,
+   "excess": -0.1053,
+   "mcnemar_b_true_only": 0,
+   "mcnemar_c_perm_only": 2,
+   "mcnemar_p": 0.5,
+   "key_variant_chars": 1,
+   "examples_key_found": [],
+   "examples_key_absent": [
+    {
+     "member": "Tim Belcher",
+     "article": "Tim Belcher",
+     "key": "719",
+     "matched_as": null
+    },
+    {
+     "member": "William Brennan",
+     "article": "William J. Brennan Jr.",
+     "key": "44",
+     "matched_as": null
+    },
+    {
+     "member": "Tim Crews",
+     "article": "Tim Crews",
+     "key": "301",
+     "matched_as": null
+    },
+    {
+     "member": "Brad Havens",
+     "article": "Brad Havens",
+     "key": "295",
+     "matched_as": null
+    }
+   ],
+   "winner_article": "Orel Hershiser",
+   "winner_has_article": true,
+   "winner_key_in_article": null,
+   "answer_in_winner_article": false,
+   "winner_article_chars": 21983,
+   "elapsed_s": 6.2
+  },
+  "travel": {
+   "category": "travel",
+   "status": "ok",
+   "answer": "IVL",
+   "entity": "Ivalo Airport",
+   "n_population": 73,
+   "mode": "max",
+   "key_label": "travel",
+   "n_sampled": 25,
+   "n_with_article": 0,
+   "key_in_article_frac": null,
+   "key_in_OTHER_article_frac": null,
+   "excess": null,
+   "mcnemar_b_true_only": 0,
+   "mcnemar_c_perm_only": 0,
+   "mcnemar_p": 1.0,
+   "key_variant_chars": null,
+   "examples_key_found": [],
+   "examples_key_absent": [],
+   "winner_article": "Ivalo Airport",
+   "winner_has_article": true,
+   "winner_key_in_article": null,
+   "answer_in_winner_article": true,
+   "winner_article_chars": 1065,
+   "elapsed_s": 7.2
+  },
+  "geography": {
+   "category": "geography",
+   "status": "generator did not call _pick_extreme",
+   "elapsed_s": 0.4
+  }
+ },
+ "travel_stage2": {
+  "article": "Ivalo Airport",
+  "article_chars": 1065,
+  "identifiers": {
+   "IATA": {
+    "value": "IVL",
+    "printed_in_article": true
+   },
+   "ICAO": {
+    "value": "EFIV",
+    "printed_in_article": true
+   },
+   "WikidataQID": {
+    "value": "Q850269",
+    "printed_in_article": false
+   }
+  },
+  "error": null
+ },
+ "finished": 1786456296.9297063
+}

@@ -1,0 +1,224 @@
+{
+ "started": 1786457707.2098353,
+ "tolerance_deg": 0.5,
+ "seeds": [
+  {
+   "idx": 0,
+   "seed": {},
+   "shipped": true,
+   "answer": "6296543",
+   "entity": "Ivalo Airport",
+   "n_ranked": 73,
+   "margin_deg": 2.042503,
+   "margin_km_approx": 227.371,
+   "cross_source": [
+    {
+     "role": "winner",
+     "iata": "IVL",
+     "name": "Ivalo Airport",
+     "openflights_lat": 68.6073,
+     "ourairports_lat": 68.6073,
+     "disagreement_deg": 0.0
+    },
+    {
+     "role": "runner_up",
+     "iata": "RVN",
+     "name": "Rovaniemi Airport",
+     "openflights_lat": 66.564796,
+     "ourairports_lat": 66.563327,
+     "disagreement_deg": 0.001469
+    }
+   ],
+   "worst_disagreement_deg": 0.001469,
+   "margin_over_disagreement": 1390.4,
+   "ranking_established_by_sources": true,
+   "margin_under_gate_tolerance": false
+  },
+  {
+   "idx": 1,
+   "seed": {
+    "airline_iata": "LH",
+    "hub_iata": "FRA"
+   },
+   "shipped": true,
+   "answer": "6301511",
+   "entity": "Helsinki Vantaa Airport",
+   "n_ranked": 171,
+   "margin_deg": 0.0238,
+   "margin_km_approx": 2.649,
+   "cross_source": [
+    {
+     "role": "winner",
+     "iata": "HEL",
+     "name": "Helsinki Vantaa Airport",
+     "openflights_lat": 60.3172,
+     "ourairports_lat": 60.318363,
+     "disagreement_deg": 0.001163
+    },
+    {
+     "role": "runner_up",
+     "iata": "BGO",
+     "name": "Bergen Airport, Flesland",
+     "openflights_lat": 60.2934,
+     "ourairports_lat": 60.2934,
+     "disagreement_deg": 0.0
+    }
+   ],
+   "worst_disagreement_deg": 0.001163,
+   "margin_over_disagreement": 20.46,
+   "ranking_established_by_sources": true,
+   "margin_under_gate_tolerance": true
+  },
+  {
+   "idx": 2,
+   "seed": {
+    "airline_iata": "SK",
+    "hub_iata": "CPH"
+   },
+   "shipped": false,
+   "refusal": "TrapUnavailable: travel: Wikidata P238 returned 2 items for 'TRD', so the winning airport cannot be pinned to one entity",
+   "n_ranked": 81,
+   "margin_deg": 0.895302,
+   "margin_km_approx": 99.665,
+   "cross_source": [
+    {
+     "role": "winner",
+     "iata": "TRD",
+     "name": "Trondheim Airport, V\u00e6rnes",
+     "openflights_lat": 63.457802,
+     "ourairports_lat": 63.457802,
+     "disagreement_deg": 0.0
+    },
+    {
+     "role": "runner_up",
+     "iata": "AES",
+     "name": "\u00c5lesund Airport",
+     "openflights_lat": 62.5625,
+     "ourairports_lat": 62.560443,
+     "disagreement_deg": 0.002057
+    }
+   ],
+   "worst_disagreement_deg": 0.002057,
+   "margin_over_disagreement": 435.25,
+   "ranking_established_by_sources": true,
+   "margin_under_gate_tolerance": false
+  },
+  {
+   "idx": 3,
+   "seed": {
+    "airline_iata": "OS",
+    "hub_iata": "VIE"
+   },
+   "shipped": true,
+   "answer": "3156088",
+   "entity": "Oslo Lufthavn",
+   "n_ranked": 108,
+   "margin_deg": 0.320699,
+   "margin_km_approx": 35.7,
+   "cross_source": [
+    {
+     "role": "winner",
+     "iata": "OSL",
+     "name": "Oslo-Gardermoen International Airport",
+     "openflights_lat": 60.121,
+     "ourairports_lat": 60.193901,
+     "disagreement_deg": 0.072901
+    },
+    {
+     "role": "runner_up",
+     "iata": "LED",
+     "name": "Pulkovo Airport",
+     "openflights_lat": 59.800301,
+     "ourairports_lat": 59.800301,
+     "disagreement_deg": 0.0
+    }
+   ],
+   "worst_disagreement_deg": 0.072901,
+   "margin_over_disagreement": 4.4,
+   "ranking_established_by_sources": true,
+   "margin_under_gate_tolerance": true
+  },
+  {
+   "idx": 4,
+   "seed": {
+    "airline_iata": "LO",
+    "hub_iata": "WAW"
+   },
+   "shipped": true,
+   "answer": "6300971",
+   "entity": "Pulkovo Airport",
+   "n_ranked": 50,
+   "margin_deg": 0.148399,
+   "margin_km_approx": 16.52,
+   "cross_source": [
+    {
+     "role": "winner",
+     "iata": "LED",
+     "name": "Pulkovo Airport",
+     "openflights_lat": 59.800301,
+     "ourairports_lat": 59.800301,
+     "disagreement_deg": 0.0
+    },
+    {
+     "role": "runner_up",
+     "iata": "ARN",
+     "name": "Stockholm-Arlanda Airport",
+     "openflights_lat": 59.651901,
+     "ourairports_lat": 59.64849,
+     "disagreement_deg": 0.003411
+    }
+   ],
+   "worst_disagreement_deg": 0.003411,
+   "margin_over_disagreement": 43.51,
+   "ranking_established_by_sources": true,
+   "margin_under_gate_tolerance": true
+  },
+  {
+   "idx": 5,
+   "seed": {
+    "airline_iata": "TP",
+    "hub_iata": "LIS"
+   },
+   "shipped": true,
+   "answer": "6301511",
+   "entity": "Helsinki Vantaa Airport",
+   "n_ranked": 82,
+   "margin_deg": 0.1962,
+   "margin_km_approx": 21.841,
+   "cross_source": [
+    {
+     "role": "winner",
+     "iata": "HEL",
+     "name": "Helsinki Vantaa Airport",
+     "openflights_lat": 60.3172,
+     "ourairports_lat": 60.318363,
+     "disagreement_deg": 0.001163
+    },
+    {
+     "role": "runner_up",
+     "iata": "OSL",
+     "name": "Oslo-Gardermoen International Airport",
+     "openflights_lat": 60.121,
+     "ourairports_lat": 60.193901,
+     "disagreement_deg": 0.072901
+    }
+   ],
+   "worst_disagreement_deg": 0.072901,
+   "margin_over_disagreement": 2.69,
+   "ranking_established_by_sources": true,
+   "margin_under_gate_tolerance": true
+  }
+ ],
+ "summary": {
+  "n_seeds_measured": 6,
+  "n_margin_under_gate_tolerance": 4,
+  "gate_tolerance_deg": 0.5,
+  "min_margin_deg": 0.0238,
+  "max_worst_disagreement_deg": 0.072901,
+  "median_worst_disagreement_deg": 0.003411,
+  "n_ranking_established_by_sources": 6,
+  "tolerance_over_min_margin": 21.0,
+  "verdict": "constant is too loose but every ranking is established"
+ },
+ "finished": 1786457710.7943573
+}

@@ -1,0 +1,760 @@
+{
+ "started": 1786457239.9076538,
+ "min_title_overlap": 0.6,
+ "members": [
+  {
+   "name": "Dave Anderson",
+   "key": "1960-08-01",
+   "mlb_id": 110231,
+   "article": "Dave Anderson",
+   "overlap": 1.0,
+   "qid": "Q5228230",
+   "kw_baseball": true,
+   "wd_ok": false,
+   "wd_reason": "no baseball occupation or team",
+   "wd_occupations": []
+  },
+  {
+   "name": "Tim Belcher",
+   "key": "1961-10-19",
+   "mlb_id": 110809,
+   "article": "Tim Belcher",
+   "overlap": 1.0,
+   "qid": "Q3528585",
+   "kw_baseball": true,
+   "wd_ok": true,
+   "wd_reason": "P106 baseball occupation",
+   "wd_occupations": [
+    "baseball player"
+   ]
+  },
+  {
+   "name": "William Brennan",
+   "key": "1963-01-15",
+   "mlb_id": 111428,
+   "article": "William J. Brennan Jr.",
+   "overlap": 1.0,
+   "qid": "Q717401",
+   "kw_baseball": false,
+   "wd_ok": false,
+   "wd_reason": "no baseball occupation or team",
+   "wd_occupations": [
+    "lawyer",
+    "judge",
+    "politician",
+    "jurist"
+   ]
+  },
+  {
+   "name": "Tim Crews",
+   "key": "1961-04-03",
+   "mlb_id": 112824,
+   "article": "Tim Crews",
+   "overlap": 1.0,
+   "qid": "Q3528617",
+   "kw_baseball": true,
+   "wd_ok": true,
+   "wd_reason": "P106 baseball occupation",
+   "wd_occupations": [
+    "baseball player"
+   ]
+  },
+  {
+   "name": "Mike Davis",
+   "key": "1959-06-11",
+   "mlb_id": 113127,
+   "article": "Mike Davis (scholar)",
+   "overlap": 1.0,
+   "qid": "Q1933136",
+   "kw_baseball": true,
+   "wd_ok": false,
+   "wd_reason": "no baseball occupation or team",
+   "wd_occupations": [
+    "writer",
+    "historian",
+    "university teacher",
+    "activist",
+    "critic",
+    "lecturer",
+    "theorist",
+    "sociologist"
+   ]
+  },
+  {
+   "name": "Rick Dempsey",
+   "key": "1949-09-13",
+   "mlb_id": 113264,
+   "article": "Rick Dempsey",
+   "overlap": 1.0,
+   "qid": "Q7331347",
+   "kw_baseball": true,
+   "wd_ok": true,
+   "wd_reason": "P106 baseball occupation",
+   "wd_occupations": [
+    "baseball player"
+   ]
+  },
+  {
+   "name": "Mike Devereaux",
+   "key": "1963-04-10",
+   "mlb_id": 113306,
+   "article": "Mike Devereaux",
+   "overlap": 1.0,
+   "qid": "Q6846559",
+   "kw_baseball": true,
+   "wd_ok": true,
+   "wd_reason": "P106 baseball occupation",
+   "wd_occupations": [
+    "baseball player"
+   ]
+  },
+  {
+   "name": "Kirk Gibson",
+   "key": "1957-05-28",
+   "mlb_id": 114752,
+   "article": "Kirk Gibson",
+   "overlap": 1.0,
+   "qid": "Q1185498",
+   "kw_baseball": true,
+   "wd_ok": true,
+   "wd_reason": "P106 baseball occupation",
+   "wd_occupations": [
+    "baseball player"
+   ]
+  },
+  {
+   "name": "Jose Gonzalez",
+   "key": "1964-11-23",
+   "mlb_id": 114931,
+   "article": "Jose Gonzalez Gonzalez",
+   "overlap": 1.0,
+   "qid": "Q25930006",
+   "kw_baseball": false,
+   "wd_ok": false,
+   "wd_reason": "no baseball occupation or team",
+   "wd_occupations": [
+    "film actor",
+    "television actor"
+   ]
+  },
+  {
+   "name": "Alfredo Griffin",
+   "key": "1957-10-06",
+   "mlb_id": 115137,
+   "article": "Alfredo Griffin",
+   "overlap": 1.0,
+   "qid": "Q519251",
+   "kw_baseball": true,
+   "wd_ok": true,
+   "wd_reason": "P106 baseball occupation",
+   "wd_occupations": [
+    "baseball player"
+   ]
+  },
+  {
+   "name": "Pedro Guerrero",
+   "key": "1956-06-29",
+   "mlb_id": 115222,
+   "article": "Pedro Guerrero",
+   "overlap": 1.0,
+   "qid": "Q686583",
+   "kw_baseball": true,
+   "wd_ok": false,
+   "wd_reason": "no baseball occupation or team",
+   "wd_occupations": []
+  },
+  {
+   "name": "Chris Gwynn",
+   "key": "1964-10-13",
+   "mlb_id": 115271,
+   "article": "Chris Gwynn",
+   "overlap": 1.0,
+   "qid": "Q5106745",
+   "kw_baseball": true,
+   "wd_ok": true,
+   "wd_reason": "P106 baseball occupation",
+   "wd_occupations": [
+    "baseball player"
+   ]
+  },
+  {
+   "name": "Jeff Hamilton",
+   "key": "1964-03-19",
+   "mlb_id": 115382,
+   "article": "Jeff Hamilton",
+   "overlap": 1.0,
+   "qid": "Q1686312",
+   "kw_baseball": true,
+   "wd_ok": false,
+   "wd_reason": "no baseball occupation or team",
+   "wd_occupations": []
+  },
+  {
+   "name": "Mickey Hatcher",
+   "key": "1955-03-15",
+   "mlb_id": 115601,
+   "article": "Mickey Hatcher",
+   "overlap": 1.0,
+   "qid": "Q6838658",
+   "kw_baseball": true,
+   "wd_ok": true,
+   "wd_reason": "P106 baseball occupation",
+   "wd_occupations": [
+    "baseball player"
+   ]
+  },
+  {
+   "name": "Brad Havens",
+   "key": "1959-11-17",
+   "mlb_id": 115622,
+   "article": "Brad Havens",
+   "overlap": 1.0,
+   "qid": "Q4953982",
+   "kw_baseball": true,
+   "wd_ok": true,
+   "wd_reason": "P106 baseball occupation",
+   "wd_occupations": [
+    "baseball player"
+   ]
+  },
+  {
+   "name": "Danny Heep",
+   "key": "1957-07-03",
+   "mlb_id": 115691,
+   "article": "Danny Heep",
+   "overlap": 1.0,
+   "qid": "Q5220432",
+   "kw_baseball": true,
+   "wd_ok": true,
+   "wd_reason": "P106 baseball occupation",
+   "wd_occupations": [
+    "baseball player"
+   ]
+  },
+  {
+   "name": "Orel Hershiser",
+   "key": "1958-09-16",
+   "mlb_id": 115861,
+   "article": "Orel Hershiser",
+   "overlap": 1.0,
+   "qid": "Q2410775",
+   "kw_baseball": true,
+   "wd_ok": true,
+   "wd_reason": "P106 baseball occupation",
+   "wd_occupations": [
+    "baseball player"
+   ]
+  },
+  {
+   "name": "Shawn Hillegas",
+   "key": "1964-08-21",
+   "mlb_id": 115947,
+   "article": "Shawn Hillegas",
+   "overlap": 1.0,
+   "qid": "Q7491372",
+   "kw_baseball": true,
+   "wd_ok": true,
+   "wd_reason": "P106 baseball occupation",
+   "wd_occupations": [
+    "baseball player"
+   ]
+  },
+  {
+   "name": "Brian Holton",
+   "key": "1959-11-29",
+   "mlb_id": 116113,
+   "article": "Brian Holton",
+   "overlap": 1.0,
+   "qid": "Q4964079",
+   "kw_baseball": true,
+   "wd_ok": true,
+   "wd_reason": "P106 baseball occupation",
+   "wd_occupations": [
+    "baseball player"
+   ]
+  },
+  {
+   "name": "Ricky Horton",
+   "key": "1959-07-30",
+   "mlb_id": 116163,
+   "article": "Ricky Horton",
+   "overlap": 1.0,
+   "qid": "Q7332095",
+   "kw_baseball": true,
+   "wd_ok": true,
+   "wd_reason": "P106 baseball occupation",
+   "wd_occupations": [
+    "baseball player"
+   ]
+  },
+  {
+   "name": "Jay Howell",
+   "key": "1955-11-26",
+   "mlb_id": 116226,
+   "article": "Jay Howell (illustrator)",
+   "overlap": 1.0,
+   "qid": "Q106306938",
+   "kw_baseball": false,
+   "wd_ok": false,
+   "wd_reason": "no baseball occupation or team",
+   "wd_occupations": [
+    "character designer",
+    "screenwriter",
+    "tattoo artist",
+    "artist",
+    "cartoonist"
+   ]
+  },
+  {
+   "name": "Ken Howell",
+   "key": "1960-11-28",
+   "mlb_id": 116227,
+   "article": "Ken Howell",
+   "overlap": 1.0,
+   "qid": "Q6387834",
+   "kw_baseball": true,
+   "wd_ok": true,
+   "wd_reason": "P106 baseball occupation",
+   "wd_occupations": [
+    "baseball player"
+   ]
+  },
+  {
+   "name": "Bill Krueger",
+   "key": "1958-04-24",
+   "mlb_id": 117332,
+   "article": "Bill Krueger",
+   "overlap": 1.0,
+   "qid": "Q4909787",
+   "kw_baseball": true,
+   "wd_ok": true,
+   "wd_reason": "P106 baseball occupation",
+   "wd_occupations": [
+    "baseball player",
+    "basketball player"
+   ]
+  },
+  {
+   "name": "Tim Leary",
+   "key": "1958-12-23",
+   "mlb_id": 117592,
+   "article": "Tim Leary",
+   "overlap": 1.0,
+   "qid": "Q7803817",
+   "kw_baseball": true,
+   "wd_ok": true,
+   "wd_reason": "P106 baseball occupation",
+   "wd_occupations": [
+    "baseball player"
+   ]
+  },
+  {
+   "name": "Mike Marshall",
+   "key": "1960-01-12",
+   "mlb_id": 118319,
+   "article": "Mike Marshall",
+   "overlap": 1.0,
+   "qid": "Q339106",
+   "kw_baseball": true,
+   "wd_ok": false,
+   "wd_reason": "no baseball occupation or team",
+   "wd_occupations": []
+  },
+  {
+   "name": "Ramon Martinez",
+   "key": "1968-03-22",
+   "mlb_id": 118378,
+   "article": "Ramon Martinez",
+   "overlap": 1.0,
+   "qid": "Q1181441",
+   "kw_baseball": true,
+   "wd_ok": false,
+   "wd_reason": "no baseball occupation or team",
+   "wd_occupations": []
+  },
+  {
+   "name": "Jesse Orosco",
+   "key": "1957-04-21",
+   "mlb_id": 120051,
+   "article": "Jesse Orosco",
+   "overlap": 1.0,
+   "qid": "Q3079492",
+   "kw_baseball": true,
+   "wd_ok": true,
+   "wd_reason": "P106 baseball occupation",
+   "wd_occupations": [
+    "baseball player"
+   ]
+  },
+  {
+   "name": "Alejandro Pena",
+   "key": "1959-06-25",
+   "mlb_id": 120369,
+   "article": null,
+   "kw_baseball": null,
+   "wd_ok": null
+  },
+  {
+   "name": "Gilberto Reyes",
+   "key": "1963-12-10",
+   "mlb_id": 121097,
+   "article": "Gilberto Reyes",
+   "overlap": 1.0,
+   "qid": "Q3105943",
+   "kw_baseball": true,
+   "wd_ok": true,
+   "wd_reason": "P106 baseball occupation",
+   "wd_occupations": [
+    "baseball player"
+   ]
+  },
+  {
+   "name": "Steve Sax",
+   "key": "1960-01-29",
+   "mlb_id": 121732,
+   "article": "Steve Sax",
+   "overlap": 1.0,
+   "qid": "Q3297148",
+   "kw_baseball": true,
+   "wd_ok": true,
+   "wd_reason": "P106 baseball occupation",
+   "wd_occupations": [
+    "baseball player"
+   ]
+  },
+  {
+   "name": "Mike Scioscia",
+   "key": "1958-11-27",
+   "mlb_id": 121919,
+   "article": "Mike Scioscia",
+   "overlap": 1.0,
+   "qid": "Q1138109",
+   "kw_baseball": true,
+   "wd_ok": true,
+   "wd_reason": "P106 baseball occupation",
+   "wd_occupations": [
+    "baseball player",
+    "baseball manager"
+   ]
+  },
+  {
+   "name": "Mike Sharperson",
+   "key": "1961-10-04",
+   "mlb_id": 122066,
+   "article": "Mike Sharperson",
+   "overlap": 1.0,
+   "qid": "Q6848783",
+   "kw_baseball": true,
+   "wd_ok": true,
+   "wd_reason": "P106 baseball occupation",
+   "wd_occupations": [
+    "baseball player"
+   ]
+  },
+  {
+   "name": "John Shelby",
+   "key": "1958-02-23",
+   "mlb_id": 122112,
+   "article": "John Shelby",
+   "overlap": 1.0,
+   "qid": "Q6257560",
+   "kw_baseball": true,
+   "wd_ok": true,
+   "wd_reason": "P106 baseball occupation",
+   "wd_occupations": [
+    "baseball player"
+   ]
+  },
+  {
+   "name": "Franklin Stubbs",
+   "key": "1960-10-21",
+   "mlb_id": 122899,
+   "article": "Franklin Stubbs",
+   "overlap": 1.0,
+   "qid": "Q5491887",
+   "kw_baseball": true,
+   "wd_ok": true,
+   "wd_reason": "P106 baseball occupation",
+   "wd_occupations": [
+    "baseball player"
+   ]
+  },
+  {
+   "name": "Don Sutton",
+   "key": "1945-04-02",
+   "mlb_id": 123006,
+   "article": "Don Sutton",
+   "overlap": 1.0,
+   "qid": "Q3035912",
+   "kw_baseball": true,
+   "wd_ok": true,
+   "wd_reason": "P106 baseball occupation",
+   "wd_occupations": [
+    "baseball player"
+   ]
+  },
+  {
+   "name": "John Tudor",
+   "key": "1954-02-02",
+   "mlb_id": 123499,
+   "article": "John Tudor",
+   "overlap": 1.0,
+   "qid": "Q11783886",
+   "kw_baseball": true,
+   "wd_ok": false,
+   "wd_reason": "no baseball occupation or team",
+   "wd_occupations": []
+  },
+  {
+   "name": "Fernando Valenzuela",
+   "key": "1960-11-01",
+   "mlb_id": 123619,
+   "article": "Fernando Valenzuela",
+   "overlap": 1.0,
+   "qid": "Q1131057",
+   "kw_baseball": true,
+   "wd_ok": true,
+   "wd_reason": "P106 baseball occupation",
+   "wd_occupations": [
+    "baseball player",
+    "sports commentator"
+   ]
+  },
+  {
+   "name": "Tracy Woodson",
+   "key": "1962-10-05",
+   "mlb_id": 124567,
+   "article": "Tracy Woodson",
+   "overlap": 1.0,
+   "qid": "Q7831877",
+   "kw_baseball": true,
+   "wd_ok": true,
+   "wd_reason": "P106 baseball occupation",
+   "wd_occupations": [
+    "baseball player"
+   ]
+  }
+ ],
+ "n_roster": 38,
+ "identity": {
+  "n_resolved": 37,
+  "resolution_rate": 0.9737,
+  "n_identity_verified": 27,
+  "n_wrong_person": 10,
+  "n_undetermined": 0,
+  "measured_correct_resolution_frac": 0.7297,
+  "verified_ci95": [
+   0.5702,
+   0.846
+  ],
+  "classifier_agreement": 0.8108,
+  "wrong_person_examples": [
+   {
+    "member": "Dave Anderson",
+    "article": "Dave Anderson",
+    "overlap": 1.0,
+    "occupations": [],
+    "reason": "no baseball occupation or team"
+   },
+   {
+    "member": "William Brennan",
+    "article": "William J. Brennan Jr.",
+    "overlap": 1.0,
+    "occupations": [
+     "lawyer",
+     "judge",
+     "politician",
+     "jurist"
+    ],
+    "reason": "no baseball occupation or team"
+   },
+   {
+    "member": "Mike Davis",
+    "article": "Mike Davis (scholar)",
+    "overlap": 1.0,
+    "occupations": [
+     "writer",
+     "historian",
+     "university teacher",
+     "activist",
+     "critic",
+     "lecturer",
+     "theorist",
+     "sociologist"
+    ],
+    "reason": "no baseball occupation or team"
+   },
+   {
+    "member": "Jose Gonzalez",
+    "article": "Jose Gonzalez Gonzalez",
+    "overlap": 1.0,
+    "occupations": [
+     "film actor",
+     "television actor"
+    ],
+    "reason": "no baseball occupation or team"
+   },
+   {
+    "member": "Pedro Guerrero",
+    "article": "Pedro Guerrero",
+    "overlap": 1.0,
+    "occupations": [],
+    "reason": "no baseball occupation or team"
+   },
+   {
+    "member": "Jeff Hamilton",
+    "article": "Jeff Hamilton",
+    "overlap": 1.0,
+    "occupations": [],
+    "reason": "no baseball occupation or team"
+   },
+   {
+    "member": "Jay Howell",
+    "article": "Jay Howell (illustrator)",
+    "overlap": 1.0,
+    "occupations": [
+     "character designer",
+     "screenwriter",
+     "tattoo artist",
+     "artist",
+     "cartoonist"
+    ],
+    "reason": "no baseball occupation or team"
+   },
+   {
+    "member": "Mike Marshall",
+    "article": "Mike Marshall",
+    "overlap": 1.0,
+    "occupations": [],
+    "reason": "no baseball occupation or team"
+   },
+   {
+    "member": "Ramon Martinez",
+    "article": "Ramon Martinez",
+    "overlap": 1.0,
+    "occupations": [],
+    "reason": "no baseball occupation or team"
+   },
+   {
+    "member": "John Tudor",
+    "article": "John Tudor",
+    "overlap": 1.0,
+    "occupations": [],
+    "reason": "no baseball occupation or team"
+   }
+  ],
+  "disagreements": [
+   {
+    "member": "Dave Anderson",
+    "article": "Dave Anderson",
+    "kw": true,
+    "wd": false
+   },
+   {
+    "member": "Mike Davis",
+    "article": "Mike Davis (scholar)",
+    "kw": true,
+    "wd": false
+   },
+   {
+    "member": "Pedro Guerrero",
+    "article": "Pedro Guerrero",
+    "kw": true,
+    "wd": false
+   },
+   {
+    "member": "Jeff Hamilton",
+    "article": "Jeff Hamilton",
+    "kw": true,
+    "wd": false
+   },
+   {
+    "member": "Mike Marshall",
+    "article": "Mike Marshall",
+    "kw": true,
+    "wd": false
+   },
+   {
+    "member": "Ramon Martinez",
+    "article": "Ramon Martinez",
+    "kw": true,
+    "wd": false
+   },
+   {
+    "member": "John Tudor",
+    "article": "John Tudor",
+    "kw": true,
+    "wd": false
+   }
+  ]
+ },
+ "leak": {
+  "all_resolved": {
+   "n": 37,
+   "full_iso_date": {
+    "n_informative": 37,
+    "key_in_own_article_frac": 0.0,
+    "key_in_other_article_frac": 0.0,
+    "excess": 0.0,
+    "own_ci95": [
+     0.0,
+     0.0941
+    ],
+    "mcnemar_b_own_only": 0,
+    "mcnemar_c_other_only": 0,
+    "mcnemar_p": 1.0,
+    "min_correct_resolution_frac_implied": 0.0,
+    "excess_if_f_at_min": null
+   },
+   "year_only": {
+    "n_informative": 37,
+    "key_in_own_article_frac": 0.9189,
+    "key_in_other_article_frac": 0.5405,
+    "excess": 0.3784,
+    "own_ci95": [
+     0.787,
+     0.972
+    ],
+    "mcnemar_b_own_only": 16,
+    "mcnemar_c_other_only": 2,
+    "mcnemar_p": 0.001312,
+    "min_correct_resolution_frac_implied": 0.8235,
+    "excess_if_f_at_min": 0.4595
+   }
+  },
+  "identity_verified_only": {
+   "n": 27,
+   "full_iso_date": {
+    "n_informative": 27,
+    "key_in_own_article_frac": 0.0,
+    "key_in_other_article_frac": 0.0,
+    "excess": 0.0,
+    "own_ci95": [
+     0.0,
+     0.1246
+    ],
+    "mcnemar_b_own_only": 0,
+    "mcnemar_c_other_only": 0,
+    "mcnemar_p": 1.0,
+    "min_correct_resolution_frac_implied": 0.0,
+    "excess_if_f_at_min": null
+   },
+   "year_only": {
+    "n_informative": 27,
+    "key_in_own_article_frac": 1.0,
+    "key_in_other_article_frac": 0.4815,
+    "excess": 0.5185,
+    "own_ci95": [
+     0.8754,
+     1.0
+    ],
+    "mcnemar_b_own_only": 14,
+    "mcnemar_c_other_only": 0,
+    "mcnemar_p": 0.000122,
+    "min_correct_resolution_frac_implied": 1.0,
+    "excess_if_f_at_min": 0.5185
+   }
+  }
+ },
+ "finished": 1786457252.9256291
+}

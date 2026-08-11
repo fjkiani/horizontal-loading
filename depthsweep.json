@@ -1,0 +1,448 @@
+{
+ "seeds": {
+  "2021/Bill": {
+   "status": "REJECT",
+   "reason": "component shallow: ['primary_dealer_accepted:asc']",
+   "n_rows": 336,
+   "winner_cusip": "912796J34",
+   "winner_key": 3.567308,
+   "runner_up_key": 2.776419,
+   "rel_separation": 0.221705,
+   "n_distinct_cusips": 148,
+   "component_depths": {
+    "indirect_bidder_accepted:asc": {
+     "rank": 51,
+     "depth": 0.1518
+    },
+    "indirect_bidder_accepted:desc": {
+     "rank": 67,
+     "depth": 0.1994
+    },
+    "primary_dealer_accepted:asc": {
+     "rank": 9,
+     "depth": 0.0268
+    },
+    "primary_dealer_accepted:desc": {
+     "rank": 40,
+     "depth": 0.119
+    }
+   },
+   "shallowest_component_depth": 0.0268
+  },
+  "2021/ALL": {
+   "status": "REJECT",
+   "reason": "component shallow: ['primary_dealer_accepted:asc']",
+   "n_rows": 445,
+   "winner_cusip": "91282CCA7",
+   "winner_key": 18.413921,
+   "runner_up_key": 12.804566,
+   "rel_separation": 0.304626,
+   "n_distinct_cusips": 220,
+   "component_depths": {
+    "indirect_bidder_accepted:asc": {
+     "rank": 101,
+     "depth": 0.227
+    },
+    "indirect_bidder_accepted:desc": {
+     "rank": 311,
+     "depth": 0.6989
+    },
+    "primary_dealer_accepted:asc": {
+     "rank": 2,
+     "depth": 0.0045
+    },
+    "primary_dealer_accepted:desc": {
+     "rank": 435,
+     "depth": 0.9775
+    }
+   },
+   "shallowest_component_depth": 0.0045
+  },
+  "2019/Bill": {
+   "status": "REJECT",
+   "reason": "component shallow: ['indirect_bidder_accepted:asc', 'indirect_bidder_accepted:desc', 'primary_dealer_accepted:asc']",
+   "n_rows": 227,
+   "winner_cusip": "912796TC3",
+   "winner_key": 2.059664,
+   "runner_up_key": 1.913034,
+   "rel_separation": 0.071191,
+   "n_distinct_cusips": 130,
+   "component_depths": {
+    "indirect_bidder_accepted:asc": {
+     "rank": 20,
+     "depth": 0.0881
+    },
+    "indirect_bidder_accepted:desc": {
+     "rank": 2,
+     "depth": 0.0088
+    },
+    "primary_dealer_accepted:asc": {
+     "rank": 14,
+     "depth": 0.0617
+    },
+    "primary_dealer_accepted:desc": {
+     "rank": 50,
+     "depth": 0.2203
+    }
+   },
+   "shallowest_component_depth": 0.0088
+  },
+  "2019/ALL": {
+   "status": "REJECT",
+   "reason": "component shallow: ['indirect_bidder_accepted:asc', 'primary_dealer_accepted:asc']",
+   "n_rows": 325,
+   "winner_cusip": "912810SG4",
+   "winner_key": 7.677569,
+   "runner_up_key": 5.653843,
+   "rel_separation": 0.263589,
+   "n_distinct_cusips": 197,
+   "component_depths": {
+    "indirect_bidder_accepted:asc": {
+     "rank": 5,
+     "depth": 0.0154
+    },
+    "indirect_bidder_accepted:desc": {
+     "rank": 315,
+     "depth": 0.9692
+    },
+    "primary_dealer_accepted:asc": {
+     "rank": 3,
+     "depth": 0.0092
+    },
+    "primary_dealer_accepted:desc": {
+     "rank": 322,
+     "depth": 0.9908
+    }
+   },
+   "shallowest_component_depth": 0.0092
+  },
+  "2017/Bill": {
+   "status": "REJECT",
+   "reason": "component shallow: ['indirect_bidder_accepted:asc', 'indirect_bidder_accepted:desc', 'primary_dealer_accepted:asc']",
+   "n_rows": 181,
+   "winner_cusip": "912796NN5",
+   "winner_key": 2.012017,
+   "runner_up_key": 2.002456,
+   "rel_separation": 0.004752,
+   "n_distinct_cusips": 85,
+   "component_depths": {
+    "indirect_bidder_accepted:asc": {
+     "rank": 2,
+     "depth": 0.011
+    },
+    "indirect_bidder_accepted:desc": {
+     "rank": 1,
+     "depth": 0.0055
+    },
+    "primary_dealer_accepted:asc": {
+     "rank": 3,
+     "depth": 0.0166
+    },
+    "primary_dealer_accepted:desc": {
+     "rank": 87,
+     "depth": 0.4807
+    }
+   },
+   "shallowest_component_depth": 0.0055
+  },
+  "2017/ALL": {
+   "status": "REJECT",
+   "reason": "component shallow: ['indirect_bidder_accepted:desc', 'primary_dealer_accepted:asc']",
+   "n_rows": 277,
+   "winner_cusip": "912828X70",
+   "winner_key": 9.306814,
+   "runner_up_key": 7.087852,
+   "rel_separation": 0.238423,
+   "n_distinct_cusips": 151,
+   "component_depths": {
+    "indirect_bidder_accepted:asc": {
+     "rank": 265,
+     "depth": 0.9567
+    },
+    "indirect_bidder_accepted:desc": {
+     "rank": 13,
+     "depth": 0.0469
+    },
+    "primary_dealer_accepted:asc": {
+     "rank": 9,
+     "depth": 0.0325
+    },
+    "primary_dealer_accepted:desc": {
+     "rank": 269,
+     "depth": 0.9711
+    }
+   },
+   "shallowest_component_depth": 0.0325
+  },
+  "2015/Bill": {
+   "status": "REJECT",
+   "reason": "component shallow: ['indirect_bidder_accepted:desc', 'primary_dealer_accepted:asc']",
+   "n_rows": 176,
+   "winner_cusip": "912796FV6",
+   "winner_key": 1.996058,
+   "runner_up_key": 1.812728,
+   "rel_separation": 0.091846,
+   "n_distinct_cusips": 84,
+   "component_depths": {
+    "indirect_bidder_accepted:asc": {
+     "rank": 84,
+     "depth": 0.4773
+    },
+    "indirect_bidder_accepted:desc": {
+     "rank": 1,
+     "depth": 0.0057
+    },
+    "primary_dealer_accepted:asc": {
+     "rank": 15,
+     "depth": 0.0852
+    },
+    "primary_dealer_accepted:desc": {
+     "rank": 113,
+     "depth": 0.642
+    }
+   },
+   "shallowest_component_depth": 0.0057
+  },
+  "2015/ALL": {
+   "status": "REJECT",
+   "reason": "component shallow: ['primary_dealer_accepted:asc']",
+   "n_rows": 272,
+   "winner_cusip": "912828K33",
+   "winner_key": 3.304139,
+   "runner_up_key": 3.261216,
+   "rel_separation": 0.012991,
+   "n_distinct_cusips": 150,
+   "component_depths": {
+    "indirect_bidder_accepted:asc": {
+     "rank": 187,
+     "depth": 0.6875
+    },
+    "indirect_bidder_accepted:desc": {
+     "rank": 57,
+     "depth": 0.2096
+    },
+    "primary_dealer_accepted:asc": {
+     "rank": 14,
+     "depth": 0.0515
+    },
+    "primary_dealer_accepted:desc": {
+     "rank": 238,
+     "depth": 0.875
+    }
+   },
+   "shallowest_component_depth": 0.0515
+  },
+  "2013/Bill": {
+   "status": "REJECT",
+   "reason": "component shallow: ['indirect_bidder_accepted:desc', 'primary_dealer_accepted:asc']",
+   "n_rows": 183,
+   "winner_cusip": "912796CG2",
+   "winner_key": 1.754337,
+   "runner_up_key": 1.678473,
+   "rel_separation": 0.043243,
+   "n_distinct_cusips": 86,
+   "component_depths": {
+    "indirect_bidder_accepted:asc": {
+     "rank": 181,
+     "depth": 0.9891
+    },
+    "indirect_bidder_accepted:desc": {
+     "rank": 3,
+     "depth": 0.0164
+    },
+    "primary_dealer_accepted:asc": {
+     "rank": 2,
+     "depth": 0.0109
+    },
+    "primary_dealer_accepted:desc": {
+     "rank": 182,
+     "depth": 0.9945
+    }
+   },
+   "shallowest_component_depth": 0.0109
+  },
+  "2013/ALL": {
+   "status": "REJECT",
+   "reason": "component shallow: ['primary_dealer_accepted:asc']",
+   "n_rows": 267,
+   "winner_cusip": "912828UN8",
+   "winner_key": 2.141732,
+   "runner_up_key": 1.839358,
+   "rel_separation": 0.141182,
+   "n_distinct_cusips": 148,
+   "component_depths": {
+    "indirect_bidder_accepted:asc": {
+     "rank": 101,
+     "depth": 0.3783
+    },
+    "indirect_bidder_accepted:desc": {
+     "rank": 72,
+     "depth": 0.2697
+    },
+    "primary_dealer_accepted:asc": {
+     "rank": 7,
+     "depth": 0.0262
+    },
+    "primary_dealer_accepted:desc": {
+     "rank": 220,
+     "depth": 0.824
+    }
+   },
+   "shallowest_component_depth": 0.0262
+  },
+  "2011/Bill": {
+   "status": "REJECT",
+   "reason": "component shallow: ['primary_dealer_accepted:asc']",
+   "n_rows": 185,
+   "winner_cusip": "9127952A8",
+   "winner_key": 1.488681,
+   "runner_up_key": 1.177325,
+   "rel_separation": 0.209149,
+   "n_distinct_cusips": 86,
+   "component_depths": {
+    "indirect_bidder_accepted:asc": {
+     "rank": 85,
+     "depth": 0.4595
+    },
+    "indirect_bidder_accepted:desc": {
+     "rank": 54,
+     "depth": 0.2919
+    },
+    "primary_dealer_accepted:asc": {
+     "rank": 4,
+     "depth": 0.0216
+    },
+    "primary_dealer_accepted:desc": {
+     "rank": 91,
+     "depth": 0.4919
+    }
+   },
+   "shallowest_component_depth": 0.0216
+  },
+  "2011/ALL": {
+   "status": "REJECT",
+   "reason": "component shallow: ['indirect_bidder_accepted:desc', 'primary_dealer_accepted:asc']",
+   "n_rows": 269,
+   "winner_cusip": "912828PX2",
+   "winner_key": 2.526166,
+   "runner_up_key": 2.081263,
+   "rel_separation": 0.176118,
+   "n_distinct_cusips": 148,
+   "component_depths": {
+    "indirect_bidder_accepted:asc": {
+     "rank": 147,
+     "depth": 0.5465
+    },
+    "indirect_bidder_accepted:desc": {
+     "rank": 3,
+     "depth": 0.0112
+    },
+    "primary_dealer_accepted:asc": {
+     "rank": 21,
+     "depth": 0.0781
+    },
+    "primary_dealer_accepted:desc": {
+     "rank": 223,
+     "depth": 0.829
+    }
+   },
+   "shallowest_component_depth": 0.0112
+  },
+  "2009/Bill": {
+   "status": "REJECT",
+   "reason": "component shallow: ['indirect_bidder_accepted:asc', 'indirect_bidder_accepted:desc', 'primary_dealer_accepted:asc', 'primary_dealer_accepted:desc']",
+   "n_rows": 206,
+   "winner_cusip": "912795UL3",
+   "winner_key": 2.937569,
+   "runner_up_key": 2.539338,
+   "rel_separation": 0.135565,
+   "n_distinct_cusips": 84,
+   "component_depths": {
+    "indirect_bidder_accepted:asc": {
+     "rank": 7,
+     "depth": 0.034
+    },
+    "indirect_bidder_accepted:desc": {
+     "rank": 2,
+     "depth": 0.0097
+    },
+    "primary_dealer_accepted:asc": {
+     "rank": 3,
+     "depth": 0.0146
+    },
+    "primary_dealer_accepted:desc": {
+     "rank": 19,
+     "depth": 0.0922
+    }
+   },
+   "shallowest_component_depth": 0.0097
+  },
+  "2023/Bill": {
+   "status": "REJECT",
+   "reason": "component shallow: ['indirect_bidder_accepted:asc', 'primary_dealer_accepted:asc']",
+   "n_rows": 320,
+   "winner_cusip": "912797FR3",
+   "winner_key": 5.094861,
+   "runner_up_key": 4.35918,
+   "rel_separation": 0.144397,
+   "n_distinct_cusips": 142,
+   "component_depths": {
+    "indirect_bidder_accepted:asc": {
+     "rank": 12,
+     "depth": 0.0375
+    },
+    "indirect_bidder_accepted:desc": {
+     "rank": 109,
+     "depth": 0.3406
+    },
+    "primary_dealer_accepted:asc": {
+     "rank": 4,
+     "depth": 0.0125
+    },
+    "primary_dealer_accepted:desc": {
+     "rank": 257,
+     "depth": 0.8031
+    }
+   },
+   "shallowest_component_depth": 0.0125
+  },
+  "2023/ALL": {
+   "status": "REJECT",
+   "reason": "component shallow: ['indirect_bidder_accepted:asc', 'primary_dealer_accepted:asc']",
+   "n_rows": 428,
+   "winner_cusip": "91282CHP9",
+   "winner_key": 57.751142,
+   "runner_up_key": 21.988019,
+   "rel_separation": 0.619263,
+   "n_distinct_cusips": 214,
+   "component_depths": {
+    "indirect_bidder_accepted:asc": {
+     "rank": 20,
+     "depth": 0.0467
+    },
+    "indirect_bidder_accepted:desc": {
+     "rank": 383,
+     "depth": 0.8949
+    },
+    "primary_dealer_accepted:asc": {
+     "rank": 2,
+     "depth": 0.0047
+    },
+    "primary_dealer_accepted:desc": {
+     "rank": 399,
+     "depth": 0.9322
+    }
+   },
+   "shallowest_component_depth": 0.0047
+  }
+ },
+ "min_component_depth": 0.1,
+ "VERDICT": {
+  "n_seeds": 15,
+  "n_accept": 0,
+  "accepting": [],
+  "best_seed": null,
+  "best": null,
+  "conclusion": "no seed hides both components"
+ }
+}

@@ -1,0 +1,617 @@
+{
+ "candidates": {
+  "2021/Bill": {
+   "residual_indirect_on_primary": {
+    "status": "REJECT",
+    "fails": [
+     "COMPONENT_SHALLOW:['indirect_bidder_accepted:asc', 'indirect_bidder_accepted:desc', 'primary_dealer_accepted:desc']"
+    ],
+    "label": "residual_indirect_on_primary",
+    "winner_cusip": "9127964L0",
+    "n_rows": 336,
+    "rel_separation": 0.015862,
+    "component_depths": {
+     "indirect_bidder_accepted:asc": 0.0536,
+     "indirect_bidder_accepted:desc": 0.006,
+     "primary_dealer_accepted:asc": 0.1042,
+     "primary_dealer_accepted:desc": 0.0982
+    },
+    "shallowest_component_depth": 0.006,
+    "n_fields_swept": 37,
+    "equivalent_served_fields": [],
+    "rho_vs_api_order": 0.146,
+    "n_distinct_keys": 336,
+    "p_uniform": 0.006757
+   },
+   "rank_difference": {
+    "status": "REJECT",
+    "fails": [
+     "COMPONENT_SHALLOW:['indirect_bidder_accepted:asc', 'indirect_bidder_accepted:desc', 'primary_dealer_accepted:desc']"
+    ],
+    "label": "rank_difference",
+    "winner_cusip": "9127964L0",
+    "n_rows": 336,
+    "rel_separation": 0.064516,
+    "component_depths": {
+     "indirect_bidder_accepted:asc": 0.0536,
+     "indirect_bidder_accepted:desc": 0.006,
+     "primary_dealer_accepted:asc": 0.1042,
+     "primary_dealer_accepted:desc": 0.0982
+    },
+    "shallowest_component_depth": 0.006,
+    "n_fields_swept": 37,
+    "equivalent_served_fields": [],
+    "rho_vs_api_order": 0.1908,
+    "n_distinct_keys": 230,
+    "p_uniform": 0.006757
+   },
+   "ols": {
+    "slope": 0.429169,
+    "intercept": 10391979911.945
+   }
+  },
+  "2021/ALL": {
+   "residual_indirect_on_primary": {
+    "status": "REJECT",
+    "fails": [
+     "COMPONENT_SHALLOW:['indirect_bidder_accepted:desc']"
+    ],
+    "label": "residual_indirect_on_primary",
+    "winner_cusip": "91282CDF5",
+    "n_rows": 445,
+    "rel_separation": 0.015296,
+    "component_depths": {
+     "indirect_bidder_accepted:asc": 0.9978,
+     "indirect_bidder_accepted:desc": 0.0045,
+     "primary_dealer_accepted:asc": 0.1775,
+     "primary_dealer_accepted:desc": 0.8247
+    },
+    "shallowest_component_depth": 0.0045,
+    "n_fields_swept": 33,
+    "equivalent_served_fields": [],
+    "rho_vs_api_order": 0.124,
+    "n_distinct_keys": 445,
+    "p_uniform": 0.004545
+   },
+   "rank_difference": {
+    "status": "REJECT",
+    "fails": [
+     "COMPONENT_SHALLOW:['primary_dealer_accepted:asc']"
+    ],
+    "label": "rank_difference",
+    "winner_cusip": "91282CCS8",
+    "n_rows": 445,
+    "rel_separation": 0.021448,
+    "component_depths": {
+     "indirect_bidder_accepted:asc": 0.7663,
+     "indirect_bidder_accepted:desc": 0.1213,
+     "primary_dealer_accepted:asc": 0.0427,
+     "primary_dealer_accepted:desc": 0.9416
+    },
+    "shallowest_component_depth": 0.0427,
+    "n_fields_swept": 33,
+    "equivalent_served_fields": [],
+    "rho_vs_api_order": 0.1807,
+    "n_distinct_keys": 314,
+    "p_uniform": 0.004545
+   },
+   "ols": {
+    "slope": 0.252513,
+    "intercept": 15494422203.665
+   }
+  },
+  "2019/Bill": {
+   "residual_indirect_on_primary": {
+    "status": "REJECT",
+    "fails": [
+     "COMPONENT_SHALLOW:['indirect_bidder_accepted:desc']",
+     "EQUIVALENT:['indirect_bidder_accepted']"
+    ],
+    "label": "residual_indirect_on_primary",
+    "winner_cusip": "912796UZ0",
+    "n_rows": 227,
+    "rel_separation": 0.009188,
+    "component_depths": {
+     "indirect_bidder_accepted:asc": 0.2379,
+     "indirect_bidder_accepted:desc": 0.0044,
+     "primary_dealer_accepted:asc": 0.3348,
+     "primary_dealer_accepted:desc": 0.4934
+    },
+    "shallowest_component_depth": 0.0044,
+    "n_fields_swept": 37,
+    "equivalent_served_fields": [
+     {
+      "field": "indirect_bidder_accepted",
+      "rho": 0.9935
+     }
+    ],
+    "rho_vs_api_order": 0.266,
+    "n_distinct_keys": 227,
+    "p_uniform": 0.007692
+   },
+   "rank_difference": {
+    "status": "REJECT",
+    "fails": [
+     "COMPONENT_SHALLOW:['indirect_bidder_accepted:asc', 'indirect_bidder_accepted:desc', 'primary_dealer_accepted:asc']"
+    ],
+    "label": "rank_difference",
+    "winner_cusip": "912796TC3",
+    "n_rows": 227,
+    "rel_separation": 0.080189,
+    "component_depths": {
+     "indirect_bidder_accepted:asc": 0.0881,
+     "indirect_bidder_accepted:desc": 0.0088,
+     "primary_dealer_accepted:asc": 0.0617,
+     "primary_dealer_accepted:desc": 0.2203
+    },
+    "shallowest_component_depth": 0.0088,
+    "n_fields_swept": 37,
+    "equivalent_served_fields": [],
+    "rho_vs_api_order": 0.291,
+    "n_distinct_keys": 173,
+    "p_uniform": 0.007692
+   },
+   "ols": {
+    "slope": -0.094226,
+    "intercept": 18728738492.888
+   }
+  },
+  "2019/ALL": {
+   "residual_indirect_on_primary": {
+    "status": "REJECT",
+    "fails": [
+     "COMPONENT_SHALLOW:['indirect_bidder_accepted:desc']",
+     "EQUIVALENT:['indirect_bidder_accepted']"
+    ],
+    "label": "residual_indirect_on_primary",
+    "winner_cusip": "912796UZ0",
+    "n_rows": 325,
+    "rel_separation": 0.061665,
+    "component_depths": {
+     "indirect_bidder_accepted:asc": 0.2831,
+     "indirect_bidder_accepted:desc": 0.0031,
+     "primary_dealer_accepted:asc": 0.5354,
+     "primary_dealer_accepted:desc": 0.3446
+    },
+    "shallowest_component_depth": 0.0031,
+    "n_fields_swept": 33,
+    "equivalent_served_fields": [
+     {
+      "field": "indirect_bidder_accepted",
+      "rho": 0.989
+     }
+    ],
+    "rho_vs_api_order": 0.1941,
+    "n_distinct_keys": 325,
+    "p_uniform": 0.005076
+   },
+   "rank_difference": {
+    "status": "REJECT",
+    "fails": [
+     "COMPONENT_SHALLOW:['indirect_bidder_accepted:desc']"
+    ],
+    "label": "rank_difference",
+    "winner_cusip": "912828YV6",
+    "n_rows": 325,
+    "rel_separation": 0.011364,
+    "component_depths": {
+     "indirect_bidder_accepted:asc": 0.9846,
+     "indirect_bidder_accepted:desc": 0.0185,
+     "primary_dealer_accepted:asc": 0.1723,
+     "primary_dealer_accepted:desc": 0.8308
+    },
+    "shallowest_component_depth": 0.0185,
+    "n_fields_swept": 33,
+    "equivalent_served_fields": [],
+    "rho_vs_api_order": 0.232,
+    "n_distinct_keys": 250,
+    "p_uniform": 0.005076
+   },
+   "ols": {
+    "slope": 0.105869,
+    "intercept": 14509542979.785
+   }
+  },
+  "2017/Bill": {
+   "residual_indirect_on_primary": {
+    "status": "REJECT",
+    "fails": [
+     "COMPONENT_SHALLOW:['indirect_bidder_accepted:asc', 'indirect_bidder_accepted:desc', 'primary_dealer_accepted:asc']",
+     "EQUIVALENT:['indirect_bidder_accepted']"
+    ],
+    "label": "residual_indirect_on_primary",
+    "winner_cusip": "912796NN5",
+    "n_rows": 181,
+    "rel_separation": 0.103432,
+    "component_depths": {
+     "indirect_bidder_accepted:asc": 0.011,
+     "indirect_bidder_accepted:desc": 0.0055,
+     "primary_dealer_accepted:asc": 0.0166,
+     "primary_dealer_accepted:desc": 0.4807
+    },
+    "shallowest_component_depth": 0.0055,
+    "n_fields_swept": 37,
+    "equivalent_served_fields": [
+     {
+      "field": "indirect_bidder_accepted",
+      "rho": 0.9966
+     }
+    ],
+    "rho_vs_api_order": 0.1803,
+    "n_distinct_keys": 181,
+    "p_uniform": 0.011765
+   },
+   "rank_difference": {
+    "status": "REJECT",
+    "fails": [
+     "COMPONENT_SHALLOW:['indirect_bidder_accepted:asc', 'indirect_bidder_accepted:desc', 'primary_dealer_accepted:asc']"
+    ],
+    "label": "rank_difference",
+    "winner_cusip": "912796NN5",
+    "n_rows": 181,
+    "rel_separation": 0.006369,
+    "component_depths": {
+     "indirect_bidder_accepted:asc": 0.011,
+     "indirect_bidder_accepted:desc": 0.0055,
+     "primary_dealer_accepted:asc": 0.0166,
+     "primary_dealer_accepted:desc": 0.4807
+    },
+    "shallowest_component_depth": 0.0055,
+    "n_fields_swept": 37,
+    "equivalent_served_fields": [],
+    "rho_vs_api_order": 0.1111,
+    "n_distinct_keys": 124,
+    "p_uniform": 0.011765
+   },
+   "ols": {
+    "slope": 0.066316,
+    "intercept": 12258849257.204
+   }
+  },
+  "2017/ALL": {
+   "residual_indirect_on_primary": {
+    "status": "REJECT",
+    "fails": [
+     "COMPONENT_SHALLOW:['indirect_bidder_accepted:asc', 'indirect_bidder_accepted:desc']",
+     "EQUIVALENT:['indirect_bidder_accepted']"
+    ],
+    "label": "residual_indirect_on_primary",
+    "winner_cusip": "912796NN5",
+    "n_rows": 277,
+    "rel_separation": 0.083842,
+    "component_depths": {
+     "indirect_bidder_accepted:asc": 0.0072,
+     "indirect_bidder_accepted:desc": 0.0036,
+     "primary_dealer_accepted:asc": 0.231,
+     "primary_dealer_accepted:desc": 0.3141
+    },
+    "shallowest_component_depth": 0.0036,
+    "n_fields_swept": 33,
+    "equivalent_served_fields": [
+     {
+      "field": "indirect_bidder_accepted",
+      "rho": 0.9901
+     }
+    ],
+    "rho_vs_api_order": 0.1039,
+    "n_distinct_keys": 277,
+    "p_uniform": 0.006623
+   },
+   "rank_difference": {
+    "status": "REJECT",
+    "fails": [
+     "COMPONENT_SHALLOW:['indirect_bidder_accepted:desc', 'primary_dealer_accepted:asc']"
+    ],
+    "label": "rank_difference",
+    "winner_cusip": "912828X70",
+    "n_rows": 277,
+    "rel_separation": 0.089844,
+    "component_depths": {
+     "indirect_bidder_accepted:asc": 0.9567,
+     "indirect_bidder_accepted:desc": 0.0469,
+     "primary_dealer_accepted:asc": 0.0325,
+     "primary_dealer_accepted:desc": 0.9711
+    },
+    "shallowest_component_depth": 0.0325,
+    "n_fields_swept": 33,
+    "equivalent_served_fields": [],
+    "rho_vs_api_order": 0.1104,
+    "n_distinct_keys": 201,
+    "p_uniform": 0.006623
+   },
+   "ols": {
+    "slope": 0.083466,
+    "intercept": 12062288657.079
+   }
+  },
+  "2015/ALL": {
+   "residual_indirect_on_primary": {
+    "status": "REJECT",
+    "fails": [
+     "COMPONENT_SHALLOW:['indirect_bidder_accepted:desc']",
+     "EQUIVALENT:['indirect_bidder_accepted']"
+    ],
+    "label": "residual_indirect_on_primary",
+    "winner_cusip": "912828XM7",
+    "n_rows": 272,
+    "rel_separation": 0.085498,
+    "component_depths": {
+     "indirect_bidder_accepted:asc": 1.0,
+     "indirect_bidder_accepted:desc": 0.0037,
+     "primary_dealer_accepted:asc": 0.3015,
+     "primary_dealer_accepted:desc": 0.7022
+    },
+    "shallowest_component_depth": 0.0037,
+    "n_fields_swept": 33,
+    "equivalent_served_fields": [
+     {
+      "field": "indirect_bidder_accepted",
+      "rho": 0.9809
+     }
+    ],
+    "rho_vs_api_order": 0.0212,
+    "n_distinct_keys": 272,
+    "p_uniform": 0.006667
+   },
+   "rank_difference": {
+    "status": "REJECT",
+    "fails": [
+     "COMPONENT_SHALLOW:['primary_dealer_accepted:asc']"
+    ],
+    "label": "rank_difference",
+    "winner_cusip": "912828XB1",
+    "n_rows": 272,
+    "rel_separation": 0.04955,
+    "component_depths": {
+     "indirect_bidder_accepted:asc": 0.7831,
+     "indirect_bidder_accepted:desc": 0.114,
+     "primary_dealer_accepted:asc": 0.0735,
+     "primary_dealer_accepted:desc": 0.8529
+    },
+    "shallowest_component_depth": 0.0735,
+    "n_fields_swept": 33,
+    "equivalent_served_fields": [],
+    "rho_vs_api_order": 0.075,
+    "n_distinct_keys": 199,
+    "p_uniform": 0.006667
+   },
+   "ols": {
+    "slope": -0.096797,
+    "intercept": 10600965745.356
+   }
+  },
+  "2013/ALL": {
+   "residual_indirect_on_primary": {
+    "status": "REJECT",
+    "fails": [
+     "COMPONENT_SHALLOW:['indirect_bidder_accepted:desc']",
+     "EQUIVALENT:['indirect_bidder_accepted']"
+    ],
+    "label": "residual_indirect_on_primary",
+    "winner_cusip": "9127957M7",
+    "n_rows": 267,
+    "rel_separation": 0.098872,
+    "component_depths": {
+     "indirect_bidder_accepted:asc": 1.0,
+     "indirect_bidder_accepted:desc": 0.0037,
+     "primary_dealer_accepted:asc": 0.7753,
+     "primary_dealer_accepted:desc": 0.2285
+    },
+    "shallowest_component_depth": 0.0037,
+    "n_fields_swept": 33,
+    "equivalent_served_fields": [
+     {
+      "field": "indirect_bidder_accepted",
+      "rho": 0.9898
+     }
+    ],
+    "rho_vs_api_order": -0.0338,
+    "n_distinct_keys": 267,
+    "p_uniform": 0.006757
+   },
+   "rank_difference": {
+    "status": "REJECT",
+    "fails": [
+     "COMPONENT_SHALLOW:['indirect_bidder_accepted:desc']"
+    ],
+    "label": "rank_difference",
+    "winner_cusip": "912796CG2",
+    "n_rows": 267,
+    "rel_separation": 0.030973,
+    "component_depths": {
+     "indirect_bidder_accepted:asc": 0.9813,
+     "indirect_bidder_accepted:desc": 0.0225,
+     "primary_dealer_accepted:asc": 0.1348,
+     "primary_dealer_accepted:desc": 0.8689
+    },
+    "shallowest_component_depth": 0.0225,
+    "n_fields_swept": 33,
+    "equivalent_served_fields": [],
+    "rho_vs_api_order": 0.0483,
+    "n_distinct_keys": 205,
+    "p_uniform": 0.006757
+   },
+   "ols": {
+    "slope": -0.066656,
+    "intercept": 9233933972.254
+   }
+  },
+  "2011/Bill": {
+   "residual_indirect_on_primary": {
+    "status": "REJECT",
+    "fails": [
+     "COMPONENT_SHALLOW:['indirect_bidder_accepted:desc']",
+     "EQUIVALENT:['indirect_bidder_accepted']"
+    ],
+    "label": "residual_indirect_on_primary",
+    "winner_cusip": "9127952Q3",
+    "n_rows": 185,
+    "rel_separation": 0.122986,
+    "component_depths": {
+     "indirect_bidder_accepted:asc": 0.9027,
+     "indirect_bidder_accepted:desc": 0.0054,
+     "primary_dealer_accepted:asc": 0.4324,
+     "primary_dealer_accepted:desc": 0.1838
+    },
+    "shallowest_component_depth": 0.0054,
+    "n_fields_swept": 37,
+    "equivalent_served_fields": [
+     {
+      "field": "indirect_bidder_accepted",
+      "rho": 0.9828
+     }
+    ],
+    "rho_vs_api_order": 0.004,
+    "n_distinct_keys": 185,
+    "p_uniform": 0.011628
+   },
+   "rank_difference": {
+    "status": "REJECT",
+    "fails": [
+     "COMPONENT_SHALLOW:['indirect_bidder_accepted:desc', 'primary_dealer_accepted:asc']"
+    ],
+    "label": "rank_difference",
+    "winner_cusip": "9127953R0",
+    "n_rows": 185,
+    "rel_separation": 0.042945,
+    "component_depths": {
+     "indirect_bidder_accepted:asc": 0.2432,
+     "indirect_bidder_accepted:desc": 0.0649,
+     "primary_dealer_accepted:asc": 0.0595,
+     "primary_dealer_accepted:desc": 0.1081
+    },
+    "shallowest_component_depth": 0.0595,
+    "n_fields_swept": 37,
+    "equivalent_served_fields": [],
+    "rho_vs_api_order": -0.0383,
+    "n_distinct_keys": 136,
+    "p_uniform": 0.011628
+   },
+   "ols": {
+    "slope": -0.127569,
+    "intercept": 9890784674.916
+   }
+  },
+  "2023/Bill": {
+   "residual_indirect_on_primary": {
+    "status": "REJECT",
+    "fails": [
+     "COMPONENT_SHALLOW:['indirect_bidder_accepted:desc']",
+     "TRACKS_API_ORDER"
+    ],
+    "label": "residual_indirect_on_primary",
+    "winner_cusip": "912797HM2",
+    "n_rows": 320,
+    "rel_separation": 0.009338,
+    "component_depths": {
+     "indirect_bidder_accepted:asc": 0.2125,
+     "indirect_bidder_accepted:desc": 0.0031,
+     "primary_dealer_accepted:asc": 0.2844,
+     "primary_dealer_accepted:desc": 0.1906
+    },
+    "shallowest_component_depth": 0.0031,
+    "n_fields_swept": 37,
+    "equivalent_served_fields": [],
+    "rho_vs_api_order": 0.4582,
+    "n_distinct_keys": 320,
+    "p_uniform": 0.007042
+   },
+   "rank_difference": {
+    "status": "REJECT",
+    "fails": [
+     "COMPONENT_SHALLOW:['indirect_bidder_accepted:asc', 'primary_dealer_accepted:asc']"
+    ],
+    "label": "rank_difference",
+    "winner_cusip": "912797FE2",
+    "n_rows": 320,
+    "rel_separation": 0.07173,
+    "component_depths": {
+     "indirect_bidder_accepted:asc": 0.0563,
+     "indirect_bidder_accepted:desc": 0.1688,
+     "primary_dealer_accepted:asc": 0.0719,
+     "primary_dealer_accepted:desc": 0.8781
+    },
+    "shallowest_component_depth": 0.0563,
+    "n_fields_swept": 37,
+    "equivalent_served_fields": [],
+    "rho_vs_api_order": 0.183,
+    "n_distinct_keys": 218,
+    "p_uniform": 0.007042
+   },
+   "ols": {
+    "slope": 0.610798,
+    "intercept": 17957961825.755
+   }
+  },
+  "2023/ALL": {
+   "residual_indirect_on_primary": {
+    "status": "REJECT",
+    "fails": [
+     "COMPONENT_SHALLOW:['indirect_bidder_accepted:desc']"
+    ],
+    "label": "residual_indirect_on_primary",
+    "winner_cusip": "912797HM2",
+    "n_rows": 428,
+    "rel_separation": 0.009543,
+    "component_depths": {
+     "indirect_bidder_accepted:asc": 0.3037,
+     "indirect_bidder_accepted:desc": 0.0023,
+     "primary_dealer_accepted:asc": 0.465,
+     "primary_dealer_accepted:desc": 0.1425
+    },
+    "shallowest_component_depth": 0.0023,
+    "n_fields_swept": 33,
+    "equivalent_served_fields": [],
+    "rho_vs_api_order": 0.3516,
+    "n_distinct_keys": 428,
+    "p_uniform": 0.004673
+   },
+   "rank_difference": {
+    "status": "ACCEPT",
+    "fails": [],
+    "label": "rank_difference",
+    "winner_cusip": "91282CJR3",
+    "n_rows": 428,
+    "rel_separation": 0.128205,
+    "component_depths": {
+     "indirect_bidder_accepted:asc": 0.8692,
+     "indirect_bidder_accepted:desc": 0.1332,
+     "primary_dealer_accepted:asc": 0.2313,
+     "primary_dealer_accepted:desc": 0.771
+    },
+    "shallowest_component_depth": 0.1332,
+    "n_fields_swept": 33,
+    "equivalent_served_fields": [],
+    "rho_vs_api_order": 0.2099,
+    "n_distinct_keys": 265,
+    "p_uniform": 0.004673
+   },
+   "ols": {
+    "slope": 0.644509,
+    "intercept": 17247383331.239
+   }
+  }
+ },
+ "VERDICT": {
+  "n_accept": 1,
+  "accepting": [
+   {
+    "seed": "2023/ALL",
+    "key": "rank_difference",
+    "depth": 0.1332,
+    "sep": 0.128205,
+    "n": 428,
+    "cusip": "91282CJR3"
+   }
+  ],
+  "best": {
+   "seed": "2023/ALL",
+   "key": "rank_difference",
+   "depth": 0.1332,
+   "sep": 0.128205,
+   "n": 428,
+   "cusip": "91282CJR3"
+  },
+  "conclusion": "finance repairable with a non-ratio key"
+ }
+}

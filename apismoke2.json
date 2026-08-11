@@ -1,0 +1,425 @@
+{
+  "cases": [
+    {
+      "category": "finance",
+      "seed": {
+        "year": 2010
+      },
+      "status": "refused",
+      "detail": "TrapUnavailable: finance: withdrawn. The auctions service honours 228 orderings, so raw fields are one call away; the indirect-over-primary ratio key is structurally leaky because a ratio's argmax sits in the small-denominator tail (shallow in 15 of 15 seeds); and the two non-ratio replacements passed 1 of 22 searched configurations and 0 of 8 held-out years, with a bootstrap hit rate of 0.635.",
+      "verdict": null,
+      "witness_tier": null,
+      "independent_witnesses": null,
+      "failed_tests": null,
+      "unproven_tests": null,
+      "n_tests": null,
+      "tests": {},
+      "answer": null,
+      "n_base": null,
+      "secs": 0.0
+    },
+    {
+      "category": "finance",
+      "seed": {},
+      "status": "refused",
+      "detail": "TrapUnavailable: finance: withdrawn. The auctions service honours 228 orderings, so raw fields are one call away; the indirect-over-primary ratio key is structurally leaky because a ratio's argmax sits in the small-denominator tail (shallow in 15 of 15 seeds); and the two non-ratio replacements passed 1 of 22 searched configurations and 0 of 8 held-out years, with a bootstrap hit rate of 0.635.",
+      "verdict": null,
+      "witness_tier": null,
+      "independent_witnesses": null,
+      "failed_tests": null,
+      "unproven_tests": null,
+      "n_tests": null,
+      "tests": {},
+      "answer": null,
+      "n_base": null,
+      "secs": 0.0
+    },
+    {
+      "category": "art",
+      "seed": {
+        "artist": "Albrecht Durer",
+        "dept": 9
+      },
+      "status": "refused",
+      "detail": "TrapUnavailable: art: withdrawn. The Met slice returns total=0; the AIC replacement route honours 10/10 sort orderings so colour keys are one call away; the composite colour key's argmax ranks 1st/3rd/6th/7th on served color.s; and museum accession numbers are not globally unique -- the only one resolving outside AIC (2011.70) matches three works in three other museums, none of them the Chicago object.",
+      "verdict": null,
+      "witness_tier": null,
+      "independent_witnesses": null,
+      "failed_tests": null,
+      "unproven_tests": null,
+      "n_tests": null,
+      "tests": {},
+      "answer": null,
+      "n_base": null,
+      "secs": 0.0
+    },
+    {
+      "category": "health and medicine",
+      "seed": {
+        "condition": "multiple sclerosis",
+        "phase": "PHASE3"
+      },
+      "status": "done",
+      "detail": "",
+      "verdict": "ship",
+      "witness_tier": "gold",
+      "independent_witnesses": [
+        "EMBL-EBI",
+        "OurResearch (OpenAlex)",
+        "Wikimedia Foundation"
+      ],
+      "failed_tests": [],
+      "unproven_tests": [],
+      "n_tests": 13,
+      "tests": {
+        "T0_base_adequacy": {
+          "pass": true,
+          "detail": "n_ranked=235 (>= 5); isolation chooses among candidates"
+        },
+        "T0b_population_complete": {
+          "pass": true,
+          "detail": "ranked 235 of 235 records reported by the source (complete enumeration, 2 page(s))"
+        },
+        "T1_uniqueness": {
+          "pass": true,
+          "detail": "n_tied_at_extremum=1"
+        },
+        "T2_guessability": {
+          "pass": true,
+          "detail": "answer occurs 1/235 times (p=0.004255), modal count 1, 235 distinct values, answer_is_strict_mode=False"
+        },
+        "T3_order_leak": {
+          "pass": true,
+          "detail": "winner at index 138 of 235 (depth 0.5897), first=False last=False, H0 P(first|last)=0.0085"
+        },
+        "T3b_monotone_key": {
+          "pass": true,
+          "detail": "spearman(key, api_index)=-0.0024 (|rho| <= 0.45); key is off-axis"
+        },
+        "T3c_key_derivable_depth": {
+          "pass": true,
+          "detail": "key has no served component fields to sort on"
+        },
+        "T3d_derivable_key": {
+          "pass": true,
+          "detail": "4 served fields swept for rank equivalence; none reproduces the key ordering"
+        },
+        "T4_separation": {
+          "pass": true,
+          "detail": "top1=75 top2=48 gap=27 rel=0.36"
+        },
+        "T4b_fragility": {
+          "pass": true,
+          "detail": "key is per-row, not aggregated; flip condition does not apply"
+        },
+        "T5_confirmation": {
+          "pass": true,
+          "detail": "3 independent witness(es): ['EMBL-EBI', 'OurResearch (OpenAlex)', 'Wikimedia Foundation']; primary='US National Institutes of Health'; 5 source operator(s): ['EMBL-EBI', 'OurResearch (OpenAlex)', 'US Food and Drug Administration', 'US National Institutes of Health', 'Wikimedia Foundation']"
+        },
+        "T6_gate": {
+          "pass": true,
+          "detail": "clean"
+        },
+        "T7_prompt_leak": {
+          "pass": true,
+          "detail": "word count 94"
+        }
+      },
+      "answer": "NCT01817166",
+      "n_base": 235,
+      "secs": 0.4
+    },
+    {
+      "category": "health and medicine",
+      "seed": {},
+      "status": "done",
+      "detail": "",
+      "verdict": "ship",
+      "witness_tier": "gold",
+      "independent_witnesses": [
+        "EMBL-EBI",
+        "OurResearch (OpenAlex)"
+      ],
+      "failed_tests": [],
+      "unproven_tests": [],
+      "n_tests": 13,
+      "tests": {
+        "T0_base_adequacy": {
+          "pass": true,
+          "detail": "n_ranked=51 (>= 5); isolation chooses among candidates"
+        },
+        "T0b_population_complete": {
+          "pass": true,
+          "detail": "ranked 51 of 51 records reported by the source (complete enumeration, 1 page(s))"
+        },
+        "T1_uniqueness": {
+          "pass": true,
+          "detail": "n_tied_at_extremum=1"
+        },
+        "T2_guessability": {
+          "pass": true,
+          "detail": "answer occurs 1/51 times (p=0.01961), modal count 1, 51 distinct values, answer_is_strict_mode=False"
+        },
+        "T3_order_leak": {
+          "pass": true,
+          "detail": "winner at index 42 of 51 (depth 0.84), first=False last=False, H0 P(first|last)=0.0392"
+        },
+        "T3b_monotone_key": {
+          "pass": true,
+          "detail": "spearman(key, api_index)=0.064 (|rho| <= 0.45); key is off-axis"
+        },
+        "T3c_key_derivable_depth": {
+          "pass": true,
+          "detail": "key has no served component fields to sort on"
+        },
+        "T3d_derivable_key": {
+          "pass": true,
+          "detail": "4 served fields swept for rank equivalence; none reproduces the key ordering"
+        },
+        "T4_separation": {
+          "pass": true,
+          "detail": "top1=18 top2=10 gap=8 rel=0.4444"
+        },
+        "T4b_fragility": {
+          "pass": true,
+          "detail": "key is per-row, not aggregated; flip condition does not apply"
+        },
+        "T5_confirmation": {
+          "pass": true,
+          "detail": "2 independent witness(es): ['EMBL-EBI', 'OurResearch (OpenAlex)']; primary='US National Institutes of Health'; 4 source operator(s): ['EMBL-EBI', 'OurResearch (OpenAlex)', 'US Food and Drug Administration', 'US National Institutes of Health']"
+        },
+        "T6_gate": {
+          "pass": true,
+          "detail": "clean"
+        },
+        "T7_prompt_leak": {
+          "pass": true,
+          "detail": "word count 95"
+        }
+      },
+      "answer": "NCT05178810",
+      "n_base": 51,
+      "secs": 0.0
+    },
+    {
+      "category": "travel",
+      "seed": {
+        "airline_iata": "LH",
+        "hub_iata": "FRA"
+      },
+      "status": "done",
+      "detail": "",
+      "verdict": "ship",
+      "witness_tier": "gold",
+      "independent_witnesses": [
+        "OurAirports",
+        "Wikimedia Foundation"
+      ],
+      "failed_tests": [],
+      "unproven_tests": [],
+      "n_tests": 13,
+      "tests": {
+        "T0_base_adequacy": {
+          "pass": true,
+          "detail": "n_ranked=171 (>= 5); isolation chooses among candidates"
+        },
+        "T0b_population_complete": {
+          "pass": true,
+          "detail": "collection arrives as a complete bulk file; there is no pagination that could truncate it"
+        },
+        "T1_uniqueness": {
+          "pass": true,
+          "detail": "n_tied_at_extremum=1"
+        },
+        "T2_guessability": {
+          "pass": true,
+          "detail": "answer occurs 1/171 times (p=0.005848), modal count 1, 171 distinct values, answer_is_strict_mode=False"
+        },
+        "T3_order_leak": {
+          "pass": true,
+          "detail": "winner at index 62 of 171 (depth 0.3647), first=False last=False, H0 P(first|last)=0.0117"
+        },
+        "T3b_monotone_key": {
+          "pass": true,
+          "detail": "spearman(key, api_index)=-0.0514 (|rho| <= 0.45); key is off-axis"
+        },
+        "T3c_key_derivable_depth": {
+          "pass": true,
+          "detail": "collection arrives as a bulk file, so there is no server to perform an ordering; any sort costs a full download first, which is the enumeration the trap asks for"
+        },
+        "T3d_derivable_key": {
+          "pass": true,
+          "detail": "bulk file: a rank-equivalent column is no shortcut when reading any column requires downloading every row"
+        },
+        "T4_separation": {
+          "pass": true,
+          "detail": "top1=60.317199707031 top2=60.29339981 gap=0.0237999 rel=0.0003946"
+        },
+        "T4b_fragility": {
+          "pass": true,
+          "detail": "key is per-row, not aggregated; flip condition does not apply"
+        },
+        "T5_confirmation": {
+          "pass": true,
+          "detail": "2 independent witness(es): ['OurAirports', 'Wikimedia Foundation']; primary='OpenFlights'; 3 source operator(s): ['OpenFlights', 'OurAirports', 'Wikimedia Foundation']"
+        },
+        "T6_gate": {
+          "pass": true,
+          "detail": "clean"
+        },
+        "T7_prompt_leak": {
+          "pass": true,
+          "detail": "word count 91"
+        }
+      },
+      "answer": "HEL",
+      "n_base": 171,
+      "secs": 0.5
+    },
+    {
+      "category": "travel",
+      "seed": {},
+      "status": "done",
+      "detail": "",
+      "verdict": "ship",
+      "witness_tier": "gold",
+      "independent_witnesses": [
+        "OurAirports",
+        "Wikimedia Foundation"
+      ],
+      "failed_tests": [],
+      "unproven_tests": [],
+      "n_tests": 13,
+      "tests": {
+        "T0_base_adequacy": {
+          "pass": true,
+          "detail": "n_ranked=73 (>= 5); isolation chooses among candidates"
+        },
+        "T0b_population_complete": {
+          "pass": true,
+          "detail": "collection arrives as a complete bulk file; there is no pagination that could truncate it"
+        },
+        "T1_uniqueness": {
+          "pass": true,
+          "detail": "n_tied_at_extremum=1"
+        },
+        "T2_guessability": {
+          "pass": true,
+          "detail": "answer occurs 1/73 times (p=0.0137), modal count 1, 73 distinct values, answer_is_strict_mode=False"
+        },
+        "T3_order_leak": {
+          "pass": true,
+          "detail": "winner at index 6 of 73 (depth 0.0833), first=False last=False, H0 P(first|last)=0.0274"
+        },
+        "T3b_monotone_key": {
+          "pass": true,
+          "detail": "spearman(key, api_index)=-0.2042 (|rho| <= 0.45); key is off-axis"
+        },
+        "T3c_key_derivable_depth": {
+          "pass": true,
+          "detail": "collection arrives as a bulk file, so there is no server to perform an ordering; any sort costs a full download first, which is the enumeration the trap asks for"
+        },
+        "T3d_derivable_key": {
+          "pass": true,
+          "detail": "bulk file: a rank-equivalent column is no shortcut when reading any column requires downloading every row"
+        },
+        "T4_separation": {
+          "pass": true,
+          "detail": "top1=68.607299804688 top2=66.564796447754 gap=2.0425 rel=0.02977"
+        },
+        "T4b_fragility": {
+          "pass": true,
+          "detail": "key is per-row, not aggregated; flip condition does not apply"
+        },
+        "T5_confirmation": {
+          "pass": true,
+          "detail": "2 independent witness(es): ['OurAirports', 'Wikimedia Foundation']; primary='OpenFlights'; 3 source operator(s): ['OpenFlights', 'OurAirports', 'Wikimedia Foundation']"
+        },
+        "T6_gate": {
+          "pass": true,
+          "detail": "clean"
+        },
+        "T7_prompt_leak": {
+          "pass": true,
+          "detail": "word count 91"
+        }
+      },
+      "answer": "IVL",
+      "n_base": 73,
+      "secs": 0.5
+    },
+    {
+      "category": "legal",
+      "seed": {},
+      "status": "done",
+      "detail": "",
+      "verdict": "ship",
+      "witness_tier": "gold",
+      "independent_witnesses": [
+        "Cornell University",
+        "Free Law Project"
+      ],
+      "failed_tests": [],
+      "unproven_tests": [],
+      "n_tests": 13,
+      "tests": {
+        "T0_base_adequacy": {
+          "pass": true,
+          "detail": "n_ranked=51 (>= 5); isolation chooses among candidates"
+        },
+        "T0b_population_complete": {
+          "pass": true,
+          "detail": "collection arrives as a complete bulk file; there is no pagination that could truncate it"
+        },
+        "T1_uniqueness": {
+          "pass": true,
+          "detail": "n_tied_at_extremum=1"
+        },
+        "T2_guessability": {
+          "pass": true,
+          "detail": "answer occurs 1/51 times (p=0.01961), modal count 1, 51 distinct values, answer_is_strict_mode=False"
+        },
+        "T3_order_leak": {
+          "pass": true,
+          "detail": "winner at index 27 of 51 (depth 0.54), first=False last=False, H0 P(first|last)=0.0392"
+        },
+        "T3b_monotone_key": {
+          "pass": true,
+          "detail": "spearman(key, api_index)=0.0064 (|rho| <= 0.45); key is off-axis"
+        },
+        "T3c_key_derivable_depth": {
+          "pass": true,
+          "detail": "collection arrives as a bulk file, so there is no server to perform an ordering; any sort costs a full download first, which is the enumeration the trap asks for"
+        },
+        "T3d_derivable_key": {
+          "pass": true,
+          "detail": "bulk file: a rank-equivalent column is no shortcut when reading any column requires downloading every row"
+        },
+        "T4_separation": {
+          "pass": true,
+          "detail": "top1='allied-signal, inc. ex rel. bendix corp. v. director, division of taxation' top2='ankenbrandt ex rel. l. r. v. richards' (non-numeric key, distinct)"
+        },
+        "T4b_fragility": {
+          "pass": true,
+          "detail": "key is per-row, not aggregated; flip condition does not apply"
+        },
+        "T5_confirmation": {
+          "pass": true,
+          "detail": "2 independent witness(es): ['Cornell University', 'Free Law Project']; primary='Harvard Law School Library Innovation Lab'; 3 source operator(s): ['Cornell University', 'Free Law Project', 'Harvard Law School Library Innovation Lab']"
+        },
+        "T6_gate": {
+          "pass": true,
+          "detail": "clean"
+        },
+        "T7_prompt_leak": {
+          "pass": true,
+          "detail": "word count 109"
+        }
+      },
+      "answer": "768",
+      "n_base": 51,
+      "secs": 0.0
+    }
+  ],
+  "updated": "2026-08-11T11:35:11Z"
+}

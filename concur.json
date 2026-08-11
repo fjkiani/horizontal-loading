@@ -1,0 +1,103 @@
+{
+ "started": 1786456376.9915984,
+ "limit_mb": 512.0,
+ "retention": {
+  "baseline_mb": 32.0,
+  "steps": [
+   {
+    "step": "baseline",
+    "rss_mb": 32.0,
+    "peak_mb": 32.1
+   },
+   {
+    "step": "geography",
+    "err": null,
+    "rss_after_build_mb": 63.9,
+    "rss_after_trim_mb": 38.0,
+    "peak_mb": 219.1,
+    "elapsed_s": 0.5
+   },
+   {
+    "step": "travel",
+    "err": null,
+    "rss_after_build_mb": 46.7,
+    "rss_after_trim_mb": 39.0,
+    "peak_mb": 266.2,
+    "elapsed_s": 0.5
+   },
+   {
+    "step": "geography",
+    "err": null,
+    "rss_after_build_mb": 51.4,
+    "rss_after_trim_mb": 40.0,
+    "peak_mb": 266.2,
+    "elapsed_s": 0.5
+   },
+   {
+    "step": "travel",
+    "err": null,
+    "rss_after_build_mb": 48.7,
+    "rss_after_trim_mb": 41.0,
+    "peak_mb": 266.2,
+    "elapsed_s": 0.5
+   },
+   {
+    "step": "health and medicine",
+    "err": null,
+    "rss_after_build_mb": 52.3,
+    "rss_after_trim_mb": 42.2,
+    "peak_mb": 266.2,
+    "elapsed_s": 0.0
+   }
+  ],
+  "final_rss_mb": 42.2,
+  "process_peak_mb": 266.2,
+  "headroom_at_final_mb": 469.8
+ },
+ "serialization": {
+  "category": "geography",
+  "n_threads": 4,
+  "max_simultaneous_in_generator": 1,
+  "serialized": true,
+  "wall_s": 1.81,
+  "sum_held_s": 1.8,
+  "max_queue_wait_s": 1.34,
+  "peak_rss_mb": 286.5,
+  "rss_after_mb": 86.5,
+  "threads": [
+   {
+    "thread": 0,
+    "queued_s": 0.0,
+    "t_in": 1786456379.0235891,
+    "t_out": 1786456379.477949,
+    "held_s": 0.45,
+    "err": null
+   },
+   {
+    "thread": 1,
+    "queued_s": 0.454,
+    "t_in": 1786456379.4780898,
+    "t_out": 1786456379.9297862,
+    "held_s": 0.45,
+    "err": null
+   },
+   {
+    "thread": 2,
+    "queued_s": 0.906,
+    "t_in": 1786456379.9300516,
+    "t_out": 1786456380.3829494,
+    "held_s": 0.45,
+    "err": null
+   },
+   {
+    "thread": 3,
+    "queued_s": 1.342,
+    "t_in": 1786456380.383188,
+    "t_out": 1786456380.829829,
+    "held_s": 0.45,
+    "err": null
+   }
+  ]
+ },
+ "finished": 1786456380.8302574
+}

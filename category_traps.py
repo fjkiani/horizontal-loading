@@ -684,8 +684,55 @@ def gen_travel(airline_iata="AY", hub_iata="HEL"):
     match = [r for r in oa if r["iata_code"] == answer]
     if not match:
         raise TrapUnavailable(f"travel: OurAirports does not carry IATA {answer}")
-    if abs(float(match[0]["latitude_deg"]) - best[1]["lat"]) > 0.5:
-        raise TrapUnavailable("travel: OurAirports latitude disagrees with OpenFlights")
+
+    # CROSS-SOURCE AGREEMENT, SCALED TO THE DECISION IT PROTECTS.
+    #
+    # This check used to be an absolute half-degree tolerance on the winner
+    # alone. travelmargin.json measured what that actually permitted: across the
+    # six-seed roster the winning margins run 0.0238 to 2.0425 degrees, so for
+    # four of six seeds the gate tolerated MORE disagreement than the margin it
+    # was protecting -- 21x more in the LH/FRA case, where the winner beats the
+    # runner-up by 0.0238 degrees, about 2.6 km. A tolerance wider than the
+    # margin cannot establish the ranking.
+    #
+    # Two changes. The runner-up is checked too, because "northernmost" is a
+    # comparison and an error on either endpoint can invert it. And the bar is
+    # the margin, not a constant: both endpoints must agree across sources to
+    # within half the gap between them, so the two sources' values cannot cross.
+    #
+    # Measured cost: zero. Worst observed disagreement is 0.0729 degrees and the
+    # tightest margin-to-disagreement ratio is 2.69 (TP/LIS), so all six seeds
+    # clear a factor-of-two bar that the old constant would have waved through
+    # even had they failed.
+    ranked = sorted(base, key=lambda kv: kv[1]["lat"], reverse=True)
+    if len(ranked) < 2:
+        raise TrapUnavailable("travel: fewer than two ranked destinations")
+    margin = ranked[0][1]["lat"] - ranked[1][1]["lat"]
+    LAST_RANK["margin_deg"] = round(margin, 6)
+
+    def _oa_lat(code):
+        m = [r for r in oa if r["iata_code"] == code]
+        try:
+            return float(m[0]["latitude_deg"]) if m else None
+        except (TypeError, ValueError):
+            return None
+
+    disagreements = {}
+    for role, (code, rec) in (("winner", ranked[0]), ("runner_up", ranked[1])):
+        oa_lat = _oa_lat(code)
+        if oa_lat is None:
+            raise TrapUnavailable(
+                f"travel: OurAirports carries no latitude for the {role} {code}, "
+                "so the ranking has only one source")
+        disagreements[role] = abs(oa_lat - rec["lat"])
+    worst = max(disagreements.values())
+    LAST_RANK["cross_source_disagreement_deg"] = round(worst, 6)
+    if worst >= margin / 2.0:
+        raise TrapUnavailable(
+            f"travel: OpenFlights and OurAirports disagree by {worst:.6f} deg on "
+            f"the top two destinations, which is not smaller than half the "
+            f"{margin:.6f} deg margin between them, so the ranking is not "
+            "established by its own sources")
 
     # SECOND WITNESS. Confirm by the ANSWER, not by the airport NAME: P238 is
     # the IATA code, so an exact-value match cannot collide on a shared label

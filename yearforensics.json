@@ -1,0 +1,295 @@
+{
+ "started": "2026-08-11T08:50:27Z",
+ "cohorts": {
+  "Leiden University": {
+   "institution": "Leiden University",
+   "year": 1997,
+   "winner_orcid": "0000-0002-3856-3621",
+   "winner_name": "J. G. E. M. Fraaije",
+   "year_value_from_counts_by_year": 19926,
+   "n_works_in_year": 7,
+   "sum_of_year_work_citations": 19927,
+   "top_work_title": "LINCS: A linear constraint solver for molecular simulations",
+   "top_work_doi": "https://doi.org/10.1002/(sici)1096-987x(199709)18:12<1463::aid-jcc4>3.0.co;2-h",
+   "top_work_citations": 17310,
+   "top_work_share_of_year": 0.8687,
+   "top_work_n_authors": 4,
+   "top_work_n_authors_with_orcid": 2,
+   "top_work_coauthors": [
+    {
+     "name": "Berk Hess",
+     "orcid": "https://orcid.org/0000-0002-7498-7763",
+     "is_winner": false
+    },
+    {
+     "name": "Henk Bekker",
+     "orcid": null,
+     "is_winner": false
+    },
+    {
+     "name": "Herman J. C. Berendsen",
+     "orcid": null,
+     "is_winner": false
+    },
+    {
+     "name": "J. G. E. M. Fraaije",
+     "orcid": "https://orcid.org/0000-0002-3856-3621",
+     "is_winner": true
+    }
+   ],
+   "n_duplicate_title_groups": 1,
+   "n_duplicate_doi_groups": 0,
+   "duplicate_inflation_citations": 1993,
+   "deduped_year_total": 17934,
+   "duplicate_inflation_frac": 0.1,
+   "flags": [
+    "SINGLE_WORK_DOMINATES",
+    "DUPLICATE_RECORDS_INFLATE",
+    "COAUTHOR_HINGE: another author on the dominating work also has an ORCID, so the argmax depends on affiliation labels"
+   ],
+   "verdict": "FRAGILE",
+   "yearkey_rel_separation": 0.809846,
+   "yearkey_rho_vs_total": 0.4161
+  },
+  "Technion \u2013 Israel Institute of Technology": {
+   "institution": "Technion \u2013 Israel Institute of Technology",
+   "year": 1994,
+   "winner_orcid": "0000-0002-8817-2469",
+   "winner_name": "Misha Ivanov",
+   "year_value_from_counts_by_year": 5055,
+   "n_works_in_year": 8,
+   "sum_of_year_work_citations": 5055,
+   "top_work_title": "Theory of high-harmonic generation by low-frequency laser fields",
+   "top_work_doi": "https://doi.org/10.1103/physreva.49.2117",
+   "top_work_citations": 4110,
+   "top_work_share_of_year": 0.8131,
+   "top_work_n_authors": 5,
+   "top_work_n_authors_with_orcid": 5,
+   "top_work_coauthors": [
+    {
+     "name": "Maciej Lewenstein",
+     "orcid": "https://orcid.org/0000-0002-0210-7800",
+     "is_winner": false
+    },
+    {
+     "name": "Ph. Balcou",
+     "orcid": "https://orcid.org/0000-0002-5546-6436",
+     "is_winner": false
+    },
+    {
+     "name": "Misha Ivanov",
+     "orcid": "https://orcid.org/0000-0002-8817-2469",
+     "is_winner": true
+    },
+    {
+     "name": "A. L\u2019Huillier",
+     "orcid": "https://orcid.org/0000-0002-1335-4022",
+     "is_winner": false
+    },
+    {
+     "name": "P. B. Corkum",
+     "orcid": "https://orcid.org/0000-0003-3394-5572",
+     "is_winner": false
+    }
+   ],
+   "n_duplicate_title_groups": 1,
+   "n_duplicate_doi_groups": 0,
+   "duplicate_inflation_citations": 0,
+   "deduped_year_total": 5055,
+   "duplicate_inflation_frac": 0.0,
+   "flags": [
+    "SINGLE_WORK_DOMINATES",
+    "COAUTHOR_HINGE: another author on the dominating work also has an ORCID, so the argmax depends on affiliation labels"
+   ],
+   "verdict": "FRAGILE",
+   "yearkey_rel_separation": 0.581998,
+   "yearkey_rho_vs_total": 0.4466
+  },
+  "University of British Columbia": {
+   "institution": "University of British Columbia",
+   "year": 1995,
+   "winner_orcid": "0000-0001-7866-4892",
+   "winner_name": "Martin L. Puterman",
+   "year_value_from_counts_by_year": 10680,
+   "n_works_in_year": 5,
+   "sum_of_year_work_citations": 10680,
+   "top_work_title": "Markov Decision Processes: Discrete Stochastic Dynamic Programming.",
+   "top_work_doi": "https://doi.org/10.2307/2291177",
+   "top_work_citations": 8465,
+   "top_work_share_of_year": 0.7926,
+   "top_work_n_authors": 2,
+   "top_work_n_authors_with_orcid": 1,
+   "top_work_coauthors": [
+    {
+     "name": "Kasra Hazeghi",
+     "orcid": null,
+     "is_winner": false
+    },
+    {
+     "name": "Martin L. Puterman",
+     "orcid": "https://orcid.org/0000-0001-7866-4892",
+     "is_winner": true
+    }
+   ],
+   "n_duplicate_title_groups": 2,
+   "n_duplicate_doi_groups": 0,
+   "duplicate_inflation_citations": 2020,
+   "deduped_year_total": 8660,
+   "duplicate_inflation_frac": 0.1891,
+   "flags": [
+    "SINGLE_WORK_DOMINATES",
+    "DUPLICATE_RECORDS_INFLATE"
+   ],
+   "verdict": "FRAGILE",
+   "yearkey_rel_separation": 0.551873,
+   "yearkey_rho_vs_total": 0.4113
+  },
+  "Seoul National University": {
+   "institution": "Seoul National University",
+   "year": 1999,
+   "winner_orcid": "0000-0001-7335-3729",
+   "winner_name": "Young\u2010Yun Kong",
+   "year_value_from_counts_by_year": 5786,
+   "n_works_in_year": 8,
+   "sum_of_year_work_citations": 5786,
+   "top_work_title": "OPGL is a key regulator of osteoclastogenesis, lymphocyte development and lymph-node organogenesis",
+   "top_work_doi": "https://doi.org/10.1038/16852",
+   "top_work_citations": 3364,
+   "top_work_share_of_year": 0.5814,
+   "top_work_n_authors": 17,
+   "top_work_n_authors_with_orcid": 5,
+   "top_work_coauthors": [
+    {
+     "name": "Young\u2010Yun Kong",
+     "orcid": "https://orcid.org/0000-0001-7335-3729",
+     "is_winner": true
+    },
+    {
+     "name": "Hiroki Yoshida",
+     "orcid": null,
+     "is_winner": false
+    },
+    {
+     "name": "Ildiko Sarosi",
+     "orcid": null,
+     "is_winner": false
+    },
+    {
+     "name": "Hong\u2010Lin Tan",
+     "orcid": null,
+     "is_winner": false
+    },
+    {
+     "name": "Emma Timms",
+     "orcid": null,
+     "is_winner": false
+    },
+    {
+     "name": "Casey Capparelli",
+     "orcid": null,
+     "is_winner": false
+    },
+    {
+     "name": "Sean Morony",
+     "orcid": null,
+     "is_winner": false
+    },
+    {
+     "name": "Antonio Oliveira-dos-Santos",
+     "orcid": null,
+     "is_winner": false
+    },
+    {
+     "name": "Gwyneth Van",
+     "orcid": null,
+     "is_winner": false
+    },
+    {
+     "name": "Annick Iti\u00e9",
+     "orcid": null,
+     "is_winner": false
+    },
+    {
+     "name": "Wilson Khoo",
+     "orcid": null,
+     "is_winner": false
+    },
+    {
+     "name": "Andrew Wakeham",
+     "orcid": null,
+     "is_winner": false
+    }
+   ],
+   "n_duplicate_title_groups": 1,
+   "n_duplicate_doi_groups": 0,
+   "duplicate_inflation_citations": 290,
+   "deduped_year_total": 5496,
+   "duplicate_inflation_frac": 0.0501,
+   "flags": [
+    "SINGLE_WORK_DOMINATES",
+    "DUPLICATE_RECORDS_INFLATE",
+    "COAUTHOR_HINGE: another author on the dominating work also has an ORCID, so the argmax depends on affiliation labels"
+   ],
+   "verdict": "FRAGILE",
+   "yearkey_rel_separation": 0.507432,
+   "yearkey_rho_vs_total": 0.4045
+  },
+  "University of Otago": {
+   "institution": "University of Otago",
+   "year": 1994,
+   "error": "https://api.openalex.org/works?filter=authorships.author.orcid:0000-0002-7669-2475,publication_year:1994&select=id,doi,title,cited_by_count,authorships&per-page=100 -> gave up after 3 attempts (HTTP 4",
+   "verdict": "ERROR",
+   "yearkey_rel_separation": 0.278607,
+   "yearkey_rho_vs_total": 0.4041
+  },
+  "University of Auckland": {
+   "institution": "University of Auckland",
+   "year": 1997,
+   "error": "https://api.openalex.org/works?filter=authorships.author.orcid:0000-0002-1445-1000,publication_year:1997&select=id,doi,title,cited_by_count,authorships&per-page=100 -> gave up after 3 attempts (HTTP 4",
+   "verdict": "ERROR",
+   "yearkey_rel_separation": 0.238946,
+   "yearkey_rho_vs_total": 0.4172
+  },
+  "University of California, Los Angeles": {
+   "institution": "University of California, Los Angeles",
+   "year": 1995,
+   "error": "https://api.openalex.org/works?filter=authorships.author.orcid:0000-0002-8065-3057,publication_year:1995&select=id,doi,title,cited_by_count,authorships&per-page=100 -> gave up after 3 attempts (HTTP 4",
+   "verdict": "ERROR",
+   "yearkey_rel_separation": 0.224318,
+   "yearkey_rho_vs_total": 0.4345
+  },
+  "University of Vienna": {
+   "institution": "University of Vienna",
+   "year": 2000,
+   "error": "https://api.openalex.org/works?filter=authorships.author.orcid:0000-0002-9927-4938,publication_year:2000&select=id,doi,title,cited_by_count,authorships&per-page=100 -> gave up after 3 attempts (HTTP 4",
+   "verdict": "ERROR",
+   "yearkey_rel_separation": 0.143172,
+   "yearkey_rho_vs_total": 0.4494
+  },
+  "National University of Singapore": {
+   "institution": "National University of Singapore",
+   "year": 2002,
+   "error": "https://api.openalex.org/works?filter=authorships.author.orcid:0000-0003-1381-7418,publication_year:2002&select=id,doi,title,cited_by_count,authorships&per-page=100 -> gave up after 3 attempts (HTTP 4",
+   "verdict": "ERROR",
+   "yearkey_rel_separation": 0.120766,
+   "yearkey_rho_vs_total": 0.447
+  },
+  "VERDICT": {
+   "n_cohorts": 9,
+   "n_fragile": 4,
+   "n_robust": 0,
+   "robust_cohorts": [],
+   "n_single_work_dominates": 4,
+   "n_duplicate_records_inflate": 3,
+   "n_coauthor_hinge": 3,
+   "rho_separation_vs_concentration": 1.0,
+   "separation_gate_is_inverted": true,
+   "rho_vs_total_min": 0.4041,
+   "rho_vs_total_max": 0.4494,
+   "rho_vs_total_all_just_under_gate": true,
+   "interpretation": "If rho_separation_vs_concentration is strongly positive, then MIN_REL_SEPARATION selects FOR single-paper dominance and must be replaced by a two-sided band plus an explicit concentration ceiling. If rho_vs_total values all sit just under the 0.45 gate, the year key is a moderate proxy for the server-sortable total rather than an independent ranking, and the gate -- not the data -- is choosing the winners."
+  },
+  "_done": true
+ },
+ "finished": "2026-08-11T08:51:43Z"
+}

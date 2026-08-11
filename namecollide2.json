@@ -1,0 +1,399 @@
+{
+ "started": 1786457529.1420505,
+ "members": [
+  {
+   "name": "Dave Anderson",
+   "key": "1960-08-01",
+   "article": "Dave Anderson",
+   "qid": "Q5228230",
+   "group": "DISAMBIG",
+   "why": "{\"p31_disambig\": false, \"text_may_refer_to\": true}"
+  },
+  {
+   "name": "Tim Belcher",
+   "key": "1961-10-19",
+   "article": "Tim Belcher",
+   "qid": "Q3528585",
+   "group": "VERIFIED",
+   "why": "P106 baseball occupation"
+  },
+  {
+   "name": "William Brennan",
+   "key": "1963-01-15",
+   "article": "William J. Brennan Jr.",
+   "qid": "Q717401",
+   "group": "COLLISION",
+   "why": "lawyer, judge, politician, jurist"
+  },
+  {
+   "name": "Tim Crews",
+   "key": "1961-04-03",
+   "article": "Tim Crews",
+   "qid": "Q3528617",
+   "group": "VERIFIED",
+   "why": "P106 baseball occupation"
+  },
+  {
+   "name": "Mike Davis",
+   "key": "1959-06-11",
+   "article": "Mike Davis (scholar)",
+   "qid": "Q1933136",
+   "group": "COLLISION",
+   "why": "writer, historian, university teacher, activist, critic, lecturer, theorist, sociologist"
+  },
+  {
+   "name": "Rick Dempsey",
+   "key": "1949-09-13",
+   "article": "Rick Dempsey",
+   "qid": "Q7331347",
+   "group": "VERIFIED",
+   "why": "P106 baseball occupation"
+  },
+  {
+   "name": "Mike Devereaux",
+   "key": "1963-04-10",
+   "article": "Mike Devereaux",
+   "qid": "Q6846559",
+   "group": "VERIFIED",
+   "why": "P106 baseball occupation"
+  },
+  {
+   "name": "Kirk Gibson",
+   "key": "1957-05-28",
+   "article": "Kirk Gibson",
+   "qid": "Q1185498",
+   "group": "VERIFIED",
+   "why": "P106 baseball occupation"
+  },
+  {
+   "name": "Jose Gonzalez",
+   "key": "1964-11-23",
+   "article": "Jose Gonzalez Gonzalez",
+   "qid": "Q25930006",
+   "group": "COLLISION",
+   "why": "film actor, television actor"
+  },
+  {
+   "name": "Alfredo Griffin",
+   "key": "1957-10-06",
+   "article": "Alfredo Griffin",
+   "qid": "Q519251",
+   "group": "VERIFIED",
+   "why": "P106 baseball occupation"
+  },
+  {
+   "name": "Pedro Guerrero",
+   "key": "1956-06-29",
+   "article": "Pedro Guerrero",
+   "qid": "Q686583",
+   "group": "DISAMBIG",
+   "why": "{\"p31_disambig\": false, \"text_may_refer_to\": true}"
+  },
+  {
+   "name": "Chris Gwynn",
+   "key": "1964-10-13",
+   "article": "Chris Gwynn",
+   "qid": "Q5106745",
+   "group": "VERIFIED",
+   "why": "P106 baseball occupation"
+  },
+  {
+   "name": "Jeff Hamilton",
+   "key": "1964-03-19",
+   "article": "Jeff Hamilton",
+   "qid": "Q1686312",
+   "group": "COLLISION",
+   "why": "no baseball occupation or team"
+  },
+  {
+   "name": "Mickey Hatcher",
+   "key": "1955-03-15",
+   "article": "Mickey Hatcher",
+   "qid": "Q6838658",
+   "group": "VERIFIED",
+   "why": "P106 baseball occupation"
+  },
+  {
+   "name": "Brad Havens",
+   "key": "1959-11-17",
+   "article": "Brad Havens",
+   "qid": "Q4953982",
+   "group": "VERIFIED",
+   "why": "P106 baseball occupation"
+  },
+  {
+   "name": "Danny Heep",
+   "key": "1957-07-03",
+   "article": "Danny Heep",
+   "qid": "Q5220432",
+   "group": "VERIFIED",
+   "why": "P106 baseball occupation"
+  },
+  {
+   "name": "Orel Hershiser",
+   "key": "1958-09-16",
+   "article": "Orel Hershiser",
+   "qid": "Q2410775",
+   "group": "VERIFIED",
+   "why": "P106 baseball occupation"
+  },
+  {
+   "name": "Shawn Hillegas",
+   "key": "1964-08-21",
+   "article": "Shawn Hillegas",
+   "qid": "Q7491372",
+   "group": "VERIFIED",
+   "why": "P106 baseball occupation"
+  },
+  {
+   "name": "Brian Holton",
+   "key": "1959-11-29",
+   "article": "Brian Holton",
+   "qid": "Q4964079",
+   "group": "VERIFIED",
+   "why": "P106 baseball occupation"
+  },
+  {
+   "name": "Ricky Horton",
+   "key": "1959-07-30",
+   "article": "Ricky Horton",
+   "qid": "Q7332095",
+   "group": "VERIFIED",
+   "why": "P106 baseball occupation"
+  },
+  {
+   "name": "Jay Howell",
+   "key": "1955-11-26",
+   "article": "Jay Howell (illustrator)",
+   "qid": "Q106306938",
+   "group": "COLLISION",
+   "why": "character designer, screenwriter, tattoo artist, artist, cartoonist"
+  },
+  {
+   "name": "Ken Howell",
+   "key": "1960-11-28",
+   "article": "Ken Howell",
+   "qid": "Q6387834",
+   "group": "VERIFIED",
+   "why": "P106 baseball occupation"
+  },
+  {
+   "name": "Bill Krueger",
+   "key": "1958-04-24",
+   "article": "Bill Krueger",
+   "qid": "Q4909787",
+   "group": "VERIFIED",
+   "why": "P106 baseball occupation"
+  },
+  {
+   "name": "Tim Leary",
+   "key": "1958-12-23",
+   "article": "Tim Leary",
+   "qid": "Q7803817",
+   "group": "VERIFIED",
+   "why": "P106 baseball occupation"
+  },
+  {
+   "name": "Mike Marshall",
+   "key": "1960-01-12",
+   "article": "Mike Marshall",
+   "qid": "Q339106",
+   "group": "DISAMBIG",
+   "why": "{\"p31_disambig\": false, \"text_may_refer_to\": true}"
+  },
+  {
+   "name": "Ramon Martinez",
+   "key": "1968-03-22",
+   "article": "Ramon Martinez",
+   "qid": "Q1181441",
+   "group": "DISAMBIG",
+   "why": "{\"p31_disambig\": false, \"text_may_refer_to\": true}"
+  },
+  {
+   "name": "Jesse Orosco",
+   "key": "1957-04-21",
+   "article": "Jesse Orosco",
+   "qid": "Q3079492",
+   "group": "VERIFIED",
+   "why": "P106 baseball occupation"
+  },
+  {
+   "name": "Alejandro Pena",
+   "group": "UNRESOLVED"
+  },
+  {
+   "name": "Gilberto Reyes",
+   "key": "1963-12-10",
+   "article": "Gilberto Reyes",
+   "qid": "Q3105943",
+   "group": "VERIFIED",
+   "why": "P106 baseball occupation"
+  },
+  {
+   "name": "Steve Sax",
+   "key": "1960-01-29",
+   "article": "Steve Sax",
+   "qid": "Q3297148",
+   "group": "VERIFIED",
+   "why": "P106 baseball occupation"
+  },
+  {
+   "name": "Mike Scioscia",
+   "key": "1958-11-27",
+   "article": "Mike Scioscia",
+   "qid": "Q1138109",
+   "group": "VERIFIED",
+   "why": "P106 baseball occupation"
+  },
+  {
+   "name": "Mike Sharperson",
+   "key": "1961-10-04",
+   "article": "Mike Sharperson",
+   "qid": "Q6848783",
+   "group": "VERIFIED",
+   "why": "P106 baseball occupation"
+  },
+  {
+   "name": "John Shelby",
+   "key": "1958-02-23",
+   "article": "John Shelby",
+   "qid": "Q6257560",
+   "group": "VERIFIED",
+   "why": "P106 baseball occupation"
+  },
+  {
+   "name": "Franklin Stubbs",
+   "key": "1960-10-21",
+   "article": "Franklin Stubbs",
+   "qid": "Q5491887",
+   "group": "VERIFIED",
+   "why": "P106 baseball occupation"
+  },
+  {
+   "name": "Don Sutton",
+   "key": "1945-04-02",
+   "article": "Don Sutton",
+   "qid": "Q3035912",
+   "group": "VERIFIED",
+   "why": "P106 baseball occupation"
+  },
+  {
+   "name": "John Tudor",
+   "key": "1954-02-02",
+   "article": "John Tudor",
+   "qid": "Q11783886",
+   "group": "DISAMBIG",
+   "why": "{\"p31_disambig\": false, \"text_may_refer_to\": true}"
+  },
+  {
+   "name": "Fernando Valenzuela",
+   "key": "1960-11-01",
+   "article": "Fernando Valenzuela",
+   "qid": "Q1131057",
+   "group": "VERIFIED",
+   "why": "P106 baseball occupation"
+  },
+  {
+   "name": "Tracy Woodson",
+   "key": "1962-10-05",
+   "article": "Tracy Woodson",
+   "qid": "Q7831877",
+   "group": "VERIFIED",
+   "why": "P106 baseball occupation"
+  }
+ ],
+ "groups": {
+  "VERIFIED": {
+   "n": 27,
+   "year_in_page": 27,
+   "year_in_page_frac": 1.0,
+   "year_in_page_ci95": [
+    0.8754,
+    1.0
+   ],
+   "year_in_permuted_page_frac": 0.5185,
+   "iso_date_in_page": 0,
+   "members": [
+    "Tim Belcher",
+    "Tim Crews",
+    "Rick Dempsey",
+    "Mike Devereaux",
+    "Kirk Gibson",
+    "Alfredo Griffin",
+    "Chris Gwynn",
+    "Mickey Hatcher",
+    "Brad Havens",
+    "Danny Heep",
+    "Orel Hershiser",
+    "Shawn Hillegas",
+    "Brian Holton",
+    "Ricky Horton",
+    "Ken Howell",
+    "Bill Krueger",
+    "Tim Leary",
+    "Jesse Orosco",
+    "Gilberto Reyes",
+    "Steve Sax",
+    "Mike Scioscia",
+    "Mike Sharperson",
+    "John Shelby",
+    "Franklin Stubbs",
+    "Don Sutton",
+    "Fernando Valenzuela",
+    "Tracy Woodson"
+   ]
+  },
+  "DISAMBIG": {
+   "n": 5,
+   "year_in_page": 5,
+   "year_in_page_frac": 1.0,
+   "year_in_page_ci95": [
+    0.5655,
+    1.0
+   ],
+   "year_in_permuted_page_frac": 0.4,
+   "iso_date_in_page": 0,
+   "members": [
+    "Dave Anderson",
+    "Pedro Guerrero",
+    "Mike Marshall",
+    "Ramon Martinez",
+    "John Tudor"
+   ]
+  },
+  "COLLISION": {
+   "n": 5,
+   "year_in_page": 2,
+   "year_in_page_frac": 0.4,
+   "year_in_page_ci95": [
+    0.1176,
+    0.7693
+   ],
+   "year_in_permuted_page_frac": 0.8,
+   "iso_date_in_page": 0,
+   "members": [
+    "William Brennan",
+    "Mike Davis",
+    "Jose Gonzalez",
+    "Jeff Hamilton",
+    "Jay Howell"
+   ]
+  }
+ },
+ "reconciliation": {
+  "n_pages": 37,
+  "own_year_hits": 34,
+  "own_frac": 0.9189,
+  "perm_frac": 0.5405,
+  "excess": 0.3784,
+  "f_min_implied_by_two_component_model": 0.8235,
+  "identity_verified_frac": 0.7297,
+  "two_component_model_contradicted": true,
+  "identity_carrying_frac_verified_plus_disambig": 0.8649,
+  "carriers_over_n": "32/37",
+  "own_hits_over_n": "34/37",
+  "prediction_exact_match": false,
+  "note": "Prediction with no free parameter: if DISAMBIG pages carry the member's identity then VERIFIED+DISAMBIG must equal the observed own-hit count."
+ },
+ "finished": 1786457529.2077775
+}

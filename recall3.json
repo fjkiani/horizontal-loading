@@ -1,0 +1,315 @@
+{
+ "started": 1786456542.743293,
+ "min_key_chars": 4,
+ "min_title_overlap": 0.6,
+ "categories": {
+  "health and medicine": {
+   "category": "health and medicine",
+   "status": "ok",
+   "answer": "NCT05178810",
+   "entity": "Study to Investigate the Efficacy and Safety of FAB122 (Daily Oral Edaravone) in Patients With Amyotrophic Lateral Scler",
+   "n_population": 51,
+   "mode": "max",
+   "sample_names": [
+    "Efficacy and Safety Study of MYOBLOC\u00ae in the Treatment of Sialorrhea i",
+    "A Long-Term Study in Patients With Amyotrophic Lateral Sclerosis (ALS)",
+    "HEALEY ALS Platform Trial - Regimen C CNM-Au8",
+    "Study of Dopamine and Serotonin Transporters in Patients With Amyotrop"
+   ],
+   "n_sampled": 25,
+   "n_with_own_article": 4,
+   "own_article_frac": 0.16,
+   "own_article_ci95": [
+    0.064,
+    0.3465
+   ],
+   "key_chars_min": 1,
+   "key_chars_max": 2,
+   "stage2_key": {
+    "n_informative": 0,
+    "note": "too few informative keys to test"
+   },
+   "winner_article": null,
+   "winner_has_own_article": false,
+   "answer_in_winner_article": null,
+   "elapsed_s": 6.2
+  },
+  "science and technology": {
+   "category": "science and technology",
+   "status": "ok",
+   "answer": "2403.07505",
+   "entity": "Rotational Evolution of Classical T Tauri Stars: Models and Observations",
+   "n_population": 15,
+   "mode": "max",
+   "sample_names": [
+    "Free-Floating Planets, Survivor Planets, Captured Planets and Binary P",
+    "A Novel Method to Constrain Tidal Quality Factor from A Non-synchroniz",
+    "Predicting the Slowing of Stellar Differential Rotation by Instability",
+    "Automated Discovery of Anomalous Features in Ultra-Large Planetary Rem"
+   ],
+   "n_sampled": 15,
+   "n_with_own_article": 3,
+   "own_article_frac": 0.2,
+   "own_article_ci95": [
+    0.0705,
+    0.4519
+   ],
+   "key_chars_min": 1,
+   "key_chars_max": 2,
+   "stage2_key": {
+    "n_informative": 0,
+    "note": "too few informative keys to test"
+   },
+   "winner_article": null,
+   "winner_has_own_article": false,
+   "answer_in_winner_article": null,
+   "elapsed_s": 4.6
+  },
+  "sports": {
+   "category": "sports",
+   "status": "ok",
+   "answer": "243777",
+   "entity": "Orel Hershiser",
+   "n_population": 19,
+   "mode": "max",
+   "sample_names": [
+    "Tim Belcher",
+    "William Brennan",
+    "Tim Crews",
+    "Brad Havens"
+   ],
+   "n_sampled": 19,
+   "n_with_own_article": 19,
+   "own_article_frac": 1.0,
+   "own_article_ci95": [
+    0.8318,
+    1.0
+   ],
+   "key_chars_min": 1,
+   "key_chars_max": 4,
+   "stage2_key": {
+    "n_informative": 1,
+    "note": "too few informative keys to test"
+   },
+   "winner_article": "Orel Hershiser",
+   "winner_has_own_article": true,
+   "answer_in_winner_article": false,
+   "elapsed_s": 4.2
+  },
+  "travel": {
+   "category": "travel",
+   "status": "ok",
+   "answer": "IVL",
+   "entity": "Ivalo Airport",
+   "n_population": 73,
+   "mode": "max",
+   "sample_names": [
+    "KAO",
+    "OUL",
+    "GZP",
+    "KEF"
+   ],
+   "n_sampled": 25,
+   "n_with_own_article": 22,
+   "own_article_frac": 0.88,
+   "own_article_ci95": [
+    0.7004,
+    0.9583
+   ],
+   "key_chars_min": 9,
+   "key_chars_max": 18,
+   "stage2_key": {
+    "n_informative": 22,
+    "key_in_own_article_frac": 0.0,
+    "key_in_other_article_frac": 0.0,
+    "excess": 0.0,
+    "own_ci95": [
+     0.0,
+     0.1487
+    ],
+    "mcnemar_b_own_only": 0,
+    "mcnemar_c_other_only": 0,
+    "mcnemar_p": 1.0,
+    "examples_found": [],
+    "examples_absent": [
+     {
+      "member": "KAO",
+      "article": "Kao",
+      "key": "65.987602233887",
+      "matched_as": null
+     },
+     {
+      "member": "GZP",
+      "article": "GZP",
+      "key": "36.299217",
+      "matched_as": null
+     },
+     {
+      "member": "KEF",
+      "article": "KEF",
+      "key": "63.985000610352",
+      "matched_as": null
+     }
+    ]
+   },
+   "winner_article": "Ivalo Airport",
+   "winner_has_own_article": true,
+   "answer_in_winner_article": true,
+   "elapsed_s": 11.5
+  },
+  "geography": {
+   "category": "geography",
+   "status": "ok",
+   "answer": "SKIP",
+   "entity": "San Luis Airport",
+   "n_population": 42,
+   "mode": "max",
+   "sample_names": [
+    "Tres De Mayo Airport",
+    "Palonegro Airport",
+    "El Dorado International Airport",
+    "Ernesto Cortissoz International Airport"
+   ],
+   "n_sampled": 25,
+   "n_with_own_article": 22,
+   "own_article_frac": 0.88,
+   "own_article_ci95": [
+    0.7004,
+    0.9583
+   ],
+   "key_chars_min": 1,
+   "key_chars_max": 4,
+   "stage2_key": {
+    "n_informative": 8,
+    "key_in_own_article_frac": 0.0,
+    "key_in_other_article_frac": 0.0,
+    "excess": 0.0,
+    "own_ci95": [
+     0.0,
+     0.3244
+    ],
+    "mcnemar_b_own_only": 0,
+    "mcnemar_c_other_only": 0,
+    "mcnemar_p": 1.0,
+    "examples_found": [],
+    "examples_absent": [
+     {
+      "member": "Palonegro Airport",
+      "article": "Palonegro International Airport",
+      "key": "3897",
+      "matched_as": null
+     },
+     {
+      "member": "El Dorado International Airport",
+      "article": "El Dorado International Airport",
+      "key": "8361",
+      "matched_as": null
+     },
+     {
+      "member": "Alfonso Bonilla Aragon International Airport",
+      "article": "Alfonso Bonilla Arag\u00f3n International Airport",
+      "key": "3162",
+      "matched_as": null
+     }
+    ]
+   },
+   "winner_article": "San Luis Potos\u00ed International Airport",
+   "winner_has_own_article": true,
+   "answer_in_winner_article": false,
+   "elapsed_s": 12.7
+  }
+ },
+ "retired_sports_birthdate_key": {
+  "n_population": 38,
+  "n_sampled": 25,
+  "n_with_own_article": 25,
+  "full_iso_date": {
+   "n_informative": 25,
+   "key_in_own_article_frac": 0.0,
+   "key_in_other_article_frac": 0.0,
+   "excess": 0.0,
+   "own_ci95": [
+    0.0,
+    0.1332
+   ],
+   "mcnemar_b_own_only": 0,
+   "mcnemar_c_other_only": 0,
+   "mcnemar_p": 1.0,
+   "examples_found": [],
+   "examples_absent": [
+    {
+     "member": "Dave Anderson",
+     "article": "Dave Anderson",
+     "key": "1960-08-01",
+     "matched_as": null
+    },
+    {
+     "member": "William Brennan",
+     "article": "William J. Brennan Jr.",
+     "key": "1963-01-15",
+     "matched_as": null
+    },
+    {
+     "member": "Tim Crews",
+     "article": "Tim Crews",
+     "key": "1961-04-03",
+     "matched_as": null
+    }
+   ]
+  },
+  "year_only_as_originally_measured": {
+   "n_informative": 25,
+   "key_in_own_article_frac": 0.88,
+   "key_in_other_article_frac": 0.52,
+   "excess": 0.36,
+   "own_ci95": [
+    0.7004,
+    0.9583
+   ],
+   "mcnemar_b_own_only": 11,
+   "mcnemar_c_other_only": 2,
+   "mcnemar_p": 0.022461,
+   "examples_found": [
+    {
+     "member": "Dave Anderson",
+     "article": "Dave Anderson",
+     "key": "1960-08-01",
+     "matched_as": "1960"
+    },
+    {
+     "member": "William Brennan",
+     "article": "William J. Brennan Jr.",
+     "key": "1963-01-15",
+     "matched_as": "1963"
+    },
+    {
+     "member": "Tim Crews",
+     "article": "Tim Crews",
+     "key": "1961-04-03",
+     "matched_as": "1961"
+    }
+   ],
+   "examples_absent": [
+    {
+     "member": "Mike Davis",
+     "article": "Mike Davis (scholar)",
+     "key": "1959-06-11",
+     "matched_as": null
+    },
+    {
+     "member": "Jose Gonzalez",
+     "article": "Jose Gonzalez Gonzalez",
+     "key": "1964-11-23",
+     "matched_as": null
+    },
+    {
+     "member": "Jay Howell",
+     "article": "Jay Howell (illustrator)",
+     "key": "1955-11-26",
+     "matched_as": null
+    }
+   ]
+  }
+ },
+ "finished": 1786456586.3616438
+}

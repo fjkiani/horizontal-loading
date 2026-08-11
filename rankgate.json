@@ -1,0 +1,347 @@
+{
+ "started": "2026-08-11T10:56:32Z",
+ "stages": {
+  "finance": {
+   "answer": "912796J34",
+   "n_rows": 336,
+   "n_numeric_fields": 37,
+   "shallowest_rank_over_all_served_orderings": 9,
+   "fields_placing_answer_in_top_20": [
+    {
+     "field": "primary_dealer_accepted",
+     "best_rank": 9,
+     "direction": "asc"
+    },
+    {
+     "field": "avg_med_discnt_rate",
+     "best_rank": 10,
+     "direction": "asc"
+    },
+    {
+     "field": "high_discnt_rate",
+     "best_rank": 12,
+     "direction": "asc"
+    },
+    {
+     "field": "high_investment_rate",
+     "best_rank": 12,
+     "direction": "asc"
+    },
+    {
+     "field": "allocation_pctage",
+     "best_rank": 14,
+     "direction": "desc"
+    },
+    {
+     "field": "direct_bidder_tendered",
+     "best_rank": 17,
+     "direction": "desc"
+    },
+    {
+     "field": "high_price",
+     "best_rank": 17,
+     "direction": "desc"
+    },
+    {
+     "field": "price_per100",
+     "best_rank": 17,
+     "direction": "desc"
+    },
+    {
+     "field": "nlp_exclusion_amt",
+     "best_rank": 19,
+     "direction": "asc"
+    }
+   ],
+   "n_shallow": 9,
+   "all_ranks": {
+    "allocation_pctage": {
+     "desc": 14,
+     "asc": 56
+    },
+    "allocation_pctage_decimals": {
+     "desc": 85,
+     "asc": 85
+    },
+    "avg_med_discnt_rate": {
+     "desc": 164,
+     "asc": 10
+    },
+    "bid_to_cover_ratio": {
+     "desc": 93,
+     "asc": 112
+    },
+    "comp_accepted": {
+     "desc": 147,
+     "asc": 134
+    },
+    "comp_bid_decimals": {
+     "desc": 85,
+     "asc": 85
+    },
+    "comp_tendered": {
+     "desc": 187,
+     "asc": 147
+    },
+    "direct_bidder_accepted": {
+     "desc": 39,
+     "asc": 65
+    },
+    "direct_bidder_tendered": {
+     "desc": 17,
+     "asc": 124
+    },
+    "fima_noncomp_accepted": {
+     "desc": 224,
+     "asc": 38
+    },
+    "fima_noncomp_tendered": {
+     "desc": 224,
+     "asc": 38
+    },
+    "high_discnt_rate": {
+     "desc": 183,
+     "asc": 12
+    },
+    "high_investment_rate": {
+     "desc": 183,
+     "asc": 12
+    },
+    "high_price": {
+     "desc": 17,
+     "asc": 170
+    },
+    "indirect_bidder_accepted": {
+     "desc": 67,
+     "asc": 51
+    },
+    "indirect_bidder_tendered": {
+     "desc": 117,
+     "asc": 45
+    },
+    "low_discnt_rate": {
+     "desc": 207,
+     "asc": 75
+    },
+    "max_comp_award": {
+     "desc": 150,
+     "asc": 120
+    },
+    "max_noncomp_award": {
+     "desc": 85,
+     "asc": 85
+    },
+    "max_single_bid": {
+     "desc": 150,
+     "asc": 120
+    },
+    "min_bid_amt": {
+     "desc": 85,
+     "asc": 85
+    },
+    "min_to_issue": {
+     "desc": 85,
+     "asc": 85
+    },
+    "multiples_to_bid": {
+     "desc": 85,
+     "asc": 85
+    },
+    "multiples_to_issue": {
+     "desc": 85,
+     "asc": 85
+    },
+    "nlp_exclusion_amt": {
+     "desc": 89,
+     "asc": 19
+    },
+    "nlp_reporting_threshold": {
+     "desc": 150,
+     "asc": 120
+    },
+    "noncomp_accepted": {
+     "desc": 34,
+     "asc": 78
+    },
+    "offering_amt": {
+     "desc": 150,
+     "asc": 120
+    },
+    "price_per100": {
+     "desc": 17,
+     "asc": 170
+    },
+    "primary_dealer_accepted": {
+     "desc": 40,
+     "asc": 9
+    },
+    "primary_dealer_tendered": {
+     "desc": 123,
+     "asc": 102
+    },
+    "soma_accepted": {
+     "desc": 147,
+     "asc": 36
+    },
+    "soma_holdings": {
+     "desc": 199,
+     "asc": 45
+    },
+    "soma_tendered": {
+     "desc": 147,
+     "asc": 36
+    },
+    "total_accepted": {
+     "desc": 133,
+     "asc": 98
+    },
+    "total_tendered": {
+     "desc": 181,
+     "asc": 141
+    },
+    "treas_retail_accepted": {
+     "desc": 41,
+     "asc": 36
+    }
+   },
+   "status": "FAIL"
+  },
+  "health": {
+   "answer": "NCT05178810",
+   "orderings": {
+    "StartDate:asc": {
+     "n": 51,
+     "rank": 46,
+     "row_one": "NCT00021697"
+    },
+    "StartDate:desc": {
+     "n": 51,
+     "rank": 6,
+     "row_one": "NCT05842941"
+    },
+    "EnrollmentCount:asc": {
+     "n": 51,
+     "rank": 39,
+     "row_one": "NCT00965497"
+    },
+    "EnrollmentCount:desc": {
+     "n": 51,
+     "rank": 13,
+     "row_one": "NCT01281189"
+    },
+    "NumArmGroups:asc": {
+     "n": 51,
+     "rank": 39,
+     "row_one": "NCT00386464"
+    },
+    "NumArmGroups:desc": {
+     "n": 51,
+     "rank": 34,
+     "row_one": "NCT02623699"
+    },
+    "LastUpdatePostDate:asc": {
+     "n": 51,
+     "rank": 37,
+     "row_one": "NCT00136110"
+    },
+    "LastUpdatePostDate:desc": {
+     "n": 51,
+     "rank": 15,
+     "row_one": "NCT00330681"
+    },
+    "CompletionDate:asc": {
+     "n": 51,
+     "rank": 44,
+     "row_one": "NCT00021697"
+    },
+    "CompletionDate:desc": {
+     "n": 51,
+     "rank": 8,
+     "row_one": "NCT03548311"
+    },
+    "PrimaryCompletionDate:asc": {
+     "n": 51,
+     "rank": 41,
+     "row_one": "NCT00021697"
+    },
+    "PrimaryCompletionDate:desc": {
+     "n": 51,
+     "rank": 7,
+     "row_one": "NCT05842941"
+    },
+    "NumLocations:asc": {
+     "n": 51,
+     "rank": 40,
+     "row_one": "NCT00330681"
+    },
+    "NumLocations:desc": {
+     "n": 51,
+     "rank": 12,
+     "row_one": "NCT03505021"
+    },
+    "StudyFirstPostDate:asc": {
+     "n": 51,
+     "rank": 47,
+     "row_one": "NCT00021697"
+    },
+    "StudyFirstPostDate:desc": {
+     "n": 51,
+     "rank": 5,
+     "row_one": "NCT05842941"
+    }
+   },
+   "shallow": [
+    {
+     "ordering": "StartDate:desc",
+     "rank": 6
+    },
+    {
+     "ordering": "EnrollmentCount:desc",
+     "rank": 13
+    },
+    {
+     "ordering": "LastUpdatePostDate:desc",
+     "rank": 15
+    },
+    {
+     "ordering": "CompletionDate:desc",
+     "rank": 8
+    },
+    {
+     "ordering": "PrimaryCompletionDate:desc",
+     "rank": 7
+    },
+    {
+     "ordering": "NumLocations:desc",
+     "rank": 12
+    },
+    {
+     "ordering": "StudyFirstPostDate:desc",
+     "rank": 5
+    }
+   ],
+   "rejected_sorts": [
+    {
+     "field": "SecondaryOutcomeCount",
+     "still_rejected": true
+    },
+    {
+     "field": "OutcomeMeasureCount",
+     "still_rejected": true
+    }
+   ],
+   "shallowest_rank": 5,
+   "n_shallow": 7,
+   "status": "FAIL"
+  },
+  "VERDICT": {
+   "k_shallow": 20,
+   "finance": "FAIL",
+   "finance_shallowest": 9,
+   "health": "FAIL",
+   "health_shallowest": 5,
+   "conclusion": "at least one rekey is near-argmax of a served ordering"
+  }
+ },
+ "finished": "2026-08-11T10:56:48Z"
+}

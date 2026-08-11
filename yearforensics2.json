@@ -1,0 +1,290 @@
+{
+ "started": "2026-08-11T09:15:59Z",
+ "cohorts": {
+  "University of Otago": {
+   "institution": "University of Otago",
+   "year": 1994,
+   "winner_orcid": "0000-0002-7669-2475",
+   "winner_name": "Cliff S. Law",
+   "year_value_from_counts_by_year": 1608,
+   "n_works_in_year": 3,
+   "sum_of_year_work_citations": 1608,
+   "top_work_title": "Testing the iron hypothesis in ecosystems of the equatorial Pacific Ocean",
+   "top_work_doi": "https://doi.org/10.1038/371123a0",
+   "top_work_citations": 1401,
+   "top_work_share_of_year": 0.8713,
+   "top_work_n_authors": 44,
+   "top_work_n_authors_with_orcid": 20,
+   "top_work_coauthors": [
+    {
+     "name": "John H. Martin",
+     "orcid": "https://orcid.org/0000-0002-8670-8469"
+    },
+    {
+     "name": "Kenneth H. Coale",
+     "orcid": null
+    },
+    {
+     "name": "Kenneth S. Johnson",
+     "orcid": null
+    },
+    {
+     "name": "Steve E. Fitzwater",
+     "orcid": null
+    },
+    {
+     "name": "R. M. Gordon",
+     "orcid": null
+    },
+    {
+     "name": "Sara J. Tanner",
+     "orcid": null
+    },
+    {
+     "name": "Craig N. Hunter",
+     "orcid": null
+    },
+    {
+     "name": "Virginia A. Elrod",
+     "orcid": null
+    },
+    {
+     "name": "Jocelyn L. Nowicki",
+     "orcid": null
+    },
+    {
+     "name": "Teresa L. Coley",
+     "orcid": null
+    },
+    {
+     "name": "Richard T. Barber",
+     "orcid": null
+    },
+    {
+     "name": "Steven T. Lindley",
+     "orcid": "https://orcid.org/0000-0001-9556-0411"
+    }
+   ],
+   "n_duplicate_title_groups": 0,
+   "n_duplicate_doi_groups": 0,
+   "duplicate_inflation_citations": 0,
+   "deduped_year_total": 1608,
+   "duplicate_inflation_frac": 0.0,
+   "flags": [
+    "SINGLE_WORK_DOMINATES",
+    "COAUTHOR_HINGE"
+   ],
+   "verdict": "FRAGILE",
+   "yearkey_rel_separation": 0.278607,
+   "yearkey_rho_vs_total": 0.4041
+  },
+  "University of Auckland": {
+   "institution": "University of Auckland",
+   "year": 1997,
+   "winner_orcid": "0000-0002-1445-1000",
+   "winner_name": "Kevin E. Trenberth",
+   "year_value_from_counts_by_year": 5428,
+   "n_works_in_year": 10,
+   "sum_of_year_work_citations": 5428,
+   "top_work_title": "The Definition of El Ni\u00f1o",
+   "top_work_doi": "https://doi.org/10.1175/1520-0477(1997)078<2771:tdoeno>2.0.co;2",
+   "top_work_citations": 2928,
+   "top_work_share_of_year": 0.5394,
+   "top_work_n_authors": 1,
+   "top_work_n_authors_with_orcid": 1,
+   "top_work_coauthors": [
+    {
+     "name": "Kevin E. Trenberth",
+     "orcid": "https://orcid.org/0000-0002-1445-1000"
+    }
+   ],
+   "n_duplicate_title_groups": 0,
+   "n_duplicate_doi_groups": 0,
+   "duplicate_inflation_citations": 0,
+   "deduped_year_total": 5428,
+   "duplicate_inflation_frac": 0.0,
+   "flags": [
+    "SINGLE_WORK_DOMINATES"
+   ],
+   "verdict": "FRAGILE",
+   "yearkey_rel_separation": 0.238946,
+   "yearkey_rho_vs_total": 0.4172
+  },
+  "University of California, Los Angeles": {
+   "institution": "University of California, Los Angeles",
+   "year": 1995,
+   "winner_orcid": "0000-0002-8065-3057",
+   "winner_name": "Leonid Kruglyak",
+   "year_value_from_counts_by_year": 8060,
+   "n_works_in_year": 8,
+   "sum_of_year_work_citations": 8060,
+   "top_work_title": "Genetic dissection of complex traits: guidelines for interpreting and reporting linkage results",
+   "top_work_doi": "https://doi.org/10.1038/ng1195-241",
+   "top_work_citations": 5299,
+   "top_work_share_of_year": 0.6574,
+   "top_work_n_authors": 2,
+   "top_work_n_authors_with_orcid": 2,
+   "top_work_coauthors": [
+    {
+     "name": "Eric S. Lander",
+     "orcid": "https://orcid.org/0000-0003-2662-4631"
+    },
+    {
+     "name": "Leonid Kruglyak",
+     "orcid": "https://orcid.org/0000-0002-8065-3057"
+    }
+   ],
+   "n_duplicate_title_groups": 0,
+   "n_duplicate_doi_groups": 1,
+   "duplicate_inflation_citations": 0,
+   "deduped_year_total": 8060,
+   "duplicate_inflation_frac": 0.0,
+   "flags": [
+    "SINGLE_WORK_DOMINATES",
+    "COAUTHOR_HINGE"
+   ],
+   "verdict": "FRAGILE",
+   "yearkey_rel_separation": 0.224318,
+   "yearkey_rho_vs_total": 0.4345
+  },
+  "University of Vienna": {
+   "institution": "University of Vienna",
+   "year": 2000,
+   "winner_orcid": "0000-0002-9927-4938",
+   "winner_name": "Mark W. Chase",
+   "year_value_from_counts_by_year": 3632,
+   "n_works_in_year": 25,
+   "sum_of_year_work_citations": 3632,
+   "top_work_title": "Angiosperm phylogeny inferred from 18S rDNA, rbcL, and atpB sequences",
+   "top_work_doi": "https://doi.org/10.1111/j.1095-8339.2000.tb01588.x",
+   "top_work_citations": 888,
+   "top_work_share_of_year": 0.2445,
+   "top_work_n_authors": 16,
+   "top_work_n_authors_with_orcid": 10,
+   "top_work_coauthors": [
+    {
+     "name": "Douglas E. Soltis",
+     "orcid": null
+    },
+    {
+     "name": "Pamela S. Soltis",
+     "orcid": "https://orcid.org/0000-0001-9310-8659"
+    },
+    {
+     "name": "Mark W. Chase",
+     "orcid": "https://orcid.org/0000-0002-9927-4938"
+    },
+    {
+     "name": "Mark E. Mort",
+     "orcid": "https://orcid.org/0000-0003-3338-1009"
+    },
+    {
+     "name": "Dirk C. Albach",
+     "orcid": "https://orcid.org/0000-0001-9056-7382"
+    },
+    {
+     "name": "Michael J. Zanis",
+     "orcid": null
+    },
+    {
+     "name": "Vincent Savolainen",
+     "orcid": "https://orcid.org/0000-0001-5350-9984"
+    },
+    {
+     "name": "William H. Hahn",
+     "orcid": null
+    },
+    {
+     "name": "Sara B. Hoot",
+     "orcid": "https://orcid.org/0000-0001-6494-6901"
+    },
+    {
+     "name": "Michael F. Fay",
+     "orcid": "https://orcid.org/0000-0003-3491-9093"
+    },
+    {
+     "name": "Michael Axtell",
+     "orcid": null
+    },
+    {
+     "name": "Susan M. Swensen",
+     "orcid": null
+    }
+   ],
+   "n_duplicate_title_groups": 1,
+   "n_duplicate_doi_groups": 1,
+   "duplicate_inflation_citations": 1,
+   "deduped_year_total": 3631,
+   "duplicate_inflation_frac": 0.0003,
+   "flags": [
+    "DUPLICATE_RECORDS_INFLATE",
+    "COAUTHOR_HINGE"
+   ],
+   "verdict": "FRAGILE",
+   "yearkey_rel_separation": 0.143172,
+   "yearkey_rho_vs_total": 0.4494
+  },
+  "National University of Singapore": {
+   "institution": "National University of Singapore",
+   "year": 2002,
+   "winner_orcid": "0000-0003-1381-7418",
+   "winner_name": "Guanrong Chen",
+   "year_value_from_counts_by_year": 9713,
+   "n_works_in_year": 100,
+   "sum_of_year_work_citations": 9713,
+   "top_work_title": "A NEW CHAOTIC ATTRACTOR COINED",
+   "top_work_doi": "https://doi.org/10.1142/s0218127402004620",
+   "top_work_citations": 1856,
+   "top_work_share_of_year": 0.1911,
+   "top_work_n_authors": 2,
+   "top_work_n_authors_with_orcid": 2,
+   "top_work_coauthors": [
+    {
+     "name": "Jinhu L\u00fc",
+     "orcid": "https://orcid.org/0000-0003-0275-8387"
+    },
+    {
+     "name": "Guanrong Chen",
+     "orcid": "https://orcid.org/0000-0003-1381-7418"
+    }
+   ],
+   "n_duplicate_title_groups": 0,
+   "n_duplicate_doi_groups": 1,
+   "duplicate_inflation_citations": 0,
+   "deduped_year_total": 9713,
+   "duplicate_inflation_frac": 0.0,
+   "flags": [
+    "COAUTHOR_HINGE"
+   ],
+   "verdict": "FRAGILE",
+   "yearkey_rel_separation": 0.120766,
+   "yearkey_rho_vs_total": 0.447
+  },
+  "VERDICT_COMBINED": {
+   "n_measured": 9,
+   "rho_separation_vs_concentration_full_set": 0.7667,
+   "separation_gate_is_inverted": true,
+   "n_robust": 0,
+   "robust_cohorts": [],
+   "concentration_ceiling": 0.5,
+   "cohorts_below_ceiling": [
+    [
+     "National University of Singapore",
+     0.120766,
+     0.1911
+    ],
+    [
+     "University of Vienna",
+     0.143172,
+     0.2445
+    ]
+   ],
+   "n_below_ceiling": 2,
+   "recommended_cohort_for_gen_v5": "National University of Singapore",
+   "corrected_gate": "Replace MIN_REL_SEPARATION-as-maximand with a two-sided band: require a unique argmax and rel separation >= 0.05, but ALSO require the single most-cited work of the winning year to carry < 0.50 of that year's citations. Rank candidate cohorts by ASCENDING separation, not descending -- the highest-separation cohort is the most shortcuttable, because a lone landmark paper decides the winner and a solver with domain knowledge reaches it without enumerating.",
+   "residual_risk": "Even below the ceiling, the winner is decided by which co-authors of the top works happen to hold an ORCID and happen to be labelled with this institution in last_known_institutions. That hinge is a property of OpenAlex metadata, not of the scholarship, and it is not stationary."
+  },
+  "_done": true
+ },
+ "finished": "2026-08-11T09:16:29Z"
+}

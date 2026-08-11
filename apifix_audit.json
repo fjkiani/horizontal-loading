@@ -1,0 +1,121 @@
+{
+  "bind_failures": [
+    {
+      "category": "finance",
+      "seed_index": 1,
+      "seed": {
+        "year": 2010
+      },
+      "unknown_params": [
+        "year"
+      ],
+      "accepted": [
+        "seeds"
+      ],
+      "generator": "gen_v4.gen_finance",
+      "withdrawn": true,
+      "consequence": "error (TypeError) instead of refused"
+    },
+    {
+      "category": "finance",
+      "seed_index": 2,
+      "seed": {
+        "year": 2014
+      },
+      "unknown_params": [
+        "year"
+      ],
+      "accepted": [
+        "seeds"
+      ],
+      "generator": "gen_v4.gen_finance",
+      "withdrawn": true,
+      "consequence": "error (TypeError) instead of refused"
+    },
+    {
+      "category": "finance",
+      "seed_index": 3,
+      "seed": {
+        "year": 2021
+      },
+      "unknown_params": [
+        "year"
+      ],
+      "accepted": [
+        "seeds"
+      ],
+      "generator": "gen_v4.gen_finance",
+      "withdrawn": true,
+      "consequence": "error (TypeError) instead of refused"
+    },
+    {
+      "category": "finance",
+      "seed_index": 4,
+      "seed": {
+        "year": 2023
+      },
+      "unknown_params": [
+        "year"
+      ],
+      "accepted": [
+        "seeds"
+      ],
+      "generator": "gen_v4.gen_finance",
+      "withdrawn": true,
+      "consequence": "error (TypeError) instead of refused"
+    }
+  ],
+  "withdrawn": [
+    "art",
+    "celebrities/public figures",
+    "finance",
+    "history",
+    "video games"
+  ],
+  "live": [
+    "business",
+    "education",
+    "geography",
+    "health and medicine",
+    "legal",
+    "politics",
+    "science and technology",
+    "shopping",
+    "sports",
+    "travel",
+    "tv shows and movies"
+  ],
+  "api_gate_tests": [
+    "source_gate.validate_trap (operators only)"
+  ],
+  "build_gate_tests": [
+    "T0_base_adequacy",
+    "T1_uniqueness",
+    "T2_guessability",
+    "T3_order_leak",
+    "T3b_monotone_key",
+    "T3c_key_derivable_depth",
+    "T3d_derivable_key",
+    "T4_separation",
+    "T4b_fragility",
+    "T5_confirmation",
+    "T6_gate",
+    "T7_prompt_leak"
+  ],
+  "gate_gap": [
+    "T0_base_adequacy",
+    "T1_uniqueness",
+    "T2_guessability",
+    "T3_order_leak",
+    "T3b_monotone_key",
+    "T3c_key_derivable_depth",
+    "T3d_derivable_key",
+    "T4_separation",
+    "T4b_fragility",
+    "T5_confirmation",
+    "T6_gate",
+    "T7_prompt_leak"
+  ],
+  "n_bind_failures": 4,
+  "n_seeds_total": 81
+}

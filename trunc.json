@@ -1,0 +1,134 @@
+{
+  "probes": [
+    {
+      "key": "health:amyotrophic+lateral+sclerosis",
+      "category": "health and medicine",
+      "collection": "ClinicalTrials.gov v2 studies",
+      "page_cap": 200,
+      "seed": "amyotrophic lateral sclerosis",
+      "n_served": 51,
+      "n_true": 51,
+      "next_page_token": false,
+      "truncated": false,
+      "fraction_seen": 1.0
+    },
+    {
+      "key": "health:multiple+sclerosis",
+      "category": "health and medicine",
+      "collection": "ClinicalTrials.gov v2 studies",
+      "page_cap": 200,
+      "seed": "multiple sclerosis",
+      "n_served": 200,
+      "n_true": 235,
+      "next_page_token": true,
+      "truncated": true,
+      "fraction_seen": 0.8511
+    },
+    {
+      "key": "health:idiopathic+pulmonary+fibrosis",
+      "category": "health and medicine",
+      "collection": "ClinicalTrials.gov v2 studies",
+      "page_cap": 200,
+      "seed": "idiopathic pulmonary fibrosis",
+      "n_served": 30,
+      "n_true": 30,
+      "next_page_token": false,
+      "truncated": false,
+      "fraction_seen": 1.0
+    },
+    {
+      "key": "health:sickle+cell+disease",
+      "category": "health and medicine",
+      "collection": "ClinicalTrials.gov v2 studies",
+      "page_cap": 200,
+      "seed": "sickle cell disease",
+      "n_served": 49,
+      "n_true": 49,
+      "next_page_token": false,
+      "truncated": false,
+      "fraction_seen": 1.0
+    },
+    {
+      "key": "health:Duchenne+muscular+dystrophy",
+      "category": "health and medicine",
+      "collection": "ClinicalTrials.gov v2 studies",
+      "page_cap": 200,
+      "seed": "Duchenne muscular dystrophy",
+      "n_served": 28,
+      "n_true": 28,
+      "next_page_token": false,
+      "truncated": false,
+      "fraction_seen": 1.0
+    },
+    {
+      "key": "health:cystic+fibrosis",
+      "category": "health and medicine",
+      "collection": "ClinicalTrials.gov v2 studies",
+      "page_cap": 200,
+      "seed": "cystic fibrosis",
+      "n_served": 152,
+      "n_true": 152,
+      "next_page_token": false,
+      "truncated": false,
+      "fraction_seen": 1.0
+    },
+    {
+      "key": "arxiv:cs.CR:20230214",
+      "category": "science and technology",
+      "collection": "arXiv Atom query",
+      "page_cap": 200,
+      "seed": "cs.CR 20230214",
+      "n_served": 12,
+      "n_true": 12,
+      "next_page_token": null,
+      "truncated": false,
+      "fraction_seen": 1.0
+    },
+    {
+      "key": "arxiv:math.PR:20230516",
+      "category": "science and technology",
+      "collection": "arXiv Atom query",
+      "page_cap": 200,
+      "seed": "math.PR 20230516",
+      "n_served": 12,
+      "n_true": 12,
+      "next_page_token": null,
+      "truncated": false,
+      "fraction_seen": 1.0
+    },
+    {
+      "key": "arxiv:cs.LG:20220314",
+      "category": "science and technology",
+      "collection": "arXiv Atom query",
+      "page_cap": 200,
+      "seed": "cs.LG 20220314",
+      "n_served": 104,
+      "n_true": 104,
+      "next_page_token": null,
+      "truncated": false,
+      "fraction_seen": 1.0
+    },
+    {
+      "key": "arxiv:astro-ph.GA:20230912",
+      "category": "science and technology",
+      "collection": "arXiv Atom query",
+      "page_cap": 200,
+      "seed": "astro-ph.GA 20230912",
+      "n_served": 27,
+      "n_true": 27,
+      "next_page_token": null,
+      "truncated": false,
+      "fraction_seen": 1.0
+    }
+  ],
+  "updated": "2026-08-11T11:31:27Z",
+  "summary": {
+    "n_probes": 10,
+    "n_truncated": 1,
+    "truncated_keys": [
+      "health:multiple+sclerosis"
+    ],
+    "n_served_exactly_at_cap": 1,
+    "worst_fraction_seen": 0.8511
+  }
+}

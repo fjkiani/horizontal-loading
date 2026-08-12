@@ -1,0 +1,185 @@
+{
+  "caida_alt::/restful/asns/3333": {
+    "ok": true,
+    "detail": "keys=['data']",
+    "sample": "{'data': {'asn': {'rank': 6464, 'asn': '3333', 'asnName': 'RIPE-NCC-AS', 'source': 'RIPE', 'cliqueMember': True, 'seen': True, 'ixp': None, 'longitude': 4.9, 'latitude': 52.35, 'organization': {'orgId': 'c409f58291'}, 'cone': {'numberAsns': 3, 'numberPrefixes': 30, 'numberAddresses': 12176}, 'countr"
+  },
+  "caida_alt::/restful/asn/3333/": {
+    "ok": false,
+    "detail": "FetchError: https://api.asrank.caida.org/v2/restful/asn/3333/ -> gave up after 1 attempts (HTTP 500)",
+    "sample": "None"
+  },
+  "caida_alt::/restful/asns/3333/": {
+    "ok": true,
+    "detail": "keys=['data']",
+    "sample": "{'data': {'asn': {'rank': 6464, 'asn': '3333', 'asnName': 'RIPE-NCC-AS', 'source': 'RIPE', 'cliqueMember': True, 'seen': True, 'ixp': None, 'longitude': 4.9, 'latitude': 52.35, 'organization': {'orgId': 'c409f58291'}, 'cone': {'numberAsns': 3, 'numberPrefixes': 30, 'numberAddresses': 12176}, 'countr"
+  },
+  "caida_graphql": {
+    "ok": true,
+    "detail": "{'data': {'asn': {'asn': '3333', 'asnName': 'RIPE-NCC-AS', 'rank': 6464, 'organization': {'orgName': 'Reseaux IP Europeens Network Coordination Centre (RIPE NCC)'}}}}",
+    "sample": null
+  },
+  "bgpview_3333": {
+    "ok": false,
+    "detail": "FetchError: https://api.bgpview.io/asn/3333 -> gave up after 1 attempts (URLError: <urlopen error [Errno -2] Name or service not known>)",
+    "sample": null
+  },
+  "bgpview_7018": {
+    "ok": false,
+    "detail": "FetchError: https://api.bgpview.io/asn/7018 -> gave up after 1 attempts (URLError: <urlopen error [Errno -2] Name or service not known>)",
+    "sample": null
+  },
+  "bgpview_2914": {
+    "ok": false,
+    "detail": "FetchError: https://api.bgpview.io/asn/2914 -> gave up after 1 attempts (URLError: <urlopen error [Errno -2] Name or service not known>)",
+    "sample": null
+  },
+  "echo::arin_rdap_ripe_asn": {
+    "ok": false,
+    "detail": "requested arin.net -> served ripe.net *** ECHO: REDIRECTED OFF-OPERATOR ***",
+    "sample": {
+      "final_url": "https://rdap.db.ripe.net/autnum/3333",
+      "head": "{\n  \"handle\" : \"AS3333\",\n  \"startAutnum\" : 3333,\n  \"endAutnum\" : 3333,\n  \"name\" : \"RIPE-NCC-AS\",\n  \"status\" : [ \"active\" ],\n  \"entities\" : [ {\n    \"handle\" : \"MDIR-RIPE\",\n    \"vcardArray\" : [ \"vcard\","
+    }
+  },
+  "echo::arin_rdap_arin_asn": {
+    "ok": true,
+    "detail": "requested arin.net -> served arin.net (no cross-operator redirect)",
+    "sample": {
+      "final_url": "https://rdap.arin.net/registry/autnum/7018",
+      "head": "{\n  \"endAutnum\" : 7018,\n  \"entities\" : [ {\n    \"entities\" : [ {\n      \"events\" : [ {\n        \"eventAction\" : \"last changed\",\n        \"eventDate\" : \"2026-02-04T11:52:45-05:00\"\n      }, {\n        \"event"
+    }
+  },
+  "echo::nvd": {
+    "ok": true,
+    "detail": "requested nist.gov -> served nist.gov (no cross-operator redirect)",
+    "sample": {
+      "final_url": "https://services.nvd.nist.gov/rest/json/cves/2.0?cveId=CVE-2023-34095",
+      "head": "{\"resultsPerPage\":1,\"startIndex\":0,\"totalResults\":1,\"format\":\"NVD_CVE\",\"version\":\"2.0\",\"timestamp\":\"2026-08-11T23:40:15.323\",\"vulnerabilities\":[{\"cve\":{\"id\":\"CVE-2023-34095\",\"sourceIdentifier\":\"securi"
+    }
+  },
+  "echo::mitre_cve": {
+    "ok": true,
+    "detail": "requested mitre.org -> served mitre.org (no cross-operator redirect)",
+    "sample": {
+      "final_url": "https://cveawg.mitre.org/api/cve/CVE-2023-34095",
+      "head": "{\"dataType\":\"CVE_RECORD\",\"dataVersion\":\"5.1\",\"cveMetadata\":{\"cveId\":\"CVE-2023-34095\",\"assignerOrgId\":\"a0819718-46f1-4df5-94e2-005712e83aaa\",\"state\":\"PUBLISHED\",\"assignerShortName\":\"GitHub_M\",\"dateRese"
+    }
+  },
+  "echo::first_epss": {
+    "ok": true,
+    "detail": "requested first.org -> served first.org (no cross-operator redirect)",
+    "sample": {
+      "final_url": "https://api.first.org/data/v1/epss?cve=CVE-2023-34095",
+      "head": "{\"status\":\"OK\",\"status-code\":200,\"version\":\"1.0\",\"access\":\"public\",\"total\":1,\"offset\":0,\"limit\":100,\"data\":[{\"cve\":\"CVE-2023-34095\",\"epss\":\"0.015390000\",\"percentile\":\"0.725640000\",\"date\":\"2026-08-11\"}"
+    }
+  },
+  "echo::rfc_editor": {
+    "ok": true,
+    "detail": "requested rfc-editor.org -> served rfc-editor.org (no cross-operator redirect)",
+    "sample": {
+      "final_url": "https://www.rfc-editor.org/rfc/rfc9110.json",
+      "head": "{\n  \"draft\": \"draft-ietf-httpbis-semantics-19\",\n  \"doc_id\": \"RFC9110\",\n  \"title\": \"HTTP Semantics\",\n  \"authors\": [\n    \"R. Fielding, Ed.\",\n    \"M. Nottingham, Ed.\",\n    \"J. Reschke, Ed.\"\n  ],\n  \"forma"
+    }
+  },
+  "echo::crossref_rfc": {
+    "ok": true,
+    "detail": "requested crossref.org -> served crossref.org (no cross-operator redirect)",
+    "sample": {
+      "final_url": "https://api.crossref.org/works/10.17487/RFC9110",
+      "head": "{\"status\":\"ok\",\"message-type\":\"work\",\"message-version\":\"1.0.0\",\"message\":{\"indexed\":{\"date-parts\":[[2026,8,11]],\"date-time\":\"2026-08-11T20:10:47Z\",\"timestamp\":1786479047635,\"version\":\"3.56.0\"},\"refere"
+    }
+  },
+  "echo::s2_rfc": {
+    "ok": true,
+    "detail": "requested semanticscholar.org -> served semanticscholar.org (no cross-operator redirect)",
+    "sample": {
+      "final_url": "https://api.semanticscholar.org/graph/v1/paper/DOI:10.17487/RFC9110?fields=title",
+      "head": "{\"paperId\": \"8057b3d758c7853086a6c6ef395452f9546f53ca\", \"title\": \"HTTP Semantics\"}\n"
+    }
+  },
+  "echo::pypi": {
+    "ok": true,
+    "detail": "requested pypi.org -> served pypi.org (no cross-operator redirect)",
+    "sample": {
+      "final_url": "https://pypi.org/pypi/flask/json",
+      "head": "{\"info\":{\"author\":null,\"author_email\":null,\"bugtrack_url\":null,\"classifiers\":[\"Development Status :: 5 - Production/Stable\",\"Environment :: Web Environment\",\"Framework :: Flask\",\"Intended Audience :: "
+    }
+  },
+  "echo::depsdev": {
+    "ok": true,
+    "detail": "requested deps.dev -> served deps.dev (no cross-operator redirect)",
+    "sample": {
+      "final_url": "https://api.deps.dev/v3alpha/systems/pypi/packages/flask",
+      "head": "{\"packageKey\":{\"system\":\"PYPI\", \"name\":\"flask\"}, \"purl\":\"pkg:pypi/flask\", \"versions\":[{\"versionKey\":{\"system\":\"PYPI\", \"name\":\"flask\", \"version\":\"0.1.0\"}, \"purl\":\"pkg:pypi/flask@0.1.0\", \"publishedAt\":\""
+    }
+  },
+  "echo::swh": {
+    "ok": true,
+    "detail": "requested softwareheritage.org -> served softwareheritage.org (no cross-operator redirect)",
+    "sample": {
+      "final_url": "https://archive.softwareheritage.org/api/1/origin/search/flask/?limit=5",
+      "head": "[{\"url\":\"https://github.com/dophung812/flask-restful-API\",\"visit_types\":[\"git\"],\"has_visits\":true,\"nb_visits\":1,\"snapshot_id\":\"98bddc00da144c17ff3f48b8d68c5b21e03125e1\",\"last_visit_date\":\"2026-04-17T1"
+    }
+  },
+  "echo::ripestat": {
+    "ok": true,
+    "detail": "requested ripe.net -> served ripe.net (no cross-operator redirect)",
+    "sample": {
+      "final_url": "https://stat.ripe.net/data/announced-prefixes/data.json?resource=AS3333",
+      "head": "{\"messages\":[[\"info\",\"Results exclude routes with very low visibility (less than 10 RIS full-feed peers seeing).\"]],\"see_also\":[],\"version\":\"1.2\",\"data_call_name\":\"announced-prefixes\",\"data_call_statu"
+    }
+  },
+  "echo::peeringdb": {
+    "ok": true,
+    "detail": "requested peeringdb.com -> served peeringdb.com (no cross-operator redirect)",
+    "sample": {
+      "final_url": "https://www.peeringdb.com/api/net?asn=3333",
+      "head": "{\"data\": [{\"id\": 5104, \"org_id\": 8829, \"name\": \"RIPE NCC\", \"aka\": \"R\\u00e9seaux IP Europ\\u00e9ens Network Coordination Centre\", \"name_long\": \"\", \"website\": \"http://www.ripe.net\", \"social_media\": [{\"se"
+    }
+  },
+  "echo::rcsb": {
+    "ok": true,
+    "detail": "requested rcsb.org -> served rcsb.org (no cross-operator redirect)",
+    "sample": {
+      "final_url": "https://data.rcsb.org/rest/v1/core/entry/1tup",
+      "head": "{\"audit_author\":[{\"name\":\"Cho, Y.\",\"pdbx_ordinal\":1},{\"name\":\"Gorina, S.\",\"pdbx_ordinal\":2},{\"name\":\"Jeffrey, P.D.\",\"pdbx_ordinal\":3},{\"name\":\"Pavletich, N.P.\",\"pdbx_ordinal\":4}],\"cell\":{\"Z_PDB\":12,\"a"
+    }
+  },
+  "echo::pdbj": {
+    "ok": true,
+    "detail": "requested pdbj.org -> served pdbj.org (no cross-operator redirect)",
+    "sample": {
+      "final_url": "https://pdbj.org/rest/newweb/search/pdb?query=1tup",
+      "head": "{\"total\":\"39\",\"results\":[[\"1tup\",\"TUMOR SUPPRESSOR P53 COMPLEXED WITH DNA\",\"Cho, Y., Gorina, S., Jeffrey, P.D., Pavletich, N.P.\",\"Crystal structure of a p53 tumor suppressor-DNA complex: understanding"
+    }
+  },
+  "echo::crossref_pdb": {
+    "ok": true,
+    "detail": "requested crossref.org -> served crossref.org (no cross-operator redirect)",
+    "sample": {
+      "final_url": "https://api.crossref.org/works/10.2210/pdb1tup/pdb",
+      "head": "{\"status\":\"ok\",\"message-type\":\"work\",\"message-version\":\"1.0.0\",\"message\":{\"institution\":[{\"id\":[{\"id\":\"https:\\/\\/ror.org\\/047qy5748\",\"id-type\":\"ROR\",\"asserted-by\":\"publisher\"}],\"name\":\"Worldwide Prote"
+    }
+  },
+  "crossref_rfc_member": {
+    "ok": true,
+    "detail": "publisher='RFC Editor' member='7045' prefix='10.17487' deposited='2022-06-06T19:52:11Z'",
+    "sample": null
+  },
+  "crossref_pdb_member": {
+    "ok": true,
+    "detail": "publisher='Worldwide Protein Data Bank' member='7763' prefix='10.2210' deposited='2025-05-22T13:34:26Z'",
+    "sample": null
+  },
+  "crossref_arxiv_member": {
+    "ok": false,
+    "detail": "FetchError: https://api.crossref.org/works/10.48550/arXiv.2203.11011 -> HTTP 404",
+    "sample": null
+  },
+  "peeringdb_provenance": {
+    "ok": true,
+    "detail": "created=2012-11-09T06:06:08Z updated=2025-10-21T05:51:32Z policy_url='Selective' fields_absent_from_ripe=['info_ratio', 'info_traffic', 'irr_as_set', 'policy_general']",
+    "sample": null
+  }
+}

@@ -1,0 +1,406 @@
+{
+ "retired_at": null,
+ "reason": "source-family collapse: all four science-and-technology prompts resolve through Cornell University (arXiv) with the identical witness pair DataCite and OurResearch, share the domains arxiv.org, datacite.org and openalex.org, and sit at 0.980-0.993 pairwise prompt similarity against a clone threshold of 0.50. Measured effective depth of the four rows is 1, not 4. Retired to non-servable calibration baseline and replaced by four families with pairwise-disjoint operator and domain sets.",
+ "traps": [
+  {
+   "collection_is_explicit": false,
+   "primary_operator": "Cornell University",
+   "independent_confirming_operators": [
+    "DataCite",
+    "OurResearch (OpenAlex)"
+   ],
+   "category": "science and technology",
+   "field": "arXiv identifier",
+   "answer": "2203.11011",
+   "entity": "Reinforced MOOCs Concept Recommendation in Heterogeneous Information Networks",
+   "n_base": 94,
+   "sources": [
+    "http://export.arxiv.org/api/query?search_query=cat:cs.LG+AND+submittedDate:[202203080000+TO+202203082359]&start=0&max_results=200&sortBy=submittedDate&sortOrder=ascending",
+    "https://api.datacite.org/dois/10.48550/arxiv.2203.11011",
+    "https://api.openalex.org/works/doi:10.48550/arxiv.2203.11011"
+   ],
+   "confirming_sources": [
+    "https://api.datacite.org/dois/10.48550/arxiv.2203.11011",
+    "https://api.openalex.org/works/doi:10.48550/arxiv.2203.11011"
+   ],
+   "api_proof": true,
+   "api_proof_argument": "The arXiv interface can sort only by relevance or submission time and exposes no author-count filter, so all 94 submissions listed for that day under cs.LG must be retrieved and their author lists counted.",
+   "confirmation": "DataCite and OpenAlex both resolve 10.48550/arxiv.2203.11011 to the same title, from two registries independent of arXiv",
+   "prompt": "The arXiv preprint server publishes a dated listing of every submission indexed under the subject class cs.LG, each entry carrying its full author list and its arXiv identifier. Consider only the submissions that arXiv timestamps to 2022-03-08 in Coordinated Universal Time. Among only those submissions, exactly one credits more named authors than any other. Report the arXiv identifier of that single submission. Resolve the identifier through two registration agencies independent of the preprint server before answering. Give the identifier alone, without any version suffix and with no other words.",
+   "source_operators": [
+    "Cornell University",
+    "DataCite",
+    "OurResearch (OpenAlex)"
+   ],
+   "confirming_operators": [
+    "DataCite",
+    "OurResearch (OpenAlex)"
+   ],
+   "track": "api-native",
+   "ranking_evidence": {
+    "label": "science cs.LG/2022-03-08",
+    "mode": "max",
+    "n_base": 94,
+    "n_ranked": 94,
+    "spearman_key_vs_api_order": -0.0984,
+    "n_tied_at_extremum": 1,
+    "distinct_keys": 10,
+    "winner_position_in_api_order": 12,
+    "winner_is_first_returned": false,
+    "winner_is_last_returned": false,
+    "top_keys": [
+     "11",
+     "9",
+     "8",
+     "8",
+     "7"
+    ],
+    "answer_field_distinct_values": 94,
+    "answer_field_n_values": 94,
+    "answer_field_max_count": 1,
+    "answer_field_count_of_answer": 1,
+    "answer_field_modal_share": 0.010638,
+    "p_answer_by_uniform_guess": 0.010638,
+    "key_component_depths": {},
+    "key_is_aggregated": false,
+    "equivalent_served_fields": [],
+    "n_fields_swept": 0,
+    "sort_field_rejected_by_service": [
+     "sortBy=authorCount",
+     "sortBy=authors"
+    ],
+    "n_true": 94,
+    "page_cap": 200,
+    "pages_fetched": 1
+   },
+   "facts": {
+    "cat": "cs.LG",
+    "day": "2022-03-08",
+    "n": 94,
+    "authors": 11,
+    "doi": "10.48550/arxiv.2203.11011"
+   },
+   "seed_repr": "{\"cats\": [\"cs.LG\", \"math.CO\", \"cond-mat.supr-con\", \"astro-ph.HE\", \"q-bio.NC\", \"physics.optics\"], \"days\": [\"2022-03-08\", \"2022-06-14\", \"2022-10-11\", \"2023-01-10\", \"2023-04-11\", \"2023-07-11\"]}",
+   "verdict": "ship",
+   "witness_tier": "gold",
+   "field_class": "identifier",
+   "trap_id": "85b6f35922fb3589",
+   "stump": null,
+   "solver_difficulty": null,
+   "solver_difficulty_status": "unmeasured: no solver quota. The available Cohere key is a trial key capped at 1000 calls/month and is exhausted (HTTP 429 with an explicit trial-quota message). A usable measurement needs about 600 calls: the shipping traps x 3 access conditions (no tools, search only, full API) x ~20 repeats for workable intervals.",
+   "memorization_proxy": {
+    "measured_by": "wikipedia-recall-proxy",
+    "caveat": "a proxy for whether the answer is memorable, NOT for whether the trap is hard",
+    "answer_wikipedia_mentions": null,
+    "answer_pageviews_365": null,
+    "exact_article": null,
+    "verdict": null,
+    "field_class": "identifier",
+    "changed_this_build": null
+   },
+   "servable": false,
+   "retired_reason": "source-family collapse: all four science-and-technology prompts resolve through Cornell University (arXiv) with the identical witness pair DataCite and OurResearch, share the domains arxiv.org, datacite.org and openalex.org, and sit at 0.980-0.993 pairwise prompt similarity against a clone threshold of 0.50. Measured effective depth of the four rows is 1, not 4. Retired to non-servable calibration baseline and replaced by four families with pairwise-disjoint operator and domain sets.",
+   "retired_as": "calibration baseline"
+  },
+  {
+   "collection_is_explicit": false,
+   "primary_operator": "Cornell University",
+   "independent_confirming_operators": [
+    "DataCite",
+    "OurResearch (OpenAlex)"
+   ],
+   "category": "science and technology",
+   "field": "arXiv identifier",
+   "answer": "2211.04278",
+   "entity": "Tight Complexity Bounds for Counting Generalized Dominating Sets in Bounded-Treewidth Graphs Part I: Algorithmic Results",
+   "n_base": 20,
+   "sources": [
+    "http://export.arxiv.org/api/query?search_query=cat:cs.DS+AND+submittedDate:[202211080000+TO+202211082359]&start=0&max_results=200&sortBy=submittedDate&sortOrder=ascending",
+    "https://api.datacite.org/dois/10.48550/arxiv.2211.04278",
+    "https://api.openalex.org/works/doi:10.48550/arxiv.2211.04278"
+   ],
+   "confirming_sources": [
+    "https://api.datacite.org/dois/10.48550/arxiv.2211.04278",
+    "https://api.openalex.org/works/doi:10.48550/arxiv.2211.04278"
+   ],
+   "api_proof": true,
+   "api_proof_argument": "The arXiv interface can sort only by relevance or submission time and exposes no author-count filter, so all 20 submissions listed for that day under cs.DS must be retrieved and their author lists counted.",
+   "confirmation": "DataCite and OpenAlex both resolve 10.48550/arxiv.2211.04278 to the same title, from two registries independent of arXiv",
+   "prompt": "The arXiv preprint server publishes a dated listing of every submission indexed under the subject class cs.DS, each entry carrying its full author list and its arXiv identifier. Consider only the submissions that arXiv timestamps to 2022-11-08 in Coordinated Universal Time. Among only those submissions, exactly one credits more named authors than any other. Report the arXiv identifier of that single submission. Resolve the identifier through two registration agencies independent of the preprint server before answering. Give the identifier alone, without any version suffix and with no other words.",
+   "source_operators": [
+    "Cornell University",
+    "DataCite",
+    "OurResearch (OpenAlex)"
+   ],
+   "confirming_operators": [
+    "DataCite",
+    "OurResearch (OpenAlex)"
+   ],
+   "track": "api-native",
+   "ranking_evidence": {
+    "label": "science cs.DS/2022-11-08",
+    "mode": "max",
+    "n_base": 20,
+    "n_ranked": 20,
+    "spearman_key_vs_api_order": -0.2934,
+    "n_tied_at_extremum": 1,
+    "distinct_keys": 6,
+    "winner_position_in_api_order": 11,
+    "winner_is_first_returned": false,
+    "winner_is_last_returned": false,
+    "top_keys": [
+     "7",
+     "6",
+     "4",
+     "4",
+     "4"
+    ],
+    "answer_field_distinct_values": 20,
+    "answer_field_n_values": 20,
+    "answer_field_max_count": 1,
+    "answer_field_count_of_answer": 1,
+    "answer_field_modal_share": 0.05,
+    "p_answer_by_uniform_guess": 0.05,
+    "key_component_depths": {},
+    "key_is_aggregated": false,
+    "equivalent_served_fields": [],
+    "n_fields_swept": 0,
+    "sort_field_rejected_by_service": [
+     "sortBy=authorCount",
+     "sortBy=authors"
+    ],
+    "n_true": 20,
+    "page_cap": 200,
+    "pages_fetched": 1
+   },
+   "facts": {
+    "cat": "cs.DS",
+    "day": "2022-11-08",
+    "n": 20,
+    "authors": 7,
+    "doi": "10.48550/arxiv.2211.04278"
+   },
+   "seed_repr": "{\"cats\": [\"cs.DS\", \"math.NT\", \"cond-mat.soft\", \"astro-ph.SR\", \"q-bio.QM\", \"physics.plasm-ph\"], \"days\": [\"2021-05-11\", \"2021-09-14\", \"2022-01-11\", \"2022-04-12\", \"2022-08-09\", \"2022-11-08\"]}",
+   "verdict": "ship",
+   "witness_tier": "gold",
+   "field_class": "identifier",
+   "trap_id": "a67a390ce46966e8",
+   "stump": null,
+   "solver_difficulty": null,
+   "solver_difficulty_status": "unmeasured: no solver quota. The available Cohere key is a trial key capped at 1000 calls/month and is exhausted (HTTP 429 with an explicit trial-quota message). A usable measurement needs about 600 calls: the shipping traps x 3 access conditions (no tools, search only, full API) x ~20 repeats for workable intervals.",
+   "memorization_proxy": {
+    "measured_by": "wikipedia-recall-proxy",
+    "caveat": "a proxy for whether the answer is memorable, NOT for whether the trap is hard",
+    "answer_wikipedia_mentions": null,
+    "answer_pageviews_365": null,
+    "exact_article": null,
+    "verdict": null,
+    "field_class": "identifier",
+    "changed_this_build": null
+   },
+   "servable": false,
+   "retired_reason": "source-family collapse: all four science-and-technology prompts resolve through Cornell University (arXiv) with the identical witness pair DataCite and OurResearch, share the domains arxiv.org, datacite.org and openalex.org, and sit at 0.980-0.993 pairwise prompt similarity against a clone threshold of 0.50. Measured effective depth of the four rows is 1, not 4. Retired to non-servable calibration baseline and replaced by four families with pairwise-disjoint operator and domain sets.",
+   "retired_as": "calibration baseline"
+  },
+  {
+   "collection_is_explicit": false,
+   "primary_operator": "Cornell University",
+   "independent_confirming_operators": [
+    "DataCite",
+    "OurResearch (OpenAlex)"
+   ],
+   "category": "science and technology",
+   "field": "arXiv identifier",
+   "answer": "2302.07287",
+   "entity": "Forward Pass: On the Security Implications of Email Forwarding Mechanism and Policy",
+   "n_base": 12,
+   "sources": [
+    "http://export.arxiv.org/api/query?search_query=cat:cs.CR+AND+submittedDate:[202302140000+TO+202302142359]&start=0&max_results=200&sortBy=submittedDate&sortOrder=ascending",
+    "https://api.datacite.org/dois/10.48550/arxiv.2302.07287",
+    "https://api.openalex.org/works/doi:10.48550/arxiv.2302.07287"
+   ],
+   "confirming_sources": [
+    "https://api.datacite.org/dois/10.48550/arxiv.2302.07287",
+    "https://api.openalex.org/works/doi:10.48550/arxiv.2302.07287"
+   ],
+   "api_proof": true,
+   "api_proof_argument": "The arXiv interface can sort only by relevance or submission time and exposes no author-count filter, so all 12 submissions listed for that day under cs.CR must be retrieved and their author lists counted.",
+   "confirmation": "DataCite and OpenAlex both resolve 10.48550/arxiv.2302.07287 to the same title, from two registries independent of arXiv",
+   "prompt": "The arXiv preprint server publishes a dated listing of every submission indexed under the subject class cs.CR, each entry carrying its full author list and its arXiv identifier. Consider only the submissions that arXiv timestamps to 2023-02-14 in Coordinated Universal Time. Among only those submissions, exactly one credits more named authors than any other. Report the arXiv identifier of that single submission. Resolve the identifier through two registration agencies independent of the preprint server before answering. Give the identifier alone, without any version suffix and with no other words.",
+   "source_operators": [
+    "Cornell University",
+    "DataCite",
+    "OurResearch (OpenAlex)"
+   ],
+   "confirming_operators": [
+    "DataCite",
+    "OurResearch (OpenAlex)"
+   ],
+   "track": "api-native",
+   "ranking_evidence": {
+    "label": "science cs.CR/2023-02-14",
+    "mode": "max",
+    "n_base": 12,
+    "n_ranked": 12,
+    "spearman_key_vs_api_order": 0.4461,
+    "n_tied_at_extremum": 1,
+    "distinct_keys": 7,
+    "winner_position_in_api_order": 10,
+    "winner_is_first_returned": false,
+    "winner_is_last_returned": false,
+    "top_keys": [
+     "7",
+     "6",
+     "6",
+     "5",
+     "4"
+    ],
+    "answer_field_distinct_values": 12,
+    "answer_field_n_values": 12,
+    "answer_field_max_count": 1,
+    "answer_field_count_of_answer": 1,
+    "answer_field_modal_share": 0.083333,
+    "p_answer_by_uniform_guess": 0.083333,
+    "key_component_depths": {},
+    "key_is_aggregated": false,
+    "equivalent_served_fields": [],
+    "n_fields_swept": 0,
+    "sort_field_rejected_by_service": [
+     "sortBy=authorCount",
+     "sortBy=authors"
+    ],
+    "n_true": 12,
+    "page_cap": 200,
+    "pages_fetched": 1
+   },
+   "facts": {
+    "cat": "cs.CR",
+    "day": "2023-02-14",
+    "n": 12,
+    "authors": 7,
+    "doi": "10.48550/arxiv.2302.07287"
+   },
+   "seed_repr": "{\"cats\": [\"cs.CR\", \"math.PR\", \"cond-mat.mes-hall\", \"astro-ph.GA\", \"q-bio.PE\", \"physics.flu-dyn\"], \"days\": [\"2023-02-14\", \"2023-05-16\", \"2023-09-12\", \"2023-11-14\", \"2024-09-10\", \"2024-10-08\"]}",
+   "verdict": "ship",
+   "witness_tier": "gold",
+   "field_class": "identifier",
+   "trap_id": "c545461c81470175",
+   "stump": null,
+   "solver_difficulty": null,
+   "solver_difficulty_status": "unmeasured: no solver quota. The available Cohere key is a trial key capped at 1000 calls/month and is exhausted (HTTP 429 with an explicit trial-quota message). A usable measurement needs about 600 calls: the shipping traps x 3 access conditions (no tools, search only, full API) x ~20 repeats for workable intervals.",
+   "memorization_proxy": {
+    "measured_by": "wikipedia-recall-proxy",
+    "caveat": "a proxy for whether the answer is memorable, NOT for whether the trap is hard",
+    "answer_wikipedia_mentions": null,
+    "answer_pageviews_365": null,
+    "exact_article": null,
+    "verdict": null,
+    "field_class": "identifier",
+    "changed_this_build": null
+   },
+   "servable": false,
+   "retired_reason": "source-family collapse: all four science-and-technology prompts resolve through Cornell University (arXiv) with the identical witness pair DataCite and OurResearch, share the domains arxiv.org, datacite.org and openalex.org, and sit at 0.980-0.993 pairwise prompt similarity against a clone threshold of 0.50. Measured effective depth of the four rows is 1, not 4. Retired to non-servable calibration baseline and replaced by four families with pairwise-disjoint operator and domain sets.",
+   "retired_as": "calibration baseline"
+  },
+  {
+   "collection_is_explicit": false,
+   "primary_operator": "Cornell University",
+   "independent_confirming_operators": [
+    "DataCite",
+    "OurResearch (OpenAlex)"
+   ],
+   "category": "science and technology",
+   "field": "arXiv identifier",
+   "answer": "2403.07505",
+   "entity": "Rotational Evolution of Classical T Tauri Stars: Models and Observations",
+   "n_base": 15,
+   "sources": [
+    "http://export.arxiv.org/api/query?search_query=cat:astro-ph.EP+AND+submittedDate:[202403120000+TO+202403122359]&start=0&max_results=200&sortBy=submittedDate&sortOrder=ascending",
+    "https://api.datacite.org/dois/10.48550/arxiv.2403.07505",
+    "https://api.openalex.org/works/doi:10.48550/arxiv.2403.07505"
+   ],
+   "confirming_sources": [
+    "https://api.datacite.org/dois/10.48550/arxiv.2403.07505",
+    "https://api.openalex.org/works/doi:10.48550/arxiv.2403.07505"
+   ],
+   "api_proof": true,
+   "api_proof_argument": "The arXiv interface can sort only by relevance or submission time and exposes no author-count filter, so all 15 submissions listed for that day under astro-ph.EP must be retrieved and their author lists counted.",
+   "confirmation": "DataCite and OpenAlex both resolve 10.48550/arxiv.2403.07505 to the same title, from two registries independent of arXiv",
+   "prompt": "The arXiv preprint server publishes a dated listing of every submission indexed under the subject class astro-ph.EP, each entry carrying its full author list and its arXiv identifier. Consider only the submissions that arXiv timestamps to 2024-03-12 in Coordinated Universal Time. Among only those submissions, exactly one credits more named authors than any other. Report the arXiv identifier of that single submission. Resolve the identifier through two registration agencies independent of the preprint server before answering. Give the identifier alone, without any version suffix and with no other words.",
+   "source_operators": [
+    "Cornell University",
+    "DataCite",
+    "OurResearch (OpenAlex)"
+   ],
+   "confirming_operators": [
+    "DataCite",
+    "OurResearch (OpenAlex)"
+   ],
+   "track": "api-native",
+   "ranking_evidence": {
+    "label": "science astro-ph.EP/2024-03-12",
+    "mode": "max",
+    "n_base": 15,
+    "n_ranked": 15,
+    "spearman_key_vs_api_order": 0.0255,
+    "n_tied_at_extremum": 1,
+    "distinct_keys": 6,
+    "winner_position_in_api_order": 5,
+    "winner_is_first_returned": false,
+    "winner_is_last_returned": false,
+    "top_keys": [
+     "20",
+     "5",
+     "5",
+     "5",
+     "4"
+    ],
+    "answer_field_distinct_values": 15,
+    "answer_field_n_values": 15,
+    "answer_field_max_count": 1,
+    "answer_field_count_of_answer": 1,
+    "answer_field_modal_share": 0.066667,
+    "p_answer_by_uniform_guess": 0.066667,
+    "key_component_depths": {},
+    "key_is_aggregated": false,
+    "equivalent_served_fields": [],
+    "n_fields_swept": 0,
+    "sort_field_rejected_by_service": [
+     "sortBy=authorCount",
+     "sortBy=authors"
+    ],
+    "n_true": 15,
+    "page_cap": 200,
+    "pages_fetched": 1
+   },
+   "facts": {
+    "cat": "astro-ph.EP",
+    "day": "2024-03-12",
+    "n": 15,
+    "authors": 20,
+    "doi": "10.48550/arxiv.2403.07505"
+   },
+   "seed_repr": "{}",
+   "verdict": "ship",
+   "witness_tier": "gold",
+   "field_class": "identifier",
+   "trap_id": "5fe273d07bb17d54",
+   "stump": null,
+   "solver_difficulty": null,
+   "solver_difficulty_status": "unmeasured: no solver quota. The available Cohere key is a trial key capped at 1000 calls/month and is exhausted (HTTP 429 with an explicit trial-quota message). A usable measurement needs about 600 calls: the shipping traps x 3 access conditions (no tools, search only, full API) x ~20 repeats for workable intervals.",
+   "memorization_proxy": {
+    "measured_by": "wikipedia-recall-proxy",
+    "caveat": "a proxy for whether the answer is memorable, NOT for whether the trap is hard",
+    "answer_wikipedia_mentions": null,
+    "answer_pageviews_365": null,
+    "exact_article": null,
+    "verdict": null,
+    "field_class": "identifier",
+    "changed_this_build": null
+   },
+   "servable": false,
+   "retired_reason": "source-family collapse: all four science-and-technology prompts resolve through Cornell University (arXiv) with the identical witness pair DataCite and OurResearch, share the domains arxiv.org, datacite.org and openalex.org, and sit at 0.980-0.993 pairwise prompt similarity against a clone threshold of 0.50. Measured effective depth of the four rows is 1, not 4. Retired to non-servable calibration baseline and replaced by four families with pairwise-disjoint operator and domain sets.",
+   "retired_as": "calibration baseline"
+  }
+ ]
+}

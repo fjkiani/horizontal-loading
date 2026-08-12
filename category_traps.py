@@ -28,7 +28,7 @@ import threading as _threading
 import datetime as _dt
 import urllib.parse as up
 import xml.etree.ElementTree as ET
-from dataclasses import dataclass, field as dc_field
+from dataclasses import dataclass, field as dc_field, replace
 
 import net
 import source_gate as sg
@@ -2175,6 +2175,83 @@ def gen_education(country="Ireland"):
             "Give the domain alone, in lower case, with no protocol and no path.",
             note="Confirm the institution through an independent structured knowledge base."),
     )
+
+
+# ==========================================================================
+# GENERATOR FAMILIES
+# ==========================================================================
+# GENERATORS below maps ONE callable per category. That single line is the whole
+# root cause of the defect this registry exists to fix: gen_science is one
+# function parameterised by a tuple of dates, so the four science-and-technology
+# "prompts" in the pool were four SEEDS OF ONE TEMPLATE. Measured, they were
+# 98.0-99.3% textually identical and cited an identical operator set, so a solver
+# that answered one had answered all four. No seed list can repair that; the
+# registry shape has to change.
+#
+# GENERATORS is deliberately LEFT ALONE. Fifteen call sites across the app, the
+# sweep scripts and the override modules (gen_v2, gen_v3, gen_v4) all index it as
+# category -> callable, and gen_v* mutate it on import. Breaking that contract to
+# fix one category would be a large blast radius for no gain. Instead FAMILIES is
+# a parallel registry, category -> ordered {family_id: Family}, and any category
+# with no explicit registration synthesises a single default family from
+# GENERATORS at LOOKUP TIME, so gen_v* import-order overrides still win.
+@dataclass
+class Family:
+    """One independent way to generate a trap in a category."""
+    category: str
+    family_id: str
+    fn: object
+    primary_operator: str = ""
+    witness_operators: tuple = ()
+    ranking_key: str = ""
+    servable: bool = True
+    retired_reason: str = ""
+    note: str = ""
+
+    def __call__(self, *a, **kw):
+        return self.fn(*a, **kw)
+
+
+_FAMILY_REGISTRY = {}      # category -> {family_id: Family}
+_SUPPRESS_DEFAULT = set()  # categories whose GENERATORS entry is registered explicitly
+
+
+def register_family(category, family_id, fn=None, *, primary_operator="",
+                    witness_operators=(), ranking_key="", servable=True,
+                    retired_reason="", note="", supersedes_default=False):
+    """Register one generator family. fn=None binds late to GENERATORS[category]."""
+    fam = Family(category=category, family_id=family_id, fn=fn,
+                 primary_operator=primary_operator,
+                 witness_operators=tuple(witness_operators),
+                 ranking_key=ranking_key, servable=servable,
+                 retired_reason=retired_reason, note=note)
+    _FAMILY_REGISTRY.setdefault(category, {})[family_id] = fam
+    if supersedes_default:
+        _SUPPRESS_DEFAULT.add(category)
+    return fam
+
+
+def families_for(category, servable_only=False):
+    """All families for a category, resolved against the CURRENT GENERATORS."""
+    out = {}
+    if category not in _SUPPRESS_DEFAULT:
+        fn = GENERATORS.get(category)
+        if fn is not None:
+            out[getattr(fn, "__name__", "default")] = Family(
+                category=category, family_id=getattr(fn, "__name__", "default"),
+                fn=fn, note="synthesised from GENERATORS; not yet split into families")
+    for fid, fam in (_FAMILY_REGISTRY.get(category) or {}).items():
+        if fam.fn is None:  # late-bound to whatever GENERATORS holds now
+            fam = replace(fam, fn=GENERATORS.get(category))
+        out[fid] = fam
+    if servable_only:
+        out = {k: v for k, v in out.items() if v.servable and v.fn is not None}
+    return out
+
+
+def family_depth(category):
+    """Number of SERVABLE families -- the honest answer to 'how many questions'."""
+    return len(families_for(category, servable_only=True))
 
 
 GENERATORS = {

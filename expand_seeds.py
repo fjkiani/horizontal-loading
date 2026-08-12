@@ -198,6 +198,17 @@ SHARDS = {
 }
 
 
+def _accepted_traps(state):
+    """Every trap this run has already banked, as the disjointness corpus.
+
+    Held traps are included on purpose: a prompt that was refused for some other
+    reason still occupies its domains and phrasing, so reusing them would be a
+    ground-rule-7 breach even though the earlier row never shipped.
+    """
+    return [r["trap"] for r in (state.get("results") or [])
+            if isinstance(r.get("trap"), dict)]
+
+
 def main():
     assert_ownership()
     if SHARD not in SHARDS:
@@ -227,7 +238,12 @@ def main():
                 # A prompt only enters the pool with an evaluate_one verdict.
                 ev, verdict, tier, failing, unproven = None, "error", None, None, None
                 try:
-                    ev = et.evaluate_one(cat, {"status": "ok", "trap": trap})
+                    # T8/T9 are pairwise, so a lone trap scores "unproven" and
+                    # is refused. Every trap already accepted in this run is the
+                    # sibling set, which makes the sweep self-policing: seed k+1
+                    # is measured against seeds 1..k rather than against nothing.
+                    ev = et.evaluate_one(cat, {"status": "ok", "trap": trap},
+                                         others=_accepted_traps(state))
                     verdict = ev.get("verdict")
                     tier = ev.get("witness_tier")
                     # evaluate_one returns tests[name] = {"pass": bool|None,

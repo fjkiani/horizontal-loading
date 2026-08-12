@@ -1,0 +1,47 @@
+{
+  "per_question": [
+    {
+      "answer": "6513",
+      "rows": 3,
+      "depth": 1,
+      "collapses": true,
+      "text_gate": [
+        false,
+        false
+      ]
+    },
+    {
+      "answer": "CVE-2022-23221",
+      "rows": 3,
+      "depth": 1,
+      "collapses": true,
+      "text_gate": [
+        false,
+        false
+      ]
+    },
+    {
+      "answer": "11.3.0",
+      "rows": 3,
+      "depth": 1,
+      "collapses": true,
+      "text_gate": [
+        false,
+        false
+      ]
+    },
+    {
+      "answer": "200651",
+      "rows": 3,
+      "depth": 1,
+      "collapses": true,
+      "text_gate": [
+        false,
+        false
+      ]
+    }
+  ],
+  "sci_depth": 4,
+  "sci_rows": 4,
+  "structural_holds": true
+}

@@ -252,7 +252,12 @@ def _run_category_generate(job_id, category, kwargs, seed_index, request_key=Non
         _p("checking source independence")
         ok_gate, violations = sg.validate_trap(trap, min_operators=3)
         _p("scoring the full trap battery", tests=len(et.TESTS_EV) + len(et.TESTS_TRAP))
-        ev = et.evaluate_one(category, {"trap": trap})
+        # Ground rule 7 is a question about the CORPUS, not about one row:
+        # "have you used this prompt before, have you used the same domains?"
+        # The deployed catalogue is therefore handed in as the sibling set, so
+        # a freshly minted prompt is measured against everything already shipped
+        # instead of being scored in isolation and passing by default.
+        ev = et.evaluate_one(category, {"trap": trap}, others=_catalog_traps())
         failed = sorted(n for n, r in ev["tests"].items() if r["pass"] is False)
         unproven = sorted(n for n, r in ev["tests"].items() if r["pass"] is None)
         verdict = ev["verdict"]

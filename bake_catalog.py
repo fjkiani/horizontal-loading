@@ -180,7 +180,25 @@ def main():
     for c in sg.CATEGORIES:
         served = [t for t in traps if t.get("category") == c]
         tiers = {t.get("witness_tier") for t in served}
+        # Row count and DEPTH are different quantities and the catalog used to
+        # publish only the first. Four arXiv prompts sharing one operator set,
+        # one field and one domain triple counted as four; measured, they are
+        # one question asked four ways. effective_depth groups by
+        # (field, source-operator set), so a family collapse can no longer be
+        # advertised as stock. n_distinct_families counts distinct operator sets
+        # alone, and max_pairwise_prompt_similarity is the textual check that
+        # caught the collapse in the first place.
+        depth = sg.effective_depth(served) if served else 0
+        opsets = {frozenset(t.get("source_operators") or []) for t in served}
+        sims = [sg.prompt_similarity(a.get("prompt", ""), b.get("prompt", ""))
+                for i, a in enumerate(served) for b in served[i + 1:]]
         cats.append({"category": c, "n_served": len(served),
+                     "effective_depth": depth,
+                     "n_distinct_families": len(opsets),
+                     "depth_matches_rows": depth == len(served),
+                     "max_pairwise_prompt_similarity": (
+                         round(max(sims), 4) if sims else None),
+                     "clone_threshold": sg.CLONE_SIMILARITY_THRESHOLD,
                      # served[0]'s tier used to stand for the whole category.
                      # With one trap per category that was harmless; with four,
                      # a gold first trap would advertise gold over a silver
@@ -189,9 +207,21 @@ def main():
                               "gold" if tiers == {"gold"} else
                               "silver" if "silver" in tiers else sorted(tiers)[0])})
 
+    stocked = [c for c in cats if c["n_served"]]
     doc = {"generated_at": __import__("datetime").datetime.utcnow()
            .strftime("%Y-%m-%dT%H:%M:%SZ"),
-           "traps": traps, "categories": cats}
+           "traps": traps, "categories": cats,
+           "depth": {
+               "n_traps": len(traps),
+               "effective_depth_total": sum(c["effective_depth"] for c in cats),
+               "n_distinct_families_total": sum(c["n_distinct_families"]
+                                                for c in cats),
+               "categories_where_depth_below_rows": [
+                   c["category"] for c in stocked if not c["depth_matches_rows"]],
+               "definition": ("effective_depth groups a category's traps by "
+                              "(answer field, source-operator set): rows that "
+                              "share both are one question asked more than once"),
+           }}
 
     # Refuse to write a catalog that cites a banned publisher. The gate already
     # refuses such a trap at generation time, but the catalog is a separate

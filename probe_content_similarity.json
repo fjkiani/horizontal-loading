@@ -1,0 +1,1406 @@
+{
+  "summary": {
+    "n_pairs": 153,
+    "n_clone": 16,
+    "n_nonclone": 137,
+    "char": {
+      "nonclone_min": 0.34104541559554413,
+      "nonclone_max": 0.5403508771929825,
+      "clone_min": 0.9818481848184818,
+      "clone_max": 0.9985074626865672,
+      "separation_gap": 0.4414973076254993,
+      "max_asymmetry": 0.0,
+      "separated": true
+    },
+    "content": {
+      "nonclone_min": 0.0,
+      "nonclone_max": 0.11320754716981132,
+      "clone_min": 0.8857142857142857,
+      "clone_max": 0.9523809523809523,
+      "separation_gap": 0.7725067385444744,
+      "max_asymmetry": 0.0,
+      "separated": true
+    },
+    "sci_max_char": 0.5403508771929825,
+    "sci_max_content": 0.07317073170731707
+  },
+  "pairs": [
+    {
+      "a": "live|geography|SKIP",
+      "b": "live|geography|SPJL",
+      "clone": true,
+      "char": 0.9896373056994818,
+      "char_gap": 0.0,
+      "content": 0.9512195121951219,
+      "content_gap": 0.0
+    },
+    {
+      "a": "live|geography|SKIP",
+      "b": "live|health and medicine|NCT05178810",
+      "clone": false,
+      "char": 0.4166666666666667,
+      "char_gap": 0.0,
+      "content": 0.05128205128205128,
+      "content_gap": 0.0
+    },
+    {
+      "a": "live|geography|SKIP",
+      "b": "live|legal|200",
+      "clone": false,
+      "char": 0.37090327737809753,
+      "char_gap": 0.0,
+      "content": 0.013157894736842105,
+      "content_gap": 0.0
+    },
+    {
+      "a": "live|geography|SKIP",
+      "b": "live|legal|768",
+      "clone": false,
+      "char": 0.37090327737809753,
+      "char_gap": 0.0,
+      "content": 0.013157894736842105,
+      "content_gap": 0.0
+    },
+    {
+      "a": "live|geography|SKIP",
+      "b": "live|legal|919",
+      "clone": false,
+      "char": 0.37090327737809753,
+      "char_gap": 0.0,
+      "content": 0.013157894736842105,
+      "content_gap": 0.0
+    },
+    {
+      "a": "live|geography|SKIP",
+      "b": "live|travel|6296543",
+      "clone": false,
+      "char": 0.3461868037703513,
+      "char_gap": 0.0,
+      "content": 0.038461538461538464,
+      "content_gap": 0.0
+    },
+    {
+      "a": "live|geography|SKIP",
+      "b": "live|travel|6296778",
+      "clone": false,
+      "char": 0.34790059982862037,
+      "char_gap": 0.0,
+      "content": 0.038461538461538464,
+      "content_gap": 0.0
+    },
+    {
+      "a": "live|geography|SKIP",
+      "b": "live|travel|6300971",
+      "clone": false,
+      "char": 0.34104541559554413,
+      "char_gap": 0.0,
+      "content": 0.038461538461538464,
+      "content_gap": 0.0
+    },
+    {
+      "a": "live|geography|SKIP",
+      "b": "live|travel|6301511",
+      "clone": false,
+      "char": 0.3461868037703513,
+      "char_gap": 0.0,
+      "content": 0.038461538461538464,
+      "content_gap": 0.0
+    },
+    {
+      "a": "live|geography|SKIP",
+      "b": "live|science and technology|CVE-2022-23221",
+      "clone": false,
+      "char": 0.44147682639434405,
+      "char_gap": 0.0,
+      "content": 0.047619047619047616,
+      "content_gap": 0.0
+    },
+    {
+      "a": "live|geography|SKIP",
+      "b": "live|science and technology|6513",
+      "clone": false,
+      "char": 0.42133333333333334,
+      "char_gap": 0.0,
+      "content": 0.05172413793103448,
+      "content_gap": 0.0
+    },
+    {
+      "a": "live|geography|SKIP",
+      "b": "live|science and technology|11.3.0",
+      "clone": false,
+      "char": 0.4071246819338422,
+      "char_gap": 0.0,
+      "content": 0.03333333333333333,
+      "content_gap": 0.0
+    },
+    {
+      "a": "live|geography|SKIP",
+      "b": "live|science and technology|200651",
+      "clone": false,
+      "char": 0.3874256584536958,
+      "char_gap": 0.0,
+      "content": 0.05,
+      "content_gap": 0.0
+    },
+    {
+      "a": "live|geography|SKIP",
+      "b": "retired|science and technology|2203.11011",
+      "clone": false,
+      "char": 0.49155405405405406,
+      "char_gap": 0.0,
+      "content": 0.10606060606060606,
+      "content_gap": 0.0
+    },
+    {
+      "a": "live|geography|SKIP",
+      "b": "retired|science and technology|2211.04278",
+      "clone": false,
+      "char": 0.49155405405405406,
+      "char_gap": 0.0,
+      "content": 0.10606060606060606,
+      "content_gap": 0.0
+    },
+    {
+      "a": "live|geography|SKIP",
+      "b": "retired|science and technology|2302.07287",
+      "clone": false,
+      "char": 0.49155405405405406,
+      "char_gap": 0.0,
+      "content": 0.10606060606060606,
+      "content_gap": 0.0
+    },
+    {
+      "a": "live|geography|SKIP",
+      "b": "retired|science and technology|2403.07505",
+      "clone": false,
+      "char": 0.4890756302521008,
+      "char_gap": 0.0,
+      "content": 0.10606060606060606,
+      "content_gap": 0.0
+    },
+    {
+      "a": "live|geography|SPJL",
+      "b": "live|health and medicine|NCT05178810",
+      "clone": false,
+      "char": 0.4180064308681672,
+      "char_gap": 0.0,
+      "content": 0.05128205128205128,
+      "content_gap": 0.0
+    },
+    {
+      "a": "live|geography|SPJL",
+      "b": "live|legal|200",
+      "clone": false,
+      "char": 0.37048917401764236,
+      "char_gap": 0.0,
+      "content": 0.013157894736842105,
+      "content_gap": 0.0
+    },
+    {
+      "a": "live|geography|SPJL",
+      "b": "live|legal|768",
+      "clone": false,
+      "char": 0.37048917401764236,
+      "char_gap": 0.0,
+      "content": 0.013157894736842105,
+      "content_gap": 0.0
+    },
+    {
+      "a": "live|geography|SPJL",
+      "b": "live|legal|919",
+      "clone": false,
+      "char": 0.37048917401764236,
+      "char_gap": 0.0,
+      "content": 0.013157894736842105,
+      "content_gap": 0.0
+    },
+    {
+      "a": "live|geography|SPJL",
+      "b": "live|travel|6296543",
+      "clone": false,
+      "char": 0.352536543422184,
+      "char_gap": 0.0,
+      "content": 0.038461538461538464,
+      "content_gap": 0.0
+    },
+    {
+      "a": "live|geography|SPJL",
+      "b": "live|travel|6296778",
+      "clone": false,
+      "char": 0.354256233877902,
+      "char_gap": 0.0,
+      "content": 0.038461538461538464,
+      "content_gap": 0.0
+    },
+    {
+      "a": "live|geography|SPJL",
+      "b": "live|travel|6300971",
+      "clone": false,
+      "char": 0.3473774720550301,
+      "char_gap": 0.0,
+      "content": 0.038461538461538464,
+      "content_gap": 0.0
+    },
+    {
+      "a": "live|geography|SPJL",
+      "b": "live|travel|6301511",
+      "clone": false,
+      "char": 0.352536543422184,
+      "char_gap": 0.0,
+      "content": 0.038461538461538464,
+      "content_gap": 0.0
+    },
+    {
+      "a": "live|geography|SPJL",
+      "b": "live|science and technology|CVE-2022-23221",
+      "clone": false,
+      "char": 0.4428684003152088,
+      "char_gap": 0.0,
+      "content": 0.047619047619047616,
+      "content_gap": 0.0
+    },
+    {
+      "a": "live|geography|SPJL",
+      "b": "live|science and technology|6513",
+      "clone": false,
+      "char": 0.4264049955396967,
+      "char_gap": 0.0,
+      "content": 0.05172413793103448,
+      "content_gap": 0.0
+    },
+    {
+      "a": "live|geography|SPJL",
+      "b": "live|science and technology|11.3.0",
+      "clone": false,
+      "char": 0.4102127659574468,
+      "char_gap": 0.0,
+      "content": 0.03333333333333333,
+      "content_gap": 0.0
+    },
+    {
+      "a": "live|geography|SPJL",
+      "b": "live|science and technology|200651",
+      "clone": false,
+      "char": 0.3887468030690537,
+      "char_gap": 0.0,
+      "content": 0.05,
+      "content_gap": 0.0
+    },
+    {
+      "a": "live|geography|SPJL",
+      "b": "retired|science and technology|2203.11011",
+      "clone": false,
+      "char": 0.4966101694915254,
+      "char_gap": 0.0,
+      "content": 0.10606060606060606,
+      "content_gap": 0.0
+    },
+    {
+      "a": "live|geography|SPJL",
+      "b": "retired|science and technology|2211.04278",
+      "clone": false,
+      "char": 0.4966101694915254,
+      "char_gap": 0.0,
+      "content": 0.10606060606060606,
+      "content_gap": 0.0
+    },
+    {
+      "a": "live|geography|SPJL",
+      "b": "retired|science and technology|2302.07287",
+      "clone": false,
+      "char": 0.4966101694915254,
+      "char_gap": 0.0,
+      "content": 0.10606060606060606,
+      "content_gap": 0.0
+    },
+    {
+      "a": "live|geography|SPJL",
+      "b": "retired|science and technology|2403.07505",
+      "clone": false,
+      "char": 0.49409780775716694,
+      "char_gap": 0.0,
+      "content": 0.10606060606060606,
+      "content_gap": 0.0
+    },
+    {
+      "a": "live|health and medicine|NCT05178810",
+      "b": "live|legal|200",
+      "clone": false,
+      "char": 0.3530291697830965,
+      "char_gap": 0.0,
+      "content": 0.025974025974025976,
+      "content_gap": 0.0
+    },
+    {
+      "a": "live|health and medicine|NCT05178810",
+      "b": "live|legal|768",
+      "clone": false,
+      "char": 0.3530291697830965,
+      "char_gap": 0.0,
+      "content": 0.025974025974025976,
+      "content_gap": 0.0
+    },
+    {
+      "a": "live|health and medicine|NCT05178810",
+      "b": "live|legal|919",
+      "clone": false,
+      "char": 0.3530291697830965,
+      "char_gap": 0.0,
+      "content": 0.025974025974025976,
+      "content_gap": 0.0
+    },
+    {
+      "a": "live|health and medicine|NCT05178810",
+      "b": "live|travel|6296543",
+      "clone": false,
+      "char": 0.3862729449321628,
+      "char_gap": 0.0,
+      "content": 0.024691358024691357,
+      "content_gap": 0.0
+    },
+    {
+      "a": "live|health and medicine|NCT05178810",
+      "b": "live|travel|6296778",
+      "clone": false,
+      "char": 0.3862729449321628,
+      "char_gap": 0.0,
+      "content": 0.024691358024691357,
+      "content_gap": 0.0
+    },
+    {
+      "a": "live|health and medicine|NCT05178810",
+      "b": "live|travel|6300971",
+      "clone": false,
+      "char": 0.3862729449321628,
+      "char_gap": 0.0,
+      "content": 0.024691358024691357,
+      "content_gap": 0.0
+    },
+    {
+      "a": "live|health and medicine|NCT05178810",
+      "b": "live|travel|6301511",
+      "clone": false,
+      "char": 0.3862729449321628,
+      "char_gap": 0.0,
+      "content": 0.024691358024691357,
+      "content_gap": 0.0
+    },
+    {
+      "a": "live|health and medicine|NCT05178810",
+      "b": "live|science and technology|CVE-2022-23221",
+      "clone": false,
+      "char": 0.44150110375275936,
+      "char_gap": 0.0,
+      "content": 0.046153846153846156,
+      "content_gap": 0.0
+    },
+    {
+      "a": "live|health and medicine|NCT05178810",
+      "b": "live|science and technology|6513",
+      "clone": false,
+      "char": 0.39801816680429397,
+      "char_gap": 0.0,
+      "content": 0.03278688524590164,
+      "content_gap": 0.0
+    },
+    {
+      "a": "live|health and medicine|NCT05178810",
+      "b": "live|science and technology|11.3.0",
+      "clone": false,
+      "char": 0.366798418972332,
+      "char_gap": 0.0,
+      "content": 0.0,
+      "content_gap": 0.0
+    },
+    {
+      "a": "live|health and medicine|NCT05178810",
+      "b": "live|science and technology|200651",
+      "clone": false,
+      "char": 0.3752969121140142,
+      "char_gap": 0.0,
+      "content": 0.0,
+      "content_gap": 0.0
+    },
+    {
+      "a": "live|health and medicine|NCT05178810",
+      "b": "retired|science and technology|2203.11011",
+      "clone": false,
+      "char": 0.45511811023622045,
+      "char_gap": 0.0,
+      "content": 0.0273972602739726,
+      "content_gap": 0.0
+    },
+    {
+      "a": "live|health and medicine|NCT05178810",
+      "b": "retired|science and technology|2211.04278",
+      "clone": false,
+      "char": 0.4582677165354331,
+      "char_gap": 0.0,
+      "content": 0.0273972602739726,
+      "content_gap": 0.0
+    },
+    {
+      "a": "live|health and medicine|NCT05178810",
+      "b": "retired|science and technology|2302.07287",
+      "clone": false,
+      "char": 0.45511811023622045,
+      "char_gap": 0.0,
+      "content": 0.0273972602739726,
+      "content_gap": 0.0
+    },
+    {
+      "a": "live|health and medicine|NCT05178810",
+      "b": "retired|science and technology|2403.07505",
+      "clone": false,
+      "char": 0.4498432601880878,
+      "char_gap": 0.0,
+      "content": 0.0273972602739726,
+      "content_gap": 0.0
+    },
+    {
+      "a": "live|legal|200",
+      "b": "live|legal|768",
+      "clone": true,
+      "char": 0.9970149253731343,
+      "char_gap": 0.0,
+      "content": 0.9473684210526315,
+      "content_gap": 0.0
+    },
+    {
+      "a": "live|legal|200",
+      "b": "live|legal|919",
+      "clone": true,
+      "char": 0.9985074626865672,
+      "char_gap": 0.0,
+      "content": 0.9473684210526315,
+      "content_gap": 0.0
+    },
+    {
+      "a": "live|legal|200",
+      "b": "live|travel|6296543",
+      "clone": false,
+      "char": 0.4156050955414013,
+      "char_gap": 0.0,
+      "content": 0.04,
+      "content_gap": 0.0
+    },
+    {
+      "a": "live|legal|200",
+      "b": "live|travel|6296778",
+      "clone": false,
+      "char": 0.4156050955414013,
+      "char_gap": 0.0,
+      "content": 0.04,
+      "content_gap": 0.0
+    },
+    {
+      "a": "live|legal|200",
+      "b": "live|travel|6300971",
+      "clone": false,
+      "char": 0.4140127388535032,
+      "char_gap": 0.0,
+      "content": 0.04,
+      "content_gap": 0.0
+    },
+    {
+      "a": "live|legal|200",
+      "b": "live|travel|6301511",
+      "clone": false,
+      "char": 0.4140127388535032,
+      "char_gap": 0.0,
+      "content": 0.04,
+      "content_gap": 0.0
+    },
+    {
+      "a": "live|legal|200",
+      "b": "live|science and technology|CVE-2022-23221",
+      "clone": false,
+      "char": 0.41409691629955947,
+      "char_gap": 0.0,
+      "content": 0.05,
+      "content_gap": 0.0
+    },
+    {
+      "a": "live|legal|200",
+      "b": "live|science and technology|6513",
+      "clone": false,
+      "char": 0.4332784184514003,
+      "char_gap": 0.0,
+      "content": 0.017543859649122806,
+      "content_gap": 0.0
+    },
+    {
+      "a": "live|legal|200",
+      "b": "live|science and technology|11.3.0",
+      "clone": false,
+      "char": 0.443217665615142,
+      "char_gap": 0.0,
+      "content": 0.03508771929824561,
+      "content_gap": 0.0
+    },
+    {
+      "a": "live|legal|200",
+      "b": "live|science and technology|200651",
+      "clone": false,
+      "char": 0.38388625592417064,
+      "char_gap": 0.0,
+      "content": 0.034482758620689655,
+      "content_gap": 0.0
+    },
+    {
+      "a": "live|legal|200",
+      "b": "retired|science and technology|2203.11011",
+      "clone": false,
+      "char": 0.4493322859387274,
+      "char_gap": 0.0,
+      "content": 0.014492753623188406,
+      "content_gap": 0.0
+    },
+    {
+      "a": "live|legal|200",
+      "b": "retired|science and technology|2211.04278",
+      "clone": false,
+      "char": 0.4493322859387274,
+      "char_gap": 0.0,
+      "content": 0.014492753623188406,
+      "content_gap": 0.0
+    },
+    {
+      "a": "live|legal|200",
+      "b": "retired|science and technology|2302.07287",
+      "clone": false,
+      "char": 0.4493322859387274,
+      "char_gap": 0.0,
+      "content": 0.014492753623188406,
+      "content_gap": 0.0
+    },
+    {
+      "a": "live|legal|200",
+      "b": "retired|science and technology|2403.07505",
+      "clone": false,
+      "char": 0.4503518373729476,
+      "char_gap": 0.0,
+      "content": 0.014492753623188406,
+      "content_gap": 0.0
+    },
+    {
+      "a": "live|legal|768",
+      "b": "live|legal|919",
+      "clone": true,
+      "char": 0.9970149253731343,
+      "char_gap": 0.0,
+      "content": 0.9473684210526315,
+      "content_gap": 0.0
+    },
+    {
+      "a": "live|legal|768",
+      "b": "live|travel|6296543",
+      "clone": false,
+      "char": 0.4156050955414013,
+      "char_gap": 0.0,
+      "content": 0.04,
+      "content_gap": 0.0
+    },
+    {
+      "a": "live|legal|768",
+      "b": "live|travel|6296778",
+      "clone": false,
+      "char": 0.4156050955414013,
+      "char_gap": 0.0,
+      "content": 0.04,
+      "content_gap": 0.0
+    },
+    {
+      "a": "live|legal|768",
+      "b": "live|travel|6300971",
+      "clone": false,
+      "char": 0.4140127388535032,
+      "char_gap": 0.0,
+      "content": 0.04,
+      "content_gap": 0.0
+    },
+    {
+      "a": "live|legal|768",
+      "b": "live|travel|6301511",
+      "clone": false,
+      "char": 0.4140127388535032,
+      "char_gap": 0.0,
+      "content": 0.04,
+      "content_gap": 0.0
+    },
+    {
+      "a": "live|legal|768",
+      "b": "live|science and technology|CVE-2022-23221",
+      "clone": false,
+      "char": 0.41409691629955947,
+      "char_gap": 0.0,
+      "content": 0.05,
+      "content_gap": 0.0
+    },
+    {
+      "a": "live|legal|768",
+      "b": "live|science and technology|6513",
+      "clone": false,
+      "char": 0.4332784184514003,
+      "char_gap": 0.0,
+      "content": 0.017543859649122806,
+      "content_gap": 0.0
+    },
+    {
+      "a": "live|legal|768",
+      "b": "live|science and technology|11.3.0",
+      "clone": false,
+      "char": 0.443217665615142,
+      "char_gap": 0.0,
+      "content": 0.03508771929824561,
+      "content_gap": 0.0
+    },
+    {
+      "a": "live|legal|768",
+      "b": "live|science and technology|200651",
+      "clone": false,
+      "char": 0.38388625592417064,
+      "char_gap": 0.0,
+      "content": 0.034482758620689655,
+      "content_gap": 0.0
+    },
+    {
+      "a": "live|legal|768",
+      "b": "retired|science and technology|2203.11011",
+      "clone": false,
+      "char": 0.4493322859387274,
+      "char_gap": 0.0,
+      "content": 0.014492753623188406,
+      "content_gap": 0.0
+    },
+    {
+      "a": "live|legal|768",
+      "b": "retired|science and technology|2211.04278",
+      "clone": false,
+      "char": 0.4493322859387274,
+      "char_gap": 0.0,
+      "content": 0.014492753623188406,
+      "content_gap": 0.0
+    },
+    {
+      "a": "live|legal|768",
+      "b": "retired|science and technology|2302.07287",
+      "clone": false,
+      "char": 0.4493322859387274,
+      "char_gap": 0.0,
+      "content": 0.014492753623188406,
+      "content_gap": 0.0
+    },
+    {
+      "a": "live|legal|768",
+      "b": "retired|science and technology|2403.07505",
+      "clone": false,
+      "char": 0.4503518373729476,
+      "char_gap": 0.0,
+      "content": 0.014492753623188406,
+      "content_gap": 0.0
+    },
+    {
+      "a": "live|legal|919",
+      "b": "live|travel|6296543",
+      "clone": false,
+      "char": 0.4156050955414013,
+      "char_gap": 0.0,
+      "content": 0.04,
+      "content_gap": 0.0
+    },
+    {
+      "a": "live|legal|919",
+      "b": "live|travel|6296778",
+      "clone": false,
+      "char": 0.4156050955414013,
+      "char_gap": 0.0,
+      "content": 0.04,
+      "content_gap": 0.0
+    },
+    {
+      "a": "live|legal|919",
+      "b": "live|travel|6300971",
+      "clone": false,
+      "char": 0.4140127388535032,
+      "char_gap": 0.0,
+      "content": 0.04,
+      "content_gap": 0.0
+    },
+    {
+      "a": "live|legal|919",
+      "b": "live|travel|6301511",
+      "clone": false,
+      "char": 0.4140127388535032,
+      "char_gap": 0.0,
+      "content": 0.04,
+      "content_gap": 0.0
+    },
+    {
+      "a": "live|legal|919",
+      "b": "live|science and technology|CVE-2022-23221",
+      "clone": false,
+      "char": 0.41409691629955947,
+      "char_gap": 0.0,
+      "content": 0.05,
+      "content_gap": 0.0
+    },
+    {
+      "a": "live|legal|919",
+      "b": "live|science and technology|6513",
+      "clone": false,
+      "char": 0.4332784184514003,
+      "char_gap": 0.0,
+      "content": 0.017543859649122806,
+      "content_gap": 0.0
+    },
+    {
+      "a": "live|legal|919",
+      "b": "live|science and technology|11.3.0",
+      "clone": false,
+      "char": 0.443217665615142,
+      "char_gap": 0.0,
+      "content": 0.03508771929824561,
+      "content_gap": 0.0
+    },
+    {
+      "a": "live|legal|919",
+      "b": "live|science and technology|200651",
+      "clone": false,
+      "char": 0.38388625592417064,
+      "char_gap": 0.0,
+      "content": 0.034482758620689655,
+      "content_gap": 0.0
+    },
+    {
+      "a": "live|legal|919",
+      "b": "retired|science and technology|2203.11011",
+      "clone": false,
+      "char": 0.4493322859387274,
+      "char_gap": 0.0,
+      "content": 0.014492753623188406,
+      "content_gap": 0.0
+    },
+    {
+      "a": "live|legal|919",
+      "b": "retired|science and technology|2211.04278",
+      "clone": false,
+      "char": 0.4493322859387274,
+      "char_gap": 0.0,
+      "content": 0.014492753623188406,
+      "content_gap": 0.0
+    },
+    {
+      "a": "live|legal|919",
+      "b": "retired|science and technology|2302.07287",
+      "clone": false,
+      "char": 0.4493322859387274,
+      "char_gap": 0.0,
+      "content": 0.014492753623188406,
+      "content_gap": 0.0
+    },
+    {
+      "a": "live|legal|919",
+      "b": "retired|science and technology|2403.07505",
+      "clone": false,
+      "char": 0.4503518373729476,
+      "char_gap": 0.0,
+      "content": 0.014492753623188406,
+      "content_gap": 0.0
+    },
+    {
+      "a": "live|travel|6296543",
+      "b": "live|travel|6296778",
+      "clone": true,
+      "char": 0.9931740614334471,
+      "char_gap": 0.0,
+      "content": 0.9523809523809523,
+      "content_gap": 0.0
+    },
+    {
+      "a": "live|travel|6296543",
+      "b": "live|travel|6300971",
+      "clone": true,
+      "char": 0.9914675767918089,
+      "char_gap": 0.0,
+      "content": 0.9523809523809523,
+      "content_gap": 0.0
+    },
+    {
+      "a": "live|travel|6296543",
+      "b": "live|travel|6301511",
+      "clone": true,
+      "char": 0.9914675767918089,
+      "char_gap": 0.0,
+      "content": 0.9523809523809523,
+      "content_gap": 0.0
+    },
+    {
+      "a": "live|travel|6296543",
+      "b": "live|science and technology|CVE-2022-23221",
+      "clone": false,
+      "char": 0.39123630672926446,
+      "char_gap": 0.0,
+      "content": 0.03076923076923077,
+      "content_gap": 0.0
+    },
+    {
+      "a": "live|travel|6296543",
+      "b": "live|science and technology|6513",
+      "clone": false,
+      "char": 0.35929203539823007,
+      "char_gap": 0.0,
+      "content": 0.03333333333333333,
+      "content_gap": 0.0
+    },
+    {
+      "a": "live|travel|6296543",
+      "b": "live|science and technology|11.3.0",
+      "clone": false,
+      "char": 0.3783783783783784,
+      "char_gap": 0.0,
+      "content": 0.03278688524590164,
+      "content_gap": 0.0
+    },
+    {
+      "a": "live|travel|6296543",
+      "b": "live|science and technology|200651",
+      "clone": false,
+      "char": 0.39086294416243655,
+      "char_gap": 0.0,
+      "content": 0.03225806451612903,
+      "content_gap": 0.0
+    },
+    {
+      "a": "live|travel|6296543",
+      "b": "retired|science and technology|2203.11011",
+      "clone": false,
+      "char": 0.4238856181665265,
+      "char_gap": 0.0,
+      "content": 0.04225352112676056,
+      "content_gap": 0.0
+    },
+    {
+      "a": "live|travel|6296543",
+      "b": "retired|science and technology|2211.04278",
+      "clone": false,
+      "char": 0.4255677039529016,
+      "char_gap": 0.0,
+      "content": 0.04225352112676056,
+      "content_gap": 0.0
+    },
+    {
+      "a": "live|travel|6296543",
+      "b": "retired|science and technology|2302.07287",
+      "clone": false,
+      "char": 0.4238856181665265,
+      "char_gap": 0.0,
+      "content": 0.04225352112676056,
+      "content_gap": 0.0
+    },
+    {
+      "a": "live|travel|6296543",
+      "b": "retired|science and technology|2403.07505",
+      "clone": false,
+      "char": 0.42677824267782427,
+      "char_gap": 0.0,
+      "content": 0.04225352112676056,
+      "content_gap": 0.0
+    },
+    {
+      "a": "live|travel|6296778",
+      "b": "live|travel|6300971",
+      "clone": true,
+      "char": 0.9914675767918089,
+      "char_gap": 0.0,
+      "content": 0.9523809523809523,
+      "content_gap": 0.0
+    },
+    {
+      "a": "live|travel|6296778",
+      "b": "live|travel|6301511",
+      "clone": true,
+      "char": 0.9914675767918089,
+      "char_gap": 0.0,
+      "content": 0.9523809523809523,
+      "content_gap": 0.0
+    },
+    {
+      "a": "live|travel|6296778",
+      "b": "live|science and technology|CVE-2022-23221",
+      "clone": false,
+      "char": 0.39123630672926446,
+      "char_gap": 0.0,
+      "content": 0.03076923076923077,
+      "content_gap": 0.0
+    },
+    {
+      "a": "live|travel|6296778",
+      "b": "live|science and technology|6513",
+      "clone": false,
+      "char": 0.35752212389380533,
+      "char_gap": 0.0,
+      "content": 0.03333333333333333,
+      "content_gap": 0.0
+    },
+    {
+      "a": "live|travel|6296778",
+      "b": "live|science and technology|11.3.0",
+      "clone": false,
+      "char": 0.3783783783783784,
+      "char_gap": 0.0,
+      "content": 0.03278688524590164,
+      "content_gap": 0.0
+    },
+    {
+      "a": "live|travel|6296778",
+      "b": "live|science and technology|200651",
+      "clone": false,
+      "char": 0.39086294416243655,
+      "char_gap": 0.0,
+      "content": 0.03225806451612903,
+      "content_gap": 0.0
+    },
+    {
+      "a": "live|travel|6296778",
+      "b": "retired|science and technology|2203.11011",
+      "clone": false,
+      "char": 0.4238856181665265,
+      "char_gap": 0.0,
+      "content": 0.04225352112676056,
+      "content_gap": 0.0
+    },
+    {
+      "a": "live|travel|6296778",
+      "b": "retired|science and technology|2211.04278",
+      "clone": false,
+      "char": 0.4255677039529016,
+      "char_gap": 0.0,
+      "content": 0.04225352112676056,
+      "content_gap": 0.0
+    },
+    {
+      "a": "live|travel|6296778",
+      "b": "retired|science and technology|2302.07287",
+      "clone": false,
+      "char": 0.4238856181665265,
+      "char_gap": 0.0,
+      "content": 0.04225352112676056,
+      "content_gap": 0.0
+    },
+    {
+      "a": "live|travel|6296778",
+      "b": "retired|science and technology|2403.07505",
+      "clone": false,
+      "char": 0.42677824267782427,
+      "char_gap": 0.0,
+      "content": 0.04225352112676056,
+      "content_gap": 0.0
+    },
+    {
+      "a": "live|travel|6300971",
+      "b": "live|travel|6301511",
+      "clone": true,
+      "char": 0.9948805460750854,
+      "char_gap": 0.0,
+      "content": 0.9523809523809523,
+      "content_gap": 0.0
+    },
+    {
+      "a": "live|travel|6300971",
+      "b": "live|science and technology|CVE-2022-23221",
+      "clone": false,
+      "char": 0.39123630672926446,
+      "char_gap": 0.0,
+      "content": 0.03076923076923077,
+      "content_gap": 0.0
+    },
+    {
+      "a": "live|travel|6300971",
+      "b": "live|science and technology|6513",
+      "clone": false,
+      "char": 0.35752212389380533,
+      "char_gap": 0.0,
+      "content": 0.03333333333333333,
+      "content_gap": 0.0
+    },
+    {
+      "a": "live|travel|6300971",
+      "b": "live|science and technology|11.3.0",
+      "clone": false,
+      "char": 0.3783783783783784,
+      "char_gap": 0.0,
+      "content": 0.03278688524590164,
+      "content_gap": 0.0
+    },
+    {
+      "a": "live|travel|6300971",
+      "b": "live|science and technology|200651",
+      "clone": false,
+      "char": 0.39086294416243655,
+      "char_gap": 0.0,
+      "content": 0.03225806451612903,
+      "content_gap": 0.0
+    },
+    {
+      "a": "live|travel|6300971",
+      "b": "retired|science and technology|2203.11011",
+      "clone": false,
+      "char": 0.4238856181665265,
+      "char_gap": 0.0,
+      "content": 0.04225352112676056,
+      "content_gap": 0.0
+    },
+    {
+      "a": "live|travel|6300971",
+      "b": "retired|science and technology|2211.04278",
+      "clone": false,
+      "char": 0.4255677039529016,
+      "char_gap": 0.0,
+      "content": 0.04225352112676056,
+      "content_gap": 0.0
+    },
+    {
+      "a": "live|travel|6300971",
+      "b": "retired|science and technology|2302.07287",
+      "clone": false,
+      "char": 0.4238856181665265,
+      "char_gap": 0.0,
+      "content": 0.04225352112676056,
+      "content_gap": 0.0
+    },
+    {
+      "a": "live|travel|6300971",
+      "b": "retired|science and technology|2403.07505",
+      "clone": false,
+      "char": 0.42677824267782427,
+      "char_gap": 0.0,
+      "content": 0.04225352112676056,
+      "content_gap": 0.0
+    },
+    {
+      "a": "live|travel|6301511",
+      "b": "live|science and technology|CVE-2022-23221",
+      "clone": false,
+      "char": 0.39123630672926446,
+      "char_gap": 0.0,
+      "content": 0.03076923076923077,
+      "content_gap": 0.0
+    },
+    {
+      "a": "live|travel|6301511",
+      "b": "live|science and technology|6513",
+      "clone": false,
+      "char": 0.35752212389380533,
+      "char_gap": 0.0,
+      "content": 0.03333333333333333,
+      "content_gap": 0.0
+    },
+    {
+      "a": "live|travel|6301511",
+      "b": "live|science and technology|11.3.0",
+      "clone": false,
+      "char": 0.3783783783783784,
+      "char_gap": 0.0,
+      "content": 0.03278688524590164,
+      "content_gap": 0.0
+    },
+    {
+      "a": "live|travel|6301511",
+      "b": "live|science and technology|200651",
+      "clone": false,
+      "char": 0.39086294416243655,
+      "char_gap": 0.0,
+      "content": 0.03225806451612903,
+      "content_gap": 0.0
+    },
+    {
+      "a": "live|travel|6301511",
+      "b": "retired|science and technology|2203.11011",
+      "clone": false,
+      "char": 0.4238856181665265,
+      "char_gap": 0.0,
+      "content": 0.04225352112676056,
+      "content_gap": 0.0
+    },
+    {
+      "a": "live|travel|6301511",
+      "b": "retired|science and technology|2211.04278",
+      "clone": false,
+      "char": 0.4255677039529016,
+      "char_gap": 0.0,
+      "content": 0.04225352112676056,
+      "content_gap": 0.0
+    },
+    {
+      "a": "live|travel|6301511",
+      "b": "retired|science and technology|2302.07287",
+      "clone": false,
+      "char": 0.4238856181665265,
+      "char_gap": 0.0,
+      "content": 0.04225352112676056,
+      "content_gap": 0.0
+    },
+    {
+      "a": "live|travel|6301511",
+      "b": "retired|science and technology|2403.07505",
+      "clone": false,
+      "char": 0.42677824267782427,
+      "char_gap": 0.0,
+      "content": 0.04225352112676056,
+      "content_gap": 0.0
+    },
+    {
+      "a": "live|science and technology|CVE-2022-23221",
+      "b": "live|science and technology|6513",
+      "clone": false,
+      "char": 0.5097087378640777,
+      "char_gap": 0.0,
+      "content": 0.06818181818181818,
+      "content_gap": 0.0
+    },
+    {
+      "a": "live|science and technology|CVE-2022-23221",
+      "b": "live|science and technology|11.3.0",
+      "clone": false,
+      "char": 0.4542635658914729,
+      "char_gap": 0.0,
+      "content": 0.043478260869565216,
+      "content_gap": 0.0
+    },
+    {
+      "a": "live|science and technology|CVE-2022-23221",
+      "b": "live|science and technology|200651",
+      "clone": false,
+      "char": 0.4611801242236025,
+      "char_gap": 0.0,
+      "content": 0.0425531914893617,
+      "content_gap": 0.0
+    },
+    {
+      "a": "live|science and technology|CVE-2022-23221",
+      "b": "retired|science and technology|2203.11011",
+      "clone": false,
+      "char": 0.522007722007722,
+      "char_gap": 0.0,
+      "content": 0.11320754716981132,
+      "content_gap": 0.0
+    },
+    {
+      "a": "live|science and technology|CVE-2022-23221",
+      "b": "retired|science and technology|2211.04278",
+      "clone": false,
+      "char": 0.522007722007722,
+      "char_gap": 0.0,
+      "content": 0.11320754716981132,
+      "content_gap": 0.0
+    },
+    {
+      "a": "live|science and technology|CVE-2022-23221",
+      "b": "retired|science and technology|2302.07287",
+      "clone": false,
+      "char": 0.522007722007722,
+      "char_gap": 0.0,
+      "content": 0.11320754716981132,
+      "content_gap": 0.0
+    },
+    {
+      "a": "live|science and technology|CVE-2022-23221",
+      "b": "retired|science and technology|2403.07505",
+      "clone": false,
+      "char": 0.5226748654880861,
+      "char_gap": 0.0,
+      "content": 0.11320754716981132,
+      "content_gap": 0.0
+    },
+    {
+      "a": "live|science and technology|6513",
+      "b": "live|science and technology|11.3.0",
+      "clone": false,
+      "char": 0.5183887915936952,
+      "char_gap": 0.0,
+      "content": 0.04878048780487805,
+      "content_gap": 0.0
+    },
+    {
+      "a": "live|science and technology|6513",
+      "b": "live|science and technology|200651",
+      "clone": false,
+      "char": 0.5403508771929825,
+      "char_gap": 0.0,
+      "content": 0.07317073170731707,
+      "content_gap": 0.0
+    },
+    {
+      "a": "live|science and technology|6513",
+      "b": "retired|science and technology|2203.11011",
+      "clone": false,
+      "char": 0.4934612031386225,
+      "char_gap": 0.0,
+      "content": 0.058823529411764705,
+      "content_gap": 0.0
+    },
+    {
+      "a": "live|science and technology|6513",
+      "b": "retired|science and technology|2211.04278",
+      "clone": false,
+      "char": 0.4934612031386225,
+      "char_gap": 0.0,
+      "content": 0.058823529411764705,
+      "content_gap": 0.0
+    },
+    {
+      "a": "live|science and technology|6513",
+      "b": "retired|science and technology|2302.07287",
+      "clone": false,
+      "char": 0.4934612031386225,
+      "char_gap": 0.0,
+      "content": 0.058823529411764705,
+      "content_gap": 0.0
+    },
+    {
+      "a": "live|science and technology|6513",
+      "b": "retired|science and technology|2403.07505",
+      "clone": false,
+      "char": 0.49262792714657416,
+      "char_gap": 0.0,
+      "content": 0.058823529411764705,
+      "content_gap": 0.0
+    },
+    {
+      "a": "live|science and technology|11.3.0",
+      "b": "live|science and technology|200651",
+      "clone": false,
+      "char": 0.4807370184254606,
+      "char_gap": 0.0,
+      "content": 0.046511627906976744,
+      "content_gap": 0.0
+    },
+    {
+      "a": "live|science and technology|11.3.0",
+      "b": "retired|science and technology|2203.11011",
+      "clone": false,
+      "char": 0.4546211490424646,
+      "char_gap": 0.0,
+      "content": 0.057692307692307696,
+      "content_gap": 0.0
+    },
+    {
+      "a": "live|science and technology|11.3.0",
+      "b": "retired|science and technology|2211.04278",
+      "clone": false,
+      "char": 0.4546211490424646,
+      "char_gap": 0.0,
+      "content": 0.057692307692307696,
+      "content_gap": 0.0
+    },
+    {
+      "a": "live|science and technology|11.3.0",
+      "b": "retired|science and technology|2302.07287",
+      "clone": false,
+      "char": 0.45129059117402165,
+      "char_gap": 0.0,
+      "content": 0.057692307692307696,
+      "content_gap": 0.0
+    },
+    {
+      "a": "live|science and technology|11.3.0",
+      "b": "retired|science and technology|2403.07505",
+      "clone": false,
+      "char": 0.4523612261806131,
+      "char_gap": 0.0,
+      "content": 0.057692307692307696,
+      "content_gap": 0.0
+    },
+    {
+      "a": "live|science and technology|200651",
+      "b": "retired|science and technology|2203.11011",
+      "clone": false,
+      "char": 0.43369474562135113,
+      "char_gap": 0.0,
+      "content": 0.037037037037037035,
+      "content_gap": 0.0
+    },
+    {
+      "a": "live|science and technology|200651",
+      "b": "retired|science and technology|2211.04278",
+      "clone": false,
+      "char": 0.43369474562135113,
+      "char_gap": 0.0,
+      "content": 0.037037037037037035,
+      "content_gap": 0.0
+    },
+    {
+      "a": "live|science and technology|200651",
+      "b": "retired|science and technology|2302.07287",
+      "clone": false,
+      "char": 0.43369474562135113,
+      "char_gap": 0.0,
+      "content": 0.037037037037037035,
+      "content_gap": 0.0
+    },
+    {
+      "a": "live|science and technology|200651",
+      "b": "retired|science and technology|2403.07505",
+      "clone": false,
+      "char": 0.4315352697095436,
+      "char_gap": 0.0,
+      "content": 0.037037037037037035,
+      "content_gap": 0.0
+    },
+    {
+      "a": "retired|science and technology|2203.11011",
+      "b": "retired|science and technology|2211.04278",
+      "clone": true,
+      "char": 0.9933665008291874,
+      "char_gap": 0.0,
+      "content": 0.8857142857142857,
+      "content_gap": 0.0
+    },
+    {
+      "a": "retired|science and technology|2203.11011",
+      "b": "retired|science and technology|2302.07287",
+      "clone": true,
+      "char": 0.9900497512437811,
+      "char_gap": 0.0,
+      "content": 0.8857142857142857,
+      "content_gap": 0.0
+    },
+    {
+      "a": "retired|science and technology|2203.11011",
+      "b": "retired|science and technology|2403.07505",
+      "clone": true,
+      "char": 0.9851485148514851,
+      "char_gap": 0.0,
+      "content": 0.8857142857142857,
+      "content_gap": 0.0
+    },
+    {
+      "a": "retired|science and technology|2211.04278",
+      "b": "retired|science and technology|2302.07287",
+      "clone": true,
+      "char": 0.9900497512437811,
+      "char_gap": 0.0,
+      "content": 0.8857142857142857,
+      "content_gap": 0.0
+    },
+    {
+      "a": "retired|science and technology|2211.04278",
+      "b": "retired|science and technology|2403.07505",
+      "clone": true,
+      "char": 0.9818481848184818,
+      "char_gap": 0.0,
+      "content": 0.8857142857142857,
+      "content_gap": 0.0
+    },
+    {
+      "a": "retired|science and technology|2302.07287",
+      "b": "retired|science and technology|2403.07505",
+      "clone": true,
+      "char": 0.9851485148514851,
+      "char_gap": 0.0,
+      "content": 0.8857142857142857,
+      "content_gap": 0.0
+    }
+  ]
+}

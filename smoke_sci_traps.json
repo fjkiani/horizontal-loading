@@ -1,0 +1,347 @@
+[
+ {
+  "collection_is_explicit": false,
+  "primary_operator": "US National Institute of Standards and Technology",
+  "independent_confirming_operators": [
+   "Forum of Incident Response and Security Teams",
+   "MITRE Corporation"
+  ],
+  "category": "science and technology",
+  "field": "CVE identifier",
+  "answer": "CVE-2023-34095",
+  "entity": "cpdb-libs provides frontend and backend libraries for the Common Printing Dialog Backends (CPDB) project. In versions 1.",
+  "n_base": 177,
+  "sources": [
+   "https://services.nvd.nist.gov/rest/json/cves/2.0?pubStartDate=2023-06-14T00:00:00.000&pubEndDate=2023-06-14T23:59:59.999&resultsPerPage=2000",
+   "https://cveawg.mitre.org/api/cve/CVE-2023-34095",
+   "https://api.first.org/data/v1/epss?cve=CVE-2023-34095"
+  ],
+  "confirming_sources": [
+   "https://cveawg.mitre.org/api/cve/CVE-2023-34095",
+   "https://api.first.org/data/v1/epss?cve=CVE-2023-34095"
+  ],
+  "api_proof": true,
+  "api_proof_argument": "The National Vulnerability Database interface accepts no sort parameter and offers no filter on how many references a record carries, so every one of the 177 records published that day must be retrieved and its reference list counted.",
+  "confirmation": "MITRE resolves CVE-2023-34095 to the same description text, and FIRST publishes an exploit-prediction score of 0.015390000 for it; MITRE operates the CVE Program and FIRST models exploit probability independently of both",
+  "prompt": "The National Vulnerability Database operated by the United States National Institute of Standards and Technology stamps every vulnerability record it publishes with a publication date and lists the external reference links attached to that record. Consider only the records that database stamps as published on 2023-06-14 in Coordinated Universal Time. Exactly one of those records carries more external reference links than any other record published that day. Report the CVE identifier of that single record. Confirm the identifier against the CVE Program record and an exploit-prediction listing before answering. Give the identifier alone, in the form CVE-YYYY-NNNNN, with no other words.",
+  "source_operators": [
+   "Forum of Incident Response and Security Teams",
+   "MITRE Corporation",
+   "US National Institute of Standards and Technology"
+  ],
+  "confirming_operators": [
+   "Forum of Incident Response and Security Teams",
+   "MITRE Corporation"
+  ],
+  "track": "api-native",
+  "ranking_evidence": {
+   "label": "vuln 2023-06-14",
+   "mode": "max",
+   "n_base": 177,
+   "n_ranked": 177,
+   "spearman_key_vs_api_order": 0.1465,
+   "n_tied_at_extremum": 1,
+   "distinct_keys": 9,
+   "winner_position_in_api_order": 150,
+   "winner_is_first_returned": false,
+   "winner_is_last_returned": false,
+   "top_keys": [
+    "12",
+    "10",
+    "10",
+    "10",
+    "10"
+   ],
+   "answer_field_distinct_values": 177,
+   "answer_field_n_values": 177,
+   "answer_field_max_count": 1,
+   "answer_field_count_of_answer": 1,
+   "answer_field_modal_share": 0.00565,
+   "p_answer_by_uniform_guess": 0.00565,
+   "key_component_depths": {},
+   "key_is_aggregated": false,
+   "equivalent_served_fields": [],
+   "n_fields_swept": 0,
+   "sort_field_rejected_by_service": [
+    "the NVD 2.0 API exposes no sort parameter",
+    "no reference-count filter exists"
+   ],
+   "n_true": 177,
+   "page_cap": 2000,
+   "pages_fetched": 1
+  },
+  "facts": {
+   "day": "2023-06-14",
+   "n": 177,
+   "references": 12,
+   "epss": "0.015390000",
+   "epss_percentile": "0.725640000",
+   "runner_up_references": 10,
+   "landing_pages": [
+    "https://nvd.nist.gov/vuln/detail/CVE-2023-34095",
+    "https://www.cve.org/CVERecord?id=CVE-2023-34095"
+   ]
+  }
+ },
+ {
+  "collection_is_explicit": false,
+  "primary_operator": "RFC Editor",
+  "independent_confirming_operators": [
+   "Allen Institute for AI",
+   "Crossref"
+  ],
+  "category": "science and technology",
+  "field": "RFC number",
+  "answer": "9914",
+  "entity": "Root-Initiated Routing State in the Routing Protocol for Low-Power and Lossy Networks (RPL)",
+  "n_base": 14,
+  "sources": [
+   "https://www.rfc-editor.org/rfc-index.xml",
+   "https://api.crossref.org/works/10.17487/RFC9914",
+   "https://api.semanticscholar.org/graph/v1/paper/DOI:10.17487/RFC9914?fields=title,year"
+  ],
+  "confirming_sources": [
+   "https://api.crossref.org/works/10.17487/RFC9914",
+   "https://api.semanticscholar.org/graph/v1/paper/DOI:10.17487/RFC9914?fields=title,year"
+  ],
+  "api_proof": true,
+  "api_proof_argument": "The RFC Editor search interface orders results only by number, date, title or status and offers no ordering or filter on length, so all 14 documents published that month must be listed and their page counts compared.",
+  "confirmation": "Crossref and Semantic Scholar both resolve 10.17487/RFC9914 to the same document title, from two bibliographic services outside the RFC Editor",
+  "prompt": "The RFC Editor maintains a published index of the Request for Comments series in which every document appears with its publication month and its length in pages. Consider only the documents that index records as published in April 2026. Exactly one of those documents runs to more pages than any other published in that month. Report the RFC number of that single document. Verify the number against its registered digital object identifier before answering. Give the number alone, as digits, without the letters RFC and with no other words.",
+  "source_operators": [
+   "Allen Institute for AI",
+   "Crossref",
+   "RFC Editor"
+  ],
+  "confirming_operators": [
+   "Allen Institute for AI",
+   "Crossref"
+  ],
+  "track": "api-native",
+  "ranking_evidence": {
+   "label": "standard April 2026",
+   "mode": "max",
+   "n_base": 14,
+   "n_ranked": 14,
+   "spearman_key_vs_api_order": -0.7026,
+   "n_tied_at_extremum": 1,
+   "distinct_keys": 12,
+   "winner_position_in_api_order": 3,
+   "winner_is_first_returned": false,
+   "winner_is_last_returned": false,
+   "top_keys": [
+    "75",
+    "61",
+    "58",
+    "53",
+    "38"
+   ],
+   "answer_field_distinct_values": 14,
+   "answer_field_n_values": 14,
+   "answer_field_max_count": 1,
+   "answer_field_count_of_answer": 1,
+   "answer_field_modal_share": 0.071429,
+   "p_answer_by_uniform_guess": 0.071429,
+   "key_component_depths": {},
+   "key_is_aggregated": false,
+   "equivalent_served_fields": [],
+   "n_fields_swept": 0,
+   "sort_field_rejected_by_service": [
+    "the RFC Editor search interface orders only by number, date, title and status",
+    "no page-count ordering or filter is offered"
+   ],
+   "n_true": 14,
+   "page_cap": null,
+   "pages_fetched": 1
+  },
+  "facts": {
+   "month": "April",
+   "year": "2026",
+   "n": 14,
+   "pages": 75,
+   "doi": "10.17487/RFC9914",
+   "stream": "IETF",
+   "status": "PROPOSED STANDARD",
+   "runner_up_pages": 61,
+   "landing_pages": [
+    "https://www.rfc-editor.org/rfc/rfc9914.html",
+    "https://www.rfc-editor.org/info/rfc9914"
+   ]
+  }
+ },
+ {
+  "collection_is_explicit": false,
+  "primary_operator": "Python Software Foundation",
+  "independent_confirming_operators": [
+   "Google LLC",
+   "ecosyste.ms (Open Source Collective)"
+  ],
+  "category": "science and technology",
+  "field": "package version string",
+  "answer": "11.3.0",
+  "entity": "pillow on the Python Package Index",
+  "n_base": 107,
+  "sources": [
+   "https://pypi.org/pypi/pillow/json",
+   "https://api.deps.dev/v3alpha/systems/pypi/packages/pillow/versions/11.3.0",
+   "https://packages.ecosyste.ms/api/v1/registries/pypi.org/packages/pillow/versions/11.3.0"
+  ],
+  "confirming_sources": [
+   "https://api.deps.dev/v3alpha/systems/pypi/packages/pillow/versions/11.3.0",
+   "https://packages.ecosyste.ms/api/v1/registries/pypi.org/packages/pillow/versions/11.3.0"
+  ],
+  "api_proof": true,
+  "api_proof_argument": "The Python Package Index serves one document per project with no query, ordering or filtering parameters at all, so the artefact lists of all 107 published releases must be read out of that document and compared.",
+  "confirmation": "Google Open Source Insights and ecosyste.ms both resolve pillow 11.3.0 as a published release, from two indexes outside the Python Package Index",
+  "prompt": "The Python Package Index publishes, for every project it hosts, a release history listing each released version together with the distribution files uploaded for it. Consider only the released versions of the project named pillow that have at least one distribution file. Exactly one of those versions has more uploaded distribution files than any other version of the project. Report the version string of that single release. Confirm the version against two package indexes outside the registry before answering. Give the version string alone, exactly as the index spells it, with no other words.",
+  "source_operators": [
+   "Google LLC",
+   "Python Software Foundation",
+   "ecosyste.ms (Open Source Collective)"
+  ],
+  "confirming_operators": [
+   "Google LLC",
+   "ecosyste.ms (Open Source Collective)"
+  ],
+  "track": "api-native",
+  "ranking_evidence": {
+   "label": "supplychain pillow",
+   "mode": "max",
+   "n_base": 107,
+   "n_ranked": 107,
+   "spearman_key_vs_api_order": 0.2289,
+   "n_tied_at_extremum": 1,
+   "distinct_keys": 48,
+   "winner_position_in_api_order": 25,
+   "winner_is_first_returned": false,
+   "winner_is_last_returned": false,
+   "top_keys": [
+    "106",
+    "91",
+    "91",
+    "91",
+    "91"
+   ],
+   "answer_field_distinct_values": 107,
+   "answer_field_n_values": 107,
+   "answer_field_max_count": 1,
+   "answer_field_count_of_answer": 1,
+   "answer_field_modal_share": 0.009346,
+   "p_answer_by_uniform_guess": 0.009346,
+   "key_component_depths": {},
+   "key_is_aggregated": false,
+   "equivalent_served_fields": [],
+   "n_fields_swept": 0,
+   "sort_field_rejected_by_service": [
+    "the PyPI JSON API serves one document per project with no query, sort or filter parameters of any kind"
+   ],
+   "n_true": 107,
+   "page_cap": null,
+   "pages_fetched": 1,
+   "key_dispersion_sd": 24.8895,
+   "key_distinct_values": 48
+  },
+  "facts": {
+   "package": "pillow",
+   "n": 107,
+   "files": 106,
+   "runner_up_files": 91,
+   "distinct_file_counts": 48,
+   "landing_pages": [
+    "https://pypi.org/project/pillow/11.3.0/",
+    "https://deps.dev/pypi/pillow/11.3.0"
+   ]
+  }
+ },
+ {
+  "collection_is_explicit": false,
+  "primary_operator": "RIPE NCC",
+  "independent_confirming_operators": [
+   "CAIDA, University of California San Diego",
+   "PeeringDB"
+  ],
+  "category": "science and technology",
+  "field": "autonomous system number",
+  "answer": "200651",
+  "entity": "FlokiNET FlokiNET ehf",
+  "n_base": 86,
+  "sources": [
+   "https://stat.ripe.net/data/country-resource-list/data.json?resource=IS",
+   "https://www.peeringdb.com/api/net?asn=200651",
+   "https://api.asrank.caida.org/v2/restful/asns/200651"
+  ],
+  "confirming_sources": [
+   "https://www.peeringdb.com/api/net?asn=200651",
+   "https://api.asrank.caida.org/v2/restful/asns/200651"
+  ],
+  "api_proof": true,
+  "api_proof_argument": "The registry returns the country roster as an unordered list and publishes announced prefixes only one resource at a time, so each of the 86 listed numbers must be queried separately and the prefix lists compared.",
+  "confirmation": "PeeringDB lists AS200651 as 'FlokiNET ehf' and CAIDA records it as 'FlokiNET' in IS; PeeringDB records are maintained by the networks themselves and CAIDA infers from its own routing observations",
+  "prompt": "The RIPE NCC publishes, for each country, the list of autonomous system numbers registered to organisations there, and separately reports the address prefixes each autonomous system announces in the global routing table. Consider only the autonomous system numbers that registry lists for Iceland. Exactly one of them announces more prefixes than any other number on that list. Report that autonomous system number. Check the number against a peering directory and an academic routing observatory before answering. Give the number alone, as digits, without the letters AS and with no other words.",
+  "source_operators": [
+   "CAIDA, University of California San Diego",
+   "PeeringDB",
+   "RIPE NCC"
+  ],
+  "confirming_operators": [
+   "CAIDA, University of California San Diego",
+   "PeeringDB"
+  ],
+  "track": "api-native",
+  "ranking_evidence": {
+   "label": "asn IS",
+   "mode": "max",
+   "n_base": 86,
+   "n_ranked": 86,
+   "spearman_key_vs_api_order": -0.2206,
+   "n_tied_at_extremum": 1,
+   "distinct_keys": 16,
+   "winner_position_in_api_order": 47,
+   "winner_is_first_returned": false,
+   "winner_is_last_returned": false,
+   "top_keys": [
+    "39",
+    "34",
+    "23",
+    "22",
+    "19"
+   ],
+   "answer_field_distinct_values": 86,
+   "answer_field_n_values": 86,
+   "answer_field_max_count": 1,
+   "answer_field_count_of_answer": 1,
+   "answer_field_modal_share": 0.011628,
+   "p_answer_by_uniform_guess": 0.011628,
+   "key_component_depths": {},
+   "key_is_aggregated": false,
+   "equivalent_served_fields": [],
+   "n_fields_swept": 0,
+   "sort_field_rejected_by_service": [
+    "the country resource list returns an unordered roster",
+    "announced-prefixes is a per-resource call, not a rankable collection endpoint"
+   ],
+   "n_true": 86,
+   "page_cap": null,
+   "pages_fetched": 87
+  },
+  "facts": {
+   "country": "IS",
+   "country_name": "Iceland",
+   "n": 86,
+   "prefixes": 39,
+   "runner_up_prefixes": 34,
+   "caida_rank": 19255,
+   "name_variants": {
+    "ripe_holder": "FlokiNET FlokiNET ehf",
+    "peeringdb_name": "FlokiNET ehf",
+    "peeringdb_aka": "",
+    "caida_asn_name": "FlokiNET"
+   },
+   "name_reconciliation_basis": "registry holder shares ['flokinet'] with CAIDA; registry holder shares ['ehf', 'flokinet'] with PeeringDB; PeeringDB shares ['flokinet'] with CAIDA",
+   "landing_pages": [
+    "https://stat.ripe.net/AS200651",
+    "https://www.peeringdb.com/asn/200651"
+   ]
+  }
+ }
+]

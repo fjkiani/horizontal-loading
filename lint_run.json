@@ -1,0 +1,1392 @@
+{
+ "new": [
+  {
+   "category": "science and technology",
+   "field": "CVE identifier",
+   "answer": "CVE-2023-34095",
+   "ok": true,
+   "violations": [],
+   "warnings": [
+    "R6 https://nvd.nist.gov/vuln/detail/CVE-2023-34095 is behind bot protection from this network (status 502, server 'cloudflare'); not counted as reachable, not counted as broken"
+   ],
+   "submittable": false,
+   "sign_off_missing": [
+    "r1_single_provable_answer",
+    "r5_answer_found_first",
+    "r8_test_evidence_honest",
+    "r10_answer_defensible",
+    "r11_single_submission"
+   ],
+   "link_detail": [
+    {
+     "url": "https://services.nvd.nist.gov/rest/json/cves/2.0?pubStartDate=2023-06-14T00:00:00.000&pubEndDate=2023-06-14T23:59:59.999&resultsPerPage=2000",
+     "final_url": "https://services.nvd.nist.gov/rest/json/cves/2.0?pubStartDate=2023-06-14T00:00:00.000&pubEndDate=2023-06-14T23:59:59.999&resultsPerPage=2000",
+     "status": 200,
+     "content_type": "application/json",
+     "server": "cloudflare",
+     "n_cookies": 2,
+     "error": "",
+     "is_html": false,
+     "paywall_markers": [],
+     "is_landing": false,
+     "verdict": "open"
+    },
+    {
+     "url": "https://cveawg.mitre.org/api/cve/CVE-2023-34095",
+     "final_url": "https://cveawg.mitre.org/api/cve/CVE-2023-34095",
+     "status": 200,
+     "content_type": "application/json; charset=utf-8",
+     "server": "",
+     "n_cookies": 0,
+     "error": "",
+     "is_html": false,
+     "paywall_markers": [],
+     "is_landing": false,
+     "verdict": "open"
+    },
+    {
+     "url": "https://api.first.org/data/v1/epss?cve=CVE-2023-34095",
+     "final_url": "https://api.first.org/data/v1/epss?cve=CVE-2023-34095",
+     "status": 200,
+     "content_type": "application/json; charset=utf-8",
+     "server": "nginx",
+     "n_cookies": 0,
+     "error": "",
+     "is_html": false,
+     "paywall_markers": [],
+     "is_landing": false,
+     "verdict": "open"
+    },
+    {
+     "url": "https://nvd.nist.gov/vuln/detail/CVE-2023-34095",
+     "final_url": "https://nvd.nist.gov/vuln/detail/CVE-2023-34095",
+     "status": 502,
+     "content_type": "text/html; charset=UTF-8",
+     "server": "cloudflare",
+     "n_cookies": 1,
+     "error": "HTTP 502",
+     "is_html": true,
+     "paywall_markers": [],
+     "is_landing": true,
+     "verdict": "bot_block"
+    },
+    {
+     "url": "https://www.cve.org/CVERecord?id=CVE-2023-34095",
+     "final_url": "https://www.cve.org/CVERecord?id=CVE-2023-34095",
+     "status": 200,
+     "content_type": "text/html",
+     "server": "AmazonS3",
+     "n_cookies": 0,
+     "error": "",
+     "is_html": true,
+     "paywall_markers": [],
+     "is_landing": true,
+     "verdict": "open"
+    }
+   ]
+  },
+  {
+   "category": "science and technology",
+   "field": "RFC number",
+   "answer": "9914",
+   "ok": true,
+   "violations": [],
+   "warnings": [],
+   "submittable": false,
+   "sign_off_missing": [
+    "r1_single_provable_answer",
+    "r5_answer_found_first",
+    "r8_test_evidence_honest",
+    "r10_answer_defensible",
+    "r11_single_submission"
+   ],
+   "link_detail": [
+    {
+     "url": "https://www.rfc-editor.org/rfc-index.xml",
+     "final_url": "https://www.rfc-editor.org/rfc-index.xml",
+     "status": 200,
+     "content_type": "application/xml;charset=utf-8",
+     "server": "cloudflare",
+     "n_cookies": 1,
+     "error": "",
+     "is_html": false,
+     "paywall_markers": [],
+     "is_landing": false,
+     "verdict": "open"
+    },
+    {
+     "url": "https://api.crossref.org/works/10.17487/RFC9914",
+     "final_url": "https://api.crossref.org/works/10.17487/RFC9914",
+     "status": 200,
+     "content_type": "application/json",
+     "server": "Jetty(9.4.40.v20210413)",
+     "n_cookies": 0,
+     "error": "",
+     "is_html": false,
+     "paywall_markers": [],
+     "is_landing": false,
+     "verdict": "open"
+    },
+    {
+     "url": "https://api.semanticscholar.org/graph/v1/paper/DOI:10.17487/RFC9914?fields=title,year",
+     "final_url": "https://api.semanticscholar.org/graph/v1/paper/DOI:10.17487/RFC9914?fields=title,year",
+     "status": 200,
+     "content_type": "application/json",
+     "server": "",
+     "n_cookies": 0,
+     "error": "",
+     "is_html": false,
+     "paywall_markers": [],
+     "is_landing": false,
+     "verdict": "open"
+    },
+    {
+     "url": "https://www.rfc-editor.org/rfc/rfc9914.html",
+     "final_url": "https://www.rfc-editor.org/rfc/rfc9914.html",
+     "status": 200,
+     "content_type": "text/html",
+     "server": "cloudflare",
+     "n_cookies": 1,
+     "error": "",
+     "is_html": true,
+     "paywall_markers": [],
+     "is_landing": true,
+     "verdict": "open"
+    },
+    {
+     "url": "https://www.rfc-editor.org/info/rfc9914",
+     "final_url": "https://www.rfc-editor.org/info/rfc9914/",
+     "status": 200,
+     "content_type": "text/html;charset=utf-8",
+     "server": "cloudflare",
+     "n_cookies": 1,
+     "error": "",
+     "is_html": true,
+     "paywall_markers": [],
+     "is_landing": true,
+     "verdict": "open"
+    }
+   ]
+  },
+  {
+   "category": "science and technology",
+   "field": "package version string",
+   "answer": "11.3.0",
+   "ok": true,
+   "violations": [],
+   "warnings": [],
+   "submittable": false,
+   "sign_off_missing": [
+    "r1_single_provable_answer",
+    "r5_answer_found_first",
+    "r8_test_evidence_honest",
+    "r10_answer_defensible",
+    "r11_single_submission"
+   ],
+   "link_detail": [
+    {
+     "url": "https://pypi.org/pypi/pillow/json",
+     "final_url": "https://pypi.org/pypi/pillow/json",
+     "status": 200,
+     "content_type": "application/json",
+     "server": "gunicorn",
+     "n_cookies": 0,
+     "error": "",
+     "is_html": false,
+     "paywall_markers": [],
+     "is_landing": false,
+     "verdict": "open"
+    },
+    {
+     "url": "https://api.deps.dev/v3alpha/systems/pypi/packages/pillow/versions/11.3.0",
+     "final_url": "https://api.deps.dev/v3alpha/systems/pypi/packages/pillow/versions/11.3.0",
+     "status": 200,
+     "content_type": "application/json; charset=utf-8",
+     "server": "",
+     "n_cookies": 0,
+     "error": "",
+     "is_html": false,
+     "paywall_markers": [],
+     "is_landing": false,
+     "verdict": "open"
+    },
+    {
+     "url": "https://packages.ecosyste.ms/api/v1/registries/pypi.org/packages/pillow/versions/11.3.0",
+     "final_url": "https://packages.ecosyste.ms/api/v1/registries/pypi.org/packages/pillow/versions/11.3.0",
+     "status": 200,
+     "content_type": "application/json; charset=utf-8",
+     "server": "cloudflare",
+     "n_cookies": 0,
+     "error": "",
+     "is_html": false,
+     "paywall_markers": [],
+     "is_landing": false,
+     "verdict": "open"
+    },
+    {
+     "url": "https://pypi.org/project/pillow/11.3.0/",
+     "final_url": "https://pypi.org/project/pillow/11.3.0/",
+     "status": 200,
+     "content_type": "text/html; charset=utf-8",
+     "server": "",
+     "n_cookies": 1,
+     "error": "",
+     "is_html": true,
+     "paywall_markers": [],
+     "is_landing": true,
+     "verdict": "open"
+    },
+    {
+     "url": "https://deps.dev/pypi/pillow/11.3.0",
+     "final_url": "https://deps.dev/pypi/pillow/11.3.0",
+     "status": 200,
+     "content_type": "text/html; charset=utf-8",
+     "server": "",
+     "n_cookies": 0,
+     "error": "",
+     "is_html": true,
+     "paywall_markers": [],
+     "is_landing": true,
+     "verdict": "open"
+    }
+   ]
+  },
+  {
+   "category": "science and technology",
+   "field": "autonomous system number",
+   "answer": "200651",
+   "ok": true,
+   "violations": [],
+   "warnings": [],
+   "submittable": false,
+   "sign_off_missing": [
+    "r1_single_provable_answer",
+    "r5_answer_found_first",
+    "r8_test_evidence_honest",
+    "r10_answer_defensible",
+    "r11_single_submission"
+   ],
+   "link_detail": [
+    {
+     "url": "https://stat.ripe.net/data/country-resource-list/data.json?resource=IS",
+     "final_url": "https://stat.ripe.net/data/country-resource-list/data.json?resource=IS",
+     "status": 200,
+     "content_type": "application/json; charset=utf-8",
+     "server": "nginx",
+     "n_cookies": 0,
+     "error": "",
+     "is_html": false,
+     "paywall_markers": [],
+     "is_landing": false,
+     "verdict": "open"
+    },
+    {
+     "url": "https://www.peeringdb.com/api/net?asn=200651",
+     "final_url": "https://www.peeringdb.com/api/net?asn=200651",
+     "status": 200,
+     "content_type": "application/json; charset=utf-8",
+     "server": "",
+     "n_cookies": 0,
+     "error": "",
+     "is_html": false,
+     "paywall_markers": [],
+     "is_landing": false,
+     "verdict": "open"
+    },
+    {
+     "url": "https://api.asrank.caida.org/v2/restful/asns/200651",
+     "final_url": "https://api.asrank.caida.org/v2/restful/asns/200651",
+     "status": 200,
+     "content_type": "application/json",
+     "server": "nginx",
+     "n_cookies": 0,
+     "error": "",
+     "is_html": false,
+     "paywall_markers": [],
+     "is_landing": false,
+     "verdict": "open"
+    },
+    {
+     "url": "https://stat.ripe.net/AS200651",
+     "final_url": "https://stat.ripe.net/resource/AS200651",
+     "status": 200,
+     "content_type": "text/html; charset=utf-8",
+     "server": "nginx",
+     "n_cookies": 0,
+     "error": "",
+     "is_html": true,
+     "paywall_markers": [],
+     "is_landing": true,
+     "verdict": "open"
+    },
+    {
+     "url": "https://www.peeringdb.com/asn/200651",
+     "final_url": "https://www.peeringdb.com/asn/200651",
+     "status": 200,
+     "content_type": "text/html; charset=utf-8",
+     "server": "",
+     "n_cookies": 0,
+     "error": "",
+     "is_html": true,
+     "paywall_markers": [],
+     "is_landing": true,
+     "verdict": "open"
+    }
+   ]
+  }
+ ],
+ "live": [
+  {
+   "category": "geography",
+   "field": "ICAO identifier",
+   "answer": "SKIP",
+   "ok": false,
+   "violations": [
+    "R6 no human-readable landing page is recorded; a reviewer cannot open the answer in a browser"
+   ],
+   "warnings": [
+    "R7 shares operator(s) ['OpenFlights', 'OurAirports', 'REST Countries project', 'US National Oceanic and Atmospheric Administration'] with 'ICAO identifier'/'SPJL'",
+    "R7 shares source domain(s) ['operator:OpenFlights', 'operator:OurAirports', 'operator:US National Oceanic and Atmospheric Administration', 'restcountries.com'] with 'ICAO identifier'/'SPJL'",
+    "R7 prompt similarity 0.990 >= 0.76 against 'ICAO identifier'/'SPJL'",
+    "R7 content similarity 0.951 >= 0.5 against 'ICAO identifier'/'SPJL'"
+   ],
+   "submittable": false,
+   "sign_off_missing": [
+    "r1_single_provable_answer",
+    "r5_answer_found_first",
+    "r8_test_evidence_honest",
+    "r10_answer_defensible",
+    "r11_single_submission"
+   ],
+   "link_detail": [
+    {
+     "url": "https://davidmegginson.github.io/ourairports-data/airports.csv",
+     "final_url": "https://davidmegginson.github.io/ourairports-data/airports.csv",
+     "status": 200,
+     "content_type": "text/csv; charset=utf-8",
+     "server": "GitHub.com",
+     "n_cookies": 0,
+     "error": "",
+     "is_html": false,
+     "paywall_markers": [],
+     "is_landing": false,
+     "verdict": "open"
+    },
+    {
+     "url": "https://aviationweather.gov/api/data/stationinfo?ids=SKIP&format=json",
+     "final_url": "https://aviationweather.gov/api/data/stationinfo?ids=SKIP&format=json",
+     "status": 200,
+     "content_type": "application/json; charset=utf-8",
+     "server": "",
+     "n_cookies": 0,
+     "error": "",
+     "is_html": false,
+     "paywall_markers": [],
+     "is_landing": false,
+     "verdict": "open"
+    },
+    {
+     "url": "https://raw.githubusercontent.com/jpatokal/openflights/master/data/airports.dat",
+     "final_url": "https://raw.githubusercontent.com/jpatokal/openflights/master/data/airports.dat",
+     "status": 200,
+     "content_type": "text/plain; charset=utf-8",
+     "server": "",
+     "n_cookies": 0,
+     "error": "",
+     "is_html": false,
+     "paywall_markers": [],
+     "is_landing": false,
+     "verdict": "open"
+    },
+    {
+     "url": "https://restcountries.com/v3.1/alpha/CO",
+     "final_url": "https://files-03.restcountries.com/countries.00/legacy.json",
+     "status": 200,
+     "content_type": "application/json",
+     "server": "cloudflare",
+     "n_cookies": 0,
+     "error": "",
+     "is_html": false,
+     "paywall_markers": [],
+     "is_landing": false,
+     "verdict": "open"
+    }
+   ]
+  },
+  {
+   "category": "geography",
+   "field": "ICAO identifier",
+   "answer": "SPJL",
+   "ok": false,
+   "violations": [
+    "R6 no human-readable landing page is recorded; a reviewer cannot open the answer in a browser"
+   ],
+   "warnings": [
+    "R7 shares operator(s) ['OpenFlights', 'OurAirports', 'REST Countries project', 'US National Oceanic and Atmospheric Administration'] with 'ICAO identifier'/'SKIP'",
+    "R7 shares source domain(s) ['operator:OpenFlights', 'operator:OurAirports', 'operator:US National Oceanic and Atmospheric Administration', 'restcountries.com'] with 'ICAO identifier'/'SKIP'",
+    "R7 prompt similarity 0.990 >= 0.76 against 'ICAO identifier'/'SKIP'",
+    "R7 content similarity 0.951 >= 0.5 against 'ICAO identifier'/'SKIP'"
+   ],
+   "submittable": false,
+   "sign_off_missing": [
+    "r1_single_provable_answer",
+    "r5_answer_found_first",
+    "r8_test_evidence_honest",
+    "r10_answer_defensible",
+    "r11_single_submission"
+   ],
+   "link_detail": [
+    {
+     "url": "https://davidmegginson.github.io/ourairports-data/airports.csv",
+     "final_url": "https://davidmegginson.github.io/ourairports-data/airports.csv",
+     "status": 200,
+     "content_type": "text/csv; charset=utf-8",
+     "server": "GitHub.com",
+     "n_cookies": 0,
+     "error": "",
+     "is_html": false,
+     "paywall_markers": [],
+     "is_landing": false,
+     "verdict": "open"
+    },
+    {
+     "url": "https://aviationweather.gov/api/data/stationinfo?ids=SPJL&format=json",
+     "final_url": "https://aviationweather.gov/api/data/stationinfo?ids=SPJL&format=json",
+     "status": 200,
+     "content_type": "application/json; charset=utf-8",
+     "server": "",
+     "n_cookies": 0,
+     "error": "",
+     "is_html": false,
+     "paywall_markers": [],
+     "is_landing": false,
+     "verdict": "open"
+    },
+    {
+     "url": "https://raw.githubusercontent.com/jpatokal/openflights/master/data/airports.dat",
+     "final_url": "https://raw.githubusercontent.com/jpatokal/openflights/master/data/airports.dat",
+     "status": 200,
+     "content_type": "text/plain; charset=utf-8",
+     "server": "",
+     "n_cookies": 0,
+     "error": "",
+     "is_html": false,
+     "paywall_markers": [],
+     "is_landing": false,
+     "verdict": "open"
+    },
+    {
+     "url": "https://restcountries.com/v3.1/alpha/PE",
+     "final_url": "https://files-03.restcountries.com/countries.00/legacy.json",
+     "status": 200,
+     "content_type": "application/json",
+     "server": "cloudflare",
+     "n_cookies": 0,
+     "error": "",
+     "is_html": false,
+     "paywall_markers": [],
+     "is_landing": false,
+     "verdict": "open"
+    }
+   ]
+  },
+  {
+   "category": "health and medicine",
+   "field": "trial registry identifier",
+   "answer": "NCT05178810",
+   "ok": false,
+   "violations": [
+    "R6 no human-readable landing page is recorded; a reviewer cannot open the answer in a browser"
+   ],
+   "warnings": [],
+   "submittable": false,
+   "sign_off_missing": [
+    "r1_single_provable_answer",
+    "r5_answer_found_first",
+    "r8_test_evidence_honest",
+    "r10_answer_defensible",
+    "r11_single_submission"
+   ],
+   "link_detail": [
+    {
+     "url": "https://clinicaltrials.gov/api/v2/studies?pageSize=200&query.cond=amyotrophic+lateral+sclerosis&filter.overallStatus=COMPLETED&aggFilters=phase:3&countTotal=true",
+     "final_url": "https://clinicaltrials.gov/api/v2/studies?pageSize=200&query.cond=amyotrophic+lateral+sclerosis&filter.overallStatus=COMPLETED&aggFilters=phase:3&countTotal=true",
+     "status": 200,
+     "content_type": "application/json",
+     "server": "istio-envoy",
+     "n_cookies": 1,
+     "error": "",
+     "is_html": false,
+     "paywall_markers": [],
+     "is_landing": false,
+     "verdict": "open"
+    },
+    {
+     "url": "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=ACCESSION_ID%3A%22NCT05178810%22&format=json&pageSize=50&resultType=core",
+     "final_url": "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=ACCESSION_ID%3A%22NCT05178810%22&format=json&pageSize=50&resultType=core",
+     "status": 200,
+     "content_type": "application/json;charset=UTF-8",
+     "server": "",
+     "n_cookies": 1,
+     "error": "",
+     "is_html": false,
+     "paywall_markers": [],
+     "is_landing": false,
+     "verdict": "open"
+    },
+    {
+     "url": "https://api.openalex.org/works?filter=fulltext.search:NCT05178810&per-page=50&mailto=fahad@crispro.ai",
+     "final_url": "https://api.openalex.org/works?filter=fulltext.search:NCT05178810&per-page=50&mailto=fahad@crispro.ai",
+     "status": 200,
+     "content_type": "application/json",
+     "server": "cloudflare",
+     "n_cookies": 0,
+     "error": "",
+     "is_html": false,
+     "paywall_markers": [],
+     "is_landing": false,
+     "verdict": "open"
+    },
+    {
+     "url": "https://api.fda.gov/drug/label.json?search=amyotrophic+lateral+sclerosis",
+     "final_url": "https://api.fda.gov/drug/label.json?search=amyotrophic+lateral+sclerosis",
+     "status": 200,
+     "content_type": "application/json; charset=utf-8",
+     "server": "",
+     "n_cookies": 0,
+     "error": "",
+     "is_html": false,
+     "paywall_markers": [],
+     "is_landing": false,
+     "verdict": "open"
+    }
+   ]
+  },
+  {
+   "category": "legal",
+   "field": "United States Reports page",
+   "answer": "200",
+   "ok": false,
+   "violations": [
+    "R6 no human-readable landing page is recorded; a reviewer cannot open the answer in a browser"
+   ],
+   "warnings": [
+    "R7 shares operator(s) ['Cornell University', 'Free Law Project', 'Harvard Law School Library Innovation Lab'] with 'United States Reports page'/'768'",
+    "R7 shares source domain(s) ['case.law', 'cornell.edu', 'courtlistener.com'] with 'United States Reports page'/'768'",
+    "R7 prompt similarity 0.997 >= 0.76 against 'United States Reports page'/'768'",
+    "R7 content similarity 0.947 >= 0.5 against 'United States Reports page'/'768'",
+    "R7 shares operator(s) ['Cornell University', 'Free Law Project', 'Harvard Law School Library Innovation Lab'] with 'United States Reports page'/'919'",
+    "R7 shares source domain(s) ['case.law', 'cornell.edu', 'courtlistener.com'] with 'United States Reports page'/'919'",
+    "R7 prompt similarity 0.999 >= 0.76 against 'United States Reports page'/'919'",
+    "R7 content similarity 0.947 >= 0.5 against 'United States Reports page'/'919'"
+   ],
+   "submittable": false,
+   "sign_off_missing": [
+    "r1_single_provable_answer",
+    "r5_answer_found_first",
+    "r8_test_evidence_honest",
+    "r10_answer_defensible",
+    "r11_single_submission"
+   ],
+   "link_detail": [
+    {
+     "url": "https://static.case.law/us/465/CasesMetadata.json",
+     "final_url": "https://static.case.law/us/465/CasesMetadata.json",
+     "status": 200,
+     "content_type": "application/json",
+     "server": "cloudflare",
+     "n_cookies": 0,
+     "error": "",
+     "is_html": false,
+     "paywall_markers": [],
+     "is_landing": false,
+     "verdict": "open"
+    },
+    {
+     "url": "https://www.law.cornell.edu/supremecourt/text/465/200",
+     "final_url": "https://www.law.cornell.edu/supremecourt/text/465/200",
+     "status": 200,
+     "content_type": "text/html; charset=utf-8",
+     "server": "nginx",
+     "n_cookies": 0,
+     "error": "",
+     "is_html": true,
+     "paywall_markers": [],
+     "is_landing": false,
+     "verdict": "open"
+    },
+    {
+     "url": "https://www.courtlistener.com/api/rest/v4/search/?q=citation%3A%28%22465+U.S.+200%22%29&type=o&court=scotus",
+     "final_url": "https://www.courtlistener.com/api/rest/v4/search/?q=citation%3A%28%22465+U.S.+200%22%29&type=o&court=scotus",
+     "status": 200,
+     "content_type": "application/json",
+     "server": "uvicorn",
+     "n_cookies": 1,
+     "error": "",
+     "is_html": false,
+     "paywall_markers": [],
+     "is_landing": false,
+     "verdict": "open"
+    }
+   ]
+  },
+  {
+   "category": "legal",
+   "field": "United States Reports page",
+   "answer": "768",
+   "ok": false,
+   "violations": [
+    "R6 no human-readable landing page is recorded; a reviewer cannot open the answer in a browser"
+   ],
+   "warnings": [
+    "R7 shares operator(s) ['Cornell University', 'Free Law Project', 'Harvard Law School Library Innovation Lab'] with 'United States Reports page'/'200'",
+    "R7 shares source domain(s) ['case.law', 'cornell.edu', 'courtlistener.com'] with 'United States Reports page'/'200'",
+    "R7 prompt similarity 0.997 >= 0.76 against 'United States Reports page'/'200'",
+    "R7 content similarity 0.947 >= 0.5 against 'United States Reports page'/'200'",
+    "R7 shares operator(s) ['Cornell University', 'Free Law Project', 'Harvard Law School Library Innovation Lab'] with 'United States Reports page'/'919'",
+    "R7 shares source domain(s) ['case.law', 'cornell.edu', 'courtlistener.com'] with 'United States Reports page'/'919'",
+    "R7 prompt similarity 0.997 >= 0.76 against 'United States Reports page'/'919'",
+    "R7 content similarity 0.947 >= 0.5 against 'United States Reports page'/'919'"
+   ],
+   "submittable": false,
+   "sign_off_missing": [
+    "r1_single_provable_answer",
+    "r5_answer_found_first",
+    "r8_test_evidence_honest",
+    "r10_answer_defensible",
+    "r11_single_submission"
+   ],
+   "link_detail": [
+    {
+     "url": "https://static.case.law/us/504/CasesMetadata.json",
+     "final_url": "https://static.case.law/us/504/CasesMetadata.json",
+     "status": 200,
+     "content_type": "application/json",
+     "server": "cloudflare",
+     "n_cookies": 0,
+     "error": "",
+     "is_html": false,
+     "paywall_markers": [],
+     "is_landing": false,
+     "verdict": "open"
+    },
+    {
+     "url": "https://www.law.cornell.edu/supremecourt/text/504/768",
+     "final_url": "https://www.law.cornell.edu/supremecourt/text/504/768",
+     "status": 200,
+     "content_type": "text/html; charset=utf-8",
+     "server": "nginx",
+     "n_cookies": 0,
+     "error": "",
+     "is_html": true,
+     "paywall_markers": [],
+     "is_landing": false,
+     "verdict": "open"
+    },
+    {
+     "url": "https://www.courtlistener.com/api/rest/v4/search/?q=citation%3A%28%22504+U.S.+768%22%29&type=o&court=scotus",
+     "final_url": "https://www.courtlistener.com/api/rest/v4/search/?q=citation%3A%28%22504+U.S.+768%22%29&type=o&court=scotus",
+     "status": 200,
+     "content_type": "application/json",
+     "server": "uvicorn",
+     "n_cookies": 1,
+     "error": "",
+     "is_html": false,
+     "paywall_markers": [],
+     "is_landing": false,
+     "verdict": "open"
+    }
+   ]
+  },
+  {
+   "category": "legal",
+   "field": "United States Reports page",
+   "answer": "919",
+   "ok": false,
+   "violations": [
+    "R6 no human-readable landing page is recorded; a reviewer cannot open the answer in a browser"
+   ],
+   "warnings": [
+    "R7 shares operator(s) ['Cornell University', 'Free Law Project', 'Harvard Law School Library Innovation Lab'] with 'United States Reports page'/'200'",
+    "R7 shares source domain(s) ['case.law', 'cornell.edu', 'courtlistener.com'] with 'United States Reports page'/'200'",
+    "R7 prompt similarity 0.999 >= 0.76 against 'United States Reports page'/'200'",
+    "R7 content similarity 0.947 >= 0.5 against 'United States Reports page'/'200'",
+    "R7 shares operator(s) ['Cornell University', 'Free Law Project', 'Harvard Law School Library Innovation Lab'] with 'United States Reports page'/'768'",
+    "R7 shares source domain(s) ['case.law', 'cornell.edu', 'courtlistener.com'] with 'United States Reports page'/'768'",
+    "R7 prompt similarity 0.997 >= 0.76 against 'United States Reports page'/'768'",
+    "R7 content similarity 0.947 >= 0.5 against 'United States Reports page'/'768'"
+   ],
+   "submittable": false,
+   "sign_off_missing": [
+    "r1_single_provable_answer",
+    "r5_answer_found_first",
+    "r8_test_evidence_honest",
+    "r10_answer_defensible",
+    "r11_single_submission"
+   ],
+   "link_detail": [
+    {
+     "url": "https://static.case.law/us/485/CasesMetadata.json",
+     "final_url": "https://static.case.law/us/485/CasesMetadata.json",
+     "status": 200,
+     "content_type": "application/json",
+     "server": "cloudflare",
+     "n_cookies": 0,
+     "error": "",
+     "is_html": false,
+     "paywall_markers": [],
+     "is_landing": false,
+     "verdict": "open"
+    },
+    {
+     "url": "https://www.law.cornell.edu/supremecourt/text/485/919",
+     "final_url": "https://www.law.cornell.edu/supremecourt/text/485/919",
+     "status": 200,
+     "content_type": "text/html; charset=utf-8",
+     "server": "nginx",
+     "n_cookies": 0,
+     "error": "",
+     "is_html": true,
+     "paywall_markers": [],
+     "is_landing": false,
+     "verdict": "open"
+    },
+    {
+     "url": "https://www.courtlistener.com/api/rest/v4/search/?q=citation%3A%28%22485+U.S.+919%22%29&type=o&court=scotus",
+     "final_url": "https://www.courtlistener.com/api/rest/v4/search/?q=citation%3A%28%22485+U.S.+919%22%29&type=o&court=scotus",
+     "status": 200,
+     "content_type": "application/json",
+     "server": "uvicorn",
+     "n_cookies": 1,
+     "error": "",
+     "is_html": false,
+     "paywall_markers": [],
+     "is_landing": false,
+     "verdict": "open"
+    }
+   ]
+  },
+  {
+   "category": "travel",
+   "field": "GeoNames identifier",
+   "answer": "6296543",
+   "ok": false,
+   "violations": [
+    "R6 no human-readable landing page is recorded; a reviewer cannot open the answer in a browser"
+   ],
+   "warnings": [
+    "R7 shares operator(s) ['GeoNames', 'OpenFlights', 'OurAirports'] with 'GeoNames identifier'/'6296778'",
+    "R7 shares source domain(s) ['geonames.org', 'operator:OpenFlights', 'operator:OurAirports'] with 'GeoNames identifier'/'6296778'",
+    "R7 prompt similarity 0.993 >= 0.76 against 'GeoNames identifier'/'6296778'",
+    "R7 content similarity 0.952 >= 0.5 against 'GeoNames identifier'/'6296778'",
+    "R7 shares operator(s) ['GeoNames', 'OpenFlights', 'OurAirports'] with 'GeoNames identifier'/'6300971'",
+    "R7 shares source domain(s) ['geonames.org', 'operator:OpenFlights', 'operator:OurAirports'] with 'GeoNames identifier'/'6300971'",
+    "R7 prompt similarity 0.991 >= 0.76 against 'GeoNames identifier'/'6300971'",
+    "R7 content similarity 0.952 >= 0.5 against 'GeoNames identifier'/'6300971'",
+    "R7 shares operator(s) ['GeoNames', 'OpenFlights', 'OurAirports'] with 'GeoNames identifier'/'6301511'",
+    "R7 shares source domain(s) ['geonames.org', 'operator:OpenFlights', 'operator:OurAirports'] with 'GeoNames identifier'/'6301511'",
+    "R7 prompt similarity 0.991 >= 0.76 against 'GeoNames identifier'/'6301511'",
+    "R7 content similarity 0.952 >= 0.5 against 'GeoNames identifier'/'6301511'"
+   ],
+   "submittable": false,
+   "sign_off_missing": [
+    "r1_single_provable_answer",
+    "r5_answer_found_first",
+    "r8_test_evidence_honest",
+    "r10_answer_defensible",
+    "r11_single_submission"
+   ],
+   "link_detail": [
+    {
+     "url": "https://raw.githubusercontent.com/jpatokal/openflights/master/data/routes.dat",
+     "final_url": "https://raw.githubusercontent.com/jpatokal/openflights/master/data/routes.dat",
+     "status": 200,
+     "content_type": "text/plain; charset=utf-8",
+     "server": "",
+     "n_cookies": 0,
+     "error": "",
+     "is_html": false,
+     "paywall_markers": [],
+     "is_landing": false,
+     "verdict": "open"
+    },
+    {
+     "url": "https://davidmegginson.github.io/ourairports-data/airports.csv",
+     "final_url": "https://davidmegginson.github.io/ourairports-data/airports.csv",
+     "status": 200,
+     "content_type": "text/csv; charset=utf-8",
+     "server": "GitHub.com",
+     "n_cookies": 0,
+     "error": "",
+     "is_html": false,
+     "paywall_markers": [],
+     "is_landing": false,
+     "verdict": "open"
+    },
+    {
+     "url": "https://sws.geonames.org/6296543/",
+     "final_url": "https://www.geonames.org/6296543/ivalo-airport.html",
+     "status": 200,
+     "content_type": "text/html; charset=utf-8",
+     "server": "Apache/2.4.57 (AlmaLinux) mod_jk/1.2.49 OpenSSL/3.0.7",
+     "n_cookies": 1,
+     "error": "",
+     "is_html": true,
+     "paywall_markers": [],
+     "is_landing": false,
+     "verdict": "open"
+    }
+   ]
+  },
+  {
+   "category": "travel",
+   "field": "GeoNames identifier",
+   "answer": "6296778",
+   "ok": false,
+   "violations": [
+    "R6 no human-readable landing page is recorded; a reviewer cannot open the answer in a browser"
+   ],
+   "warnings": [
+    "R7 shares operator(s) ['GeoNames', 'OpenFlights', 'OurAirports'] with 'GeoNames identifier'/'6296543'",
+    "R7 shares source domain(s) ['geonames.org', 'operator:OpenFlights', 'operator:OurAirports'] with 'GeoNames identifier'/'6296543'",
+    "R7 prompt similarity 0.993 >= 0.76 against 'GeoNames identifier'/'6296543'",
+    "R7 content similarity 0.952 >= 0.5 against 'GeoNames identifier'/'6296543'",
+    "R7 shares operator(s) ['GeoNames', 'OpenFlights', 'OurAirports'] with 'GeoNames identifier'/'6300971'",
+    "R7 shares source domain(s) ['geonames.org', 'operator:OpenFlights', 'operator:OurAirports'] with 'GeoNames identifier'/'6300971'",
+    "R7 prompt similarity 0.991 >= 0.76 against 'GeoNames identifier'/'6300971'",
+    "R7 content similarity 0.952 >= 0.5 against 'GeoNames identifier'/'6300971'",
+    "R7 shares operator(s) ['GeoNames', 'OpenFlights', 'OurAirports'] with 'GeoNames identifier'/'6301511'",
+    "R7 shares source domain(s) ['geonames.org', 'operator:OpenFlights', 'operator:OurAirports'] with 'GeoNames identifier'/'6301511'",
+    "R7 prompt similarity 0.991 >= 0.76 against 'GeoNames identifier'/'6301511'",
+    "R7 content similarity 0.952 >= 0.5 against 'GeoNames identifier'/'6301511'"
+   ],
+   "submittable": false,
+   "sign_off_missing": [
+    "r1_single_provable_answer",
+    "r5_answer_found_first",
+    "r8_test_evidence_honest",
+    "r10_answer_defensible",
+    "r11_single_submission"
+   ],
+   "link_detail": [
+    {
+     "url": "https://raw.githubusercontent.com/jpatokal/openflights/master/data/routes.dat",
+     "final_url": "https://raw.githubusercontent.com/jpatokal/openflights/master/data/routes.dat",
+     "status": 200,
+     "content_type": "text/plain; charset=utf-8",
+     "server": "",
+     "n_cookies": 0,
+     "error": "",
+     "is_html": false,
+     "paywall_markers": [],
+     "is_landing": false,
+     "verdict": "open"
+    },
+    {
+     "url": "https://davidmegginson.github.io/ourairports-data/airports.csv",
+     "final_url": "https://davidmegginson.github.io/ourairports-data/airports.csv",
+     "status": 200,
+     "content_type": "text/csv; charset=utf-8",
+     "server": "GitHub.com",
+     "n_cookies": 0,
+     "error": "",
+     "is_html": false,
+     "paywall_markers": [],
+     "is_landing": false,
+     "verdict": "open"
+    },
+    {
+     "url": "https://sws.geonames.org/6296778/",
+     "final_url": "https://www.geonames.org/6296778/trondheim-airport-vaernes.html",
+     "status": 200,
+     "content_type": "text/html; charset=utf-8",
+     "server": "Apache/2.4.57 (AlmaLinux) mod_jk/1.2.49 OpenSSL/3.0.7",
+     "n_cookies": 1,
+     "error": "",
+     "is_html": true,
+     "paywall_markers": [],
+     "is_landing": false,
+     "verdict": "open"
+    }
+   ]
+  },
+  {
+   "category": "travel",
+   "field": "GeoNames identifier",
+   "answer": "6300971",
+   "ok": false,
+   "violations": [
+    "R6 no human-readable landing page is recorded; a reviewer cannot open the answer in a browser"
+   ],
+   "warnings": [
+    "R7 shares operator(s) ['GeoNames', 'OpenFlights', 'OurAirports'] with 'GeoNames identifier'/'6296543'",
+    "R7 shares source domain(s) ['geonames.org', 'operator:OpenFlights', 'operator:OurAirports'] with 'GeoNames identifier'/'6296543'",
+    "R7 prompt similarity 0.991 >= 0.76 against 'GeoNames identifier'/'6296543'",
+    "R7 content similarity 0.952 >= 0.5 against 'GeoNames identifier'/'6296543'",
+    "R7 shares operator(s) ['GeoNames', 'OpenFlights', 'OurAirports'] with 'GeoNames identifier'/'6296778'",
+    "R7 shares source domain(s) ['geonames.org', 'operator:OpenFlights', 'operator:OurAirports'] with 'GeoNames identifier'/'6296778'",
+    "R7 prompt similarity 0.991 >= 0.76 against 'GeoNames identifier'/'6296778'",
+    "R7 content similarity 0.952 >= 0.5 against 'GeoNames identifier'/'6296778'",
+    "R7 shares operator(s) ['GeoNames', 'OpenFlights', 'OurAirports'] with 'GeoNames identifier'/'6301511'",
+    "R7 shares source domain(s) ['geonames.org', 'operator:OpenFlights', 'operator:OurAirports'] with 'GeoNames identifier'/'6301511'",
+    "R7 prompt similarity 0.995 >= 0.76 against 'GeoNames identifier'/'6301511'",
+    "R7 content similarity 0.952 >= 0.5 against 'GeoNames identifier'/'6301511'"
+   ],
+   "submittable": false,
+   "sign_off_missing": [
+    "r1_single_provable_answer",
+    "r5_answer_found_first",
+    "r8_test_evidence_honest",
+    "r10_answer_defensible",
+    "r11_single_submission"
+   ],
+   "link_detail": [
+    {
+     "url": "https://raw.githubusercontent.com/jpatokal/openflights/master/data/routes.dat",
+     "final_url": "https://raw.githubusercontent.com/jpatokal/openflights/master/data/routes.dat",
+     "status": 200,
+     "content_type": "text/plain; charset=utf-8",
+     "server": "",
+     "n_cookies": 0,
+     "error": "",
+     "is_html": false,
+     "paywall_markers": [],
+     "is_landing": false,
+     "verdict": "open"
+    },
+    {
+     "url": "https://davidmegginson.github.io/ourairports-data/airports.csv",
+     "final_url": "https://davidmegginson.github.io/ourairports-data/airports.csv",
+     "status": 200,
+     "content_type": "text/csv; charset=utf-8",
+     "server": "GitHub.com",
+     "n_cookies": 0,
+     "error": "",
+     "is_html": false,
+     "paywall_markers": [],
+     "is_landing": false,
+     "verdict": "open"
+    },
+    {
+     "url": "https://sws.geonames.org/6300971/",
+     "final_url": "https://www.geonames.org/6300971/pulkovo-airport.html",
+     "status": 200,
+     "content_type": "text/html; charset=utf-8",
+     "server": "Apache/2.4.57 (AlmaLinux) mod_jk/1.2.49 OpenSSL/3.0.7",
+     "n_cookies": 1,
+     "error": "",
+     "is_html": true,
+     "paywall_markers": [],
+     "is_landing": false,
+     "verdict": "open"
+    }
+   ]
+  },
+  {
+   "category": "travel",
+   "field": "GeoNames identifier",
+   "answer": "6301511",
+   "ok": false,
+   "violations": [
+    "R6 no human-readable landing page is recorded; a reviewer cannot open the answer in a browser"
+   ],
+   "warnings": [
+    "R7 shares operator(s) ['GeoNames', 'OpenFlights', 'OurAirports'] with 'GeoNames identifier'/'6296543'",
+    "R7 shares source domain(s) ['geonames.org', 'operator:OpenFlights', 'operator:OurAirports'] with 'GeoNames identifier'/'6296543'",
+    "R7 prompt similarity 0.991 >= 0.76 against 'GeoNames identifier'/'6296543'",
+    "R7 content similarity 0.952 >= 0.5 against 'GeoNames identifier'/'6296543'",
+    "R7 shares operator(s) ['GeoNames', 'OpenFlights', 'OurAirports'] with 'GeoNames identifier'/'6296778'",
+    "R7 shares source domain(s) ['geonames.org', 'operator:OpenFlights', 'operator:OurAirports'] with 'GeoNames identifier'/'6296778'",
+    "R7 prompt similarity 0.991 >= 0.76 against 'GeoNames identifier'/'6296778'",
+    "R7 content similarity 0.952 >= 0.5 against 'GeoNames identifier'/'6296778'",
+    "R7 shares operator(s) ['GeoNames', 'OpenFlights', 'OurAirports'] with 'GeoNames identifier'/'6300971'",
+    "R7 shares source domain(s) ['geonames.org', 'operator:OpenFlights', 'operator:OurAirports'] with 'GeoNames identifier'/'6300971'",
+    "R7 prompt similarity 0.995 >= 0.76 against 'GeoNames identifier'/'6300971'",
+    "R7 content similarity 0.952 >= 0.5 against 'GeoNames identifier'/'6300971'"
+   ],
+   "submittable": false,
+   "sign_off_missing": [
+    "r1_single_provable_answer",
+    "r5_answer_found_first",
+    "r8_test_evidence_honest",
+    "r10_answer_defensible",
+    "r11_single_submission"
+   ],
+   "link_detail": [
+    {
+     "url": "https://raw.githubusercontent.com/jpatokal/openflights/master/data/routes.dat",
+     "final_url": "https://raw.githubusercontent.com/jpatokal/openflights/master/data/routes.dat",
+     "status": 200,
+     "content_type": "text/plain; charset=utf-8",
+     "server": "",
+     "n_cookies": 0,
+     "error": "",
+     "is_html": false,
+     "paywall_markers": [],
+     "is_landing": false,
+     "verdict": "open"
+    },
+    {
+     "url": "https://davidmegginson.github.io/ourairports-data/airports.csv",
+     "final_url": "https://davidmegginson.github.io/ourairports-data/airports.csv",
+     "status": 200,
+     "content_type": "text/csv; charset=utf-8",
+     "server": "GitHub.com",
+     "n_cookies": 0,
+     "error": "",
+     "is_html": false,
+     "paywall_markers": [],
+     "is_landing": false,
+     "verdict": "open"
+    },
+    {
+     "url": "https://sws.geonames.org/6301511/",
+     "final_url": "https://www.geonames.org/6301511/helsinki-vantaa-airport.html",
+     "status": 200,
+     "content_type": "text/html; charset=utf-8",
+     "server": "Apache/2.4.57 (AlmaLinux) mod_jk/1.2.49 OpenSSL/3.0.7",
+     "n_cookies": 1,
+     "error": "",
+     "is_html": true,
+     "paywall_markers": [],
+     "is_landing": false,
+     "verdict": "open"
+    }
+   ]
+  },
+  {
+   "category": "science and technology",
+   "field": "CVE identifier",
+   "answer": "CVE-2022-23221",
+   "ok": true,
+   "violations": [],
+   "warnings": [
+    "R6 https://nvd.nist.gov/vuln/detail/CVE-2022-23221 is behind bot protection from this network (status 502, server 'cloudflare'); not counted as reachable, not counted as broken"
+   ],
+   "submittable": false,
+   "sign_off_missing": [
+    "r1_single_provable_answer",
+    "r5_answer_found_first",
+    "r8_test_evidence_honest",
+    "r10_answer_defensible",
+    "r11_single_submission"
+   ],
+   "link_detail": [
+    {
+     "url": "https://services.nvd.nist.gov/rest/json/cves/2.0?pubStartDate=2022-01-19T00:00:00.000&pubEndDate=2022-01-19T23:59:59.999&resultsPerPage=2000",
+     "final_url": "https://services.nvd.nist.gov/rest/json/cves/2.0?pubStartDate=2022-01-19T00:00:00.000&pubEndDate=2022-01-19T23:59:59.999&resultsPerPage=2000",
+     "status": 200,
+     "content_type": "application/json",
+     "server": "cloudflare",
+     "n_cookies": 2,
+     "error": "",
+     "is_html": false,
+     "paywall_markers": [],
+     "is_landing": false,
+     "verdict": "open"
+    },
+    {
+     "url": "https://cveawg.mitre.org/api/cve/CVE-2022-23221",
+     "final_url": "https://cveawg.mitre.org/api/cve/CVE-2022-23221",
+     "status": 200,
+     "content_type": "application/json; charset=utf-8",
+     "server": "",
+     "n_cookies": 0,
+     "error": "",
+     "is_html": false,
+     "paywall_markers": [],
+     "is_landing": false,
+     "verdict": "open"
+    },
+    {
+     "url": "https://api.first.org/data/v1/epss?cve=CVE-2022-23221",
+     "final_url": "https://api.first.org/data/v1/epss?cve=CVE-2022-23221",
+     "status": 200,
+     "content_type": "application/json; charset=utf-8",
+     "server": "nginx",
+     "n_cookies": 0,
+     "error": "",
+     "is_html": false,
+     "paywall_markers": [],
+     "is_landing": false,
+     "verdict": "open"
+    },
+    {
+     "url": "https://nvd.nist.gov/vuln/detail/CVE-2022-23221",
+     "final_url": "https://nvd.nist.gov/vuln/detail/CVE-2022-23221",
+     "status": 502,
+     "content_type": "text/html; charset=UTF-8",
+     "server": "cloudflare",
+     "n_cookies": 1,
+     "error": "HTTP 502",
+     "is_html": true,
+     "paywall_markers": [],
+     "is_landing": true,
+     "verdict": "bot_block"
+    },
+    {
+     "url": "https://www.cve.org/CVERecord?id=CVE-2022-23221",
+     "final_url": "https://www.cve.org/CVERecord?id=CVE-2022-23221",
+     "status": 200,
+     "content_type": "text/html",
+     "server": "AmazonS3",
+     "n_cookies": 0,
+     "error": "",
+     "is_html": true,
+     "paywall_markers": [],
+     "is_landing": true,
+     "verdict": "open"
+    }
+   ]
+  },
+  {
+   "category": "science and technology",
+   "field": "RFC number",
+   "answer": "6513",
+   "ok": true,
+   "violations": [],
+   "warnings": [],
+   "submittable": false,
+   "sign_off_missing": [
+    "r1_single_provable_answer",
+    "r5_answer_found_first",
+    "r8_test_evidence_honest",
+    "r10_answer_defensible",
+    "r11_single_submission"
+   ],
+   "link_detail": [
+    {
+     "url": "https://www.rfc-editor.org/rfc-index.xml",
+     "final_url": "https://www.rfc-editor.org/rfc-index.xml",
+     "status": 200,
+     "content_type": "application/xml;charset=utf-8",
+     "server": "cloudflare",
+     "n_cookies": 1,
+     "error": "",
+     "is_html": false,
+     "paywall_markers": [],
+     "is_landing": false,
+     "verdict": "open"
+    },
+    {
+     "url": "https://api.crossref.org/works/10.17487/RFC6513",
+     "final_url": "https://api.crossref.org/works/10.17487/RFC6513",
+     "status": 200,
+     "content_type": "application/json",
+     "server": "Jetty(9.4.40.v20210413)",
+     "n_cookies": 0,
+     "error": "",
+     "is_html": false,
+     "paywall_markers": [],
+     "is_landing": false,
+     "verdict": "open"
+    },
+    {
+     "url": "https://api.semanticscholar.org/graph/v1/paper/DOI:10.17487/RFC6513?fields=title,year",
+     "final_url": "https://api.semanticscholar.org/graph/v1/paper/DOI:10.17487/RFC6513?fields=title,year",
+     "status": 200,
+     "content_type": "application/json",
+     "server": "",
+     "n_cookies": 0,
+     "error": "",
+     "is_html": false,
+     "paywall_markers": [],
+     "is_landing": false,
+     "verdict": "open"
+    },
+    {
+     "url": "https://www.rfc-editor.org/rfc/rfc6513.html",
+     "final_url": "https://www.rfc-editor.org/rfc/rfc6513.html",
+     "status": 200,
+     "content_type": "text/html",
+     "server": "cloudflare",
+     "n_cookies": 1,
+     "error": "",
+     "is_html": true,
+     "paywall_markers": [],
+     "is_landing": true,
+     "verdict": "open"
+    },
+    {
+     "url": "https://www.rfc-editor.org/info/rfc6513",
+     "final_url": "https://www.rfc-editor.org/info/rfc6513/",
+     "status": 200,
+     "content_type": "text/html;charset=utf-8",
+     "server": "cloudflare",
+     "n_cookies": 1,
+     "error": "",
+     "is_html": true,
+     "paywall_markers": [],
+     "is_landing": true,
+     "verdict": "open"
+    }
+   ]
+  },
+  {
+   "category": "science and technology",
+   "field": "package version string",
+   "answer": "11.3.0",
+   "ok": true,
+   "violations": [],
+   "warnings": [],
+   "submittable": false,
+   "sign_off_missing": [
+    "r1_single_provable_answer",
+    "r5_answer_found_first",
+    "r8_test_evidence_honest",
+    "r10_answer_defensible",
+    "r11_single_submission"
+   ],
+   "link_detail": [
+    {
+     "url": "https://pypi.org/pypi/pillow/json",
+     "final_url": "https://pypi.org/pypi/pillow/json",
+     "status": 200,
+     "content_type": "application/json",
+     "server": "gunicorn",
+     "n_cookies": 0,
+     "error": "",
+     "is_html": false,
+     "paywall_markers": [],
+     "is_landing": false,
+     "verdict": "open"
+    },
+    {
+     "url": "https://api.deps.dev/v3alpha/systems/pypi/packages/pillow/versions/11.3.0",
+     "final_url": "https://api.deps.dev/v3alpha/systems/pypi/packages/pillow/versions/11.3.0",
+     "status": 200,
+     "content_type": "application/json; charset=utf-8",
+     "server": "",
+     "n_cookies": 0,
+     "error": "",
+     "is_html": false,
+     "paywall_markers": [],
+     "is_landing": false,
+     "verdict": "open"
+    },
+    {
+     "url": "https://packages.ecosyste.ms/api/v1/registries/pypi.org/packages/pillow/versions/11.3.0",
+     "final_url": "https://packages.ecosyste.ms/api/v1/registries/pypi.org/packages/pillow/versions/11.3.0",
+     "status": 200,
+     "content_type": "application/json; charset=utf-8",
+     "server": "cloudflare",
+     "n_cookies": 0,
+     "error": "",
+     "is_html": false,
+     "paywall_markers": [],
+     "is_landing": false,
+     "verdict": "open"
+    },
+    {
+     "url": "https://pypi.org/project/pillow/11.3.0/",
+     "final_url": "https://pypi.org/project/pillow/11.3.0/",
+     "status": 200,
+     "content_type": "text/html; charset=utf-8",
+     "server": "",
+     "n_cookies": 1,
+     "error": "",
+     "is_html": true,
+     "paywall_markers": [],
+     "is_landing": true,
+     "verdict": "open"
+    },
+    {
+     "url": "https://deps.dev/pypi/pillow/11.3.0",
+     "final_url": "https://deps.dev/pypi/pillow/11.3.0",
+     "status": 200,
+     "content_type": "text/html; charset=utf-8",
+     "server": "",
+     "n_cookies": 0,
+     "error": "",
+     "is_html": true,
+     "paywall_markers": [],
+     "is_landing": true,
+     "verdict": "open"
+    }
+   ]
+  },
+  {
+   "category": "science and technology",
+   "field": "autonomous system number",
+   "answer": "200651",
+   "ok": true,
+   "violations": [],
+   "warnings": [],
+   "submittable": false,
+   "sign_off_missing": [
+    "r1_single_provable_answer",
+    "r5_answer_found_first",
+    "r8_test_evidence_honest",
+    "r10_answer_defensible",
+    "r11_single_submission"
+   ],
+   "link_detail": [
+    {
+     "url": "https://stat.ripe.net/data/country-resource-list/data.json?resource=IS",
+     "final_url": "https://stat.ripe.net/data/country-resource-list/data.json?resource=IS",
+     "status": 200,
+     "content_type": "application/json; charset=utf-8",
+     "server": "nginx",
+     "n_cookies": 0,
+     "error": "",
+     "is_html": false,
+     "paywall_markers": [],
+     "is_landing": false,
+     "verdict": "open"
+    },
+    {
+     "url": "https://www.peeringdb.com/api/net?asn=200651",
+     "final_url": "https://www.peeringdb.com/api/net?asn=200651",
+     "status": 200,
+     "content_type": "application/json; charset=utf-8",
+     "server": "",
+     "n_cookies": 0,
+     "error": "",
+     "is_html": false,
+     "paywall_markers": [],
+     "is_landing": false,
+     "verdict": "open"
+    },
+    {
+     "url": "https://api.asrank.caida.org/v2/restful/asns/200651",
+     "final_url": "https://api.asrank.caida.org/v2/restful/asns/200651",
+     "status": 200,
+     "content_type": "application/json",
+     "server": "nginx",
+     "n_cookies": 0,
+     "error": "",
+     "is_html": false,
+     "paywall_markers": [],
+     "is_landing": false,
+     "verdict": "open"
+    },
+    {
+     "url": "https://stat.ripe.net/AS200651",
+     "final_url": "https://stat.ripe.net/resource/AS200651",
+     "status": 200,
+     "content_type": "text/html; charset=utf-8",
+     "server": "nginx",
+     "n_cookies": 0,
+     "error": "",
+     "is_html": true,
+     "paywall_markers": [],
+     "is_landing": true,
+     "verdict": "open"
+    },
+    {
+     "url": "https://www.peeringdb.com/asn/200651",
+     "final_url": "https://www.peeringdb.com/asn/200651",
+     "status": 200,
+     "content_type": "text/html; charset=utf-8",
+     "server": "",
+     "n_cookies": 0,
+     "error": "",
+     "is_html": true,
+     "paywall_markers": [],
+     "is_landing": true,
+     "verdict": "open"
+    }
+   ]
+  }
+ ]
+}

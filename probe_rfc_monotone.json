@@ -1,0 +1,1972 @@
+{
+ "n_candidate_months": 193,
+ "n_unique_argmax": 190,
+ "rho": {
+  "n": 193,
+  "mean": -0.2186,
+  "median": -0.2251,
+  "negative": 155,
+  "positive": 38,
+  "sign_test_p": 0.0,
+  "frac_abs_gt_0.45": 0.2124
+ },
+ "first_listed_heuristic_all": {
+  "hits": 23,
+  "n": 190,
+  "observed_rate": 0.1211,
+  "expected_rate_if_uniform": 0.0558,
+  "mean_argmax_quantile": 0.37,
+  "median_argmax_quantile": 0.3
+ },
+ "first_listed_heuristic_t3b_passing_only": {
+  "hits": 15,
+  "n": 149,
+  "observed_rate": 0.1007,
+  "expected_rate_if_uniform": 0.0536,
+  "mean_argmax_quantile": 0.4125
+ },
+ "argmax_position_histogram_decile": {
+  "7": 13,
+  "0": 45,
+  "5": 23,
+  "3": 17,
+  "1": 25,
+  "6": 13,
+  "2": 23,
+  "8": 9,
+  "4": 11,
+  "9": 11
+ },
+ "rows": [
+  {
+   "year": "2010",
+   "month": "March",
+   "n": 37,
+   "rho": 0.0754,
+   "unique": true,
+   "argmax_pos": 28,
+   "argmax_quantile": 0.7777777777777778,
+   "t3b_pass": true
+  },
+  {
+   "year": "2010",
+   "month": "April",
+   "n": 34,
+   "rho": -0.0944,
+   "unique": true,
+   "argmax_pos": 0,
+   "argmax_quantile": 0.0,
+   "t3b_pass": true
+  },
+  {
+   "year": "2010",
+   "month": "February",
+   "n": 40,
+   "rho": -0.1205,
+   "unique": true,
+   "argmax_pos": 20,
+   "argmax_quantile": 0.5128205128205128,
+   "t3b_pass": true
+  },
+  {
+   "year": "2010",
+   "month": "January",
+   "n": 33,
+   "rho": -0.197,
+   "unique": true,
+   "argmax_pos": 1,
+   "argmax_quantile": 0.03125,
+   "t3b_pass": true
+  },
+  {
+   "year": "2010",
+   "month": "August",
+   "n": 36,
+   "rho": -0.1093,
+   "unique": true,
+   "argmax_pos": 11,
+   "argmax_quantile": 0.3142857142857143,
+   "t3b_pass": true
+  },
+  {
+   "year": "2010",
+   "month": "May",
+   "n": 32,
+   "rho": -0.2748,
+   "unique": true,
+   "argmax_pos": 4,
+   "argmax_quantile": 0.12903225806451613,
+   "t3b_pass": true
+  },
+  {
+   "year": "2010",
+   "month": "July",
+   "n": 16,
+   "rho": -0.3576,
+   "unique": true,
+   "argmax_pos": 8,
+   "argmax_quantile": 0.5333333333333333,
+   "t3b_pass": true
+  },
+  {
+   "year": "2010",
+   "month": "June",
+   "n": 38,
+   "rho": -0.0698,
+   "unique": true,
+   "argmax_pos": 25,
+   "argmax_quantile": 0.6756756756756757,
+   "t3b_pass": true
+  },
+  {
+   "year": "2010",
+   "month": "September",
+   "n": 26,
+   "rho": -0.1016,
+   "unique": true,
+   "argmax_pos": 16,
+   "argmax_quantile": 0.64,
+   "t3b_pass": true
+  },
+  {
+   "year": "2010",
+   "month": "November",
+   "n": 15,
+   "rho": -0.491,
+   "unique": true,
+   "argmax_pos": 0,
+   "argmax_quantile": 0.0,
+   "t3b_pass": false
+  },
+  {
+   "year": "2010",
+   "month": "October",
+   "n": 46,
+   "rho": -0.4046,
+   "unique": true,
+   "argmax_pos": 26,
+   "argmax_quantile": 0.5777777777777777,
+   "t3b_pass": true
+  },
+  {
+   "year": "2011",
+   "month": "March",
+   "n": 52,
+   "rho": -0.5726,
+   "unique": true,
+   "argmax_pos": 12,
+   "argmax_quantile": 0.23529411764705882,
+   "t3b_pass": false
+  },
+  {
+   "year": "2011",
+   "month": "February",
+   "n": 26,
+   "rho": -0.3592,
+   "unique": true,
+   "argmax_pos": 13,
+   "argmax_quantile": 0.52,
+   "t3b_pass": true
+  },
+  {
+   "year": "2011",
+   "month": "January",
+   "n": 23,
+   "rho": -0.177,
+   "unique": true,
+   "argmax_pos": 12,
+   "argmax_quantile": 0.5454545454545454,
+   "t3b_pass": true
+  },
+  {
+   "year": "2010",
+   "month": "December",
+   "n": 10,
+   "rho": -0.1763,
+   "unique": true,
+   "argmax_pos": 5,
+   "argmax_quantile": 0.5555555555555556,
+   "t3b_pass": true
+  },
+  {
+   "year": "2012",
+   "month": "April",
+   "n": 37,
+   "rho": -0.2849,
+   "unique": true,
+   "argmax_pos": 5,
+   "argmax_quantile": 0.1388888888888889,
+   "t3b_pass": true
+  },
+  {
+   "year": "2011",
+   "month": "August",
+   "n": 32,
+   "rho": -0.1799,
+   "unique": true,
+   "argmax_pos": 21,
+   "argmax_quantile": 0.6774193548387096,
+   "t3b_pass": true
+  },
+  {
+   "year": "2011",
+   "month": "April",
+   "n": 46,
+   "rho": -0.2535,
+   "unique": true,
+   "argmax_pos": 23,
+   "argmax_quantile": 0.5111111111111111,
+   "t3b_pass": true
+  },
+  {
+   "year": "2011",
+   "month": "May",
+   "n": 37,
+   "rho": -0.3234,
+   "unique": true,
+   "argmax_pos": 14,
+   "argmax_quantile": 0.3888888888888889,
+   "t3b_pass": true
+  },
+  {
+   "year": "2011",
+   "month": "July",
+   "n": 35,
+   "rho": -0.068,
+   "unique": true,
+   "argmax_pos": 7,
+   "argmax_quantile": 0.20588235294117646,
+   "t3b_pass": true
+  },
+  {
+   "year": "2011",
+   "month": "June",
+   "n": 37,
+   "rho": -0.21,
+   "unique": true,
+   "argmax_pos": 30,
+   "argmax_quantile": 0.8333333333333334,
+   "t3b_pass": true
+  },
+  {
+   "year": "2011",
+   "month": "September",
+   "n": 18,
+   "rho": -0.1612,
+   "unique": true,
+   "argmax_pos": 13,
+   "argmax_quantile": 0.7647058823529411,
+   "t3b_pass": true
+  },
+  {
+   "year": "2011",
+   "month": "October",
+   "n": 23,
+   "rho": -0.0653,
+   "unique": true,
+   "argmax_pos": 0,
+   "argmax_quantile": 0.0,
+   "t3b_pass": true
+  },
+  {
+   "year": "2012",
+   "month": "January",
+   "n": 14,
+   "rho": -0.1947,
+   "unique": true,
+   "argmax_pos": 5,
+   "argmax_quantile": 0.38461538461538464,
+   "t3b_pass": true
+  },
+  {
+   "year": "2011",
+   "month": "November",
+   "n": 40,
+   "rho": -0.4852,
+   "unique": true,
+   "argmax_pos": 0,
+   "argmax_quantile": 0.0,
+   "t3b_pass": false
+  },
+  {
+   "year": "2011",
+   "month": "December",
+   "n": 21,
+   "rho": -0.3487,
+   "unique": true,
+   "argmax_pos": 12,
+   "argmax_quantile": 0.6,
+   "t3b_pass": true
+  },
+  {
+   "year": "2012",
+   "month": "February",
+   "n": 46,
+   "rho": 0.0204,
+   "unique": true,
+   "argmax_pos": 28,
+   "argmax_quantile": 0.6222222222222222,
+   "t3b_pass": true
+  },
+  {
+   "year": "2012",
+   "month": "May",
+   "n": 25,
+   "rho": -0.0948,
+   "unique": true,
+   "argmax_pos": 0,
+   "argmax_quantile": 0.0,
+   "t3b_pass": true
+  },
+  {
+   "year": "2012",
+   "month": "March",
+   "n": 34,
+   "rho": -0.5509,
+   "unique": true,
+   "argmax_pos": 16,
+   "argmax_quantile": 0.48484848484848486,
+   "t3b_pass": false
+  },
+  {
+   "year": "2012",
+   "month": "June",
+   "n": 26,
+   "rho": -0.3384,
+   "unique": true,
+   "argmax_pos": 12,
+   "argmax_quantile": 0.48,
+   "t3b_pass": true
+  },
+  {
+   "year": "2012",
+   "month": "July",
+   "n": 35,
+   "rho": -0.1115,
+   "unique": true,
+   "argmax_pos": 18,
+   "argmax_quantile": 0.5294117647058824,
+   "t3b_pass": true
+  },
+  {
+   "year": "2012",
+   "month": "August",
+   "n": 29,
+   "rho": -0.2364,
+   "unique": true,
+   "argmax_pos": 10,
+   "argmax_quantile": 0.35714285714285715,
+   "t3b_pass": true
+  },
+  {
+   "year": "2012",
+   "month": "November",
+   "n": 38,
+   "rho": -0.2222,
+   "unique": true,
+   "argmax_pos": 22,
+   "argmax_quantile": 0.5945945945945946,
+   "t3b_pass": true
+  },
+  {
+   "year": "2012",
+   "month": "October",
+   "n": 24,
+   "rho": -0.3568,
+   "unique": true,
+   "argmax_pos": 3,
+   "argmax_quantile": 0.13043478260869565,
+   "t3b_pass": true
+  },
+  {
+   "year": "2012",
+   "month": "September",
+   "n": 15,
+   "rho": -0.3953,
+   "unique": true,
+   "argmax_pos": 5,
+   "argmax_quantile": 0.35714285714285715,
+   "t3b_pass": true
+  },
+  {
+   "year": "2012",
+   "month": "December",
+   "n": 15,
+   "rho": -0.4933,
+   "unique": true,
+   "argmax_pos": 1,
+   "argmax_quantile": 0.07142857142857142,
+   "t3b_pass": false
+  },
+  {
+   "year": "2013",
+   "month": "February",
+   "n": 25,
+   "rho": -0.1781,
+   "unique": true,
+   "argmax_pos": 5,
+   "argmax_quantile": 0.20833333333333334,
+   "t3b_pass": true
+  },
+  {
+   "year": "2013",
+   "month": "January",
+   "n": 38,
+   "rho": -0.3916,
+   "unique": true,
+   "argmax_pos": 28,
+   "argmax_quantile": 0.7567567567567568,
+   "t3b_pass": true
+  },
+  {
+   "year": "2013",
+   "month": "March",
+   "n": 26,
+   "rho": 0.0524,
+   "unique": true,
+   "argmax_pos": 16,
+   "argmax_quantile": 0.64,
+   "t3b_pass": true
+  },
+  {
+   "year": "2013",
+   "month": "April",
+   "n": 35,
+   "rho": -0.1415,
+   "unique": true,
+   "argmax_pos": 18,
+   "argmax_quantile": 0.5294117647058824,
+   "t3b_pass": true
+  },
+  {
+   "year": "2013",
+   "month": "May",
+   "n": 21,
+   "rho": 0.1634,
+   "unique": true,
+   "argmax_pos": 3,
+   "argmax_quantile": 0.15,
+   "t3b_pass": true
+  },
+  {
+   "year": "2013",
+   "month": "June",
+   "n": 8,
+   "rho": -0.1677,
+   "unique": true,
+   "argmax_pos": 1,
+   "argmax_quantile": 0.14285714285714285,
+   "t3b_pass": true
+  },
+  {
+   "year": "2014",
+   "month": "January",
+   "n": 24,
+   "rho": -0.3255,
+   "unique": true,
+   "argmax_pos": 0,
+   "argmax_quantile": 0.0,
+   "t3b_pass": true
+  },
+  {
+   "year": "2013",
+   "month": "July",
+   "n": 20,
+   "rho": -0.2584,
+   "unique": true,
+   "argmax_pos": 13,
+   "argmax_quantile": 0.6842105263157895,
+   "t3b_pass": true
+  },
+  {
+   "year": "2013",
+   "month": "October",
+   "n": 17,
+   "rho": 0.027,
+   "unique": true,
+   "argmax_pos": 16,
+   "argmax_quantile": 1.0,
+   "t3b_pass": true
+  },
+  {
+   "year": "2013",
+   "month": "August",
+   "n": 15,
+   "rho": -0.4488,
+   "unique": true,
+   "argmax_pos": 1,
+   "argmax_quantile": 0.07142857142857142,
+   "t3b_pass": true
+  },
+  {
+   "year": "2013",
+   "month": "September",
+   "n": 23,
+   "rho": 0.0124,
+   "unique": true,
+   "argmax_pos": 9,
+   "argmax_quantile": 0.4090909090909091,
+   "t3b_pass": true
+  },
+  {
+   "year": "2013",
+   "month": "November",
+   "n": 30,
+   "rho": -0.1696,
+   "unique": true,
+   "argmax_pos": 7,
+   "argmax_quantile": 0.2413793103448276,
+   "t3b_pass": true
+  },
+  {
+   "year": "2014",
+   "month": "February",
+   "n": 20,
+   "rho": -0.3581,
+   "unique": true,
+   "argmax_pos": 5,
+   "argmax_quantile": 0.2631578947368421,
+   "t3b_pass": true
+  },
+  {
+   "year": "2013",
+   "month": "December",
+   "n": 17,
+   "rho": -0.5203,
+   "unique": true,
+   "argmax_pos": 11,
+   "argmax_quantile": 0.6875,
+   "t3b_pass": false
+  },
+  {
+   "year": "2014",
+   "month": "April",
+   "n": 41,
+   "rho": -0.2273,
+   "unique": true,
+   "argmax_pos": 1,
+   "argmax_quantile": 0.025,
+   "t3b_pass": true
+  },
+  {
+   "year": "2014",
+   "month": "March",
+   "n": 22,
+   "rho": -0.2303,
+   "unique": true,
+   "argmax_pos": 1,
+   "argmax_quantile": 0.047619047619047616,
+   "t3b_pass": true
+  },
+  {
+   "year": "2014",
+   "month": "May",
+   "n": 43,
+   "rho": -0.3948,
+   "unique": true,
+   "argmax_pos": 3,
+   "argmax_quantile": 0.07142857142857142,
+   "t3b_pass": true
+  },
+  {
+   "year": "2014",
+   "month": "August",
+   "n": 26,
+   "rho": -0.1164,
+   "unique": true,
+   "argmax_pos": 5,
+   "argmax_quantile": 0.2,
+   "t3b_pass": true
+  },
+  {
+   "year": "2014",
+   "month": "June",
+   "n": 43,
+   "rho": -0.0138,
+   "unique": true,
+   "argmax_pos": 18,
+   "argmax_quantile": 0.42857142857142855,
+   "t3b_pass": true
+  },
+  {
+   "year": "2014",
+   "month": "July",
+   "n": 32,
+   "rho": -0.5433,
+   "unique": true,
+   "argmax_pos": 1,
+   "argmax_quantile": 0.03225806451612903,
+   "t3b_pass": false
+  },
+  {
+   "year": "2014",
+   "month": "September",
+   "n": 25,
+   "rho": -0.6452,
+   "unique": true,
+   "argmax_pos": 0,
+   "argmax_quantile": 0.0,
+   "t3b_pass": false
+  },
+  {
+   "year": "2014",
+   "month": "November",
+   "n": 12,
+   "rho": 0.5315,
+   "unique": true,
+   "argmax_pos": 8,
+   "argmax_quantile": 0.7272727272727273,
+   "t3b_pass": false
+  },
+  {
+   "year": "2014",
+   "month": "October",
+   "n": 23,
+   "rho": -0.191,
+   "unique": true,
+   "argmax_pos": 0,
+   "argmax_quantile": 0.0,
+   "t3b_pass": true
+  },
+  {
+   "year": "2014",
+   "month": "December",
+   "n": 16,
+   "rho": 0.0882,
+   "unique": true,
+   "argmax_pos": 5,
+   "argmax_quantile": 0.3333333333333333,
+   "t3b_pass": true
+  },
+  {
+   "year": "2015",
+   "month": "April",
+   "n": 27,
+   "rho": -0.5923,
+   "unique": true,
+   "argmax_pos": 1,
+   "argmax_quantile": 0.038461538461538464,
+   "t3b_pass": false
+  },
+  {
+   "year": "2015",
+   "month": "February",
+   "n": 20,
+   "rho": -0.1805,
+   "unique": true,
+   "argmax_pos": 11,
+   "argmax_quantile": 0.5789473684210527,
+   "t3b_pass": true
+  },
+  {
+   "year": "2015",
+   "month": "January",
+   "n": 15,
+   "rho": -0.6613,
+   "unique": true,
+   "argmax_pos": 0,
+   "argmax_quantile": 0.0,
+   "t3b_pass": false
+  },
+  {
+   "year": "2015",
+   "month": "July",
+   "n": 22,
+   "rho": 0.0645,
+   "unique": true,
+   "argmax_pos": 7,
+   "argmax_quantile": 0.3333333333333333,
+   "t3b_pass": true
+  },
+  {
+   "year": "2015",
+   "month": "August",
+   "n": 25,
+   "rho": -0.2712,
+   "unique": true,
+   "argmax_pos": 8,
+   "argmax_quantile": 0.3333333333333333,
+   "t3b_pass": true
+  },
+  {
+   "year": "2015",
+   "month": "March",
+   "n": 36,
+   "rho": 0.0451,
+   "unique": true,
+   "argmax_pos": 32,
+   "argmax_quantile": 0.9142857142857143,
+   "t3b_pass": true
+  },
+  {
+   "year": "2015",
+   "month": "June",
+   "n": 23,
+   "rho": 0.2289,
+   "unique": true,
+   "argmax_pos": 22,
+   "argmax_quantile": 1.0,
+   "t3b_pass": true
+  },
+  {
+   "year": "2015",
+   "month": "May",
+   "n": 36,
+   "rho": -0.286,
+   "unique": true,
+   "argmax_pos": 7,
+   "argmax_quantile": 0.2,
+   "t3b_pass": true
+  },
+  {
+   "year": "2015",
+   "month": "October",
+   "n": 27,
+   "rho": -0.2222,
+   "unique": true,
+   "argmax_pos": 7,
+   "argmax_quantile": 0.2692307692307692,
+   "t3b_pass": true
+  },
+  {
+   "year": "2015",
+   "month": "September",
+   "n": 27,
+   "rho": -0.2943,
+   "unique": true,
+   "argmax_pos": 17,
+   "argmax_quantile": 0.6538461538461539,
+   "t3b_pass": true
+  },
+  {
+   "year": "2015",
+   "month": "November",
+   "n": 24,
+   "rho": -0.2277,
+   "unique": true,
+   "argmax_pos": 16,
+   "argmax_quantile": 0.6956521739130435,
+   "t3b_pass": true
+  },
+  {
+   "year": "2016",
+   "month": "January",
+   "n": 24,
+   "rho": -0.2714,
+   "unique": true,
+   "argmax_pos": 4,
+   "argmax_quantile": 0.17391304347826086,
+   "t3b_pass": true
+  },
+  {
+   "year": "2015",
+   "month": "December",
+   "n": 18,
+   "rho": -0.3554,
+   "unique": true,
+   "argmax_pos": 8,
+   "argmax_quantile": 0.47058823529411764,
+   "t3b_pass": true
+  },
+  {
+   "year": "2016",
+   "month": "March",
+   "n": 37,
+   "rho": -0.3345,
+   "unique": true,
+   "argmax_pos": 7,
+   "argmax_quantile": 0.19444444444444445,
+   "t3b_pass": true
+  },
+  {
+   "year": "2016",
+   "month": "February",
+   "n": 30,
+   "rho": -0.3598,
+   "unique": true,
+   "argmax_pos": 6,
+   "argmax_quantile": 0.20689655172413793,
+   "t3b_pass": true
+  },
+  {
+   "year": "2016",
+   "month": "April",
+   "n": 19,
+   "rho": -0.4769,
+   "unique": true,
+   "argmax_pos": 2,
+   "argmax_quantile": 0.1111111111111111,
+   "t3b_pass": false
+  },
+  {
+   "year": "2016",
+   "month": "May",
+   "n": 37,
+   "rho": -0.0157,
+   "unique": true,
+   "argmax_pos": 27,
+   "argmax_quantile": 0.75,
+   "t3b_pass": true
+  },
+  {
+   "year": "2016",
+   "month": "June",
+   "n": 33,
+   "rho": -0.2977,
+   "unique": true,
+   "argmax_pos": 0,
+   "argmax_quantile": 0.0,
+   "t3b_pass": true
+  },
+  {
+   "year": "2016",
+   "month": "December",
+   "n": 20,
+   "rho": -0.2543,
+   "unique": true,
+   "argmax_pos": 1,
+   "argmax_quantile": 0.05263157894736842,
+   "t3b_pass": true
+  },
+  {
+   "year": "2016",
+   "month": "July",
+   "n": 23,
+   "rho": 0.1272,
+   "unique": true,
+   "argmax_pos": 19,
+   "argmax_quantile": 0.8636363636363636,
+   "t3b_pass": true
+  },
+  {
+   "year": "2016",
+   "month": "November",
+   "n": 21,
+   "rho": -0.4972,
+   "unique": true,
+   "argmax_pos": 3,
+   "argmax_quantile": 0.15,
+   "t3b_pass": false
+  },
+  {
+   "year": "2016",
+   "month": "August",
+   "n": 31,
+   "rho": -0.1452,
+   "unique": true,
+   "argmax_pos": 17,
+   "argmax_quantile": 0.5666666666666667,
+   "t3b_pass": true
+  },
+  {
+   "year": "2016",
+   "month": "September",
+   "n": 18,
+   "rho": -0.183,
+   "unique": true,
+   "argmax_pos": 2,
+   "argmax_quantile": 0.11764705882352941,
+   "t3b_pass": true
+  },
+  {
+   "year": "2016",
+   "month": "October",
+   "n": 17,
+   "rho": -0.4539,
+   "unique": true,
+   "argmax_pos": 2,
+   "argmax_quantile": 0.125,
+   "t3b_pass": false
+  },
+  {
+   "year": "2017",
+   "month": "January",
+   "n": 22,
+   "rho": -0.6625,
+   "unique": true,
+   "argmax_pos": 2,
+   "argmax_quantile": 0.09523809523809523,
+   "t3b_pass": false
+  },
+  {
+   "year": "2017",
+   "month": "February",
+   "n": 33,
+   "rho": -0.3508,
+   "unique": true,
+   "argmax_pos": 5,
+   "argmax_quantile": 0.15625,
+   "t3b_pass": true
+  },
+  {
+   "year": "2017",
+   "month": "March",
+   "n": 35,
+   "rho": -0.2764,
+   "unique": true,
+   "argmax_pos": 0,
+   "argmax_quantile": 0.0,
+   "t3b_pass": true
+  },
+  {
+   "year": "2017",
+   "month": "May",
+   "n": 26,
+   "rho": -0.2499,
+   "unique": true,
+   "argmax_pos": 0,
+   "argmax_quantile": 0.0,
+   "t3b_pass": true
+  },
+  {
+   "year": "2017",
+   "month": "June",
+   "n": 18,
+   "rho": -0.605,
+   "unique": true,
+   "argmax_pos": 3,
+   "argmax_quantile": 0.17647058823529413,
+   "t3b_pass": false
+  },
+  {
+   "year": "2017",
+   "month": "April",
+   "n": 20,
+   "rho": -0.2962,
+   "unique": true,
+   "argmax_pos": 0,
+   "argmax_quantile": 0.0,
+   "t3b_pass": true
+  },
+  {
+   "year": "2017",
+   "month": "August",
+   "n": 18,
+   "rho": 0.096,
+   "unique": true,
+   "argmax_pos": 7,
+   "argmax_quantile": 0.4117647058823529,
+   "t3b_pass": true
+  },
+  {
+   "year": "2017",
+   "month": "July",
+   "n": 15,
+   "rho": -0.5898,
+   "unique": true,
+   "argmax_pos": 0,
+   "argmax_quantile": 0.0,
+   "t3b_pass": false
+  },
+  {
+   "year": "2017",
+   "month": "December",
+   "n": 15,
+   "rho": 0.254,
+   "unique": true,
+   "argmax_pos": 11,
+   "argmax_quantile": 0.7857142857142857,
+   "t3b_pass": true
+  },
+  {
+   "year": "2017",
+   "month": "September",
+   "n": 26,
+   "rho": -0.0264,
+   "unique": true,
+   "argmax_pos": 12,
+   "argmax_quantile": 0.48,
+   "t3b_pass": true
+  },
+  {
+   "year": "2017",
+   "month": "October",
+   "n": 25,
+   "rho": 0.1525,
+   "unique": true,
+   "argmax_pos": 21,
+   "argmax_quantile": 0.875,
+   "t3b_pass": true
+  },
+  {
+   "year": "2018",
+   "month": "February",
+   "n": 18,
+   "rho": -0.2173,
+   "unique": true,
+   "argmax_pos": 3,
+   "argmax_quantile": 0.17647058823529413,
+   "t3b_pass": true
+  },
+  {
+   "year": "2017",
+   "month": "November",
+   "n": 10,
+   "rho": 0.1155,
+   "unique": false,
+   "argmax_pos": null,
+   "argmax_quantile": null,
+   "t3b_pass": true
+  },
+  {
+   "year": "2018",
+   "month": "January",
+   "n": 18,
+   "rho": -0.0248,
+   "unique": true,
+   "argmax_pos": 6,
+   "argmax_quantile": 0.35294117647058826,
+   "t3b_pass": true
+  },
+  {
+   "year": "2018",
+   "month": "March",
+   "n": 30,
+   "rho": -0.0441,
+   "unique": true,
+   "argmax_pos": 21,
+   "argmax_quantile": 0.7241379310344828,
+   "t3b_pass": true
+  },
+  {
+   "year": "2018",
+   "month": "April",
+   "n": 8,
+   "rho": -0.024,
+   "unique": true,
+   "argmax_pos": 7,
+   "argmax_quantile": 1.0,
+   "t3b_pass": true
+  },
+  {
+   "year": "2018",
+   "month": "June",
+   "n": 10,
+   "rho": 0.4303,
+   "unique": true,
+   "argmax_pos": 9,
+   "argmax_quantile": 1.0,
+   "t3b_pass": true
+  },
+  {
+   "year": "2018",
+   "month": "May",
+   "n": 24,
+   "rho": -0.105,
+   "unique": true,
+   "argmax_pos": 0,
+   "argmax_quantile": 0.0,
+   "t3b_pass": true
+  },
+  {
+   "year": "2018",
+   "month": "July",
+   "n": 18,
+   "rho": -0.2251,
+   "unique": true,
+   "argmax_pos": 9,
+   "argmax_quantile": 0.5294117647058824,
+   "t3b_pass": true
+  },
+  {
+   "year": "2018",
+   "month": "December",
+   "n": 8,
+   "rho": 0.2857,
+   "unique": true,
+   "argmax_pos": 4,
+   "argmax_quantile": 0.5714285714285714,
+   "t3b_pass": true
+  },
+  {
+   "year": "2018",
+   "month": "October",
+   "n": 23,
+   "rho": -0.0837,
+   "unique": true,
+   "argmax_pos": 8,
+   "argmax_quantile": 0.36363636363636365,
+   "t3b_pass": true
+  },
+  {
+   "year": "2018",
+   "month": "August",
+   "n": 22,
+   "rho": 0.1035,
+   "unique": true,
+   "argmax_pos": 18,
+   "argmax_quantile": 0.8571428571428571,
+   "t3b_pass": true
+  },
+  {
+   "year": "2018",
+   "month": "November",
+   "n": 12,
+   "rho": 0.0315,
+   "unique": true,
+   "argmax_pos": 0,
+   "argmax_quantile": 0.0,
+   "t3b_pass": true
+  },
+  {
+   "year": "2018",
+   "month": "September",
+   "n": 17,
+   "rho": -0.4121,
+   "unique": true,
+   "argmax_pos": 1,
+   "argmax_quantile": 0.0625,
+   "t3b_pass": true
+  },
+  {
+   "year": "2019",
+   "month": "January",
+   "n": 10,
+   "rho": -0.5394,
+   "unique": true,
+   "argmax_pos": 6,
+   "argmax_quantile": 0.6666666666666666,
+   "t3b_pass": false
+  },
+  {
+   "year": "2019",
+   "month": "April",
+   "n": 26,
+   "rho": -0.2039,
+   "unique": true,
+   "argmax_pos": 19,
+   "argmax_quantile": 0.76,
+   "t3b_pass": true
+  },
+  {
+   "year": "2020",
+   "month": "February",
+   "n": 40,
+   "rho": -0.4645,
+   "unique": true,
+   "argmax_pos": 1,
+   "argmax_quantile": 0.02564102564102564,
+   "t3b_pass": false
+  },
+  {
+   "year": "2019",
+   "month": "March",
+   "n": 22,
+   "rho": -0.4475,
+   "unique": true,
+   "argmax_pos": 1,
+   "argmax_quantile": 0.047619047619047616,
+   "t3b_pass": true
+  },
+  {
+   "year": "2019",
+   "month": "February",
+   "n": 10,
+   "rho": 0.3781,
+   "unique": true,
+   "argmax_pos": 9,
+   "argmax_quantile": 1.0,
+   "t3b_pass": true
+  },
+  {
+   "year": "2019",
+   "month": "May",
+   "n": 24,
+   "rho": -0.166,
+   "unique": true,
+   "argmax_pos": 5,
+   "argmax_quantile": 0.21739130434782608,
+   "t3b_pass": true
+  },
+  {
+   "year": "2019",
+   "month": "June",
+   "n": 17,
+   "rho": -0.0933,
+   "unique": true,
+   "argmax_pos": 9,
+   "argmax_quantile": 0.5625,
+   "t3b_pass": true
+  },
+  {
+   "year": "2019",
+   "month": "July",
+   "n": 12,
+   "rho": -0.3398,
+   "unique": true,
+   "argmax_pos": 3,
+   "argmax_quantile": 0.2727272727272727,
+   "t3b_pass": true
+  },
+  {
+   "year": "2019",
+   "month": "August",
+   "n": 13,
+   "rho": -0.4077,
+   "unique": true,
+   "argmax_pos": 3,
+   "argmax_quantile": 0.25,
+   "t3b_pass": true
+  },
+  {
+   "year": "2019",
+   "month": "November",
+   "n": 13,
+   "rho": -0.1623,
+   "unique": true,
+   "argmax_pos": 8,
+   "argmax_quantile": 0.6666666666666666,
+   "t3b_pass": true
+  },
+  {
+   "year": "2019",
+   "month": "December",
+   "n": 22,
+   "rho": 0.0176,
+   "unique": true,
+   "argmax_pos": 12,
+   "argmax_quantile": 0.5714285714285714,
+   "t3b_pass": true
+  },
+  {
+   "year": "2020",
+   "month": "January",
+   "n": 8,
+   "rho": -0.3353,
+   "unique": true,
+   "argmax_pos": 1,
+   "argmax_quantile": 0.14285714285714285,
+   "t3b_pass": true
+  },
+  {
+   "year": "2020",
+   "month": "March",
+   "n": 22,
+   "rho": -0.5009,
+   "unique": true,
+   "argmax_pos": 3,
+   "argmax_quantile": 0.14285714285714285,
+   "t3b_pass": false
+  },
+  {
+   "year": "2020",
+   "month": "April",
+   "n": 13,
+   "rho": -0.1653,
+   "unique": true,
+   "argmax_pos": 1,
+   "argmax_quantile": 0.08333333333333333,
+   "t3b_pass": true
+  },
+  {
+   "year": "2020",
+   "month": "November",
+   "n": 22,
+   "rho": -0.4622,
+   "unique": true,
+   "argmax_pos": 1,
+   "argmax_quantile": 0.047619047619047616,
+   "t3b_pass": false
+  },
+  {
+   "year": "2020",
+   "month": "August",
+   "n": 21,
+   "rho": -0.1471,
+   "unique": true,
+   "argmax_pos": 16,
+   "argmax_quantile": 0.8,
+   "t3b_pass": true
+  },
+  {
+   "year": "2020",
+   "month": "July",
+   "n": 10,
+   "rho": 0.4424,
+   "unique": true,
+   "argmax_pos": 8,
+   "argmax_quantile": 0.8888888888888888,
+   "t3b_pass": true
+  },
+  {
+   "year": "2020",
+   "month": "June",
+   "n": 15,
+   "rho": -0.6571,
+   "unique": true,
+   "argmax_pos": 3,
+   "argmax_quantile": 0.21428571428571427,
+   "t3b_pass": false
+  },
+  {
+   "year": "2020",
+   "month": "September",
+   "n": 22,
+   "rho": -0.2012,
+   "unique": true,
+   "argmax_pos": 8,
+   "argmax_quantile": 0.38095238095238093,
+   "t3b_pass": true
+  },
+  {
+   "year": "2021",
+   "month": "February",
+   "n": 15,
+   "rho": -0.3649,
+   "unique": true,
+   "argmax_pos": 1,
+   "argmax_quantile": 0.07142857142857142,
+   "t3b_pass": true
+  },
+  {
+   "year": "2020",
+   "month": "October",
+   "n": 19,
+   "rho": -0.138,
+   "unique": true,
+   "argmax_pos": 9,
+   "argmax_quantile": 0.5,
+   "t3b_pass": true
+  },
+  {
+   "year": "2021",
+   "month": "April",
+   "n": 16,
+   "rho": 0.0148,
+   "unique": true,
+   "argmax_pos": 4,
+   "argmax_quantile": 0.26666666666666666,
+   "t3b_pass": true
+  },
+  {
+   "year": "2021",
+   "month": "June",
+   "n": 24,
+   "rho": 0.3003,
+   "unique": true,
+   "argmax_pos": 23,
+   "argmax_quantile": 1.0,
+   "t3b_pass": true
+  },
+  {
+   "year": "2020",
+   "month": "December",
+   "n": 11,
+   "rho": -0.1364,
+   "unique": true,
+   "argmax_pos": 3,
+   "argmax_quantile": 0.3,
+   "t3b_pass": true
+  },
+  {
+   "year": "2021",
+   "month": "May",
+   "n": 21,
+   "rho": -0.0994,
+   "unique": true,
+   "argmax_pos": 15,
+   "argmax_quantile": 0.75,
+   "t3b_pass": true
+  },
+  {
+   "year": "2021",
+   "month": "November",
+   "n": 8,
+   "rho": -0.8095,
+   "unique": true,
+   "argmax_pos": 1,
+   "argmax_quantile": 0.14285714285714285,
+   "t3b_pass": false
+  },
+  {
+   "year": "2021",
+   "month": "March",
+   "n": 8,
+   "rho": 0.5389,
+   "unique": true,
+   "argmax_pos": 5,
+   "argmax_quantile": 0.7142857142857143,
+   "t3b_pass": false
+  },
+  {
+   "year": "2021",
+   "month": "July",
+   "n": 18,
+   "rho": -0.7052,
+   "unique": true,
+   "argmax_pos": 5,
+   "argmax_quantile": 0.29411764705882354,
+   "t3b_pass": false
+  },
+  {
+   "year": "2021",
+   "month": "August",
+   "n": 28,
+   "rho": -0.2519,
+   "unique": true,
+   "argmax_pos": 1,
+   "argmax_quantile": 0.037037037037037035,
+   "t3b_pass": true
+  },
+  {
+   "year": "2021",
+   "month": "October",
+   "n": 12,
+   "rho": -0.1471,
+   "unique": true,
+   "argmax_pos": 6,
+   "argmax_quantile": 0.5454545454545454,
+   "t3b_pass": true
+  },
+  {
+   "year": "2022",
+   "month": "August",
+   "n": 29,
+   "rho": -0.3213,
+   "unique": true,
+   "argmax_pos": 24,
+   "argmax_quantile": 0.8571428571428571,
+   "t3b_pass": true
+  },
+  {
+   "year": "2021",
+   "month": "September",
+   "n": 8,
+   "rho": 0.7381,
+   "unique": true,
+   "argmax_pos": 6,
+   "argmax_quantile": 0.8571428571428571,
+   "t3b_pass": false
+  },
+  {
+   "year": "2021",
+   "month": "December",
+   "n": 16,
+   "rho": -0.3193,
+   "unique": true,
+   "argmax_pos": 10,
+   "argmax_quantile": 0.6666666666666666,
+   "t3b_pass": true
+  },
+  {
+   "year": "2022",
+   "month": "February",
+   "n": 16,
+   "rho": -0.3885,
+   "unique": true,
+   "argmax_pos": 8,
+   "argmax_quantile": 0.5333333333333333,
+   "t3b_pass": true
+  },
+  {
+   "year": "2022",
+   "month": "March",
+   "n": 17,
+   "rho": -0.2359,
+   "unique": true,
+   "argmax_pos": 3,
+   "argmax_quantile": 0.1875,
+   "t3b_pass": true
+  },
+  {
+   "year": "2022",
+   "month": "June",
+   "n": 30,
+   "rho": -0.4044,
+   "unique": true,
+   "argmax_pos": 0,
+   "argmax_quantile": 0.0,
+   "t3b_pass": true
+  },
+  {
+   "year": "2022",
+   "month": "April",
+   "n": 17,
+   "rho": -0.4428,
+   "unique": true,
+   "argmax_pos": 1,
+   "argmax_quantile": 0.0625,
+   "t3b_pass": true
+  },
+  {
+   "year": "2023",
+   "month": "April",
+   "n": 15,
+   "rho": -0.4347,
+   "unique": true,
+   "argmax_pos": 2,
+   "argmax_quantile": 0.14285714285714285,
+   "t3b_pass": true
+  },
+  {
+   "year": "2023",
+   "month": "June",
+   "n": 10,
+   "rho": 0.0973,
+   "unique": true,
+   "argmax_pos": 1,
+   "argmax_quantile": 0.1111111111111111,
+   "t3b_pass": true
+  },
+  {
+   "year": "2022",
+   "month": "January",
+   "n": 11,
+   "rho": -0.3273,
+   "unique": true,
+   "argmax_pos": 7,
+   "argmax_quantile": 0.7,
+   "t3b_pass": true
+  },
+  {
+   "year": "2022",
+   "month": "October",
+   "n": 21,
+   "rho": -0.3295,
+   "unique": true,
+   "argmax_pos": 1,
+   "argmax_quantile": 0.05,
+   "t3b_pass": true
+  },
+  {
+   "year": "2022",
+   "month": "May",
+   "n": 11,
+   "rho": -0.1142,
+   "unique": true,
+   "argmax_pos": 1,
+   "argmax_quantile": 0.1,
+   "t3b_pass": true
+  },
+  {
+   "year": "2022",
+   "month": "July",
+   "n": 15,
+   "rho": -0.8079,
+   "unique": true,
+   "argmax_pos": 3,
+   "argmax_quantile": 0.21428571428571427,
+   "t3b_pass": false
+  },
+  {
+   "year": "2022",
+   "month": "September",
+   "n": 11,
+   "rho": 0.2818,
+   "unique": true,
+   "argmax_pos": 3,
+   "argmax_quantile": 0.3,
+   "t3b_pass": true
+  },
+  {
+   "year": "2023",
+   "month": "January",
+   "n": 13,
+   "rho": -0.3609,
+   "unique": false,
+   "argmax_pos": null,
+   "argmax_quantile": null,
+   "t3b_pass": true
+  },
+  {
+   "year": "2022",
+   "month": "December",
+   "n": 9,
+   "rho": 0.4333,
+   "unique": true,
+   "argmax_pos": 1,
+   "argmax_quantile": 0.125,
+   "t3b_pass": true
+  },
+  {
+   "year": "2023",
+   "month": "March",
+   "n": 12,
+   "rho": -0.2597,
+   "unique": true,
+   "argmax_pos": 11,
+   "argmax_quantile": 1.0,
+   "t3b_pass": true
+  },
+  {
+   "year": "2023",
+   "month": "February",
+   "n": 12,
+   "rho": -0.2175,
+   "unique": true,
+   "argmax_pos": 11,
+   "argmax_quantile": 1.0,
+   "t3b_pass": true
+  },
+  {
+   "year": "2023",
+   "month": "July",
+   "n": 26,
+   "rho": 0.1047,
+   "unique": true,
+   "argmax_pos": 11,
+   "argmax_quantile": 0.44,
+   "t3b_pass": true
+  },
+  {
+   "year": "2023",
+   "month": "May",
+   "n": 8,
+   "rho": 0.0714,
+   "unique": true,
+   "argmax_pos": 3,
+   "argmax_quantile": 0.42857142857142855,
+   "t3b_pass": true
+  },
+  {
+   "year": "2023",
+   "month": "August",
+   "n": 16,
+   "rho": -0.7254,
+   "unique": true,
+   "argmax_pos": 0,
+   "argmax_quantile": 0.0,
+   "t3b_pass": false
+  },
+  {
+   "year": "2023",
+   "month": "September",
+   "n": 15,
+   "rho": -0.5098,
+   "unique": true,
+   "argmax_pos": 4,
+   "argmax_quantile": 0.2857142857142857,
+   "t3b_pass": false
+  },
+  {
+   "year": "2023",
+   "month": "November",
+   "n": 21,
+   "rho": 0.0637,
+   "unique": true,
+   "argmax_pos": 10,
+   "argmax_quantile": 0.5,
+   "t3b_pass": true
+  },
+  {
+   "year": "2024",
+   "month": "February",
+   "n": 14,
+   "rho": -0.2035,
+   "unique": true,
+   "argmax_pos": 0,
+   "argmax_quantile": 0.0,
+   "t3b_pass": true
+  },
+  {
+   "year": "2024",
+   "month": "April",
+   "n": 13,
+   "rho": -0.135,
+   "unique": true,
+   "argmax_pos": 1,
+   "argmax_quantile": 0.08333333333333333,
+   "t3b_pass": true
+  },
+  {
+   "year": "2024",
+   "month": "January",
+   "n": 12,
+   "rho": -0.2667,
+   "unique": true,
+   "argmax_pos": 6,
+   "argmax_quantile": 0.5454545454545454,
+   "t3b_pass": true
+  },
+  {
+   "year": "2023",
+   "month": "October",
+   "n": 12,
+   "rho": -0.0491,
+   "unique": false,
+   "argmax_pos": null,
+   "argmax_quantile": null,
+   "t3b_pass": true
+  },
+  {
+   "year": "2023",
+   "month": "December",
+   "n": 13,
+   "rho": 0.0,
+   "unique": true,
+   "argmax_pos": 3,
+   "argmax_quantile": 0.25,
+   "t3b_pass": true
+  },
+  {
+   "year": "2024",
+   "month": "March",
+   "n": 15,
+   "rho": -0.5183,
+   "unique": true,
+   "argmax_pos": 4,
+   "argmax_quantile": 0.2857142857142857,
+   "t3b_pass": false
+  },
+  {
+   "year": "2024",
+   "month": "May",
+   "n": 17,
+   "rho": -0.77,
+   "unique": true,
+   "argmax_pos": 1,
+   "argmax_quantile": 0.0625,
+   "t3b_pass": false
+  },
+  {
+   "year": "2024",
+   "month": "October",
+   "n": 27,
+   "rho": -0.4901,
+   "unique": true,
+   "argmax_pos": 4,
+   "argmax_quantile": 0.15384615384615385,
+   "t3b_pass": false
+  },
+  {
+   "year": "2024",
+   "month": "December",
+   "n": 14,
+   "rho": 0.0861,
+   "unique": true,
+   "argmax_pos": 2,
+   "argmax_quantile": 0.15384615384615385,
+   "t3b_pass": true
+  },
+  {
+   "year": "2024",
+   "month": "September",
+   "n": 11,
+   "rho": -0.5636,
+   "unique": true,
+   "argmax_pos": 1,
+   "argmax_quantile": 0.1,
+   "t3b_pass": false
+  },
+  {
+   "year": "2024",
+   "month": "June",
+   "n": 13,
+   "rho": -0.554,
+   "unique": true,
+   "argmax_pos": 7,
+   "argmax_quantile": 0.5833333333333334,
+   "t3b_pass": false
+  },
+  {
+   "year": "2024",
+   "month": "July",
+   "n": 10,
+   "rho": -0.6951,
+   "unique": true,
+   "argmax_pos": 0,
+   "argmax_quantile": 0.0,
+   "t3b_pass": false
+  },
+  {
+   "year": "2024",
+   "month": "August",
+   "n": 19,
+   "rho": -0.5108,
+   "unique": true,
+   "argmax_pos": 6,
+   "argmax_quantile": 0.3333333333333333,
+   "t3b_pass": false
+  },
+  {
+   "year": "2025",
+   "month": "February",
+   "n": 11,
+   "rho": -0.5571,
+   "unique": true,
+   "argmax_pos": 3,
+   "argmax_quantile": 0.3,
+   "t3b_pass": false
+  },
+  {
+   "year": "2025",
+   "month": "January",
+   "n": 18,
+   "rho": -0.6385,
+   "unique": true,
+   "argmax_pos": 1,
+   "argmax_quantile": 0.058823529411764705,
+   "t3b_pass": false
+  },
+  {
+   "year": "2025",
+   "month": "March",
+   "n": 34,
+   "rho": -0.182,
+   "unique": true,
+   "argmax_pos": 32,
+   "argmax_quantile": 0.9696969696969697,
+   "t3b_pass": true
+  },
+  {
+   "year": "2024",
+   "month": "November",
+   "n": 10,
+   "rho": -0.2727,
+   "unique": true,
+   "argmax_pos": 4,
+   "argmax_quantile": 0.4444444444444444,
+   "t3b_pass": true
+  },
+  {
+   "year": "2025",
+   "month": "June",
+   "n": 23,
+   "rho": -0.1101,
+   "unique": true,
+   "argmax_pos": 5,
+   "argmax_quantile": 0.22727272727272727,
+   "t3b_pass": true
+  },
+  {
+   "year": "2025",
+   "month": "May",
+   "n": 13,
+   "rho": -0.3674,
+   "unique": true,
+   "argmax_pos": 0,
+   "argmax_quantile": 0.0,
+   "t3b_pass": true
+  },
+  {
+   "year": "2025",
+   "month": "April",
+   "n": 16,
+   "rho": -0.528,
+   "unique": true,
+   "argmax_pos": 0,
+   "argmax_quantile": 0.0,
+   "t3b_pass": false
+  },
+  {
+   "year": "2026",
+   "month": "April",
+   "n": 14,
+   "rho": -0.7026,
+   "unique": true,
+   "argmax_pos": 3,
+   "argmax_quantile": 0.23076923076923078,
+   "t3b_pass": false
+  },
+  {
+   "year": "2025",
+   "month": "July",
+   "n": 19,
+   "rho": -0.362,
+   "unique": true,
+   "argmax_pos": 9,
+   "argmax_quantile": 0.5,
+   "t3b_pass": true
+  },
+  {
+   "year": "2025",
+   "month": "October",
+   "n": 25,
+   "rho": -0.2099,
+   "unique": true,
+   "argmax_pos": 19,
+   "argmax_quantile": 0.7916666666666666,
+   "t3b_pass": true
+  },
+  {
+   "year": "2025",
+   "month": "September",
+   "n": 19,
+   "rho": -0.4352,
+   "unique": true,
+   "argmax_pos": 7,
+   "argmax_quantile": 0.3888888888888889,
+   "t3b_pass": true
+  },
+  {
+   "year": "2025",
+   "month": "November",
+   "n": 13,
+   "rho": -0.1766,
+   "unique": true,
+   "argmax_pos": 9,
+   "argmax_quantile": 0.75,
+   "t3b_pass": true
+  },
+  {
+   "year": "2026",
+   "month": "July",
+   "n": 25,
+   "rho": 0.1547,
+   "unique": true,
+   "argmax_pos": 0,
+   "argmax_quantile": 0.0,
+   "t3b_pass": true
+  },
+  {
+   "year": "2025",
+   "month": "December",
+   "n": 10,
+   "rho": 0.2979,
+   "unique": true,
+   "argmax_pos": 3,
+   "argmax_quantile": 0.3333333333333333,
+   "t3b_pass": true
+  },
+  {
+   "year": "2026",
+   "month": "March",
+   "n": 15,
+   "rho": -0.1717,
+   "unique": true,
+   "argmax_pos": 3,
+   "argmax_quantile": 0.21428571428571427,
+   "t3b_pass": true
+  },
+  {
+   "year": "2026",
+   "month": "January",
+   "n": 11,
+   "rho": 0.1412,
+   "unique": true,
+   "argmax_pos": 9,
+   "argmax_quantile": 0.9,
+   "t3b_pass": true
+  },
+  {
+   "year": "2026",
+   "month": "June",
+   "n": 18,
+   "rho": -0.153,
+   "unique": true,
+   "argmax_pos": 7,
+   "argmax_quantile": 0.4117647058823529,
+   "t3b_pass": true
+  },
+  {
+   "year": "2026",
+   "month": "February",
+   "n": 11,
+   "rho": -0.4601,
+   "unique": true,
+   "argmax_pos": 2,
+   "argmax_quantile": 0.2,
+   "t3b_pass": false
+  },
+  {
+   "year": "2026",
+   "month": "May",
+   "n": 23,
+   "rho": -0.2517,
+   "unique": true,
+   "argmax_pos": 19,
+   "argmax_quantile": 0.8636363636363636,
+   "t3b_pass": true
+  }
+ ]
+}

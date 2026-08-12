@@ -1,0 +1,422 @@
+[
+ {
+  "url": "https://nvd.nist.gov/vuln/detail/CVE-2023-34095",
+  "headers": "minimal",
+  "codes": [
+   0,
+   0,
+   0
+  ],
+  "trials": [
+   {
+    "status": 0,
+    "bytes": 0,
+    "ctype": "",
+    "server": "",
+    "secs": 12.04,
+    "err": "TimeoutError: The read operation timed out"
+   },
+   {
+    "status": 0,
+    "bytes": 0,
+    "ctype": "",
+    "server": "",
+    "secs": 12.02,
+    "err": "TimeoutError: The read operation timed out"
+   },
+   {
+    "status": 0,
+    "bytes": 0,
+    "ctype": "",
+    "server": "",
+    "secs": 12.02,
+    "err": "TimeoutError: The read operation timed out"
+   }
+  ]
+ },
+ {
+  "url": "https://nvd.nist.gov/vuln/detail/CVE-2023-34095",
+  "headers": "browser",
+  "codes": [
+   0,
+   0,
+   0
+  ],
+  "trials": [
+   {
+    "status": 0,
+    "bytes": 0,
+    "ctype": "",
+    "server": "",
+    "secs": 12.02,
+    "err": "TimeoutError: The read operation timed out"
+   },
+   {
+    "status": 0,
+    "bytes": 0,
+    "ctype": "",
+    "server": "",
+    "secs": 12.01,
+    "err": "TimeoutError: The read operation timed out"
+   },
+   {
+    "status": 0,
+    "bytes": 0,
+    "ctype": "",
+    "server": "",
+    "secs": 12.03,
+    "err": "TimeoutError: The read operation timed out"
+   }
+  ]
+ },
+ {
+  "url": "https://nvd.nist.gov/vuln/detail/CVE-2023-34095",
+  "headers": "curl",
+  "codes": [
+   403,
+   403,
+   403
+  ],
+  "trials": [
+   {
+    "status": 403,
+    "bytes": 0,
+    "ctype": "",
+    "server": "cloudflare",
+    "secs": 0.02,
+    "err": "HTTP 403"
+   },
+   {
+    "status": 403,
+    "bytes": 0,
+    "ctype": "",
+    "server": "cloudflare",
+    "secs": 0.01,
+    "err": "HTTP 403"
+   },
+   {
+    "status": 403,
+    "bytes": 0,
+    "ctype": "",
+    "server": "cloudflare",
+    "secs": 0.01,
+    "err": "HTTP 403"
+   }
+  ]
+ },
+ {
+  "url": "https://nvd.nist.gov/vuln/detail/CVE-2021-44228",
+  "headers": "minimal",
+  "codes": [
+   0,
+   0,
+   0
+  ],
+  "trials": [
+   {
+    "status": 0,
+    "bytes": 0,
+    "ctype": "",
+    "server": "",
+    "secs": 12.02,
+    "err": "TimeoutError: The read operation timed out"
+   },
+   {
+    "status": 0,
+    "bytes": 0,
+    "ctype": "",
+    "server": "",
+    "secs": 12.01,
+    "err": "TimeoutError: The read operation timed out"
+   },
+   {
+    "status": 0,
+    "bytes": 0,
+    "ctype": "",
+    "server": "",
+    "secs": 12.01,
+    "err": "TimeoutError: The read operation timed out"
+   }
+  ]
+ },
+ {
+  "url": "https://nvd.nist.gov/vuln/detail/CVE-2021-44228",
+  "headers": "browser",
+  "codes": [
+   0,
+   0,
+   0
+  ],
+  "trials": [
+   {
+    "status": 0,
+    "bytes": 0,
+    "ctype": "",
+    "server": "",
+    "secs": 12.01,
+    "err": "TimeoutError: The read operation timed out"
+   },
+   {
+    "status": 0,
+    "bytes": 0,
+    "ctype": "",
+    "server": "",
+    "secs": 12.01,
+    "err": "TimeoutError: The read operation timed out"
+   },
+   {
+    "status": 0,
+    "bytes": 0,
+    "ctype": "",
+    "server": "",
+    "secs": 12.02,
+    "err": "TimeoutError: The read operation timed out"
+   }
+  ]
+ },
+ {
+  "url": "https://nvd.nist.gov/vuln/detail/CVE-2021-44228",
+  "headers": "curl",
+  "codes": [
+   403,
+   403,
+   403
+  ],
+  "trials": [
+   {
+    "status": 403,
+    "bytes": 0,
+    "ctype": "",
+    "server": "cloudflare",
+    "secs": 0.02,
+    "err": "HTTP 403"
+   },
+   {
+    "status": 403,
+    "bytes": 0,
+    "ctype": "",
+    "server": "cloudflare",
+    "secs": 0.02,
+    "err": "HTTP 403"
+   },
+   {
+    "status": 403,
+    "bytes": 0,
+    "ctype": "",
+    "server": "cloudflare",
+    "secs": 0.02,
+    "err": "HTTP 403"
+   }
+  ]
+ },
+ {
+  "url": "https://nvd.nist.gov/",
+  "headers": "minimal",
+  "codes": [
+   0,
+   0,
+   0
+  ],
+  "trials": [
+   {
+    "status": 0,
+    "bytes": 0,
+    "ctype": "",
+    "server": "",
+    "secs": 12.01,
+    "err": "TimeoutError: The read operation timed out"
+   },
+   {
+    "status": 0,
+    "bytes": 0,
+    "ctype": "",
+    "server": "",
+    "secs": 12.03,
+    "err": "TimeoutError: The read operation timed out"
+   },
+   {
+    "status": 0,
+    "bytes": 0,
+    "ctype": "",
+    "server": "",
+    "secs": 12.02,
+    "err": "TimeoutError: The read operation timed out"
+   }
+  ]
+ },
+ {
+  "url": "https://nvd.nist.gov/",
+  "headers": "browser",
+  "codes": [
+   0,
+   0,
+   0
+  ],
+  "trials": [
+   {
+    "status": 0,
+    "bytes": 0,
+    "ctype": "",
+    "server": "",
+    "secs": 12.03,
+    "err": "TimeoutError: The read operation timed out"
+   },
+   {
+    "status": 0,
+    "bytes": 0,
+    "ctype": "",
+    "server": "",
+    "secs": 12.02,
+    "err": "TimeoutError: The read operation timed out"
+   },
+   {
+    "status": 0,
+    "bytes": 0,
+    "ctype": "",
+    "server": "",
+    "secs": 12.02,
+    "err": "TimeoutError: The read operation timed out"
+   }
+  ]
+ },
+ {
+  "url": "https://nvd.nist.gov/",
+  "headers": "curl",
+  "codes": [
+   403,
+   403,
+   403
+  ],
+  "trials": [
+   {
+    "status": 403,
+    "bytes": 0,
+    "ctype": "",
+    "server": "cloudflare",
+    "secs": 0.02,
+    "err": "HTTP 403"
+   },
+   {
+    "status": 403,
+    "bytes": 0,
+    "ctype": "",
+    "server": "cloudflare",
+    "secs": 0.04,
+    "err": "HTTP 403"
+   },
+   {
+    "status": 403,
+    "bytes": 0,
+    "ctype": "",
+    "server": "cloudflare",
+    "secs": 0.02,
+    "err": "HTTP 403"
+   }
+  ]
+ },
+ {
+  "url": "https://www.cve.org/CVERecord?id=CVE-2023-34095",
+  "headers": "minimal",
+  "codes": [
+   200,
+   200,
+   200
+  ],
+  "trials": [
+   {
+    "status": 200,
+    "bytes": 880,
+    "ctype": "text/html",
+    "server": "AmazonS3",
+    "secs": 0.09,
+    "err": ""
+   },
+   {
+    "status": 200,
+    "bytes": 880,
+    "ctype": "text/html",
+    "server": "AmazonS3",
+    "secs": 0.04,
+    "err": ""
+   },
+   {
+    "status": 200,
+    "bytes": 880,
+    "ctype": "text/html",
+    "server": "AmazonS3",
+    "secs": 0.04,
+    "err": ""
+   }
+  ]
+ },
+ {
+  "url": "https://www.cve.org/CVERecord?id=CVE-2023-34095",
+  "headers": "browser",
+  "codes": [
+   200,
+   200,
+   200
+  ],
+  "trials": [
+   {
+    "status": 200,
+    "bytes": 880,
+    "ctype": "text/html",
+    "server": "AmazonS3",
+    "secs": 0.04,
+    "err": ""
+   },
+   {
+    "status": 200,
+    "bytes": 880,
+    "ctype": "text/html",
+    "server": "AmazonS3",
+    "secs": 0.04,
+    "err": ""
+   },
+   {
+    "status": 200,
+    "bytes": 880,
+    "ctype": "text/html",
+    "server": "AmazonS3",
+    "secs": 0.05,
+    "err": ""
+   }
+  ]
+ },
+ {
+  "url": "https://www.cve.org/CVERecord?id=CVE-2023-34095",
+  "headers": "curl",
+  "codes": [
+   200,
+   200,
+   200
+  ],
+  "trials": [
+   {
+    "status": 200,
+    "bytes": 880,
+    "ctype": "text/html",
+    "server": "AmazonS3",
+    "secs": 0.05,
+    "err": ""
+   },
+   {
+    "status": 200,
+    "bytes": 880,
+    "ctype": "text/html",
+    "server": "AmazonS3",
+    "secs": 0.04,
+    "err": ""
+   },
+   {
+    "status": 200,
+    "bytes": 880,
+    "ctype": "text/html",
+    "server": "AmazonS3",
+    "secs": 0.05,
+    "err": ""
+   }
+  ]
+ }
+]

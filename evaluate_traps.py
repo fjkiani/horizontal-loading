@@ -37,6 +37,7 @@ import re
 import sys
 import time
 
+import ground_rules as gr
 import source_gate as sg
 
 CAND = "category_trap_candidates.json"
@@ -460,6 +461,50 @@ def t7_prompt_leak(trap):
     return ok, "; ".join(notes)
 
 
+def t8_disjoint(trap, others):
+    """No sibling trap reuses this one's operators, domains or phrasing.
+
+    Ground rule 7 forbids reusing a prompt or its domains. The deployed pool
+    broke it in the only way that is invisible one row at a time: four science
+    rows differed by a seed and nothing else (pairwise prompt similarity
+    0.980-0.993 against a 0.016-0.043 cross-category baseline). The test is
+    therefore stated over PAIRS, and returns None -- unproven, not passed --
+    when there is no sibling to compare against.
+    """
+    others = [o for o in (others or [])
+              if not (o.get("field") == trap.get("field")
+                      and o.get("answer") == trap.get("answer"))]
+    if not others:
+        return None, "no sibling trap in this corpus; disjointness unmeasured"
+    viol, warn = sg.disjointness_violations(trap, others)
+    same_cat = [o for o in others if o.get("category") == trap.get("category")]
+    detail = (f"{len(others)} sibling(s), {len(same_cat)} in category; "
+              f"{len(viol)} violation(s), {len(warn)} warning(s)")
+    if viol:
+        return False, detail + "; " + "; ".join(viol[:4])
+    return True, detail + (("; warnings: " + "; ".join(warn[:2])) if warn else "")
+
+
+def t9_ground_rules(trap, others):
+    """The six mechanically decidable submission ground rules.
+
+    Link reachability is the only part that needs the network, so it is opt-in
+    via SEAL_LINT_LINKS=1. When it is off the test still runs, and says so,
+    rather than reporting a clean bill of health it did not earn.
+    """
+    check_links = os.environ.get("SEAL_LINT_LINKS", "") == "1"
+    v = gr.lint_trap(trap, others=others or [], check_links=check_links)
+    detail = (f"rules {','.join(v['rules_checked'])} checked"
+              + ("" if check_links else " (links not fetched)")
+              + f"; human sign-off outstanding: {len(v['sign_off_missing'])}/"
+              + f"{len(gr.SIGN_OFF_FIELDS)}")
+    if v["violations"]:
+        return False, detail + "; " + "; ".join(v["violations"][:4])
+    return True, detail
+
+
+TESTS_PAIR = [("T8_disjoint", t8_disjoint), ("T9_ground_rules", t9_ground_rules)]
+
 TESTS_EV = [("T0_base_adequacy", t0_base_adequacy),
             ("T0b_population_complete", t0b_population_complete),
             ("T1_uniqueness", t1_uniqueness), ("T2_guessability", t2_guessability),
@@ -471,7 +516,7 @@ TESTS_TRAP = [("T5_confirmation", t5_confirmation), ("T6_gate", t6_gate),
               ("T7_prompt_leak", t7_prompt_leak)]
 
 
-def evaluate_one(cat, rec):
+def evaluate_one(cat, rec, others=()):
     trap = rec.get("trap") or {}
     ev = dict(trap.get("ranking_evidence") or {})
     ev["_collection_is_explicit"] = bool(trap.get("collection_is_explicit"))
@@ -488,6 +533,13 @@ def evaluate_one(cat, rec):
             verdict = "unproven"
     for name, fn in TESTS_TRAP:
         ok, why = fn(trap)
+        res["tests"][name] = {"pass": ok, "detail": why}
+        if ok is False:
+            verdict = "hold"
+        elif ok is None and verdict == "ship":
+            verdict = "unproven"
+    for name, fn in TESTS_PAIR:
+        ok, why = fn(trap, others)
         res["tests"][name] = {"pass": ok, "detail": why}
         if ok is False:
             verdict = "hold"

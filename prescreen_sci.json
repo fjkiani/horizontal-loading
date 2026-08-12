@@ -1,0 +1,118 @@
+[
+ {
+  "field": "CVE identifier",
+  "answer": "CVE-2023-34095",
+  "n_base": 177,
+  "n_true": 177,
+  "pages_fetched": 1,
+  "page_cap": 2000,
+  "enumerable_in_one_page": true,
+  "collection_truncated": false,
+  "n_tied_at_extremum": 1,
+  "distinct_keys": 9,
+  "p_uniform_guess": 0.00565,
+  "spearman_key_vs_api_order": 0.1465,
+  "answer_chars": 14,
+  "collection_is_explicit": false,
+  "margin_absolute": 2.0,
+  "margin_relative": 0.1667,
+  "top_keys_numeric": true,
+  "search_leak": {
+   "interpretation": "not run"
+  },
+  "search_leak_measured": false,
+  "caveats": [
+   "the search-leak probe did not run to completion (not run); leak status is unknown, not absent"
+  ],
+  "blockers": [],
+  "clear": true,
+  "label": "PROXY -- cheap-path surface only. This is NOT a measurement of solver difficulty and must never be written to solver_difficulty."
+ },
+ {
+  "field": "RFC number",
+  "answer": "9914",
+  "n_base": 14,
+  "n_true": 14,
+  "pages_fetched": 1,
+  "page_cap": null,
+  "enumerable_in_one_page": true,
+  "collection_truncated": false,
+  "n_tied_at_extremum": 1,
+  "distinct_keys": 12,
+  "p_uniform_guess": 0.071429,
+  "spearman_key_vs_api_order": -0.7026,
+  "answer_chars": 4,
+  "collection_is_explicit": false,
+  "margin_absolute": 14.0,
+  "margin_relative": 0.1867,
+  "top_keys_numeric": true,
+  "search_leak": {
+   "interpretation": "not run"
+  },
+  "search_leak_measured": false,
+  "caveats": [
+   "the search-leak probe did not run to completion (not run); leak status is unknown, not absent"
+  ],
+  "blockers": [],
+  "clear": true,
+  "label": "PROXY -- cheap-path surface only. This is NOT a measurement of solver difficulty and must never be written to solver_difficulty."
+ },
+ {
+  "field": "package version string",
+  "answer": "11.3.0",
+  "n_base": 107,
+  "n_true": 107,
+  "pages_fetched": 1,
+  "page_cap": null,
+  "enumerable_in_one_page": true,
+  "collection_truncated": false,
+  "n_tied_at_extremum": 1,
+  "distinct_keys": 48,
+  "p_uniform_guess": 0.009346,
+  "spearman_key_vs_api_order": 0.2289,
+  "answer_chars": 6,
+  "collection_is_explicit": false,
+  "margin_absolute": 15.0,
+  "margin_relative": 0.1415,
+  "top_keys_numeric": true,
+  "search_leak": {
+   "interpretation": "not run"
+  },
+  "search_leak_measured": false,
+  "caveats": [
+   "the search-leak probe did not run to completion (not run); leak status is unknown, not absent"
+  ],
+  "blockers": [],
+  "clear": true,
+  "label": "PROXY -- cheap-path surface only. This is NOT a measurement of solver difficulty and must never be written to solver_difficulty."
+ },
+ {
+  "field": "autonomous system number",
+  "answer": "200651",
+  "n_base": 86,
+  "n_true": 86,
+  "pages_fetched": 87,
+  "page_cap": null,
+  "enumerable_in_one_page": false,
+  "collection_truncated": false,
+  "n_tied_at_extremum": 1,
+  "distinct_keys": 16,
+  "p_uniform_guess": 0.011628,
+  "spearman_key_vs_api_order": -0.2206,
+  "answer_chars": 6,
+  "collection_is_explicit": false,
+  "margin_absolute": 5.0,
+  "margin_relative": 0.1282,
+  "top_keys_numeric": true,
+  "search_leak": {
+   "interpretation": "not run"
+  },
+  "search_leak_measured": false,
+  "caveats": [
+   "the search-leak probe did not run to completion (not run); leak status is unknown, not absent"
+  ],
+  "blockers": [],
+  "clear": true,
+  "label": "PROXY -- cheap-path surface only. This is NOT a measurement of solver difficulty and must never be written to solver_difficulty."
+ }
+]

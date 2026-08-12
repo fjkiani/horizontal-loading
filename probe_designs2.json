@@ -1,0 +1,441 @@
+{
+  "f2_index": {
+    "ok": true,
+    "detail": "9823 entries, 9823 carry page-count, 643 months",
+    "sample": null
+  },
+  "f2_unique_months": {
+    "ok": true,
+    "detail": "190 months (2010+, 8-60 RFCs) isolate a UNIQUE page-count argmax",
+    "sample": [
+      {
+        "month": "April",
+        "year": "2026",
+        "n": 14,
+        "rfc": "9914",
+        "pages": 75,
+        "runnerup": 61,
+        "doi": "10.17487/RFC9914",
+        "title": "Root-Initiated Routing State in the Routing Protocol for L"
+      },
+      {
+        "month": "February",
+        "year": "2026",
+        "n": 11,
+        "rfc": "9923",
+        "pages": 111,
+        "runnerup": 107,
+        "doi": "10.17487/RFC9923",
+        "title": "The FNV Non-Cryptographic Hash Algorithm"
+      },
+      {
+        "month": "January",
+        "year": "2026",
+        "n": 11,
+        "rfc": "9915",
+        "pages": 115,
+        "runnerup": 92,
+        "doi": "10.17487/RFC9915",
+        "title": "Dynamic Host Configuration Protocol for IPv6 (DHCPv6)"
+      },
+      {
+        "month": "July",
+        "year": "2026",
+        "n": 25,
+        "rfc": "9846",
+        "pages": 137,
+        "runnerup": 91,
+        "doi": "10.17487/RFC9846",
+        "title": "The Transport Layer Security (TLS) Protocol Version 1.3"
+      },
+      {
+        "month": "June",
+        "year": "2026",
+        "n": 18,
+        "rfc": "9980",
+        "pages": 222,
+        "runnerup": 42,
+        "doi": "10.17487/RFC9980",
+        "title": "Post-Quantum Cryptography in OpenPGP"
+      },
+      {
+        "month": "March",
+        "year": "2026",
+        "n": 15,
+        "rfc": "9907",
+        "pages": 85,
+        "runnerup": 71,
+        "doi": "10.17487/RFC9907",
+        "title": "Guidelines for Authors and Reviewers of Documents Containi"
+      },
+      {
+        "month": "May",
+        "year": "2026",
+        "n": 23,
+        "rfc": "9989",
+        "pages": 69,
+        "runnerup": 63,
+        "doi": "10.17487/RFC9989",
+        "title": "Domain-Based Message Authentication, Reporting, and Confor"
+      },
+      {
+        "month": "April",
+        "year": "2025",
+        "n": 16,
+        "rfc": "9692",
+        "pages": 150,
+        "runnerup": 85,
+        "doi": "10.17487/RFC9692",
+        "title": "RIFT: Routing in Fat Trees"
+      },
+      {
+        "month": "December",
+        "year": "2025",
+        "n": 10,
+        "rfc": "9899",
+        "pages": 54,
+        "runnerup": 44,
+        "doi": "10.17487/RFC9899",
+        "title": "Extensions to the YANG Data Model for Access Control Lists"
+      },
+      {
+        "month": "February",
+        "year": "2025",
+        "n": 11,
+        "rfc": "9710",
+        "pages": 31,
+        "runnerup": 30,
+        "doi": "10.17487/RFC9710",
+        "title": "Simple Fixes to the IP Flow Information Export (IPFIX) Ent"
+      }
+    ]
+  },
+  "f2_witness_April2026_RFC9914": {
+    "ok": true,
+    "detail": "n=14 pages=75/61 crossref='Root-Initiated Routing State in the Rout' s2='Root-Initiated Routing State in the Rout'",
+    "sample": null
+  },
+  "f2_witness_February2026_RFC9923": {
+    "ok": true,
+    "detail": "n=11 pages=111/107 crossref='The FNV Non-Cryptographic Hash Algorithm' s2='The FNV Non-Cryptographic Hash Algorithm'",
+    "sample": null
+  },
+  "f2_witness_January2026_RFC9915": {
+    "ok": true,
+    "detail": "n=11 pages=115/92 crossref='Dynamic Host Configuration Protocol for ' s2='Dynamic Host Configuration Protocol for '",
+    "sample": null
+  },
+  "f2_witness_July2026_RFC9846": {
+    "ok": false,
+    "detail": "n=25 pages=137/91 crossref='The Transport Layer Security (TLS) Proto' s2='None'",
+    "sample": null
+  },
+  "f2_witness_June2026_RFC9980": {
+    "ok": true,
+    "detail": "n=18 pages=222/42 crossref='Post-Quantum Cryptography in OpenPGP' s2='Post-Quantum Cryptography in OpenPGP'",
+    "sample": null
+  },
+  "f2_witness_March2026_RFC9907": {
+    "ok": true,
+    "detail": "n=15 pages=85/71 crossref='Guidelines for Authors and Reviewers of ' s2='Guidelines for Authors and Reviewers of '",
+    "sample": null
+  },
+  "f2_witness_May2026_RFC9989": {
+    "ok": true,
+    "detail": "n=23 pages=69/63 crossref='Domain-Based Message Authentication, Rep' s2='Domain-Based Message Authentication, Rep'",
+    "sample": null
+  },
+  "f2_witness_April2025_RFC9692": {
+    "ok": true,
+    "detail": "n=16 pages=150/85 crossref='RIFT: Routing in Fat Trees' s2='RIFT: Routing in Fat Trees'",
+    "sample": null
+  },
+  "f2_witness_December2025_RFC9899": {
+    "ok": true,
+    "detail": "n=10 pages=54/44 crossref='Extensions to the YANG Data Model for Ac' s2='Extensions to the YANG Data Model for Ac'",
+    "sample": null
+  },
+  "f2_witness_February2025_RFC9710": {
+    "ok": true,
+    "detail": "n=11 pages=31/30 crossref='Simple Fixes to the IP Flow Information ' s2='Simple Fixes to the IP Flow Information '",
+    "sample": null
+  },
+  "f2_ready": {
+    "ok": true,
+    "detail": "9/10 candidate months pass BOTH witnesses (Semantic Scholar coverage is the binding constraint)",
+    "sample": [
+      {
+        "month": "April",
+        "year": "2026",
+        "n": 14,
+        "rfc": "9914",
+        "pages": 75
+      },
+      {
+        "month": "February",
+        "year": "2026",
+        "n": 11,
+        "rfc": "9923",
+        "pages": 111
+      },
+      {
+        "month": "January",
+        "year": "2026",
+        "n": 11,
+        "rfc": "9915",
+        "pages": 115
+      },
+      {
+        "month": "June",
+        "year": "2026",
+        "n": 18,
+        "rfc": "9980",
+        "pages": 222
+      },
+      {
+        "month": "March",
+        "year": "2026",
+        "n": 15,
+        "rfc": "9907",
+        "pages": 85
+      },
+      {
+        "month": "May",
+        "year": "2026",
+        "n": 23,
+        "rfc": "9989",
+        "pages": 69
+      },
+      {
+        "month": "April",
+        "year": "2025",
+        "n": 16,
+        "rfc": "9692",
+        "pages": 150
+      },
+      {
+        "month": "December",
+        "year": "2025",
+        "n": 10,
+        "rfc": "9899",
+        "pages": 54
+      },
+      {
+        "month": "February",
+        "year": "2025",
+        "n": 11,
+        "rfc": "9710",
+        "pages": 31
+      }
+    ]
+  },
+  "f3_numpy": {
+    "ok": false,
+    "detail": "136 releases, top=74 runnerup=74 tied=4 sd=18.26 distinct_counts=36 winner=2.3.2",
+    "sample": null
+  },
+  "f3_scipy": {
+    "ok": false,
+    "detail": "102 releases, top=61 runnerup=61 tied=6 sd=13.46 distinct_counts=26 winner=1.16.2",
+    "sample": null
+  },
+  "f3_pandas": {
+    "ok": true,
+    "detail": "117 releases, top=55 runnerup=48 tied=1 sd=11.14 distinct_counts=25 winner=2.3.3",
+    "sample": null
+  },
+  "f3_cryptography": {
+    "ok": false,
+    "detail": "158 releases, top=54 runnerup=54 tied=4 sd=11.32 distinct_counts=29 winner=46.0.0",
+    "sample": null
+  },
+  "f3_pillow": {
+    "ok": true,
+    "detail": "107 releases, top=106 runnerup=91 tied=1 sd=24.89 distinct_counts=48 winner=11.3.0",
+    "sample": null
+  },
+  "f3_lxml": {
+    "ok": true,
+    "detail": "127 releases, top=154 runnerup=142 tied=1 sd=42.72 distinct_counts=46 winner=5.2.1",
+    "sample": null
+  },
+  "f3_pyzmq": {
+    "ok": false,
+    "detail": "106 releases, top=109 runnerup=109 tied=4 sd=32.88 distinct_counts=34 winner=26.1.0",
+    "sample": null
+  },
+  "f3_grpcio": {
+    "ok": false,
+    "detail": "276 releases, top=61 runnerup=61 tied=8 sd=15.82 distinct_counts=27 winner=1.75.1",
+    "sample": null
+  },
+  "f3_psycopg2-binary": {
+    "ok": true,
+    "detail": "26 releases, top=72 runnerup=71 tied=1 sd=17.12 distinct_counts=15 winner=2.9.9",
+    "sample": null
+  },
+  "f3_matplotlib": {
+    "ok": false,
+    "detail": "114 releases, top=55 runnerup=55 tied=5 sd=14.55 distinct_counts=29 winner=3.10.5",
+    "sample": null
+  },
+  "f3_scikit-learn": {
+    "ok": true,
+    "detail": "75 releases, top=41 runnerup=37 tied=1 sd=9.01 distinct_counts=23 winner=1.4.0",
+    "sample": null
+  },
+  "f3_coverage": {
+    "ok": true,
+    "detail": "185 releases, top=121 runnerup=106 tied=1 sd=27.67 distinct_counts=43 winner=7.15.4",
+    "sample": null
+  },
+  "f3_aiohttp": {
+    "ok": false,
+    "detail": "312 releases, top=120 runnerup=120 tied=6 sd=36.21 distinct_counts=28 winner=3.13.0",
+    "sample": null
+  },
+  "f3_msgpack": {
+    "ok": false,
+    "detail": "33 releases, top=66 runnerup=66 tied=3 sd=21.3 distinct_counts=16 winner=1.2.0",
+    "sample": null
+  },
+  "f3_regex": {
+    "ok": true,
+    "detail": "365 releases, top=131 runnerup=115 tied=1 sd=29.75 distinct_counts=29 winner=2026.1.15",
+    "sample": null
+  },
+  "f3_summary": {
+    "ok": true,
+    "detail": "7/15 compiled-wheel packages isolate a unique argmax (pure-Python roster scored 2/10)",
+    "sample": [
+      {
+        "pkg": "pandas",
+        "v": "2.3.3",
+        "top": 55,
+        "runnerup": 48,
+        "n": 117,
+        "sd": 11.14,
+        "distinct": 25
+      },
+      {
+        "pkg": "pillow",
+        "v": "11.3.0",
+        "top": 106,
+        "runnerup": 91,
+        "n": 107,
+        "sd": 24.89,
+        "distinct": 48
+      },
+      {
+        "pkg": "lxml",
+        "v": "5.2.1",
+        "top": 154,
+        "runnerup": 142,
+        "n": 127,
+        "sd": 42.72,
+        "distinct": 46
+      },
+      {
+        "pkg": "psycopg2-binary",
+        "v": "2.9.9",
+        "top": 72,
+        "runnerup": 71,
+        "n": 26,
+        "sd": 17.12,
+        "distinct": 15
+      },
+      {
+        "pkg": "scikit-learn",
+        "v": "1.4.0",
+        "top": 41,
+        "runnerup": 37,
+        "n": 75,
+        "sd": 9.01,
+        "distinct": 23
+      },
+      {
+        "pkg": "coverage",
+        "v": "7.15.4",
+        "top": 121,
+        "runnerup": 106,
+        "n": 185,
+        "sd": 27.67,
+        "distinct": 43
+      },
+      {
+        "pkg": "regex",
+        "v": "2026.1.15",
+        "top": 131,
+        "runnerup": 115,
+        "n": 365,
+        "sd": 29.75,
+        "distinct": 29
+      }
+    ]
+  },
+  "f3w_depsdev_pandas": {
+    "ok": true,
+    "detail": "pandas 2.3.3 -> '2.3.3' licenses=['non-standard']",
+    "sample": null
+  },
+  "f3w_ecosystems_pandas": {
+    "ok": true,
+    "detail": "pandas 2.3.3 -> number='2.3.3' published='2025-09-29T23:16:53.000Z'",
+    "sample": null
+  },
+  "f3w_clearlydefined_pandas": {
+    "ok": true,
+    "detail": "pandas 2.3.3 -> released='2025-09-29'",
+    "sample": null
+  },
+  "f3w_depsdev_pillow": {
+    "ok": true,
+    "detail": "pillow 11.3.0 -> '11.3.0' licenses=['MIT-CMU']",
+    "sample": null
+  },
+  "f3w_ecosystems_pillow": {
+    "ok": true,
+    "detail": "pillow 11.3.0 -> number='11.3.0' published='2025-07-01T09:13:39.000Z'",
+    "sample": null
+  },
+  "f3w_clearlydefined_pillow": {
+    "ok": true,
+    "detail": "pillow 11.3.0 -> released='2025-07-01'",
+    "sample": null
+  },
+  "f3w_depsdev_lxml": {
+    "ok": true,
+    "detail": "lxml 5.2.1 -> '5.2.1' licenses=['BSD-3-Clause']",
+    "sample": null
+  },
+  "f3w_ecosystems_lxml": {
+    "ok": true,
+    "detail": "lxml 5.2.1 -> number='5.2.1' published='2024-04-02T18:14:22.000Z'",
+    "sample": null
+  },
+  "f3w_clearlydefined_lxml": {
+    "ok": false,
+    "detail": "FetchError: https://api.clearlydefined.io/definitions/pypi/pypi/-/lxml/5.2.1 -> gave up after 1 attempts (TimeoutError: The read operation timed out)",
+    "sample": null
+  },
+  "f3neg_depsdev_numpy": {
+    "ok": true,
+    "detail": "fabricated version rejected",
+    "sample": null
+  },
+  "f3neg_ecosystems_numpy": {
+    "ok": true,
+    "detail": "fabricated version rejected",
+    "sample": null
+  },
+  "f3neg_depsdev_pandas": {
+    "ok": true,
+    "detail": "fabricated version rejected",
+    "sample": null
+  },
+  "f3neg_ecosystems_pandas": {
+    "ok": true,
+    "detail": "fabricated version rejected",
+    "sample": null
+  }
+}

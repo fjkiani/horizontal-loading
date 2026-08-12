@@ -1,0 +1,231 @@
+{
+  "f1_2023-06-14": {
+    "ok": true,
+    "detail": "n=177 totalResults=177 single_page=True top=12 runnerup=10 tied_at_top=1 winner=CVE-2023-34095",
+    "sample": null
+  },
+  "f1_2023-09-12": {
+    "ok": true,
+    "detail": "n=161 totalResults=161 single_page=True top=92 runnerup=15 tied_at_top=1 winner=CVE-2023-4863",
+    "sample": null
+  },
+  "f1_2022-11-08": {
+    "ok": true,
+    "detail": "n=120 totalResults=120 single_page=True top=14 runnerup=13 tied_at_top=1 winner=CVE-2022-3821",
+    "sample": null
+  },
+  "f1_2024-02-13": {
+    "ok": false,
+    "detail": "n=178 totalResults=178 single_page=True top=14 runnerup=14 tied_at_top=3 winner=CVE-2023-4408",
+    "sample": null
+  },
+  "f1_2021-07-13": {
+    "ok": true,
+    "detail": "n=140 totalResults=140 single_page=True top=68 runnerup=44 tied_at_top=1 winner=CVE-2021-36090",
+    "sample": null
+  },
+  "f1_2023-03-14": {
+    "ok": true,
+    "detail": "n=155 totalResults=155 single_page=True top=15 runnerup=12 tied_at_top=1 winner=CVE-2023-27585",
+    "sample": null
+  },
+  "f1_summary": {
+    "ok": true,
+    "detail": "5/6 days isolate a unique argmax",
+    "sample": [
+      [
+        "2023-06-14",
+        "CVE-2023-34095",
+        12,
+        10,
+        177
+      ],
+      [
+        "2023-09-12",
+        "CVE-2023-4863",
+        92,
+        15,
+        161
+      ],
+      [
+        "2022-11-08",
+        "CVE-2022-3821",
+        14,
+        13,
+        120
+      ],
+      [
+        "2021-07-13",
+        "CVE-2021-36090",
+        68,
+        44,
+        140
+      ],
+      [
+        "2023-03-14",
+        "CVE-2023-27585",
+        15,
+        12,
+        155
+      ]
+    ]
+  },
+  "f1_witness_mitre": {
+    "ok": true,
+    "detail": "CVE-2023-34095 -> 'cpdb-libs provides frontend and backend libraries for the Common Printing Dialog Backends (CPDB) project. In v'",
+    "sample": null
+  },
+  "f1_witness_first": {
+    "ok": true,
+    "detail": "CVE-2023-34095 -> epss=0.015390000 percentile=0.725640000",
+    "sample": null
+  },
+  "f1_negative_control": {
+    "ok": true,
+    "detail": "fabricated CVE-2023-99999 rejected by MITRE",
+    "sample": null
+  },
+  "f2_index": {
+    "ok": false,
+    "detail": "9823 entries parsed, 0 carry page-count, 643 distinct months",
+    "sample": [
+      [
+        "2026",
+        "June"
+      ],
+      [
+        "2026",
+        "March"
+      ],
+      [
+        "2026",
+        "May"
+      ]
+    ]
+  },
+  "f2_unique_months": {
+    "ok": false,
+    "detail": "0 months (2015+) isolate a unique page-count argmax",
+    "sample": []
+  },
+  "f3_flask": {
+    "ok": false,
+    "detail": "64 releases with files, top=2 runnerup=2 tied=46 winner=0.11",
+    "sample": null
+  },
+  "f3_requests": {
+    "ok": true,
+    "detail": "160 releases with files, top=3 runnerup=2 tied=1 winner=2.23.0",
+    "sample": null
+  },
+  "f3_click": {
+    "ok": false,
+    "detail": "64 releases with files, top=2 runnerup=2 tied=62 winner=0.1",
+    "sample": null
+  },
+  "f3_jinja2": {
+    "ok": true,
+    "detail": "52 releases with files, top=9 runnerup=4 tied=1 winner=2.0rc1",
+    "sample": null
+  },
+  "f3_attrs": {
+    "ok": false,
+    "detail": "36 releases with files, top=2 runnerup=2 tied=36 winner=15.0.0",
+    "sample": null
+  },
+  "f3_urllib3": {
+    "ok": false,
+    "detail": "104 releases with files, top=2 runnerup=2 tied=86 winner=1.10",
+    "sample": null
+  },
+  "f3_packaging": {
+    "ok": false,
+    "detail": "54 releases with files, top=2 runnerup=2 tied=54 winner=14.0",
+    "sample": null
+  },
+  "f3_pytest": {
+    "ok": false,
+    "detail": "192 releases with files, top=2 runnerup=2 tied=161 winner=2.7.1",
+    "sample": null
+  },
+  "f3_rich": {
+    "ok": false,
+    "detail": "207 releases with files, top=2 runnerup=2 tied=207 winner=0.1.0",
+    "sample": null
+  },
+  "f3_httpx": {
+    "ok": false,
+    "detail": "73 releases with files, top=2 runnerup=2 tied=66 winner=0.10.0",
+    "sample": null
+  },
+  "f3_summary": {
+    "ok": false,
+    "detail": "2/10 packages isolate a unique file-count argmax",
+    "sample": [
+      [
+        "requests",
+        "2.23.0",
+        3,
+        2,
+        160
+      ],
+      [
+        "jinja2",
+        "2.0rc1",
+        9,
+        4,
+        52
+      ]
+    ]
+  },
+  "f3_witness_depsdev": {
+    "ok": true,
+    "detail": "requests 2.23.0 -> versionKey={'system': 'PYPI', 'name': 'requests', 'version': '2.23.0'} licenses=['Apache-2.0']",
+    "sample": null
+  },
+  "f3_witness_ecosystems": {
+    "ok": true,
+    "detail": "requests 2.23.0 -> number='2.23.0' published='2020-06-17T16:30:11.000Z'",
+    "sample": null
+  },
+  "f3_witness_clearlydefined": {
+    "ok": false,
+    "detail": "FetchError: https://api.clearlydefined.io/definitions/pypi/pypi/-/requests/2.23.0 -> gave up after 1 attempts (TimeoutError: The read operation timed out)",
+    "sample": null
+  },
+  "f3_witness_swh": {
+    "ok": true,
+    "detail": "20 origins, exact project matches=['https://github.com/rol1987/requests'] -- NOTE origin-level only, does not bind a version",
+    "sample": null
+  },
+  "f4_IS": {
+    "ok": true,
+    "detail": "Iceland: 40 ASNs listed, 40 resolved, top=34 runnerup=22 tied=1 winner=AS12969",
+    "sample": null
+  },
+  "f4_IS_peeringdb": {
+    "ok": true,
+    "detail": "AS12969 -> name='Reykjavik Fibre Network'",
+    "sample": null
+  },
+  "f4_IS_caida": {
+    "ok": true,
+    "detail": "AS12969 -> name='Vodafone_Iceland' rank=1589 org=None",
+    "sample": null
+  },
+  "f4_MT": {
+    "ok": true,
+    "detail": "Malta: 40 ASNs listed, 40 resolved, top=201 runnerup=162 tied=1 winner=AS12709",
+    "sample": null
+  },
+  "f4_MT_peeringdb": {
+    "ok": true,
+    "detail": "AS12709 -> name='Melita'",
+    "sample": null
+  },
+  "f4_MT_caida": {
+    "ok": true,
+    "detail": "AS12709 -> name='MELITACABLE' rank=2802 org=None",
+    "sample": null
+  }
+}

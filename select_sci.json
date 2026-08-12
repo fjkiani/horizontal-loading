@@ -1,0 +1,620 @@
+{
+ "slate": {
+  "sci_vulnerability": {
+   "answer": "CVE-2022-23221",
+   "entity": "H2 Console before 2.1.210 allows remote attackers to execute arbitrary code via a jdbc:h2:",
+   "seed": "2022-01-19",
+   "n_base": 255,
+   "n_candidates_that_qualified": 20,
+   "n_seeds_attempted": 24,
+   "yield": 0.833,
+   "primary_operator": "US National Institute of Standards and Technology",
+   "source_operators": [
+    "Forum of Incident Response and Security Teams",
+    "MITRE Corporation",
+    "US National Institute of Standards and Technology"
+   ],
+   "witness_tier": "gold",
+   "spearman_key_vs_api_order": 0.3417,
+   "winner_position_in_api_order": 229,
+   "n_tied_at_extremum": 1,
+   "margin_absolute": 2.0,
+   "margin_relative": 0.1,
+   "p_uniform_guess": 0.003922,
+   "family_positional_lift": null,
+   "family_positional_lift_upper_bound_95": 12.684,
+   "family_positional_lift_source": "sweep sample",
+   "family_positional_lift_caveat": "underpowered: 0.24 hits expected under the uniform null, so 0 observed bounds the lift at <= 12.684 (Poisson one-sided 95%) rather than establishing 0",
+   "position_only_guess_floor": null,
+   "position_only_guess_floor_upper_bound": 0.0497,
+   "uniform_guess_floor": 0.0039,
+   "prompt": "The National Vulnerability Database operated by the United States National Institute of Standards and Technology stamps every vulnerability record it publishes with a publication date and lists the external reference links attached to that record. Consider only the records that database stamps as published on 2022-01-19 in Coordinated Universal Time. Exactly one of those records carries more external reference links than any other record published that day. Report the CVE identifier of that single record. Confirm the identifier against the CVE Program record and an exploit-prediction listing before answering. Give the identifier alone, in the form CVE-YYYY-NNNNN, with no other words.",
+   "sources": [
+    "https://services.nvd.nist.gov/rest/json/cves/2.0?pubStartDate=2022-01-19T00:00:00.000&pubEndDate=2022-01-19T23:59:59.999&resultsPerPage=2000",
+    "https://cveawg.mitre.org/api/cve/CVE-2022-23221",
+    "https://api.first.org/data/v1/epss?cve=CVE-2022-23221"
+   ],
+   "landing_pages": [
+    "https://nvd.nist.gov/vuln/detail/CVE-2022-23221",
+    "https://www.cve.org/CVERecord?id=CVE-2022-23221"
+   ],
+   "lint_warnings": [
+    "R6 https://nvd.nist.gov/vuln/detail/CVE-2022-23221 is behind bot protection from this network (status 502, server 'cloudflare'); not counted as reachable, not counted as broken"
+   ],
+   "prescreen_caveats": [
+    "the search-leak probe did not run to completion (not run); leak status is unknown, not absent"
+   ],
+   "search_leak": {
+    "verdict": "clean",
+    "query": "NVD CVE records published 2022-01-19 which record has the most external reference links",
+    "detail": "results returned CVEs published 2022-01-11 and 2022-01-17 and no ranking for 2022-01-19; CVE-2022-23221 never appeared"
+   },
+   "seeds_rejected_for_search_leak": []
+  },
+  "sci_standard": {
+   "answer": "6513",
+   "entity": "Multicast in MPLS/BGP IP VPNs",
+   "seed": [
+    "2012",
+    "February"
+   ],
+   "n_base": 46,
+   "n_candidates_that_qualified": 10,
+   "n_seeds_attempted": 18,
+   "yield": 0.556,
+   "primary_operator": "RFC Editor",
+   "source_operators": [
+    "Allen Institute for AI",
+    "Crossref",
+    "RFC Editor"
+   ],
+   "witness_tier": "gold",
+   "spearman_key_vs_api_order": 0.0204,
+   "winner_position_in_api_order": 28,
+   "n_tied_at_extremum": 1,
+   "margin_absolute": 29.0,
+   "margin_relative": 0.3295,
+   "p_uniform_guess": 0.021739,
+   "family_positional_lift": 2.17,
+   "family_positional_lift_upper_bound_95": null,
+   "family_positional_lift_source": "probe_rfc_monotone.py over all 193 candidate months",
+   "family_positional_lift_caveat": "population estimate supersedes the sweep sample; sweep sample was underpowered: 0.74 hits expected under the uniform null, so 0 observed bounds the lift at <= 4.032 (Poisson one-sided 95%) rather than establishing 0",
+   "position_only_guess_floor": 0.0472,
+   "position_only_guess_floor_upper_bound": 0.0472,
+   "uniform_guess_floor": 0.0217,
+   "prompt": "The RFC Editor maintains a published index of the Request for Comments series in which every document appears with its publication month and its length in pages. Consider only the documents that index records as published in February 2012. Exactly one of those documents runs to more pages than any other published in that month. Report the RFC number of that single document. Verify the number against its registered digital object identifier before answering. Give the number alone, as digits, without the letters RFC and with no other words.",
+   "sources": [
+    "https://www.rfc-editor.org/rfc-index.xml",
+    "https://api.crossref.org/works/10.17487/RFC6513",
+    "https://api.semanticscholar.org/graph/v1/paper/DOI:10.17487/RFC6513?fields=title,year"
+   ],
+   "landing_pages": [
+    "https://www.rfc-editor.org/rfc/rfc6513.html",
+    "https://www.rfc-editor.org/info/rfc6513"
+   ],
+   "lint_warnings": [],
+   "prescreen_caveats": [
+    "the search-leak probe did not run to completion (not run); leak status is unknown, not absent"
+   ],
+   "search_leak": {
+    "verdict": "clean",
+    "query": "RFC Editor index RFCs published February 2012 longest document page count",
+    "detail": "results returned only generic RFC Editor index pages, an RFC Editor annual production review and unrelated RFCs; RFC 6513 was never named and no page-count ranking surfaced"
+   },
+   "seeds_rejected_for_search_leak": [
+    {
+     "seed": [
+      "2025",
+      "March"
+     ],
+     "answer": "9777",
+     "n_base": 34,
+     "verdict": "leak",
+     "query": "RFC Editor index RFCs published March 2025 longest document page count",
+     "detail": "first-page results named RFC 9777 (MLDv2 for IPv6, STD 101, 56 pages) directly, plus RFC 9776 as runner-up; the argmax is an INTERNET STANDARD, a status measured 6.65x enriched among month-argmaxes and therefore widely announced"
+    }
+   ]
+  },
+  "sci_supplychain": {
+   "answer": "11.3.0",
+   "entity": "pillow on the Python Package Index",
+   "seed": "pillow",
+   "n_base": 107,
+   "n_candidates_that_qualified": 2,
+   "n_seeds_attempted": 26,
+   "yield": 0.077,
+   "primary_operator": "Python Software Foundation",
+   "source_operators": [
+    "Google LLC",
+    "Python Software Foundation",
+    "ecosyste.ms (Open Source Collective)"
+   ],
+   "witness_tier": "gold",
+   "spearman_key_vs_api_order": 0.2289,
+   "winner_position_in_api_order": 25,
+   "n_tied_at_extremum": 1,
+   "margin_absolute": 15.0,
+   "margin_relative": 0.1415,
+   "p_uniform_guess": 0.009346,
+   "family_positional_lift": 5.227,
+   "family_positional_lift_upper_bound_95": null,
+   "family_positional_lift_source": "sweep sample",
+   "family_positional_lift_caveat": "weak: only 0.19 hits expected under the uniform null",
+   "position_only_guess_floor": 0.0489,
+   "position_only_guess_floor_upper_bound": 0.0489,
+   "uniform_guess_floor": 0.0093,
+   "prompt": "The Python Package Index publishes, for every project it hosts, a release history listing each released version together with the distribution files uploaded for it. Consider only the released versions of the project named pillow that have at least one distribution file. Exactly one of those versions has more uploaded distribution files than any other version of the project. Report the version string of that single release. Confirm the version against two package indexes outside the registry before answering. Give the version string alone, exactly as the index spells it, with no other words.",
+   "sources": [
+    "https://pypi.org/pypi/pillow/json",
+    "https://api.deps.dev/v3alpha/systems/pypi/packages/pillow/versions/11.3.0",
+    "https://packages.ecosyste.ms/api/v1/registries/pypi.org/packages/pillow/versions/11.3.0"
+   ],
+   "landing_pages": [
+    "https://pypi.org/project/pillow/11.3.0/",
+    "https://deps.dev/pypi/pillow/11.3.0"
+   ],
+   "lint_warnings": [],
+   "prescreen_caveats": [
+    "the search-leak probe did not run to completion (not run); leak status is unknown, not absent"
+   ],
+   "search_leak": {
+    "verdict": "clean",
+    "query": "Python Package Index pillow project which release has the most distribution files uploaded",
+    "detail": "results pointed at the current release 12.3.0 (87 files) and at 11.2.0 (79 wheels); 11.3.0 was never identified as the maximum, so the searchable answer is wrong"
+   },
+   "seeds_rejected_for_search_leak": []
+  },
+  "sci_asn": {
+   "answer": "200651",
+   "entity": "FlokiNET FlokiNET ehf",
+   "seed": [
+    "IS",
+    "Iceland"
+   ],
+   "n_base": 86,
+   "n_candidates_that_qualified": 5,
+   "n_seeds_attempted": 22,
+   "yield": 0.227,
+   "primary_operator": "RIPE NCC",
+   "source_operators": [
+    "CAIDA, University of California San Diego",
+    "PeeringDB",
+    "RIPE NCC"
+   ],
+   "witness_tier": "gold",
+   "spearman_key_vs_api_order": -0.2206,
+   "winner_position_in_api_order": 47,
+   "n_tied_at_extremum": 1,
+   "margin_absolute": 5.0,
+   "margin_relative": 0.1282,
+   "p_uniform_guess": 0.011628,
+   "family_positional_lift": 5.038,
+   "family_positional_lift_upper_bound_95": null,
+   "family_positional_lift_source": "sweep sample",
+   "family_positional_lift_caveat": "weak: only 0.20 hits expected under the uniform null",
+   "position_only_guess_floor": 0.0586,
+   "position_only_guess_floor_upper_bound": 0.0586,
+   "uniform_guess_floor": 0.0116,
+   "prompt": "The RIPE NCC publishes, for each country, the list of autonomous system numbers registered to organisations there, and separately reports the address prefixes each autonomous system announces in the global routing table. Consider only the autonomous system numbers that registry lists for Iceland. Exactly one of them announces more prefixes than any other number on that list. Report that autonomous system number. Check the number against a peering directory and an academic routing observatory before answering. Give the number alone, as digits, without the letters AS and with no other words.",
+   "sources": [
+    "https://stat.ripe.net/data/country-resource-list/data.json?resource=IS",
+    "https://www.peeringdb.com/api/net?asn=200651",
+    "https://api.asrank.caida.org/v2/restful/asns/200651"
+   ],
+   "landing_pages": [
+    "https://stat.ripe.net/AS200651",
+    "https://www.peeringdb.com/asn/200651"
+   ],
+   "lint_warnings": [],
+   "prescreen_caveats": [
+    "the search-leak probe did not run to completion (not run); leak status is unknown, not absent"
+   ],
+   "search_leak": {
+    "verdict": "clean",
+    "query": "RIPE country resource list Iceland autonomous system most announced prefixes",
+    "detail": "results surfaced the incumbent carriers AS6677 Mila, AS12969 Ljosleidarinn, AS1850 and AS44735; AS200651 FlokiNET never appeared, so the searchable candidates are all wrong"
+   },
+   "seeds_rejected_for_search_leak": []
+  }
+ },
+ "family_positional_lift": {
+  "sci_vulnerability": {
+   "n_measured": 22,
+   "first_position_hits": 0,
+   "expected_hits_if_uniform": 0.236,
+   "lift": null,
+   "lift_upper_bound_95": 12.684,
+   "lift_source": "sweep sample",
+   "caveat": "underpowered: 0.24 hits expected under the uniform null, so 0 observed bounds the lift at <= 12.684 (Poisson one-sided 95%) rather than establishing 0"
+  },
+  "sci_standard": {
+   "n_measured": 15,
+   "first_position_hits": 0,
+   "expected_hits_if_uniform": 0.743,
+   "lift": 2.17,
+   "lift_upper_bound_95": null,
+   "lift_source": "probe_rfc_monotone.py over all 193 candidate months",
+   "caveat": "population estimate supersedes the sweep sample; sweep sample was underpowered: 0.74 hits expected under the uniform null, so 0 observed bounds the lift at <= 4.032 (Poisson one-sided 95%) rather than establishing 0",
+   "sweep_sample_lift": null,
+   "population_n_measured": 190
+  },
+  "sci_supplychain": {
+   "n_measured": 13,
+   "first_position_hits": 1,
+   "expected_hits_if_uniform": 0.191,
+   "lift": 5.227,
+   "lift_upper_bound_95": null,
+   "lift_source": "sweep sample",
+   "caveat": "weak: only 0.19 hits expected under the uniform null"
+  },
+  "sci_asn": {
+   "n_measured": 7,
+   "first_position_hits": 1,
+   "expected_hits_if_uniform": 0.198,
+   "lift": 5.038,
+   "lift_upper_bound_95": null,
+   "lift_source": "sweep sample",
+   "caveat": "weak: only 0.20 hits expected under the uniform null"
+  }
+ },
+ "pairwise_prompt_similarity": {
+  "sci_asn|sci_standard": 0.5404,
+  "sci_asn|sci_supplychain": 0.4807,
+  "sci_asn|sci_vulnerability": 0.4612,
+  "sci_standard|sci_supplychain": 0.5184,
+  "sci_standard|sci_vulnerability": 0.5097,
+  "sci_supplychain|sci_vulnerability": 0.4543
+ },
+ "max_pairwise_similarity": 0.5404,
+ "clone_threshold": 0.76,
+ "effective_depth": 4,
+ "n_traps": 4,
+ "disjointness_violations": [],
+ "traps": [
+  {
+   "collection_is_explicit": false,
+   "primary_operator": "US National Institute of Standards and Technology",
+   "independent_confirming_operators": [
+    "Forum of Incident Response and Security Teams",
+    "MITRE Corporation"
+   ],
+   "category": "science and technology",
+   "field": "CVE identifier",
+   "answer": "CVE-2022-23221",
+   "entity": "H2 Console before 2.1.210 allows remote attackers to execute arbitrary code via a jdbc:h2:mem JDBC URL containing the IG",
+   "n_base": 255,
+   "sources": [
+    "https://services.nvd.nist.gov/rest/json/cves/2.0?pubStartDate=2022-01-19T00:00:00.000&pubEndDate=2022-01-19T23:59:59.999&resultsPerPage=2000",
+    "https://cveawg.mitre.org/api/cve/CVE-2022-23221",
+    "https://api.first.org/data/v1/epss?cve=CVE-2022-23221"
+   ],
+   "confirming_sources": [
+    "https://cveawg.mitre.org/api/cve/CVE-2022-23221",
+    "https://api.first.org/data/v1/epss?cve=CVE-2022-23221"
+   ],
+   "api_proof": true,
+   "api_proof_argument": "The National Vulnerability Database interface accepts no sort parameter and offers no filter on how many references a record carries, so every one of the 255 records published that day must be retrieved and its reference list counted.",
+   "confirmation": "MITRE resolves CVE-2022-23221 to the same description text, and FIRST publishes an exploit-prediction score of 0.647660000 for it; MITRE operates the CVE Program and FIRST models exploit probability independently of both",
+   "prompt": "The National Vulnerability Database operated by the United States National Institute of Standards and Technology stamps every vulnerability record it publishes with a publication date and lists the external reference links attached to that record. Consider only the records that database stamps as published on 2022-01-19 in Coordinated Universal Time. Exactly one of those records carries more external reference links than any other record published that day. Report the CVE identifier of that single record. Confirm the identifier against the CVE Program record and an exploit-prediction listing before answering. Give the identifier alone, in the form CVE-YYYY-NNNNN, with no other words.",
+   "source_operators": [
+    "Forum of Incident Response and Security Teams",
+    "MITRE Corporation",
+    "US National Institute of Standards and Technology"
+   ],
+   "confirming_operators": [
+    "Forum of Incident Response and Security Teams",
+    "MITRE Corporation"
+   ],
+   "track": "api-native",
+   "ranking_evidence": {
+    "label": "vuln 2022-01-19",
+    "mode": "max",
+    "n_base": 255,
+    "n_ranked": 255,
+    "spearman_key_vs_api_order": 0.3417,
+    "n_tied_at_extremum": 1,
+    "distinct_keys": 11,
+    "winner_position_in_api_order": 229,
+    "winner_is_first_returned": false,
+    "winner_is_last_returned": false,
+    "top_keys": [
+     "20",
+     "18",
+     "14",
+     "14",
+     "14"
+    ],
+    "answer_field_distinct_values": 255,
+    "answer_field_n_values": 255,
+    "answer_field_max_count": 1,
+    "answer_field_count_of_answer": 1,
+    "answer_field_modal_share": 0.003922,
+    "p_answer_by_uniform_guess": 0.003922,
+    "key_component_depths": {},
+    "key_is_aggregated": false,
+    "equivalent_served_fields": [],
+    "n_fields_swept": 0,
+    "sort_field_rejected_by_service": [
+     "the NVD 2.0 API exposes no sort parameter",
+     "no reference-count filter exists"
+    ],
+    "n_true": 255,
+    "page_cap": 2000,
+    "pages_fetched": 1
+   },
+   "facts": {
+    "day": "2022-01-19",
+    "n": 255,
+    "references": 20,
+    "epss": "0.647660000",
+    "epss_percentile": "0.991690000",
+    "runner_up_references": 18,
+    "landing_pages": [
+     "https://nvd.nist.gov/vuln/detail/CVE-2022-23221",
+     "https://www.cve.org/CVERecord?id=CVE-2022-23221"
+    ]
+   }
+  },
+  {
+   "collection_is_explicit": false,
+   "primary_operator": "RFC Editor",
+   "independent_confirming_operators": [
+    "Allen Institute for AI",
+    "Crossref"
+   ],
+   "category": "science and technology",
+   "field": "RFC number",
+   "answer": "6513",
+   "entity": "Multicast in MPLS/BGP IP VPNs",
+   "n_base": 46,
+   "sources": [
+    "https://www.rfc-editor.org/rfc-index.xml",
+    "https://api.crossref.org/works/10.17487/RFC6513",
+    "https://api.semanticscholar.org/graph/v1/paper/DOI:10.17487/RFC6513?fields=title,year"
+   ],
+   "confirming_sources": [
+    "https://api.crossref.org/works/10.17487/RFC6513",
+    "https://api.semanticscholar.org/graph/v1/paper/DOI:10.17487/RFC6513?fields=title,year"
+   ],
+   "api_proof": true,
+   "api_proof_argument": "The RFC Editor search interface orders results only by number, date, title or status and offers no ordering or filter on length, so all 46 documents published that month must be listed and their page counts compared.",
+   "confirmation": "Crossref and Semantic Scholar both resolve 10.17487/RFC6513 to the same document title, from two bibliographic services outside the RFC Editor",
+   "prompt": "The RFC Editor maintains a published index of the Request for Comments series in which every document appears with its publication month and its length in pages. Consider only the documents that index records as published in February 2012. Exactly one of those documents runs to more pages than any other published in that month. Report the RFC number of that single document. Verify the number against its registered digital object identifier before answering. Give the number alone, as digits, without the letters RFC and with no other words.",
+   "source_operators": [
+    "Allen Institute for AI",
+    "Crossref",
+    "RFC Editor"
+   ],
+   "confirming_operators": [
+    "Allen Institute for AI",
+    "Crossref"
+   ],
+   "track": "api-native",
+   "ranking_evidence": {
+    "label": "standard February 2012",
+    "mode": "max",
+    "n_base": 46,
+    "n_ranked": 46,
+    "spearman_key_vs_api_order": 0.0204,
+    "n_tied_at_extremum": 1,
+    "distinct_keys": 27,
+    "winner_position_in_api_order": 28,
+    "winner_is_first_returned": false,
+    "winner_is_last_returned": false,
+    "top_keys": [
+     "88",
+     "59",
+     "41",
+     "35",
+     "32"
+    ],
+    "answer_field_distinct_values": 46,
+    "answer_field_n_values": 46,
+    "answer_field_max_count": 1,
+    "answer_field_count_of_answer": 1,
+    "answer_field_modal_share": 0.021739,
+    "p_answer_by_uniform_guess": 0.021739,
+    "key_component_depths": {},
+    "key_is_aggregated": false,
+    "equivalent_served_fields": [],
+    "n_fields_swept": 0,
+    "sort_field_rejected_by_service": [
+     "the RFC Editor search interface orders only by number, date, title and status",
+     "no page-count ordering or filter is offered"
+    ],
+    "n_true": 46,
+    "page_cap": null,
+    "pages_fetched": 1
+   },
+   "facts": {
+    "month": "February",
+    "year": "2012",
+    "n": 46,
+    "pages": 88,
+    "doi": "10.17487/RFC6513",
+    "stream": "IETF",
+    "status": "PROPOSED STANDARD",
+    "runner_up_pages": 59,
+    "landing_pages": [
+     "https://www.rfc-editor.org/rfc/rfc6513.html",
+     "https://www.rfc-editor.org/info/rfc6513"
+    ]
+   }
+  },
+  {
+   "collection_is_explicit": false,
+   "primary_operator": "Python Software Foundation",
+   "independent_confirming_operators": [
+    "Google LLC",
+    "ecosyste.ms (Open Source Collective)"
+   ],
+   "category": "science and technology",
+   "field": "package version string",
+   "answer": "11.3.0",
+   "entity": "pillow on the Python Package Index",
+   "n_base": 107,
+   "sources": [
+    "https://pypi.org/pypi/pillow/json",
+    "https://api.deps.dev/v3alpha/systems/pypi/packages/pillow/versions/11.3.0",
+    "https://packages.ecosyste.ms/api/v1/registries/pypi.org/packages/pillow/versions/11.3.0"
+   ],
+   "confirming_sources": [
+    "https://api.deps.dev/v3alpha/systems/pypi/packages/pillow/versions/11.3.0",
+    "https://packages.ecosyste.ms/api/v1/registries/pypi.org/packages/pillow/versions/11.3.0"
+   ],
+   "api_proof": true,
+   "api_proof_argument": "The Python Package Index serves one document per project with no query, ordering or filtering parameters at all, so the artefact lists of all 107 published releases must be read out of that document and compared.",
+   "confirmation": "Google Open Source Insights and ecosyste.ms both resolve pillow 11.3.0 as a published release, from two indexes outside the Python Package Index",
+   "prompt": "The Python Package Index publishes, for every project it hosts, a release history listing each released version together with the distribution files uploaded for it. Consider only the released versions of the project named pillow that have at least one distribution file. Exactly one of those versions has more uploaded distribution files than any other version of the project. Report the version string of that single release. Confirm the version against two package indexes outside the registry before answering. Give the version string alone, exactly as the index spells it, with no other words.",
+   "source_operators": [
+    "Google LLC",
+    "Python Software Foundation",
+    "ecosyste.ms (Open Source Collective)"
+   ],
+   "confirming_operators": [
+    "Google LLC",
+    "ecosyste.ms (Open Source Collective)"
+   ],
+   "track": "api-native",
+   "ranking_evidence": {
+    "label": "supplychain pillow",
+    "mode": "max",
+    "n_base": 107,
+    "n_ranked": 107,
+    "spearman_key_vs_api_order": 0.2289,
+    "n_tied_at_extremum": 1,
+    "distinct_keys": 48,
+    "winner_position_in_api_order": 25,
+    "winner_is_first_returned": false,
+    "winner_is_last_returned": false,
+    "top_keys": [
+     "106",
+     "91",
+     "91",
+     "91",
+     "91"
+    ],
+    "answer_field_distinct_values": 107,
+    "answer_field_n_values": 107,
+    "answer_field_max_count": 1,
+    "answer_field_count_of_answer": 1,
+    "answer_field_modal_share": 0.009346,
+    "p_answer_by_uniform_guess": 0.009346,
+    "key_component_depths": {},
+    "key_is_aggregated": false,
+    "equivalent_served_fields": [],
+    "n_fields_swept": 0,
+    "sort_field_rejected_by_service": [
+     "the PyPI JSON API serves one document per project with no query, sort or filter parameters of any kind"
+    ],
+    "n_true": 107,
+    "page_cap": null,
+    "pages_fetched": 1,
+    "key_dispersion_sd": 24.8895,
+    "key_distinct_values": 48
+   },
+   "facts": {
+    "package": "pillow",
+    "n": 107,
+    "files": 106,
+    "runner_up_files": 91,
+    "distinct_file_counts": 48,
+    "landing_pages": [
+     "https://pypi.org/project/pillow/11.3.0/",
+     "https://deps.dev/pypi/pillow/11.3.0"
+    ]
+   }
+  },
+  {
+   "collection_is_explicit": false,
+   "primary_operator": "RIPE NCC",
+   "independent_confirming_operators": [
+    "CAIDA, University of California San Diego",
+    "PeeringDB"
+   ],
+   "category": "science and technology",
+   "field": "autonomous system number",
+   "answer": "200651",
+   "entity": "FlokiNET FlokiNET ehf",
+   "n_base": 86,
+   "sources": [
+    "https://stat.ripe.net/data/country-resource-list/data.json?resource=IS",
+    "https://www.peeringdb.com/api/net?asn=200651",
+    "https://api.asrank.caida.org/v2/restful/asns/200651"
+   ],
+   "confirming_sources": [
+    "https://www.peeringdb.com/api/net?asn=200651",
+    "https://api.asrank.caida.org/v2/restful/asns/200651"
+   ],
+   "api_proof": true,
+   "api_proof_argument": "The registry returns the country roster as an unordered list and publishes announced prefixes only one resource at a time, so each of the 86 listed numbers must be queried separately and the prefix lists compared.",
+   "confirmation": "PeeringDB lists AS200651 as 'FlokiNET ehf' and CAIDA records it as 'FlokiNET' in IS; PeeringDB records are maintained by the networks themselves and CAIDA infers from its own routing observations",
+   "prompt": "The RIPE NCC publishes, for each country, the list of autonomous system numbers registered to organisations there, and separately reports the address prefixes each autonomous system announces in the global routing table. Consider only the autonomous system numbers that registry lists for Iceland. Exactly one of them announces more prefixes than any other number on that list. Report that autonomous system number. Check the number against a peering directory and an academic routing observatory before answering. Give the number alone, as digits, without the letters AS and with no other words.",
+   "source_operators": [
+    "CAIDA, University of California San Diego",
+    "PeeringDB",
+    "RIPE NCC"
+   ],
+   "confirming_operators": [
+    "CAIDA, University of California San Diego",
+    "PeeringDB"
+   ],
+   "track": "api-native",
+   "ranking_evidence": {
+    "label": "asn IS",
+    "mode": "max",
+    "n_base": 86,
+    "n_ranked": 86,
+    "spearman_key_vs_api_order": -0.2206,
+    "n_tied_at_extremum": 1,
+    "distinct_keys": 16,
+    "winner_position_in_api_order": 47,
+    "winner_is_first_returned": false,
+    "winner_is_last_returned": false,
+    "top_keys": [
+     "39",
+     "34",
+     "23",
+     "22",
+     "19"
+    ],
+    "answer_field_distinct_values": 86,
+    "answer_field_n_values": 86,
+    "answer_field_max_count": 1,
+    "answer_field_count_of_answer": 1,
+    "answer_field_modal_share": 0.011628,
+    "p_answer_by_uniform_guess": 0.011628,
+    "key_component_depths": {},
+    "key_is_aggregated": false,
+    "equivalent_served_fields": [],
+    "n_fields_swept": 0,
+    "sort_field_rejected_by_service": [
+     "the country resource list returns an unordered roster",
+     "announced-prefixes is a per-resource call, not a rankable collection endpoint"
+    ],
+    "n_true": 86,
+    "page_cap": null,
+    "pages_fetched": 87
+   },
+   "facts": {
+    "country": "IS",
+    "country_name": "Iceland",
+    "n": 86,
+    "prefixes": 39,
+    "runner_up_prefixes": 34,
+    "caida_rank": 19255,
+    "name_variants": {
+     "ripe_holder": "FlokiNET FlokiNET ehf",
+     "peeringdb_name": "FlokiNET ehf",
+     "peeringdb_aka": "",
+     "caida_asn_name": "FlokiNET"
+    },
+    "name_reconciliation_basis": "registry holder shares ['flokinet'] with CAIDA; registry holder shares ['ehf', 'flokinet'] with PeeringDB; PeeringDB shares ['flokinet'] with CAIDA",
+    "landing_pages": [
+     "https://stat.ripe.net/AS200651",
+     "https://www.peeringdb.com/asn/200651"
+    ]
+   }
+  }
+ ]
+}

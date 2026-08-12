@@ -73,21 +73,6 @@
   "seed_repr": "{}",
   "verdict": "ship",
   "witness_tier": "gold",
-  "field_class": "identifier",
-  "trap_id": "48985b65af0be1a7",
-  "stump": null,
-  "solver_difficulty": null,
-  "solver_difficulty_status": "unmeasured: no solver quota. The available Cohere key is a trial key capped at 1000 calls/month and is exhausted (HTTP 429 with an explicit trial-quota message). A usable measurement needs about 600 calls: the shipping traps x 3 access conditions (no tools, search only, full API) x ~20 repeats for workable intervals.",
-  "memorization_proxy": {
-   "measured_by": "wikipedia-recall-proxy",
-   "caveat": "a proxy for whether the answer is memorable, NOT for whether the trap is hard",
-   "answer_wikipedia_mentions": null,
-   "answer_pageviews_365": null,
-   "exact_article": null,
-   "verdict": null,
-   "field_class": "identifier",
-   "changed_this_build": null
-  },
   "verified": true
  },
  {
@@ -164,21 +149,6 @@
   "seed_repr": "{\"country_iso\": \"PE\", \"country_name\": \"Peru\"}",
   "verdict": "ship",
   "witness_tier": "gold",
-  "field_class": "identifier",
-  "trap_id": "8e46eb428fca0447",
-  "stump": null,
-  "solver_difficulty": null,
-  "solver_difficulty_status": "unmeasured: no solver quota. The available Cohere key is a trial key capped at 1000 calls/month and is exhausted (HTTP 429 with an explicit trial-quota message). A usable measurement needs about 600 calls: the shipping traps x 3 access conditions (no tools, search only, full API) x ~20 repeats for workable intervals.",
-  "memorization_proxy": {
-   "measured_by": "wikipedia-recall-proxy",
-   "caveat": "a proxy for whether the answer is memorable, NOT for whether the trap is hard",
-   "answer_wikipedia_mentions": null,
-   "answer_pageviews_365": null,
-   "exact_article": null,
-   "verdict": null,
-   "field_class": "identifier",
-   "changed_this_build": null
-  },
   "verified": true
  },
  {
@@ -275,21 +245,6 @@
   "seed_repr": "{}",
   "verdict": "ship",
   "witness_tier": "gold",
-  "field_class": "identifier",
-  "trap_id": "09b069c01a5dd774",
-  "stump": null,
-  "solver_difficulty": null,
-  "solver_difficulty_status": "unmeasured: no solver quota. The available Cohere key is a trial key capped at 1000 calls/month and is exhausted (HTTP 429 with an explicit trial-quota message). A usable measurement needs about 600 calls: the shipping traps x 3 access conditions (no tools, search only, full API) x ~20 repeats for workable intervals.",
-  "memorization_proxy": {
-   "measured_by": "wikipedia-recall-proxy",
-   "caveat": "a proxy for whether the answer is memorable, NOT for whether the trap is hard",
-   "answer_wikipedia_mentions": null,
-   "answer_pageviews_365": null,
-   "exact_article": null,
-   "verdict": null,
-   "field_class": "identifier",
-   "changed_this_build": null
-  },
   "verified": true
  },
  {
@@ -367,21 +322,6 @@
   "seed_repr": "{\"vols\": [460, 465, 470, 475]}",
   "verdict": "ship",
   "witness_tier": "gold",
-  "field_class": "identifier",
-  "trap_id": "73812a2701d969fa",
-  "stump": null,
-  "solver_difficulty": null,
-  "solver_difficulty_status": "unmeasured: no solver quota. The available Cohere key is a trial key capped at 1000 calls/month and is exhausted (HTTP 429 with an explicit trial-quota message). A usable measurement needs about 600 calls: the shipping traps x 3 access conditions (no tools, search only, full API) x ~20 repeats for workable intervals.",
-  "memorization_proxy": {
-   "measured_by": "wikipedia-recall-proxy",
-   "caveat": "a proxy for whether the answer is memorable, NOT for whether the trap is hard",
-   "answer_wikipedia_mentions": null,
-   "answer_pageviews_365": null,
-   "exact_article": null,
-   "verdict": null,
-   "field_class": "identifier",
-   "changed_this_build": null
-  },
   "verified": true
  },
  {
@@ -459,21 +399,6 @@
   "seed_repr": "{}",
   "verdict": "ship",
   "witness_tier": "gold",
-  "field_class": "identifier",
-  "trap_id": "6d7f695d51f8d823",
-  "stump": null,
-  "solver_difficulty": null,
-  "solver_difficulty_status": "unmeasured: no solver quota. The available Cohere key is a trial key capped at 1000 calls/month and is exhausted (HTTP 429 with an explicit trial-quota message). A usable measurement needs about 600 calls: the shipping traps x 3 access conditions (no tools, search only, full API) x ~20 repeats for workable intervals.",
-  "memorization_proxy": {
-   "measured_by": "wikipedia-recall-proxy",
-   "caveat": "a proxy for whether the answer is memorable, NOT for whether the trap is hard",
-   "answer_wikipedia_mentions": null,
-   "answer_pageviews_365": null,
-   "exact_article": null,
-   "verdict": null,
-   "field_class": "identifier",
-   "changed_this_build": null
-  },
   "verified": true
  },
  {
@@ -551,21 +476,338 @@
   "seed_repr": "{\"vols\": [480, 485, 490, 495]}",
   "verdict": "ship",
   "witness_tier": "gold",
-  "field_class": "identifier",
-  "trap_id": "22e90dcfd1513fd1",
-  "stump": null,
-  "solver_difficulty": null,
-  "solver_difficulty_status": "unmeasured: no solver quota. The available Cohere key is a trial key capped at 1000 calls/month and is exhausted (HTTP 429 with an explicit trial-quota message). A usable measurement needs about 600 calls: the shipping traps x 3 access conditions (no tools, search only, full API) x ~20 repeats for workable intervals.",
-  "memorization_proxy": {
-   "measured_by": "wikipedia-recall-proxy",
-   "caveat": "a proxy for whether the answer is memorable, NOT for whether the trap is hard",
-   "answer_wikipedia_mentions": null,
-   "answer_pageviews_365": null,
-   "exact_article": null,
-   "verdict": null,
-   "field_class": "identifier",
-   "changed_this_build": null
+  "verified": true
+ },
+ {
+  "collection_is_explicit": false,
+  "primary_operator": "Cornell University",
+  "independent_confirming_operators": [
+   "DataCite",
+   "OurResearch (OpenAlex)"
+  ],
+  "category": "science and technology",
+  "field": "arXiv identifier",
+  "answer": "2203.11011",
+  "entity": "Reinforced MOOCs Concept Recommendation in Heterogeneous Information Networks",
+  "n_base": 94,
+  "sources": [
+   "http://export.arxiv.org/api/query?search_query=cat:cs.LG+AND+submittedDate:[202203080000+TO+202203082359]&start=0&max_results=200&sortBy=submittedDate&sortOrder=ascending",
+   "https://api.datacite.org/dois/10.48550/arxiv.2203.11011",
+   "https://api.openalex.org/works/doi:10.48550/arxiv.2203.11011"
+  ],
+  "confirming_sources": [
+   "https://api.datacite.org/dois/10.48550/arxiv.2203.11011",
+   "https://api.openalex.org/works/doi:10.48550/arxiv.2203.11011"
+  ],
+  "api_proof": true,
+  "api_proof_argument": "The arXiv interface can sort only by relevance or submission time and exposes no author-count filter, so all 94 submissions listed for that day under cs.LG must be retrieved and their author lists counted.",
+  "confirmation": "DataCite and OpenAlex both resolve 10.48550/arxiv.2203.11011 to the same title, from two registries independent of arXiv",
+  "prompt": "The arXiv preprint server publishes a dated listing of every submission indexed under the subject class cs.LG, each entry carrying its full author list and its arXiv identifier. Consider only the submissions that arXiv timestamps to 2022-03-08 in Coordinated Universal Time. Among only those submissions, exactly one credits more named authors than any other. Report the arXiv identifier of that single submission. Resolve the identifier through two registration agencies independent of the preprint server before answering. Give the identifier alone, without any version suffix and with no other words.",
+  "source_operators": [
+   "Cornell University",
+   "DataCite",
+   "OurResearch (OpenAlex)"
+  ],
+  "confirming_operators": [
+   "DataCite",
+   "OurResearch (OpenAlex)"
+  ],
+  "track": "api-native",
+  "ranking_evidence": {
+   "label": "science cs.LG/2022-03-08",
+   "mode": "max",
+   "n_base": 94,
+   "n_ranked": 94,
+   "spearman_key_vs_api_order": -0.0984,
+   "n_tied_at_extremum": 1,
+   "distinct_keys": 10,
+   "winner_position_in_api_order": 12,
+   "winner_is_first_returned": false,
+   "winner_is_last_returned": false,
+   "top_keys": [
+    "11",
+    "9",
+    "8",
+    "8",
+    "7"
+   ],
+   "answer_field_distinct_values": 94,
+   "answer_field_n_values": 94,
+   "answer_field_max_count": 1,
+   "answer_field_count_of_answer": 1,
+   "answer_field_modal_share": 0.010638,
+   "p_answer_by_uniform_guess": 0.010638,
+   "key_component_depths": {},
+   "key_is_aggregated": false,
+   "equivalent_served_fields": [],
+   "n_fields_swept": 0,
+   "sort_field_rejected_by_service": [
+    "sortBy=authorCount",
+    "sortBy=authors"
+   ],
+   "n_true": 94,
+   "page_cap": 200,
+   "pages_fetched": 1
   },
+  "facts": {
+   "cat": "cs.LG",
+   "day": "2022-03-08",
+   "n": 94,
+   "authors": 11,
+   "doi": "10.48550/arxiv.2203.11011"
+  },
+  "seed_repr": "{\"cats\": [\"cs.LG\", \"math.CO\", \"cond-mat.supr-con\", \"astro-ph.HE\", \"q-bio.NC\", \"physics.optics\"], \"days\": [\"2022-03-08\", \"2022-06-14\", \"2022-10-11\", \"2023-01-10\", \"2023-04-11\", \"2023-07-11\"]}",
+  "verdict": "ship",
+  "witness_tier": "gold",
+  "verified": true
+ },
+ {
+  "collection_is_explicit": false,
+  "primary_operator": "Cornell University",
+  "independent_confirming_operators": [
+   "DataCite",
+   "OurResearch (OpenAlex)"
+  ],
+  "category": "science and technology",
+  "field": "arXiv identifier",
+  "answer": "2211.04278",
+  "entity": "Tight Complexity Bounds for Counting Generalized Dominating Sets in Bounded-Treewidth Graphs Part I: Algorithmic Results",
+  "n_base": 20,
+  "sources": [
+   "http://export.arxiv.org/api/query?search_query=cat:cs.DS+AND+submittedDate:[202211080000+TO+202211082359]&start=0&max_results=200&sortBy=submittedDate&sortOrder=ascending",
+   "https://api.datacite.org/dois/10.48550/arxiv.2211.04278",
+   "https://api.openalex.org/works/doi:10.48550/arxiv.2211.04278"
+  ],
+  "confirming_sources": [
+   "https://api.datacite.org/dois/10.48550/arxiv.2211.04278",
+   "https://api.openalex.org/works/doi:10.48550/arxiv.2211.04278"
+  ],
+  "api_proof": true,
+  "api_proof_argument": "The arXiv interface can sort only by relevance or submission time and exposes no author-count filter, so all 20 submissions listed for that day under cs.DS must be retrieved and their author lists counted.",
+  "confirmation": "DataCite and OpenAlex both resolve 10.48550/arxiv.2211.04278 to the same title, from two registries independent of arXiv",
+  "prompt": "The arXiv preprint server publishes a dated listing of every submission indexed under the subject class cs.DS, each entry carrying its full author list and its arXiv identifier. Consider only the submissions that arXiv timestamps to 2022-11-08 in Coordinated Universal Time. Among only those submissions, exactly one credits more named authors than any other. Report the arXiv identifier of that single submission. Resolve the identifier through two registration agencies independent of the preprint server before answering. Give the identifier alone, without any version suffix and with no other words.",
+  "source_operators": [
+   "Cornell University",
+   "DataCite",
+   "OurResearch (OpenAlex)"
+  ],
+  "confirming_operators": [
+   "DataCite",
+   "OurResearch (OpenAlex)"
+  ],
+  "track": "api-native",
+  "ranking_evidence": {
+   "label": "science cs.DS/2022-11-08",
+   "mode": "max",
+   "n_base": 20,
+   "n_ranked": 20,
+   "spearman_key_vs_api_order": -0.2934,
+   "n_tied_at_extremum": 1,
+   "distinct_keys": 6,
+   "winner_position_in_api_order": 11,
+   "winner_is_first_returned": false,
+   "winner_is_last_returned": false,
+   "top_keys": [
+    "7",
+    "6",
+    "4",
+    "4",
+    "4"
+   ],
+   "answer_field_distinct_values": 20,
+   "answer_field_n_values": 20,
+   "answer_field_max_count": 1,
+   "answer_field_count_of_answer": 1,
+   "answer_field_modal_share": 0.05,
+   "p_answer_by_uniform_guess": 0.05,
+   "key_component_depths": {},
+   "key_is_aggregated": false,
+   "equivalent_served_fields": [],
+   "n_fields_swept": 0,
+   "sort_field_rejected_by_service": [
+    "sortBy=authorCount",
+    "sortBy=authors"
+   ],
+   "n_true": 20,
+   "page_cap": 200,
+   "pages_fetched": 1
+  },
+  "facts": {
+   "cat": "cs.DS",
+   "day": "2022-11-08",
+   "n": 20,
+   "authors": 7,
+   "doi": "10.48550/arxiv.2211.04278"
+  },
+  "seed_repr": "{\"cats\": [\"cs.DS\", \"math.NT\", \"cond-mat.soft\", \"astro-ph.SR\", \"q-bio.QM\", \"physics.plasm-ph\"], \"days\": [\"2021-05-11\", \"2021-09-14\", \"2022-01-11\", \"2022-04-12\", \"2022-08-09\", \"2022-11-08\"]}",
+  "verdict": "ship",
+  "witness_tier": "gold",
+  "verified": true
+ },
+ {
+  "collection_is_explicit": false,
+  "primary_operator": "Cornell University",
+  "independent_confirming_operators": [
+   "DataCite",
+   "OurResearch (OpenAlex)"
+  ],
+  "category": "science and technology",
+  "field": "arXiv identifier",
+  "answer": "2302.07287",
+  "entity": "Forward Pass: On the Security Implications of Email Forwarding Mechanism and Policy",
+  "n_base": 12,
+  "sources": [
+   "http://export.arxiv.org/api/query?search_query=cat:cs.CR+AND+submittedDate:[202302140000+TO+202302142359]&start=0&max_results=200&sortBy=submittedDate&sortOrder=ascending",
+   "https://api.datacite.org/dois/10.48550/arxiv.2302.07287",
+   "https://api.openalex.org/works/doi:10.48550/arxiv.2302.07287"
+  ],
+  "confirming_sources": [
+   "https://api.datacite.org/dois/10.48550/arxiv.2302.07287",
+   "https://api.openalex.org/works/doi:10.48550/arxiv.2302.07287"
+  ],
+  "api_proof": true,
+  "api_proof_argument": "The arXiv interface can sort only by relevance or submission time and exposes no author-count filter, so all 12 submissions listed for that day under cs.CR must be retrieved and their author lists counted.",
+  "confirmation": "DataCite and OpenAlex both resolve 10.48550/arxiv.2302.07287 to the same title, from two registries independent of arXiv",
+  "prompt": "The arXiv preprint server publishes a dated listing of every submission indexed under the subject class cs.CR, each entry carrying its full author list and its arXiv identifier. Consider only the submissions that arXiv timestamps to 2023-02-14 in Coordinated Universal Time. Among only those submissions, exactly one credits more named authors than any other. Report the arXiv identifier of that single submission. Resolve the identifier through two registration agencies independent of the preprint server before answering. Give the identifier alone, without any version suffix and with no other words.",
+  "source_operators": [
+   "Cornell University",
+   "DataCite",
+   "OurResearch (OpenAlex)"
+  ],
+  "confirming_operators": [
+   "DataCite",
+   "OurResearch (OpenAlex)"
+  ],
+  "track": "api-native",
+  "ranking_evidence": {
+   "label": "science cs.CR/2023-02-14",
+   "mode": "max",
+   "n_base": 12,
+   "n_ranked": 12,
+   "spearman_key_vs_api_order": 0.4461,
+   "n_tied_at_extremum": 1,
+   "distinct_keys": 7,
+   "winner_position_in_api_order": 10,
+   "winner_is_first_returned": false,
+   "winner_is_last_returned": false,
+   "top_keys": [
+    "7",
+    "6",
+    "6",
+    "5",
+    "4"
+   ],
+   "answer_field_distinct_values": 12,
+   "answer_field_n_values": 12,
+   "answer_field_max_count": 1,
+   "answer_field_count_of_answer": 1,
+   "answer_field_modal_share": 0.083333,
+   "p_answer_by_uniform_guess": 0.083333,
+   "key_component_depths": {},
+   "key_is_aggregated": false,
+   "equivalent_served_fields": [],
+   "n_fields_swept": 0,
+   "sort_field_rejected_by_service": [
+    "sortBy=authorCount",
+    "sortBy=authors"
+   ],
+   "n_true": 12,
+   "page_cap": 200,
+   "pages_fetched": 1
+  },
+  "facts": {
+   "cat": "cs.CR",
+   "day": "2023-02-14",
+   "n": 12,
+   "authors": 7,
+   "doi": "10.48550/arxiv.2302.07287"
+  },
+  "seed_repr": "{\"cats\": [\"cs.CR\", \"math.PR\", \"cond-mat.mes-hall\", \"astro-ph.GA\", \"q-bio.PE\", \"physics.flu-dyn\"], \"days\": [\"2023-02-14\", \"2023-05-16\", \"2023-09-12\", \"2023-11-14\", \"2024-09-10\", \"2024-10-08\"]}",
+  "verdict": "ship",
+  "witness_tier": "gold",
+  "verified": true
+ },
+ {
+  "collection_is_explicit": false,
+  "primary_operator": "Cornell University",
+  "independent_confirming_operators": [
+   "DataCite",
+   "OurResearch (OpenAlex)"
+  ],
+  "category": "science and technology",
+  "field": "arXiv identifier",
+  "answer": "2403.07505",
+  "entity": "Rotational Evolution of Classical T Tauri Stars: Models and Observations",
+  "n_base": 15,
+  "sources": [
+   "http://export.arxiv.org/api/query?search_query=cat:astro-ph.EP+AND+submittedDate:[202403120000+TO+202403122359]&start=0&max_results=200&sortBy=submittedDate&sortOrder=ascending",
+   "https://api.datacite.org/dois/10.48550/arxiv.2403.07505",
+   "https://api.openalex.org/works/doi:10.48550/arxiv.2403.07505"
+  ],
+  "confirming_sources": [
+   "https://api.datacite.org/dois/10.48550/arxiv.2403.07505",
+   "https://api.openalex.org/works/doi:10.48550/arxiv.2403.07505"
+  ],
+  "api_proof": true,
+  "api_proof_argument": "The arXiv interface can sort only by relevance or submission time and exposes no author-count filter, so all 15 submissions listed for that day under astro-ph.EP must be retrieved and their author lists counted.",
+  "confirmation": "DataCite and OpenAlex both resolve 10.48550/arxiv.2403.07505 to the same title, from two registries independent of arXiv",
+  "prompt": "The arXiv preprint server publishes a dated listing of every submission indexed under the subject class astro-ph.EP, each entry carrying its full author list and its arXiv identifier. Consider only the submissions that arXiv timestamps to 2024-03-12 in Coordinated Universal Time. Among only those submissions, exactly one credits more named authors than any other. Report the arXiv identifier of that single submission. Resolve the identifier through two registration agencies independent of the preprint server before answering. Give the identifier alone, without any version suffix and with no other words.",
+  "source_operators": [
+   "Cornell University",
+   "DataCite",
+   "OurResearch (OpenAlex)"
+  ],
+  "confirming_operators": [
+   "DataCite",
+   "OurResearch (OpenAlex)"
+  ],
+  "track": "api-native",
+  "ranking_evidence": {
+   "label": "science astro-ph.EP/2024-03-12",
+   "mode": "max",
+   "n_base": 15,
+   "n_ranked": 15,
+   "spearman_key_vs_api_order": 0.0255,
+   "n_tied_at_extremum": 1,
+   "distinct_keys": 6,
+   "winner_position_in_api_order": 5,
+   "winner_is_first_returned": false,
+   "winner_is_last_returned": false,
+   "top_keys": [
+    "20",
+    "5",
+    "5",
+    "5",
+    "4"
+   ],
+   "answer_field_distinct_values": 15,
+   "answer_field_n_values": 15,
+   "answer_field_max_count": 1,
+   "answer_field_count_of_answer": 1,
+   "answer_field_modal_share": 0.066667,
+   "p_answer_by_uniform_guess": 0.066667,
+   "key_component_depths": {},
+   "key_is_aggregated": false,
+   "equivalent_served_fields": [],
+   "n_fields_swept": 0,
+   "sort_field_rejected_by_service": [
+    "sortBy=authorCount",
+    "sortBy=authors"
+   ],
+   "n_true": 15,
+   "page_cap": 200,
+   "pages_fetched": 1
+  },
+  "facts": {
+   "cat": "astro-ph.EP",
+   "day": "2024-03-12",
+   "n": 15,
+   "authors": 20,
+   "doi": "10.48550/arxiv.2403.07505"
+  },
+  "seed_repr": "{}",
+  "verdict": "ship",
+  "witness_tier": "gold",
   "verified": true
  },
  {
@@ -647,21 +889,6 @@
   "seed_repr": "{}",
   "verdict": "ship",
   "witness_tier": "gold",
-  "field_class": "identifier",
-  "trap_id": "f6bce9e07340ae0f",
-  "stump": null,
-  "solver_difficulty": null,
-  "solver_difficulty_status": "unmeasured: no solver quota. The available Cohere key is a trial key capped at 1000 calls/month and is exhausted (HTTP 429 with an explicit trial-quota message). A usable measurement needs about 600 calls: the shipping traps x 3 access conditions (no tools, search only, full API) x ~20 repeats for workable intervals.",
-  "memorization_proxy": {
-   "measured_by": "wikipedia-recall-proxy",
-   "caveat": "a proxy for whether the answer is memorable, NOT for whether the trap is hard",
-   "answer_wikipedia_mentions": null,
-   "answer_pageviews_365": null,
-   "exact_article": null,
-   "verdict": null,
-   "field_class": "identifier",
-   "changed_this_build": null
-  },
   "verified": true
  },
  {
@@ -743,21 +970,6 @@
   "seed_repr": "{\"airline_iata\": \"SK\", \"hub_iata\": \"CPH\"}",
   "verdict": "ship",
   "witness_tier": "gold",
-  "field_class": "identifier",
-  "trap_id": "40b7ef806d9e870d",
-  "stump": null,
-  "solver_difficulty": null,
-  "solver_difficulty_status": "unmeasured: no solver quota. The available Cohere key is a trial key capped at 1000 calls/month and is exhausted (HTTP 429 with an explicit trial-quota message). A usable measurement needs about 600 calls: the shipping traps x 3 access conditions (no tools, search only, full API) x ~20 repeats for workable intervals.",
-  "memorization_proxy": {
-   "measured_by": "wikipedia-recall-proxy",
-   "caveat": "a proxy for whether the answer is memorable, NOT for whether the trap is hard",
-   "answer_wikipedia_mentions": null,
-   "answer_pageviews_365": null,
-   "exact_article": null,
-   "verdict": null,
-   "field_class": "identifier",
-   "changed_this_build": null
-  },
   "verified": true
  },
  {
@@ -839,21 +1051,6 @@
   "seed_repr": "{\"airline_iata\": \"LO\", \"hub_iata\": \"WAW\"}",
   "verdict": "ship",
   "witness_tier": "gold",
-  "field_class": "identifier",
-  "trap_id": "108faddc89f2e88a",
-  "stump": null,
-  "solver_difficulty": null,
-  "solver_difficulty_status": "unmeasured: no solver quota. The available Cohere key is a trial key capped at 1000 calls/month and is exhausted (HTTP 429 with an explicit trial-quota message). A usable measurement needs about 600 calls: the shipping traps x 3 access conditions (no tools, search only, full API) x ~20 repeats for workable intervals.",
-  "memorization_proxy": {
-   "measured_by": "wikipedia-recall-proxy",
-   "caveat": "a proxy for whether the answer is memorable, NOT for whether the trap is hard",
-   "answer_wikipedia_mentions": null,
-   "answer_pageviews_365": null,
-   "exact_article": null,
-   "verdict": null,
-   "field_class": "identifier",
-   "changed_this_build": null
-  },
   "verified": true
  },
  {
@@ -935,370 +1132,6 @@
   "seed_repr": "{\"airline_iata\": \"LH\", \"hub_iata\": \"FRA\"}",
   "verdict": "ship",
   "witness_tier": "gold",
-  "field_class": "identifier",
-  "trap_id": "f6d151c39be9cc95",
-  "stump": null,
-  "solver_difficulty": null,
-  "solver_difficulty_status": "unmeasured: no solver quota. The available Cohere key is a trial key capped at 1000 calls/month and is exhausted (HTTP 429 with an explicit trial-quota message). A usable measurement needs about 600 calls: the shipping traps x 3 access conditions (no tools, search only, full API) x ~20 repeats for workable intervals.",
-  "memorization_proxy": {
-   "measured_by": "wikipedia-recall-proxy",
-   "caveat": "a proxy for whether the answer is memorable, NOT for whether the trap is hard",
-   "answer_wikipedia_mentions": null,
-   "answer_pageviews_365": null,
-   "exact_article": null,
-   "verdict": null,
-   "field_class": "identifier",
-   "changed_this_build": null
-  },
-  "verified": true
- },
- {
-  "collection_is_explicit": false,
-  "primary_operator": "US National Institute of Standards and Technology",
-  "independent_confirming_operators": [
-   "Forum of Incident Response and Security Teams",
-   "MITRE Corporation"
-  ],
-  "category": "science and technology",
-  "field": "CVE identifier",
-  "answer": "CVE-2022-23221",
-  "entity": "H2 Console before 2.1.210 allows remote attackers to execute arbitrary code via a jdbc:h2:mem JDBC URL containing the IG",
-  "n_base": 255,
-  "sources": [
-   "https://services.nvd.nist.gov/rest/json/cves/2.0?pubStartDate=2022-01-19T00:00:00.000&pubEndDate=2022-01-19T23:59:59.999&resultsPerPage=2000",
-   "https://cveawg.mitre.org/api/cve/CVE-2022-23221",
-   "https://api.first.org/data/v1/epss?cve=CVE-2022-23221"
-  ],
-  "confirming_sources": [
-   "https://cveawg.mitre.org/api/cve/CVE-2022-23221",
-   "https://api.first.org/data/v1/epss?cve=CVE-2022-23221"
-  ],
-  "api_proof": true,
-  "api_proof_argument": "The National Vulnerability Database interface accepts no sort parameter and offers no filter on how many references a record carries, so every one of the 255 records published that day must be retrieved and its reference list counted.",
-  "confirmation": "MITRE resolves CVE-2022-23221 to the same description text, and FIRST publishes an exploit-prediction score of 0.647660000 for it; MITRE operates the CVE Program and FIRST models exploit probability independently of both",
-  "prompt": "The National Vulnerability Database operated by the United States National Institute of Standards and Technology stamps every vulnerability record it publishes with a publication date and lists the external reference links attached to that record. Consider only the records that database stamps as published on 2022-01-19 in Coordinated Universal Time. Exactly one of those records carries more external reference links than any other record published that day. Report the CVE identifier of that single record. Confirm the identifier against the CVE Program record and an exploit-prediction listing before answering. Give the identifier alone, in the form CVE-YYYY-NNNNN, with no other words.",
-  "source_operators": [
-   "Forum of Incident Response and Security Teams",
-   "MITRE Corporation",
-   "US National Institute of Standards and Technology"
-  ],
-  "confirming_operators": [
-   "Forum of Incident Response and Security Teams",
-   "MITRE Corporation"
-  ],
-  "track": "api-native",
-  "ranking_evidence": {
-   "label": "vuln 2022-01-19",
-   "mode": "max",
-   "n_base": 255,
-   "n_ranked": 255,
-   "spearman_key_vs_api_order": 0.3417,
-   "n_tied_at_extremum": 1,
-   "distinct_keys": 11,
-   "winner_position_in_api_order": 229,
-   "winner_is_first_returned": false,
-   "winner_is_last_returned": false,
-   "top_keys": [
-    "20",
-    "18",
-    "14",
-    "14",
-    "14"
-   ],
-   "answer_field_distinct_values": 255,
-   "answer_field_n_values": 255,
-   "answer_field_max_count": 1,
-   "answer_field_count_of_answer": 1,
-   "answer_field_modal_share": 0.003922,
-   "p_answer_by_uniform_guess": 0.003922,
-   "key_component_depths": {},
-   "key_is_aggregated": false,
-   "equivalent_served_fields": [],
-   "n_fields_swept": 0,
-   "sort_field_rejected_by_service": [
-    "the NVD 2.0 API exposes no sort parameter",
-    "no reference-count filter exists"
-   ],
-   "n_true": 255,
-   "page_cap": 2000,
-   "pages_fetched": 1
-  },
-  "facts": {
-   "day": "2022-01-19",
-   "n": 255,
-   "references": 20,
-   "epss": "0.647660000",
-   "epss_percentile": "0.991690000",
-   "runner_up_references": 18,
-   "landing_pages": [
-    "https://nvd.nist.gov/vuln/detail/CVE-2022-23221",
-    "https://www.cve.org/CVERecord?id=CVE-2022-23221"
-   ]
-  },
-  "verified": true
- },
- {
-  "collection_is_explicit": false,
-  "primary_operator": "RFC Editor",
-  "independent_confirming_operators": [
-   "Allen Institute for AI",
-   "Crossref"
-  ],
-  "category": "science and technology",
-  "field": "RFC number",
-  "answer": "6513",
-  "entity": "Multicast in MPLS/BGP IP VPNs",
-  "n_base": 46,
-  "sources": [
-   "https://www.rfc-editor.org/rfc-index.xml",
-   "https://api.crossref.org/works/10.17487/RFC6513",
-   "https://api.semanticscholar.org/graph/v1/paper/DOI:10.17487/RFC6513?fields=title,year"
-  ],
-  "confirming_sources": [
-   "https://api.crossref.org/works/10.17487/RFC6513",
-   "https://api.semanticscholar.org/graph/v1/paper/DOI:10.17487/RFC6513?fields=title,year"
-  ],
-  "api_proof": true,
-  "api_proof_argument": "The RFC Editor search interface orders results only by number, date, title or status and offers no ordering or filter on length, so all 46 documents published that month must be listed and their page counts compared.",
-  "confirmation": "Crossref and Semantic Scholar both resolve 10.17487/RFC6513 to the same document title, from two bibliographic services outside the RFC Editor",
-  "prompt": "The RFC Editor maintains a published index of the Request for Comments series in which every document appears with its publication month and its length in pages. Consider only the documents that index records as published in February 2012. Exactly one of those documents runs to more pages than any other published in that month. Report the RFC number of that single document. Verify the number against its registered digital object identifier before answering. Give the number alone, as digits, without the letters RFC and with no other words.",
-  "source_operators": [
-   "Allen Institute for AI",
-   "Crossref",
-   "RFC Editor"
-  ],
-  "confirming_operators": [
-   "Allen Institute for AI",
-   "Crossref"
-  ],
-  "track": "api-native",
-  "ranking_evidence": {
-   "label": "standard February 2012",
-   "mode": "max",
-   "n_base": 46,
-   "n_ranked": 46,
-   "spearman_key_vs_api_order": 0.0204,
-   "n_tied_at_extremum": 1,
-   "distinct_keys": 27,
-   "winner_position_in_api_order": 28,
-   "winner_is_first_returned": false,
-   "winner_is_last_returned": false,
-   "top_keys": [
-    "88",
-    "59",
-    "41",
-    "35",
-    "32"
-   ],
-   "answer_field_distinct_values": 46,
-   "answer_field_n_values": 46,
-   "answer_field_max_count": 1,
-   "answer_field_count_of_answer": 1,
-   "answer_field_modal_share": 0.021739,
-   "p_answer_by_uniform_guess": 0.021739,
-   "key_component_depths": {},
-   "key_is_aggregated": false,
-   "equivalent_served_fields": [],
-   "n_fields_swept": 0,
-   "sort_field_rejected_by_service": [
-    "the RFC Editor search interface orders only by number, date, title and status",
-    "no page-count ordering or filter is offered"
-   ],
-   "n_true": 46,
-   "page_cap": null,
-   "pages_fetched": 1
-  },
-  "facts": {
-   "month": "February",
-   "year": "2012",
-   "n": 46,
-   "pages": 88,
-   "doi": "10.17487/RFC6513",
-   "stream": "IETF",
-   "status": "PROPOSED STANDARD",
-   "runner_up_pages": 59,
-   "landing_pages": [
-    "https://www.rfc-editor.org/rfc/rfc6513.html",
-    "https://www.rfc-editor.org/info/rfc6513"
-   ]
-  },
-  "verified": true
- },
- {
-  "collection_is_explicit": false,
-  "primary_operator": "Python Software Foundation",
-  "independent_confirming_operators": [
-   "Google LLC",
-   "ecosyste.ms (Open Source Collective)"
-  ],
-  "category": "science and technology",
-  "field": "package version string",
-  "answer": "11.3.0",
-  "entity": "pillow on the Python Package Index",
-  "n_base": 107,
-  "sources": [
-   "https://pypi.org/pypi/pillow/json",
-   "https://api.deps.dev/v3alpha/systems/pypi/packages/pillow/versions/11.3.0",
-   "https://packages.ecosyste.ms/api/v1/registries/pypi.org/packages/pillow/versions/11.3.0"
-  ],
-  "confirming_sources": [
-   "https://api.deps.dev/v3alpha/systems/pypi/packages/pillow/versions/11.3.0",
-   "https://packages.ecosyste.ms/api/v1/registries/pypi.org/packages/pillow/versions/11.3.0"
-  ],
-  "api_proof": true,
-  "api_proof_argument": "The Python Package Index serves one document per project with no query, ordering or filtering parameters at all, so the artefact lists of all 107 published releases must be read out of that document and compared.",
-  "confirmation": "Google Open Source Insights and ecosyste.ms both resolve pillow 11.3.0 as a published release, from two indexes outside the Python Package Index",
-  "prompt": "The Python Package Index publishes, for every project it hosts, a release history listing each released version together with the distribution files uploaded for it. Consider only the released versions of the project named pillow that have at least one distribution file. Exactly one of those versions has more uploaded distribution files than any other version of the project. Report the version string of that single release. Confirm the version against two package indexes outside the registry before answering. Give the version string alone, exactly as the index spells it, with no other words.",
-  "source_operators": [
-   "Google LLC",
-   "Python Software Foundation",
-   "ecosyste.ms (Open Source Collective)"
-  ],
-  "confirming_operators": [
-   "Google LLC",
-   "ecosyste.ms (Open Source Collective)"
-  ],
-  "track": "api-native",
-  "ranking_evidence": {
-   "label": "supplychain pillow",
-   "mode": "max",
-   "n_base": 107,
-   "n_ranked": 107,
-   "spearman_key_vs_api_order": 0.2289,
-   "n_tied_at_extremum": 1,
-   "distinct_keys": 48,
-   "winner_position_in_api_order": 25,
-   "winner_is_first_returned": false,
-   "winner_is_last_returned": false,
-   "top_keys": [
-    "106",
-    "91",
-    "91",
-    "91",
-    "91"
-   ],
-   "answer_field_distinct_values": 107,
-   "answer_field_n_values": 107,
-   "answer_field_max_count": 1,
-   "answer_field_count_of_answer": 1,
-   "answer_field_modal_share": 0.009346,
-   "p_answer_by_uniform_guess": 0.009346,
-   "key_component_depths": {},
-   "key_is_aggregated": false,
-   "equivalent_served_fields": [],
-   "n_fields_swept": 0,
-   "sort_field_rejected_by_service": [
-    "the PyPI JSON API serves one document per project with no query, sort or filter parameters of any kind"
-   ],
-   "n_true": 107,
-   "page_cap": null,
-   "pages_fetched": 1,
-   "key_dispersion_sd": 24.8895,
-   "key_distinct_values": 48
-  },
-  "facts": {
-   "package": "pillow",
-   "n": 107,
-   "files": 106,
-   "runner_up_files": 91,
-   "distinct_file_counts": 48,
-   "landing_pages": [
-    "https://pypi.org/project/pillow/11.3.0/",
-    "https://deps.dev/pypi/pillow/11.3.0"
-   ]
-  },
-  "verified": true
- },
- {
-  "collection_is_explicit": false,
-  "primary_operator": "RIPE NCC",
-  "independent_confirming_operators": [
-   "CAIDA, University of California San Diego",
-   "PeeringDB"
-  ],
-  "category": "science and technology",
-  "field": "autonomous system number",
-  "answer": "200651",
-  "entity": "FlokiNET FlokiNET ehf",
-  "n_base": 86,
-  "sources": [
-   "https://stat.ripe.net/data/country-resource-list/data.json?resource=IS",
-   "https://www.peeringdb.com/api/net?asn=200651",
-   "https://api.asrank.caida.org/v2/restful/asns/200651"
-  ],
-  "confirming_sources": [
-   "https://www.peeringdb.com/api/net?asn=200651",
-   "https://api.asrank.caida.org/v2/restful/asns/200651"
-  ],
-  "api_proof": true,
-  "api_proof_argument": "The registry returns the country roster as an unordered list and publishes announced prefixes only one resource at a time, so each of the 86 listed numbers must be queried separately and the prefix lists compared.",
-  "confirmation": "PeeringDB lists AS200651 as 'FlokiNET ehf' and CAIDA records it as 'FlokiNET' in IS; PeeringDB records are maintained by the networks themselves and CAIDA infers from its own routing observations",
-  "prompt": "The RIPE NCC publishes, for each country, the list of autonomous system numbers registered to organisations there, and separately reports the address prefixes each autonomous system announces in the global routing table. Consider only the autonomous system numbers that registry lists for Iceland. Exactly one of them announces more prefixes than any other number on that list. Report that autonomous system number. Check the number against a peering directory and an academic routing observatory before answering. Give the number alone, as digits, without the letters AS and with no other words.",
-  "source_operators": [
-   "CAIDA, University of California San Diego",
-   "PeeringDB",
-   "RIPE NCC"
-  ],
-  "confirming_operators": [
-   "CAIDA, University of California San Diego",
-   "PeeringDB"
-  ],
-  "track": "api-native",
-  "ranking_evidence": {
-   "label": "asn IS",
-   "mode": "max",
-   "n_base": 86,
-   "n_ranked": 86,
-   "spearman_key_vs_api_order": -0.2206,
-   "n_tied_at_extremum": 1,
-   "distinct_keys": 16,
-   "winner_position_in_api_order": 47,
-   "winner_is_first_returned": false,
-   "winner_is_last_returned": false,
-   "top_keys": [
-    "39",
-    "34",
-    "23",
-    "22",
-    "19"
-   ],
-   "answer_field_distinct_values": 86,
-   "answer_field_n_values": 86,
-   "answer_field_max_count": 1,
-   "answer_field_count_of_answer": 1,
-   "answer_field_modal_share": 0.011628,
-   "p_answer_by_uniform_guess": 0.011628,
-   "key_component_depths": {},
-   "key_is_aggregated": false,
-   "equivalent_served_fields": [],
-   "n_fields_swept": 0,
-   "sort_field_rejected_by_service": [
-    "the country resource list returns an unordered roster",
-    "announced-prefixes is a per-resource call, not a rankable collection endpoint"
-   ],
-   "n_true": 86,
-   "page_cap": null,
-   "pages_fetched": 87
-  },
-  "facts": {
-   "country": "IS",
-   "country_name": "Iceland",
-   "n": 86,
-   "prefixes": 39,
-   "runner_up_prefixes": 34,
-   "caida_rank": 19255,
-   "name_variants": {
-    "ripe_holder": "FlokiNET FlokiNET ehf",
-    "peeringdb_name": "FlokiNET ehf",
-    "peeringdb_aka": "",
-    "caida_asn_name": "FlokiNET"
-   },
-   "name_reconciliation_basis": "registry holder shares ['flokinet'] with CAIDA; registry holder shares ['ehf', 'flokinet'] with PeeringDB; PeeringDB shares ['flokinet'] with CAIDA",
-   "landing_pages": [
-    "https://stat.ripe.net/AS200651",
-    "https://www.peeringdb.com/asn/200651"
-   ]
-  },
   "verified": true
  }
 ]

@@ -1,0 +1,189 @@
+{
+  "caida_asn_3333": {
+    "ok": false,
+    "detail": "FetchError: https://api.asrank.caida.org/v2/restful/asn/3333 -> gave up after 2 attempts (HTTP 500)",
+    "sample": null
+  },
+  "caida_asn_7018": {
+    "ok": false,
+    "detail": "FetchError: https://api.asrank.caida.org/v2/restful/asn/7018 -> gave up after 2 attempts (HTTP 500)",
+    "sample": null
+  },
+  "caida_asn_2914": {
+    "ok": false,
+    "detail": "FetchError: https://api.asrank.caida.org/v2/restful/asn/2914 -> gave up after 2 attempts (HTTP 500)",
+    "sample": null
+  },
+  "peeringdb_asn_3333": {
+    "ok": true,
+    "detail": "name='RIPE NCC' org=8829 info_type='Non-Profit'",
+    "sample": {
+      "asn": 3333,
+      "name": "RIPE NCC",
+      "aka": "R\u00e9seaux IP Europ\u00e9ens Network Coordination Centre",
+      "info_type": "Non-Profit",
+      "created": "2012-11-09T06:06:08Z"
+    }
+  },
+  "peeringdb_asn_7018": {
+    "ok": true,
+    "detail": "name='AT&T US - 7018' org=912 info_type='NSP'",
+    "sample": {
+      "asn": 7018,
+      "name": "AT&T US - 7018",
+      "aka": "",
+      "info_type": "NSP",
+      "created": "2005-12-15T08:07:46Z"
+    }
+  },
+  "peeringdb_asn_2914": {
+    "ok": true,
+    "detail": "name='NTT Global IP Network' org=1271 info_type='NSP'",
+    "sample": {
+      "asn": 2914,
+      "name": "NTT Global IP Network",
+      "aka": "NTT GIN, NTT Communications Global IP Network, ntt.net",
+      "info_type": "NSP",
+      "created": "2007-02-19T06:04:57Z"
+    }
+  },
+  "ripestat_prefixes_3333": {
+    "ok": true,
+    "detail": "7 announced prefixes",
+    "sample": [
+      "193.0.18.0/23",
+      "2001:67c:2e8::/48",
+      "193.0.0.0/21",
+      "193.0.22.0/23",
+      "193.0.12.0/23"
+    ]
+  },
+  "ripestat_prefixes_7018": {
+    "ok": true,
+    "detail": "616 announced prefixes",
+    "sample": [
+      "66.72.0.0/15",
+      "170.187.0.0/24",
+      "155.201.46.0/23",
+      "158.107.156.0/22",
+      "32.252.0.0/15"
+    ]
+  },
+  "ripestat_prefixes_2914": {
+    "ok": true,
+    "detail": "1338 announced prefixes",
+    "sample": [
+      "142.111.149.0/24",
+      "205.179.213.0/24",
+      "180.223.112.0/22",
+      "155.229.4.0/22",
+      "151.245.189.0/24"
+    ]
+  },
+  "ripestat_country_list_IS": {
+    "ok": true,
+    "detail": "Iceland: 86 ASN entries, 172 ipv4 blocks",
+    "sample": [
+      "1850",
+      "6677",
+      "12969",
+      "15474",
+      "21268",
+      "24743",
+      "25244",
+      "25509",
+      "29348",
+      "29689"
+    ]
+  },
+  "rcsb_entry_1TUP": {
+    "ok": true,
+    "detail": "released=1995-07-11T00:00:00.000+00:00 title='TUMOR SUPPRESSOR P53 COMPLEXED WITH DNA' cite_doi=None",
+    "sample": {
+      "release": "1995-07-11T00:00:00.000+00:00",
+      "resolution": [
+        2.2
+      ]
+    }
+  },
+  "rcsb_entry_6P5Z": {
+    "ok": true,
+    "detail": "released=2021-06-16T00:00:00.000+00:00 title='Cobalt-sirohydrochlorin-bound S. typhimurium siroheme synthase' cite_doi=None",
+    "sample": {
+      "release": "2021-06-16T00:00:00.000+00:00",
+      "resolution": [
+        2.26
+      ]
+    }
+  },
+  "rcsb_entry_7BV2": {
+    "ok": true,
+    "detail": "released=2020-04-22T00:00:00.000+00:00 title='The nsp12-nsp7-nsp8 complex bound to the template-primer RNA and trip cite_doi=None",
+    "sample": {
+      "release": "2020-04-22T00:00:00.000+00:00",
+      "resolution": [
+        2.5
+      ]
+    }
+  },
+  "pdbj_1TUP": {
+    "ok": true,
+    "detail": "total=39 exact_hit=True title='TUMOR SUPPRESSOR P53 COMPLEXED WITH DNA'",
+    "sample": null
+  },
+  "pdbj_6P5Z": {
+    "ok": true,
+    "detail": "total=7 exact_hit=True title='Cobalt-sirohydrochlorin-bound S. typhimurium siroheme synth",
+    "sample": null
+  },
+  "pdbj_7BV2": {
+    "ok": true,
+    "detail": "total=2 exact_hit=True title='The nsp12-nsp7-nsp8 complex bound to the template-primer RN",
+    "sample": null
+  },
+  "crossref_pdb_1TUP": {
+    "ok": true,
+    "detail": "title='TUMOR SUPPRESSOR P53 COMPLEXED WITH DNA' publisher='Worldwide Protein Data Bank'",
+    "sample": null
+  },
+  "crossref_pdb_6P5Z": {
+    "ok": true,
+    "detail": "title='Cobalt-sirohydrochlorin-bound S. typhimurium siroheme synth publisher='Worldwide Protein Data Bank'",
+    "sample": null
+  },
+  "crossref_pdb_7BV2": {
+    "ok": true,
+    "detail": "title='The nsp12-nsp7-nsp8 complex bound to the template-primer RN publisher='Worldwide Protein Data Bank'",
+    "sample": null
+  },
+  "s2_rfc_coverage": {
+    "ok": true,
+    "detail": "12/15 RFCs present at Semantic Scholar; missing=[9112, 9113, 9293]",
+    "sample": {
+      "hit": [
+        9110,
+        9111,
+        9114,
+        8949,
+        7748,
+        8446,
+        6749,
+        7231,
+        5246,
+        9000,
+        8259,
+        3986
+      ],
+      "miss": [
+        9112,
+        9113,
+        9293
+      ]
+    }
+  },
+  "iana_media_types_xml": {
+    "ok": true,
+    "detail": "602051 bytes, 712 rfc xrefs",
+    "sample": "<?xml version='1.0' encoding='UTF-8'?>\n<?xml-stylesheet type=\"text/xsl\" href=\"media-types.xsl\"?>\n<?xml-model href=\"media-types.rng\" schematypens=\"http://relaxng.org/ns/structure/1.0\" ?>\n<registry xmln"
+  }
+}
